@@ -12,11 +12,11 @@ Use this file to track a long reading queue without opening every batch file.
 | B06 | multimodal-diagnostics | reviewed | later | 4 | 3,4,5,6 | Use the reviewed cards as contrast material for multimodal diagnostics, action validity, and narrow spatial-reasoning comparisons. |
 | B07 | formal-strategy-roots | reviewed | next | 4 | 0,1,2,3,5,6 | Use the reviewed cards to draft the formal-roots lineage and compare taxonomy, aggregation, and leakage-control choices. |
 | B08 | benchmark-suite-diagnostics | reviewed | next | 4 | 0,1,2,3,4,5,7 | Use the reviewed cards to draft instrumentation, process-metric, and benchmark-platform comparisons. |
-| B09 | visual-agent-lineage | queued | later | 5 | 1,3,4,5,6 | Keep as the visual backfill batch once the modern visual core is carded. |
-| B10 | long-horizon-openworld | queued | later | 5 | 1,3,4,5,6,7 | Read when the survey turns from benchmark suites to open-world and long-horizon agents. |
-| B11 | symbolic-spatial-diagnostics | queued | later | 7 | 2,3,4,6,7 | Read as a comparison batch for narrow reasoning diagnostics and map-based planning. |
-| B12 | interactive-multiagent-bridges | queued | later | 4 | 0,1,2,3,4,5,6,7 | Read to connect early social and Minecraft-style interaction benchmarks to the main narrative. |
-| B13 | domain-specialist-competition | queued | later | 7 | 1,2,3,4,5,6 | Read as a specialist comparison batch after the cross-game and ecological anchors are stable. |
+| B09 | visual-agent-lineage | reviewed | later | 5 | 1,3,4,5,6 | Use the reviewed cards to backfill the visual-agent lineage and compare raw-vision evaluation against scaffolded interfaces. |
+| B10 | long-horizon-openworld | reviewed | later | 5 | 1,3,4,5,6,7 | Use the reviewed cards to draft long-horizon, open-world, and adaptive-rule discussions. |
+| B11 | symbolic-spatial-diagnostics | reviewed | later | 7 | 2,3,4,6,7 | Use the reviewed cards as contrast material for symbolic reasoning, puzzle verifiability, and map-based planning probes. |
+| B12 | interactive-multiagent-bridges | reviewed | later | 4 | 0,1,2,3,4,5,6,7 | Use the reviewed cards to connect social interaction, collaboration, and live-evaluation threads in the survey. |
+| B13 | domain-specialist-competition | reviewed | later | 7 | 1,2,3,4,5,6 | Use the reviewed cards as specialist upper bounds and RTS comparison material after the broad benchmark sections are drafted. |
 
 ## Notes
 - Keep only `2-3` batches at `queue_tier = now`.
