@@ -124,6 +124,6 @@
 - Batch ID:
 - Outline sections:
 - Survey role: anchor / representative / contrast / peripheral
-- Paper card path:
+- Paper card path: `paper_cards/{batch_id}/{paper_id}.md`
 - Next action: read-batch / deep-read / review-card / draft-section / hold
 - Last updated:

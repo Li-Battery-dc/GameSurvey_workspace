@@ -9,6 +9,13 @@ Use these labels with the current registry schema.
 - `P2`: useful but not urgent
 - `P3`: peripheral or backlog-only
 
+## Queue Tier
+
+- `now`: next `1-3` batches to read soon
+- `next`: near queue after `now`
+- `later`: visible backlog
+- `hold`: intentionally parked
+
 ## Survey Role
 
 - `anchor`

@@ -6,6 +6,12 @@
 - `11.2 Our synthesis / interpretation`: cross-paper framing, survey positioning, and narrative interpretation
 - `11.3 Uncertain or needs re-check`: unresolved labels, ambiguous setup details, missing metrics, or claims that require another pass
 
+## Identifier Rule
+
+- Keep `paper_id` stable, readable, and title-aligned.
+- Use PascalCase or acronym-preserving CamelCase such as `SmartPlay`, `GameplayQA`, `CKArena`, or `GTBench`.
+- Keep the registry path aligned with the current batch: `paper_cards/{batch_id}/{paper_id}.md`.
+
 ## Recommended Status Progression
 
 - `triaged`
@@ -15,11 +21,18 @@
 
 A card file normally starts at `card-draft`. `triaged` is only for registry rows before a card exists.
 
+## Full-Text Rule
+
+- Prefer the authoritative paper PDF when one exists.
+- If `paper_link` is only an arXiv `abs` page or another landing page, resolve the PDF before treating the paper as fully read.
+- If the PDF cannot be verified, record that uncertainty explicitly.
+
 ## Registry Sync Fields
 
 After each completed card, update at least:
 - `status`
 - `priority` if the deep read changes importance
+- `queue_tier` if the deep read changes urgency
 - `paper_card_path`
 - `next_action`
 - `last_updated`
@@ -30,4 +43,5 @@ After each completed card, update at least:
 - keep the template section order stable
 - anchor the card to concrete outline sections
 - name nearby comparison targets inside the corpus
+- update `corpus/batches/batch_index.md` when the batch state changes
 - leave uncertainty visible instead of forcing completeness

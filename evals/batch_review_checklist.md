@@ -11,8 +11,9 @@ Run this after finishing one reading batch and before moving into drafting.
 ## Registry Check
 
 - [ ] Every processed paper has an updated row in `corpus/registry/benchmark_registry.csv`.
-- [ ] `priority`, `status`, `paper_card_path`, `next_action`, and `last_updated` are current.
+- [ ] `priority`, `queue_tier`, `status`, `paper_card_path`, `next_action`, and `last_updated` are current.
 - [ ] No `paper_card_path` points to a missing file.
+- [ ] Every `paper_card_path` matches the row's `batch_id` and readable `paper_id`.
 - [ ] Deep-read findings that changed importance or placement are reflected in the row.
 - [ ] Weak cards remain `card-draft`; only passing cards move to `card-reviewed`.
 
@@ -24,12 +25,18 @@ Run this after finishing one reading batch and before moving into drafting.
 - [ ] Interaction paradigm and evaluation protocol are described concretely.
 - [ ] Each card names nearby comparison targets.
 - [ ] Each card has an explicit review label: `strong`, `usable`, or `weak`.
+- [ ] The authoritative PDF was resolved when the stored `paper_link` was only an abstract or landing page.
 
 ## Outline Check
 
 - [ ] Each processed paper is anchored to at least one concrete part of `outline.md`.
 - [ ] The batch clarifies at least one comparison theme or section boundary.
 - [ ] Any needed outline change is explicit rather than implicit.
+
+## Queue Check
+
+- [ ] `corpus/batches/batch_index.md` reflects whether this batch is active, queued, reviewed, or done.
+- [ ] The batch still belongs in its current `queue_tier`.
 
 ## Draft Readiness Check
 

@@ -14,6 +14,7 @@ Use this skill for Stage 2 work only. Turn selected papers into evidence-bearing
 - `benchmark.md`
 - `outline.md`
 - `corpus/registry/benchmark_registry.csv`
+- `corpus/batches/batch_index.md` when it exists
 - the relevant batch file under `corpus/batches/` when one exists
 - `template/paper_card_template.md`
 - `evals/quality_rubric.md`
@@ -32,21 +33,46 @@ Read enough to fill the card reliably:
 - main results, failure modes, and limitations
 - appendix only when it resolves setup or metric ambiguity
 
+## Identifier And Path Rule
+
+- Keep `paper_id` exactly as the readable title-aligned ID stored in the registry.
+- Default card location is `paper_cards/{batch_id}/{paper_id}.md`.
+- If `batch_id` is blank, do not drop the card into the root `paper_cards/` folder; assign or confirm the batch first unless the registry already points to a deliberate override path.
+
+## Long-List Mode
+
+- Work from one batch at a time.
+- Do not load the full benchmark list plus multiple batches into one pass.
+- Keep comparison spillover small: at most `1-2` nearby cards unless the user asks for broader synthesis.
+- Treat the registry row and active batch file as the primary context; use `benchmark.md` only as backstop context.
+
+## PDF Resolution Rule
+
+Before deep reading, check whether `paper_link` already points to full text.
+
+- If it is an arXiv `abs` link, resolve the corresponding PDF URL first.
+- If it is OpenReview, a publisher landing page, or a project page, locate the official PDF from that page.
+- Prefer the authoritative paper PDF over mirrors or informal summaries.
+- If the PDF cannot be verified, mark that uncertainty explicitly instead of inventing a URL.
+
 ## Workflow
 
 1. Start from a selected batch file or an explicit paper list.
-2. For each paper, follow the card path already stored in the registry. If none exists, default to `paper_cards/{paper_id}.md`.
-3. Fill `template/paper_card_template.md` exactly. Preserve the section order so cards stay comparable.
-4. Keep section `11.1` to direct paper-supported facts, section `11.2` to our synthesis, and section `11.3` to unresolved uncertainty.
-5. Update the registry after each card:
+2. For each paper, follow the card path already stored in the registry. If none exists, default to `paper_cards/{batch_id}/{paper_id}.md`.
+3. Resolve the PDF URL when `paper_link` is only an abstract or landing page.
+4. Fill `template/paper_card_template.md` exactly. Preserve the section order so cards stay comparable.
+5. Keep section `11.1` to direct paper-supported facts, section `11.2` to our synthesis, and section `11.3` to unresolved uncertainty.
+6. Update the registry after each card:
    - `status`
    - `paper_card_path`
    - `priority` if the deep read changes importance
+   - `queue_tier` if the deep read materially changes urgency
    - `next_action`
    - `last_updated`
-6. After finishing the batch, run the checklist in `evals/batch_review_checklist.md` and judge card quality against `evals/quality_rubric.md`.
-7. Promote only passing cards to `status = card-reviewed`. Keep weak cards at `status = card-draft` with `next_action = review-card`.
-8. Strengthen `outline.md` only by adding clearer anchors or comparison targets. Do not draft long prose here.
+7. After finishing the batch, run the checklist in `evals/batch_review_checklist.md` and judge card quality against `evals/quality_rubric.md`.
+8. Promote only passing cards to `status = card-reviewed`. Keep weak cards at `status = card-draft` with `next_action = review-card`.
+9. Update `corpus/batches/batch_index.md` when the batch state changes.
+10. Strengthen `outline.md` only by adding clearer anchors or comparison targets. Do not draft long prose here.
 
 ## Status Rules
 
@@ -71,6 +97,7 @@ A good batch leaves behind:
 - registry synced
 - confidence and uncertainty explicit
 - explicit `strong` / `usable` / `weak` review outcomes
+- an updated batch state in `corpus/batches/batch_index.md`
 - a short note on which outline sections are now well supported and which are still thin
 
 ## Do Not

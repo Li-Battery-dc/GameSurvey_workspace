@@ -1,4 +1,4 @@
-# sample_balrog BALROG
+# SampleBalrog BALROG
 
 ## 0. Metadata
 - Date: 2024/11
@@ -124,6 +124,7 @@
 - Batch ID: B00
 - Outline sections: 2,4,5
 - Survey role: anchor
-- Paper card path: paper_cards/_sample_foundational_card.md
+- Paper card path: paper_cards/B00/SampleBalrog.md
 - Next action: review-card
 - Last updated: 2026-04-05
+

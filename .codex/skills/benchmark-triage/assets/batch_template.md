@@ -21,3 +21,4 @@
 - registry rows are synced
 - unresolved ambiguity is explicit
 - outline gaps exposed by the batch are noted
+- batch status in `corpus/batches/batch_index.md` is updated

@@ -6,8 +6,10 @@ Use this rubric to judge whether the current reading outputs are strong enough t
 
 A strong registry row should:
 - use the current CSV columns consistently
-- keep `paper_id` stable and lowercase
+- keep `paper_id` stable, readable, and title-aligned
 - include a usable `priority`
+- include a usable `queue_tier`
+- include a current `triage_round`
 - include a usable `batch_id` or an explicit hold decision
 - include a meaningful `outline_sections` value
 - include a valid `paper_card_path` once `status` reaches `card-draft` or above
@@ -15,9 +17,13 @@ A strong registry row should:
 - update `last_updated`
 
 Warnings:
+- lowercase slug-like `paper_id` values that no longer match the repo naming convention
 - blank or stale `next_action`
+- blank `queue_tier` in a long-list corpus
+- `queue_tier` does not match the actual reading queue anymore
 - legacy statuses such as `unread` or `read-card`
 - `paper_card_path` points to a file that does not exist when `status` is `card-draft` or above
+- `paper_card_path` does not match the row's `batch_id`
 - row still reflects Stage 1 assumptions after a deep read
 - high-priority rows have no clear outline landing point
 
@@ -30,6 +36,7 @@ A strong paper card should:
 - state why the paper matters for this survey rather than only summarizing the abstract
 - list nearby comparison targets inside the corpus
 - sync the registry status and path fields
+- be grounded in the full paper PDF or another authoritative full-text source when one exists
 - be scored explicitly as `strong`, `usable`, or `weak` during the batch review gate
 
 ### Strong
@@ -73,6 +80,7 @@ A strong completed batch should:
 - surface the remaining ambiguity instead of hiding it
 - reveal which outline sections are now well supported
 - leave a clear pass or fail decision for each card
+- keep `corpus/batches/batch_index.md` aligned with the current queue state
 
 Warnings:
 - the batch mixes too many unrelated papers to compare cleanly
@@ -80,6 +88,7 @@ Warnings:
 - registry and card paths disagree
 - no summary of what the batch clarified for the survey
 - passing and failing cards are not separated in the registry
+- the batch index still marks a finished batch as active
 
 ## 4. Draft Readiness
 
@@ -104,3 +113,4 @@ Stop and fix the underlying artifacts before drafting if you see any of these:
 - outline anchors are missing or too vague
 - draft prose introduces benchmark claims not present in cards
 - weak cards are being used as if they had already passed review
+- the agent is rereading the whole benchmark list instead of working from the registry and batch index
