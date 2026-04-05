@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games</title>
+<!--Generated on Sat Nov  8 02:06:32 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="/static/browse/0.3.4/css/arxiv-html-papers-20250916.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="/static/browse/0.3.4/js/addons_new.js"></script>
+<script src="/static/browse/0.3.4/js/feedbackOverlay.js"></script>
+<base href="/html/2508.08501v2/"/></head>
+<body>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx1" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx2" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Related Work</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx2.SS0.SSS0.Px1" title="In Related Work ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Games as LLM Benchmarks.</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx2.SS0.SSS0.Px2" title="In Related Work ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">GVGAI Framework.</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Benchmark Design</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx1" title="In Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Environment and Agent Design</span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx1.SSS0.Px1" title="In Environment and Agent Design ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Translator</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx1.SSS0.Px2" title="In Environment and Agent Design ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Player</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx1.SSS0.Px3" title="In Environment and Agent Design ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Prompt Configuration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx1.SSS0.Px4" title="In Environment and Agent Design ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">LLM Agent Interaction Pipeline</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx1.SSS0.Px5" title="In Environment and Agent Design ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Contextual Prompting</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx2" title="In Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Evaluation Metrics and Scoring Framework</span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx2.SSS0.Px1" title="In Evaluation Metrics and Scoring Framework ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Meaningful Step Ratio</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx2.SSS0.Px2" title="In Evaluation Metrics and Scoring Framework ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Step Efficiency</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx2.SSS0.Px3" title="In Evaluation Metrics and Scoring Framework ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Win Rate</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx2.SSS0.Px4" title="In Evaluation Metrics and Scoring Framework ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Normalized Reward</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.SSx2.SSS0.Px5" title="In Evaluation Metrics and Scoring Framework ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Overall Score</span></a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx4" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Experiments</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx4.SSx1" title="In Experiments ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Full-Benchmark Evaluation with GPT-4o</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx4.SSx2" title="In Experiments ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Multi-Model Comparison on Selected Games</span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx4.SSx2.SSS0.Px1" title="In Multi-Model Comparison on Selected Games ‣ Experiments ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Results</span></a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx5" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Discussion</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx5.SSx1" title="In Discussion ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Spatial Grounding Errors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx5.SSx2" title="In Discussion ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Symbolic Identity Confusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx5.SSx3" title="In Discussion ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Behavioral Misalignment</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx5.SSx4" title="In Discussion ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Prompt Design Implications</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx6" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Conclusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7" title="In GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">Appendix</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.SSx1" title="In Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">A. ChatGPT-4o-mini on more games</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.SSx2" title="In Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">B. Zero-Shot Prompt Example</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.SSx3" title="In Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">C. Decision Time Comparison Between LLM Agents and MCTS</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.SSx4" title="In Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_title">D. RL Agent Configuration Details</span></a></li>
+</ol>
+</li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">
+Yuchen Li,<sup class="ltx_sup">1</sup>
+Cong Lin,<sup class="ltx_sup">2</sup>
+Muhammad Umair Nasir,<sup class="ltx_sup">1,3</sup>
+<br class="ltx_break"/>Philip Bontrager,<sup class="ltx_sup">4</sup>
+Jialin Liu,<sup class="ltx_sup">5</sup>
+Julian Togelius<sup class="ltx_sup">1</sup>
+<br class="ltx_break"/>
+</span><span class="ltx_author_notes">yl6394@nyu.eduThis work is currently under review at AAAI 2026.Available at: <span class="ltx_ref ltx_nolink ltx_url ltx_ref_self">https://github.com/doveliyuchen/GVGAI˙GYM</span></span></span>
+</div>
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p">We introduce GVGAI-LLM, a video game benchmark for evaluating the reasoning and problem-solving capabilities of large language models (LLMs). Built on the General Video Game AI framework, it features a diverse collection of arcade-style games designed to test a model’s ability to handle tasks that differ from most existing LLM benchmarks. The benchmark leverages a game description language that enables rapid creation of new games and levels, helping to prevent overfitting over time. Each game scene is represented by a compact set of ASCII characters, allowing for efficient processing by language models. GVGAI-LLM defines interpretable metrics, including the meaningful step ratio, step efficiency, and overall score, to assess model behavior. Through zero-shot evaluations across a broad set of games and levels with diverse challenges and skill depth, we reveal persistent limitations of LLMs in spatial reasoning and basic planning. Current models consistently exhibit spatial and logical errors, motivating structured prompting and spatial grounding techniques. While these interventions lead to partial improvements, the benchmark remains very far from solved. GVGAI-LLM provides a reproducible testbed for advancing research on language model capabilities, with a particular emphasis on agentic behavior and contextual reasoning.</p>
+</div>
+<section class="ltx_section" id="Sx1">
+<h2 class="ltx_title ltx_title_section">Introduction</h2>
+<div class="ltx_para" id="Sx1.p1">
+<p class="ltx_p">Large language models (LLMs) have shown impressive capabilities in open-ended generation, planning, and reasoning tasks <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">achiam2023gpt</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">liu2024deepseek</span>)</cite>. Recently, researchers have begun deploying LLMs as interactive agents in sequential decision making environments such as robotics, web navigation, and games <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">achiam2023gpt</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">liu2024deepseek</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">10974629</span>)</cite>. While benchmarks such as GLUE <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">wang2018glue</span>)</cite>, SuperGLUE <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">NEURIPS2019_4496bf24</span>)</cite>, and MMLU <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">hendrycks2021measuring</span>)</cite> evaluate static language understanding and broad domain knowledge, HumanEval <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">chen2021evaluatinglargelanguagemodels</span>)</cite> assesses code generation proficiency, HELM <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">liang2023holistic</span>)</cite> examines safety and robustness, and instruction-following frameworks like ALFWorld <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">shridhar2021alfworld</span>)</cite> and BabyAI <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">chevalier-boisvert2018babyai</span>)</cite> focus on executing textual commands. None of these benchmarks, however, measure decision making competence in structured symbolic domains with game-style logic, real-time decision, and spatial reasoning.</p>
+</div>
+<div class="ltx_para" id="Sx1.p2">
+<p class="ltx_p">To address this gap, we introduce <span class="ltx_text ltx_font_bold">GVGAI-LLM</span>, a benchmark that adapts the General Video Game AI (GVGAI) framework <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">perez2019general</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">liebana2019general2</span>)</cite> into a testbed tailored for LLM agents. Unlike existing benchmarks focused on task completion or instruction following, GVGAI-LLM emphasizes goal-directed agent behavior in reactive, rule-based 2D games. The GVGAI framework’s diverse game dynamics and formal Video Game Description Language (VGDL) specifications <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">ebner2013towards</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">schaul2013video</span>)</cite> make it ideal for evaluating how well LLMs can parse structured environments, comply with implicit goals, and act.</p>
+</div>
+<div class="ltx_para" id="Sx1.p3">
+<p class="ltx_p">GVGAI-LLM is designed to evaluate language-only agents in symbolic environments, without
+access to code execution, simulators, or structured planners. It provides a unified testbed that supports natural language interfaces, tracks interpretable behaviors, and captures unique LLM-specific challenges such as spatial misalignment and inconsistent rule-following.
+Our key contributions are as follows:</p>
+<ul class="ltx_itemize" id="Sx1.I1">
+<li class="ltx_item" id="Sx1.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx1.I1.i1.p1">
+<p class="ltx_p">We introduce a standardized prompting interface that enables large language model-based agents to interact with more than one hundred games via natural language, supporting zero-shot and contextual prompting.</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx1.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx1.I1.i2.p1">
+<p class="ltx_p">We reformulate symbolic game states into structured textual representations, making them accessible to language-only agents without reliance on internal simulators or programmatic logic.</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx1.I1.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx1.I1.i3.p1">
+<p class="ltx_p">We design interpretable and reproducible metrics, including meaningful step ratio, step efficiency, and win rate, to assess agent behavior and reveal key failure modes.</p>
+</div>
+</li>
+</ul>
+</div>
+<figure class="ltx_figure" id="Sx1.F1"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_missing ltx_missing_image" id="Sx1.F1.g1" src=""/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>Overview of GVGAI-LLM</figcaption>
+</figure>
+</section>
+<section class="ltx_section" id="Sx2">
+<h2 class="ltx_title ltx_title_section">Related Work</h2>
+<section class="ltx_paragraph" id="Sx2.SS0.SSS0.Px1">
+<h4 class="ltx_title ltx_title_paragraph">Games as LLM Benchmarks.</h4>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px1.p1">
+<p class="ltx_p">Games have recently emerged as powerful benchmarks for evaluating a broad range of LLM capabilities, including reasoning, planning, spatial understanding, and multimodal integration. BALROG <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">paglieri2025balrog</span>)</cite> assesses LLM agentic behavior across six environments, such as BabyAI <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">chevalier-boisvert2018babyai</span>)</cite> and Nethack <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">kuttler2020nethack</span>)</cite>. Several other benchmarks, SmartPlay <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">wu2024smartplay</span>)</cite>, AgentBench <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">liu2024agentbench</span>)</cite>, DSGBench <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">tang2025dsgbench</span>)</cite>, GTBench <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">duan2024gtbench</span>)</cite>, and LMGame-Bench <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">hu2025lmgame</span>)</cite>, evaluate decision-making and reasoning through a variety of games. GameTraversalBenchmark <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">nasir2024gametraversalbenchmark</span>)</cite> focuses on planning via navigation in procedurally generated levels, while ARC-AGI <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">chollet2024arc</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">chollet2025arc</span>)</cite> emphasizes abstract reasoning through structured puzzles.</p>
+</div>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px1.p2">
+<p class="ltx_p">Other benchmarks target multimodal understanding, such as Atari-GPT <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">waytowich2024atari</span>)</cite>, VideoGameBench <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">zhang2025videogamebench</span>)</cite>, and MMBench <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">liu2024mmbench</span>)</cite>, which require interpreting visual inputs alongside text. These benchmarks highlight the breadth of skills being evaluated in games, yet many rely on either static environments, pre-defined trajectories, or focus primarily on instruction following or multimodal grounding.</p>
+</div>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px1.p3">
+<p class="ltx_p">In contrast, GVGAI-LLM emphasizes zero-shot, agent-driven decision-making in reactive, rule-based games through natural language interfaces. By focusing on symbolic logic, spatial dynamics, and prompt-based interaction, it fills a critical gap in evaluating LLM reasoning in structured and discrete environments.</p>
+</div>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px1.p4">
+<p class="ltx_p">Despite the variety of benchmarks, LLMs generally perform poorly across most game-based tasks, particularly those involving spatial reasoning, long-horizon planning, or symbolic manipulation. Their performance often lags behind traditional planning and reinforcement learning agents, especially in environments with sparse rewards or complex rules. Furthermore, inference with LLMs remains computationally expensive, as token-based prompting and decoding must be repeated at every step of interaction.</p>
+</div>
+<figure class="ltx_figure" id="Sx2.F2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="148" id="Sx2.F2.g1" src="figures/rule.png" width="359"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2: </span>VGDL rule mapping and level layout mapping</figcaption>
+</figure>
+</section>
+<section class="ltx_paragraph" id="Sx2.SS0.SSS0.Px2">
+<h4 class="ltx_title ltx_title_paragraph">GVGAI Framework.</h4>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px2.p1">
+<p class="ltx_p">The original GVGAI framework <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">perez2019general</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">liebana2019general2</span>)</cite> provides a unified testbed for evaluating general game-playing agents across diverse environments. It emphasized planning, reactivity, and generalization.
+Game rules and levels are represented by VGD <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">schaul2013video</span>)</cite>, allowing for the creation of new games and levels to evaluate agents <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">khalifa2016general</span>)</cite>, whereas existing benchmarks typically provide only a single or a fixed set of environments.</p>
+</div>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px2.p2">
+<p class="ltx_p">GVGAI has been extensively used to evaluate planning agents and reinforcement learning methods, emphasizing generalization, reactivity, and symbolic reasoning <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">hu2022reinforcement</span>)</cite>. While it was not originally designed for language-based agents, its modular, rule-based design enables structured interactions that are well-suited for LLM prompting. Modifying GVGAI to accommodate LLM agents enables direct comparison between LLMs, tree search, and RL agents in a shared symbolic space.</p>
+</div>
+<div class="ltx_para" id="Sx2.SS0.SSS0.Px2.p3">
+<p class="ltx_p">Unlike many instruction-focused benchmarks, GVGAI-LLM poses distinct challenges centered on spatial grounding, symbolic dynamics, and reactive decision-making. We provide experimental comparisons across agent types and summarize performance differences in Table <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx4.T3" title="Table 3 ‣ Full-Benchmark Evaluation with GPT-4o ‣ Experiments ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">3</span></a>.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="Sx3">
+<h2 class="ltx_title ltx_title_section">Benchmark Design</h2>
+<div class="ltx_para" id="Sx3.p1">
+<p class="ltx_p">Our benchmark is built on top of the original GVGAI Java engine, which offers a collection of over one hundred 2D video games featuring a variety of tasks, challenges, and skill levels, all defined using VGDL, which also enables rapid creation of new games and levels, making the benchmark infinitely extensible. To enable interaction with language models, we substantially extend the GVGAI framework by exposing both the dynamic game state at each time step and the underlying game rules as structured textual representations. This includes translating symbolic state information and formal game mechanics into natural language descriptions suitable for prompting language models. Specifically, each environment is serialized into a symbolic 2D layout, paired with a natural language goal description and a mapping of game entities to their meanings.</p>
+</div>
+<section class="ltx_subsection" id="Sx3.SSx1">
+<h3 class="ltx_title ltx_title_subsection">Environment and Agent Design</h3>
+<div class="ltx_para" id="Sx3.SSx1.p1">
+<p class="ltx_p">In this subsection, we describe the components responsible for rule translation, prompt formatting, agent decision making, and interaction protocols. The GVGAI environment executes the game logic and provides access to both the symbolic game state and the underlying VGDL rules at each time step. These are processed by the prompt generation module, which converts the state into a structured 2D layout and translates the game rules into natural language. The resulting prompt includes goal descriptions, entity mappings, available actions, and coordinate annotations. This prompt is then passed to the LLM agent, which selects an action based solely on the current step’s information. The selected action is executed in the environment, completing a closed loop. The overall design (c.f., Figure <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx1.F1" title="Figure 1 ‣ Introduction ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">1</span></a>) aims to isolate per-step reasoning and encourage symbolic generalization without reliance on temporal memory.</p>
+</div>
+<section class="ltx_paragraph" id="Sx3.SSx1.SSS0.Px1">
+<h4 class="ltx_title ltx_title_paragraph">Translator</h4>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px1.p1">
+<p class="ltx_p">VGDL <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">ebner2013towards</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">schaul2013video</span>)</cite> is a game description language that encodes game rules and levels/scenes as a compact string of ASCII characters.
+The <span class="ltx_text ltx_font_italic">Translator</span> module converts VGDL rule specifications into natural language descriptions. It parses object definitions, interaction rules, and termination conditions from the VGDL script. For example, a rule such as <span class="ltx_text ltx_font_typewriter">avatar &gt; key = &gt; killSprite</span> is rendered as: “<em class="ltx_emph ltx_font_italic">If the avatar touches a key, the key disappears and the avatar obtains it.</em>” These textual rule descriptions are provided to downstream modules to support language-based reasoning, as shown in Figure <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx2.F2" title="Figure 2 ‣ Games as LLM Benchmarks. ‣ Related Work ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">2</span></a>.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx1.SSS0.Px2">
+<h4 class="ltx_title ltx_title_paragraph">Player</h4>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px2.p1">
+<p class="ltx_p">The <span class="ltx_text ltx_font_italic">Player</span> module receives the current game state (represented in ASCII format) along with a high-level strategy. It selects a concrete low-level action (e.g., “<em class="ltx_emph ltx_font_italic">move right</em>”) aimed at fulfilling the strategy objective. All decisions are made through language-based reasoning without access to symbolic forward simulation.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx1.SSS0.Px3">
+<h4 class="ltx_title ltx_title_paragraph">Prompt Configuration</h4>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px3.p1">
+<p class="ltx_p">The zero-shot prompt includes several static and dynamic components summarized in Table <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx3.T1" title="Table 1 ‣ Prompt Configuration ‣ Environment and Agent Design ‣ Benchmark Design ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">1</span></a>. These elements are presented to the agent at each step to facilitate rule interpretation, spatial reasoning, and action selection. Empirically, we observe that each step consumes approximately 8,000 tokens when using reasoner models (e.g., GPT-o3-mini) and around 5,000 tokens for standard models. This includes both static components (such as game rules) and dynamic components (such as current state).</p>
+</div>
+<figure class="ltx_table" id="Sx3.T1">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Prompt Component</span></th>
+<th class="ltx_td ltx_nopad_r ltx_align_left ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Zero-Shot Setting</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t">Static Rule Description</td>
+<td class="ltx_td ltx_nopad_r ltx_align_left ltx_border_t">Included (each step)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">Action Mapping</td>
+<td class="ltx_td ltx_nopad_r ltx_align_left">Included (each step)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">Current Game State</td>
+<td class="ltx_td ltx_nopad_r ltx_align_left">Included</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">Sprite Mapping</td>
+<td class="ltx_td ltx_nopad_r ltx_align_left">Included</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left">Avatar Position</td>
+<td class="ltx_td ltx_nopad_r ltx_align_left">Included</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_bb">Past States / Actions</td>
+<td class="ltx_td ltx_nopad_r ltx_align_left ltx_border_bb">Not included</td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 1: </span>Prompt components used in the zero-shot setting.</figcaption>
+</figure>
+<figure class="ltx_figure" id="Sx3.F3"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="197" id="Sx3.F3.g1" src="figures/comprehensive_performance_heatmap.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>Comprehensive score of each model across six GVGAI games. The comprehensive score aggregates meaningful action ratio, inverse steps, and (when available) reward and win rate.</figcaption>
+</figure>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx1.SSS0.Px4">
+<h4 class="ltx_title ltx_title_paragraph">LLM Agent Interaction Pipeline</h4>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px4.p1">
+<p class="ltx_p">GVGAI-LLM follows a simple yet strict interaction loop between the environment and the language model. At each time step, the environment generates a structured textual description of the current state, including an ASCII map, rule explanations, a list of available actions, and the avatar’s current position. This information is formatted as a prompt and sent to the language model, which responds with an action choice in natural language. The environment then applies this action, updates the state, and prepares the next prompt based on the new state.</p>
+</div>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px4.p2">
+<p class="ltx_p">Importantly, each step is handled independently. The model does not receive any memory of previous states or actions, nor does it accumulate trajectory information. This zero-shot setup ensures that the agent must make decisions based entirely on the current state. This design of the prompt encourages reasoning over symbolic input rather than reliance on historical context or pattern across time.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx1.SSS0.Px5">
+<h4 class="ltx_title ltx_title_paragraph">Contextual Prompting</h4>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px5.p1">
+<p class="ltx_p">Although our benchmark adopts a zero-shot setup by default, we also explored a contextual prompting variant in which each input includes a short history, up to 20,000 tokens, comprising prior states, actions, and chat. Since prompts are constructed as interactive dialogues, this incorporates previous exchanges to provide the model with a limited form of temporal continuity. However, we found this approach introduced several drawbacks, including compounded reasoning errors, and higher token costs, without significantly improving task performance.</p>
+</div>
+<div class="ltx_para" id="Sx3.SSx1.SSS0.Px5.p2">
+<p class="ltx_p">First, the addition of historical context did not lead to higher win rates or better decision quality across most games. Second, the extra context greatly increased the prompt length, which leads to higher token usage and cost. Finally, including prior steps shifted the focus away from general reasoning and symbolic interpretation, instead encouraging models to rely on memorized patterns. Since GVGAI-LLM is designed to evaluate how well models can generalize from the current state, we chose to standardize on zero-shot prompting as our main evaluation setting.</p>
+</div>
+</section>
+</section>
+<section class="ltx_subsection" id="Sx3.SSx2">
+<h3 class="ltx_title ltx_title_subsection">Evaluation Metrics and Scoring Framework</h3>
+<div class="ltx_para" id="Sx3.SSx2.p1">
+<p class="ltx_p">To assess the behavior of LLM agents in GVGAI-LLM, we introduce a set of evaluation metrics that capture key aspects of decision-making quality.</p>
+</div>
+<section class="ltx_paragraph" id="Sx3.SSx2.SSS0.Px1">
+<h4 class="ltx_title ltx_title_paragraph">Meaningful Step Ratio</h4>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px1.p1">
+<p class="ltx_p">The first metric is the meaningful step ratio, which quantifies the proportion of agent actions that produce tangible effects on the environment. This metric captures the agent’s ability to engage in purposeful, goal-directed behavior and helps differentiate between effective and redundant actions.</p>
+</div>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px1.p2">
+<p class="ltx_p">A step is considered <em class="ltx_emph ltx_font_italic">meaningful</em> if and only if it satisfies:</p>
+<table class="ltx_equation ltx_eqn_table" id="Sx3.Ex1">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="\texttt{isMeaningful(step)}=(\Delta\text{reward}\neq 0)\lor(\Delta\text{state}\neq 0)" class="ltx_Math" display="block" id="Sx3.Ex1.m1" intent=":literal"><semantics><mrow><mtext class="ltx_mathvariant_monospace">isMeaningful(step)</mtext><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mtext>reward</mtext></mrow><mo>≠</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow><mo>∨</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mtext>state</mtext></mrow><mo>≠</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\texttt{isMeaningful(step)}=(\Delta\text{reward}\neq 0)\lor(\Delta\text{state}\neq 0)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math alttext="\Delta\text{state}\neq 0" class="ltx_Math" display="inline" id="Sx3.SSx2.SSS0.Px1.p2.m1" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mtext>state</mtext></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta\text{state}\neq 0</annotation></semantics></math> indicates that the action causes a visible change in the game world, such as the removal, transformation, or appearance of an entity. We explicitly exclude the following from meaningful steps:</p>
+<ul class="ltx_itemize" id="Sx3.I2">
+<li class="ltx_item" id="Sx3.I2.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx3.I2.i1.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">ACTION_NIL</span> (i.e., doing nothing at current time step);</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx3.I2.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx3.I2.i2.p1">
+<p class="ltx_p">Repeating ineffective actions (e.g., walking into a wall);</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx3.I2.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx3.I2.i3.p1">
+<p class="ltx_p">Moves that cancel each other trivially in the last 4 steps (e.g., moving left immediately after moving right).</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px1.p3">
+<p class="ltx_p">A higher <span class="ltx_text ltx_font_italic">meaningful step ratio</span> indicates that the agent is frequently executing impactful actions that contribute to progress toward the game’s objectives. This metric is particularly relevant for evaluating reasoning, planning, and the agent’s ability to interact meaningfully with symbolic game environments. Notably, weak agents, regardless of their underlying architecture, often exhibit low meaningful step ratios, as they tend to perform ineffective behaviors such as moving back and forth or repeating trivial actions.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx2.SSS0.Px2">
+<h4 class="ltx_title ltx_title_paragraph">Step Efficiency</h4>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px2.p1">
+<p class="ltx_p">The second metric is step efficiency, which evaluates the agent’s ability to achieve objectives with minimal effort. It is computed as the normalized difference between the average number of steps required to win and the maximum tested steps in a level. Formally, we define:</p>
+<table class="ltx_equation ltx_eqn_table" id="Sx3.E1">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="\text{Step Efficiency}=1-\frac{\text{Average Win Step}}{\text{Max Step}}." class="ltx_Math" display="block" id="Sx3.E1.m1" intent=":literal"><semantics><mrow><mrow><mtext>Step Efficiency</mtext><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mtext>Average Win Step</mtext><mtext>Max Step</mtext></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\text{Step Efficiency}=1-\frac{\text{Average Win Step}}{\text{Max Step}}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This value ranges from 0 to 1, with higher values indicating more efficient solutions.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx2.SSS0.Px3">
+<h4 class="ltx_title ltx_title_paragraph">Win Rate</h4>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px3.p1">
+<p class="ltx_p">In addition to these, we also track win rate, defined as the fraction of episodes in which the agent successfully completes the level, and total game reward, normalized to the interval <math alttext="[0,1]" class="ltx_Math" display="inline" id="Sx3.SSx2.SSS0.Px3.p1.m1" intent=":literal"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>. While win rate captures binary task completion, normalized reward offers a more granular perspective by measuring partial progress in cases where the agent does not reach the goal.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx2.SSS0.Px4">
+<h4 class="ltx_title ltx_title_paragraph">Normalized Reward</h4>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px4.p1">
+<p class="ltx_p">A normalized reward is computed using min-max scaling across all agent runs for a level:</p>
+<table class="ltx_equation ltx_eqn_table" id="Sx3.Ex2">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="R=\frac{r-r_{\min}}{r_{\max}-r_{\min}+\epsilon}," class="ltx_Math" display="block" id="Sx3.Ex2.m1" intent=":literal"><semantics><mrow><mrow><mi>R</mi><mo>=</mo><mfrac><mrow><mi>r</mi><mo>−</mo><msub><mi>r</mi><mi>min</mi></msub></mrow><mrow><mrow><msub><mi>r</mi><mi>max</mi></msub><mo>−</mo><msub><mi>r</mi><mi>min</mi></msub></mrow><mo>+</mo><mi>ϵ</mi></mrow></mfrac></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">R=\frac{r-r_{\min}}{r_{\max}-r_{\min}+\epsilon},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math alttext="r" class="ltx_Math" display="inline" id="Sx3.SSx2.SSS0.Px4.p1.m1" intent=":literal"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math> is the total reward of a run, <math alttext="r_{\min}" class="ltx_Math" display="inline" id="Sx3.SSx2.SSS0.Px4.p1.m2" intent=":literal"><semantics><msub><mi>r</mi><mi>min</mi></msub><annotation encoding="application/x-tex">r_{\min}</annotation></semantics></math> and <math alttext="r_{\max}" class="ltx_Math" display="inline" id="Sx3.SSx2.SSS0.Px4.p1.m3" intent=":literal"><semantics><msub><mi>r</mi><mi>max</mi></msub><annotation encoding="application/x-tex">r_{\max}</annotation></semantics></math> are the minimum and maximum rewards observed across all agents for the same game level, and <math alttext="\epsilon" class="ltx_Math" display="inline" id="Sx3.SSx2.SSS0.Px4.p1.m4" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> is a small constant to avoid division by zero.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="Sx3.SSx2.SSS0.Px5">
+<h4 class="ltx_title ltx_title_paragraph">Overall Score</h4>
+<div class="ltx_para" id="Sx3.SSx2.SSS0.Px5.p1">
+<p class="ltx_p">To summarize agent behavior across these dimensions, we define an overall score by averaging four normalized metrics: meaningful step ratio, total steps (inverted), reward, and win rate.
+We deliberately assign equal weights to each metric to ensure balanced evaluation across different aspects of agent behavior, and to maintain interpretability across diverse games. Exploratory tests with manual reweighting yielded no consistent improvements in ranking robustness.
+Each component captures a distinct behavioral property, meaningful step ratio, efficiency, and task success, allowing the final score to reflect multiple dimensions of quality. We deliberately avoid assigning manual weights to prevent overfitting to any single behavior type. This formulation supports a robust, interpretable measure for comparing LLM agents across tasks and prompting strategies. Since reward distributions vary significantly across GVGAI games, we apply per-game normalization to ensure that the normalized reward captures relative performance within each environment.</p>
+</div>
+</section>
+</section>
+</section>
+<section class="ltx_section" id="Sx4">
+<h2 class="ltx_title ltx_title_section">Experiments</h2>
+<div class="ltx_para" id="Sx4.p1">
+<p class="ltx_p">We conduct two experiments to evaluate language model agents in GVGAI-LLM under a standardized zero-shot setting. In this setup, agents choose actions based solely on the current symbolic state, without memory, trajectory history, or access to forward simulation. All models are evaluated via a shared API using identical prompt templates, input formatting, and decoding parameters to ensure comparability. The first experiment evaluates <span class="ltx_text ltx_font_typewriter">GPT-4o-mini</span> across the entire benchmark, while the second compares multiple LLMs on a selected subset of six games.</p>
+</div>
+<section class="ltx_subsection" id="Sx4.SSx1">
+<h3 class="ltx_title ltx_title_subsection">Full-Benchmark Evaluation with GPT-4o</h3>
+<div class="ltx_para" id="Sx4.SSx1.p1">
+<p class="ltx_p">In the first experiment, we evaluate <span class="ltx_text ltx_font_typewriter">GPT-4o-mini</span> across all 118 games in the GVGAI-LLM benchmark. Each game is associated with a single rule file and up to five distinct level layouts. For each level, we run one episode using the same underlying game rules, allowing us to assess the model’s ability to generalize across structurally different scenarios within the same game.
+Results are summarized in Table <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx4.T2" title="Table 2 ‣ Full-Benchmark Evaluation with GPT-4o ‣ Experiments ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">2</span></a>, with full per-game data in the Appendix.
+<span class="ltx_text ltx_font_typewriter">GPT-4o-mini</span> fails to complete the vast majority of game levels in GVGAI-LLM, even when the levels are relatively small and conceptually straightforward for humans. These results underscore the challenge posed by GVGAI-LLM and highlight its value in identifying persistent failures in symbolic reasoning and spatial decision-making.</p>
+</div>
+<figure class="ltx_figure" id="Sx4.F4"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="197" id="Sx4.F4.g1" src="figures/win_rate_heatmap.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 4: </span>Win rate comparison of three LLM agents across six GVGAI games. The win rate is computed as the percentage of successful completions out of multiple rollouts.</figcaption>
+</figure>
+<figure class="ltx_table" id="Sx4.T2">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span class="ltx_text ltx_font_bold">Metric</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Value</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Total Games Tested</th>
+<td class="ltx_td ltx_align_center ltx_border_t">118</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Levels with 0% Win Rate</th>
+<td class="ltx_td ltx_align_center">477/540</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Average Meaningful Step Ratio</th>
+<td class="ltx_td ltx_align_center">49.71%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Average Step Efficiency</th>
+<td class="ltx_td ltx_align_center">0.3293</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Overall Win Rate</th>
+<td class="ltx_td ltx_align_center">10.27%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Average Overall Score</th>
+<td class="ltx_td ltx_align_center">0.2764</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">Best Performing Game (Win Rate)</th>
+<td class="ltx_td ltx_align_center ltx_border_bb">
+<span class="ltx_text ltx_font_typewriter">Cec3</span> (100.00%)</td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 2: </span>
+GPT-4o summary statistics.</figcaption>
+</figure>
+<figure class="ltx_table" id="Sx4.T3">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_tt"><span class="ltx_text ltx_font_bold">Agent/Model</span></th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><span class="ltx_text ltx_font_bold">Aliens</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><span class="ltx_text ltx_font_bold">Boulderdash</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><span class="ltx_text ltx_font_bold">Escape</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><span class="ltx_text ltx_font_bold">Realsokoban</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><span class="ltx_text ltx_font_bold">Sokoban</span></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><span class="ltx_text ltx_font_bold">Zelda</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t">Deepseek-chat</th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">16.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">20.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_t">24.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">Deepseek-r1</th>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">24.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">12.0%</td>
+<td class="ltx_td ltx_align_center">16.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">GPT-4o-mini</th>
+<td class="ltx_td ltx_align_center ltx_border_r">8.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">4.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center">0.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">GPT-o3-mini</th>
+<td class="ltx_td ltx_align_center ltx_border_r">80.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">44.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">52.0</span>%</td>
+<td class="ltx_td ltx_align_center">72.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">Gemini-2.5-pro</th>
+<td class="ltx_td ltx_align_center ltx_border_r">16.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">36.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">4.0</span>%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">28.0%</td>
+<td class="ltx_td ltx_align_center">8.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">Gemini-2.0-exp.-flash</th>
+<td class="ltx_td ltx_align_center ltx_border_r">4.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">12.5%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center">0.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">olets</th>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">100.0</span>%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">56.0</span>%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">68.0</span>%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">24.0%</td>
+<td class="ltx_td ltx_align_center">
+<span class="ltx_text ltx_font_bold">76.0</span>%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">sampleMCTS</th>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">100.0</span>%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">28.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">40.0%</td>
+<td class="ltx_td ltx_align_center">24.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">sampleRHEA</th>
+<td class="ltx_td ltx_align_center ltx_border_r">
+<span class="ltx_text ltx_font_bold">100.0</span>%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">4.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">24.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">24.0%</td>
+<td class="ltx_td ltx_align_center">36.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">baseline3DQN</th>
+<td class="ltx_td ltx_align_center ltx_border_r">56.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">16.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center">0.0%</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r">baseline3PPO</th>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">64.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">12.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">0.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">12.0%</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">8.0%</td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 3: </span>Win rates comparison across planning agents in GVGAI and LLMs.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="Sx4.SSx2">
+<h3 class="ltx_title ltx_title_subsection">Multi-Model Comparison on Selected Games</h3>
+<div class="ltx_para" id="Sx4.SSx2.p1">
+<p class="ltx_p">In the second experiment, we compare multiple LLMs on a curated subset of six representative games: <span class="ltx_text ltx_font_typewriter">zelda</span>, <span class="ltx_text ltx_font_typewriter">aliens</span>, <span class="ltx_text ltx_font_typewriter">boulderdash</span>, <span class="ltx_text ltx_font_typewriter">realsokoban</span>, <span class="ltx_text ltx_font_typewriter">escape</span>, and <span class="ltx_text ltx_font_typewriter">sokoban</span> with five levels per game. These games were chosen to span a variety of mechanics and difficulty degrees, ranging from real-time action (e.g., <span class="ltx_text ltx_font_typewriter">aliens</span>, <span class="ltx_text ltx_font_typewriter">zelda</span>) to spatial puzzles (<span class="ltx_text ltx_font_typewriter">sokoban</span>, <span class="ltx_text ltx_font_typewriter">realsokoban</span>) and open-ended navigation tasks (<span class="ltx_text ltx_font_typewriter">escape</span>). The selection was informed by procedural content generation (PCG) design taxonomies <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">shaker2016procedural</span>; <span class="ltx_ref ltx_missing_citation ltx_ref_self">Yannakakis2018Artificial</span>)</cite>, ensuring diversity <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">li2025measuring</span>)</cite> in spatiality, interactivity, and temporal structure.</p>
+</div>
+<div class="ltx_para" id="Sx4.SSx2.p2">
+<p class="ltx_p">We evaluate six models: <span class="ltx_text ltx_font_typewriter">gpt-4o-mini</span>, <span class="ltx_text ltx_font_typewriter">o3-mini</span>, <span class="ltx_text ltx_font_typewriter">gemini-2.0-flash-exp</span>, <span class="ltx_text ltx_font_typewriter">gemini-2.5-pro</span> (without thinking), <span class="ltx_text ltx_font_typewriter">deepseek-chat</span>, and <span class="ltx_text ltx_font_typewriter">Deepseek-r1</span>. Each model is run under the same zero-shot prompting setup, with five repeated runs per game level.
+All prompts and decoding parameters are held nearly constant with a temperature of 0.9. Although we explored contextual prompting, we ultimately discarded it due to high token costs and limited performance gains. This experiment focuses on comparing model behavior across games with varied symbolic and spatial demands. Detailed results are shown in Appendix.</p>
+</div>
+<section class="ltx_paragraph" id="Sx4.SSx2.SSS0.Px1">
+<h4 class="ltx_title ltx_title_paragraph">Results</h4>
+<div class="ltx_para" id="Sx4.SSx2.SSS0.Px1.p1">
+<p class="ltx_p">The multi-model evaluation reveals clear differences in model behavior and competence across symbolic environments. <span class="ltx_text ltx_font_typewriter">gpt-4o-mini</span> demonstrates relatively balanced performance, achieving moderate-to-high scores in puzzle-based games like <span class="ltx_text ltx_font_typewriter">sokoban</span> and <span class="ltx_text ltx_font_typewriter">realsokoban</span>, although it still fails to consistently complete levels. <span class="ltx_text ltx_font_typewriter">o3-mini</span> shows similar trends, with stable but limited competence in levels requiring deterministic planning, such as <span class="ltx_text ltx_font_typewriter">escape</span> and <span class="ltx_text ltx_font_typewriter">realsokoban</span>, yet with overall low win rates and little generalization across level variations. In contrast,<span class="ltx_text ltx_font_typewriter">gemini-2.0-flash-exp</span> achieves moderate scores but rarely succeeds in completing any levels, reflecting minimal spatial grounding. The more capable <span class="ltx_text ltx_font_typewriter">gemini-2.5-pro</span> occasionally solves simple levels, particularly in Escape, but still underperforms on more complex puzzle scenarios. Meanwhile, <span class="ltx_text ltx_font_typewriter">deepseek-chat</span> achieves a few wins in early levels but exhibits erratic behavior and low overall score across most puzzle-based games.</p>
+</div>
+<div class="ltx_para" id="Sx4.SSx2.SSS0.Px1.p2">
+<p class="ltx_p">The results show that language model agents perform inconsistently across games and generally underperform compared to search-based methods. <span class="ltx_text ltx_font_typewriter">GPT-o3-mini</span> stands out among LLMs with relatively strong performance on games like Aliens and Zelda, but still falls short of search-based agents in overall reliability. Reinforcement learning baselines perform poorly overall. baseline3DQN succeeds only in Aliens (56.0%) and Escape (16.0%), while baseline3PPO performs slightly better in Aliens (64.0%) and achieves low win rates in Escape (12.0%), Sokoban (12.0%), and Zelda (8.0%). Their near-zero performance in planning-heavy games highlights the challenge posed by sparse rewards and long-horizon reasoning in GVGAI-LLM. However, in planning-heavy environments such as Sokoban and Escape, some LLMs show surprising strengths. For instance, <span class="ltx_text ltx_font_typewriter">Deepseek-r1</span> achieves 50.0% in Sokoban and 54.5% in Escape, outperforming many other models. This suggests that LLMs may possess useful priors or structured reasoning capabilities that help in environments where search alone is not sufficient.</p>
+</div>
+</section>
+</section>
+</section>
+<section class="ltx_section" id="Sx5">
+<h2 class="ltx_title ltx_title_section">Discussion</h2>
+<div class="ltx_para" id="Sx5.p1">
+<p class="ltx_p">GVGAI-LLM reveals systematic limitations in how current language-only models reason about symbolic, spatially grounded environments. Across diverse games and agent types, we observe consistent failure patterns that cannot be explained by randomness or decoding noise alone. These behaviors suggest deeper challenges in symbolic understanding of the level, spatial inference, and action reasoning. We group our findings into three core categories: (1) spatial grounding failures, (2) symbolic identity confusion, and (3) behavioral misalignment.</p>
+</div>
+<section class="ltx_subsection" id="Sx5.SSx1">
+<h3 class="ltx_title ltx_title_subsection">Spatial Grounding Errors</h3>
+<div class="ltx_para" id="Sx5.SSx1.p1">
+<p class="ltx_p">Despite receiving structured textual prompts, LLMs frequently misinterpret spatial layouts. First, coordinate confusion, where the model reverses vertical orientation or misaligns row and column positions, often leads to incorrect assumptions about adjacency. Second, hallucinated proximity in sparse layouts causes agents to misjudge distances (e.g., assuming two far-apart objects are adjacent due to horizontal alignment in ASCII maps). These failures often result in ineffective movement and wandering behavior.</p>
+</div>
+<div class="ltx_para" id="Sx5.SSx1.p2">
+<p class="ltx_p">We address this issue by introducing two prompt modifications. Explicit coordinate tagging removes ambiguity by anchoring object positions numerically (e.g., <span class="ltx_text ltx_font_typewriter">row=3, col=4</span>). Verbose grounding transforms spatial context into a set of declarative facts (e.g., “row 2, col 7 is a”). These changes improve LLM understanding across games but do not fully resolve the underlying difficulties.</p>
+</div>
+<div class="ltx_para" id="Sx5.SSx1.p3">
+<p class="ltx_p">More fundamentally, we observe that LLMs lack the capacity for path planning in the algorithmic sense. Unlike traditional methods such as A<sup class="ltx_sup">∗</sup>, which search over possible trajectories to compute optimal paths, LLMs operate with limited forward context and no internal simulation of future states. While a reasoning-aware model might theoretically learn to emulate planning through intermediate steps, our outputs do not reveal such structured traces. This limitation aligns with findings from GameTraversalBenchmark <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">nasir2024gametraversalbenchmark</span>)</cite>, where LLM agents similarly failed to perform multi-step navigation tasks.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx5.SSx2">
+<h3 class="ltx_title ltx_title_subsection">Symbolic Identity Confusion</h3>
+<div class="ltx_para" id="Sx5.SSx2.p1">
+<p class="ltx_p">A second class of failures concerns the model’s ability to track symbolic identity over time. In many GVGAI games, entity transformations occur through rule-based interactions, for example, an <span class="ltx_text ltx_font_typewriter">avatar</span> picking up a key transitions from <span class="ltx_text ltx_font_typewriter">nokey</span> to <span class="ltx_text ltx_font_typewriter">withkey</span>.
+Despite prompts including both the rule and the updated symbol mapping, some models, such as Gemini-pro, treat <span class="ltx_text ltx_font_typewriter">withkey</span> as a new and unrelated entity. They often respond as if the avatar has disappeared or cannot act. This failure is not due to prompt ambiguity, as the same information is handled correctly by other models (e.g., GPT-o3-mini), indicating a model-internal reasoning limitation.</p>
+</div>
+<div class="ltx_para" id="Sx5.SSx2.p2">
+<p class="ltx_p">Rather than correcting for this behavior via external prompting, GVGAI-LLM treats symbolic identity tracking as an intentional test dimension. The benchmark aims to assess whether LLM agents can maintain referential continuity across symbolic transitions, which is fundamental to robust reasoning in structured environments.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx5.SSx3">
+<h3 class="ltx_title ltx_title_subsection">Behavioral Misalignment</h3>
+<div class="ltx_para" id="Sx5.SSx3.p1">
+<p class="ltx_p">A third failure class involves misalignment between observed state and chosen action. The most common case is the inappropriate use of <span class="ltx_text ltx_font_typewriter">ACTION_NIL</span>, i.e., choosing to do nothing even when meaningful interactions are possible.</p>
+</div>
+<div class="ltx_para" id="Sx5.SSx3.p2">
+<p class="ltx_p">In several benchmark games, agents encounter interactive objects such as keys, switches, or portals, yet frequently choose to remain stationary. This behavior reveals a consistent failure to act, even when progression clearly requires explicit movement or interaction. While the underlying cause is uncertain, we consider several possible explanations. One possibility is that models assume proximity alone is sufficient to trigger effects, misinterpreting the environment as real-time or event-driven (such as Wait for Breakfast). Another is that standing still acts as a default behavior when the model is uncertain, reflecting indecision rather than a specific belief about the environment. These cases suggest a broader misunderstanding of game dynamics and goal-directed behavior, ultimately limiting task completion.</p>
+</div>
+<div class="ltx_para" id="Sx5.SSx3.p3">
+<p class="ltx_p">Such behavioral misalignment persists even when prompts explicitly describe win conditions and available actions. This suggests that the model may struggle to translate symbolic state representations into effective actions. A common failure mode involves incorrect spatial reasoning: for example, the agent may continuously walk into a wall that separates it from a key, seemingly aware of the goal but unable to plan a valid path around the obstacle. Similarly, the agent may fail to recognize that a box can be pushed to reach a target location. These patterns indicate that the model often lacks task-specific associations between objects and actions, or cannot reason over multi-step interactions.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx5.SSx4">
+<h3 class="ltx_title ltx_title_subsection">Prompt Design Implications</h3>
+<div class="ltx_para" id="Sx5.SSx4.p1">
+<p class="ltx_p">The above failure modes emphasize the importance of structured prompt design in symbolic, spatial decision environments. Our findings show that LLMs benefit from explicitly encoding spatial relationships, but still struggle with generalization and abstraction in complex layouts.</p>
+</div>
+<div class="ltx_para" id="Sx5.SSx4.p2">
+<p class="ltx_p">To address spatial reasoning issues, GVGAI-LLM introduces two prompt-level mitigation strategies: (1) <span class="ltx_text ltx_font_bold">explicit coordinate tagging</span>, which anchors entities to precise locations, and (2) <span class="ltx_text ltx_font_bold">verbose spatial grounding</span>, which guides the model to explicitly assess what lies in each adjacent direction, helping it reason about possible movement options based on local surroundings rather than relying solely on global map structure.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="Sx6">
+<h2 class="ltx_title ltx_title_section">Conclusion</h2>
+<div class="ltx_para" id="Sx6.p1">
+<p class="ltx_p">We introduce GVGAI-LLM, a benchmark that reuses and extends the classic GVGAI environment for LLM agents. The benchmark uses textual interfaces, defines interpretable metrics, and ensures reproducibility. It offers a compact setting for analyzing how language models make decisions in games.
+Our experiments show that most models fail on most games, even when the environments are small or conceptually clear. This reveals fundamental weaknesses in symbolic reasoning, spatial understanding, and planning. GVGAI-LLM remains a difficult challenge and can support further study of LLM behavior in structured decision problems.
+In the future, we plan to extend GVGAI-LLM to support language models that not only play games, but also design them. This includes using LLMs to generate new game rules and levels, which can then serve as novel test cases for evaluating other models, shifting the focus from agentic behavior to creative and generative capabilities. These design tasks may also provide a new lens on how LLMs reason about rules and game mechanisms, rather than just executing them.</p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_section" id="Sx7">
+<h2 class="ltx_title ltx_title_section">Appendix</h2>
+<section class="ltx_subsection" id="Sx7.SSx1">
+<h3 class="ltx_title ltx_title_subsection">A. ChatGPT-4o-mini on more games</h3>
+<figure class="ltx_table" id="Sx7.T4">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_column ltx_th_row ltx_border_tt">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;"><span class="ltx_text ltx_font_bold">Game</span></span>
+</span>
+</th>
+<th class="ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">M.Ratio</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Win%</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Score</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Eff.</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_t">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Aliens</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center ltx_border_t">51.8</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.0</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.213</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.705</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Angelsdemons</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">69.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.285</td>
+<td class="ltx_td ltx_align_center">0.857</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Assemblyline</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">56.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.364</td>
+<td class="ltx_td ltx_align_center">0.137</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Avoidgeorge</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">77.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.257</td>
+<td class="ltx_td ltx_align_center">0.755</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Bait</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">9.6</td>
+<td class="ltx_td ltx_align_center">12.5</td>
+<td class="ltx_td ltx_align_center">0.133</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Beltmanager</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">48.5</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.174</td>
+<td class="ltx_td ltx_align_center">0.611</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Blacksmoke</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">82.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.277</td>
+<td class="ltx_td ltx_align_center">0.136</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Boloadventures</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">48.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.326</td>
+<td class="ltx_td ltx_align_center">0.633</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Bomber</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">40.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.155</td>
+<td class="ltx_td ltx_align_center">0.114</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Bomberman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">86.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.255</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Boulderchase</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">51.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.185</td>
+<td class="ltx_td ltx_align_center">0.175</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Boulderdash</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">19.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.213</td>
+<td class="ltx_td ltx_align_center">0.159</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Brainman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">62.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.450</td>
+<td class="ltx_td ltx_align_center">0.476</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Bravekeeper</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">72.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.242</td>
+<td class="ltx_td ltx_align_center">0.827</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Butterflies</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">76.4</td>
+<td class="ltx_td ltx_align_center">80.0</td>
+<td class="ltx_td ltx_align_center">0.512</td>
+<td class="ltx_td ltx_align_center">0.791</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Cakybaky</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">72.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.225</td>
+<td class="ltx_td ltx_align_center">0.781</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Camelrace</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">53.9</td>
+<td class="ltx_td ltx_align_center">20.0</td>
+<td class="ltx_td ltx_align_center">0.232</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Catapults</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.040</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Cec1</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">31.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.117</td>
+<td class="ltx_td ltx_align_center">0.174</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Cec2</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">23.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.219</td>
+<td class="ltx_td ltx_align_center">0.188</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Cec3</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">58.7</td>
+<td class="ltx_td ltx_align_center">100.0</td>
+<td class="ltx_td ltx_align_center">0.443</td>
+<td class="ltx_td ltx_align_center">0.860</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Chainreaction</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">67.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.244</td>
+<td class="ltx_td ltx_align_center">0.844</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Chase</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">55.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.391</td>
+<td class="ltx_td ltx_align_center">0.776</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Chipschallenge</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">58.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.236</td>
+<td class="ltx_td ltx_align_center">0.801</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Chopper</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">79.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.264</td>
+<td class="ltx_td ltx_align_center">0.787</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Clusters</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">72.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.227</td>
+<td class="ltx_td ltx_align_center">0.860</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Colourescape</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">3.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.157</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Cookmepasta</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">31.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.366</td>
+<td class="ltx_td ltx_align_center">0.478</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Cops</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">47.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.391</td>
+<td class="ltx_td ltx_align_center">0.665</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Crossfire</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">82.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.297</td>
+<td class="ltx_td ltx_align_center">0.644</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Decepticoins</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">50.1</td>
+<td class="ltx_td ltx_align_center">60.0</td>
+<td class="ltx_td ltx_align_center">0.320</td>
+<td class="ltx_td ltx_align_center">0.809</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Deceptizelda</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">32.6</td>
+<td class="ltx_td ltx_align_center">100.0</td>
+<td class="ltx_td ltx_align_center">0.374</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Defem</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">62.5</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.199</td>
+<td class="ltx_td ltx_align_center">0.980</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Defender</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">79.4</td>
+<td class="ltx_td ltx_align_center">60.0</td>
+<td class="ltx_td ltx_align_center">0.461</td>
+<td class="ltx_td ltx_align_center">0.728</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Deflection</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.037</td>
+<td class="ltx_td ltx_align_center">0.510</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Digdug</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">32.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.194</td>
+<td class="ltx_td ltx_align_center">0.175</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Donkeykong</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">59.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.266</td>
+<td class="ltx_td ltx_align_center">0.045</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Doorkoban</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">40.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.263</td>
+<td class="ltx_td ltx_align_center">0.630</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Dungeon</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">78.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.390</td>
+<td class="ltx_td ltx_align_center">0.892</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Eggomania</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">57.5</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.190</td>
+<td class="ltx_td ltx_align_center">0.739</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Eighthpassenger</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">66.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.219</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Enemycitadel</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">68.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.416</td>
+<td class="ltx_td ltx_align_center">0.525</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Escape</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">44.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.179</td>
+<td class="ltx_td ltx_align_center">0.566</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Factorymanager</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">47.9</td>
+<td class="ltx_td ltx_align_center">100.0</td>
+<td class="ltx_td ltx_align_center">0.504</td>
+<td class="ltx_td ltx_align_center">0.238</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Firecaster</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">14.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.324</td>
+<td class="ltx_td ltx_align_center">0.136</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Fireman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">55.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.254</td>
+<td class="ltx_td ltx_align_center">0.160</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Firestorms</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">72.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.294</td>
+<td class="ltx_td ltx_align_center">0.737</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Flower</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">71.6</td>
+<td class="ltx_td ltx_align_center">100.0</td>
+<td class="ltx_td ltx_align_center">0.868</td>
+<td class="ltx_td ltx_align_center">0.980</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Freeway</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">90.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.275</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Frogs</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">52.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.173</td>
+<td class="ltx_td ltx_align_center">0.493</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Greedymouse</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">14.5</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.080</td>
+<td class="ltx_td ltx_align_center">0.081</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Gymkhana</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">19.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.089</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Hungrybirds</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">27.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.209</td>
+<td class="ltx_td ltx_align_center">0.463</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Iceandfire</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">38.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.156</td>
+<td class="ltx_td ltx_align_center">0.602</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Ikaruga</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">62.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.206</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Infection</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">96.3</td>
+<td class="ltx_td ltx_align_center">80.0</td>
+<td class="ltx_td ltx_align_center">0.607</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Intersection</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">78.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.251</td>
+<td class="ltx_td ltx_align_center">0.867</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_bb">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Invest</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center ltx_border_bb">60.5</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.0</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.201</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.975</td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 4: </span>GPT-4o Performance - Part 1</figcaption>
+</figure>
+<figure class="ltx_table" id="Sx7.T5">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_column ltx_th_row ltx_border_tt">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;"><span class="ltx_text ltx_font_bold">Game</span></span>
+</span>
+</th>
+<th class="ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">M.Ratio</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Win%</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Score</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Eff.</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_t">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Investdie</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center ltx_border_t">69.6</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.0</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.219</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.982</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Islands</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">36.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.127</td>
+<td class="ltx_td ltx_align_center">0.361</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Jaws</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">50.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.174</td>
+<td class="ltx_td ltx_align_center">0.244</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Killbillvol1</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">12.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.277</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Labyrinth</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">39.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.206</td>
+<td class="ltx_td ltx_align_center">0.632</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Labyrinthdual</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.135</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Lasers</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">56.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.183</td>
+<td class="ltx_td ltx_align_center">0.221</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Lasers2</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">43.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.222</td>
+<td class="ltx_td ltx_align_center">0.183</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Lemmings</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">28.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.334</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Mirrors</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">22.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.184</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Missilecommand</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">62.6</td>
+<td class="ltx_td ltx_align_center">40.0</td>
+<td class="ltx_td ltx_align_center">0.306</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Modality</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">15.9</td>
+<td class="ltx_td ltx_align_center">20.0</td>
+<td class="ltx_td ltx_align_center">0.330</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Overload</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">28.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.323</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Pacman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.048</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Painter</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">42.1</td>
+<td class="ltx_td ltx_align_center">60.0</td>
+<td class="ltx_td ltx_align_center">0.429</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Plants</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">93.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.318</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Plaqueattack</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">84.1</td>
+<td class="ltx_td ltx_align_center">20.0</td>
+<td class="ltx_td ltx_align_center">0.345</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Pokemon</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">48.5</td>
+<td class="ltx_td ltx_align_center">80.0</td>
+<td class="ltx_td ltx_align_center">0.462</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Portals</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">83.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.253</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Racebet</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">39.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.153</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Racebet2</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">51.5</td>
+<td class="ltx_td ltx_align_center">20.0</td>
+<td class="ltx_td ltx_align_center">0.235</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Realportals</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">29.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.115</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Realsokoban</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">34.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.372</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Rivers</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">23.5</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.250</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Roadfighter</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">83.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.251</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Roguelike</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">38.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.199</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Run</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">72.6</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.231</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Seaquest</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">84.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.283</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Sheriff</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">76.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.247</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Shipwreck</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">37.4</td>
+<td class="ltx_td ltx_align_center">40.0</td>
+<td class="ltx_td ltx_align_center">0.296</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Sistersavior</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">51.0</td>
+<td class="ltx_td ltx_align_center">50.0</td>
+<td class="ltx_td ltx_align_center">0.297</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Sokoban</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">44.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.398</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Solarfox</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">50.9</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.177</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Superman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">71.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.241</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Surround</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">22.1</td>
+<td class="ltx_td ltx_align_center">100.0</td>
+<td class="ltx_td ltx_align_center">0.349</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Survivezombies</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">77.1</td>
+<td class="ltx_td ltx_align_center">20.0</td>
+<td class="ltx_td ltx_align_center">0.324</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Tercio</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">9.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.183</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Thecitadel</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">39.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.383</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Themole</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">56.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.257</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Theshepherd</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">25.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.348</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Thesnowman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">36.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.327</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Trappedhero</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.185</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Treasurekeeper</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">39.4</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.148</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Vortex</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">51.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.289</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Waferthinmints</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">64.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.205</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Waferthinmin…</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">35.3</td>
+<td class="ltx_td ltx_align_center">100.0</td>
+<td class="ltx_td ltx_align_center">0.376</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Waitforbreak…</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">13.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.075</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Watergame</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">39.1</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.138</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Waterpuzzle</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.222</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Waves</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">70.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.240</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Whackamole</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">54.3</td>
+<td class="ltx_td ltx_align_center">20.0</td>
+<td class="ltx_td ltx_align_center">0.252</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Wildgunman</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">71.3</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.233</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Witnessprote…</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">98.8</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.352</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Witnessprote…</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">73.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.241</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Wrapsokoban</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">29.2</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.359</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">X-Racer</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">94.5</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.297</td>
+<td class="ltx_td ltx_align_center">0.078</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Zelda</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center">9.7</td>
+<td class="ltx_td ltx_align_center">0.0</td>
+<td class="ltx_td ltx_align_center">0.083</td>
+<td class="ltx_td ltx_align_center">0.000</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_bb">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:71.1pt;">Zenpuzzle</span>
+</span>
+</th>
+<td class="ltx_td ltx_nopad_l ltx_align_center ltx_border_bb">31.6</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.0</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.364</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.000</td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 5: </span>GPT-4o Performance - Part 2</figcaption>
+</figure>
+<figure class="ltx_table" id="Sx7.T6">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span class="ltx_text ltx_font_bold">Game</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Without tagger</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">With tagger</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">aliens</th>
+<td class="ltx_td ltx_align_center ltx_border_t">0.00</td>
+<td class="ltx_td ltx_align_center ltx_border_t">0.08</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">boulderdash</th>
+<td class="ltx_td ltx_align_center">0.00</td>
+<td class="ltx_td ltx_align_center">0.00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">escape</th>
+<td class="ltx_td ltx_align_center">0.00</td>
+<td class="ltx_td ltx_align_center">0.04</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">realsokoban</th>
+<td class="ltx_td ltx_align_center">0.00</td>
+<td class="ltx_td ltx_align_center">0.00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">sokoban</th>
+<td class="ltx_td ltx_align_center">0.00</td>
+<td class="ltx_td ltx_align_center">0.00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">zelda</th>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.00</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.00</td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table">Table 6: </span>Winrate without coordinate tagger vs. with coordinate tagger of ChatGPT-4o-mini. The significance of any improvement is judged using Fisher’s exact test over 25 episodes per game. None of the improvements were statistically significant.</figcaption>
+</figure>
+<div class="ltx_para" id="Sx7.SSx1.p1">
+<p class="ltx_p">To further examine the generalization ability of <span class="ltx_text ltx_font_typewriter">GPT-4o-mini</span>, we report detailed results across a broader set of games in the GVGAI-LLM benchmark. Tables <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.T4" title="Table 4 ‣ A. ChatGPT-4o-mini on more games ‣ Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">4</span></a> and <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.T5" title="Table 5 ‣ A. ChatGPT-4o-mini on more games ‣ Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">5</span></a> present the model’s performance on 100+ environments, covering meaningful step ratio, win rate, overall behavioral score, and step efficiency. While the model demonstrates high engagement in many environments (e.g., <span class="ltx_text ltx_font_typewriter">Flower</span>, <span class="ltx_text ltx_font_typewriter">Infection</span>, <span class="ltx_text ltx_font_typewriter">Butterflies</span>), it achieves consistently low win rates, particularly in puzzle and planning-heavy games.</p>
+</div>
+<div class="ltx_para" id="Sx7.SSx1.p2">
+<p class="ltx_p">We also assess the effect of coordinate-based spatial grounding. Table <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.T6" title="Table 6 ‣ A. ChatGPT-4o-mini on more games ‣ Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">6</span></a> compares win rates with and without coordinate taggers across six spatially demanding games. Although slight improvements are observed in <span class="ltx_text ltx_font_typewriter">aliens</span> and <span class="ltx_text ltx_font_typewriter">escape</span>, none reach statistical significance under Fisher’s exact test, suggesting that coordinate tagging alone is insufficient to resolve core spatial reasoning limitations.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx7.SSx2">
+<h3 class="ltx_title ltx_title_subsection">B. Zero-Shot Prompt Example</h3>
+<div class="ltx_para" id="Sx7.SSx2.p1">
+<p class="ltx_p">We design a structured prompt to support zero-shot reasoning in symbolic games. The prompt contains multiple components, including natural language descriptions of the game rules, mechanics analysis, available actions, strategy advice, and a fully verbalised game state. An excerpt of the prompt is shown below (abridged for space):</p>
+</div>
+<div class="ltx_para" id="Sx7.SSx2.p2">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">User
+<br class="ltx_break"/>=== Game Rules ===
+<br class="ltx_break"/>Game rules in natural language:
+<br class="ltx_break"/>
+<br class="ltx_break"/># Game Analysis
+<br class="ltx_break"/>
+<br class="ltx_break"/><span class="ltx_text ltx_font_bold">Genre:</span> This is a puzzle-adventure game with elements of strategy and item collection.
+<br class="ltx_break"/>
+<br class="ltx_break"/><span class="ltx_text ltx_font_bold">Mechanics:
+<br class="ltx_break"/></span>1. <span class="ltx_text ltx_font_bold">Sprites:</span> The game includes avatars, walls, doors, gems, keys, and exits.
+<br class="ltx_break"/>2. <span class="ltx_text ltx_font_bold">Transformation and Interaction:</span> The avatar collects keys, avoids enemies, and triggers effects via sprite interactions.
+<br class="ltx_break"/>3. <span class="ltx_text ltx_font_bold">Win/Loss:</span> Reaching the exit wins the game. Losing occurs if the avatar is destroyed.
+<br class="ltx_break"/>
+<br class="ltx_break"/><span class="ltx_text ltx_font_bold">Strategy Suggestions:
+<br class="ltx_break"/></span>- Collect keys to unlock doors and reach the exit.
+<br class="ltx_break"/>- Avoid enemies (gems) unless necessary.
+<br class="ltx_break"/>- Use missile keys strategically.
+<br class="ltx_break"/>
+<br class="ltx_break"/>=== Available Actions ===
+<br class="ltx_break"/>0: ACTION_NIL
+<br class="ltx_break"/>1: ACTION_LEFT
+<br class="ltx_break"/>2: ACTION_RIGHT
+<br class="ltx_break"/>3: ACTION_DOWN
+<br class="ltx_break"/>4: ACTION_UP
+<br class="ltx_break"/>
+<br class="ltx_break"/>=== Important Mechanics Notice ===
+<br class="ltx_break"/>Some directional actions may rotate the avatar without movement. Repeating the direction may be needed. Avoid null actions. Interpret the state carefully and act meaningfully.
+<br class="ltx_break"/>
+<br class="ltx_break"/>=== Sprite Mapping ===
+<br class="ltx_break"/>avatar <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m1" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’a’
+<br class="ltx_break"/>background floor <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m2" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’.’
+<br class="ltx_break"/>exit <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m3" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’e’
+<br class="ltx_break"/>diamond <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m4" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’%’
+<br class="ltx_break"/>wall <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m5" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’b’
+<br class="ltx_break"/>dirt <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m6" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’&amp;’
+<br class="ltx_break"/>enemy <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m7" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> ’$’
+<br class="ltx_break"/>
+<br class="ltx_break"/>=== Current State ===
+<br class="ltx_break"/>bbbbbbbbbbbbbbbbbbbbbbbbbb
+<br class="ltx_break"/>b&amp;@@&amp;&amp;&amp;&amp;&amp;@@@........a....b
+<br class="ltx_break"/>b&amp;%&amp;&amp;b@b&amp;&amp;&amp;%&amp;&amp;.&amp;&amp;&amp;@@&amp;&amp;&amp;bbb
+<br class="ltx_break"/>...
+<br class="ltx_break"/>Each line shows entity at (row, col).
+<br class="ltx_break"/>row=1, col=3 <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m8" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> a
+<br class="ltx_break"/>row=2, col=7 <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m9" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> % (diamond)
+<br class="ltx_break"/>row=2, col=8 <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m10" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> &amp; (dirt)
+<br class="ltx_break"/>row=3, col=2 <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m11" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> % (diamond)
+<br class="ltx_break"/>row=1, col=14 <math alttext="\rightarrow" class="ltx_Math" display="inline" id="Sx7.SSx2.p2.m12" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math> $ (enemy)
+<br class="ltx_break"/>...</span></p>
+</blockquote>
+</div>
+<div class="ltx_para" id="Sx7.SSx2.p3">
+<p class="ltx_p">The agent is instructed to output a response in the format:
+<span class="ltx_text ltx_font_typewriter">\\ Action:&lt;action number&gt;
+<br class="ltx_break"/></span>It also provides a one-line justification of the action in relation to the current strategy.</p>
+</div>
+<div class="ltx_para" id="Sx7.SSx2.p4">
+<p class="ltx_p">This structured prompt enables the LLM to (1) understand symbolic state representations, (2) reason over spatial layout and interaction rules, and (3) produce meaningful, goal-aligned actions in a zero-shot setting.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="Sx7.SSx3">
+<h3 class="ltx_title ltx_title_subsection">C. Decision Time Comparison Between LLM Agents and MCTS</h3>
+<div class="ltx_para" id="Sx7.SSx3.p1">
+<p class="ltx_p">Table <a class="ltx_ref" href="https://arxiv.org/html/2508.08501v2#Sx7.T7" title="Table 7 ‣ C. Decision Time Comparison Between LLM Agents and MCTS ‣ Appendix ‣ GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games"><span class="ltx_text ltx_ref_tag">7</span></a> reports the per-move latency for all LLM agents evaluated in GVGAI-LLM. For models served via the Portkey API, we use the median (p50) latency statistics collected over the past month. For DeepSeek models, latency is measured as the average response time over 10 representative game prompts. In contrast, MCTS is not an API-based model but a symbolic planning algorithm that directly simulates game rules; its decision time is set to the standard per-move time budget (0.04s) defined in the original GVGAI competition.</p>
+</div>
+<div class="ltx_para" id="Sx7.SSx3.p2">
+<p class="ltx_p">The results reveal that LLM agents are two to three orders of magnitude slower than symbolic search methods. While real-time playability is not the focus of our benchmark, this latency gap highlights the computational inefficiency of current LLM-based agents compared to classical planning algorithms.</p>
+</div>
+<figure class="ltx_table" id="Sx7.T7">
+<div class="ltx_flex_figure ltx_flex_table">
+<div class="ltx_flex_cell ltx_flex_size_1">
+<table class="ltx_tabular ltx_figure_panel ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span class="ltx_text ltx_font_bold">Agent</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Model</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span class="ltx_text ltx_font_bold">Time/Move</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Gemini-2.5-pro<sup class="ltx_sup">*</sup>
+</th>
+<td class="ltx_td ltx_align_center ltx_border_t">LLM</td>
+<td class="ltx_td ltx_align_center ltx_border_t">27.82</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Gemini-2.0-flash-exp<sup class="ltx_sup">*</sup>
+</th>
+<td class="ltx_td ltx_align_center">LLM</td>
+<td class="ltx_td ltx_align_center">1.05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">GPT-o3-mini<sup class="ltx_sup">*</sup>
+</th>
+<td class="ltx_td ltx_align_center">LLM</td>
+<td class="ltx_td ltx_align_center">35.94</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">GPT-4o-mini<sup class="ltx_sup">*</sup>
+</th>
+<td class="ltx_td ltx_align_center">LLM</td>
+<td class="ltx_td ltx_align_center">2.37</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">DeepSeek Reasoner<sup class="ltx_sup">†</sup>
+</th>
+<td class="ltx_td ltx_align_center">LLM</td>
+<td class="ltx_td ltx_align_center">166.00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">DeepSeek Chat<sup class="ltx_sup">†</sup>
+</th>
+<td class="ltx_td ltx_align_center">LLM</td>
+<td class="ltx_td ltx_align_center">1.80</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">MCTS<sup class="ltx_sup">‡</sup>
+</th>
+<td class="ltx_td ltx_align_center ltx_border_bb">Search Algorithm</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">0.04</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 7: </span>Estimated decision time per move (in seconds) for LLM agents and MCTS.</figcaption><div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1">
+<p class="ltx_p ltx_align_left ltx_figure_panel ltx_align_center"><sup class="ltx_sup">*</sup> Served via Portkey API; Median (p50) latency from Portkey API over the past month. 
+<br class="ltx_break"/><sup class="ltx_sup">†</sup> Latency averaged over prompts from 10 GVGAI games. 
+<br class="ltx_break"/><sup class="ltx_sup">‡</sup> Monte Carlo Tree Search (MCTS) agent using symbolic rule simulation; 0.04s is the per-move time budget defined in the original GVGAI competition settings.</p>
+</div>
+</div>
+</figure>
+</section>
+<section class="ltx_subsection" id="Sx7.SSx4">
+<h3 class="ltx_title ltx_title_subsection">D. RL Agent Configuration Details</h3>
+<div class="ltx_para" id="Sx7.SSx4.p1">
+<p class="ltx_p">To compare LLM agents with reinforcement learning (RL) baselines, we trained PPO and DQN agents using standard configurations from the Stable Baselines3 library, with minimal adjustments for symbolic grid-based input. Specifically, both policies employ a custom feature extractor (<span class="ltx_text ltx_font_typewriter">PaddedEmbeddingCNN</span>) designed to handle discrete int8 observations. All hyperparameters are fixed and shared across games and levels. No tuning was performed, in order to ensure a fair comparison with LLM agents, which are also evaluated in a zero-shot manner.</p>
+</div>
+<div class="ltx_para ltx_noindent" id="Sx7.SSx4.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">PPO Configuration (used without tuning)</span></p>
+<ul class="ltx_itemize" id="Sx7.I3">
+<li class="ltx_item" id="Sx7.I3.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i1.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Policy</span>: <span class="ltx_text ltx_font_typewriter">MlpPolicy</span> with custom extractor (<span class="ltx_text ltx_font_typewriter">PaddedEmbeddingCNN</span>)</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i2.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Embedding dimension</span>: 32</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i3.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Feature dimension</span>: 256</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i4" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i4.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">MLP architecture</span>:</p>
+<ul class="ltx_itemize" id="Sx7.I3.i4.I1">
+<li class="ltx_item" id="Sx7.I3.i4.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span>
+<div class="ltx_para" id="Sx7.I3.i4.I1.i1.p1">
+<p class="ltx_p"><math alttext="\pi" class="ltx_Math" display="inline" id="Sx7.I3.i4.I1.i1.p1.m1" intent=":literal"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>-network: [128, 64]</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i4.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span>
+<div class="ltx_para" id="Sx7.I3.i4.I1.i2.p1">
+<p class="ltx_p">Value-network: [128, 64]</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i5" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i5.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Learning rate</span>: 3e-4</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i6" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i6.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">n_steps</span>: 2048</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i7" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i7.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Batch size</span>: 256</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i8" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i8.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">n_epochs</span>: 10</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i9" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i9.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Discount factor</span> (<math alttext="\gamma" class="ltx_Math" display="inline" id="Sx7.I3.i9.p1.m1" intent=":literal"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>): 0.99</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i10" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i10.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">GAE lambda</span>: 0.95</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i11" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i11.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Entropy coefficient</span>: 0.01</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i12" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i12.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Rollout buffer</span>: <span class="ltx_text ltx_font_typewriter">Int8RolloutBuffer</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I3.i13" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I3.i13.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Device</span>: RTX4090</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para ltx_noindent" id="Sx7.SSx4.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">DQN Configuration (used without tuning)</span></p>
+<ul class="ltx_itemize" id="Sx7.I4">
+<li class="ltx_item" id="Sx7.I4.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i1.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Policy</span>: <span class="ltx_text ltx_font_typewriter">MlpPolicy</span> with custom extractor (<span class="ltx_text ltx_font_typewriter">PaddedEmbeddingCNN</span>)</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i2.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Embedding dimension</span>: 32</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i3.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Feature dimension</span>: 256</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i4" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i4.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Q-network architecture</span>: [128, 64]</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i5" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i5.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Learning rate</span>: 3e-4</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i6" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i6.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Replay buffer</span>: <span class="ltx_text ltx_font_typewriter">Int8ReplayBuffer</span></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i7" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i7.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Buffer size</span>: <math alttext="\min(1{,}000{,}000,\ \text{total timesteps})" class="ltx_Math" display="inline" id="Sx7.I4.i7.p1.m1" intent=":literal"><semantics><mrow><mi>min</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>000</mn><mo>,</mo><mn>000</mn><mo rspace="0.667em">,</mo><mtext>total timesteps</mtext><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\min(1{,}000{,}000,\ \text{total timesteps})</annotation></semantics></math></p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i8" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i8.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Batch size</span>: 256</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i9" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i9.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Discount factor</span> (<math alttext="\gamma" class="ltx_Math" display="inline" id="Sx7.I4.i9.p1.m1" intent=":literal"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>): 0.99</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i10" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i10.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Exploration</span>:</p>
+<ul class="ltx_itemize" id="Sx7.I4.i10.I1">
+<li class="ltx_item" id="Sx7.I4.i10.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span>
+<div class="ltx_para" id="Sx7.I4.i10.I1.i1.p1">
+<p class="ltx_p">Initial epsilon: 1.0</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i10.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span>
+<div class="ltx_para" id="Sx7.I4.i10.I1.i2.p1">
+<p class="ltx_p">Final epsilon: 0.02</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i10.I1.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span>
+<div class="ltx_para" id="Sx7.I4.i10.I1.i3.p1">
+<p class="ltx_p">Exploration fraction: 0.1</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i11" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i11.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Target update interval</span>: 1000</p>
+</div>
+</li>
+<li class="ltx_item" id="Sx7.I4.i12" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="Sx7.I4.i12.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Device</span>: RTX4090</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para ltx_noindent" id="Sx7.SSx4.p4">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Evaluation Protocol:</span></p>
+</div>
+<div class="ltx_para" id="Sx7.SSx4.p5">
+<p class="ltx_p">All agents, including reinforcement learning (PPO, DQN), search-based (MCTS), and language model agents, evaluated on six GVGAI games: <span class="ltx_text ltx_font_typewriter">zelda</span>, <span class="ltx_text ltx_font_typewriter">aliens</span>, <span class="ltx_text ltx_font_typewriter">boulderdash</span>, <span class="ltx_text ltx_font_typewriter">escape</span>, <span class="ltx_text ltx_font_typewriter">sokoban</span>, and <span class="ltx_text ltx_font_typewriter">realsokoban</span> are under the same experimental protocol. Each game contains 5 levels, resulting in 30 unique game-level combinations. For every level, each agent is evaluated across 5 independent episodes. All reported metrics (e.g., win rate, total reward, number of steps) are averaged over these 5 runs per level, ensuring consistent comparison across models and methods. Heatmaps for LLM win rate are presented separately on each level.</p>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Nov  8 02:06:32 2025 by <a class="ltx_LaTeXML_logo" href="http://dlmf.nist.gov/LaTeXML/"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img alt="Mascot Sammy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+</div>
+</body>
+</html>

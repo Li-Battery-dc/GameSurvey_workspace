@@ -1,0 +1,133 @@
+# PokeAgentChallenge The PokeAgent Challenge: Competitive and Long-Context Learning at Scale
+
+## 0. Metadata
+- Date: 2025/12
+- Venue: NeurIPS 2025 competition
+- Authors: Seth Karten, Jake Grigsby, Tersoo Upaa, Junik Bae, Seonghun Hong, Hyunyoung Jeong, Jaeyoon Jung, Kun Kerdthaisong, Gyungbo Kim, Hyeokgi Kim, Yujin Kim, Eunju Kwon, Dongyu Liu, Patrick Mariglia, Sangyeon Park, Benedikt Schink, Xianwei Shi, Anthony Sistilli, Joseph Twin, Arian Urdu, Matin Urdu, Qiao Wang, Ling Wu, Wenli Zhang, Kunsheng Zhou, Stephanie Milani, Kiran Vodrahalli, Amy Zhang, Fei Fang, Yuke Zhu, Chi Jin
+- Paper link: https://arxiv.org/pdf/2603.15563v2
+- Code link:
+- Reading depth: deep
+- Card status: card-reviewed
+- Confidence in this card: medium
+- Review gate label: strong
+
+## 1. One-paragraph benchmark summary
+- The PokeAgent Challenge turns Pokemon into a two-track living benchmark that jointly stresses competitive partial observability and long-horizon sequential planning. Its Battling Track runs agents on a dedicated Pokemon Showdown server and evaluates them with Full-History Bradley-Terry, Glicko-1, and GXE, while its Speedrunning Track standardizes long-context play in Pokemon Emerald with metrics such as completion percentage, time, and action count. For this survey, it is one of the strongest bridge papers between specialist game AI, LLM harnesses, and competition-backed benchmarking.
+
+## 2. Position in our survey
+- Why-games relevance: Pokemon naturally combines hidden information, strategic adversaries, and extremely long action horizons in a way few other benchmarks do.
+- Historical stage: competition-backed living benchmark
+- Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
+- Most relevant outline section(s): 3,5,7
+- Role in corpus: contrast
+
+## 3. Design-space coding
+### 3.1 Environment structure
+- Information structure: imperfect
+- Transition structure: stochastic
+- Agent structure: mixed
+- Social structure: mixed
+- Time structure: mixed
+
+### 3.2 World structure
+- World type(s): battle / RPG
+- Real game / simulated game / designed task-game hybrid: real game benchmark wrappers around Pokemon battling and RPG play
+- Benchmark unit: battle or speedrun episode
+
+### 3.3 Benchmark scope
+- Scope: dual-track benchmark
+- Number of games / tasks: 2 tracks
+- Benchmark intent: diagnostic evaluation
+
+### 3.4 Modality
+- Primary modality: mixed
+- Perception burden retained: hidden information, opponent modeling, long-horizon planning, visual interaction in speedrunning
+- Perception burden removed: some standardized harness friction, especially on the battling track
+
+## 4. What this benchmark measures
+- Primary capability target: strategic reasoning under partial observability plus long-context planning at scale
+- Secondary capability target(s): harness design, metagame adaptation, specialist-versus-generalist comparison
+- Does it test rule grounding / legal action generation? yes
+- Does it test strategic planning under uncertainty? yes
+- Does it test social reasoning / deception / cooperation? partially, through opponent modeling in battles
+- Does it test visual grounding / spatial-temporal reasoning? yes, in the speedrunning track
+- Does it test long-horizon autonomy / task completion? yes
+- Does it test real-time efficiency? partially
+- Does it test cross-game transfer / open-ended generalization? no
+- Why is a game environment especially suitable here? Pokemon combines adversarial decision making and very long sequential play inside a culturally stable, data-rich ecosystem.
+
+## 5. Interaction paradigm
+- Observation channel: structured battle states on Showdown and visual frames plus limited state information for speedrunning
+- Action channel: legal battle actions or environment control commands through the challenge harnesses
+- Interface type: hybrid
+- Agent scaffold allowed: tool use
+- Is there privileged API access? yes
+- How close is the setup to human play? medium; the benchmark preserves real game structure but often relies on standardized harnesses and battle-state abstractions
+- Main ecological-validity trade-off: The benchmark is unusually realistic in domain complexity, but performance is strongly shaped by harness quality.
+
+## 6. Evaluation protocol
+- Main score: Full-History Bradley-Terry for battling and completion progress/time for speedrunning
+- Auxiliary score(s): Glicko-1, GXE, completion time, and action count
+- Evaluation style: leaderboard / competition / hybrid
+- Human baseline / AI anchor / self-play / model-vs-model setup: community submissions, strong RL and LLM baselines, plus human references
+- Automatic verifiability: high
+- Calibration method: dedicated evaluation server, large battle datasets, public leaderboards, and standardized task rules
+- Anti-contamination argument: yes; the paper argues that Pokemon battling is nearly orthogonal to standard LLM benchmarks and that evolving metagames force adaptation
+- Reliability or comparability concerns: results depend heavily on harness design, and the two tracks measure very different kinds of capability
+
+## 7. Main contributions
+- Contribution 1: Introduces a dual-track benchmark spanning competitive battling and RPG speedrunning.
+- Contribution 2: Releases very large public battle data resources, sample teams, and strong baselines.
+- Contribution 3: Converts the NeurIPS 2025 challenge into a living benchmark with continuing evaluation infrastructure.
+
+## 8. Main findings and failure modes
+- Core empirical takeaway: specialist RL and search methods remain much stronger than generalist LLM approaches, and long-horizon Pokemon play still requires substantial harness support
+- Notable model failure mode 1: raw frontier models do not make meaningful speedrunning progress without sophisticated orchestration
+- Notable model failure mode 2: battle performance depends heavily on harnesses and search support rather than backbone model quality alone
+- Notable model failure mode 3: Pokemon exposes capabilities that standard LLM benchmarks fail to predict well
+- Does this paper reveal a benchmark-design limitation as well? yes; benchmark difficulty is excellent, but comparing systems is hard when harness complexity varies so much
+
+## 9. Why this paper matters for our survey
+- Best use in Section 0 (why games): Shows how one game franchise can stress multiple hard capability axes simultaneously.
+- Best use in Section 1 (historical evolution): Strong example of competition infrastructure hardening into a living benchmark.
+- Best use in Section 2 (design space): Useful mixed battle-plus-RPG comparison point.
+- Best use in Section 3 (capability targets): Direct evidence for partial observability, long-horizon planning, and metagame adaptation.
+- Best use in Section 4 (interaction paradigm): Good case for harness-heavy evaluation.
+- Best use in Section 5 (evaluation protocol): One of the strongest rating and leaderboard protocol cards in the corpus.
+- Best use in Section 6/7 (limitations and future): Supports the claim that benchmark quality and harness comparability need to be discussed together.
+
+## 10. Relation to nearby papers
+- Closest predecessor(s): PokeChamp, specialist Pokemon agents, long-horizon game-agent demonstrations
+- Closest follow-up(s): living game competitions and benchmark leaderboards
+- Best comparison targets inside our corpus: Orak, AI GameStore, MCU, PillagerBench
+- What this paper uniquely adds relative to neighbors: It puts adversarial partial observability and long-context RPG play inside one benchmark ecosystem.
+
+## 11. Evidence notes
+### 11.1 Direct paper-supported facts
+- The benchmark has two tracks: Battling on Pokemon Showdown and Speedrunning in Pokemon Emerald.
+- The battling track uses Glicko-1, GXE, and a Full-History Bradley-Terry rating as its primary skill metric, while the speedrunning track uses completion-oriented metrics.
+- The released resources include 20M+ battle trajectories, 18M synthetic battles, and 200K+ teams, and the NeurIPS challenge drew more than 100 competing teams.
+
+### 11.2 Our synthesis / interpretation
+- This card is especially useful for discussing benchmark quality under strong harness effects rather than as a clean "raw model" comparison.
+- It also strengthens the survey's argument that living competitive ecosystems create difficult-to-saturate evaluation targets.
+
+### 11.3 Uncertain or needs re-check
+- Recheck Sections 3.2, 4.2, and 5 if we later need the exact FH-BT fitting procedure or the official speedrunning boundary conditions.
+
+## 12. Follow-up reading plan
+- Should we read beyond abstract + intro? why? A targeted reread may be worthwhile later because the rating design and harness details matter for protocol drafting.
+- Which section to read next if needed: 3.2 / 4.2 / Appendix D
+- Follow-up question(s): Should FH-BT become a named protocol example in Section 5?
+
+## 13. Registry sync
+- Registry row synced: yes
+- Registry status: card-reviewed
+- Priority: P2
+- Reading depth: deep
+- Batch ID: B05
+- Outline sections: 3,5,7
+- Survey role: contrast
+- Paper card path: `paper_cards/B05/PokeAgentChallenge.md`
+- Next action: draft-section
+- Last updated: 2026-04-05

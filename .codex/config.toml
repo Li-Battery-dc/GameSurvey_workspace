@@ -1,5 +1,10 @@
 model = "gpt-5.4"
-approval_policy = "on-request"
+approval_policy = "never"
 sandbox_mode = "workspace-write"
 project_doc_max_bytes = 65536
 project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md"]
+
+[sandbox_workspace_write]
+network_access = true
+
+web_search = "live"
