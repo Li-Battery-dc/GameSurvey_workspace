@@ -1,7 +1,7 @@
 # Registry Schema
 
 This file is the canonical schema for `corpus/registry/benchmark_registry.csv`.
-Keep the column order stable. Do not add legacy taxonomy columns, `notes_path`, or reviewer-assignment fields unless the whole repo is intentionally migrated.
+Keep the column order stable. Do not add legacy taxonomy columns, `notes_path`, reviewer-assignment fields, or other leftovers from older schema drafts unless the whole repo is intentionally migrated.
 
 ## Active columns
 
@@ -34,7 +34,7 @@ Keep the column order stable. Do not add legacy taxonomy columns, `notes_path`, 
 - `reading_depth`: use `structured-skim` for lighter Stage 2 passes and `deep` for full benchmark reading.
 - `batch_id`: leave blank only for papers intentionally parked with `next_action = hold`.
 - `outline_sections`: keep values short and traceable to the current `outline.md`.
-- `paper_card_path`: default to `paper_cards/{paper_id}.md` unless the row already uses another stable path.
+- `paper_card_path`: default to `paper_cards/{paper_id}.md` unless the row already uses another stable path. Once `status` reaches `card-draft` or above, this path must exist.
 - `triage_note`: keep it to one or two sentences. Put uncertainty inside the note, for example `[uncertain: evaluation|outline-fit]`.
 - `next_action`: keep it concrete and workflow-facing rather than descriptive prose.
 - `last_updated`: use ISO date format `YYYY-MM-DD`.

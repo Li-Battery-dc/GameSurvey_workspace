@@ -6,8 +6,8 @@
 - Authors:
 - Paper link:
 - Code link:
-- Reading depth: skim / deep
-- Card status: draft / reviewed / finalized
+- Reading depth: structured-skim / deep
+- Card status: card-draft / card-reviewed / finalized
 - Confidence in this card: high / medium / low
 
 ## 1. One-paragraph benchmark summary
@@ -16,9 +16,9 @@
 ## 2. Position in our survey
 - Why-games relevance:
 - Historical stage: formal container / diagnostic capability probe / ecological agent benchmark / open-ended general-game benchmark
-- Narrative level(s): rule-grounded interaction / strategic planning / social & multi-agent intelligence / perception-grounded agency / cross-game & open-ended generalization
+- Narrative level(s): L1 rule following / L2 strategic reasoning / L3 social intelligence / L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s):
-- Role in corpus: anchor / representative / contrast case / peripheral
+- Role in corpus: anchor / representative / contrast / peripheral
 
 ## 3. Design-space coding
 ### 3.1 Environment structure
@@ -117,9 +117,13 @@
 - Follow-up question(s):
 
 ## 13. Registry sync
-- Registry status updated: yes / no
+- Registry row synced: yes / no
+- Registry status: triaged / card-draft / card-reviewed / finalized
 - Priority: P0 / P1 / P2 / P3
+- Reading depth: structured-skim / deep
 - Batch ID:
-- Comparison cluster:
-- Notes path:
+- Outline sections:
+- Survey role: anchor / representative / contrast / peripheral
+- Paper card path:
+- Next action: read-batch / deep-read / review-card / draft-section / hold
 - Last updated:

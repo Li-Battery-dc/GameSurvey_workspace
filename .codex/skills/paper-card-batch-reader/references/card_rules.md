@@ -8,20 +8,19 @@
 
 ## Recommended Status Progression
 
-- `unread`
 - `triaged`
 - `card-draft`
 - `card-reviewed`
 - `finalized`
 
-Preserve an existing project-specific status vocabulary if the registry already uses one consistently.
+A card file normally starts at `card-draft`. `triaged` is only for registry rows before a card exists.
 
 ## Registry Sync Fields
 
 After each completed card, update at least:
 - `status`
 - `priority` if the deep read changes importance
-- `paper_card_path` or `notes_path`
+- `paper_card_path`
 - `next_action`
 - `last_updated`
 

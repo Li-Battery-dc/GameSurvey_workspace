@@ -16,13 +16,17 @@ Use this before moving from one stage to the next.
 - Does each card follow `template/paper_card_template.md`?
 - Are direct facts, our synthesis, and unresolved uncertainty separated?
 - Does each card name nearby comparison targets?
-- Is the registry synced after each card?
+- Is the registry synced after each card with `status = card-draft`, `paper_card_path`, `next_action`, and `last_updated`?
 - Is the paper anchored to a concrete part of `outline.md`?
 
 ## Stage 3 QA
 
-- Are weak cards reviewed before drafting?
+- Did you run both `evals/quality_rubric.md` and `evals/batch_review_checklist.md`?
+- Has each touched card been judged `strong`, `usable`, or `weak`?
+- Were only `strong` or `usable` cards promoted to `card-reviewed`?
+- Do weak cards remain `card-draft` with `next_action = review-card`?
 - Are drafted sections comparative rather than serial summaries?
-- Can each major paragraph be traced back to cards?
+- Can each major paragraph be traced back to reviewed cards?
 - Are unsupported claims removed or softened?
 - Are outline changes explicit?
+- Is `finalized` reserved for cards that are already stable enough to cite repeatedly during writing?

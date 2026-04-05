@@ -40,12 +40,13 @@ Read enough to fill the card reliably:
 4. Keep section `11.1` to direct paper-supported facts, section `11.2` to our synthesis, and section `11.3` to unresolved uncertainty.
 5. Update the registry after each card:
    - `status`
-   - `notes_path` or `paper_card_path`
+   - `paper_card_path`
    - `priority` if the deep read changes importance
    - `next_action`
    - `last_updated`
 6. After finishing the batch, run the checklist in `evals/batch_review_checklist.md` and judge card quality against `evals/quality_rubric.md`.
-7. Strengthen `outline.md` only by adding clearer anchors or comparison targets. Do not draft long prose here.
+7. Promote only passing cards to `status = card-reviewed`. Keep weak cards at `status = card-draft` with `next_action = review-card`.
+8. Strengthen `outline.md` only by adding clearer anchors or comparison targets. Do not draft long prose here.
 
 ## Status Rules
 
@@ -54,7 +55,7 @@ Read enough to fill the card reliably:
 - `card-reviewed`: core fields checked against the paper and ready for synthesis
 - `finalized`: stable enough to cite during writing
 
-If the existing registry uses another status vocabulary, preserve it and move it forward rather than renaming the whole project midstream.
+If you touch legacy rows that still use older status words, normalize them to the current repo vocabulary during the update.
 
 ## Evidence Rules
 
@@ -69,6 +70,7 @@ A good batch leaves behind:
 - one card per paper
 - registry synced
 - confidence and uncertainty explicit
+- explicit `strong` / `usable` / `weak` review outcomes
 - a short note on which outline sections are now well supported and which are still thin
 
 ## Do Not

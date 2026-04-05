@@ -2,7 +2,7 @@
 
 ## Why This Batch Exists
 - What survey problem does this batch resolve?
-- Which outline section or comparison cluster will become clearer after reading it?
+- Which outline section or comparison theme will become clearer after reading it?
 
 ## Reading Order
 

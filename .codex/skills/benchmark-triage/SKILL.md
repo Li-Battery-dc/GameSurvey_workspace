@@ -17,7 +17,7 @@ Use this skill for Stage 1 work only. Start from `benchmark.md` and `outline.md`
 - `template/registry_schema.md`
 - `assets/benchmark_registry_template.csv` if the registry needs to be initialized
 - `assets/batch_template.md` when writing `corpus/batches/batch_XX.md`
-- `references/triage_labels.md` for priority, stage, and uncertainty labels
+- `references/triage_labels.md` for priority, role, and next-step labels
 
 ## Scope
 
@@ -34,6 +34,7 @@ Do not full-read methods or results unless placement is impossible without them.
 1. Read `benchmark.md` and `outline.md` before touching the registry.
 2. Preserve the existing registry schema when `corpus/registry/benchmark_registry.csv` already exists. Only initialize from the asset template if the file is missing.
 3. For each paper, fill or revise the Stage 1 fields conservatively:
+   - `status`
    - `priority`
    - `reading_depth`
    - `batch_id`
@@ -41,22 +42,11 @@ Do not full-read methods or results unless placement is impossible without them.
    - `batch_order`
    - `outline_sections`
    - `survey_role`
+   - `paper_card_path` when you need to reserve the default future card location
    - `triage_note`
    - `next_action`
    - `last_updated`
-4. If the registry also carries the broader survey columns from `template/registry_schema.md`, fill them with first-pass labels only:
-   - `historical_strand`
-   - `narrative_level`
-   - `single_or_diverse`
-   - `game_type`
-   - `purpose_primary`
-   - `purpose_secondary`
-   - `interface_type`
-   - `perception_mode`
-   - `action_mode`
-   - `evaluation_type`
-   - `cluster`
-   - `uncertain_flags`
+4. Keep Stage 1 rows at `status = triaged`. Use `next_action = read-batch` for queued papers and `hold` only for intentionally parked papers.
 5. Group papers into 3 to 5 batches that help the survey converge, not just papers that look superficially similar.
 6. Create or update `corpus/batches/batch_XX.md` files using the asset template.
 7. Only adjust `outline.md` when the new batch structure reveals a missing cluster or a clearer narrative ordering.
@@ -64,7 +54,7 @@ Do not full-read methods or results unless placement is impossible without them.
 ## Priority Rules
 
 - `P0`: anchor paper, milestone benchmark, or high-leverage bridge that stabilizes the outline
-- `P1`: representative paper that strengthens a section or comparison cluster
+- `P1`: representative paper that strengthens a section or comparison theme
 - `P2`: useful but non-urgent, redundant, or mostly confirmatory
 - `P3`: peripheral, weak fit, or worth keeping only as background
 
@@ -83,6 +73,7 @@ If the project is already using only `P0` or `P1` or `P2`, reserve `P3` for clea
 ## Output Standard
 
 A good Stage 1 pass leaves every paper with:
+- `status = triaged`
 - a priority
 - a tentative batch
 - at least one outline landing point
@@ -93,7 +84,7 @@ A good Stage 1 pass leaves every paper with:
 - do not write full paper cards
 - do not draft section prose
 - do not hide ambiguity behind overconfident labels
-- do not overwrite existing registry columns with a narrower schema
+- do not reintroduce legacy taxonomy columns from older schema drafts
 
 ## Handoff
 

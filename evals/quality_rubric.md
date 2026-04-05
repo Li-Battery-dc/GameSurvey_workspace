@@ -10,13 +10,14 @@ A strong registry row should:
 - include a usable `priority`
 - include a usable `batch_id` or an explicit hold decision
 - include a meaningful `outline_sections` value
-- include a valid `paper_card_path` once a card exists
+- include a valid `paper_card_path` once `status` reaches `card-draft` or above
 - include a concrete `next_action`
 - update `last_updated`
 
 Warnings:
 - blank or stale `next_action`
-- `paper_card_path` points to a file that does not exist
+- legacy statuses such as `unread` or `read-card`
+- `paper_card_path` points to a file that does not exist when `status` is `card-draft` or above
 - row still reflects Stage 1 assumptions after a deep read
 - high-priority rows have no clear outline landing point
 
@@ -29,10 +30,11 @@ A strong paper card should:
 - state why the paper matters for this survey rather than only summarizing the abstract
 - list nearby comparison targets inside the corpus
 - sync the registry status and path fields
+- be scored explicitly as `strong`, `usable`, or `weak` during the batch review gate
 
 ### Strong
 
-The card is reliable enough to support comparative drafting.
+The card is reliable enough to support comparative drafting and can normally be promoted to `status = card-reviewed`.
 
 Signs:
 - key benchmark facts are specific rather than generic
@@ -43,7 +45,7 @@ Signs:
 
 ### Usable
 
-The card can support planning and light synthesis, but still needs one more verification pass before being used heavily in prose.
+The card can support planning and bounded synthesis. It may also be promoted to `status = card-reviewed` if its remaining uncertainty is explicit and does not undermine the section claim.
 
 Typical issues:
 - one or two fields remain vague
@@ -53,7 +55,7 @@ Typical issues:
 
 ### Weak
 
-The card should not drive drafting yet.
+The card should not drive drafting yet and should remain at `status = card-draft` with `next_action = review-card`.
 
 Typical issues:
 - mostly abstract paraphrase
@@ -70,17 +72,19 @@ A strong completed batch should:
 - keep registry rows in sync with those cards
 - surface the remaining ambiguity instead of hiding it
 - reveal which outline sections are now well supported
+- leave a clear pass or fail decision for each card
 
 Warnings:
 - the batch mixes too many unrelated papers to compare cleanly
 - half-finished cards are treated as ready evidence
 - registry and card paths disagree
 - no summary of what the batch clarified for the survey
+- passing and failing cards are not separated in the registry
 
 ## 4. Draft Readiness
 
 A section is ready to draft when:
-- at least 3 strong or usable cards support it
+- at least 3 reviewed cards rated `strong` or `usable` support it
 - the cards can be compared on more than one axis
 - the section claim is traceable to cards
 - uncertainty is visible and bounded
@@ -99,3 +103,4 @@ Stop and fix the underlying artifacts before drafting if you see any of these:
 - direct evidence contains claims that belong to synthesis
 - outline anchors are missing or too vague
 - draft prose introduces benchmark claims not present in cards
+- weak cards are being used as if they had already passed review

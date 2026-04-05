@@ -1,6 +1,6 @@
 # Triage Labels
 
-Use these labels unless the existing registry already uses a stable project-specific vocabulary.
+Use these labels with the current registry schema.
 
 ## Priority
 
@@ -8,22 +8,6 @@ Use these labels unless the existing registry already uses a stable project-spec
 - `P1`: strong representative or comparison target
 - `P2`: useful but not urgent
 - `P3`: peripheral or backlog-only
-
-## Historical Strand
-
-- `formal-container`
-- `diagnostic-capability-probe`
-- `ecological-agent-benchmark`
-- `open-ended-general-game-benchmark`
-
-## Narrative Level
-
-Use one or more pipe-separated values:
-- `L1-rule-following`
-- `L2-strategic-reasoning`
-- `L3-social-intelligence`
-- `L4-visual-agency`
-- `L5-cross-game-generalization`
 
 ## Survey Role
 
@@ -35,14 +19,14 @@ Use one or more pipe-separated values:
 ## Useful `next_action` Values
 
 - `read-batch`
-- `read-card`
-- `read-setup`
-- `read-eval`
+- `deep-read`
+- `review-card`
+- `draft-section`
 - `hold`
 
-## Useful `uncertain_flags` Values
+## Useful uncertainty tags for `triage_note`
 
-Use short pipe-separated tags:
+Use short bracketed tags inside the note when needed:
 - `taxonomy`
 - `modality`
 - `evaluation`

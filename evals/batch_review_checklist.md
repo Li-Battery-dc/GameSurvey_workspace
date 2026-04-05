@@ -14,6 +14,7 @@ Run this after finishing one reading batch and before moving into drafting.
 - [ ] `priority`, `status`, `paper_card_path`, `next_action`, and `last_updated` are current.
 - [ ] No `paper_card_path` points to a missing file.
 - [ ] Deep-read findings that changed importance or placement are reflected in the row.
+- [ ] Weak cards remain `card-draft`; only passing cards move to `card-reviewed`.
 
 ## Paper Card Check
 
@@ -22,16 +23,18 @@ Run this after finishing one reading batch and before moving into drafting.
 - [ ] Direct evidence, our synthesis, and unresolved uncertainty are separated.
 - [ ] Interaction paradigm and evaluation protocol are described concretely.
 - [ ] Each card names nearby comparison targets.
+- [ ] Each card has an explicit review label: `strong`, `usable`, or `weak`.
 
 ## Outline Check
 
 - [ ] Each processed paper is anchored to at least one concrete part of `outline.md`.
-- [ ] The batch clarifies at least one comparison cluster or section boundary.
+- [ ] The batch clarifies at least one comparison theme or section boundary.
 - [ ] Any needed outline change is explicit rather than implicit.
 
 ## Draft Readiness Check
 
 - [ ] Strong cards and weak cards are distinguished clearly.
+- [ ] Usable cards are distinguished from weak cards.
 - [ ] Unsupported claims were removed or downgraded to uncertainty.
-- [ ] It is clear which section or cluster can be drafted next.
+- [ ] It is clear which reviewed section or comparison theme can be drafted next.
 - [ ] It is clear what still needs another reading pass.

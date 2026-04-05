@@ -6,3 +6,4 @@ File name convention:
 
 Every processed paper must have one card based on `template/paper_card_template.md`.
 Keep direct paper facts, synthesis, and unresolved uncertainty in separate sections.
+Use the repo workflow status vocabulary consistently: `card-draft`, `card-reviewed`, `finalized`.

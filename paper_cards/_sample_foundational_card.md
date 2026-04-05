@@ -1,78 +1,129 @@
 # sample_balrog BALROG
 
 ## 0. Metadata
-- Date: 2025
-- Venue: ICLR
-- Links:
-- Reading depth: skim
+- Date: 2024/11
+- Venue: ICLR 2025
+- Authors: placeholder
+- Paper link: https://arxiv.org/abs/2411.13543
+- Code link: https://github.com/balrog-ai/BALROG
+- Reading depth: structured-skim
+- Card status: card-draft
 - Confidence in this card: low
 
-## 1. Benchmark identity
-- Single-game or diverse-games: diverse-games
-- Game type(s): action|adventure|mixed
-- Benchmark environment form: broad game benchmark
-- Real game / simulated game / designed task-game hybrid: real/simulated benchmark suite
-- Primary modality: multimodal
+## 1. One-paragraph benchmark summary
+- Placeholder sample only. Replace this with a 3-5 sentence benchmark summary grounded in the paper before using the card for synthesis.
 
 ## 2. Position in our survey
-- Historical strand: open-world-distribution
-- Narrative level(s): L3-visual-action|L5-cross-game-generalization
-- Taxonomy labels: diverse-games
-- Purpose labels: visual-perception|generalization
-- Paradigm labels: image-dominant|GUI-agent
-- Evaluation labels: mixed-evaluation
+- Why-games relevance: placeholder
+- Historical stage: ecological agent benchmark
+- Narrative level(s): L4 visual agency / L5 cross-game generalization
+- Most relevant outline section(s): 2,4,5
+- Role in corpus: anchor
 
-## 3. Main benchmark question
-- What capability or behavior is this benchmark trying to measure?
-- Why is a game environment used here rather than a static benchmark?
+## 3. Design-space coding
+### 3.1 Environment structure
+- Information structure: unclear
+- Transition structure: unclear
+- Agent structure: unclear
+- Social structure: unclear
+- Time structure: unclear
 
-## 4. Game choice and benchmark design
-- What game(s) are used?
-- Why are these games suitable for the target capability?
-- What is the benchmark unit: episode / round / trajectory / multi-turn interaction / open world?
+### 3.2 World structure
+- World type(s): placeholder
+- Real game / simulated game / designed task-game hybrid: placeholder
+- Benchmark unit: placeholder
 
-## 5. Interface and interaction
-- Observation channel:
-- Action channel:
-- Is there API privilege?
-- How close is the interaction to human play?
-- What perception burden is preserved or removed?
+### 3.3 Benchmark scope
+- Scope: placeholder
+- Number of games / tasks: placeholder
+- Benchmark intent: ecological evaluation
 
-## 6. Evaluation
-- Main score:
-- Auxiliary score:
-- Adversarial / Elo / tournament evaluation:
-- Process / milestone evaluation:
-- Automatic verifiability:
-- Anti-contamination advantage:
-- Reliability concerns:
+### 3.4 Modality
+- Primary modality: mixed
+- Perception burden retained: placeholder
+- Perception burden removed: placeholder
 
-## 7. Key contribution
-- Contribution 1:
-- Contribution 2:
-- Contribution 3:
+## 4. What this benchmark measures
+- Primary capability target: placeholder
+- Secondary capability target(s): placeholder
+- Does it test rule grounding / legal action generation? unclear
+- Does it test strategic planning under uncertainty? unclear
+- Does it test social reasoning / deception / cooperation? unclear
+- Does it test visual grounding / spatial-temporal reasoning? yes
+- Does it test long-horizon autonomy / task completion? unclear
+- Does it test real-time efficiency? unclear
+- Does it test cross-game transfer / open-ended generalization? yes
+- Why is a game environment especially suitable here? placeholder
 
-## 8. Main findings
-- What do the reported results show?
-- What kinds of failures are especially notable?
+## 5. Interaction paradigm
+- Observation channel: placeholder
+- Action channel: placeholder
+- Interface type: placeholder
+- Agent scaffold allowed: placeholder
+- Is there privileged API access? unclear
+- How close is the setup to human play? placeholder
+- Main ecological-validity trade-off: placeholder
 
-## 9. Limitations
-- Coverage limitation:
-- Ecological validity limitation:
-- Comparability limitation:
-- Evaluation limitation:
+## 6. Evaluation protocol
+- Main score: placeholder
+- Auxiliary score(s): placeholder
+- Evaluation style: placeholder
+- Human baseline / AI anchor / self-play / model-vs-model setup: placeholder
+- Automatic verifiability: placeholder
+- Calibration method: placeholder
+- Anti-contamination argument: placeholder
+- Reliability or comparability concerns: placeholder
+
+## 7. Main contributions
+- Contribution 1: placeholder
+- Contribution 2: placeholder
+- Contribution 3: placeholder
+
+## 8. Main findings and failure modes
+- Core empirical takeaway: placeholder
+- Notable model failure mode 1: placeholder
+- Notable model failure mode 2: placeholder
+- Notable model failure mode 3: placeholder
+- Does this paper reveal a benchmark-design limitation as well? placeholder
+
+## 9. Why this paper matters for our survey
+- Best use in Section 0 (why games): placeholder
+- Best use in Section 1 (historical evolution): placeholder
+- Best use in Section 2 (design space): placeholder
+- Best use in Section 3 (capability targets): placeholder
+- Best use in Section 4 (interaction paradigm): placeholder
+- Best use in Section 5 (evaluation protocol): placeholder
+- Best use in Section 6/7 (limitations and future): placeholder
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s):
-- Closest follow-up(s):
-- Best comparison targets inside our corpus:
+- Closest predecessor(s): placeholder
+- Closest follow-up(s): placeholder
+- Best comparison targets inside our corpus: placeholder
+- What this paper uniquely adds relative to neighbors: placeholder
 
 ## 11. Evidence notes
-### Direct paper-supported facts
-- This is only a placeholder card, not a final reading output.
+### 11.1 Direct paper-supported facts
+- This sample file is only a formatting reference and is not a validated reading output.
 
-### Our synthesis / interpretation
-- Likely important for L3–L5 bridge.
+### 11.2 Our synthesis / interpretation
+- Keep synthesis separate from direct evidence in real cards.
 
-### Uncertain or needs re-check
-- All details need to be verified from the actual paper.
+### 11.3 Uncertain or needs re-check
+- Replace all placeholder values with paper-backed content before using the card.
+
+## 12. Follow-up reading plan
+- Should we read beyond abstract + intro? why? yes; this sample is intentionally incomplete.
+- Which section to read next if needed: setup / evaluation
+- Follow-up question(s): What exact interface and evaluation design does the benchmark use?
+
+## 13. Registry sync
+- Registry row synced: no
+- Registry status: card-draft
+- Priority: P0
+- Reading depth: structured-skim
+- Batch ID: B00
+- Outline sections: 2,4,5
+- Survey role: anchor
+- Paper card path: paper_cards/_sample_foundational_card.md
+- Next action: review-card
+- Last updated: 2026-04-05
