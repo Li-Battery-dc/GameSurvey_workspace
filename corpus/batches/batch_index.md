@@ -9,9 +9,9 @@ Use this file to track a long reading queue without opening every batch file.
 | B03 | visual-ecological-core | reviewed | now | 5 | 0,3,4,5,6,7 | Use the reviewed cards to draft the visual-agency and ecological benchmark sections. |
 | B04 | strategic-arena-extensions | reviewed | next | 5 | 2,3,4,5,6 | Use the reviewed cards as contrast material for arena, tournament, and competitive extensions. |
 | B05 | generalization-challenge-space | reviewed | next | 6 | 0,1,2,3,4,5,7 | Use the reviewed cards to draft open-ended, genre-diverse, and generalization-focused sections. |
-| B06 | multimodal-diagnostics | queued | later | 4 | 3,4,5,6 | Keep visible as the later queue for narrow but useful multimodal comparison papers. |
-| B07 | formal-strategy-roots | queued | next | 4 | 0,1,2,3,5,6 | Read after B05 to backfill the formal and game-theoretic lineage behind the current core queue. |
-| B08 | benchmark-suite-diagnostics | queued | next | 4 | 0,1,2,3,4,5,7 | Read after B07 to compare how newer suites instrument cognition and protocol design. |
+| B06 | multimodal-diagnostics | reviewed | later | 4 | 3,4,5,6 | Use the reviewed cards as contrast material for multimodal diagnostics, action validity, and narrow spatial-reasoning comparisons. |
+| B07 | formal-strategy-roots | reviewed | next | 4 | 0,1,2,3,5,6 | Use the reviewed cards to draft the formal-roots lineage and compare taxonomy, aggregation, and leakage-control choices. |
+| B08 | benchmark-suite-diagnostics | reviewed | next | 4 | 0,1,2,3,4,5,7 | Use the reviewed cards to draft instrumentation, process-metric, and benchmark-platform comparisons. |
 | B09 | visual-agent-lineage | queued | later | 5 | 1,3,4,5,6 | Keep as the visual backfill batch once the modern visual core is carded. |
 | B10 | long-horizon-openworld | queued | later | 5 | 1,3,4,5,6,7 | Read when the survey turns from benchmark suites to open-world and long-horizon agents. |
 | B11 | symbolic-spatial-diagnostics | queued | later | 7 | 2,3,4,6,7 | Read as a comparison batch for narrow reasoning diagnostics and map-based planning. |

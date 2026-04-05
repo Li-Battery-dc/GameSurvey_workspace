@@ -1,0 +1,133 @@
+# GAMEBoT GAMEBoT: Transparent Assessment of LLM Reasoning in Games
+
+## 0. Metadata
+- Date: 2024/12
+- Venue: ACL 2025
+- Authors: Wenye Lin, Jonathan Roberts, Yunhan Yang, Samuel Albanie, Zongqing Lu, Kai Han
+- Paper link: https://arxiv.org/pdf/2412.13602v2
+- Code link:
+- Reading depth: deep
+- Card status: card-reviewed
+- Confidence in this card: high
+- Review gate label: strong
+
+## 1. One-paragraph benchmark summary
+- GAMEBoT is a game benchmark that evaluates not only final outcomes but also intermediate reasoning steps. It covers eight games across board, action, card, and game-theoretic categories, decomposes each decision into 2-3 rule-verifiable subproblems, and scores both the intermediate chain and the final move. The benchmark uses curated CoT prompts, dynamic competition between LLMs, and rule-based verification to make hidden reasoning failures visible. For this survey, GAMEBoT is one of the strongest protocol papers because it directly addresses a major weakness of game benchmarks: win rate alone can hide brittle or nonsensical reasoning.
+
+## 2. Position in our survey
+- Why-games relevance: Games provide repeated, rule-bounded decision points where intermediate reasoning can be checked against ground truth rather than inferred from a single final answer.
+- Historical stage: diagnostic capability probe
+- Narrative level(s): L2 strategic reasoning
+- Most relevant outline section(s): 2,3,5,6
+- Role in corpus: contrast
+
+## 3. Design-space coding
+### 3.1 Environment structure
+- Information structure: mixed
+- Transition structure: mixed
+- Agent structure: multi-agent
+- Social structure: mixed
+- Time structure: mixed
+
+### 3.2 World structure
+- World type(s): board / card / other
+- Real game / simulated game / designed task-game hybrid: curated suite of existing games under unified text interfaces
+- Benchmark unit: match
+
+### 3.3 Benchmark scope
+- Scope: curated suite
+- Number of games / tasks: 8 games
+- Benchmark intent: diagnostic evaluation
+
+### 3.4 Modality
+- Primary modality: text
+- Perception burden retained: rule understanding, game-state tracking, subgoal reasoning, and opponent-aware decision making
+- Perception burden removed: gameplay is represented in text rather than through native visual interfaces
+
+## 4. What this benchmark measures
+- Primary capability target: process-level reasoning quality during gameplay
+- Secondary capability target(s): spatial reasoning, mathematical reasoning, long-term path planning, risk management, and competitive collaboration depending on the game
+- Does it test rule grounding / legal action generation? yes
+- Does it test strategic planning under uncertainty? yes
+- Does it test social reasoning / deception / cooperation? partially
+- Does it test visual grounding / spatial-temporal reasoning? no
+- Does it test long-horizon autonomy / task completion? partially
+- Does it test real-time efficiency? no
+- Does it test cross-game transfer / open-ended generalization? partially
+- Why is a game environment especially suitable here? Games naturally decompose into repeated decisions, so intermediate reasoning can be aligned with local subproblems instead of judged only by final success.
+
+## 5. Interaction paradigm
+- Observation channel: text representations of the current game state plus curated chain-of-thought prompts with game rules and strategy hints
+- Action channel: explicit reasoning steps followed by a chosen move
+- Interface type: natural language / hybrid
+- Agent scaffold allowed: other
+- Is there privileged API access? yes
+- How close is the setup to human play? medium-low; the games are real, but play is mediated through text states and prompt decomposition
+- Main ecological-validity trade-off: GAMEBoT improves interpretability by decomposing reasoning, but the prompt and subproblem design intervene strongly in the natural play process
+
+## 6. Evaluation protocol
+- Main score: final game outcome
+- Auxiliary score(s): intermediate-step correctness aggregated across subproblems
+- Evaluation style: win rate / hybrid
+- Human baseline / AI anchor / self-play / model-vs-model setup: 17 LLMs compete head-to-head in dynamic game environments, with rule-based verification of intermediate reasoning
+- Automatic verifiability: high
+- Calibration method: 20 games per model pairing, curated CoT prompts, and exact rule-based checking for each game’s subproblems
+- Anti-contamination argument: dynamic competition broadens the exposed state distribution relative to fixed single-agent game datasets
+- Reliability or comparability concerns: conclusions depend on the quality of the manually designed subproblem decompositions and on prompts that already inject game-specific strategic knowledge
+
+## 7. Main contributions
+- Contribution 1: Introduces a benchmark that evaluates both final gameplay outcomes and intermediate reasoning steps.
+- Contribution 2: Covers eight games spanning different game types and strategic demands.
+- Contribution 3: Uses rule-based subproblem verification to make benchmark scores more interpretable.
+
+## 8. Main findings and failure modes
+- Core empirical takeaway: intermediate-step scores strongly predict final outcomes overall, but some games expose mismatches where outcome-only evaluation would misread model ability.
+- Notable model failure mode 1: models can achieve acceptable final outcomes while still showing weak intermediate reasoning quality
+- Notable model failure mode 2: performance is highly inconsistent across games, even for strong models
+- Notable model failure mode 3: prompt-injected strategy knowledge can improve results, especially for non-reasoning models
+- Does this paper reveal a benchmark-design limitation as well? yes; it shows that subproblem design itself becomes part of the benchmark and can shape what is being measured
+
+## 9. Why this paper matters for our survey
+- Best use in Section 0 (why games): Demonstrates why repeated interactive decisions make game environments suitable for process-level reasoning evaluation.
+- Best use in Section 1 (historical evolution): Useful as a newer response to the criticism that game benchmarks often measure only outcomes.
+- Best use in Section 2 (design space): Helps distinguish broad game suites from process-oriented diagnostic suites.
+- Best use in Section 3 (capability targets): Supports discussion of decomposable reasoning skills inside games.
+- Best use in Section 4 (interaction paradigm): Good contrast case for heavily prompt-shaped interfaces.
+- Best use in Section 5 (evaluation protocol): One of the best references for outcome versus process evaluation.
+- Best use in Section 6/7 (limitations and future): Supports the claim that future benchmarks may need process supervision, but that process definitions are themselves a design choice.
+
+## 10. Relation to nearby papers
+- Closest predecessor(s): GTBench and other outcome-focused strategic suites
+- Closest follow-up(s): benchmark designs that include process metrics or richer instrumentation
+- Best comparison targets inside our corpus: [GTBench](D:/research_root/GameSurvey/workspace/paper_cards/B07/GTBench.md), [LMGameBench](D:/research_root/GameSurvey/workspace/paper_cards/B08/LMGameBench.md), [KORGym](D:/research_root/GameSurvey/workspace/paper_cards/B08/KORGym.md), [ReasoningViaVideo](D:/research_root/GameSurvey/workspace/paper_cards/B06/ReasoningViaVideo.md)
+- What this paper uniquely adds relative to neighbors: It makes intermediate reasoning verification the center of the benchmark rather than an auxiliary analysis.
+
+## 11. Evidence notes
+### 11.1 Direct paper-supported facts
+- GAMEBoT evaluates 17 LLMs across eight games that include Othello, Checkers, TicTacToe, Connect4, Pong, Surround, Texas Hold'em, and Negotiation v2.
+- Each move is decomposed into 2-3 subproblems with rule-based verification, and the benchmark reports both final outcomes and intermediate-step scores.
+- The paper reports that the average benchmark difficulty remains substantial, with mean final-outcome results around the middle of the score range rather than near saturation.
+
+### 11.2 Our synthesis / interpretation
+- GAMEBoT is one of the clearest papers in the corpus for arguing that outcome-only game benchmarking can be misleading.
+- It is especially useful for Section 5 because it formalizes a concrete alternative rather than only criticizing win rate.
+
+### 11.3 Uncertain or needs re-check
+- Re-check Section 3.1.3 and Appendix G if we later need the exact game-specific exceptions where outcome and intermediate scores diverge most.
+
+## 12. Follow-up reading plan
+- Should we read beyond abstract + intro? why? A targeted reread will likely be useful later because this paper is highly relevant to the evaluation-protocol section.
+- Which section to read next if needed: 2.1 / 2.5 / 3.1.3
+- Follow-up question(s): Which GAMEBoT games provide the cleanest examples for showing why process metrics can overturn outcome-only rankings?
+
+## 13. Registry sync
+- Registry row synced: yes
+- Registry status: card-reviewed
+- Priority: P1
+- Reading depth: deep
+- Batch ID: B08
+- Outline sections: 2,3,5,6
+- Survey role: contrast
+- Paper card path: `paper_cards/B08/GAMEBoT.md`
+- Next action: draft-section
+- Last updated: 2026-04-05
