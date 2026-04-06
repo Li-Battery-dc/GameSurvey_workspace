@@ -15,7 +15,7 @@
 | 5 | StarCraftIIArena | StarCraft II Arena | P1 | deep | 2,3,4,5,6 | RTS benchmark for strategic planning, real-time adaptation, and robustness. |
 | 6 | VLMPlayStarCraftII | VLMs Play StarCraft II | P1 | deep | 2,3,4,5,6 | Multimodal RTS benchmark extending the StarCraft line into visual decision-making. |
 | 7 | MixingExpertKnowledge | Mixing Expert Knowledge | P3 | structured-skim | 2,6 | Boundary-case Go specialist retained for domain-specific upper-bound comparison. |
-| 8 | GTOWizardBenchmark | GTO Wizard Benchmark | P1 | deep | 2,3,5,6 | Standardized poker benchmark with a fixed superhuman anchor for specialist calibration. No paper card yet. |
+| 8 | GTOWizardBenchmark | GTO Wizard Benchmark | P1 | deep | 2,3,5,6 | Standardized poker benchmark with a fixed superhuman anchor for specialist calibration. |
 
 ## Expected Survey Payoff
 - Provide a controlled comparison set for specialist versus general benchmark claims.

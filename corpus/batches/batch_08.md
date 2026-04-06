@@ -12,10 +12,10 @@
 | 2 | GAMEBoT | GAMEBoT | P1 | deep | 2,3,5,6 | Transparent modular evaluation useful for process-level analysis. |
 | 3 | KORGym | KORGym | P1 | deep | 1,2,3,5,7 | Dynamic multi-game platform that broadens benchmark coverage. |
 | 4 | RuleOracles | LLMs as Rule Oracles | P2 | deep | 2,3,4,5 | Tabletop rulebook benchmark for multimodal rule understanding. |
-| 5 | TextArena | TextArena | P1 | deep | 3,4,5,7 | Competitive text-game suite with online-play ratings and rich interactive coverage. No paper card yet. |
-| 6 | Clembench | clembench | P1 | structured-skim | 1,3,4,5 | Dialogue-game evaluation framework for conversational agents. No paper card yet. |
-| 7 | Clembench2024 | clembench-2024 | P2 | structured-skim | 1,3,4,5,7 | Framework expansion that adds multilingual and multi-action dialogue games. No paper card yet. |
-| 8 | ThirdParadigm | A Third Paradigm for LLM Evaluation | P2 | structured-skim | 0,1,5,7 | Meta-evaluation framing paper that positions dialogue-game evaluation against static and arena paradigms. No paper card yet. |
+| 5 | TextArena | TextArena | P1 | deep | 3,4,5,7 | Competitive text-game suite with online-play ratings and rich interactive coverage. |
+| 6 | Clembench | clembench | P1 | structured-skim | 1,3,4,5 | Dialogue-game evaluation framework for conversational agents. |
+| 7 | Clembench2024 | clembench-2024 | P2 | structured-skim | 1,3,4,5,7 | Framework expansion that adds multilingual and multi-action dialogue games. |
+| 8 | ThirdParadigm | A Third Paradigm for LLM Evaluation | P2 | structured-skim | 0,1,5,7 | Meta-evaluation framing paper that positions dialogue-game evaluation against static and arena paradigms. |
 
 ## Expected Survey Payoff
 - Clarify how suites differ in instrumentation granularity and task decomposition.

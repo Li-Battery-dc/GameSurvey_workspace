@@ -12,7 +12,7 @@
 | 2 | GameBench | GameBench | P1 | deep | 1,2,3,5,6 | Cross-domain strategic suite that broadens the early formal story. |
 | 3 | GAMABench | GAMA-Bench | P1 | deep | 1,2,3,5,6 | Multi-agent decision benchmark grounded in game-theoretic settings. |
 | 4 | TMGBench | TMGBench | P2 | deep | 2,3,5,6 | Systematic strategic benchmark useful for taxonomy coverage and overlap checks. |
-| 5 | GridBasedGameCompetitions | Evaluating Large Language Models with Grid-Based Game Competitions | P2 | structured-skim | 1,2,3,5 | Grid-game leaderboard benchmark for controlled strategic comparison. No paper card yet. |
+| 5 | GridBasedGameCompetitions | Evaluating Large Language Models with Grid-Based Game Competitions | P2 | structured-skim | 1,2,3,5 | Grid-game leaderboard benchmark for controlled strategic comparison. |
 
 ## Expected Survey Payoff
 - Firm up the survey's formal roots before deeper historical synthesis.

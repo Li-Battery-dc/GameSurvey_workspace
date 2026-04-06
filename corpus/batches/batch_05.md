@@ -14,7 +14,7 @@
 | 4 | PuzzlePlex | PuzzlePlex | P2 | deep | 2,3,6,7 | Broad puzzle suite that usefully stresses planning and generalization. |
 | 5 | Orak | Orak | P0 | deep | 1,2,3,4,7 | Genre-diverse train-and-eval benchmark connecting suite evaluation to general-game claims. |
 | 6 | MCU | MCU | P1 | deep | 0,3,4,5,7 | Open-ended Minecraft benchmark with task composition and human-aligned evaluation. |
-| 7 | Crafter | Benchmarking the Spectrum of Agent Capabilities | P1 | structured-skim | 0,1,2,3,7 | Foundational Crafter precursor for single-environment general-capability evaluation. No paper card yet. |
+| 7 | Crafter | Benchmarking the Spectrum of Agent Capabilities | P1 | structured-skim | 0,1,2,3,7 | Foundational Crafter precursor for single-environment general-capability evaluation. |
 
 ## Expected Survey Payoff
 - Clarify the boundary between broad challenge-space design and truly open-ended evaluation.
