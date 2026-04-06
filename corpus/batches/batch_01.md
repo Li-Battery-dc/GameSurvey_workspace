@@ -12,7 +12,7 @@
 | 2 | BotzoneBench | BotzoneBench | P0 | deep | 0,2,3,5 | Anchor for scalable evaluation using graded AI anchors rather than volatile model pools. |
 | 3 | BeyondScaling | Beyond Scaling | P1 | deep | 2,3,5,6 | Adds a zero-sum and time-sensitive strategic contrast. |
 | 4 | LLMChess | LLM CHESS | P1 | deep | 1,2,3,5 | Tight single-game probe for legal moves and instruction-following. |
-| 5 | BoardGameArena | Board Game Arena | P1 | deep | 1,2,3,5 | Broad board-game framework that strengthens cross-game strategic comparison. |
+| 5 | BoardGameArena | Game Reasoning Arena | P1 | deep | 1,2,3,5 | Broad board-game framework that strengthens cross-game strategic comparison. |
 
 ## Expected Survey Payoff
 - Lock down the rule-grounded and strategic-evaluation side of the survey narrative.

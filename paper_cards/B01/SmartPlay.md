@@ -1,4 +1,4 @@
-# SmartPlay SmartPlay
+# SmartPlay: A BENCHMARK FOR LLMS AS INTELLIGENT AGENTS
 
 ## 0. Metadata
 - Date: 2023/10

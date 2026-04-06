@@ -13,6 +13,9 @@
 | 3 | StarDojo | StarDojo | P1 | deep | 3,4,5,6,7 | Open-ended Stardew Valley benchmark for production-living behaviors. |
 | 4 | CivRealm | CivRealm | P1 | deep | 1,2,3,6,7 | Civilization environment for strategic planning and generalization. |
 | 5 | Mars | Mars | P2 | deep | 3,4,6,7 | Open-world situated reasoning environment with partial survey fit. |
+| 6 | MineNPCTask | MineNPC-Task | P1 | deep | 3,4,5,6,7 | Minecraft benchmark centered on memory-aware mixed-initiative tasks. No paper card yet. |
+| 7 | InteractiveFictionGames | Interactive Fiction Games | P1 | structured-skim | 0,1,3,4,6,7 | Highly cited Jericho precursor for text-game and long-horizon evaluation. No paper card yet. |
+| 8 | NetHackLearningEnvironment | The NetHack Learning Environment | P1 | structured-skim | 1,3,4,6,7 | Foundational hard game environment for long-horizon and partial-observability comparisons. No paper card yet. |
 
 ## Expected Survey Payoff
 - Strengthen the survey's account of long-horizon autonomy and open-world evaluation.

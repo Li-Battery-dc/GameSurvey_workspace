@@ -12,6 +12,7 @@
 | 2 | DeepPHY | DeepPHY | P2 | deep | 3,4,6 | Physical-reasoning benchmark that overlaps with game-like control but remains somewhat indirect. |
 | 3 | ReasoningViaVideo | Reasoning via Video | P2 | deep | 3,4,6 | Video maze benchmark for temporal and spatial reasoning under visual input. |
 | 4 | EvoEmpirBench | EvoEmpirBench | P2 | deep | 3,4,6 | Narrow dynamic spatial benchmark that is useful mainly as a comparison target. |
+| 5 | EMemBench | EMemBench | P1 | deep | 3,4,6 | Interactive episodic-memory benchmark for VLM agents across text and visual games. No paper card yet. |
 
 ## Expected Survey Payoff
 - Preserve a clear backlog of specialized multimodal comparison papers.
