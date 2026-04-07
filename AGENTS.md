@@ -26,7 +26,7 @@ Repo-local skills live in `.codex/skills/`.
 - `paper-card-batch-reader`: deep-read selected papers, write paper cards, and sync the registry.
 
 ## Default Workflow
-1. Stage 1: use `benchmark-triage`. Read only title, abstract, and introduction-level material. For long corpora, read `benchmark.md` once to seed context, then work in rolling windows from the registry. Update the registry strictly against `template/registry_schema.md`, maintain `corpus/batches/batch_index.md` plus `corpus/batches/batch_XX.md`, and leave each active row with `status = triaged`, a `queue_tier`, a `triage_round`, a batch or hold decision, a concrete `next_action`, and updated `last_updated`.
+1. Stage 1: use `benchmark-triage`. Read only title, abstract, and introduction-level material. For long corpora, read `benchmark.md` once to seed context, then work in rolling windows from the registry. Update the registry strictly against `template/registry_schema.md`, maintain `corpus/batches/batch_index.md` plus `corpus/batches/batch_XX.md`, and leave each active row with `status = triaged`, a `queue_tier`, a `triage_round`, a batch or hold decision, `check_status = unchecked`, and updated `last_updated`.
 2. Stage 2: use `paper-card-batch-reader`. Read benchmark setup, interface, evaluation, results, and limitations. Work from one batch at a time, resolve a PDF when `paper_link` is only an abstract or landing page, create or update one card per paper under `paper_cards/{batch_id}/`, and sync the registry fields defined in `template/registry_schema.md`.
 3. Stage 3: run the eval gate before drafting. Only strong or usable cards that pass `evals/quality_rubric.md` and `evals/batch_review_checklist.md` should be promoted to `card-reviewed` and used for section drafting.
 

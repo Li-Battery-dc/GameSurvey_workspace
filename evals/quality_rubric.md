@@ -13,12 +13,12 @@ A strong registry row should:
 - include a usable `batch_id` or an explicit hold decision
 - include a meaningful `outline_sections` value
 - include a valid `paper_card_path` once `status` reaches `card-draft` or above
-- include a concrete `next_action`
+- include a valid `check_status`
 - update `last_updated`
 
 Warnings:
 - lowercase slug-like `paper_id` values that no longer match the repo naming convention
-- blank or stale `next_action`
+- blank or invalid `check_status`
 - blank `queue_tier` in a long-list corpus
 - `queue_tier` does not match the actual reading queue anymore
 - legacy statuses such as `unread` or `read-card`
@@ -38,6 +38,8 @@ A strong paper card should:
 - sync the registry status and path fields
 - be grounded in the full paper PDF or another authoritative full-text source when one exists
 - be scored explicitly as `strong`, `usable`, or `weak` during the batch review gate
+
+Manual human review is tracked separately in `check_status`; a row may be `card-reviewed` for workflow purposes while still remaining `unchecked` until the team confirms it.
 
 ### Strong
 
@@ -62,7 +64,7 @@ Typical issues:
 
 ### Weak
 
-The card should not drive drafting yet and should remain at `status = card-draft` with `next_action = review-card`.
+The card should not drive drafting yet and should remain at `status = card-draft` until corrected.
 
 Typical issues:
 - mostly abstract paraphrase

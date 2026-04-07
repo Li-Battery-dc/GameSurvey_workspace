@@ -19,7 +19,7 @@ Use this skill for Stage 1 work only. Start from `benchmark.md` and `outline.md`
 - `assets/benchmark_registry_template.csv` if the registry needs to be initialized
 - `assets/batch_template.md` when writing `corpus/batches/batch_XX.md`
 - `assets/batch_index_template.md` when writing `corpus/batches/batch_index.md`
-- `references/triage_labels.md` for priority, queue, role, and next-step labels
+- `references/triage_labels.md` for priority, queue, role, and check-status labels
 
 ## Scope
 
@@ -65,7 +65,7 @@ Use long-list mode whenever `benchmark.md` is around `50+` papers.
    - `survey_role`
    - `paper_card_path`
    - `triage_note`
-   - `next_action`
+   - `check_status`
    - `last_updated`
 4. Keep Stage 1 rows at `status = triaged`.
 5. Use `queue_tier` to control scale:
@@ -74,7 +74,7 @@ Use long-list mode whenever `benchmark.md` is around `50+` papers.
    - `later`: backlog that should stay visible but not active yet
    - `hold`: intentionally parked rows
 6. Set `triage_round = 1` on first placement and increment it when a later pass materially changes urgency, batching, or outline placement.
-7. Use `next_action = read-batch` for queued papers, `deep-read` only when a paper should bypass batching, and `hold` only for intentionally parked papers.
+7. Set `check_status = unchecked` for newly touched rows. Use `queue_tier`, `batch_id`, and explicit hold decisions to express what should happen next.
 8. When a paper has a `batch_id`, reserve `paper_card_path` as `paper_cards/{batch_id}/{paper_id}.md`.
 9. Create or update `corpus/batches/batch_index.md` plus any touched `corpus/batches/batch_XX.md` files.
 10. Only adjust `outline.md` when the new batch structure reveals a missing cluster or a clearer narrative ordering.
@@ -109,6 +109,7 @@ A good Stage 1 pass leaves every touched paper with:
 - a `queue_tier`
 - a `triage_round`
 - a tentative batch or an explicit hold decision
+- `check_status = unchecked`
 - at least one outline landing point
 - an explicit uncertainty marker when placement is fuzzy
 - a default future card path of `paper_cards/{batch_id}/{paper_id}.md` once batching is known

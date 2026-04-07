@@ -11,11 +11,12 @@ Run this after finishing one reading batch and before moving into drafting.
 ## Registry Check
 
 - [ ] Every processed paper has an updated row in `corpus/registry/benchmark_registry.csv`.
-- [ ] `priority`, `queue_tier`, `status`, `paper_card_path`, `next_action`, and `last_updated` are current.
+- [ ] `priority`, `queue_tier`, `status`, `paper_card_path`, `check_status`, and `last_updated` are current.
 - [ ] No `paper_card_path` points to a missing file.
 - [ ] Every `paper_card_path` matches the row's `batch_id` and readable `paper_id`.
 - [ ] Deep-read findings that changed importance or placement are reflected in the row.
 - [ ] Weak cards remain `card-draft`; only passing cards move to `card-reviewed`.
+- [ ] If a human check was completed, the corresponding rows are marked `check_status = checked`.
 
 ## Paper Card Check
 

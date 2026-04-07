@@ -23,13 +23,10 @@ Use these labels with the current registry schema.
 - `contrast`
 - `peripheral`
 
-## Useful `next_action` Values
+## Useful `check_status` Values
 
-- `read-batch`
-- `deep-read`
-- `review-card`
-- `draft-section`
-- `hold`
+- `unchecked`
+- `checked`
 
 ## Useful uncertainty tags for `triage_note`
 

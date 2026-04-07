@@ -67,10 +67,10 @@ Before deep reading, check whether `paper_link` already points to full text.
    - `paper_card_path`
    - `priority` if the deep read changes importance
    - `queue_tier` if the deep read materially changes urgency
-   - `next_action`
+   - `check_status`
    - `last_updated`
 7. After finishing the batch, run the checklist in `evals/batch_review_checklist.md` and judge card quality against `evals/quality_rubric.md`.
-8. Promote only passing cards to `status = card-reviewed`. Keep weak cards at `status = card-draft` with `next_action = review-card`.
+8. Promote only passing cards to `status = card-reviewed`. Keep weak cards at `status = card-draft`. Leave `check_status = unchecked` unless the user explicitly confirms a human check is complete.
 9. Update `corpus/batches/batch_index.md` when the batch state changes.
 10. Strengthen `outline.md` only by adding clearer anchors or comparison targets. Do not draft long prose here.
 
@@ -78,7 +78,7 @@ Before deep reading, check whether `paper_link` already points to full text.
 
 - `triaged`: only Stage 1 placement exists
 - `card-draft`: first complete structured card exists
-- `card-reviewed`: core fields checked against the paper and ready for synthesis
+- `card-reviewed`: passed the repo review gate and is ready for synthesis; this does not by itself imply `check_status = checked`
 - `finalized`: stable enough to cite during writing
 
 If you touch legacy rows that still use older status words, normalize them to the current repo vocabulary during the update.

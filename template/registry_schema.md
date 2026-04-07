@@ -25,8 +25,10 @@ Keep the column order stable. Do not add legacy taxonomy columns, `notes_path`, 
 | `survey_role` | Why this paper is in the corpus | `anchor`, `representative`, `contrast`, `peripheral` |
 | `paper_card_path` | Relative path to the paper card | `paper_cards/B03/Balrog.md` |
 | `triage_note` | Short reason for placement, with inline uncertainty when needed | `Anchor for social evaluation. [uncertain: outline-fit]` |
-| `next_action` | Immediate next step for this paper | `read-batch`, `deep-read`, `review-card`, `draft-section`, `hold` |
+| `check_status` | Manual human-check marker for this row or card | `unchecked`, `checked` |
 | `last_updated` | Last registry edit date | `2026-04-05` |
+
+`status` is the workflow stage for the paper. `check_status` is a separate manual marker that should change only when a human explicitly finishes checking the row or card.
 
 ## Field rules
 
@@ -36,9 +38,9 @@ Keep the column order stable. Do not add legacy taxonomy columns, `notes_path`, 
 - `queue_tier`: use `now` for the next `1-3` batches, `next` for the near queue after that, `later` for backlog that should remain visible, and `hold` for intentionally parked papers.
 - `triage_round`: start at `1` for the first triage pass and increment when a later pass materially revises placement or urgency.
 - `reading_depth`: use `structured-skim` for lighter Stage 2 passes and `deep` for full benchmark reading.
-- `batch_id`: leave blank only for papers intentionally parked with `next_action = hold`.
+- `batch_id`: leave blank only for papers intentionally parked with `queue_tier = hold`.
 - `outline_sections`: keep values short and traceable to the current `outline.md`.
 - `paper_card_path`: default to `paper_cards/{batch_id}/{paper_id}.md`. If `batch_id` changes, update the path to the matching batch subdirectory. Once `status` reaches `card-draft` or above, this path must exist.
 - `triage_note`: keep it to one or two sentences. Put uncertainty inside the note, for example `[uncertain: evaluation|outline-fit]`.
-- `next_action`: keep it concrete and workflow-facing rather than descriptive prose.
+- `check_status`: use `unchecked` by default. Set it to `checked` only after a human explicitly finishes reviewing the row or paper card.
 - `last_updated`: use ISO date format `YYYY-MM-DD`.

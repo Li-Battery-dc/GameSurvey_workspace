@@ -1,6 +1,6 @@
 # Outline
 
-survey outline：
+Survey on Game benchmark for LLMs and VLMs
 
 high-level narrative stages, all sections follow or recall:
 - Level 1: Rule Following — Can it make legal moves? (SmartPlay, GTBench)

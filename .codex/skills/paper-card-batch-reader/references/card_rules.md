@@ -34,8 +34,10 @@ After each completed card, update at least:
 - `priority` if the deep read changes importance
 - `queue_tier` if the deep read changes urgency
 - `paper_card_path`
-- `next_action`
+- `check_status`
 - `last_updated`
+
+Keep `check_status = unchecked` unless a human explicitly verifies the row or card.
 
 ## Good Stage 2 Behavior
 
