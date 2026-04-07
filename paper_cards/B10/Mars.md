@@ -98,8 +98,8 @@
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter-based achievement benchmarks
-- Closest follow-up(s): ARC-AGI-3 Exploration, StarDojo
-- Best comparison targets inside our corpus: ARCAGI3Exploration, GameTraversalBenchmark, TextQuests, StarDojo
+- Closest follow-up(s): ARC-AGI-3, StarDojo
+- Best comparison targets inside our corpus: ARCAGI3, GameTraversalBenchmark, TextQuests, StarDojo
 - What this paper uniquely adds relative to neighbors: It makes the central challenge inferring changed mechanics rather than merely solving a known game.
 
 ## 11. Evidence notes

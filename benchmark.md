@@ -5,6 +5,7 @@
 | :--- | :--- | :--- | :--- | :--- |
 | 2026/03 | **GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents** | arXiv |  | [[Paper](https://arxiv.org/abs/2603.24329)] [[Code](https://hats-ict.github.io/gameplayqa/)] |
 | 2026/03 | **GTO Wizard Benchmark** | arXiv | Poker, HUNL, Nash Equilibrium, Superhuman Anchor | [[Paper](https://arxiv.org/abs/2603.23660)] |
+| 2026/03 | **ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence** | arXiv | ARC-AGI-3, Agentic Intelligence, Interactive Reasoning, Human Calibration | [[Paper](https://arxiv.org/abs/2603.24621v1)] |
 | 2026/03 | **Beyond Scaling: Assessing Strategic Reasoning and Rapid Decision-Making Capability of LLMs in Zero-sum Environments** | arXiv | Strategic Reasoning, Zero-sum Games, Real-time Decision, STAR Framework | [[Paper](https://arxiv.org/abs/2603.09337)] [[Code](https://github.com/star-nexus/star)] |
 | 2026/03 | **GameVerse: Can VLMs Learn from Video-based Reflection?** | arXiv | VLM, Video Reflection, 15 Games | [[Paper](https://arxiv.org/abs/2603.06656)] [[Code](https://github.com/THUSI-Lab/GameVerse)] |
 | 2026/02 | **AI GAMESTORE: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games** | arXiv | Open-Ended Evaluation, Automated Game Pipeline, Large Game Space | [[Paper](https://arxiv.org/abs/2602.17594)] |
@@ -19,7 +20,6 @@
 | 2025/12 | **LLM CHESS: Benchmarking Reasoning and Instruction-Following in LLMs through Chess** | arXiv | Chess, Reasoning, Instruction-following, Agentic Evaluation | [[Paper](https://arxiv.org/abs/2512.01992)] |
 | 2025/12 | **The PokeAgent Challenge: Competitive and Long-Context Learning at Scale** | NeurIPS 2025 competition | Opponent Modeling, Reinforcement Learning, LLMs, Game AI | [[Paper](https://arxiv.org/abs/2603.15563)] |
 | 2025/12 | **WOLF: Werewolf-based Observations for LLM Deception and Falsehoods** | NeurIPS 2025 Workshop | Werewolf, Deception Detection, Multi-agent, Social Deduction, Longitudinal Eval | [[Paper](https://arxiv.org/abs/2512.09187)] |
-| 2025/12 | **Graph-Based Exploration for ARC-AGI-3 Interactive Reasoning Tasks** | arXiv | ARC-AGI-3, Graph-based Exploration, Interactive Reasoning | [[Paper](https://arxiv.org/abs/2512.24156v1)] [[Code](https://github.com/dolphin-in-a-coma/arc-agi-3-just-explore)] |
 | 2025/11 | **Reasoning via Video: The First Evaluation of Video Models' Reasoning Abilities through Maze-Solving Tasks** | arXiv | Maze Reasoning, Spatial Planning, Video Models | [[Paper](https://arxiv.org/abs/2511.15065)] |
 | 2025/10 | **StarBench: A Turn-Based RPG Benchmark for Agentic Multimodal Decision-Making and Information Seeking** | arXiv | VLMs, Multimodal Benchmark, Decision-making, UI grounding | [[Paper](https://arxiv.org/abs/2510.18483)] |
 | 2025/10 | **LLM-Hanabi: Evaluating Multi-Agent Gameplays with Theory-of-Mind and Rationale Inference in Imperfect Information Collaboration Game** | EMNLP 2025 workshop | Hanabi, Theory-of-Mind, Rationale Inference, Cooperative, Imperfect Information | [[Paper](https://arxiv.org/abs/2510.04980)] |

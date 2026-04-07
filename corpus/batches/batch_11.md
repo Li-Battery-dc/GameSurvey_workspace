@@ -14,7 +14,7 @@
 | 4 | VGRPBench | VGRP-Bench | P2 | deep | 3,4,6 | Visual grid puzzle benchmark for rule comprehension and spatial reasoning. |
 | 5 | MazeEval | MazeEval | P2 | deep | 3,4,6 | Compact maze-planning benchmark for navigation under sequential decisions. |
 | 6 | GameTraversalBenchmark | GameTraversalBenchmark | P2 | deep | 3,4,6 | 2D game-map traversal benchmark for multi-step planning. |
-| 7 | ARCAGI3Exploration | ARC-AGI-3 Interactive Reasoning | P3 | structured-skim | 2,3,7 | Boundary-case interactive reasoning task retained as an adjacent comparison item. |
+| 7 | ARCAGI3 | ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence | P1 | deep | 0,1,2,3,4,5,7 | Official ARC-AGI-3 benchmark paper for human-calibrated interactive reasoning and anti-overfitting evaluation design. |
 
 ## Expected Survey Payoff
 - Preserve a comparison set for specialized diagnostics without inflating their survey centrality.

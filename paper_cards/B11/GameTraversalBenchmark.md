@@ -99,7 +99,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PlanBench-like symbolic planning tasks
 - Closest follow-up(s): MazeEval
-- Best comparison targets inside our corpus: MazeEval, INGVP, ARCAGI3Exploration
+- Best comparison targets inside our corpus: MazeEval, INGVP, ARCAGI3
 - What this paper uniquely adds relative to neighbors: It combines optimal-path references with generation-quality penalties in a multi-objective traversal setting.
 
 ## 11. Evidence notes
