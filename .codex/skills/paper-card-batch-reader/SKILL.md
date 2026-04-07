@@ -1,18 +1,19 @@
 ---
 name: paper-card-batch-reader
-description: "Use when deep-reading a selected batch of benchmark papers for this survey: create or revise paper cards, sync corpus/registry/benchmark_registry.csv, or anchor evidence into outline.md. Trigger on requests like 'read batch 01', 'complete cards for these papers', or 'write paper cards for this batch'."
+description: "Use when deep-reading a selected batch of benchmark papers for this survey: create or revise paper cards, sync corpus/registry/benchmark_registry.csv, or anchor evidence into outline.md and writing.md. Trigger on requests like 'read batch 01', 'complete cards for these papers', or 'write paper cards for this batch'."
 ---
 
 # Paper Card Batch Reader
 
 ## Overview
 
-Use this skill for Stage 2 work only. Turn selected papers into evidence-bearing paper cards that are ready for later survey writing.
+Use this skill for Stage 2 work only. Turn selected papers into evidence-bearing paper cards that are ready for current drafting, later survey writing, and revision.
 
 ## Open These Files First
 
 - `benchmark.md`
 - `outline.md`
+- `writing.md`
 - `corpus/registry/benchmark_registry.csv`
 - `corpus/batches/batch_index.md` when it exists
 - the relevant batch file under `corpus/batches/` when one exists

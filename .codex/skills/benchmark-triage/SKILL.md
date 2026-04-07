@@ -1,18 +1,19 @@
 ---
 name: benchmark-triage
-description: "Use when triaging a game benchmark literature list for this survey: assign batches, set reading priority or importance, update corpus/registry/benchmark_registry.csv, or decide what to read next from benchmark.md and outline.md. Trigger on requests like 'first-pass screening', 'assign batches', 'set priority', or 'choose the first reading batch'."
+description: "Use when triaging a game benchmark literature list for this survey: assign batches, set reading priority or importance, update corpus/registry/benchmark_registry.csv, or decide what to read next from benchmark.md, outline.md, and the current writing needs in writing.md. Trigger on requests like 'first-pass screening', 'assign batches', 'set priority', or 'choose the first reading batch'."
 ---
 
 # Benchmark Triage
 
 ## Overview
 
-Use this skill for Stage 1 work only. Start from `benchmark.md` and `outline.md`, then perform an abstract and introduction-level pass that turns the long paper list into a stable reading queue.
+Use this skill for Stage 1 work only. Start from `benchmark.md`, `outline.md`, and `writing.md`, then perform an abstract and introduction-level pass that turns the long paper list into a stable reading queue for later review and drafting.
 
 ## Open These Files First
 
 - `benchmark.md`
 - `outline.md`
+- `writing.md`
 - `corpus/registry/benchmark_registry.csv` if it already exists
 - `corpus/batches/batch_index.md` if it already exists
 - `template/registry_schema.md`

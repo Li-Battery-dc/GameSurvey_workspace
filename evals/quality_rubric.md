@@ -1,6 +1,6 @@
 # Quality Rubric
 
-Use this rubric to judge whether the current reading outputs are strong enough to support later survey writing.
+Use this rubric to judge whether the current reading outputs are strong enough to support section drafting, revision, and later survey writing.
 
 ## 1. Registry Quality
 
