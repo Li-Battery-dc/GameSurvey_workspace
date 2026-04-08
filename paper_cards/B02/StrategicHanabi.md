@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2601.18077.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-draft
+- Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
 - Outline sections: 2,3,5,6
 - Survey role: contrast
 - Paper card path: `paper_cards/B02/StrategicHanabi.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08

@@ -7,7 +7,7 @@
 - Paper link: https://ojs.aaai.org/index.php/AAAI/article/download/6297/6153
 - Code link: https://github.com/microsoft/jericho
 - Reading depth: structured-skim
-- Card status: card-draft
+- Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B10
 - Outline sections: 0,1,3,4,6,7
 - Survey role: anchor
 - Paper card path: `paper_cards/B10/InteractiveFictionGames.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08

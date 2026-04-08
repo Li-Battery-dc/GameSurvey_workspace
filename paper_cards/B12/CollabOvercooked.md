@@ -7,7 +7,7 @@
 - Paper link: https://aclanthology.org/2025.emnlp-main.249.pdf
 - Code link: https://github.com/YusaeMeow/Collab-Overcooked
 - Reading depth: deep
-- Card status: card-draft
+- Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B12
 - Outline sections: 3,5,6
 - Survey role: representative
 - Paper card path: `paper_cards/B12/CollabOvercooked.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08

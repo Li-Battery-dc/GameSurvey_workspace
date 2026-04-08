@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2601.16690.pdf
 - Code link: https://github.com/InternLM/EMemBench
 - Reading depth: deep
-- Card status: card-draft
+- Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06
 - Outline sections: 3,4,6
 - Survey role: representative
 - Paper card path: `paper_cards/B06/EMemBench.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08

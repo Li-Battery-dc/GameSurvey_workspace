@@ -7,7 +7,7 @@
 - Paper link: https://aclanthology.org/2023.emnlp-main.689.pdf
 - Code link: https://github.com/clembench/clembench
 - Reading depth: structured-skim
-- Card status: card-draft
+- Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B08
 - Outline sections: 1,3,4,5
 - Survey role: representative
 - Paper card path: `paper_cards/B08/Clembench.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08

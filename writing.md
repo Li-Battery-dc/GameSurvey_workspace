@@ -30,59 +30,59 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 | Section | Status | Current evidence base | Next move |
 | :--- | :--- | :--- | :--- |
-| 0. Why game as benchmark | planning | B01 and B03 reviewed; B05 mixed | Draft the core motivation paragraph from `SmartPlay`, `GTBench`, `BALROG`, `AIGameStore`, and `MCU`, then patch historical bridges after more precursor reviews. |
-| 1. Historical evolution of game benchmarks | planning | B01 and B07 reviewed; B05, B10, B12 mixed | Build the historical skeleton first, then tighten the early-to-open-ended transition after `Crafter`, `InteractiveFictionGames`, `NetHackLearningEnvironment`, and `HumanLevelDiplomacy` are fully reviewed. |
-| 2. Taxonomy of game benchmarks | planning | Broad reviewed coverage plus a few mixed edge cases | Draft the table schema and the five-level narrative mapping, then fill edge-case contrasts from mixed batches. |
-| 3. Purpose: What game benchmarks actually measure | planning | B01, B02, B03, B10, B12 reviewed or mixed | Draft capability-target subsections now, then patch social and memory gaps after pending B02, B10, and B12 reviews. |
-| 4. Paradigm: how models are allowed to play | planning | B03, B08, B09, B10, B13 reviewed or mixed | Draft the interface taxonomy and privileged-vs-ecological trade-off, then sharpen methodology contrasts after B08 review. |
-| 5. Evaluation protocols | planning | B01, B03, B04, B08, B13 reviewed or mixed | Draft the score and calibration comparison, then tighten the methodology section after `TextArena` and the `clembench` line are fully reviewed. |
-| 6. Synthesis: what current models still fail at | planning | B01, B02, B03, B10, B13 reviewed or mixed | Build the failure-mode skeleton from reviewed anchors, then revisit once the open-world and social mixed batches are upgraded. |
-| 7. Open problems for next-generation game benchmarks | planning | B03, B05, B08, B10, B12 reviewed or mixed | Draft the forward-looking agenda after the generalization, methodology, and collaboration batches have cleaner reviewed support. |
+| 0. Why game as benchmark | planning | B01, B03, and B05 reviewed | Draft the core motivation paragraph from `SmartPlay`, `GTBench`, `BALROG`, `AIGameStore`, `MCU`, and `Crafter`, then use `HumanLevelDiplomacy` as a high-ecology bridge example. |
+| 1. Historical evolution of game benchmarks | planning | B01, B05, B07, B10, and B12 reviewed | Build the historical skeleton using `Crafter`, `InteractiveFictionGames`, `NetHackLearningEnvironment`, and `HumanLevelDiplomacy` as reviewed bridge papers. |
+| 2. Taxonomy of game benchmarks | planning | Broad reviewed coverage across core and edge-case batches | Draft the table schema and five-level narrative mapping, then use `GridBasedGameCompetitions`, `clembench`, and `GTOWizardBenchmark` as edge-case contrasts. |
+| 3. Purpose: What game benchmarks actually measure | planning | B01, B02, B03, B10, and B12 reviewed | Draft capability-target subsections using the newly reviewed social, memory, and collaboration cards alongside the existing anchors. |
+| 4. Paradigm: how models are allowed to play | planning | B03, B08, B09, B10, and B13 reviewed | Draft the interface taxonomy and privileged-vs-ecological trade-off using the dialogue-game, open-world, and specialist-interface contrasts now in reviewed state. |
+| 5. Evaluation protocols | planning | B01, B03, B04, B08, and B13 reviewed | Draft the score and calibration comparison using `TextArena`, the `clembench` line, `CollabOvercooked`, and `GTOWizardBenchmark` as methodology anchors. |
+| 6. Synthesis: what current models still fail at | planning | B01, B02, B03, B10, B12, and B13 reviewed | Build the failure-mode skeleton from reviewed anchors spanning social, memory, collaboration, and specialist-calibration settings. |
+| 7. Open problems for next-generation game benchmarks | planning | B03, B05, B08, B10, and B12 reviewed | Draft the agenda from the reviewed generalization, dialogue-game, open-world, and collaboration branches. |
 
 ## 0. Why game as benchmark
 
 - Draft goal: explain why games provide dynamic, multi-step, interactive, strategically rich, and comparatively contamination-resistant benchmark settings.
-- Likely reviewed anchors: `SmartPlay`, `GTBench`, `BALROG`, `AIGameStore`, `MCU`.
-- Open gaps: early historical precursors still need stronger reviewed support before the framing section can make a clean lineage claim.
+- Likely reviewed anchors: `SmartPlay`, `GTBench`, `BALROG`, `AIGameStore`, `MCU`, `Crafter`, `HumanLevelDiplomacy`.
+- Open synthesis focus: use the early precursor cards to bridge from formal containers to later ecological and open-ended benchmark claims without overstating direct comparability.
 
 ## 1. Historical evolution of game benchmarks
 
 - Draft goal: trace the shift from formal rule-grounded containers to diagnostic probes, ecological agent benchmarks, and open-ended challenge spaces.
-- Likely reviewed anchors: `SmartPlay`, `GTBench`, `GameBench`, `BALROG`, `Orak`, `AIGameStore`.
-- Open gaps: `InteractiveFictionGames`, `NetHackLearningEnvironment`, `Crafter`, and `HumanLevelDiplomacy` should be reviewed more cleanly before this section is treated as stable.
+- Likely reviewed anchors: `SmartPlay`, `GTBench`, `GameBench`, `BALROG`, `Orak`, `AIGameStore`, `Crafter`, `InteractiveFictionGames`, `NetHackLearningEnvironment`, `HumanLevelDiplomacy`.
+- Open synthesis focus: keep single-environment precursors, live-play milestones, and later benchmark suites distinct as the lineage broadens.
 
 ## 2. Taxonomy of game benchmarks
 
 - Draft goal: define the design-space axes and map the five narrative levels onto environment structure, world structure, scope, modality, and intent.
-- Likely reviewed anchors: `SmartPlay`, `BotzoneBench`, `BALROG`, `GameVerse`, `Orak`, `GVGAI-LLM`, `DSGBench`, `KORGym`.
-- Open gaps: edge cases in mixed batches should be checked before locking the final table wording.
+- Likely reviewed anchors: `SmartPlay`, `BotzoneBench`, `BALROG`, `GameVerse`, `Orak`, `GVGAI-LLM`, `DSGBench`, `KORGym`, `GridBasedGameCompetitions`, `clembench`, `GTOWizardBenchmark`.
+- Open synthesis focus: explain where dialogue-game frameworks, narrow prompt-format probes, and specialist anchor benchmarks sit relative to the main taxonomy.
 
 ## 3. Purpose: What game benchmarks actually measure
 
 - Draft goal: classify benchmarks by capability target and explain why games are a credible medium for each capability.
-- Likely reviewed anchors: `SmartPlay`, `GTBench`, `WerewolfArena`, `LLMHanabi`, `BALROG`, `FlashAdventure`, `TextQuests`, `StarDojo`.
-- Open gaps: pending B02, B10, and B12 cards still matter for cooperation, negotiation, and memory-heavy claims.
+- Likely reviewed anchors: `SmartPlay`, `GTBench`, `WerewolfArena`, `LLMHanabi`, `MulticulturalSpyfall`, `StrategicHanabi`, `BALROG`, `EMemBench`, `MineNPCTask`, `CollabOvercooked`, `LLMCoordination`, `TextQuests`, `StarDojo`.
+- Open synthesis focus: separate cooperation, negotiation, memory, and mixed-initiative task execution rather than collapsing them into one generic social-intelligence bucket.
 
 ## 4. Paradigm: how models are allowed to play
 
 - Draft goal: compare observation channels, action channels, scaffolds, and ecological-validity trade-offs.
-- Likely reviewed anchors: `BALROG`, `GameplayQA`, `StarBench`, `VideoGameBench`, `V-MAGE`, `LLMPlayStarCraftII`, `Orak`.
-- Open gaps: methodology-heavy reviews in B08 should be finished before freezing the interface comparison section.
+- Likely reviewed anchors: `BALROG`, `GameplayQA`, `StarBench`, `VideoGameBench`, `V-MAGE`, `LLMPlayStarCraftII`, `Orak`, `TextArena`, `Clembench`, `Clembench2024`, `ThirdParadigm`, `MineNPCTask`, `GTOWizardBenchmark`.
+- Open synthesis focus: contrast pure natural-language dialogue games, structured API interfaces, and open-world scaffolded play without flattening them into one interface family.
 
 ## 5. Evaluation protocols
 
 - Draft goal: compare win rate, completion rate, milestone scoring, Elo or arena setups, human baselines, AI anchors, and contamination arguments.
-- Likely reviewed anchors: `BotzoneBench`, `BoardGameArena`, `BALROG`, `GAMEBoT`, `KORGym`, `VMage`, `StarCraftIIArena`.
-- Open gaps: the `clembench` and `TextArena` line still needs cleaner reviewed support for the broader methodology argument.
+- Likely reviewed anchors: `BotzoneBench`, `BoardGameArena`, `BALROG`, `GAMEBoT`, `KORGym`, `VMage`, `StarCraftIIArena`, `TextArena`, `Clembench`, `Clembench2024`, `ThirdParadigm`, `CollabOvercooked`, `GTOWizardBenchmark`.
+- Open synthesis focus: separate living leaderboards, dialogue-game protocol design, process-level collaboration metrics, and fixed-anchor calibration into distinct evaluation families.
 
 ## 6. Synthesis: what current models still fail at
 
 - Draft goal: synthesize recurring failure modes across rule tracking, partial observability, social reasoning, visual grounding, long-horizon consistency, and execution under time pressure.
-- Likely reviewed anchors: `GTBench`, `BeyondScaling`, `WerewolfArena`, `BALROG`, `GameplayQA`, `FlashAdventure`, `TextAtari`, `StarDojo`.
-- Open gaps: mixed open-world and collaboration cards should be upgraded before this section is treated as stable.
+- Likely reviewed anchors: `GTBench`, `BeyondScaling`, `WerewolfArena`, `BALROG`, `GameplayQA`, `FlashAdventure`, `EMemBench`, `MineNPCTask`, `CollabOvercooked`, `LLMCoordination`, `TextAtari`, `StarDojo`.
+- Open synthesis focus: compare collaboration failures, memory failures, and long-horizon execution failures without reducing them to a single generic capability gap.
 
 ## 7. Open problems for next-generation game benchmarks
 
 - Draft goal: propose benchmark-design directions around unified interfaces, calibration, multimodal social play, and open-ended generalization.
-- Likely reviewed anchors: `AIGameStore`, `Orak`, `BALROG`, `GameVerse`, `KORGym`, `MCU`, `TeamCraft`.
-- Open gaps: the open-ended, collaboration, and dialogue-game branches still need a few more reviewed anchors before the agenda is complete.
+- Likely reviewed anchors: `AIGameStore`, `Orak`, `BALROG`, `GameVerse`, `KORGym`, `MCU`, `TeamCraft`, `TextArena`, `Clembench2024`, `MineNPCTask`, `CollabOvercooked`, `HumanLevelDiplomacy`.
+- Open synthesis focus: connect benchmark maintenance, open-world validators, collaboration protocols, and calibration design into one forward-looking agenda.

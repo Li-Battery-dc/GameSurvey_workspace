@@ -7,9 +7,9 @@
 - Paper link: https://doi.org/10.1126/science.ade9097
 - Code link: https://github.com/facebookresearch/diplomacy_cicero
 - Reading depth: structured-skim
-- Card status: card-draft
-- Confidence in this card: low
-- Review gate label: weak
+- Card status: card-reviewed
+- Confidence in this card: medium
+- Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
 - This paper presents Cicero, an AI system that achieved human-level performance in the negotiation strategy game Diplomacy by combining language modeling with strategic planning and reinforcement-learning components. Strictly speaking, it is not a benchmark paper in the same sense as the other items in this batch; its core contribution is a high-impact capability demonstration in a socially rich game environment. However, it matters greatly for this survey because Diplomacy is one of the strongest known settings where natural-language negotiation, hidden intentions, alliance formation, and tactical planning are all required together. For historical framing, this paper is a major bridge between formal game evaluation and later benchmark work on negotiation and multi-agent social intelligence.
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P0
 - Reading depth: structured-skim
 - Batch ID: B12
 - Outline sections: 0,1,2,3,5,6
 - Survey role: anchor
 - Paper card path: `paper_cards/B12/HumanLevelDiplomacy.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08

@@ -7,9 +7,9 @@
 - Paper link: https://doi.org/10.52876/jcs.1611181
 - Code link: https://github.com/research-outcome/LLM-Game-Benchmark
 - Reading depth: structured-skim
-- Card status: card-draft
+- Card status: card-reviewed
 - Confidence in this card: medium
-- Review gate label: weak
+- Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
 - This paper proposes a simple, extensible leaderboard benchmark based on grid games such as Tic-Tac-Toe, Connect Four, and Gomoku. Its main contribution is not game novelty but a controlled comparison of prompt formats: list-based state descriptions, illustrative board renderings, and image inputs. Across 2,310 simulated matches, the authors show that even simple deterministic board games reveal meaningful differences in invalid moves, missed opportunities, and sensitivity to input modality. For this survey, the paper is a useful narrow precursor for formal rule-following and prompt-format analysis rather than a central benchmark anchor.
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-draft
+- Registry status: card-reviewed
 - Priority: P2
 - Reading depth: structured-skim
 - Batch ID: B07
 - Outline sections: 1,2,3,5
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/GridBasedGameCompetitions.md`
-- Next action: review-card
-- Last updated: 2026-04-06
+- Next action: draft-section
+- Last updated: 2026-04-08
