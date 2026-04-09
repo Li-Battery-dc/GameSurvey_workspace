@@ -12,11 +12,11 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- TMGBench is a systematic strategic-reasoning benchmark built around the full Robinson-Goforth topology of 144 distinct 2x2 game types. It evaluates models on both classic matrix-game forms and synthetically generated story-based counterparts, then composes these atomic games into sequential, parallel, and nested forms to test harder multi-layered reasoning. The benchmark also introduces metrics for inconsistency, bias, and perfect accuracy rather than relying only on average correctness. For this survey, TMGBench is a strong formal-root anchor because it turns coverage, leakage mitigation, and compositional difficulty into first-class benchmark design goals.
+- TMGBench is a systematic strategic-reasoning benchmark built around the full Robinson-Goforth topology of 144 2x2 ordinal game equivalence classes. It evaluates models on both classic matrix-game forms and five GPT-4o-generated, human-inspected story-based counterparts per class, then composes these atomic games into sequential, parallel, and nested forms to test harder multi-layered reasoning. The benchmark emphasizes coverage, leakage mitigation, and structured diagnosis through perfect accuracy, inconsistency, and bias metrics rather than relying on one overall score. For this survey, TMGBench is best treated as a coverage-driven formal diagnostic benchmark.
 
 ## 2. Position in our survey
 - Why-games relevance: Matrix games let benchmark designers vary strategic structure systematically and still score responses exactly against Nash-equilibrium-based targets.
-- Historical stage: formal container
+- Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
@@ -53,69 +53,71 @@
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? partially
 - Why is a game environment especially suitable here? Matrix-game topology gives a principled way to cover the strategic design space rather than sampling a few famous games.
 
 ## 5. Interaction paradigm
 - Observation channel: text descriptions of classic payoff matrices or story-based scenarios with associated choices
 - Action channel: textual selection of one or more strategic options
 - Interface type: natural language
-- Agent scaffold allowed: none
+- Agent scaffold allowed: DA / CoT / FoToM / SoToM
 - Is there privileged API access? yes
-- How close is the setup to human play? low; the benchmark is intentionally abstract and analysis-first
-- Main ecological-validity trade-off: TMGBench gains systematic coverage and formal grading, but almost all interface and environment realism is abstracted away
+- How close is the setup to human play? low; the benchmark is intentionally abstract, prompt-based, and analysis-first
+- Main ecological-validity trade-off: TMGBench gains systematic coverage and formal grading, but almost all interface, temporal, and environment realism is abstracted away
 
 ## 6. Evaluation protocol
-- Main score: perfect accuracy against the standard strategic answer
-- Auxiliary score(s): inconsistency degree, bias degree, sub-metrics by equilibrium class, and results on sequential, parallel, and nested compositions
+- Main score: a metric family consisting of perfect accuracy rate, inconsistency degree, and bias degree
+- Auxiliary score(s): sub-metrics by equilibrium class, classic-versus-story comparisons, and results on sequential, parallel, and nested compositions
 - Evaluation style: native score / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: mainstream LLMs and later SOTA reasoning models are evaluated directly against the benchmark’s standard answers
+- Human baseline / AI anchor / self-play / model-vs-model setup: mainstream LLMs and later SOTA reasoning models are evaluated directly against benchmark-standard answers rather than against humans or other agents
 - Automatic verifiability: high
-- Calibration method: full-topology coverage, classic versus story-based settings, human-inspected synthetic scenarios, and repeated testing across equivalence classes
-- Anti-contamination argument: story-based synthetic games with topic control and human inspection are used to reduce leakage from famous canonical scenarios
-- Reliability or comparability concerns: the benchmark is extremely systematic for 2x2 games, but its abstraction may underrepresent reasoning demands found in richer sequential or multimodal games
+- Calibration method: full-topology coverage, four repeated tests per data point, classic-versus-story settings, topic-controlled synthetic scenarios, and temperature near zero during evaluation
+- Anti-contamination argument: moderate; synthetic story-based tasks, long contexts, and template generation reduce leakage risk, but the paper explicitly does not claim zero contamination and notes that familiarity with famous games may still matter
+- Reliability or comparability concerns: the benchmark is extremely systematic for 2x2 games, but its abstraction may underrepresent reasoning demands found in richer sequential or multimodal games, and its metric family is not directly comparable to win-rate-style suites
 
 ## 7. Main contributions
-- Contribution 1: Covers all 144 Robinson-Goforth 2x2 game types instead of a small handpicked subset.
-- Contribution 2: Adds story-based variants to reduce leakage and context overfitting.
-- Contribution 3: Builds sequential, parallel, and nested compositions to keep the benchmark challenging for stronger models.
+- Contribution 1: Covers all 144 Robinson-Goforth 2x2 game equivalence classes instead of a small handpicked subset.
+- Contribution 2: Adds five story-based variants per class with topic control and human inspection to reduce leakage and context overfitting.
+- Contribution 3: Builds sequential, parallel, and nested compositions plus metric families for inconsistency, bias, and perfect accuracy.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: top reasoning models can exceed 90% accuracy on atomic tasks, but inconsistency, bias, limited ToM depth, and collapse on composed forms remain significant.
+- Core empirical takeaway: top reasoning models such as o3-mini, Qwen3-32B, and deepseek-reasoner exceed 90% perfect accuracy on classic atomic tasks, but many other models fail to transfer cleanly to story-based settings, show asymmetric inconsistency or bias patterns, and degrade sharply on composed forms.
 - Notable model failure mode 1: asymmetric or biased response patterns across theoretically symmetric game classes
 - Notable model failure mode 2: weak transfer or instability between classic and story-based counterparts
 - Notable model failure mode 3: strong atomic-game performance does not carry cleanly to sequential, parallel, or nested compositions
 - Does this paper reveal a benchmark-design limitation as well? yes; its formal precision is excellent, but the abstraction level means success here does not imply competence in richer game interfaces
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how games can provide a principled coverage map for strategic reasoning rather than a grab bag of examples.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later formal benchmark that reacts directly to leakage and coverage criticisms of earlier work. One of the best papers for systematic strategic design-space coverage.
-- Best use in Section 2 (core capabilities evaluated by games): Supports precise discussion of equilibrium reasoning, ToM depth, and compositional strategic reasoning.
-- Best use in Section 3 (interaction and evaluation paradigm): Mainly as a contrast case showing what maximum formal control looks like. Strong source on inconsistency and bias metrics beyond simple accuracy.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that even perfect formal coverage still leaves ecological validity unresolved.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited use only; it can show how games provide principled coverage maps for strategic reasoning, but it is not a primary motivation anchor.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later formal diagnostic benchmark that reacts directly to leakage and coverage criticisms of earlier work.
+- Best use in Section 2 (core capabilities evaluated by games): Supports precise discussion of equilibrium reasoning, theory-of-mind prompting, context transfer, and compositional strategic reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for maximum formal control, direct answer versus CoT or ToM prompting, and metric families beyond simple accuracy.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that even near-complete formal coverage still leaves ecological validity unresolved while exposing consistency and bias failures.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench and GAMABench
 - Closest follow-up(s): later compositional or synthetic strategic benchmarks
-- Best comparison targets inside our corpus: [GTBench](D:/research_root/GameSurvey/workspace/paper_cards/B07/GTBench.md), [GameBench](D:/research_root/GameSurvey/workspace/paper_cards/B07/GameBench.md), [GAMABench](D:/research_root/GameSurvey/workspace/paper_cards/B07/GAMABench.md), [PuzzlePlex](D:/research_root/GameSurvey/workspace/paper_cards/B05/PuzzlePlex.md)
-- What this paper uniquely adds relative to neighbors: It is the clearest attempt in the corpus to make formal coverage itself the benchmark’s organizing principle.
+- Best comparison targets inside our corpus: GTBench, GameBench, GAMABench
+- What this paper uniquely adds relative to neighbors: It is the clearest attempt in the corpus to make formal coverage itself the benchmark’s organizing principle while also testing context transfer and compositional difficulty.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - TMGBench includes all 144 equivalence classes from the Robinson-Goforth topology of 2x2 games.
-- The benchmark adds five story-based variants per classic game type using synthetic generation with topic guidance and human inspection.
-- The paper evaluates classic and story-based atomic games plus sequential, parallel, and nested composed forms, and reports metrics such as inconsistency degree, bias degree, and perfect accuracy rate.
+- The benchmark adds five story-based variants per classic game type using GPT-4o generation, topic control, self-correction, and human inspection.
+- The paper evaluates classic and story-based atomic games plus sequential, parallel, and nested composed forms, and reports perfect accuracy rate, inconsistency degree, bias degree, and related sub-metrics.
+- Each evaluated model is tested four times per data point across classic and story-based settings, and the paper reports 2,880 tests per model under near-zero generation temperature.
 
 ### 11.2 Our synthesis / interpretation
 - TMGBench is one of the strongest survey sources for explaining how formal strategic benchmarks evolved from ad hoc game lists toward coverage-driven design.
-- It is best used alongside GTBench rather than instead of it: GTBench provides cleaner task variety, while TMGBench provides cleaner topological coverage.
+- It is best used alongside GTBench rather than instead of it: GTBench provides cleaner game-family variety, while TMGBench provides cleaner topological coverage and stronger diagnosis of inconsistency or bias.
 
 ### 11.3 Uncertain or needs re-check
-- If we later need the exact synthetic-data generation pipeline or the precise sub-metric formulas, re-check Sections 2.3 to 2.5.
+- If we later need the exact synthetic-data generation pipeline or human review loop, re-check Sections 2.3 and Appendix E.
+- If we later need the precise leakage argument or PPL analysis, re-check Appendix H.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread is needed; this card already captures the benchmark’s most survey-relevant contributions.
-- Which section to read next if needed: 2.3 / 2.5 / 3
+- Should we read beyond abstract + intro? why? Already completed in this audit; no further reread is needed unless we later need the exact metric formulas or leakage-analysis appendix.
+- Which section to read next if needed: 2.5 / Appendix E / Appendix H
 - Follow-up question(s): Should TMGBench be the main source for the survey’s "coverage versus realism" trade-off in formal strategic benchmarks?
 
 ## 13. Registry sync
@@ -127,5 +129,5 @@
 - Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/TMGBench.md`
-- Next action: draft-section
-- Last updated: 2026-04-05
+- Check status: unchecked
+- Last updated: 2026-04-09

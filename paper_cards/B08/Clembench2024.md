@@ -12,7 +12,7 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- clembench-2024 is an expansion of the original clembench framework that stresses dynamic benchmark maintenance, multilingual evaluation, and broader multi-action interaction. The paper argues that dialogue-game evaluation can remain current without collapsing into contamination-prone static test sets, and it shows that human performance still remains substantially above top model performance. It also uses the framework to examine questions such as how prompting language affects agent behavior. For this survey, the paper is useful because it turns clembench from a proof-of-concept framework into an evolving benchmark program.
+- clembench-2024 is a follow-up validation paper for the original clembench framework rather than a completely new benchmark family. It argues that dialogue-game evaluation can remain current without collapsing into contamination-prone static test sets, shows that even the best models remain well below human expert performance, and uses the framework to study questions such as multilingual prompting effects. For this survey, the paper is useful because it turns clembench from a proof-of-concept framework into an explicitly dynamic, maintainable benchmark program.
 
 ## 2. Position in our survey
 - Why-games relevance: Dialogue games make it possible to keep evaluation dynamic, multi-turn, and automatically scoreable while still targeting interactive agency.
@@ -25,7 +25,7 @@
 ### 3.1 Environment structure
 - Information structure: mixed
 - Transition structure: mixed
-- Agent structure: multi-agent
+- Agent structure: mixed
 - Social structure: mixed
 - Time structure: turn-based
 
@@ -36,7 +36,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: curated suite
-- Number of games / tasks: expanded clembench suite with dynamic, multilingual, and multi-action extensions
+- Number of games / tasks: updated clembench benchmark with refreshed instances and a multilingual case study over the reference game
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -53,7 +53,7 @@
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? partially
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Game-like interaction supports repeatable, multi-turn, automatically scoreable evaluation while staying flexible enough to add new test forms.
 
 ## 5. Interaction paradigm
@@ -66,17 +66,17 @@
 - Main ecological-validity trade-off: clembench-2024 improves realism relative to static QA but remains less open-ended than natural user interaction
 
 ## 6. Evaluation protocol
-- Main score: game or task success within the dialogue framework
-- Auxiliary score(s): multilingual comparisons, human-versus-model gaps, and non-saturation analyses
+- Main score: overall clembench score, computed from percentage played and average quality score across games
+- Auxiliary score(s): multilingual comparisons, human-versus-model gaps, and rank-correlation analyses against other benchmarks
 - Evaluation style: completion rate / hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: model comparisons plus human reference performance
 - Automatic verifiability: mixed-high
-- Calibration method: dynamic benchmark updates, multilingual prompt variants, and complementary task design
+- Calibration method: refreshed game instances, fixed game specifications, multilingual prompt variants, and game-specific automatic scoring
 - Anti-contamination argument: the paper explicitly argues that dynamic interactive games help avoid contamination and keep pace with model releases
 - Reliability or comparability concerns: the exact conclusions depend on which games and prompt languages are instantiated in the framework
 
 ## 7. Main contributions
-- Contribution 1: Extends clembench into a more dynamic, complementary, multilingual benchmark and framework.
+- Contribution 1: Revalidates clembench as a dynamic, complementary, multilingual benchmark and framework.
 - Contribution 2: Shows that human performance remains much higher than top model performance.
 - Contribution 3: Demonstrates that the framework can study practical questions such as prompting-language effects and model choice for interactive systems.
 
@@ -104,7 +104,8 @@
 ### 11.1 Direct paper-supported facts
 - The paper presents clembench-2024 as a dynamic, complementary, multilingual benchmark and framework for LLMs as multi-action agents.
 - It argues that the framework can keep up with new model developments while helping avoid data contamination.
-- The authors report that human performance is substantially higher than even the best models and use the framework to study prompting-language effects.
+- The authors report that human expert performance is substantially higher than even the best models and use the framework to study prompting-language effects.
+- The paper reports stronger rank correlation with Chatbot Arena than with HELM, positioning clembench as a more interaction-aligned complement to static reference benchmarks.
 
 ### 11.2 Our synthesis / interpretation
 - This paper matters less for introducing a new benchmark family than for showing how an interactive benchmark can remain scientifically useful over time.
@@ -114,8 +115,8 @@
 - Re-check the exact suite composition and multilingual setup if we later need a more precise comparison with TextArena or GAMEBoT.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes, if we later want the exact multilingual or dynamic-update protocol.
-- Which section to read next if needed: framework changes / multilingual analysis / discussion
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit; revisit only if we later need the exact multilingual prompt translations or leaderboard deltas across timepoints.
+- Which section to read next if needed: Section 3 / Section 5 / Section 7
 - Follow-up question(s): Which parts of clembench-2024 most directly improve contamination resistance rather than only expanding task breadth?
 
 ## 13. Registry sync
@@ -127,5 +128,5 @@
 - Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/Clembench2024.md`
-- Next action: draft-section
-- Last updated: 2026-04-08
+- Check status: unchecked
+- Last updated: 2026-04-09

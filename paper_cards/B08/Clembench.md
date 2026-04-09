@@ -25,7 +25,7 @@
 ### 3.1 Environment structure
 - Information structure: mixed
 - Transition structure: mixed
-- Agent structure: multi-agent
+- Agent structure: mixed
 - Social structure: mixed
 - Time structure: turn-based
 
@@ -36,7 +36,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: curated suite
-- Number of games / tasks: 5 interaction settings
+- Number of games / tasks: 5 interaction settings in v1.0, instantiated as 7 benchmark datasets and 250 instances
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -66,14 +66,14 @@
 - Main ecological-validity trade-off: clembench gains control and repeatability by using constrained dialogue games rather than open-ended real-world interaction
 
 ## 6. Evaluation protocol
-- Main score: task or game success
-- Auxiliary score(s): instruction-following quality and objective-fulfillment metrics by game
+- Main score: percentage of episodes played to completion plus game-specific quality scores, summarized overall as `clemscore`
+- Auxiliary score(s): per-game quality metrics such as speed, F1, or Cohen's kappa depending on the setting
 - Evaluation style: completion rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: chat-optimized models are compared across the same interaction settings
+- Human baseline / AI anchor / self-play / model-vs-model setup: chat-optimized models are evaluated in self-play across the same interaction settings; the paper assumes human performance would be near ceiling but does not report a human baseline
 - Automatic verifiability: mixed-high
-- Calibration method: repeated, automatically scoreable dialogue games with shared prompts and game logic
+- Calibration method: programmatic Game Master control, repeated benchmark instances, and fixed prompts shared across models
 - Anti-contamination argument: constructed interaction settings reduce direct overlap with standard benchmark instances
-- Reliability or comparability concerns: results depend on the chosen game set and on how much each game captures real conversational use
+- Reliability or comparability concerns: results depend on the chosen game set, some experiments use relatively small instance counts, and closed-model APIs can drift over time
 
 ## 7. Main contributions
 - Contribution 1: Introduces a reusable dialogue-game framework for evaluating chat-optimized language models.
@@ -103,8 +103,9 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The paper investigates five interaction settings for evaluating chat-optimized language models through gameplay.
+- Benchmark v1.0 contains 250 instances distributed across taboo, wordle, wordle+clue, wordle+clue+critic, drawing, reference, and private/shared datasets.
 - It argues that LLMs can be meaningfully evaluated by exposing them to constrained game-like settings designed to challenge specific capabilities.
-- The authors report that the metrics remain far from saturated and that newer models generally perform better.
+- The authors report that the metrics remain far from saturated and that newer models generally perform better, with GPT-4 achieving the strongest overall reported `clemscore`.
 
 ### 11.2 Our synthesis / interpretation
 - clembench is less about game diversity than about evaluation philosophy, which makes it especially relevant for the survey's paradigm section.
@@ -114,8 +115,8 @@
 - Re-check the exact names and scoring details of the five interaction settings if we later compare dialogue-game frameworks in more detail.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes, if we need the individual game settings or scoring details for Section 5.
-- Which section to read next if needed: framework / interaction settings / evaluation
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit; revisit only if we later need exact prompt templates or per-game scoring formulas.
+- Which section to read next if needed: Section 4 / Section 5 / Appendix B
 - Follow-up question(s): Which of the five settings best captures benchmarkable conversational agency rather than narrow instruction following?
 
 ## 13. Registry sync
@@ -127,5 +128,5 @@
 - Outline sections: 1,2,3
 - Survey role: representative
 - Paper card path: `paper_cards/B08/Clembench.md`
-- Next action: draft-section
-- Last updated: 2026-04-08
+- Check status: unchecked
+- Last updated: 2026-04-09

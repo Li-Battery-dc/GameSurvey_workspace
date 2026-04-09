@@ -12,12 +12,12 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- The NetHack Learning Environment adapts the classic terminal-based roguelike NetHack into a scalable research benchmark. The paper emphasizes that NetHack combines procedural generation, stochasticity, long horizons, hidden information, resource management, and rich symbolic observations in one difficult but efficiently simulated environment. NLE also provides a task suite and baseline results, making it both a benchmark and a long-term research environment. For this survey, NLE is a major historical precursor for long-horizon, partial-observability, and text or symbol-mediated game-agent evaluation.
+- The NetHack Learning Environment adapts the classic terminal-based roguelike NetHack into a scalable research benchmark. The paper emphasizes that NetHack combines procedural generation, stochasticity, long horizons, hidden information, resource management, and rich symbolic observations in one difficult but efficiently simulated environment. NLE also provides a task suite, replay tooling, and RL baselines, making it both a benchmark and a long-term research platform rather than a lightweight one-off evaluation set. For this survey, NLE is a major historical precursor for long-horizon, partial-observability, and symbol-mediated game-agent evaluation.
 
 ## 2. Position in our survey
 - Why-games relevance: NetHack compresses exploration, planning, survival, and partial observability into a single environment that is both hard and automatically evaluable.
-- Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Historical stage: diagnostic capability probe
+- Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
@@ -50,20 +50,20 @@
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? no
-- Does it test visual grounding / spatial-temporal reasoning? partially
+- Does it test visual grounding / spatial-temporal reasoning? no in the modern visual-agent sense; it studies symbolic spatial reasoning instead
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? yes for within-environment systematic generalization over unseen seeds and roles, but not for cross-title transfer
 - Why is a game environment especially suitable here? NetHack is rich enough to stress planning and exploration for years while still being cheap to simulate and precisely scored.
 
 ## 5. Interaction paradigm
 - Observation channel: terminal-style text and symbolic game state
 - Action channel: discrete NetHack actions
-- Interface type: natural language / structured action space / hybrid
+- Interface type: API / structured action space / hybrid
 - Agent scaffold allowed: none in the benchmark core
 - Is there privileged API access? yes through environment instrumentation and task suite wrappers
-- How close is the setup to human play? medium; the original game is preserved, but benchmark wrappers expose machine-friendly state and tasks
-- Main ecological-validity trade-off: NLE preserves the difficulty structure of a real game while simplifying perception relative to modern visual or embodied environments
+- How close is the setup to human play? medium-low; the original game is preserved, but benchmark wrappers expose machine-friendly arrays and task rewards
+- Main ecological-validity trade-off: NLE preserves the difficulty structure of a real game while replacing most human-facing UI friction with symbolic observations and task-specific reward wrappers
 
 ## 6. Evaluation protocol
 - Main score: task-suite performance and in-game progress
@@ -92,30 +92,32 @@
 - Best use in Section 1 (taxonomy and evolutionary levels): Important precursor in the long-horizon game-agent lineage. Useful for procedural, single-game, terminal-mediated benchmarks.
 - Best use in Section 2 (core capabilities evaluated by games): Supports exploration, planning, and long-horizon robustness claims.
 - Best use in Section 3 (interaction and evaluation paradigm): Helpful contrast against later natural-language or GUI-heavy interfaces. Good reference for task-suite calibration in a single hard game.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why later LLM-agent work often seeks more instrumented interfaces over similarly hard worlds.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why later agent work often seeks more instrumented interfaces or narrower wrappers over similarly hard worlds.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): ALE, Obstacle Tower, BabyAI, classic roguelike RL environments
-- Closest follow-up(s): Jericho-derived text-game benchmarks and later long-horizon game-agent evaluations
-- Best comparison targets inside our corpus: InteractiveFictionGames, TextQuests, Crafter, MineNPCTask
-- What this paper uniquely adds relative to neighbors: It offers a real, procedurally generated hard game with long-horizon complexity but without relying on rich visual interfaces.
+- Closest follow-up(s): later long-horizon symbolic-game and text-game evaluation platforms
+- Best comparison targets inside our corpus: InteractiveFictionGames, Crafter, TextQuests, CivRealm
+- What this paper uniquely adds relative to neighbors: It offers a real, procedurally generated hard game with long-horizon complexity, formal task wrappers, and machine-friendly symbolic observations.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The paper presents NLE as a scalable, procedurally generated, stochastic, rich, and challenging environment based on NetHack.
 - It explicitly motivates the environment as a medium for studying exploration, planning, skill acquisition, and language-conditioned RL.
+- The default environment exposes symbolic observations such as glyphs, chars, colors, bottom-line stats, messages, and inventory tensors over 93 available actions.
 - The paper provides a task suite and baseline deep RL results, emphasizing that only early-game success is currently demonstrated.
 
 ### 11.2 Our synthesis / interpretation
 - NLE is a useful historical anchor because it shows how a single hard game can function as a long-term benchmark platform.
 - It is best used as a precursor and comparison target rather than as a direct peer to modern LLM benchmark papers.
+- It should support the procedural-generalization and hard-world lineage, not claims about human-like multimodal interaction.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact NLE task-suite composition and observation interfaces if we later compare it closely with parser-based text benchmarks.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? A targeted reread is worthwhile if we later want to position NLE more precisely in the historical-evolution section.
-- Which section to read next if needed: task suite / environment design / baseline experiments
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need exact task definitions, observation tensors, or evaluation protocol details.
+- Which section to read next if needed: Sections 2.2 to 2.5 and Appendix B to E
 - Follow-up question(s): How should NLE be framed relative to text-only long-horizon benchmarks such as Jericho and TextQuests?
 
 ## 13. Registry sync
@@ -127,5 +129,6 @@
 - Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B10/NetHackLearningEnvironment.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-08
+- Last updated: 2026-04-09

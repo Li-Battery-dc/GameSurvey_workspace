@@ -12,12 +12,12 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- CivRealm is a Civilization-like decision-making environment built on Freeciv that targets learning and reasoning in long-horizon, multi-agent strategy play. It supports both full games that can last for hours or days and a large family of automatically generated mini-games spanning development, battle, and diplomacy. The environment offers both tensor and language APIs, explicitly foregrounding imperfect information, stochasticity, multi-goal planning, diplomacy, and changing action spaces. For this survey, CivRealm is a foundational benchmark for long-horizon strategic worlds that sit between specialist board games and open-ended social simulators.
+- CivRealm is a Civilization-like decision-making environment built on Freeciv that targets learning and reasoning in long-horizon, multi-agent strategy play. It supports both full games that can last for hours or days and a large family of automatically generated mini-games spanning development, battle, and diplomacy. The environment offers both tensor and language APIs, explicitly foregrounding imperfect information, stochasticity, multi-goal planning, diplomacy, communication, and changing action spaces. For this survey, CivRealm is a strong benchmark platform for long-horizon strategic worlds that sit between specialist board games and broader open-ended world benchmarks.
 
 ## 2. Position in our survey
 - Why-games relevance: Civilization-like worlds compress economics, warfare, diplomacy, and technology planning into one persistent strategic environment.
 - Historical stage: open-ended general-game benchmark
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence / L5 cross-game generalization
+- Narrative level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 1,2,4
 - Role in corpus: representative
 
@@ -53,17 +53,17 @@
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? yes for within-platform generalization to novel maps, rules, and mini-games, but not for cross-title transfer
 - Why is a game environment especially suitable here? Civilization-like games naturally combine multiple strategic objectives, hidden information, and long-range consequences in a single formal world.
 
 ## 5. Interaction paradigm
 - Observation channel: structured information about map tiles, units, cities, government, technology, and diplomacy
 - Action channel: rich discrete actions over unit, city, government, technology, and diplomacy operations
 - Interface type: API / hybrid
-- Agent scaffold allowed: other
+- Agent scaffold allowed: other; the platform provides tensor and language APIs, and the language baselines in the paper use AutoGPT-like decomposition rather than pure direct play
 - Is there privileged API access? yes
 - How close is the setup to human play? medium-low; it captures strategic structure well but abstracts away the original GUI
-- Main ecological-validity trade-off: CivRealm preserves deep strategic structure while sacrificing native-interface cognition and real-time pressures
+- Main ecological-validity trade-off: CivRealm preserves deep strategic structure while sacrificing native-interface cognition and almost all human-like interaction friction
 
 ## 6. Evaluation protocol
 - Main score: aggregated game score plus task-specific mini-game victory criteria
@@ -89,16 +89,16 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that strategy games can bundle many real-world decision dimensions into one environment.
-- Best use in Section 1 (taxonomy and evolutionary levels): A key waypoint in the move from narrow games toward broader decision worlds. Helps define open-ended, multi-goal strategy worlds.
+- Best use in Section 1 (taxonomy and evolutionary levels): A key waypoint in the move from narrow games toward broader decision worlds. Helps define open-ended, multi-goal strategy worlds without claiming human-like interface fidelity.
 - Best use in Section 2 (core capabilities evaluated by games): Useful for planning, diplomacy, uncertainty, and transfer discussions.
 - Best use in Section 3 (interaction and evaluation paradigm): A clear example of language/API access to a deep strategy environment. Good reference for combining full-game and mini-game evaluation.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for benchmarks that test strategic breadth without collapsing into overly narrow tasks.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): SmartPlay, OpenGuanDan
-- Closest follow-up(s): StarDojo, DSGBench
-- Best comparison targets inside our corpus: SmartPlay, StarDojo, DSGBench, LLMPlayStarCraftII
-- What this paper uniquely adds relative to neighbors: It offers one of the clearest long-horizon strategic worlds with both diplomacy and curriculum-like mini-games.
+- Closest predecessor(s): StarCraft-style strategy environments and earlier Civilization or Diplomacy-inspired decision-making work
+- Closest follow-up(s): later benchmark platforms that combine broad strategic worlds with more explicit agent-facing interfaces
+- Best comparison targets inside our corpus: DSGBench, OpenGuanDan, HumanLevelDiplomacy, StarDojo
+- What this paper uniquely adds relative to neighbors: It offers one of the clearest long-horizon strategic worlds with both diplomacy and automatically generated curriculum-like mini-games under one platform.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
@@ -109,15 +109,16 @@
 ### 11.2 Our synthesis / interpretation
 - CivRealm is a strong representative of open-ended strategic-world benchmarks rather than a narrow single-game probe.
 - It is especially valuable for contrasting full-world evaluation against decomposed diagnostic mini-games.
+- It is better used as a strategic-world generalization platform than as evidence of ecological or human-like play.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact mini-game taxonomy and reward definitions if we later need a formal comparison table.
 - Re-check the strongest reported language-agent baseline numbers for full game versus mini-games.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes later, because this paper can anchor the strategic-world section.
-- Which section to read next if needed: full-game observations / mini-game generation / evaluation metrics
-- Follow-up question(s): Which mini-games transfer best to full-game competence, if any?
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need exact full-game score dimensions or the detailed BaseLang/Mastaba setup.
+- Which section to read next if needed: Sections 3.1 to 3.2 and Appendix A.1 to A.2
+- Follow-up question(s): Which mini-games transfer best to full-game competence, and how much of the difficulty comes from diplomacy versus dynamic action growth?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -128,5 +129,6 @@
 - Outline sections: 1,2,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/CivRealm.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

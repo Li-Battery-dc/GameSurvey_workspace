@@ -12,12 +12,12 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- Interactive Fiction Games: A Colossal Adventure introduces Jericho, an environment for studying autonomous language agents in human-authored text-adventure games. The paper argues that parser-based interactive fiction combines combinatorial action spaces, language understanding, commonsense reasoning, and long-horizon planning in a single benchmark family. Jericho supports score detection, move counts, and world-change tracking for a set of 56 human-made games, which makes these historically important text games newly usable as research benchmarks. For this survey, the paper is a key precursor for later long-horizon text-game benchmarks such as TextQuests.
+- Interactive Fiction Games: A Colossal Adventure introduces Jericho, an environment for studying autonomous language agents in human-authored text-adventure games. The paper argues that parser-based interactive fiction combines combinatorial action spaces, language understanding, commonsense reasoning, and long-horizon planning in a single benchmark family. Jericho supports score detection, move counts, world-change tracking, and template-based action generation for a set of 56 supported human-made games, which makes these historically important text games newly usable as research benchmarks. For this survey, the paper is a key precursor for later long-horizon text-game benchmarks such as TextQuests, but its results should be read alongside the strong instrumentation Jericho provides.
 
 ## 2. Position in our survey
 - Why-games relevance: Interactive fiction exposes language grounding, exploration, and long-horizon planning inside environments with sparse feedback and machine-verifiable progress.
-- Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Historical stage: diagnostic capability probe
+- Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
@@ -60,10 +60,10 @@
 - Observation channel: room descriptions, parser feedback, inventory changes, score, and move counts
 - Action channel: free-form text commands
 - Interface type: natural language
-- Agent scaffold allowed: none in the core benchmark framing
+- Agent scaffold allowed: other; Jericho can expose templates, parser vocabulary, world objects, and valid-action signals as handicaps
 - Is there privileged API access? yes; Jericho exposes score, move count, and world-change information for supported games
-- How close is the setup to human play? medium-high; play remains parser-based, but the environment instrumentation makes learning and evaluation easier than raw emulator use
-- Main ecological-validity trade-off: Jericho preserves classic text-game interaction while adding benchmark instrumentation that slightly reduces opacity
+- How close is the setup to human play? medium; play remains parser-based, but the environment instrumentation materially reduces the raw opacity of the original games
+- Main ecological-validity trade-off: Jericho preserves classic text-game interaction while adding benchmark instrumentation and action-space shortcuts that make learning and evaluation easier than unaided human-style play
 
 ## 6. Evaluation protocol
 - Main score: in-game score or game progress
@@ -73,7 +73,7 @@
 - Automatic verifiability: high for supported games
 - Calibration method: standardized environment support across 56 games with score and world-change detection
 - Anti-contamination argument: not central
-- Reliability or comparability concerns: parser ambiguity and unsupported-game coverage remain limitations, and some methods rely on walkthrough-derived action reductions
+- Reliability or comparability concerns: parser ambiguity and unsupported-game coverage remain limitations, and the strongest learning setups rely on Jericho handicaps such as valid-action detection or template-restricted action spaces
 
 ## 7. Main contributions
 - Contribution 1: Introduces Jericho as a learning environment for human-authored interactive fiction games.
@@ -92,7 +92,7 @@
 - Best use in Section 1 (taxonomy and evolutionary levels): Core historical root for later text-game agent benchmarks. Useful for the text-adventure region of the survey taxonomy.
 - Best use in Section 2 (core capabilities evaluated by games): Supports long-horizon planning, exploration, and rule grounding.
 - Best use in Section 3 (interaction and evaluation paradigm): Anchor case for free-form natural-language action. Important precursor for score-based and progress-based text-game evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why long-horizon text benchmarks remain hard even with strong language models.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why long-horizon text benchmarks remain hard and why strong instrumentation can change the benchmark question.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): TextWorld and earlier text-game RL work
@@ -104,18 +104,20 @@
 ### 11.1 Direct paper-supported facts
 - The paper introduces Jericho as an environment for man-made interactive fiction games and argues that IF games are an excellent testbed for language-based autonomous agents.
 - Jericho supports score detection, move counts, and world-change detection for 56 supported games.
+- Jericho also exposes templates and parser vocabulary that can be combined into a tractable game-specific action space.
 - The paper highlights combinatorial action spaces, language understanding, and commonsense reasoning as central challenges.
 
 ### 11.2 Our synthesis / interpretation
 - Jericho is a foundational precursor card for the survey because later text-game work repeatedly builds on its framing of long-horizon language environments.
 - It is especially useful for connecting classical text games to modern LLM-agent benchmarks.
+- It should be cited as an instrumented text-game platform, not as a clean ecological benchmark in the same sense as later end-to-end agent evaluations.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact baseline agents and how much action-space reduction they use if we later compare Jericho directly with TextQuests.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes, if we later need a cleaner historical bridge from TextWorld to modern IF-agent benchmarks.
-- Which section to read next if needed: environment support / experiments / discussion
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need detailed comparisons among DRRN, TDQN, and NAIL or a precise account of Jericho handicaps.
+- Which section to read next if needed: Sections 4 to 6
 - Follow-up question(s): How much of later long-horizon text-agent progress comes from better backbones versus better action-space management?
 
 ## 13. Registry sync
@@ -127,5 +129,6 @@
 - Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B10/InteractiveFictionGames.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-08
+- Last updated: 2026-04-09

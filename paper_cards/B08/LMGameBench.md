@@ -12,12 +12,12 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- LMGAME-BENCH is a six-game benchmark for testing LLMs and VLMs on classical video games under both raw and scaffolded settings. Its main contribution is not only the game suite itself, but the gaming harness around it: perception modules, memory and reflection support, contamination checks, and prompt-standardization procedures that make game evaluation more discriminative and interpretable. The paper also analyzes how game performance relates to other benchmark families and shows that RL training on some games transfers to planning and agentic tasks such as BlocksWorld and WebShop. For this survey, LMGAME-BENCH is one of the strongest diagnostic-suite papers because it treats interface scaffolding, contamination, and prompt variance as benchmark-design variables rather than implementation details.
+- LMGAME-BENCH is a six-game video-game benchmark built around Super Mario Bros., Tetris, Sokoban, Candy Crush, 2048, and Ace Attorney, all exposed through a unified Gym-style API. The paper's main contribution is not just the suite, but the benchmark harness layered on top of it: optional perception, memory, and reasoning support, bounded contamination checks, and prompt-standardization procedures intended to make rankings more discriminative and interpretable. Across 13 frontier models, the authors compare raw and harnessed play, then use correlation analysis and RL transfer studies to argue that different games load on different capability mixtures. For this survey, the paper is most useful as evidence that benchmark results in games depend heavily on interface design, prompt control, and contamination handling rather than on game choice alone.
 
 ## 2. Position in our survey
 - Why-games relevance: Video games stress perception, planning, memory, and low-fault-tolerance action in ways that are easy to score yet difficult to saturate.
-- Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L4 visual agency / L5 cross-game generalization
+- Historical stage: diagnostic capability probe
+- Narrative level(s): L2 strategic reasoning / L4 visual agency
 - Most relevant outline section(s): 0,1,2,3
 - Role in corpus: representative
 
@@ -30,14 +30,14 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): platformer / puzzle / adventure / other
+- World type(s): platformer / puzzle / adventure
 - Real game / simulated game / designed task-game hybrid: curated suite of established video games with a common harness
 - Benchmark unit: game episode
 
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 6 games
-- Benchmark intent: diagnostic evaluation / train+eval foundation
+- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed
@@ -45,8 +45,8 @@
 - Perception burden removed: when the harness is enabled, perception modules and memory modules expose more machine-friendly state descriptions
 
 ## 4. What this benchmark measures
-- Primary capability target: game-agent competence under both raw and scaffolded interfaces
-- Secondary capability target(s): effect of perception and memory scaffolds, contamination sensitivity, prompt sensitivity, and transfer from RL game training
+- Primary capability target: game-agent competence under both raw and harnessed interfaces
+- Secondary capability target(s): sensitivity to perception and memory scaffolds, prompt variance, bounded contamination risk, and transfer from game-based RL training
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? no
@@ -57,66 +57,71 @@
 - Why is a game environment especially suitable here? Games combine perception, state tracking, and sequential control in one verifiable loop, making them a compact proxy for broader agentic competence.
 
 ## 5. Interaction paradigm
-- Observation channel: game screenshots, extracted symbolic or textual state representations, and optional memory/reflection traces
-- Action channel: game actions chosen turn by turn through the gaming harness
-- Interface type: GUI interaction / API / hybrid
+- Observation channel: raw screenshots or extracted textual or symbolic state descriptions, optionally augmented with short trajectory memory and reflection traces
+- Action channel: discrete game actions selected turn by turn through the unified Gym-style API
+- Interface type: API / structured action space / hybrid
 - Agent scaffold allowed: memory / reflection / other
 - Is there privileged API access? yes
-- How close is the setup to human play? medium; the games are real, but the harness can substantially reduce perceptual burden
-- Main ecological-validity trade-off: LMGAME-BENCH spans real games, yet its strongest results often come from harnessed settings that blend ecological play with diagnostic abstraction
+- How close is the setup to human play? low-to-medium; the games are real, but the strongest settings rely on backend-assisted textualization and memory support
+- Main ecological-validity trade-off: the benchmark preserves real commercial or canonical games, but its most informative results come from privileged harness settings that trade human-like play for diagnostic separation
 
 ## 6. Evaluation protocol
-- Main score: normalized per-game benchmark score
-- Auxiliary score(s): harness-versus-no-harness comparisons, contamination analyses, prompt-variance analyses, benchmark-correlation studies, and RL transfer results
+- Main score: per-game native rewards, including progression rewards or long-horizon rewards depending on the game
+- Auxiliary score(s): harness-versus-no-harness comparisons, module ablations, contamination analyses, prompt-variance analyses, benchmark-correlation studies, and RL transfer results
 - Evaluation style: native score / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: 13 state-of-the-art models are compared with and without harness support, plus random-play baselines and human-level proficiency gaps
+- Human baseline / AI anchor / self-play / model-vs-model setup: 13 frontier models are compared with and without harness support, with random-play baselines as the explicit reference point
 - Automatic verifiability: high
-- Calibration method: standardized prompts, DSPy-based prompt optimization, contamination checks, and module ablations for perception and memory
-- Anti-contamination argument: the paper explicitly tests vision-level contamination in Super Mario Bros and text-level contamination in Ace Attorney, then introduces mitigation procedures
-- Reliability or comparability concerns: the benchmark meaningfully changes when the harness is enabled, so backbone comparisons depend on interface choices as much as on raw model ability
+- Calibration method: standardized prompt optimization with DSPy, module ablations, paired-sample significance tests, and contamination-mitigation interventions for the checked games
+- Anti-contamination argument: the paper explicitly checks vision-level contamination in Super Mario Bros and text-level contamination in Ace Attorney, then mitigates the latter with prompt interventions; it does not provide equally strong contamination evidence for every game in the suite
+- Reliability or comparability concerns: rankings depend strongly on harness choice, Super Mario Bros is too high-variance for some correlation analyses, and some expensive evaluations are single-run only
 
 ## 7. Main contributions
 - Contribution 1: Builds a six-game benchmark plus harness for evaluating LLMs and VLMs on video games.
-- Contribution 2: Treats perception modules, memory, contamination mitigation, and prompt standardization as benchmark infrastructure.
-- Contribution 3: Connects game performance to other benchmark families and to RL transfer on planning or agentic tasks.
+- Contribution 2: Treats perception modules, memory, contamination mitigation, and prompt standardization as part of benchmark infrastructure rather than mere implementation detail.
+- Contribution 3: Connects game performance to other benchmark families and to RL transfer on planning and agentic tasks.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: without harnesses, many runs are near random; with harnesses, performance gaps become clearer, but even top models remain far below human-level play.
-- Notable model failure mode 1: poor raw visual perception and long-horizon planning drive many near-random runs
-- Notable model failure mode 2: prompt sensitivity remains large even among empirically tuned prompts
-- Notable model failure mode 3: contamination can distort apparent ability, especially in games with public transcripts or iconic visual assets
-- Does this paper reveal a benchmark-design limitation as well? yes; the benchmark shows that scaffold choice can dominate model ranking, which complicates comparisons unless the interface is reported explicitly
+- Core empirical takeaway: without harnesses, many model-game runs sit near random baselines, while harness support makes the benchmark more discriminative but also reveals how strongly interface assistance shapes rankings.
+- Notable model failure mode 1: poor raw visual perception and weak long-horizon control leave many unharnessed runs near zero or near-random performance.
+- Notable model failure mode 2: prompt sensitivity remains substantial even after empirical tuning, motivating the paper's DSPy-based standardization step.
+- Notable model failure mode 3: RL training on simplified games transfers to cross-game planning and WebShop, but not to math or coding benchmarks such as GSM8K and BIRD.
+- Does this paper reveal a benchmark-design limitation as well? yes; it shows that scaffold choice, contamination handling, and prompt protocol can materially change what the benchmark score means
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games stress a composition of abilities usually benchmarked in isolation.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move from simply using games to building benchmark-plus-harness ecosystems around them. Useful for discussing real-game suites, scaffolded interfaces, and contamination-aware benchmark design.
-- Best use in Section 2 (core capabilities evaluated by games): Covers perception, planning, memory, and some transfer.
-- Best use in Section 3 (interaction and evaluation paradigm): One of the best sources on how much the interface itself shapes game-agent performance. Strong reference for prompt variance, contamination studies, and module ablations.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmarks must expose scaffolds and contamination checks, not hide them.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the claim that games jointly stress perception, memory, and sequential planning in a closed-loop setting.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as a diagnostic-suite example that sits between raw visual game play and heavily scaffolded benchmark infrastructure rather than as a pure ecological benchmark.
+- Best use in Section 2 (core capabilities evaluated by games): Useful for showing that one suite can probe different mixtures of spatial reasoning, long-context language understanding, and long-horizon planning.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the strongest sources for the claim that observation abstraction, memory support, prompt control, and contamination mitigation all change what a game benchmark is measuring.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need to disclose interface privilege and bounded contamination evidence instead of treating benchmark scores as directly comparable across setups.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): BALROG and earlier video-game suite benchmarks
+- Closest predecessor(s): BALROG and earlier multimodal game-suite benchmarks
 - Closest follow-up(s): KORGym and broader benchmark-platform papers
-- Best comparison targets inside our corpus: [Balrog](D:/research_root/GameSurvey/workspace/paper_cards/B03/Balrog.md), [Orak](D:/research_root/GameSurvey/workspace/paper_cards/B05/Orak.md), [KORGym](D:/research_root/GameSurvey/workspace/paper_cards/B08/KORGym.md), [GAMEBoT](D:/research_root/GameSurvey/workspace/paper_cards/B08/GAMEBoT.md)
-- What this paper uniquely adds relative to neighbors: It makes benchmark infrastructure itself part of the scientific claim by analyzing harnessing, contamination, and prompt standardization together.
+- Best comparison targets inside our corpus: Balrog, GAMEBoT, KORGym, Orak
+- What this paper uniquely adds relative to neighbors: It turns harness design, contamination mitigation, and prompt standardization into part of the benchmark contribution, then ties those choices to correlation and transfer analyses.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- LMGAME-BENCH evaluates 13 models on six games and introduces harness modules for perception, memory, and prompt optimization.
-- The paper reports that 40% of unharnessed game runs fail to beat random baselines, whereas 86.7% of harnessed runs do so.
-- RL training on some games improves both in-domain gaming performance and some out-of-domain planning or agentic benchmarks.
+- LMGAME-BENCH evaluates 13 models on six games: Super Mario Bros., Tetris, Sokoban, Candy Crush, 2048, and Ace Attorney.
+- The paper introduces optional perception, memory, and reasoning support through a unified gaming harness and compares model performance with and without that support.
+- Excluding text-only models, 40% of unharnessed runs fail to beat random-play baselines, whereas 86.7% of harnessed runs beat the random baseline.
+- The contamination study is explicit for only two cases: vision-level checks in Super Mario Bros and text-level checks plus prompt-based mitigation in Ace Attorney.
+- RL training on simplified Sokoban and Tetris improves cross-game planning performance and WebShop, but does not improve GSM8K or BIRD in the reported experiments.
 
 ### 11.2 Our synthesis / interpretation
 - LMGAME-BENCH is one of the clearest papers for arguing that benchmark design now includes interface engineering, not just task selection.
-- It is especially valuable because it does not treat contamination and prompt variance as afterthoughts.
+- It is more defensible as a Section 3 paradigm paper than as a clean ecological-play benchmark, because the paper's own strongest results depend on privileged harness settings.
+- Its contamination contribution is useful for methodology discussion, but the evidence is bounded and should not be inflated into a blanket anti-contamination guarantee for all six games.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check Sections 3.2 and 3.3 if we later need the exact low-rank factorization findings or the strongest transfer numbers into BlocksWorld and WebShop.
+- Re-check Appendix C if we later need exact prompt-variance reductions for specific games.
+- Re-check Appendix E or F if we later need exact paired-test or effect-size values for harness gains.
+- The paper does not provide a full human baseline table, so avoid phrasing that implies a direct human-versus-model benchmark.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? A targeted reread is likely worthwhile later because this paper can support multiple survey sections.
-- Which section to read next if needed: 2.2 / 3.2 / 3.3
-- Follow-up question(s): Should LMGAME-BENCH or Orak anchor the survey’s discussion of scaffold-heavy game benchmark platforms?
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit; no additional general read is required unless we need appendix-level numerical details.
+- Which section to read next if needed: Appendix B / Appendix C / Appendix E / Appendix F
+- Follow-up question(s): Use this paper mainly as a Section 3 anchor on interface privilege and calibration, not as the main anchor for cross-game generalization.
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -127,5 +132,5 @@
 - Outline sections: 0,1,2,3
 - Survey role: representative
 - Paper card path: `paper_cards/B08/LMGameBench.md`
-- Next action: draft-section
-- Last updated: 2026-04-05
+- Check status: unchecked
+- Last updated: 2026-04-09

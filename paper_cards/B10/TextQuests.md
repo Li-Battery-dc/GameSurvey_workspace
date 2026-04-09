@@ -12,7 +12,7 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- TextQuests is a long-horizon text-game benchmark built from 25 Infocom games running through Jericho/Frotz. It is explicitly designed to test whether language agents can sustain coherent planning over hundreds of steps without external tools, and it evaluates both progress and harm in morally charged action spaces. The benchmark includes `With Clues` and `No Clues` settings, keeps full history rather than aggressive truncation, and surfaces failure modes such as hallucinated state, poor map building, and repetitive loops. For this survey, TextQuests is one of the strongest anchors for long-horizon textual game autonomy.
+- TextQuests is a long-horizon text-game benchmark built from 25 Infocom games running through Jericho/Frotz. It is explicitly designed to test whether language agents can sustain coherent planning over hundreds of steps without external tools, and it evaluates both progress and harm in morally charged action spaces. The benchmark always provides the games' required `feelies`, optionally adds official `InvisiClues`, keeps the full turn history, and exposes an autosave or restore command that lets agents backtrack within the same run. For this survey, TextQuests is a strong anchor for long-horizon textual game autonomy, but its assistance mechanisms need to be stated explicitly when we compare it with less scaffolded settings.
 
 ## 2. Position in our survey
 - Why-games relevance: Text adventures expose memory, planning, exploration, and instruction-following over very long action horizons in an automatically scored environment.
@@ -60,20 +60,20 @@
 - Observation channel: textual room descriptions, inventory changes, and game feedback
 - Action channel: free-form text commands
 - Interface type: natural language
-- Agent scaffold allowed: none in the core evaluation, though save/restore is analyzed separately
-- Is there privileged API access? no
+- Agent scaffold allowed: other; built-in autosave and restore are available within the environment, but no external planning tools are allowed
+- Is there privileged API access? limited; play remains parser-based, but the benchmark exposes a restore command and injects clue documents into context in the clue-assisted setting
 - How close is the setup to human play? high; it uses the standard text-adventure command loop
-- Main ecological-validity trade-off: clue settings and save/restore analysis improve interpretability, but they also make the benchmark more scaffoldable than pure blind play
+- Main ecological-validity trade-off: the parser loop is human-like, but the always-available feelies, optional official clues, and restore support make the benchmark easier to study than completely blind play
 
 ## 6. Evaluation protocol
 - Main score: checkpoint-based game progress
 - Auxiliary score(s): average harm, clue-versus-no-clue performance, and save/restore effects
 - Evaluation style: milestone / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: multiple frontier LLMs are evaluated on the same 25 games with and without clues
+- Human baseline / AI anchor / self-play / model-vs-model setup: multiple frontier LLMs are evaluated on the same 25 games with and without clues, with an optimal human walkthrough used as a progress reference in plots
 - Automatic verifiability: high
-- Calibration method: 500-step cap, preserved full history, and standardized clue settings
-- Anti-contamination argument: live interactive play on long games reduces the value of memorizing isolated answer strings
-- Reliability or comparability concerns: checkpoint scoring may undercount partial strategic competence, and model context limits interact strongly with the very long histories
+- Calibration method: 500-step cap, preserved full history, standardized clue regimes, and explicit checkpoint labels for each game
+- Anti-contamination argument: not a central claim; the benchmark's difficulty comes from long interactive trajectories rather than from fresh source material
+- Reliability or comparability concerns: checkpoint scoring may undercount partial strategic competence, and results depend meaningfully on whether restore and clue access are available
 
 ## 7. Main contributions
 - Contribution 1: Introduces a 25-game long-horizon text-adventure benchmark with standardized evaluation.
@@ -88,36 +88,38 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many agent benchmarks remain far shorter and easier than the horizons required for genuine autonomous play
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can operationalize week-scale decision horizons in a compact benchmark.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can operationalize hours-long, hundreds-step decision horizons in a compact benchmark.
 - Best use in Section 1 (taxonomy and evolutionary levels): Extends the text-game lineage from short interactive tasks to genuinely long quests. Helps define long-horizon adventure suites as a distinct region of the design space.
 - Best use in Section 2 (core capabilities evaluated by games): Supports discussion of memory, exploration, and planning failures.
 - Best use in Section 3 (interaction and evaluation paradigm): An anchor for free-form natural-language command interfaces. Useful for checkpoint scoring plus harm-aware evaluation.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that long-horizon robustness remains a major open problem.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): OpenDevin? not in corpus; Text-based benchmarks like BotzoneBench are less ecological
-- Closest follow-up(s): TextAtari, StarDojo
-- Best comparison targets inside our corpus: TextAtari, OpenGuanDan, GameTraversalBenchmark, Mars
-- What this paper uniquely adds relative to neighbors: It combines natural-language actioning with genuinely very long task arcs and a safety-relevant side metric.
+- Closest predecessor(s): InteractiveFictionGames and the Jiminy Cricket moral-evaluation setup it builds upon
+- Closest follow-up(s): later long-horizon text-game agent evaluations rather than broad multimodal open-world benchmarks
+- Best comparison targets inside our corpus: InteractiveFictionGames, TextAtari, MineNPCTask, Mars
+- What this paper uniquely adds relative to neighbors: It combines long parser-based game trajectories with checkpoint progress, harm scoring, clue/no-clue conditions, and built-in restore support.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The benchmark contains 25 Infocom games and caps runs at 500 steps.
-- It evaluates `With Clues` and `No Clues` settings and keeps full interaction history.
+- It always provides required game `feelies`, evaluates `With Clues` and `No Clues` settings, and keeps the full interaction history.
+- It includes an autosave mechanism that lets agents issue `restore {step_id}` to backtrack within a run.
 - It reports both checkpoint-based `Game Progress` and `Average Harm`.
 
 ### 11.2 Our synthesis / interpretation
 - TextQuests is one of the most useful corpus papers for arguing that many current agent benchmarks still understate real long-horizon difficulty.
 - The harm metric also makes it a useful bridge from raw progress scoring to more nuanced evaluation.
+- It should not be used as a strong anti-contamination example, because the paper's contribution is interaction design and long-context pressure, not benchmark freshness.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the appendix if we later need exact game lists or the strongest model numbers by condition.
 - Re-check how save/restore changes performance if we use it in a discussion of scaffolding.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes, likely later, because this paper can anchor the long-horizon section.
-- Which section to read next if needed: evaluation protocol / save-restore analysis / harm annotation
-- Follow-up question(s): Which specific games best expose memory collapse versus exploration failure?
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need exact per-game checkpoint or harm details.
+- Which section to read next if needed: Appendix A and Appendix D for environment assistance details
+- Follow-up question(s): Which specific games best expose memory collapse versus exploration failure, and how much of the gain comes from restore versus clues?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -128,5 +130,6 @@
 - Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/TextQuests.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

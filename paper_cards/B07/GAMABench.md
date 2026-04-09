@@ -12,11 +12,11 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- GAMABench is a multi-player game-theory benchmark built around eight classical scenarios, but extends them beyond the usual two-player, two-action setting through dynamic parameters, multi-round play, and multi-action choices. It groups games into cooperative, betraying, and sequential categories and uses a dynamic scoring scheme to compare robustness, prompt sensitivity, and generalizability across variants. The paper analyzes both one model family in depth and a broader 13-model leaderboard. For this survey, GAMABench is a representative formal-root benchmark because it keeps the game-theoretic abstraction but broadens player structure and scenario generation to reduce trivial saturation.
+- GAMABench is a multi-player game-theory benchmark built around eight classical scenarios, but extends them beyond the usual two-player, two-action setting through multi-player, multi-round, and multi-action variants with adjustable parameters. It groups games into cooperative, betraying, and sequential categories, rescales game-specific raw scores into a unified 0-100 scheme, and uses those scores to study robustness, prompt sensitivity, and parameter generalizability. The paper analyzes GPT-3.5 in depth with ten same-model agents, then reports a 13-model leaderboard. For this survey, GAMABench is best read as a parameterized formal diagnostic benchmark: its "dynamic" contribution is mainly scenario variation and score adaptation rather than richer interaction interfaces.
 
 ## 2. Position in our survey
 - Why-games relevance: Classical game-theory scenarios compress many real-world decision dilemmas into tunable, measurable settings that support multi-agent evaluation without requiring rich narrative worlds.
-- Historical stage: formal container
+- Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
@@ -46,77 +46,79 @@
 
 ## 4. What this benchmark measures
 - Primary capability target: decision-making in multi-agent game-theoretic environments
-- Secondary capability target(s): robustness to prompt and temperature changes, generalization across parameterized scenarios, cooperation versus betrayal, and sequential decision-making
+- Secondary capability target(s): arithmetic reasoning, theory-of-mind reasoning, robustness to prompt and temperature changes, cooperation versus betrayal, and sequential decision-making
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? yes
 - Does it test visual grounding / spatial-temporal reasoning? no
-- Does it test long-horizon autonomy / task completion? partially
+- Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Parameterized games let the benchmark vary strategic structure while keeping the objective and scoring rules explicit.
 
 ## 5. Interaction paradigm
-- Observation channel: text prompts describing game rules, current setting, prior outcomes, and player-specific information
-- Action channel: JSON-formatted or otherwise structured textual decisions
-- Interface type: natural language / hybrid
-- Agent scaffold allowed: other
+- Observation channel: text prompts describing rules, current round, historical outcomes, and player-specific information such as valuations, rank, or hit rate
+- Action channel: JSON-formatted bids, proposals, votes, dish choices, targets, or other structured textual decisions
+- Interface type: natural language / structured action space / hybrid
+- Agent scaffold allowed: none by default; CoT and role prompting in targeted ablations
 - Is there privileged API access? yes
-- How close is the setup to human play? low; GAMABench is primarily a formal prompt-based decision benchmark
-- Main ecological-validity trade-off: it gains breadth and parameterized generalization at the cost of removing perceptual and interface realism
+- How close is the setup to human play? low; GAMABench is a prompt-based formal decision benchmark with explicit rules, repeated summaries, and structured JSON outputs
+- Main ecological-validity trade-off: it gains multi-player breadth and parameter variation at the cost of using heavily mediated prompt interfaces and same-model multi-agent play rather than ecological play loops
 
 ## 6. Evaluation protocol
-- Main score: dynamic benchmark score aggregated across the eight games
-- Auxiliary score(s): robustness analyses over multiple runs, temperature settings, prompt variants, and generalization across different game settings
+- Main score: rescaled 0-100 gamma-bench score aggregated across eight game-specific raw-score formulas
+- Auxiliary score(s): robustness analyses over multiple runs, temperature settings, prompt variants, generalization across alternative parameter settings, and a 13-model leaderboard
 - Evaluation style: native score / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: the framework supports humans and fixed strategies, but the main reported results focus on LLM cohorts playing the scenarios
+- Human baseline / AI anchor / self-play / model-vs-model setup: main experiments use ten agents instantiated from the same LLM, with auxiliary appendix experiments against fixed strategies; the framework can also include humans, but no broad human baseline is reported in the main leaderboard
 - Automatic verifiability: high
-- Calibration method: dynamically adjustable game parameters, shared prompt templates, and multi-agent replication within each model family
-- Anti-contamination argument: dynamic scenario generation and varied parameters are intended to reduce leakage from memorized classical settings
-- Reliability or comparability concerns: because scores are benchmark-specific and heavily parameterized, comparison to other suites is less intuitive than raw win rates
+- Calibration method: game-specific raw-score formulas rescaled to 0-100, five runs under default settings, temperature sweeps, prompt-template sweeps, and parameterized setting variation
+- Anti-contamination argument: moderate rather than strong; the benchmark uses classical game-theory scenarios, but varying parameters and multi-player settings are intended to reduce simple memorization and leakage
+- Reliability or comparability concerns: scores depend on benchmark-specific rescaling, the main setup uses same-model agents rather than mixed-model play, and the fixed 20-round horizon may affect strategic behavior in repeated games
 
 ## 7. Main contributions
-- Contribution 1: Extends game-theoretic LLM evaluation to multi-player, multi-round, and multi-action settings.
-- Contribution 2: Introduces a dynamic scoring scheme and parameterized scenario generation for broader robustness testing.
-- Contribution 3: Provides both detailed single-model analysis and a wider 13-model leaderboard.
+- Contribution 1: Extends game-theoretic LLM evaluation to multi-player, multi-round, and multi-action settings across eight classical scenarios.
+- Contribution 2: Introduces game-specific scoring plus 0-100 rescaling and parameterized scenario variation for robustness and generalizability testing.
+- Contribution 3: Provides both detailed GPT-3.5 behavioral analysis and a wider 13-model leaderboard.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: GPT-3.5 shows decent robustness but limited generalizability, CoT helps, and Gemini-1.5-Pro leads the reported leaderboard.
+- Core empirical takeaway: GPT-3.5 is fairly robust across repeated runs and temperature changes but generalizes unevenly across altered settings; CoT improves its overall score from 45.9 to 57.9, whereas role prompting helps only marginally; and Gemini-1.5-Pro leads the reported leaderboard at 69.8.
 - Notable model failure mode 1: weak generalization across altered game settings despite acceptable performance on familiar variants
 - Notable model failure mode 2: prompt and temperature changes can alter decision quality meaningfully
 - Notable model failure mode 3: many models struggle to balance self-interest against collective welfare across betrayal-oriented games
 - Does this paper reveal a benchmark-design limitation as well? yes; its custom scoring scheme is useful inside the benchmark but makes cross-benchmark interpretation less transparent
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that parameterized games can create a renewable decision-making benchmark.
-- Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from small canonical games to broader multi-agent scenario generation. Useful for social-structure and multi-player taxonomy discussion.
-- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of ToM, arithmetic reasoning, and cooperation-versus-betrayal decisions.
-- Best use in Section 3 (interaction and evaluation paradigm): Mainly as a contrast case showing what is lost when all perception is abstracted away. Useful for dynamic scoring, prompt-robustness analysis, and generalizability evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark-specific scoring can improve diagnosis while reducing comparability.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited use only; it can support the claim that parameterized games offer a renewable formal test bed, but it is not a primary motivation anchor.
+- Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from small fixed canonical games to broader multi-player, multi-round, parameterized formal probes.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of arithmetic reasoning, theory-of-mind reasoning, cooperation-versus-betrayal choices, and sequential tactical reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for prompt-mediated JSON interfaces, repeated-round summaries, game-specific scoring, and robustness or generalizability analysis under parameter changes.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark-specific scoring and parameter variation improve diagnosis but reduce comparability and still stop short of ecological validity.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench and two-player game-theory evaluations
 - Closest follow-up(s): TMGBench and later broader strategic suites
-- Best comparison targets inside our corpus: [GTBench](D:/research_root/GameSurvey/workspace/paper_cards/B07/GTBench.md), [GameBench](D:/research_root/GameSurvey/workspace/paper_cards/B07/GameBench.md), [TMGBench](D:/research_root/GameSurvey/workspace/paper_cards/B07/TMGBench.md), [CKArena](D:/research_root/GameSurvey/workspace/paper_cards/B02/CKArena.md)
-- What this paper uniquely adds relative to neighbors: It pushes formal strategic benchmarking toward multi-player, parameterized scenarios without abandoning classical game-theory grounding.
+- Best comparison targets inside our corpus: GTBench, GameBench, TMGBench
+- What this paper uniquely adds relative to neighbors: It pushes formal strategic benchmarking toward multi-player, multi-round, parameterized scenarios without abandoning classical game-theory grounding.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GAMABench includes eight classical game-theory scenarios organized into cooperative, betraying, and sequential categories.
-- The benchmark varies player counts, actions, rounds, temperatures, prompts, and other parameters to study robustness and generalization.
-- The paper reports Gemini-1.5-Pro as the top model on the leaderboard, with CoT improving decision-making in the detailed GPT-3.5 analyses.
+- The default case study uses ten GPT-3.5 (0125) agents, twenty rounds for simultaneous games, temperature 1, and five repeated runs to stabilize estimates.
+- The benchmark uses game-specific raw-score formulas that are rescaled to 0-100, then reports robustness under temperature and prompt variation plus generalizability under changed game settings.
+- The paper reports that CoT improves GPT-3.5’s overall score from 45.9 to 57.9, while Gemini-1.5-Pro tops the leaderboard at 69.8, followed by LLaMA-3.1-70B at 65.9 and Mixtral-8x22B at 62.4.
 
 ### 11.2 Our synthesis / interpretation
-- GAMABench is less central than GTBench for formal taxonomy, but more useful for showing how the field tried to escape tiny canonical setups without leaving the formal game-theory space.
-- It is a helpful reminder that "dynamic" can mean parameter variation rather than richer interfaces or more ecological environments.
+- GAMABench is less central than GTBench for formal taxonomy, but more useful for showing how the field tried to escape tiny canonical setups without leaving the prompt-based game-theory space.
+- It is a helpful reminder that "dynamic" can mean parameter variation and score adaptation rather than richer interfaces or more ecological environments.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the appendix if we later need the exact dynamic scoring formula or per-game score normalization details.
+- Re-check Appendix E if we later need the exact rescaling formulas or want to compare scores across games more carefully.
+- Re-check Appendix I if we later cite the same-model multi-agent limitation or the fixed 20-round horizon as benchmark caveats.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Only if we later need a tighter comparison between GAMABench’s scoring design and GTBench’s tournament-style evaluation.
-- Which section to read next if needed: 2 / 3 / Appendix F
-- Follow-up question(s): Should GAMABench anchor the survey’s discussion of robustness and parameterized variation inside formal benchmarks?
+- Should we read beyond abstract + intro? why? Already completed in this audit; no further reread is needed unless we need exact score formulas or appendix-level robustness tables.
+- Which section to read next if needed: 3 / Appendix E / Appendix F / Appendix I
+- Follow-up question(s): Should GAMABench anchor the survey’s discussion of parameterized formal diagnostics, or serve mainly as a contrast case on custom scoring and same-model self-play?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -127,5 +129,5 @@
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B07/GAMABench.md`
-- Next action: draft-section
-- Last updated: 2026-04-05
+- Check status: unchecked
+- Last updated: 2026-04-09

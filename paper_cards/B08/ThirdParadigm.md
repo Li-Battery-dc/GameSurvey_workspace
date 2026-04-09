@@ -25,7 +25,7 @@
 ### 3.1 Environment structure
 - Information structure: mixed
 - Transition structure: mixed
-- Agent structure: multi-agent
+- Agent structure: mixed
 - Social structure: mixed
 - Time structure: turn-based
 
@@ -36,7 +36,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: curated suite
-- Number of games / tasks: extensible framework rather than a fixed task count
+- Number of games / tasks: current benchmark bundles report 14 text-only games with 817 instances and 5 multimodal games with 560 instances, within a broader extensible framework
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -66,10 +66,10 @@
 - Main ecological-validity trade-off: the framework increases ecological validity relative to static benchmarks while remaining more controlled than open user-arena evaluation
 
 ## 6. Evaluation protocol
-- Main score: framework-defined game success rather than one universal scalar score
-- Auxiliary score(s): repeatability, extensibility, and targeted capability probes through benchmark games
+- Main score: `clemscore`, a 0-100 summary derived from the per-game main metrics
+- Auxiliary score(s): detailed per-game metrics, transcript records, percentage played, and targeted capability probes through benchmark games
 - Evaluation style: completion rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: not the central contribution; the focus is the evaluation paradigm and reusable framework
+- Human baseline / AI anchor / self-play / model-vs-model setup: the paper includes a human gameplay reference from earlier clembench work and reports that the best model still trails average human performance on the overlapping games
 - Automatic verifiability: mixed-high
 - Calibration method: benchmark-controlled multi-turn interactions with reusable game instances
 - Anti-contamination argument: dialogue games can be extended and tailored, which helps avoid overreliance on fixed public test instances
@@ -105,6 +105,7 @@
 - The paper argues that LLM evaluation currently has two main paradigms, reference-based and preference-based evaluation, and proposes dialogue game-based evaluation as a third complementary paradigm.
 - It presents clembench as a mature reusable implementation optimized for broader use.
 - The paper emphasizes multi-turn, reference-free, repeatable interactions and explains how the framework can benchmark one's own models or be extended with new tests.
+- It reports current benchmark bundles of 14 text-only games with 817 instances and 5 multimodal games with 560 instances, and describes `clemscore` as the condensed 0-100 summary score.
 
 ### 11.2 Our synthesis / interpretation
 - This is a survey-methodology card more than a benchmark card, but it is highly useful because it provides a principled vocabulary for discussing why game-based evaluation exists.
@@ -114,9 +115,9 @@
 - Re-check whether the latest paper version includes any new empirical results beyond the framework description before citing it as evidence about model performance.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? A targeted reread is worthwhile if we later need exact wording for the evaluation-paradigm section.
-- Which section to read next if needed: introduction / framework / extension guidance
-- Follow-up question(s): Should this paper be cited in Section 0 as evaluation philosophy or mainly in Section 5 as protocol framing?
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit; revisit only if we later need exact wording for the feature matrix or the benchmark-extension workflow.
+- Which section to read next if needed: Section 2 / Section 3 / Section 4
+- Follow-up question(s): Should this paper be cited in Section 0 as evaluation philosophy or mainly in Section 3 as protocol framing?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -127,5 +128,5 @@
 - Outline sections: 0,1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/ThirdParadigm.md`
-- Next action: draft-section
-- Last updated: 2026-04-08
+- Check status: unchecked
+- Last updated: 2026-04-09

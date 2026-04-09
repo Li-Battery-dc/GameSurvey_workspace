@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Games can operationalize rule discovery by forcing agents to infer hidden mechanics through repeated interaction.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
@@ -35,7 +35,7 @@
 - Benchmark unit: episode / world instance
 
 ### 3.3 Benchmark scope
-- Scope: curated suite of modified worlds
+- Scope: curated suite of modified worlds generated from a larger world family
 - Number of games / tasks: 7 representative worlds selected from combinations of terrain, survival, and task-dependency changes
 - Benchmark intent: diagnostic evaluation
 
@@ -53,16 +53,16 @@
 - Does it test visual grounding / spatial-temporal reasoning? partially
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? no in the cross-title sense; it tests adaptation to novel rule configurations within one benchmark family
 - Why is a game environment especially suitable here? Interactive worlds let the benchmark hide rules in action consequences rather than revealing them as explicit text constraints.
 
 ## 5. Interaction paradigm
-- Observation channel: local world view, status values, and inventory descriptions generated from the game state
+- Observation channel: local visual world view with optional text descriptions of nearby blocks, status values, and inventory
 - Action channel: discrete movement and interaction commands
 - Interface type: structured action space / hybrid
-- Agent scaffold allowed: reflection / other
-- Is there privileged API access? limited to textualized environment descriptors rather than full world mechanics
-- How close is the setup to human play? medium-low; the world is game-like and interactive, but still lightweight and benchmark-oriented
+- Agent scaffold allowed: reflection / other; the paper's LLM baselines use text wrappers and reflective rule induction
+- Is there privileged API access? limited; the benchmark offers a textualized screen descriptor for LLMs but does not expose the underlying rule table directly
+- How close is the setup to human play? medium-low; the world is interactive and partially observed, but still lightweight and benchmark-oriented
 - Main ecological-validity trade-off: Mars gains clean control over hidden-rule variation by working in a simplified survival world rather than a richer commercial game
 
 ## 6. Evaluation protocol
@@ -89,34 +89,36 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Demonstrates that games can test rule discovery through interaction rather than static QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move toward adaptive reasoning benchmarks rather than fixed-rule play only. Useful for defining rule-perturbed task-game hybrids.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move toward adaptive reasoning benchmarks rather than fixed-rule play only. Useful for defining rule-perturbed task-game hybrids, mainly as a contrast case rather than as a central level anchor.
 - Best use in Section 2 (core capabilities evaluated by games): Strong evidence for inductive reasoning and exploration as distinct targets.
 - Best use in Section 3 (interaction and evaluation paradigm): Useful contrast to benchmarks that reveal all task rules upfront. A good example of controlled world perturbation as evaluation design.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark difficulty should come from novelty, not only from scale.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter-based achievement benchmarks
-- Closest follow-up(s): ARC-AGI-3, StarDojo
-- Best comparison targets inside our corpus: ARCAGI3, GameTraversalBenchmark, TextQuests, StarDojo
-- What this paper uniquely adds relative to neighbors: It makes the central challenge inferring changed mechanics rather than merely solving a known game.
+- Closest follow-up(s): later novelty-driven or counter-commonsense agent benchmarks rather than standard fixed-world game suites
+- Best comparison targets inside our corpus: Crafter, GameTraversalBenchmark, TextQuests, CivRealm
+- What this paper uniquely adds relative to neighbors: It makes the central challenge inferring changed mechanics rather than merely solving a known game under a fixed ruleset.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - Mars modifies Crafter through terrain, survival, and task-dependency changes.
 - The main evaluation uses seven worlds spanning single, double, and triple combinations of those changes.
-- The benchmark reports reward, success rate, and a log-space overall score, and finds severe degradation from default Crafter to Mars worlds.
+- The benchmark reports reward, success rate, and a log-space overall score over 22 achievements, and finds severe degradation from default Crafter to Mars worlds.
+- The paper also introduces Induction from Reflection (IfR), which improves over other LLM baselines but remains far from solving the benchmark.
 
 ### 11.2 Our synthesis / interpretation
 - Mars is one of the most useful corpus papers for arguing that game benchmarks can test adaptation to novel rules rather than only execution under fixed rules.
 - It is particularly strong for the survey’s limitations section because it exposes how pretrained priors can become liabilities.
+- It is better used as a novelty-and-adaptation contrast case than as a broad open-world benchmark anchor.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact world definitions in Appendix M if we later need a detailed taxonomy.
 - Re-check the best IfR numbers per world if we compare methods quantitatively in prose.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? A targeted reread will likely help later because this paper cleanly anchors adaptive rule-induction claims.
-- Which section to read next if needed: world-construction principles / IfR analysis / case studies
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need exact world configurations from Appendix M or the rule-induction precision and recall analysis.
+- Which section to read next if needed: Sections 2.2 to 2.3, 3.1 to 3.5, and Appendix M
 - Follow-up question(s): Which modifications are most diagnostic of inductive failure: terrain, survival, or task dependency?
 
 ## 13. Registry sync
@@ -128,5 +130,6 @@
 - Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B10/Mars.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

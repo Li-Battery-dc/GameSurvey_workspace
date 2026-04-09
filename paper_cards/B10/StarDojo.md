@@ -12,12 +12,12 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- StarDojo is an open-ended multimodal benchmark built on Stardew Valley that targets production-living behavior rather than only combat or navigation. It provides 1,000 tasks across farming, crafting, exploration, combat, and social interaction, plus a 100-task `StarDojo-Lite` subset and a much longer playthrough objective aimed at earning one million in-game currency. The environment exposes both screenshots and structured textual state, supports pausing during inference, and includes task-specific automatic evaluators based on state comparison. For this survey, StarDojo is a major anchor for open-world daily-life simulation as a game benchmark for agentic MLLMs.
+- StarDojo is a multimodal benchmark built on Stardew Valley that targets production-living behavior rather than only combat or navigation. It provides 1,000 tasks across farming, crafting, exploration, combat, and social interaction, plus a 100-task `StarDojo-Lite` subset and a much longer playthrough objective aimed at earning one million in-game currency. The environment exposes screenshots, structured textual state, high-level callable actions, pausing during inference, and task-specific automatic evaluators based on state comparison. For this survey, StarDojo is a strong ecological benchmark for long-horizon daily-life simulation, but it should be framed as a rich single-world benchmark rather than a cross-game generalization benchmark.
 
 ## 2. Position in our survey
 - Why-games relevance: Production-living simulators package long-horizon planning, resource management, and social interaction into a grounded interactive world with reusable evaluation hooks.
-- Historical stage: open-ended general-game benchmark
-- Narrative level(s): L2 strategic reasoning / L4 visual agency / L5 cross-game generalization
+- Historical stage: ecological agent benchmark
+- Narrative level(s): L3 social intelligence / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
@@ -53,14 +53,14 @@
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? partially
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no in the cross-game sense; its open-endedness is within one persistent game world
 - Why is a game environment especially suitable here? Stardew Valley naturally combines work, exploration, economy, and social life in one persistent world.
 
 ## 5. Interaction paradigm
 - Observation channel: gameplay screenshots plus structured textual observations about nearby tiles, inventory, character state, and global state
 - Action channel: high-level callable skills such as movement, interaction, item selection, and menu operations
 - Interface type: GUI interaction / API / hybrid
-- Agent scaffold allowed: memory / other
+- Agent scaffold allowed: other; the benchmark provides structured text, one-step history, pause-resume support, and high-level skills, while excluding the higher-level `navigate` shortcut in the main experiments
 - Is there privileged API access? yes
 - How close is the setup to human play? medium; the world is real and rich, but actions and state are significantly abstracted through the mod and Python wrapper
 - Main ecological-validity trade-off: StarDojo gains scalability and evaluability by exposing structured state and pausing the world, which makes it less human-like than pure screen-and-input play
@@ -69,11 +69,11 @@
 - Main score: task success rate on StarDojo-Lite and full task suites
 - Auxiliary score(s): success by category and difficulty, plus progress on long playthrough
 - Evaluation style: completion rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: several frontier MLLM agents are tested on the shared task suites, typically with three runs per task
+- Human baseline / AI anchor / self-play / model-vs-model setup: several frontier MLLM agents are tested on the shared task suites, typically with three runs per task; the paper does not provide a direct human baseline
 - Automatic verifiability: high
 - Calibration method: task-specific evaluators compare current and previous game state, and task initial states are standardized through save files and init commands
-- Anti-contamination argument: live interaction with a modded commercial game plus many procedurally configured tasks reduces answer memorization
-- Reliability or comparability concerns: performance depends strongly on the privileged observation subset and the provided action abstractions, especially for navigation-heavy tasks
+- Anti-contamination argument: not a central claim; the paper's contribution is benchmark coverage and instrumentation rather than freshness against pretraining
+- Reliability or comparability concerns: performance depends strongly on the privileged observation subset, the provided action abstractions, and the fact that most reported results focus on StarDojo-Lite rather than the full 1,000-task suite
 
 ## 7. Main contributions
 - Contribution 1: Introduces a large open-ended benchmark on Stardew Valley with 1,000 tasks and a practical lite subset.
@@ -89,35 +89,36 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can model everyday productivity, planning, and social behavior in one world.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move toward open-world life-simulation benchmarks for agentic MLLMs. A key case for open-world, task-wrapped commercial games.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move toward open-world life-simulation benchmarks for agentic MLLMs. A key case for open-world, task-wrapped commercial games, but not for cross-game transfer.
 - Best use in Section 2 (core capabilities evaluated by games): Supports claims about navigation, planning, social interaction, and multimodal grounding.
 - Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing privileged APIs versus more human-like interfaces. Strong example of scalable automatic evaluation through state-difference task checkers.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for better spatial grounding and more explicit communication tools in collaborative/open-ended settings.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): Cradle-style game agents, CivRealm
-- Closest follow-up(s): TeamCraft, GameArena
-- Best comparison targets inside our corpus: TeamCraft, CivRealm, Mars, TextQuests, LMGAME-BENCH
-- What this paper uniquely adds relative to neighbors: It targets everyday production-living behavior and social routines rather than only combat, navigation, or board-state reasoning.
+- Closest predecessor(s): MineDojo, Cradle's Stardew Valley experiments, and other open-world sandbox agent settings
+- Closest follow-up(s): later commercial-game benchmark wrappers that combine multimodal observations with automatic evaluators
+- Best comparison targets inside our corpus: MineNPCTask, TeamCraft, CivRealm, MCU, Mars
+- What this paper uniquely adds relative to neighbors: It targets everyday production-living behavior, economic routines, and social life inside one commercial world rather than only combat, navigation, or macro-strategy reasoning.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - StarDojo contains 1,000 tasks across farming, crafting, exploration, combat, and social categories, plus a 100-task lite subset.
-- The environment exposes screenshots, textual state, callable actions, and automatic evaluators based on state comparison.
+- The environment exposes screenshots, structured textual state, callable actions, pause-resume control, and automatic evaluators based on state comparison.
 - The best reported overall success on StarDojo-Lite is 12.7%, with near-zero success on many medium and hard tasks.
 
 ### 11.2 Our synthesis / interpretation
 - StarDojo is one of the strongest corpus papers for arguing that open-world life simulators offer a broader ecological benchmark than combat-centric games alone.
 - It is especially useful when discussing how benchmark wrappers can trade off ecological realism against reliable large-scale evaluation.
+- It should support the visual-agency and long-horizon discussion, not the cross-game-generalization narrative.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact number of tasks per category and the full playthrough protocol if we later need a detailed table.
-- Re-check whether map-level global information is fully excluded in the main experimental setting or only in some tasks.
+- Re-check the precise action-skill inventory and evaluator types if we later build a detailed interaction-design comparison table.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes later, because this paper can anchor the open-world limitations section.
-- Which section to read next if needed: observation space / action space / qualitative failure analysis
-- Follow-up question(s): Which benchmark setting is the fairest "default" comparison point for future work: the lite subset, the full suite, or the playthrough task?
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need a precise comparison of observation subsets, action abstractions, or evaluator design.
+- Which section to read next if needed: Sections 3.2 to 3.4 and Appendix C for environment-interface details
+- Follow-up question(s): Which benchmark setting is the fairest default comparison point for future work: the Lite subset, the full suite, or the playthrough task?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -128,5 +129,6 @@
 - Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/StarDojo.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09
