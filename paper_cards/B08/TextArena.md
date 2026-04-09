@@ -18,7 +18,7 @@
 - Why-games relevance: Competitive games generate dynamic, multi-turn pressure on strategy and social behavior while still producing clear outcomes and public leaderboards.
 - Historical stage: open-ended general-game benchmark
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,5,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that public leaderboard design and model-pool drift become part of benchmark validity
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong contemporary example of games testing dynamic interaction beyond static QA.
-- Best use in Section 1 (historical evolution): Useful late-stage step from fixed suites to living benchmark platforms.
-- Best use in Section 2 (design space): Good anchor for genre-diverse text-game suites.
-- Best use in Section 3 (capability targets): Supports social reasoning, deception, and competitive planning claims.
-- Best use in Section 4 (interaction paradigm): Helps anchor natural-language-only game interaction.
-- Best use in Section 5 (evaluation protocol): Important for leaderboard, TrueSkill, and human-vs-model evaluation discussion.
-- Best use in Section 6/7 (limitations and future): Supports the need for extensible, continuously updated benchmark ecosystems.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong contemporary example of games testing dynamic interaction beyond static QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful late-stage step from fixed suites to living benchmark platforms. Good anchor for genre-diverse text-game suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports social reasoning, deception, and competitive planning claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Helps anchor natural-language-only game interaction. Important for leaderboard, TrueSkill, and human-vs-model evaluation discussion.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for extensible, continuously updated benchmark ecosystems.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): clembench, game-specific social benchmarks, earlier text-game suites
@@ -109,7 +107,7 @@
 - The paper uses real-time TrueSkill ratings and explicitly highlights negotiation, theory of mind, and deception as key benchmark targets.
 
 ### 11.2 Our synthesis / interpretation
-- TextArena is one of the strongest missing pieces for the survey's methodology section because it combines suite breadth with live leaderboard infrastructure.
+- TextArena is one of the strongest missing pieces for the survey's paradigm section because it combines suite breadth with live leaderboard infrastructure.
 - It is also a useful bridge between narrow social-deduction benchmarks and broader agent-platform work.
 
 ### 11.3 Uncertain or needs re-check
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B08
-- Outline sections: 3,4,5,7
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B08/TextArena.md`
 - Next action: draft-section

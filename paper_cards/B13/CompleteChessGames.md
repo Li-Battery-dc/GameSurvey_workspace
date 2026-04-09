@@ -18,7 +18,7 @@
 - Why-games relevance: Chess remains a clean test of legal action generation and strategic quality under exact rules.
 - Historical stage: diagnostic capability probe / specialist comparison
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,6
+- Most relevant outline section(s): 1,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it argues that static evaluation sets are insufficient for chess and should be supplemented by actual games
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Limited use; mostly a specialist upper-bound case.
-- Best use in Section 1 (historical evolution): Useful in the lineage of LLMs entering classical board games.
-- Best use in Section 2 (design space): Helps contrast single-game specialists with broader benchmark suites.
-- Best use in Section 3 (capability targets): Supports legal-action and move-quality discussions.
-- Best use in Section 4 (interaction paradigm): A contrast case for text-encoded board states.
-- Best use in Section 5 (evaluation protocol): Good example of mixing static board evaluation with full-game Elo tests.
-- Best use in Section 6/7 (limitations and future): Supports caution when broad survey claims rely on specialist-trained models.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited use; mostly a specialist upper-bound case.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the lineage of LLMs entering classical board games. Helps contrast single-game specialists with broader benchmark suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports legal-action and move-quality discussions.
+- Best use in Section 3 (interaction and evaluation paradigm): A contrast case for text-encoded board states. Good example of mixing static board evaluation with full-game Elo tests.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports caution when broad survey claims rely on specialist-trained models.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLMChess
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,6
+- Outline sections: 1,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B13/CompleteChessGames.md`
 - Next action: draft-section

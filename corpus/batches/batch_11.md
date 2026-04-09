@@ -8,13 +8,13 @@
 
 | Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | PuzzleJAX | PuzzleJAX | P2 | deep | 2,3,6,7 | Procedural puzzle suite for reasoning-transfer comparison. |
-| 2 | SudokuBench | Sudoku-Bench | P2 | deep | 2,3,6 | Creative logical reasoning benchmark with limited gameplay interaction. |
-| 3 | CrossWordBench | CrossWordBench | P2 | deep | 2,3,4,6 | Symbolic reasoning benchmark based on controllable crossword tasks. |
-| 4 | VGRPBench | VGRP-Bench | P2 | deep | 3,4,6 | Visual grid puzzle benchmark for rule comprehension and spatial reasoning. |
-| 5 | MazeEval | MazeEval | P2 | deep | 3,4,6 | Compact maze-planning benchmark for navigation under sequential decisions. |
-| 6 | GameTraversalBenchmark | GameTraversalBenchmark | P2 | deep | 3,4,6 | 2D game-map traversal benchmark for multi-step planning. |
-| 7 | ARCAGI3 | ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence | P1 | deep | 0,1,2,3,4,5,7 | Official ARC-AGI-3 benchmark paper for human-calibrated interactive reasoning and anti-overfitting evaluation design. |
+| 1 | PuzzleJAX | PuzzleJAX | P2 | deep | 1,2,4 | Procedural puzzle suite for reasoning-transfer comparison. |
+| 2 | SudokuBench | Sudoku-Bench | P2 | deep | 1,2,4 | Creative logical reasoning benchmark with limited gameplay interaction. |
+| 3 | CrossWordBench | CrossWordBench | P2 | deep | 1,2,3,4 | Symbolic reasoning benchmark based on controllable crossword tasks. |
+| 4 | VGRPBench | VGRP-Bench | P2 | deep | 2,3,4 | Visual grid puzzle benchmark for rule comprehension and spatial reasoning. |
+| 5 | MazeEval | MazeEval | P2 | deep | 2,3,4 | Compact maze-planning benchmark for navigation under sequential decisions. |
+| 6 | GameTraversalBenchmark | GameTraversalBenchmark | P2 | deep | 2,3,4 | 2D game-map traversal benchmark for multi-step planning. |
+| 7 | ARCAGI3 | ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence | P1 | deep | 0,1,2,3,4 | Official ARC-AGI-3 benchmark paper for human-calibrated interactive reasoning and anti-overfitting evaluation design. |
 
 ## Expected Survey Payoff
 - Preserve a comparison set for specialized diagnostics without inflating their survey centrality.

@@ -18,7 +18,7 @@
 - Why-games relevance: It shows how games can expose social inference, deception, and conversational coordination in a controlled but still adversarial setting.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the paper shows promise, but the tournament scale is still modest and mainly compares GPT and Gemini families
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong example of interactive social reasoning that static benchmarks cannot reproduce.
-- Best use in Section 1 (historical evolution): Marks the move from formal rule-grounded games to social-intelligence probes.
-- Best use in Section 2 (design space): Clear anchor for social deduction and imperfect-information multi-agent play.
-- Best use in Section 3 (capability targets): Direct fit for deception, cooperation, persuasion, and belief tracking.
-- Best use in Section 4 (interaction paradigm): Useful for memory-enabled text debate with role-specific actions.
-- Best use in Section 5 (evaluation protocol): Relevant for role-balanced tournaments and process-level vote analysis.
-- Best use in Section 6/7 (limitations and future): Supports the claim that partial observability and social modeling remain hard.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of interactive social reasoning that static benchmarks cannot reproduce.
+- Best use in Section 1 (taxonomy and evolutionary levels): Marks the move from formal rule-grounded games to social-intelligence probes. Clear anchor for social deduction and imperfect-information multi-agent play.
+- Best use in Section 2 (core capabilities evaluated by games): Direct fit for deception, cooperation, persuasion, and belief tracking.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for memory-enabled text debate with role-specific actions. Relevant for role-balanced tournaments and process-level vote analysis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that partial observability and social modeling remain hard.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): AvalonBench and earlier LLM social-deduction studies
@@ -126,7 +124,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B02/WerewolfArena.md`
 - Next action: draft-section

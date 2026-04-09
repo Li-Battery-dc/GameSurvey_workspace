@@ -18,7 +18,7 @@
 - Why-games relevance: Turn-based interactive environments let the benchmark measure exploration, mechanic discovery, and planning efficiency rather than only final-answer accuracy.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 0,1,2,3,4,5,7
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows how strongly measured performance can depend on whether evaluation rewards general-purpose agents or benchmark-specific scaffolds
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that interactive game-like environments can measure adaptive efficiency rather than static competence.
-- Best use in Section 1 (historical evolution): Useful for the ARC line's shift from static abstract reasoning toward interactive agentic evaluation.
-- Best use in Section 2 (design space): Helps define a boundary case between puzzle diagnostics and broader interactive agent benchmarks.
-- Best use in Section 3 (capability targets): Strong anchor for exploration, goal inference, and planning under hidden mechanics.
-- Best use in Section 4 (interaction paradigm): Useful for comparing shared turn-based APIs against richer harnesses and external memory tooling.
-- Best use in Section 5 (evaluation protocol): Important for human-normalized efficiency scoring, private holdouts, and anti-overfitting leaderboard policy.
-- Best use in Section 6/7 (limitations and future): Supports the claim that future benchmarks need both stronger novelty protection and clearer separation between general intelligence and task-specific harness engineering.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that interactive game-like environments can measure adaptive efficiency rather than static competence.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the ARC line's shift from static abstract reasoning toward interactive agentic evaluation. Helps define a boundary case between puzzle diagnostics and broader interactive agent benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Strong anchor for exploration, goal inference, and planning under hidden mechanics.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for comparing shared turn-based APIs against richer harnesses and external memory tooling. Important for human-normalized efficiency scoring, private holdouts, and anti-overfitting leaderboard policy.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmarks need both stronger novelty protection and clearer separation between general intelligence and task-specific harness engineering.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): ARC-AGI-1, ARC-AGI-2
@@ -128,7 +126,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 0,1,2,3,4,5,7
+- Outline sections: 0,1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/ARCAGI3.md`
 - Next action: draft-section

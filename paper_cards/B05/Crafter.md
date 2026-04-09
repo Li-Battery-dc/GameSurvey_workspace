@@ -18,7 +18,7 @@
 - Why-games relevance: A survival game can package exploration, planning, resource dependencies, and long horizons into one automatically scored environment.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 0,1,2,3,7
+- Most relevant outline section(s): 0,1,2,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows both the value and the limits of using one environment as a proxy for many capabilities
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong early argument that one game can measure a wide capability spectrum under automatic scoring.
-- Best use in Section 1 (historical evolution): Important precursor to later open-world and general-capability game benchmarks.
-- Best use in Section 2 (design space): Useful for the distinction between single-world breadth and multi-game breadth.
-- Best use in Section 3 (capability targets): Supports long-horizon planning, exploration, and visual grounding claims.
-- Best use in Section 4 (interaction paradigm): Useful contrast against later heavily scaffolded LLM-agent interfaces.
-- Best use in Section 5 (evaluation protocol): Good reference for achievement-based milestone scoring and geometric-mean aggregation.
-- Best use in Section 6/7 (limitations and future): Helps motivate why later work moved from one broad environment to multi-game suites and open-world platforms.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong early argument that one game can measure a wide capability spectrum under automatic scoring.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important precursor to later open-world and general-capability game benchmarks. Useful for the distinction between single-world breadth and multi-game breadth.
+- Best use in Section 2 (core capabilities evaluated by games): Supports long-horizon planning, exploration, and visual grounding claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast against later heavily scaffolded LLM-agent interfaces. Good reference for achievement-based milestone scoring and geometric-mean aggregation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps motivate why later work moved from one broad environment to multi-game suites and open-world platforms.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): earlier RL environments such as MiniGrid and Obstacle Tower
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B05
-- Outline sections: 0,1,2,3,7
+- Outline sections: 0,1,2,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B05/Crafter.md`
 - Next action: draft-section

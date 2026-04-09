@@ -18,7 +18,7 @@
 - Why-games relevance: It shows that games let us build stable, repeatable strategic evaluations instead of volatile peer-only rankings.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 0,2,3,5
+- Most relevant outline section(s): 0,1,2,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; cross-game anchor levels are not directly comparable
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that games permit durable, interpretable evaluation standards.
-- Best use in Section 1 (historical evolution): Marks a shift from ad hoc suite results toward protocol-calibrated benchmarking.
-- Best use in Section 2 (design space): Good case of a mixed-information strategic suite.
-- Best use in Section 3 (capability targets): Supports strategic planning, uncertainty handling, and adaptive play.
-- Best use in Section 4 (interaction paradigm): Typical privileged text-state plus legal-action benchmark interface.
-- Best use in Section 5 (evaluation protocol): One of the clearest anchor-based calibration papers in the corpus.
-- Best use in Section 6/7 (limitations and future): Helps argue for better cross-benchmark comparability and non-volatile evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games permit durable, interpretable evaluation standards.
+- Best use in Section 1 (taxonomy and evolutionary levels): Marks a shift from ad hoc suite results toward protocol-calibrated benchmarking. Good case of a mixed-information strategic suite.
+- Best use in Section 2 (core capabilities evaluated by games): Supports strategic planning, uncertainty handling, and adaptive play.
+- Best use in Section 3 (interaction and evaluation paradigm): Typical privileged text-state plus legal-action benchmark interface. One of the clearest anchor-based calibration papers in the corpus.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue for better cross-benchmark comparability and non-volatile evaluation.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GameBench-style strategic suites, traditional game-AI rating ladders
@@ -127,7 +125,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 0,2,3,5
+- Outline sections: 0,1,2,3
 - Survey role: anchor
 - Paper card path: `paper_cards/B01/BotzoneBench.md`
 - Check status: unchecked

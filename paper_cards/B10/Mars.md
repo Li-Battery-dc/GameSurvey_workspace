@@ -18,7 +18,7 @@
 - Why-games relevance: Games can operationalize rule discovery by forcing agents to infer hidden mechanics through repeated interaction.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,6,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many existing benchmarks mostly reward stored world knowledge rather than adaptive reasoning
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates that games can test rule discovery through interaction rather than static QA.
-- Best use in Section 1 (historical evolution): Represents a move toward adaptive reasoning benchmarks rather than fixed-rule play only.
-- Best use in Section 2 (design space): Useful for defining rule-perturbed task-game hybrids.
-- Best use in Section 3 (capability targets): Strong evidence for inductive reasoning and exploration as distinct targets.
-- Best use in Section 4 (interaction paradigm): Useful contrast to benchmarks that reveal all task rules upfront.
-- Best use in Section 5 (evaluation protocol): A good example of controlled world perturbation as evaluation design.
-- Best use in Section 6/7 (limitations and future): Supports the argument that benchmark difficulty should come from novelty, not only from scale.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates that games can test rule discovery through interaction rather than static QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move toward adaptive reasoning benchmarks rather than fixed-rule play only. Useful for defining rule-perturbed task-game hybrids.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for inductive reasoning and exploration as distinct targets.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast to benchmarks that reveal all task rules upfront. A good example of controlled world perturbation as evaluation design.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark difficulty should come from novelty, not only from scale.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter-based achievement benchmarks
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B10
-- Outline sections: 3,4,6,7
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B10/Mars.md`
 - Next action: draft-section

@@ -18,7 +18,7 @@
 - Why-games relevance: Variant Sudoku gives tightly verifiable problems where success depends on discovering nontrivial logical break-ins.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,6
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many reasoning benchmarks reward known templates rather than the discovery of novel constraint structures
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Supports the argument that games and puzzles can give exact verification without trivializing reasoning.
-- Best use in Section 1 (historical evolution): A modern example of human-designed puzzle benchmarking rather than mass-generated textbook QA.
-- Best use in Section 2 (design space): Useful for text-versus-visual puzzle interface comparisons.
-- Best use in Section 3 (capability targets): Strong evidence for creative break-in reasoning and global consistency maintenance.
-- Best use in Section 4 (interaction paradigm): Helpful for discussing when visual structure should be textualized and when it should not.
-- Best use in Section 5 (evaluation protocol): Good example of single-shot versus iterative solving.
-- Best use in Section 6/7 (limitations and future): Supports the case for future tool-use tracks distinct from pure reasoning tracks.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the argument that games and puzzles can give exact verification without trivializing reasoning.
+- Best use in Section 1 (taxonomy and evolutionary levels): A modern example of human-designed puzzle benchmarking rather than mass-generated textbook QA. Useful for text-versus-visual puzzle interface comparisons.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for creative break-in reasoning and global consistency maintenance.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful for discussing when visual structure should be textualized and when it should not. Good example of single-shot versus iterative solving.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the case for future tool-use tracks distinct from pure reasoning tracks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): classic Sudoku and ARC-style reasoning benchmarks
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 2,3,6
+- Outline sections: 1,2,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/SudokuBench.md`
 - Next action: draft-section

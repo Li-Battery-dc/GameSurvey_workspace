@@ -18,7 +18,7 @@
 - Why-games relevance: Dialogue games create repeatable multi-turn interaction with explicit goals, which lets the benchmark test conversational agency rather than only response quality.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L3 social intelligence
-- Most relevant outline section(s): 1,3,4,5
+- Most relevant outline section(s): 1,2,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that static evaluation misses behavior that only appears under multi-turn interaction
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong argument that games can evaluate dialogue agency in a way static benchmarks cannot.
-- Best use in Section 1 (historical evolution): Important branch in the move toward interaction-first evaluation.
-- Best use in Section 2 (design space): Useful for dialogue games as a benchmark family distinct from board or video games.
-- Best use in Section 3 (capability targets): Supports instruction following and conversational agency discussion.
-- Best use in Section 4 (interaction paradigm): Strong anchor for pure natural-language game interaction.
-- Best use in Section 5 (evaluation protocol): Helps frame automatic scoring for multi-turn, reference-free interaction.
-- Best use in Section 6/7 (limitations and future): Supports dialogue-game evaluation as a reusable benchmark pattern, not just one-off tasks.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong argument that games can evaluate dialogue agency in a way static benchmarks cannot.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important branch in the move toward interaction-first evaluation. Useful for dialogue games as a benchmark family distinct from board or video games.
+- Best use in Section 2 (core capabilities evaluated by games): Supports instruction following and conversational agency discussion.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong anchor for pure natural-language game interaction. Helps frame automatic scoring for multi-turn, reference-free interaction.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports dialogue-game evaluation as a reusable benchmark pattern, not just one-off tasks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): situated language understanding and dialogue-game evaluation proposals
@@ -109,7 +107,7 @@
 - The authors report that the metrics remain far from saturated and that newer models generally perform better.
 
 ### 11.2 Our synthesis / interpretation
-- clembench is less about game diversity than about evaluation philosophy, which makes it especially relevant for the survey's methodology sections.
+- clembench is less about game diversity than about evaluation philosophy, which makes it especially relevant for the survey's paradigm section.
 - It is one of the clearest alternatives to both static benchmark evaluation and open preference-arena evaluation.
 
 ### 11.3 Uncertain or needs re-check
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B08
-- Outline sections: 1,3,4,5
+- Outline sections: 1,2,3
 - Survey role: representative
 - Paper card path: `paper_cards/B08/Clembench.md`
 - Next action: draft-section

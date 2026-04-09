@@ -18,7 +18,7 @@
 - Why-games relevance: Classical game-theory scenarios compress many real-world decision dilemmas into tunable, measurable settings that support multi-agent evaluation without requiring rich narrative worlds.
 - Historical stage: formal container
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 1,2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; its custom scoring scheme is useful inside the benchmark but makes cross-benchmark interpretation less transparent
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good evidence that parameterized games can create a renewable decision-making benchmark.
-- Best use in Section 1 (historical evolution): Helps show the move from small canonical games to broader multi-agent scenario generation.
-- Best use in Section 2 (design space): Useful for social-structure and multi-player taxonomy discussion.
-- Best use in Section 3 (capability targets): Supports discussion of ToM, arithmetic reasoning, and cooperation-versus-betrayal decisions.
-- Best use in Section 4 (interaction paradigm): Mainly as a contrast case showing what is lost when all perception is abstracted away.
-- Best use in Section 5 (evaluation protocol): Useful for dynamic scoring, prompt-robustness analysis, and generalizability evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the argument that benchmark-specific scoring can improve diagnosis while reducing comparability.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that parameterized games can create a renewable decision-making benchmark.
+- Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from small canonical games to broader multi-agent scenario generation. Useful for social-structure and multi-player taxonomy discussion.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of ToM, arithmetic reasoning, and cooperation-versus-betrayal decisions.
+- Best use in Section 3 (interaction and evaluation paradigm): Mainly as a contrast case showing what is lost when all perception is abstracted away. Useful for dynamic scoring, prompt-robustness analysis, and generalizability evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark-specific scoring can improve diagnosis while reducing comparability.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench and two-player game-theory evaluations
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B07
-- Outline sections: 1,2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B07/GAMABench.md`
 - Next action: draft-section

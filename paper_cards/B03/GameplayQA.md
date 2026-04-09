@@ -18,7 +18,7 @@
 - Why-games relevance: Games create dense temporally entangled streams of self-actions, other-agent behavior, and world events that are hard to approximate with generic video QA.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is a perceptual proxy, not a full agent benchmark
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows that gameplay video is a rich source of dynamic perception challenges.
-- Best use in Section 1 (historical evolution): Useful marker for the rise of video-understanding proxies in game-agent evaluation.
-- Best use in Section 2 (design space): Good example of first-person multi-video observation without action.
-- Best use in Section 3 (capability targets): Direct fit for visual grounding, temporal reasoning, and multi-agent attribution.
-- Best use in Section 4 (interaction paradigm): Important counterexample to active-play benchmarks.
-- Best use in Section 5 (evaluation protocol): Relevant for annotation-heavy QA generation and hallucination analysis.
-- Best use in Section 6/7 (limitations and future): Supports the claim that perception is still a bottleneck even before control.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that gameplay video is a rich source of dynamic perception challenges.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful marker for the rise of video-understanding proxies in game-agent evaluation. Good example of first-person multi-video observation without action.
+- Best use in Section 2 (core capabilities evaluated by games): Direct fit for visual grounding, temporal reasoning, and multi-agent attribution.
+- Best use in Section 3 (interaction and evaluation paradigm): Important counterexample to active-play benchmarks. Relevant for annotation-heavy QA generation and hallucination analysis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that perception is still a bottleneck even before control.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): video QA and egocentric video benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
-- Outline sections: 3,4,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B03/GameplayQA.md`
 - Next action: draft-section

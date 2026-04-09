@@ -18,7 +18,7 @@
 - Why-games relevance: Diverse real video games make it possible to evaluate whether an LLM agent can remain useful across very different cognitive demands instead of only one narrow ruleset.
 - Historical stage: benchmark expansion / training platform
 - Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
-- Most relevant outline section(s): 1,2,3,4,7
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; a common interface is valuable, but heavy scaffolding makes it harder to separate raw backbone ability from workflow engineering
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how genre diversity creates a broader capability test than single-game benchmarks.
-- Best use in Section 1 (historical evolution): Strong example of the benchmark-plus-platform turn in recent work.
-- Best use in Section 2 (design space): Important cross-genre anchor.
-- Best use in Section 3 (capability targets): Covers rule following, planning, memory, spatial reasoning, and error handling in one suite.
-- Best use in Section 4 (interaction paradigm): One of the best cases for MCP-like scaffolded game interaction.
-- Best use in Section 5 (evaluation protocol): Useful for discussing module ablations and benchmark leaderboards.
-- Best use in Section 6/7 (limitations and future): Supports the claim that future benchmark work should discuss scaffolding explicitly, not just backbone models.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how genre diversity creates a broader capability test than single-game benchmarks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of the benchmark-plus-platform turn in recent work. Important cross-genre anchor.
+- Best use in Section 2 (core capabilities evaluated by games): Covers rule following, planning, memory, spatial reasoning, and error handling in one suite.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the best cases for MCP-like scaffolded game interaction. Useful for discussing module ablations and benchmark leaderboards.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmark work should discuss scaffolding explicitly, not just backbone models.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): BALROG, Cradle, V-MAGE, LMGame-Bench, earlier multi-game suites
@@ -126,7 +124,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 1,2,3,4,7
+- Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B05/Orak.md`
 - Next action: draft-section

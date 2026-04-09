@@ -18,7 +18,7 @@
 - Why-games relevance: Go remains a classic domain for evaluating whether structured strategy expertise can be incorporated into general models.
 - Historical stage: diagnostic capability probe / specialist comparison
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,6
+- Most relevant outline section(s): 1,4
 - Role in corpus: peripheral
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that specialist benchmarks can be advanced by heavy domain-specific data construction not available for all domains
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Limited; mostly a specialist comparison case.
-- Best use in Section 1 (historical evolution): Useful for the return of board-game specialists inside the LLM era.
-- Best use in Section 2 (design space): Helps distinguish benchmark papers from specialist training-plus-evaluation papers.
-- Best use in Section 3 (capability targets): A case study in expert strategic knowledge injection.
-- Best use in Section 4 (interaction paradigm): Minor use only.
-- Best use in Section 5 (evaluation protocol): Useful for move-prediction benchmark plus tournament correlation.
-- Best use in Section 6/7 (limitations and future): Supports discussion of when specialist upper bounds are achievable for LLMs.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited; mostly a specialist comparison case.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the return of board-game specialists inside the LLM era. Helps distinguish benchmark papers from specialist training-plus-evaluation papers.
+- Best use in Section 2 (core capabilities evaluated by games): A case study in expert strategic knowledge injection.
+- Best use in Section 3 (interaction and evaluation paradigm): Minor use only. Useful for move-prediction benchmark plus tournament correlation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of when specialist upper bounds are achievable for LLMs.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): specialized Go engines, chess-specialist LLMs
@@ -127,7 +125,7 @@
 - Priority: P3
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,6
+- Outline sections: 1,4
 - Survey role: peripheral
 - Paper card path: `paper_cards/B13/MixingExpertKnowledge.md`
 - Next action: draft-section

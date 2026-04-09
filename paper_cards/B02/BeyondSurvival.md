@@ -18,7 +18,7 @@
 - Why-games relevance: It uses a socially rich game to ground evaluation against human strategic behavior rather than only model-vs-model outcomes.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 3,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is a strong offline social benchmark, but not a live-agent game benchmark
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows that games can anchor human-like social reasoning evaluation with richer evidence than generic dialogue tasks.
-- Best use in Section 1 (historical evolution): Useful marker for a move from synthetic arenas toward human-grounded evaluation.
-- Best use in Section 2 (design space): Social-deduction benchmark built from recorded gameplay rather than live self-play.
-- Best use in Section 3 (capability targets): Strong for role inference, deception reasoning, and persuasive strategy.
-- Best use in Section 4 (interaction paradigm): Good example of offline contextual evaluation rather than embodied participation.
-- Best use in Section 5 (evaluation protocol): Important for winning-faction alignment and dimension-specific speech scoring.
-- Best use in Section 6/7 (limitations and future): Supports the claim that fluent dialogue is easier than robust social strategy.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that games can anchor human-like social reasoning evaluation with richer evidence than generic dialogue tasks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful marker for a move from synthetic arenas toward human-grounded evaluation. Social-deduction benchmark built from recorded gameplay rather than live self-play.
+- Best use in Section 2 (core capabilities evaluated by games): Strong for role inference, deception reasoning, and persuasive strategy.
+- Best use in Section 3 (interaction and evaluation paradigm): Good example of offline contextual evaluation rather than embodied participation. Important for winning-faction alignment and dimension-specific speech scoring.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that fluent dialogue is easier than robust social strategy.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Werewolf Arena and earlier self-play social-deduction benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 3,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B02/BeyondSurvival.md`
 - Next action: draft-section

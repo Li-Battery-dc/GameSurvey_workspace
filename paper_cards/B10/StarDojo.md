@@ -18,7 +18,7 @@
 - Why-games relevance: Production-living simulators package long-horizon planning, resource management, and social interaction into a grounded interactive world with reusable evaluation hooks.
 - Historical stage: open-ended general-game benchmark
 - Narrative level(s): L2 strategic reasoning / L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,5,6,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that richer observation APIs materially change difficulty, so benchmark reporting must expose what state is privileged
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that games can model everyday productivity, planning, and social behavior in one world.
-- Best use in Section 1 (historical evolution): Represents the move toward open-world life-simulation benchmarks for agentic MLLMs.
-- Best use in Section 2 (design space): A key case for open-world, task-wrapped commercial games.
-- Best use in Section 3 (capability targets): Supports claims about navigation, planning, social interaction, and multimodal grounding.
-- Best use in Section 4 (interaction paradigm): Useful for discussing privileged APIs versus more human-like interfaces.
-- Best use in Section 5 (evaluation protocol): Strong example of scalable automatic evaluation through state-difference task checkers.
-- Best use in Section 6/7 (limitations and future): Supports the need for better spatial grounding and more explicit communication tools in collaborative/open-ended settings.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can model everyday productivity, planning, and social behavior in one world.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move toward open-world life-simulation benchmarks for agentic MLLMs. A key case for open-world, task-wrapped commercial games.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about navigation, planning, social interaction, and multimodal grounding.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing privileged APIs versus more human-like interfaces. Strong example of scalable automatic evaluation through state-difference task checkers.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for better spatial grounding and more explicit communication tools in collaborative/open-ended settings.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Cradle-style game agents, CivRealm
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B10
-- Outline sections: 3,4,5,6,7
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/StarDojo.md`
 - Next action: draft-section

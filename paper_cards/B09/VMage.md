@@ -18,7 +18,7 @@
 - Why-games relevance: Games can hold planning demands constant while varying how much perception and timing burden remain in the interface.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many "game reasoning" claims are actually sensitive to how much perception is abstracted away
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates that visual games expose failures not visible in text-only reasoning settings.
-- Best use in Section 1 (historical evolution): Fits the move toward ecologically realistic multimodal interfaces.
-- Best use in Section 2 (design space): Useful for classifying perception-heavy suites and interface-ablation protocols.
-- Best use in Section 3 (capability targets): Strong evidence that visual grounding and strategic control should be analyzed separately.
-- Best use in Section 4 (interaction paradigm): Excellent comparison case for raw-vision versus textualized play.
-- Best use in Section 5 (evaluation protocol): Helpful reference for combining action validity with outcome quality.
-- Best use in Section 6/7 (limitations and future): Supports the argument that better visual grounding, not only bigger models, is needed for game agents.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates that visual games expose failures not visible in text-only reasoning settings.
+- Best use in Section 1 (taxonomy and evolutionary levels): Fits the move toward ecologically realistic multimodal interfaces. Useful for classifying perception-heavy suites and interface-ablation protocols.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence that visual grounding and strategic control should be analyzed separately.
+- Best use in Section 3 (interaction and evaluation paradigm): Excellent comparison case for raw-vision versus textualized play. Helpful reference for combining action validity with outcome quality.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that better visual grounding, not only bigger models, is needed for game agents.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): VideoGameBench, Balrog
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 3,4,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B09/VMage.md`
 - Next action: draft-section

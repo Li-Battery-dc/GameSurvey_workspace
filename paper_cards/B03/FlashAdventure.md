@@ -18,7 +18,7 @@
 - Why-games relevance: Adventure games create long dependency chains and memory-heavy task structure that static benchmarks rarely capture.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,6,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; automatic judging is practical but still depends on a powerful oracle-like evaluator
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong example of why games matter for long-horizon agent evaluation.
-- Best use in Section 1 (historical evolution): Represents the move toward more ecologically realistic GUI-game benchmarks.
-- Best use in Section 2 (design space): Useful anchor for adventure-game and full-story-arc evaluation.
-- Best use in Section 3 (capability targets): Direct fit for long-horizon autonomy and memory-dependent task completion.
-- Best use in Section 4 (interaction paradigm): Strong example of raw GUI control with little privilege.
-- Best use in Section 5 (evaluation protocol): Important for milestone-based progress scoring and computer-use judging.
-- Best use in Section 6/7 (limitations and future): Supports the claim that long horizons and memory remain major failure points.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of why games matter for long-horizon agent evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move toward more ecologically realistic GUI-game benchmarks. Useful anchor for adventure-game and full-story-arc evaluation.
+- Best use in Section 2 (core capabilities evaluated by games): Direct fit for long-horizon autonomy and memory-dependent task completion.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of raw GUI control with little privilege. Important for milestone-based progress scoring and computer-use judging.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that long horizons and memory remain major failure points.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): earlier room-escape and GUI-agent benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
-- Outline sections: 3,4,6,7
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B03/FlashAdventure.md`
 - Next action: draft-section

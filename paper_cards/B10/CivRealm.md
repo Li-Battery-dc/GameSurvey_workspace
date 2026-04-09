@@ -18,7 +18,7 @@
 - Why-games relevance: Civilization-like worlds compress economics, warfare, diplomacy, and technology planning into one persistent strategic environment.
 - Historical stage: open-ended general-game benchmark
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence / L5 cross-game generalization
-- Most relevant outline section(s): 1,2,3,6,7
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that miniature subgames are valuable but can only partially stand in for the full strategic world
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that strategy games can bundle many real-world decision dimensions into one environment.
-- Best use in Section 1 (historical evolution): A key waypoint in the move from narrow games toward broader decision worlds.
-- Best use in Section 2 (design space): Helps define open-ended, multi-goal strategy worlds.
-- Best use in Section 3 (capability targets): Useful for planning, diplomacy, uncertainty, and transfer discussions.
-- Best use in Section 4 (interaction paradigm): A clear example of language/API access to a deep strategy environment.
-- Best use in Section 5 (evaluation protocol): Good reference for combining full-game and mini-game evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the need for benchmarks that test strategic breadth without collapsing into overly narrow tasks.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that strategy games can bundle many real-world decision dimensions into one environment.
+- Best use in Section 1 (taxonomy and evolutionary levels): A key waypoint in the move from narrow games toward broader decision worlds. Helps define open-ended, multi-goal strategy worlds.
+- Best use in Section 2 (core capabilities evaluated by games): Useful for planning, diplomacy, uncertainty, and transfer discussions.
+- Best use in Section 3 (interaction and evaluation paradigm): A clear example of language/API access to a deep strategy environment. Good reference for combining full-game and mini-game evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for benchmarks that test strategic breadth without collapsing into overly narrow tasks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, OpenGuanDan
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B10
-- Outline sections: 1,2,3,6,7
+- Outline sections: 1,2,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/CivRealm.md`
 - Next action: draft-section

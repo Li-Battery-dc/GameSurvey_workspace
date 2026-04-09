@@ -18,7 +18,7 @@
 - Why-games relevance: Minecraft supports long task arcs, tool dependencies, navigation, and mixed-initiative cooperation in a world where outcomes can still be checked from in-world evidence.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,5,6,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that fair open-world evaluation depends heavily on bounded policies and validator design
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that games can ground realistic, multi-step user requests in a verifiable environment.
-- Best use in Section 1 (historical evolution): Useful as a recent Minecraft benchmark that adds memory and mixed initiative to the lineage.
-- Best use in Section 2 (design space): Good open-world cooperative benchmark with validator-based evaluation.
-- Best use in Section 3 (capability targets): Direct support for long-horizon memory, repair, and task completion.
-- Best use in Section 4 (interaction paradigm): Important for natural-language clarification plus tool or API execution.
-- Best use in Section 5 (evaluation protocol): Strong example of machine-checkable validators and bounded benchmark policies.
-- Best use in Section 6/7 (limitations and future): Supports the claim that memory and repair remain fragile even in heavily instrumented open-world setups.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can ground realistic, multi-step user requests in a verifiable environment.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a recent Minecraft benchmark that adds memory and mixed initiative to the lineage. Good open-world cooperative benchmark with validator-based evaluation.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for long-horizon memory, repair, and task completion.
+- Best use in Section 3 (interaction and evaluation paradigm): Important for natural-language clarification plus tool or API execution. Strong example of machine-checkable validators and bounded benchmark policies.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that memory and repair remain fragile even in heavily instrumented open-world setups.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo, TeamCraft, MCU, Minecraft NPC and agent work
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B10
-- Outline sections: 3,4,5,6,7
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/MineNPCTask.md`
 - Next action: draft-section

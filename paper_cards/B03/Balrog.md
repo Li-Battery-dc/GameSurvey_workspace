@@ -18,7 +18,7 @@
 - Why-games relevance: It uses games to stress sequential planning, exploration, spatial reasoning, and rule discovery under far richer dynamics than static multimodal benchmarks.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 0,2,3,4,5,6
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; results can depend on language wrappers and fallback handling for invalid actions
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that games can still challenge frontier multimodal models on long-horizon interaction.
-- Best use in Section 1 (historical evolution): Represents the shift toward broader ecological suites after earlier symbolic/formal benchmarks.
-- Best use in Section 2 (design space): Useful overview paper for mixed environment structure and modality.
-- Best use in Section 3 (capability targets): Supports planning, exploration, and spatial reasoning claims.
-- Best use in Section 4 (interaction paradigm): Good comparison case for language wrappers versus image-plus-language observations.
-- Best use in Section 5 (evaluation protocol): Relevant for standardized progression metrics and invalid-action handling.
-- Best use in Section 6/7 (limitations and future): Strong evidence for persistent exploration and planning failures.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can still challenge frontier multimodal models on long-horizon interaction.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the shift toward broader ecological suites after earlier symbolic/formal benchmarks. Useful overview paper for mixed environment structure and modality.
+- Best use in Section 2 (core capabilities evaluated by games): Supports planning, exploration, and spatial reasoning claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Good comparison case for language wrappers versus image-plus-language observations. Relevant for standardized progression metrics and invalid-action handling.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence for persistent exploration and planning failures.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay and earlier RL-game benchmark suites
@@ -126,7 +124,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B03
-- Outline sections: 0,2,3,4,5,6
+- Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B03/Balrog.md`
 - Next action: draft-section

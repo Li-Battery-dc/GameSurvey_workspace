@@ -18,7 +18,7 @@
 - Why-games relevance: Puzzle games give compact, highly verifiable tests of planning, deduction, and deadlock avoidance.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 2,3,6,7
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that fixed single-game benchmarks can hide how fragile methods are across varied rule systems
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Supports the argument that small games can still pose deep reasoning challenges.
-- Best use in Section 1 (historical evolution): Marks a move from isolated puzzle games to broad generative puzzle families.
-- Best use in Section 2 (design space): Excellent for discussing benchmark families defined by DSLs rather than one fixed suite.
-- Best use in Section 3 (capability targets): Strong evidence for logical inference, planning, and deadlock handling as distinct targets.
-- Best use in Section 4 (interaction paradigm): A clean symbolic-interface contrast to visual puzzle benchmarks.
-- Best use in Section 5 (evaluation protocol): Useful for comparing search, RL, and LLMs under the same task family.
-- Best use in Section 6/7 (limitations and future): Supports future benchmark designs that are broad enough to resist overfitting.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the argument that small games can still pose deep reasoning challenges.
+- Best use in Section 1 (taxonomy and evolutionary levels): Marks a move from isolated puzzle games to broad generative puzzle families. Excellent for discussing benchmark families defined by DSLs rather than one fixed suite.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for logical inference, planning, and deadlock handling as distinct targets.
+- Best use in Section 3 (interaction and evaluation paradigm): A clean symbolic-interface contrast to visual puzzle benchmarks. Useful for comparing search, RL, and LLMs under the same task family.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports future benchmark designs that are broad enough to resist overfitting.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Sokoban-like puzzle benchmarks
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 2,3,6,7
+- Outline sections: 1,2,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/PuzzleJAX.md`
 - Next action: draft-section

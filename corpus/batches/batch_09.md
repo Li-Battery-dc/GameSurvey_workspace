@@ -8,11 +8,11 @@
 
 | Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | VideoGameBench | VideoGameBench | P1 | deep | 3,4,5,6 | Raw-visual real-time benchmark and direct comparison target for BALROG. |
-| 2 | VMage | V-MAGE | P1 | deep | 3,4,5,6 | Visual-centric agent benchmark with Elo-style evaluation. |
-| 3 | LVLMGamePlayers | Are Large Vision-Language Models Good Game Players? | P2 | deep | 1,3,4,6 | Early visual-game baseline for historical comparison. |
-| 4 | INGVP | ING-VP | P2 | deep | 3,4,6 | Benchmark focused on easy vision-game failure cases and spatial planning limits. |
-| 5 | AtariGPT | Atari-GPT | P2 | deep | 3,4,6 | Low-level multimodal control benchmark for reaction speed and perception. |
+| 1 | VideoGameBench | VideoGameBench | P1 | deep | 2,3,4 | Raw-visual real-time benchmark and direct comparison target for BALROG. |
+| 2 | VMage | V-MAGE | P1 | deep | 2,3,4 | Visual-centric agent benchmark with Elo-style evaluation. |
+| 3 | LVLMGamePlayers | Are Large Vision-Language Models Good Game Players? | P2 | deep | 1,2,3,4 | Early visual-game baseline for historical comparison. |
+| 4 | INGVP | ING-VP | P2 | deep | 2,3,4 | Benchmark focused on easy vision-game failure cases and spatial planning limits. |
+| 5 | AtariGPT | Atari-GPT | P2 | deep | 2,3,4 | Low-level multimodal control benchmark for reaction speed and perception. |
 
 ## Expected Survey Payoff
 - Give the survey a historical visual branch instead of relying only on the newest multimodal papers.

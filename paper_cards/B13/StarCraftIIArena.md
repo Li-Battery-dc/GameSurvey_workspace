@@ -18,7 +18,7 @@
 - Why-games relevance: RTS games expose the tension between long-term plans and rapidly changing tactical demands.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 2,3,4,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it argues that broad outcome metrics are too coarse for RTS evaluation
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Supports the claim that RTS games remain demanding because they require both planning and speed.
-- Best use in Section 1 (historical evolution): A follow-up step after early text-based SC2 evaluations.
-- Best use in Section 2 (design space): Useful for single-domain benchmark deepening through better metrics rather than new games.
-- Best use in Section 3 (capability targets): Strong for strategic planning versus real-time adaptation distinctions.
-- Best use in Section 4 (interaction paradigm): Another reference for abstracted RTS interfaces.
-- Best use in Section 5 (evaluation protocol): Particularly useful for fine-grained RTS metrics and decision traces.
-- Best use in Section 6/7 (limitations and future): Supports richer metric design in future RTS benchmarks.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the claim that RTS games remain demanding because they require both planning and speed.
+- Best use in Section 1 (taxonomy and evolutionary levels): A follow-up step after early text-based SC2 evaluations. Useful for single-domain benchmark deepening through better metrics rather than new games.
+- Best use in Section 2 (core capabilities evaluated by games): Strong for strategic planning versus real-time adaptation distinctions.
+- Best use in Section 3 (interaction and evaluation paradigm): Another reference for abstracted RTS interfaces. Particularly useful for fine-grained RTS metrics and decision traces.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports richer metric design in future RTS benchmarks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLMPlayStarCraftII
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,3,4,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B13/StarCraftIIArena.md`
 - Next action: draft-section

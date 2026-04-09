@@ -18,7 +18,7 @@
 - Why-games relevance: Social deduction creates a repeatable setting where deception, belief tracking, and strategic dialogue can be tested jointly rather than as isolated QA skills.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that English-only social benchmarks can overestimate social competence
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows why dynamic game play can reduce leakage pressure in multilingual evaluation.
-- Best use in Section 1 (historical evolution): Useful late-stage extension of social-deduction benchmarks toward multilingual and multicultural stress.
-- Best use in Section 2 (design space): Good example of a social-deduction benchmark whose key axis is language and culture rather than only game mechanics.
-- Best use in Section 3 (capability targets): Strong evidence for social reasoning plus cultural grounding.
-- Best use in Section 4 (interaction paradigm): Helpful for natural-language multi-agent play without privileged state abstractions.
-- Best use in Section 5 (evaluation protocol): Supports discussion of dynamic, leakage-resistant multilingual evaluation.
-- Best use in Section 6/7 (limitations and future): Useful for arguing that future social benchmarks should go beyond English-centric settings.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why dynamic game play can reduce leakage pressure in multilingual evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful late-stage extension of social-deduction benchmarks toward multilingual and multicultural stress. Good example of a social-deduction benchmark whose key axis is language and culture rather than only game mechanics.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for social reasoning plus cultural grounding.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful for natural-language multi-agent play without privileged state abstractions. Supports discussion of dynamic, leakage-resistant multilingual evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that future social benchmarks should go beyond English-centric settings.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Werewolf Arena, WOLF, CK-Arena, other social-deduction evaluations
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B02/MulticulturalSpyfall.md`
 - Next action: draft-section

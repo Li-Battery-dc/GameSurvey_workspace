@@ -18,7 +18,7 @@
 - Why-games relevance: Tower-defense play creates measurable pressure on planning, timing, spatial allocation, and action validity inside a dynamic but still analyzable game loop.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L4 visual agency
-- Most relevant outline section(s): 3,4,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is informative partly because it exposes a large gap between correctness of legal actions and effectiveness of those actions
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows why a compact RTS-derived environment can still expose clear planning gaps in frontier models.
-- Best use in Section 1 (historical evolution): Useful as a later specialized branch of RTS-style LLM evaluation.
-- Best use in Section 2 (design space): Good case for comparing raw-vision, text-state, and structured-state interfaces inside one benchmark.
-- Best use in Section 3 (capability targets): Strong evidence on planning, spatial reasoning, and hallucination under dynamic play.
-- Best use in Section 4 (interaction paradigm): Useful when discussing privileged observations versus human-like perceptual burden.
-- Best use in Section 5 (evaluation protocol): Helpful for the distinction between task performance and valid-action reliability.
-- Best use in Section 6/7 (limitations and future): Supports the claim that many agent failures are not only illegal-action failures but also ineffective-action failures.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why a compact RTS-derived environment can still expose clear planning gaps in frontier models.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later specialized branch of RTS-style LLM evaluation. Good case for comparing raw-vision, text-state, and structured-state interfaces inside one benchmark.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on planning, spatial reasoning, and hallucination under dynamic play.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful when discussing privileged observations versus human-like perceptual burden. Helpful for the distinction between task performance and valid-action reliability.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that many agent failures are not only illegal-action failures but also ineffective-action failures.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): RTS-style LLM benchmarks such as TextStarCraft II and LLM-PySC2
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B06
-- Outline sections: 3,4,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B06/TowerMind.md`
 - Next action: draft-section

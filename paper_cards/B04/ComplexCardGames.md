@@ -18,7 +18,7 @@
 - Why-games relevance: Complex card games give a demanding testbed for whether LLMs can acquire nontrivial strategic competence from data rather than from prompt scaffolds alone.
 - Historical stage: training-oriented evaluation study
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,6
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is partly a benchmark paper and partly a domain-adaptation study
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows why high-complexity games remain attractive as upper-bound capability probes.
-- Best use in Section 1 (historical evolution): Marks a shift from zero-shot prompting studies toward explicit game-skill acquisition.
-- Best use in Section 2 (design space): Useful card-game suite covering both similar and dissimilar rule families.
-- Best use in Section 3 (capability targets): Strong evidence for uncertainty handling, long-horizon strategy, and cross-game transfer limits.
-- Best use in Section 4 (interaction paradigm): Representative symbolic-state training setup.
-- Best use in Section 5 (evaluation protocol): Helpful for discussing fixed-teacher data and post-training evaluation.
-- Best use in Section 6/7 (limitations and future): Strong evidence that specialist game tuning can trade off against broader capability retention.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why high-complexity games remain attractive as upper-bound capability probes.
+- Best use in Section 1 (taxonomy and evolutionary levels): Marks a shift from zero-shot prompting studies toward explicit game-skill acquisition. Useful card-game suite covering both similar and dissimilar rule families.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for uncertainty handling, long-horizon strategy, and cross-game transfer limits.
+- Best use in Section 3 (interaction and evaluation paradigm): Representative symbolic-state training setup. Helpful for discussing fixed-teacher data and post-training evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence that specialist game tuning can trade off against broader capability retention.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): prompt-based poker and card-game evaluations, specialist game-AI training work
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
-- Outline sections: 2,3,6
+- Outline sections: 1,2,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/ComplexCardGames.md`
 - Next action: draft-section

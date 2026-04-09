@@ -18,7 +18,7 @@
 - Why-games relevance: Maze tasks provide explicit goals, procedural variation, and objectively checkable trajectories, which makes them useful for controlled visual-reasoning evaluation.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is rigorous for spatial reasoning, but it currently centers on maze tasks and not on broader interactive gameplay
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows that even stylized game tasks can create objective multimodal reasoning evaluations unavailable in static QA.
-- Best use in Section 1 (historical evolution): Useful as an offshoot where game-like tasks are repurposed for generative video reasoning rather than action-taking agents.
-- Best use in Section 2 (design space): Helps separate action-agent benchmarks from trajectory-generation benchmarks.
-- Best use in Section 3 (capability targets): Strong contrast for spatial-temporal reasoning and rule compliance.
-- Best use in Section 4 (interaction paradigm): Clarifies that some multimodal benchmarks remove action interfaces entirely and instead evaluate generated rollouts.
-- Best use in Section 5 (evaluation protocol): Useful for discussing exact-path metrics, efficiency metrics, and judge-assisted rule-compliance scoring.
-- Best use in Section 6/7 (limitations and future): Supports the claim that strong video reasoning does not automatically imply strong interactive agency.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that even stylized game tasks can create objective multimodal reasoning evaluations unavailable in static QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as an offshoot where game-like tasks are repurposed for generative video reasoning rather than action-taking agents. Helps separate action-agent benchmarks from trajectory-generation benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Strong contrast for spatial-temporal reasoning and rule compliance.
+- Best use in Section 3 (interaction and evaluation paradigm): Clarifies that some multimodal benchmarks remove action interfaces entirely and instead evaluate generated rollouts. Useful for discussing exact-path metrics, efficiency metrics, and judge-assisted rule-compliance scoring.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that strong video reasoning does not automatically imply strong interactive agency.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): visual reasoning and maze-style trajectory benchmarks
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B06
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B06/ReasoningViaVideo.md`
 - Next action: draft-section

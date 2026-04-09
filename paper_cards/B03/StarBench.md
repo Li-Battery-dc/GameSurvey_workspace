@@ -18,7 +18,7 @@
 - Why-games relevance: It captures the pixel-to-action mapping and selective information seeking that static multimodal benchmarks usually abstract away.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the tool-assisted regime is powerful enough that comparisons must distinguish ecological and privileged performance explicitly
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good evidence that games can expose multimodal action problems beyond plain visual question answering.
-- Best use in Section 1 (historical evolution): Useful modern example of GUI-grounded agent benchmarking.
-- Best use in Section 2 (design space): Helps place GUI-based real-client play in the taxonomy.
-- Best use in Section 3 (capability targets): Strong for visual grounding, action selection, and information seeking.
-- Best use in Section 4 (interaction paradigm): Excellent comparison case for privileged versus ecological interfaces.
-- Best use in Section 5 (evaluation protocol): Useful for family-specific battle metrics and ask-or-act evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that perception-to-control fidelity is still a major weakness.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that games can expose multimodal action problems beyond plain visual question answering.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful modern example of GUI-grounded agent benchmarking. Helps place GUI-based real-client play in the taxonomy.
+- Best use in Section 2 (core capabilities evaluated by games): Strong for visual grounding, action selection, and information seeking.
+- Best use in Section 3 (interaction and evaluation paradigm): Excellent comparison case for privileged versus ecological interfaces. Useful for family-specific battle metrics and ask-or-act evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that perception-to-control fidelity is still a major weakness.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GUI-agent benchmarks and earlier VLM game-agent papers
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
-- Outline sections: 3,4,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B03/StarBench.md`
 - Next action: draft-section

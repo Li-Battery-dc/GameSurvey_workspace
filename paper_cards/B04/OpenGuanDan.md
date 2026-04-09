@@ -18,7 +18,7 @@
 - Why-games relevance: It uses a rich card game to stress hidden information, huge legal-action sets, and teammate coordination inside one benchmark.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is a demanding but highly domain-specific benchmark
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how a single rich card game can expose several hard strategic dimensions at once.
-- Best use in Section 1 (historical evolution): Helpful later-stage example of specialized imperfect-information benchmarking.
-- Best use in Section 2 (design space): Strong anchor for mixed cooperative-competitive card games.
-- Best use in Section 3 (capability targets): Direct evidence for partial observability and long-horizon coordination.
-- Best use in Section 4 (interaction paradigm): Useful API-based symbolic benchmark comparison.
-- Best use in Section 5 (evaluation protocol): Relevant for pairwise tournaments and human-AI comparisons.
-- Best use in Section 6/7 (limitations and future): Supports the claim that hidden-information reasoning remains unsolved.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how a single rich card game can expose several hard strategic dimensions at once.
+- Best use in Section 1 (taxonomy and evolutionary levels): Helpful later-stage example of specialized imperfect-information benchmarking. Strong anchor for mixed cooperative-competitive card games.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for partial observability and long-horizon coordination.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful API-based symbolic benchmark comparison. Relevant for pairwise tournaments and human-AI comparisons.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that hidden-information reasoning remains unsolved.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokerBench and other imperfect-information card-game benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B04
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B04/OpenGuanDan.md`
 - Next action: draft-section

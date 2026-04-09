@@ -18,7 +18,7 @@
 - Why-games relevance: Pokémon battles stress hidden information, long horizons, combinatorial action spaces, and opponent modeling in a popular competitive game.
 - Historical stage: ecological agent benchmark / specialist comparison
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 2,3,6
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that specialist game strength often depends as much on search/world-model integration as on raw LLM reasoning
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Limited; mostly a specialist exemplar.
-- Best use in Section 1 (historical evolution): Useful in the line from heuristic game bots to LLM-augmented planners.
-- Best use in Section 2 (design space): Helps contrast benchmark papers with specialist systems plus rich evaluation harnesses.
-- Best use in Section 3 (capability targets): Strong source on uncertainty, opponent modeling, and search-guided planning.
-- Best use in Section 4 (interaction paradigm): An example of LLM modules embedded inside a search agent.
-- Best use in Section 5 (evaluation protocol): Useful for discussing offline puzzles plus live ladder evaluation together.
-- Best use in Section 6/7 (limitations and future): Supports hybrid approaches combining learned priors with planning.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited; mostly a specialist exemplar.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the line from heuristic game bots to LLM-augmented planners. Helps contrast benchmark papers with specialist systems plus rich evaluation harnesses.
+- Best use in Section 2 (core capabilities evaluated by games): Strong source on uncertainty, opponent modeling, and search-guided planning.
+- Best use in Section 3 (interaction and evaluation paradigm): An example of LLM modules embedded inside a search agent. Useful for discussing offline puzzles plus live ladder evaluation together.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports hybrid approaches combining learned priors with planning.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokéLLMon
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,3,6
+- Outline sections: 1,2,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B13/PokeChamp.md`
 - Next action: draft-section

@@ -18,7 +18,7 @@
 - Why-games relevance: Interactive games create long trajectories with grounded state changes, which makes it possible to ask memory questions that are both meaningful and automatically checkable.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many current memory evaluations are too static and too detached from actual agent trajectories
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong example of games as controllable generators of grounded, dynamic evaluation data.
-- Best use in Section 1 (historical evolution): Useful as a specialized later-stage benchmark that repurposes game trajectories for capability diagnosis.
-- Best use in Section 2 (design space): Good case where the benchmark unit is not only an episode but also a trajectory-derived question set.
-- Best use in Section 3 (capability targets): Direct support for long-horizon memory, spatial reasoning, and trajectory consistency.
-- Best use in Section 4 (interaction paradigm): Useful for discussing memory modules as an explicit scaffold variable.
-- Best use in Section 5 (evaluation protocol): Strong reference for trajectory-grounded, automatically verified memory evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that visually grounded memory remains a major open problem.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of games as controllable generators of grounded, dynamic evaluation data.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a specialized later-stage benchmark that repurposes game trajectories for capability diagnosis. Good case where the benchmark unit is not only an episode but also a trajectory-derived question set.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for long-horizon memory, spatial reasoning, and trajectory consistency.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing memory modules as an explicit scaffold variable. Strong reference for trajectory-grounded, automatically verified memory evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that visually grounded memory remains a major open problem.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): static agent-memory QA benchmarks and trajectory-based agent diagnostics
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B06/EMemBench.md`
 - Next action: draft-section

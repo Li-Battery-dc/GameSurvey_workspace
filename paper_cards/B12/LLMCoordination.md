@@ -18,7 +18,7 @@
 - Why-games relevance: Pure coordination games expose partner modeling and joint planning in a controlled setting without mixing in adversarial incentives.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 1,2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that aggregate coordination success alone can hide why models coordinate or fail to coordinate
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Clean evidence that games can isolate cooperation challenges under shared incentives.
-- Best use in Section 1 (historical evolution): Useful bridge from formal coordination settings to richer social benchmarks.
-- Best use in Section 2 (design space): Good example of a curated coordination-game suite with a diagnostic overlay.
-- Best use in Section 3 (capability targets): Direct support for cooperation, theory of mind, and joint planning.
-- Best use in Section 4 (interaction paradigm): Helpful for mixed end-to-end play plus diagnostic QA evaluation.
-- Best use in Section 5 (evaluation protocol): Strong reference for separating holistic coordination outcomes from component-level diagnosis.
-- Best use in Section 6/7 (limitations and future): Supports the claim that unseen-partner robustness is not the same as deep partner-belief reasoning.
+- Best use in Section 0 (lead-in and benchmark motivation): Clean evidence that games can isolate cooperation challenges under shared incentives.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful bridge from formal coordination settings to richer social benchmarks. Good example of a curated coordination-game suite with a diagnostic overlay.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for cooperation, theory of mind, and joint planning.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful for mixed end-to-end play plus diagnostic QA evaluation. Strong reference for separating holistic coordination outcomes from component-level diagnosis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that unseen-partner robustness is not the same as deep partner-belief reasoning.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench-style coordination tasks and earlier coordination-game studies
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B12
-- Outline sections: 1,2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/LLMCoordination.md`
 - Next action: draft-section

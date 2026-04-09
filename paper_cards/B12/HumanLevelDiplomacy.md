@@ -18,7 +18,7 @@
 - Why-games relevance: Diplomacy combines negotiation, hidden intentions, coalition management, and long-horizon strategic planning inside a fully game-structured environment.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 0,1,2,3,5,6
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it highlights the gap between impressive game performance and easily reusable benchmark methodology
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strongest high-level example that games can operationalize language-based social strategy in a way static NLP tasks cannot.
-- Best use in Section 1 (historical evolution): Essential historical bridge from capability demonstrations to later negotiation and cooperation benchmarks.
-- Best use in Section 2 (design space): Useful for mixed cooperative-competitive games with both language and tactical planning.
-- Best use in Section 3 (capability targets): Direct support for negotiation, belief modeling, and long-horizon social strategy.
-- Best use in Section 4 (interaction paradigm): Important example of a hybrid language-plus-planner game agent.
-- Best use in Section 5 (evaluation protocol): Good contrast case for live human-league evaluation rather than fixed benchmark suites.
-- Best use in Section 6/7 (limitations and future): Supports the claim that high ecological validity often comes with low comparability and heavy system engineering.
+- Best use in Section 0 (lead-in and benchmark motivation): Strongest high-level example that games can operationalize language-based social strategy in a way static NLP tasks cannot.
+- Best use in Section 1 (taxonomy and evolutionary levels): Essential historical bridge from capability demonstrations to later negotiation and cooperation benchmarks. Useful for mixed cooperative-competitive games with both language and tactical planning.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for negotiation, belief modeling, and long-horizon social strategy.
+- Best use in Section 3 (interaction and evaluation paradigm): Important example of a hybrid language-plus-planner game agent. Good contrast case for live human-league evaluation rather than fixed benchmark suites.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that high ecological validity often comes with low comparability and heavy system engineering.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): prior Diplomacy AI and negotiation systems
@@ -126,7 +124,7 @@
 - Priority: P0
 - Reading depth: structured-skim
 - Batch ID: B12
-- Outline sections: 0,1,2,3,5,6
+- Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B12/HumanLevelDiplomacy.md`
 - Next action: draft-section

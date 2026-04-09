@@ -18,7 +18,7 @@
 - Why-games relevance: Social deduction games force agents to combine hidden information, dialogue, deception, and structured decision phases.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 1,2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that social-game evaluation can be confounded by prompt scaffolding and bot quality
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Early evidence that games can expose social reasoning gaps beyond static chat quality.
-- Best use in Section 1 (historical evolution): Important as an early social-deduction LLM benchmark.
-- Best use in Section 2 (design space): Helps define hidden-role, dialogue-heavy game benchmarks.
-- Best use in Section 3 (capability targets): Supports discussion of deduction, deception, and cooperation under uncertainty.
-- Best use in Section 4 (interaction paradigm): Useful for role-prompt plus summary-based interaction loops.
-- Best use in Section 5 (evaluation protocol): Good example of role-conditioned win-rate analysis.
-- Best use in Section 6/7 (limitations and future): Supports later calls for stronger multi-agent evaluation and less prompt-dependent setups.
+- Best use in Section 0 (lead-in and benchmark motivation): Early evidence that games can expose social reasoning gaps beyond static chat quality.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important as an early social-deduction LLM benchmark. Helps define hidden-role, dialogue-heavy game benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of deduction, deception, and cooperation under uncertainty.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for role-prompt plus summary-based interaction loops. Good example of role-conditioned win-rate analysis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports later calls for stronger multi-agent evaluation and less prompt-dependent setups.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Werewolf-style social deduction studies
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B12
-- Outline sections: 1,2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/AvalonBench.md`
 - Next action: draft-section

@@ -18,7 +18,7 @@
 - Why-games relevance: Minecraft-like worlds support open-ended cooperation, tool use, spatial planning, and multimodal task specification at scale.
 - Historical stage: open-ended general-game benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,5,6,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that centralized success can mask how weak decentralized coordination really is
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates why open-world games are strong testbeds for embodied collaboration.
-- Best use in Section 1 (historical evolution): A key multi-agent multimodal benchmark in the Minecraft lineage.
-- Best use in Section 2 (design space): Important for cooperative open-world benchmarks with procedural task variation.
-- Best use in Section 3 (capability targets): Supports claims about coordination, visual grounding, and workload allocation.
-- Best use in Section 4 (interaction paradigm): Strong example of multimodal prompts specifying collaborative tasks.
-- Best use in Section 5 (evaluation protocol): Good reference for subgoal success and redundancy metrics.
-- Best use in Section 6/7 (limitations and future): Supports the need for explicit communication and better decentralized agent modeling.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why open-world games are strong testbeds for embodied collaboration.
+- Best use in Section 1 (taxonomy and evolutionary levels): A key multi-agent multimodal benchmark in the Minecraft lineage. Important for cooperative open-world benchmarks with procedural task variation.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about coordination, visual grounding, and workload allocation.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of multimodal prompts specifying collaborative tasks. Good reference for subgoal success and redundancy metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for explicit communication and better decentralized agent modeling.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo, MineRL, Marlo
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B12
-- Outline sections: 3,4,5,6,7
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/TeamCraft.md`
 - Next action: draft-section

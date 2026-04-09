@@ -18,7 +18,7 @@
 - Why-games relevance: Pokemon naturally combines hidden information, strategic adversaries, and extremely long action horizons in a way few other benchmarks do.
 - Historical stage: competition-backed living benchmark
 - Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
-- Most relevant outline section(s): 3,5,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; benchmark difficulty is excellent, but comparing systems is hard when harness complexity varies so much
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how one game franchise can stress multiple hard capability axes simultaneously.
-- Best use in Section 1 (historical evolution): Strong example of competition infrastructure hardening into a living benchmark.
-- Best use in Section 2 (design space): Useful mixed battle-plus-RPG comparison point.
-- Best use in Section 3 (capability targets): Direct evidence for partial observability, long-horizon planning, and metagame adaptation.
-- Best use in Section 4 (interaction paradigm): Good case for harness-heavy evaluation.
-- Best use in Section 5 (evaluation protocol): One of the strongest rating and leaderboard protocol cards in the corpus.
-- Best use in Section 6/7 (limitations and future): Supports the claim that benchmark quality and harness comparability need to be discussed together.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how one game franchise can stress multiple hard capability axes simultaneously.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of competition infrastructure hardening into a living benchmark. Useful mixed battle-plus-RPG comparison point.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for partial observability, long-horizon planning, and metagame adaptation.
+- Best use in Section 3 (interaction and evaluation paradigm): Good case for harness-heavy evaluation. One of the strongest rating and leaderboard protocol cards in the corpus.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that benchmark quality and harness comparability need to be discussed together.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokeChamp, specialist Pokemon agents, long-horizon game-agent demonstrations
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 3,5,7
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B05/PokeAgentChallenge.md`
 - Next action: draft-section

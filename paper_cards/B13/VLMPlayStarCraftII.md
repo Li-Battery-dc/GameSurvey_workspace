@@ -18,7 +18,7 @@
 - Why-games relevance: RTS micromanagement provides a harsh test of multimodal perception, tactical choice, and multi-unit coordination under time pressure.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 2,3,4,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that symbolic SC2 environments miss important multimodal burdens, but purely visual play is still hard enough to need auxiliary text support
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates why multimodal games matter for testing integrated perception and control.
-- Best use in Section 1 (historical evolution): A natural extension of text-based SC2 benchmarking toward human-aligned multimodal play.
-- Best use in Section 2 (design space): Useful for multimodal RTS benchmark design.
-- Best use in Section 3 (capability targets): Strong evidence on target selection, spatial reasoning, and coordinated tactical action.
-- Best use in Section 4 (interaction paradigm): A key comparison point for text-only versus multimodal RTS interfaces.
-- Best use in Section 5 (evaluation protocol): Good example of component ablations within a benchmark paper.
-- Best use in Section 6/7 (limitations and future): Supports future work on bridging full visual realism and scalable evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why multimodal games matter for testing integrated perception and control.
+- Best use in Section 1 (taxonomy and evolutionary levels): A natural extension of text-based SC2 benchmarking toward human-aligned multimodal play. Useful for multimodal RTS benchmark design.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on target selection, spatial reasoning, and coordinated tactical action.
+- Best use in Section 3 (interaction and evaluation paradigm): A key comparison point for text-only versus multimodal RTS interfaces. Good example of component ablations within a benchmark paper.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports future work on bridging full visual realism and scalable evaluation.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLMPlayStarCraftII
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,3,4,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B13/VLMPlayStarCraftII.md`
 - Next action: draft-section

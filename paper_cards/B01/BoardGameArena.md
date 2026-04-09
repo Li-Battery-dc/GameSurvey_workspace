@@ -18,7 +18,7 @@
 - Why-games relevance: It shows how classic strategic games can be repackaged into scalable LLM-agent evaluations with logged reasoning traces.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 1,2,3,4,5
+- Most relevant outline section(s): 1,2,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the paper is stronger on framework design than on a large decisive empirical comparison
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates how games support process-level inspection of reasoning traces.
-- Best use in Section 1 (historical evolution): Helps show the move from isolated benchmark scripts to reusable benchmark infrastructure.
-- Best use in Section 2 (design space): Useful game-family benchmark with mixed world structures inside one framework.
-- Best use in Section 3 (capability targets): Supports strategic reasoning and game-theoretic decision making claims.
-- Best use in Section 4 (interaction paradigm): Good illustration of OpenSpiel-state-to-prompt wrappers, structured reasoning directives, and JSON-style output constraints.
-- Best use in Section 5 (evaluation protocol): Relevant for reasoning-trace analysis and optimality-oriented metrics.
-- Best use in Section 6/7 (limitations and future): Supports discussion of why rationale logging is useful but imperfect.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates how games support process-level inspection of reasoning traces.
+- Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from isolated benchmark scripts to reusable benchmark infrastructure. Useful game-family benchmark with mixed world structures inside one framework.
+- Best use in Section 2 (core capabilities evaluated by games): Supports strategic reasoning and game-theoretic decision making claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Good illustration of OpenSpiel-state-to-prompt wrappers, structured reasoning directives, and JSON-style output constraints. Relevant for reasoning-trace analysis and optimality-oriented metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of why rationale logging is useful but imperfect.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): OpenSpiel-based LLM game wrappers and earlier board-game prompting setups
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 1,2,3,4,5
+- Outline sections: 1,2,3
 - Survey role: representative
 - Paper card path: `paper_cards/B01/BoardGameArena.md`
 - Check status: unchecked

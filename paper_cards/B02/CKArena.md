@@ -18,7 +18,7 @@
 - Why-games relevance: It uses the interaction pressure of a game to force concept use, discrimination, and role-aware description in context.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark cleanly isolates concept use, but only within one specialized language-game setting
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how games can operationalize semantic knowledge in interaction rather than as static QA.
-- Best use in Section 1 (historical evolution): Useful example of game benchmarks expanding into diagnostic knowledge probes.
-- Best use in Section 2 (design space): Social-deduction-adjacent benchmark centered on language-only concept play.
-- Best use in Section 3 (capability targets): Supports concept reasoning, inference from partial clues, and strategic description.
-- Best use in Section 4 (interaction paradigm): Illustrates prompt restrictions used to isolate target capabilities.
-- Best use in Section 5 (evaluation protocol): Relevant for mixed game outcomes plus snapshot QA and anchor-based rating.
-- Best use in Section 6/7 (limitations and future): Helps argue that general benchmark strength does not guarantee fine-grained conceptual competence.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how games can operationalize semantic knowledge in interaction rather than as static QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful example of game benchmarks expanding into diagnostic knowledge probes. Social-deduction-adjacent benchmark centered on language-only concept play.
+- Best use in Section 2 (core capabilities evaluated by games): Supports concept reasoning, inference from partial clues, and strategic description.
+- Best use in Section 3 (interaction and evaluation paradigm): Illustrates prompt restrictions used to isolate target capabilities. Relevant for mixed game outcomes plus snapshot QA and anchor-based rating.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that general benchmark strength does not guarantee fine-grained conceptual competence.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Undercover-game LLM studies and static concept-understanding benchmarks
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B02/CKArena.md`
 - Next action: draft-section

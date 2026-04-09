@@ -18,7 +18,7 @@
 - Why-games relevance: It makes the case that games expose planning, randomness, memory, and spatial reasoning in ways static QA benchmarks miss.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 0,1,2,3,4,5
+- Most relevant outline section(s): 0,1,2,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; textifying visual worlds helps measurement but weakens ecological validity
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Early clear argument that games surface dynamic capabilities missing from static benchmarks.
-- Best use in Section 1 (historical evolution): Early transition point from generic game environments to capability-decomposed LLM-agent benchmarking.
-- Best use in Section 2 (design space): Useful exemplar of a multi-game diagnostic suite with mixed world structures.
-- Best use in Section 3 (capability targets): Strong anchor for rule following, planning, spatial reasoning, and learning-from-history.
-- Best use in Section 4 (interaction paradigm): Illustrates an early, highly privileged textification pipeline using manuals, bounded history, and flat action sets.
-- Best use in Section 5 (evaluation protocol): Good reference for reward/completion/score hybrids and for the distinction between native game metrics and later human-normalized comparison.
-- Best use in Section 6/7 (limitations and future): Supports the claim that symbolic success does not imply ecological competence.
+- Best use in Section 0 (lead-in and benchmark motivation): Early clear argument that games surface dynamic capabilities missing from static benchmarks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Early transition point from generic game environments to capability-decomposed LLM-agent benchmarking. Useful exemplar of a multi-game diagnostic suite with mixed world structures.
+- Best use in Section 2 (core capabilities evaluated by games): Strong anchor for rule following, planning, spatial reasoning, and learning-from-history.
+- Best use in Section 3 (interaction and evaluation paradigm): Illustrates an early, highly privileged textification pipeline using manuals, bounded history, and flat action sets. Good reference for reward/completion/score hybrids and for the distinction between native game metrics and later human-normalized comparison.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic success does not imply ecological competence.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter and Messenger as component environments, plus earlier text-game and general-agent evaluation lines
@@ -127,7 +125,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 0,1,2,3,4,5
+- Outline sections: 0,1,2,3
 - Survey role: anchor
 - Paper card path: `paper_cards/B01/SmartPlay.md`
 - Check status: unchecked

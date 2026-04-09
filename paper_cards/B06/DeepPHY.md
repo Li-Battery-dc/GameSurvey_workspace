@@ -18,7 +18,7 @@
 - Why-games relevance: Physics games and simulators provide controllable, outcome-verifiable settings where perceptual understanding must be converted into action plans rather than static answers.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark’s necessary observation and action simplifications make performance partly dependent on interface design choices
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows why interactive game-like settings can test reasoning more directly than static physics QA.
-- Best use in Section 1 (historical evolution): Useful as a side branch where game environments are used for embodied or physical-reasoning diagnosis rather than for broad benchmark suites.
-- Best use in Section 2 (design space): Helps distinguish game benchmarks from simulator-heavy physics diagnostics.
-- Best use in Section 3 (capability targets): Strong contrast case for visual causal reasoning and predictive control.
-- Best use in Section 4 (interaction paradigm): Useful for discussing how much perceptual and motor burden current benchmarks remove.
-- Best use in Section 5 (evaluation protocol): Relevant when comparing pass@K-style task completion with broader gameplay metrics.
-- Best use in Section 6/7 (limitations and future): Supports the claim that current multimodal agents still do not reliably operationalize physics knowledge in action loops.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why interactive game-like settings can test reasoning more directly than static physics QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a side branch where game environments are used for embodied or physical-reasoning diagnosis rather than for broad benchmark suites. Helps distinguish game benchmarks from simulator-heavy physics diagnostics.
+- Best use in Section 2 (core capabilities evaluated by games): Strong contrast case for visual causal reasoning and predictive control.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing how much perceptual and motor burden current benchmarks remove. Relevant when comparing pass@K-style task completion with broader gameplay metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that current multimodal agents still do not reliably operationalize physics knowledge in action loops.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): static physical reasoning benchmarks and symbolic embodied-control settings
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B06
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B06/DeepPHY.md`
 - Next action: draft-section

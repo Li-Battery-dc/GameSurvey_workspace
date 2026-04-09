@@ -87,13 +87,11 @@
 - Does this paper reveal a benchmark-design limitation as well?
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games):
-- Best use in Section 1 (historical evolution):
-- Best use in Section 2 (design space):
-- Best use in Section 3 (capability targets):
-- Best use in Section 4 (interaction paradigm):
-- Best use in Section 5 (evaluation protocol):
-- Best use in Section 6/7 (limitations and future):
+- Best use in Section 0 (lead-in and benchmark motivation):
+- Best use in Section 1 (taxonomy and evolutionary levels):
+- Best use in Section 2 (core capabilities evaluated by games):
+- Best use in Section 3 (interaction and evaluation paradigm):
+- Best use in Section 4 (synthesis, bottlenecks, and future design):
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s):

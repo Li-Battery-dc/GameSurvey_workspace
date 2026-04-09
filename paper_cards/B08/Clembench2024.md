@@ -18,7 +18,7 @@
 - Why-games relevance: Dialogue games make it possible to keep evaluation dynamic, multi-turn, and automatically scoreable while still targeting interactive agency.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L3 social intelligence
-- Most relevant outline section(s): 1,3,4,5,7
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it emphasizes that interactive benchmarks need continuous maintenance to stay diagnostic
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good evidence that game-like interaction supports dynamic and contamination-aware evaluation.
-- Best use in Section 1 (historical evolution): Important follow-up showing how a dialogue-game framework matures after the initial proof of concept.
-- Best use in Section 2 (design space): Helps represent dialogue-game frameworks that evolve over time.
-- Best use in Section 3 (capability targets): Supports conversational agency and language-sensitive interactive reasoning.
-- Best use in Section 4 (interaction paradigm): Useful for natural-language multi-action evaluation under benchmark control.
-- Best use in Section 5 (evaluation protocol): Strong reference for dynamic maintenance, human gaps, and multilingual prompt effects.
-- Best use in Section 6/7 (limitations and future): Supports the claim that future benchmarks must remain updateable and contamination-aware.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that game-like interaction supports dynamic and contamination-aware evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important follow-up showing how a dialogue-game framework matures after the initial proof of concept. Helps represent dialogue-game frameworks that evolve over time.
+- Best use in Section 2 (core capabilities evaluated by games): Supports conversational agency and language-sensitive interactive reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for natural-language multi-action evaluation under benchmark control. Strong reference for dynamic maintenance, human gaps, and multilingual prompt effects.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmarks must remain updateable and contamination-aware.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): clembench
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: structured-skim
 - Batch ID: B08
-- Outline sections: 1,3,4,5,7
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/Clembench2024.md`
 - Next action: draft-section

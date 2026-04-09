@@ -18,7 +18,7 @@
 - Why-games relevance: Atari provides a compact way to test whether multimodal models can close the gap between visual understanding and low-level control.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that using LLMs as direct low-level policies is informative but also heavily system-limited
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows that interactive visual control exposes limitations not visible in static multimodal benchmarks.
-- Best use in Section 1 (historical evolution): A useful transition from classical RL game environments to multimodal LLM evaluation.
-- Best use in Section 2 (design space): A narrow but concrete example of low-level policy benchmarking.
-- Best use in Section 3 (capability targets): Supports discussion of spatial-temporal reasoning and reactive control.
-- Best use in Section 4 (interaction paradigm): Contrasts structured action outputs with natural-language action interfaces.
-- Best use in Section 5 (evaluation protocol): Good for discussing normalized human-relative score reporting.
-- Best use in Section 6/7 (limitations and future): Supports the argument that frontier MLLMs still trail classical game agents in reactive environments.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that interactive visual control exposes limitations not visible in static multimodal benchmarks.
+- Best use in Section 1 (taxonomy and evolutionary levels): A useful transition from classical RL game environments to multimodal LLM evaluation. A narrow but concrete example of low-level policy benchmarking.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of spatial-temporal reasoning and reactive control.
+- Best use in Section 3 (interaction and evaluation paradigm): Contrasts structured action outputs with natural-language action interfaces. Good for discussing normalized human-relative score reporting.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that frontier MLLMs still trail classical game agents in reactive environments.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Balrog, GameplayQA
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/AtariGPT.md`
 - Next action: draft-section

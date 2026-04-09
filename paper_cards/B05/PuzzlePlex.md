@@ -18,7 +18,7 @@
 - Why-games relevance: Puzzles retain explicit rules and strategic interaction while letting benchmark designers vary uncertainty, competition, and horizon length compactly.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,6,7
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; PuzzlePlex is rigorous for puzzle reasoning, but puzzle-heavy benchmarks only partially overlap with broader agent evaluation
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how compact game-like environments can still generate difficult reasoning tests.
-- Best use in Section 1 (historical evolution): Later-stage example of reasoning-model benchmarking entering game-like domains.
-- Best use in Section 2 (design space): Useful contrast case for puzzle-focused suites.
-- Best use in Section 3 (capability targets): Supports claims about rule grounding, planning, and uncertainty handling.
-- Best use in Section 4 (interaction paradigm): Good example of comparing direct interaction with code-based execution.
-- Best use in Section 5 (evaluation protocol): Useful Elo and legal-play metric comparison point.
-- Best use in Section 6/7 (limitations and future): Supports the argument that puzzle success and broader agent competence should not be conflated.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how compact game-like environments can still generate difficult reasoning tests.
+- Best use in Section 1 (taxonomy and evolutionary levels): Later-stage example of reasoning-model benchmarking entering game-like domains. Useful contrast case for puzzle-focused suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about rule grounding, planning, and uncertainty handling.
+- Best use in Section 3 (interaction and evaluation paradigm): Good example of comparing direct interaction with code-based execution. Useful Elo and legal-play metric comparison point.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that puzzle success and broader agent competence should not be conflated.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PuzzleBench, VGRP-Bench, BoardgameQA, other puzzle-centered evaluations
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 2,3,6,7
+- Outline sections: 1,2,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B05/PuzzlePlex.md`
 - Next action: draft-section

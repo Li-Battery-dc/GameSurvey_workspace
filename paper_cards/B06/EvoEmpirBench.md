@@ -18,7 +18,7 @@
 - Why-games relevance: Dynamic games make it possible to test exploration, risk management, and adaptation under partial observability with automatically measurable outcomes.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; because the paper couples a new benchmark with a new workflow, it is harder to separate raw benchmark difficulty from scaffold-driven performance improvements
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good example of why dynamic games remain harder than static reasoning datasets.
-- Best use in Section 1 (historical evolution): Useful as a later narrow branch focused on adaptive online reasoning rather than broad benchmark suites.
-- Best use in Section 2 (design space): Helps define the boundary between dynamic single-agent diagnostics and broader game-benchmark platforms.
-- Best use in Section 3 (capability targets): Supports discussion of exploration, resource trade-offs, and adaptation under partial observability.
-- Best use in Section 4 (interaction paradigm): Useful when discussing prompt-and-API game interfaces and scaffolded memory.
-- Best use in Section 5 (evaluation protocol): Highlights how game benchmarks can expose multiple complementary metrics instead of one scalar score.
-- Best use in Section 6/7 (limitations and future): Supports the argument that benchmark papers should disentangle environment difficulty from workflow engineering.
+- Best use in Section 0 (lead-in and benchmark motivation): Good example of why dynamic games remain harder than static reasoning datasets.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later narrow branch focused on adaptive online reasoning rather than broad benchmark suites. Helps define the boundary between dynamic single-agent diagnostics and broader game-benchmark platforms.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of exploration, resource trade-offs, and adaptation under partial observability.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful when discussing prompt-and-API game interfaces and scaffolded memory. Highlights how game benchmarks can expose multiple complementary metrics instead of one scalar score.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark papers should disentangle environment difficulty from workflow engineering.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): dynamic text-game and online-learning agent benchmarks
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B06
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B06/EvoEmpirBench.md`
 - Next action: draft-section

@@ -18,7 +18,7 @@
 - Why-games relevance: Traversal tasks turn planning into a measurable sequential control problem with exact optimal-path references.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that natural-language planning competence does not transfer automatically to symbolic traversal tasks
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Supports the argument that game-like tasks give precise planning metrics.
-- Best use in Section 1 (historical evolution): A useful symbolic planning waypoint before richer embodied game benchmarks.
-- Best use in Section 2 (design space): Helps define symbolic traversal benchmarks.
-- Best use in Section 3 (capability targets): Supports path planning and route-following discussions.
-- Best use in Section 4 (interaction paradigm): A contrast case for one-shot action-sequence generation.
-- Best use in Section 5 (evaluation protocol): Useful for discussing composite metrics beyond pure success rate.
-- Best use in Section 6/7 (limitations and future): Shows the limits of simple symbolic planning transfer.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the argument that game-like tasks give precise planning metrics.
+- Best use in Section 1 (taxonomy and evolutionary levels): A useful symbolic planning waypoint before richer embodied game benchmarks. Helps define symbolic traversal benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Supports path planning and route-following discussions.
+- Best use in Section 3 (interaction and evaluation paradigm): A contrast case for one-shot action-sequence generation. Useful for discussing composite metrics beyond pure success rate.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Shows the limits of simple symbolic planning transfer.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PlanBench-like symbolic planning tasks
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/GameTraversalBenchmark.md`
 - Next action: draft-section

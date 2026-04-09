@@ -18,7 +18,7 @@
 - Why-games relevance: Game-like interaction provides goal-directed, repeatable, multi-turn evaluation that sits between fixed-instance testing and open-ended human preference.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L3 social intelligence
-- Most relevant outline section(s): 0,1,5,7
+- Most relevant outline section(s): 0,1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it explicitly frames the limitations of both static reference benchmarks and open preference arenas
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Gives a direct conceptual argument for why game-based evaluation fills a gap left by static and arena-style evaluation.
-- Best use in Section 1 (historical evolution): Useful for framing the dialogue-game branch as a distinct historical development.
-- Best use in Section 2 (design space): Helpful for representing framework-level benchmark contributions.
-- Best use in Section 3 (capability targets): Secondary; more about evaluation framing than one capability axis.
-- Best use in Section 4 (interaction paradigm): Strong support for controlled natural-language interaction settings.
-- Best use in Section 5 (evaluation protocol): One of the best sources on reference-free, repeatable, multi-turn evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the argument that future game benchmarks should balance ecological validity with repeatability and extensibility.
+- Best use in Section 0 (lead-in and benchmark motivation): Gives a direct conceptual argument for why game-based evaluation fills a gap left by static and arena-style evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for framing the dialogue-game branch as a distinct historical development. Helpful for representing framework-level benchmark contributions.
+- Best use in Section 2 (core capabilities evaluated by games): Secondary; more about evaluation framing than one capability axis.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong support for controlled natural-language interaction settings. One of the best sources on reference-free, repeatable, multi-turn evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that future game benchmarks should balance ecological validity with repeatability and extensibility.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): clembench and clembench-2024
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: structured-skim
 - Batch ID: B08
-- Outline sections: 0,1,5,7
+- Outline sections: 0,1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/ThirdParadigm.md`
 - Next action: draft-section

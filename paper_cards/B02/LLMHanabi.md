@@ -18,7 +18,7 @@
 - Why-games relevance: Cooperative games let the benchmark test hidden-state reasoning and partner modeling without collapsing everything into competition or deception.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is narrow but clean, so it is better for mechanism probing than for broad generalization claims
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how cooperative games can probe interactive inference beyond solitary reasoning.
-- Best use in Section 1 (historical evolution): Useful expansion from adversarial social games toward collaboration-centered social benchmarks.
-- Best use in Section 2 (design space): Clean cooperative imperfect-information benchmark anchor.
-- Best use in Section 3 (capability targets): Direct evidence for cooperation and rationale inference.
-- Best use in Section 4 (interaction paradigm): Helpful case of prompt-instrumented cooperative play.
-- Best use in Section 5 (evaluation protocol): Strong for dual scoring with gameplay and ToM metrics.
-- Best use in Section 6/7 (limitations and future): Supports the claim that partner modeling remains a major bottleneck.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how cooperative games can probe interactive inference beyond solitary reasoning.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful expansion from adversarial social games toward collaboration-centered social benchmarks. Clean cooperative imperfect-information benchmark anchor.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for cooperation and rationale inference.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful case of prompt-instrumented cooperative play. Strong for dual scoring with gameplay and ToM metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that partner modeling remains a major bottleneck.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Hanabi-based AI collaboration studies and ToM benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B02/LLMHanabi.md`
 - Next action: draft-section

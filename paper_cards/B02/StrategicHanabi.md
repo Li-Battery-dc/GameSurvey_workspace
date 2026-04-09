@@ -18,7 +18,7 @@
 - Why-games relevance: Hanabi makes hidden-state coordination and recursive partner modeling concrete while remaining fully scoreable.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it highlights how much cooperative-benchmark results can change when memory and context engineering change
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good evidence that cooperative games reveal hidden-state reasoning limits that ordinary QA misses.
-- Best use in Section 1 (historical evolution): Useful for the cooperative branch of social benchmark evolution.
-- Best use in Section 2 (design space): Strong single-game cooperative imperfect-information case.
-- Best use in Section 3 (capability targets): Directly supports cooperation, ToM, and working-memory claims.
-- Best use in Section 4 (interaction paradigm): Helpful when discussing context engineering and memory scaffolds.
-- Best use in Section 5 (evaluation protocol): Useful for comparing native score with scaffolded and trainable evaluation setups.
-- Best use in Section 6/7 (limitations and future): Supports the claim that social competence often depends on explicit memory support.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that cooperative games reveal hidden-state reasoning limits that ordinary QA misses.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the cooperative branch of social benchmark evolution. Strong single-game cooperative imperfect-information case.
+- Best use in Section 2 (core capabilities evaluated by games): Directly supports cooperation, ToM, and working-memory claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful when discussing context engineering and memory scaffolds. Useful for comparing native score with scaffolded and trainable evaluation setups.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that social competence often depends on explicit memory support.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLM-Hanabi, earlier Hanabi AI work, cooperative ToM evaluations
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B02/StrategicHanabi.md`
 - Next action: draft-section

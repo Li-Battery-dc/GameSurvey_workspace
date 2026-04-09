@@ -18,7 +18,7 @@
 - Why-games relevance: Even tiny game worlds can expose the interaction between perception, planning, and repeated action selection better than one-shot reasoning tasks.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that apparent reasoning improvements can disappear once evaluation requires persistent action rather than one-shot answers
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Useful for showing that game interaction reveals failures hidden by static reasoning tests.
-- Best use in Section 1 (historical evolution): Fits the diagnostic phase of multimodal game benchmarking.
-- Best use in Section 2 (design space): Good example of a deliberately simplified task-game suite.
-- Best use in Section 3 (capability targets): Strong evidence for separating perception and planning bottlenecks.
-- Best use in Section 4 (interaction paradigm): Helpful contrast to richer video-game interfaces because the world is intentionally stripped down.
-- Best use in Section 5 (evaluation protocol): Useful for discussing factorized evaluation across modality and history settings.
-- Best use in Section 6/7 (limitations and future): Supports the claim that basic sequential control remains unresolved even before ecological realism is introduced.
+- Best use in Section 0 (lead-in and benchmark motivation): Useful for showing that game interaction reveals failures hidden by static reasoning tests.
+- Best use in Section 1 (taxonomy and evolutionary levels): Fits the diagnostic phase of multimodal game benchmarking. Good example of a deliberately simplified task-game suite.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for separating perception and planning bottlenecks.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful contrast to richer video-game interfaces because the world is intentionally stripped down. Useful for discussing factorized evaluation across modality and history settings.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that basic sequential control remains unresolved even before ecological realism is introduced.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GameplayQA, Sudoku-Bench
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/INGVP.md`
 - Next action: draft-section

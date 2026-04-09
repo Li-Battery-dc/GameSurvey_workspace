@@ -18,7 +18,7 @@
 - Why-games relevance: It shows that games can provide repeated, adversarial, role-grounded deception events rather than isolated lie-detection examples.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 3,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark depends on self-reported deception labels as a reference signal
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how repeated social interaction creates richer deceptive behavior than static truthfulness datasets.
-- Best use in Section 1 (historical evolution): Represents a move from social-game tournaments toward instrumented deception diagnostics.
-- Best use in Section 2 (design space): Helpful social-deduction design point with statement-level units.
-- Best use in Section 3 (capability targets): Excellent fit for deception generation, detection, and belief tracking.
-- Best use in Section 4 (interaction paradigm): Illustrates highly instrumented role-grounded prompting and private scratchpads.
-- Best use in Section 5 (evaluation protocol): Useful for calibration metrics, suspicion trajectories, and per-role statistics.
-- Best use in Section 6/7 (limitations and future): Supports the claim that deception detection remains weak and poorly calibrated.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how repeated social interaction creates richer deceptive behavior than static truthfulness datasets.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move from social-game tournaments toward instrumented deception diagnostics. Helpful social-deduction design point with statement-level units.
+- Best use in Section 2 (core capabilities evaluated by games): Excellent fit for deception generation, detection, and belief tracking.
+- Best use in Section 3 (interaction and evaluation paradigm): Illustrates highly instrumented role-grounded prompting and private scratchpads. Useful for calibration metrics, suspicion trajectories, and per-role statistics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that deception detection remains weak and poorly calibrated.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Werewolf Arena and deception-detection studies
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 3,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B02/Wolf.md`
 - Next action: draft-section

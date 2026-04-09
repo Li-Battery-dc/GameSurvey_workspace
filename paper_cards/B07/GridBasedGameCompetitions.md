@@ -18,7 +18,7 @@
 - Why-games relevance: Small deterministic games make rule comprehension and action validity easy to verify, which is useful for controlled LLM comparison.
 - Historical stage: formal container
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 1,2,3,5
+- Most relevant outline section(s): 1,2,3
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that benchmark outcomes in simple games can be driven heavily by representation choice
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Modest supporting example that games offer exact rule-verification and strategy probes.
-- Best use in Section 1 (historical evolution): Useful as a narrow formal precursor rather than a main historical anchor.
-- Best use in Section 2 (design space): Clean example of perfect-information deterministic board-game benchmarking.
-- Best use in Section 3 (capability targets): Supports rule-following and simple strategic-planning discussion.
-- Best use in Section 4 (interaction paradigm): Helpful for prompt-format and visual-versus-symbolic interface comparisons.
-- Best use in Section 5 (evaluation protocol): Useful for discussing invalid-move metrics and leaderboard design.
-- Best use in Section 6/7 (limitations and future): Supports the need for richer games once simple deterministic settings saturate.
+- Best use in Section 0 (lead-in and benchmark motivation): Modest supporting example that games offer exact rule-verification and strategy probes.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a narrow formal precursor rather than a main historical anchor. Clean example of perfect-information deterministic board-game benchmarking.
+- Best use in Section 2 (core capabilities evaluated by games): Supports rule-following and simple strategic-planning discussion.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful for prompt-format and visual-versus-symbolic interface comparisons. Useful for discussing invalid-move metrics and leaderboard design.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for richer games once simple deterministic settings saturate.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GTBench, early board-game LLM evaluations
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: structured-skim
 - Batch ID: B07
-- Outline sections: 1,2,3,5
+- Outline sections: 1,2,3
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/GridBasedGameCompetitions.md`
 - Next action: draft-section

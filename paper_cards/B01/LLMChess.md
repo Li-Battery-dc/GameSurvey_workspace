@@ -18,7 +18,7 @@
 - Why-games relevance: Chess supplies a high-contamination-resistance, automatically verifiable environment where legal-move errors and strategic weakness are easy to separate.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 1,2,3,4,5
+- Most relevant outline section(s): 1,2,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the chosen tool access simplifies some real chess burdens while intentionally foregrounding others
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Illustrates how games expose both competence and failure modes with exact automatic checking.
-- Best use in Section 1 (historical evolution): Strong example of single-game probes used as modern reasoning diagnostics.
-- Best use in Section 2 (design space): Simple but useful single-game perfect-information anchor.
-- Best use in Section 3 (capability targets): Good evidence for rule grounding, tool use, and tactical reasoning.
-- Best use in Section 4 (interaction paradigm): Helpful case for privileged API tools, exposed legal-move sets, and the deliberate omission of move history.
-- Best use in Section 5 (evaluation protocol): Strong example of combining win/loss, Elo, and process-level instruction-following or per-ply error metrics.
-- Best use in Section 6/7 (limitations and future): Supports the claim that instruction following remains a bottleneck even in formal domains.
+- Best use in Section 0 (lead-in and benchmark motivation): Illustrates how games expose both competence and failure modes with exact automatic checking.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of single-game probes used as modern reasoning diagnostics. Simple but useful single-game perfect-information anchor.
+- Best use in Section 2 (core capabilities evaluated by games): Good evidence for rule grounding, tool use, and tactical reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful case for privileged API tools, exposed legal-move sets, and the deliberate omission of move history. Strong example of combining win/loss, Elo, and process-level instruction-following or per-ply error metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that instruction following remains a bottleneck even in formal domains.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): chess-as-reasoning studies and earlier chess finetuning papers
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 1,2,3,4,5
+- Outline sections: 1,2,3
 - Survey role: representative
 - Paper card path: `paper_cards/B01/LLMChess.md`
 - Check status: unchecked

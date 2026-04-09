@@ -18,7 +18,7 @@
 - Why-games relevance: Competitive Minecraft combines open-ended embodied environments with teammate coordination and adversarial adaptation in one benchmark.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence / L4 embodied interaction
-- Most relevant outline section(s): 2,3,4,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is promising but still narrow in scenario count and closely tied to one reference method
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how games expose adaptation, coordination, and failure modes in a controlled but rich world.
-- Best use in Section 1 (historical evolution): Later-stage example of embodied competitive multi-agent benchmarking.
-- Best use in Section 2 (design space): Strong case of an open-world competitive scenario suite.
-- Best use in Section 3 (capability targets): Direct evidence for planning under uncertainty, cooperation, and opponent modeling.
-- Best use in Section 4 (interaction paradigm): Useful comparison point between symbolic wrappers and raw ecological play.
-- Best use in Section 5 (evaluation protocol): Helpful for repeated-episode testing and built-in-opponent evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that multi-agent open-world competition remains under-benchmarked.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how games expose adaptation, coordination, and failure modes in a controlled but rich world.
+- Best use in Section 1 (taxonomy and evolutionary levels): Later-stage example of embodied competitive multi-agent benchmarking. Strong case of an open-world competitive scenario suite.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for planning under uncertainty, cooperation, and opponent modeling.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful comparison point between symbolic wrappers and raw ecological play. Helpful for repeated-episode testing and built-in-opponent evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that multi-agent open-world competition remains under-benchmarked.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Minecraft cooperative benchmarks and team-vs-team RL challenges such as SMAC
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B04
-- Outline sections: 2,3,4,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B04/PillagerBench.md`
 - Next action: draft-section

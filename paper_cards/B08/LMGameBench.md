@@ -18,7 +18,7 @@
 - Why-games relevance: Video games stress perception, planning, memory, and low-fault-tolerance action in ways that are easy to score yet difficult to saturate.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 0,1,2,3,5
+- Most relevant outline section(s): 0,1,2,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark shows that scaffold choice can dominate model ranking, which complicates comparisons unless the interface is reported explicitly
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that games stress a composition of abilities usually benchmarked in isolation.
-- Best use in Section 1 (historical evolution): Represents the move from simply using games to building benchmark-plus-harness ecosystems around them.
-- Best use in Section 2 (design space): Useful for discussing real-game suites, scaffolded interfaces, and contamination-aware benchmark design.
-- Best use in Section 3 (capability targets): Covers perception, planning, memory, and some transfer.
-- Best use in Section 4 (interaction paradigm): One of the best sources on how much the interface itself shapes game-agent performance.
-- Best use in Section 5 (evaluation protocol): Strong reference for prompt variance, contamination studies, and module ablations.
-- Best use in Section 6/7 (limitations and future): Supports the claim that future benchmarks must expose scaffolds and contamination checks, not hide them.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games stress a composition of abilities usually benchmarked in isolation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move from simply using games to building benchmark-plus-harness ecosystems around them. Useful for discussing real-game suites, scaffolded interfaces, and contamination-aware benchmark design.
+- Best use in Section 2 (core capabilities evaluated by games): Covers perception, planning, memory, and some transfer.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the best sources on how much the interface itself shapes game-agent performance. Strong reference for prompt variance, contamination studies, and module ablations.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmarks must expose scaffolds and contamination checks, not hide them.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): BALROG and earlier video-game suite benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B08
-- Outline sections: 0,1,2,3,5
+- Outline sections: 0,1,2,3
 - Survey role: representative
 - Paper card path: `paper_cards/B08/LMGameBench.md`
 - Next action: draft-section

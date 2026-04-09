@@ -18,7 +18,7 @@
 - Why-games relevance: Poker combines hidden information, opponent modeling, and strategic trade-offs in a fully formalized setting with exact solver references.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 2,3,6
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that full-game poker evaluation is too expensive to use alone during development, motivating spot benchmarks
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Supports the use of games to evaluate hidden-information strategy.
-- Best use in Section 1 (historical evolution): A specialist benchmark reflecting a move from full-play engines to faster diagnostic spot evaluation.
-- Best use in Section 2 (design space): Useful for decision-spot versus full-trajectory benchmark distinctions.
-- Best use in Section 3 (capability targets): Strong evidence on uncertainty, balance, and opponent-aware play.
-- Best use in Section 4 (interaction paradigm): A contrast case for text-only strategic state inputs.
-- Best use in Section 5 (evaluation protocol): A strong reference for solver-grounded action-level accuracy metrics.
-- Best use in Section 6/7 (limitations and future): Supports the idea that specialist domains may need both spot and live-play evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the use of games to evaluate hidden-information strategy.
+- Best use in Section 1 (taxonomy and evolutionary levels): A specialist benchmark reflecting a move from full-play engines to faster diagnostic spot evaluation. Useful for decision-spot versus full-trajectory benchmark distinctions.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on uncertainty, balance, and opponent-aware play.
+- Best use in Section 3 (interaction and evaluation paradigm): A contrast case for text-only strategic state inputs. A strong reference for solver-grounded action-level accuracy metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the idea that specialist domains may need both spot and live-play evaluation.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): solver-based poker AI work
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,3,6
+- Outline sections: 1,2,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B13/PokerBench.md`
 - Next action: draft-section

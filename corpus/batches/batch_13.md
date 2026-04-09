@@ -8,14 +8,14 @@
 
 | Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | PokerBench | PokerBench | P2 | deep | 2,3,6 | Imperfect-information specialist benchmark with strong training emphasis. |
-| 2 | CompleteChessGames | Complete Chess Games Enable LLM Become A Chess Master | P2 | deep | 2,6 | Chess-specialized training paper and scope-bound comparison target. |
-| 3 | PokeChamp | PokéChamp | P2 | deep | 2,3,6 | Expert-level Pokémon agent acting as a specialist upper bound. |
-| 4 | LLMPlayStarCraftII | Large Language Models Play StarCraft II | P1 | deep | 1,2,3,4,6 | Early StarCraft II benchmark showing the text-interface RTS lineage. |
-| 5 | StarCraftIIArena | StarCraft II Arena | P1 | deep | 2,3,4,5,6 | RTS benchmark for strategic planning, real-time adaptation, and robustness. |
-| 6 | VLMPlayStarCraftII | VLMs Play StarCraft II | P1 | deep | 2,3,4,5,6 | Multimodal RTS benchmark extending the StarCraft line into visual decision-making. |
-| 7 | MixingExpertKnowledge | Mixing Expert Knowledge | P3 | structured-skim | 2,6 | Boundary-case Go specialist retained for domain-specific upper-bound comparison. |
-| 8 | GTOWizardBenchmark | GTO Wizard Benchmark | P1 | deep | 2,3,5,6 | Standardized poker benchmark with a fixed superhuman anchor for specialist calibration. |
+| 1 | PokerBench | PokerBench | P2 | deep | 1,2,4 | Imperfect-information specialist benchmark with strong training emphasis. |
+| 2 | CompleteChessGames | Complete Chess Games Enable LLM Become A Chess Master | P2 | deep | 1,4 | Chess-specialized training paper and scope-bound comparison target. |
+| 3 | PokeChamp | PokéChamp | P2 | deep | 1,2,4 | Expert-level Pokémon agent acting as a specialist upper bound. |
+| 4 | LLMPlayStarCraftII | Large Language Models Play StarCraft II | P1 | deep | 1,2,3,4 | Early StarCraft II benchmark showing the text-interface RTS lineage. |
+| 5 | StarCraftIIArena | StarCraft II Arena | P1 | deep | 1,2,3,4 | RTS benchmark for strategic planning, real-time adaptation, and robustness. |
+| 6 | VLMPlayStarCraftII | VLMs Play StarCraft II | P1 | deep | 1,2,3,4 | Multimodal RTS benchmark extending the StarCraft line into visual decision-making. |
+| 7 | MixingExpertKnowledge | Mixing Expert Knowledge | P3 | structured-skim | 1,4 | Boundary-case Go specialist retained for domain-specific upper-bound comparison. |
+| 8 | GTOWizardBenchmark | GTO Wizard Benchmark | P1 | deep | 1,2,3,4 | Standardized poker benchmark with a fixed superhuman anchor for specialist calibration. |
 
 ## Expected Survey Payoff
 - Provide a controlled comparison set for specialist versus general benchmark claims.

@@ -18,7 +18,7 @@
 - Why-games relevance: Game-theoretic tasks strip away narrative clutter and make strategic trade-offs, uncertainty, and opponent modeling observable under explicit rules.
 - Historical stage: formal container
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 0,1,2,3,5,6
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; because many tasks are classic, the benchmark is strong for formal comparison but weaker on contamination resistance
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong formal argument that games can probe strategic reasoning under explicit incentives and uncertainty.
-- Best use in Section 1 (historical evolution): One of the clearest anchors for the formal game-theoretic branch of the benchmark lineage.
-- Best use in Section 2 (design space): Useful for the information-structure, stochasticity, and timing taxonomy.
-- Best use in Section 3 (capability targets): Supports claims about strategic reasoning, bluffing, bidding, and opponent modeling as distinct subtargets.
-- Best use in Section 4 (interaction paradigm): Good contrast case for text-only, rule-clean interfaces.
-- Best use in Section 5 (evaluation protocol): Valuable for comparing match outcomes with equilibrium- and regret-based analyses.
-- Best use in Section 6/7 (limitations and future): Helps frame the trade-off between formal purity and ecological validity.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong formal argument that games can probe strategic reasoning under explicit incentives and uncertainty.
+- Best use in Section 1 (taxonomy and evolutionary levels): One of the clearest anchors for the formal game-theoretic branch of the benchmark lineage. Useful for the information-structure, stochasticity, and timing taxonomy.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about strategic reasoning, bluffing, bidding, and opponent modeling as distinct subtargets.
+- Best use in Section 3 (interaction and evaluation paradigm): Good contrast case for text-only, rule-clean interfaces. Valuable for comparing match outcomes with equilibrium- and regret-based analyses.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps frame the trade-off between formal purity and ecological validity.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): individual game-theory evaluations and smaller multi-agent game studies
@@ -126,7 +124,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B07
-- Outline sections: 0,1,2,3,5,6
+- Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B07/GTBench.md`
 - Next action: draft-section

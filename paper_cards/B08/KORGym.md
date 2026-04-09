@@ -18,7 +18,7 @@
 - Why-games relevance: A large game platform can probe many reasoning dimensions under controlled rules while staying less knowledge-dependent than many domain-specific benchmarks.
 - Historical stage: benchmark expansion / diagnostic platform
 - Narrative level(s): L2 strategic reasoning / L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 1,2,3,5,7
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; a large normalized platform gives breadth, but the aggregate score can hide game-family-specific behavior
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good evidence that games can support large-scale, heterogeneous reasoning evaluation.
-- Best use in Section 1 (historical evolution): Represents the platform turn in which game evaluation becomes benchmark infrastructure rather than a one-off suite.
-- Best use in Section 2 (design space): Useful for discussing very broad scope and dimension-based aggregation.
-- Best use in Section 3 (capability targets): Covers mathematical, logical, control, puzzle, spatial, strategic, and multimodal reasoning.
-- Best use in Section 4 (interaction paradigm): Useful for standardized API-based interaction and RL compatibility.
-- Best use in Section 5 (evaluation protocol): Good source on normalization and dimension-aware aggregation across heterogeneous games.
-- Best use in Section 6/7 (limitations and future): Helps show the trade-off between platform breadth and interpretability.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that games can support large-scale, heterogeneous reasoning evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the platform turn in which game evaluation becomes benchmark infrastructure rather than a one-off suite. Useful for discussing very broad scope and dimension-based aggregation.
+- Best use in Section 2 (core capabilities evaluated by games): Covers mathematical, logical, control, puzzle, spatial, strategic, and multimodal reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for standardized API-based interaction and RL compatibility. Good source on normalization and dimension-aware aggregation across heterogeneous games.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps show the trade-off between platform breadth and interpretability.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LMGameBench and earlier benchmark suites with Gym-like aspirations
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B08
-- Outline sections: 1,2,3,5,7
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B08/KORGym.md`
 - Next action: draft-section

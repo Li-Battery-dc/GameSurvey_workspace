@@ -18,7 +18,7 @@
 - Why-games relevance: Poker provides a formal hidden-information setting where strong solver-like anchors and variance-aware evaluation make strategic competence measurable.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is strong on calibration but depends on a proprietary anchor ecosystem
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good specialist example of games supporting precise quantitative evaluation under uncertainty.
-- Best use in Section 1 (historical evolution): Useful later-stage refinement of poker benchmarking toward fixed-anchor standardization.
-- Best use in Section 2 (design space): Clean single-game imperfect-information specialist benchmark.
-- Best use in Section 3 (capability targets): Supports strategic reasoning and hidden-state planning discussion.
-- Best use in Section 4 (interaction paradigm): Useful contrast for highly structured API-based evaluation.
-- Best use in Section 5 (evaluation protocol): Strong reference for AI anchors, variance reduction, and standardized calibration.
-- Best use in Section 6/7 (limitations and future): Supports the need for cross-benchmark comparability and transparent anchor design.
+- Best use in Section 0 (lead-in and benchmark motivation): Good specialist example of games supporting precise quantitative evaluation under uncertainty.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful later-stage refinement of poker benchmarking toward fixed-anchor standardization. Clean single-game imperfect-information specialist benchmark.
+- Best use in Section 2 (core capabilities evaluated by games): Supports strategic reasoning and hidden-state planning discussion.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast for highly structured API-based evaluation. Strong reference for AI anchors, variance reduction, and standardized calibration.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for cross-benchmark comparability and transparent anchor design.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokerBench, Slumbot-based poker evaluation, solver-grounded poker AI work
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B13/GTOWizardBenchmark.md`
 - Next action: draft-section

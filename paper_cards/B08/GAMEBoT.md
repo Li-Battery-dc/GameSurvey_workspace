@@ -18,7 +18,7 @@
 - Why-games relevance: Games provide repeated, rule-bounded decision points where intermediate reasoning can be checked against ground truth rather than inferred from a single final answer.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that subproblem design itself becomes part of the benchmark and can shape what is being measured
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates why repeated interactive decisions make game environments suitable for process-level reasoning evaluation.
-- Best use in Section 1 (historical evolution): Useful as a newer response to the criticism that game benchmarks often measure only outcomes.
-- Best use in Section 2 (design space): Helps distinguish broad game suites from process-oriented diagnostic suites.
-- Best use in Section 3 (capability targets): Supports discussion of decomposable reasoning skills inside games.
-- Best use in Section 4 (interaction paradigm): Good contrast case for heavily prompt-shaped interfaces.
-- Best use in Section 5 (evaluation protocol): One of the best references for outcome versus process evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that future benchmarks may need process supervision, but that process definitions are themselves a design choice.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why repeated interactive decisions make game environments suitable for process-level reasoning evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a newer response to the criticism that game benchmarks often measure only outcomes. Helps distinguish broad game suites from process-oriented diagnostic suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of decomposable reasoning skills inside games.
+- Best use in Section 3 (interaction and evaluation paradigm): Good contrast case for heavily prompt-shaped interfaces. One of the best references for outcome versus process evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmarks may need process supervision, but that process definitions are themselves a design choice.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench and other outcome-focused strategic suites
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B08
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/GAMEBoT.md`
 - Next action: draft-section

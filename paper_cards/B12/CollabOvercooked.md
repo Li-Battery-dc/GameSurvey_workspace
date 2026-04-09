@@ -18,7 +18,7 @@
 - Why-games relevance: Overcooked tasks make collaboration pressure concrete because agents must coordinate spatially and temporally under shared goals.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 3,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that outcome-only scoring can hide large differences in how collaboration actually happens
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good evidence that cooperative games reveal interaction failures that static task benchmarks miss.
-- Best use in Section 1 (historical evolution): Useful bridge from social reasoning benchmarks to collaboration-centered multi-agent evaluation.
-- Best use in Section 2 (design space): Strong example of a cooperative single-game benchmark with process metrics.
-- Best use in Section 3 (capability targets): Direct support for cooperation and adaptation.
-- Best use in Section 4 (interaction paradigm): Helpful for natural-language communication plus structured execution.
-- Best use in Section 5 (evaluation protocol): Important for process-oriented collaboration metrics.
-- Best use in Section 6/7 (limitations and future): Supports the claim that active collaboration remains much weaker than simple goal interpretation.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that cooperative games reveal interaction failures that static task benchmarks miss.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful bridge from social reasoning benchmarks to collaboration-centered multi-agent evaluation. Strong example of a cooperative single-game benchmark with process metrics.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for cooperation and adaptation.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful for natural-language communication plus structured execution. Important for process-oriented collaboration metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that active collaboration remains much weaker than simple goal interpretation.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Overcooked-AI, coordination and teamwork benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B12
-- Outline sections: 3,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/CollabOvercooked.md`
 - Next action: draft-section

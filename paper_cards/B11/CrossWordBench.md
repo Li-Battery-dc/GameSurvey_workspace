@@ -18,7 +18,7 @@
 - Why-games relevance: Crossword structure forces local answers to satisfy global consistency constraints, making reasoning more than independent clue retrieval.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L4 visual agency
-- Most relevant outline section(s): 2,3,4,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that highly saturated QA data can still become challenging once structural constraints are imposed
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates how game structure can turn familiar question answering into a harder reasoning task.
-- Best use in Section 1 (historical evolution): Part of the trend toward controllable generated puzzle benchmarks.
-- Best use in Section 2 (design space): Useful for procedural puzzle generation and text-versus-image interface comparisons.
-- Best use in Section 3 (capability targets): Supports discussion of global consistency and constraint integration.
-- Best use in Section 4 (interaction paradigm): A useful case for comparing LLM and LVLM performance on the same underlying task.
-- Best use in Section 5 (evaluation protocol): Strong example of multi-metric scoring beyond task success alone.
-- Best use in Section 6/7 (limitations and future): Suggests crossword-like tasks as future multimodal RL environments with verifiable feedback.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates how game structure can turn familiar question answering into a harder reasoning task.
+- Best use in Section 1 (taxonomy and evolutionary levels): Part of the trend toward controllable generated puzzle benchmarks. Useful for procedural puzzle generation and text-versus-image interface comparisons.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of global consistency and constraint integration.
+- Best use in Section 3 (interaction and evaluation paradigm): A useful case for comparing LLM and LVLM performance on the same underlying task. Strong example of multi-metric scoring beyond task success alone.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Suggests crossword-like tasks as future multimodal RL environments with verifiable feedback.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): text-centric crossword datasets
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 2,3,4,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/CrossWordBench.md`
 - Next action: draft-section

@@ -17,7 +17,7 @@
 - Why-games relevance: placeholder
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 2,4,5
+- Most relevant outline section(s): 1,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -87,13 +87,11 @@
 - Does this paper reveal a benchmark-design limitation as well? placeholder
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): placeholder
-- Best use in Section 1 (historical evolution): placeholder
-- Best use in Section 2 (design space): placeholder
-- Best use in Section 3 (capability targets): placeholder
-- Best use in Section 4 (interaction paradigm): placeholder
-- Best use in Section 5 (evaluation protocol): placeholder
-- Best use in Section 6/7 (limitations and future): placeholder
+- Best use in Section 0 (lead-in and benchmark motivation): placeholder
+- Best use in Section 1 (taxonomy and evolutionary levels): placeholder placeholder
+- Best use in Section 2 (core capabilities evaluated by games): placeholder
+- Best use in Section 3 (interaction and evaluation paradigm): placeholder placeholder
+- Best use in Section 4 (synthesis, bottlenecks, and future design): placeholder
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): placeholder
@@ -122,7 +120,7 @@
 - Priority: P0
 - Reading depth: structured-skim
 - Batch ID: B00
-- Outline sections: 2,4,5
+- Outline sections: 1,3
 - Survey role: anchor
 - Paper card path: paper_cards/B00/SampleBalrog.md
 - Next action: review-card

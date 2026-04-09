@@ -18,7 +18,7 @@
 - Why-games relevance: Real-time strategy games compress resource management, tech progression, scouting, and long-horizon adaptation into one domain.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 1,2,3,4,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that RTS evaluation outcomes change substantially when micro control and vision are abstracted away
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates why RTS games are still central stress tests for long-horizon strategic reasoning.
-- Best use in Section 1 (historical evolution): A key early RTS benchmark in the LLM-agent literature.
-- Best use in Section 2 (design space): Important for text-abstracted RTS benchmarks.
-- Best use in Section 3 (capability targets): Supports planning, adaptation, and resource-management claims.
-- Best use in Section 4 (interaction paradigm): Strong reference for text-first RTS interfaces and summarization scaffolds.
-- Best use in Section 5 (evaluation protocol): Useful for combining win rate with macro-management metrics.
-- Best use in Section 6/7 (limitations and future): Supports future work on bringing vision and richer control back into RTS benchmarks.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why RTS games are still central stress tests for long-horizon strategic reasoning.
+- Best use in Section 1 (taxonomy and evolutionary levels): A key early RTS benchmark in the LLM-agent literature. Important for text-abstracted RTS benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Supports planning, adaptation, and resource-management claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong reference for text-first RTS interfaces and summarization scaffolds. Useful for combining win rate with macro-management metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports future work on bringing vision and richer control back into RTS benchmarks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): AlphaStar-style RL environments
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 1,2,3,4,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B13/LLMPlayStarCraftII.md`
 - Next action: draft-section

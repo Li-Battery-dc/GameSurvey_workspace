@@ -18,7 +18,7 @@
 - Why-games relevance: Procedurally extensible game families let us probe reasoning, planning, and symbolic grounding beyond fixed benchmark sets.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L4 embodied interaction
-- Most relevant outline section(s): 1,2,3,7
+- Most relevant outline section(s): 1,2,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the zero-shot symbolic interface is useful diagnostically but not ecologically realistic
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows why procedurally extensible game families resist saturation better than fixed task sets.
-- Best use in Section 1 (historical evolution): Strong example of the GVGAI lineage entering LLM benchmarking.
-- Best use in Section 2 (design space): Important symbolic-game family comparison point.
-- Best use in Section 3 (capability targets): Direct evidence for spatial reasoning and rule-grounding limits.
-- Best use in Section 4 (interaction paradigm): Useful as a privileged symbolic-state foil to visual and GUI benchmarks.
-- Best use in Section 5 (evaluation protocol): Strong metric-design example.
-- Best use in Section 6/7 (limitations and future): Supports the claim that symbolic access can clarify failure modes but weakens ecological claims.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why procedurally extensible game families resist saturation better than fixed task sets.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of the GVGAI lineage entering LLM benchmarking. Important symbolic-game family comparison point.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for spatial reasoning and rule-grounding limits.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful as a privileged symbolic-state foil to visual and GUI benchmarks. Strong metric-design example.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic access can clarify failure modes but weakens ecological claims.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): original GVGAI, SmartPlay, symbolic planning benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 1,2,3,7
+- Outline sections: 1,2,4
 - Survey role: representative
 - Paper card path: `paper_cards/B05/GVGAILLM.md`
 - Next action: draft-section

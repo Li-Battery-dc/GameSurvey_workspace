@@ -18,7 +18,7 @@
 - Why-games relevance: Grid puzzles let a benchmark stress perception and rule-based reasoning while keeping exact verification.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that whole-puzzle accuracy alone hides whether a model failed at perception or reasoning
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how puzzles can turn multimodal reasoning into an exactly scored benchmark.
-- Best use in Section 1 (historical evolution): A useful waypoint in the shift to purpose-built LVLM game benchmarks.
-- Best use in Section 2 (design space): Strong source on puzzle taxonomy and customizable benchmark construction.
-- Best use in Section 3 (capability targets): Supports decomposition into perception, rule following, and solution generation.
-- Best use in Section 4 (interaction paradigm): Good contrast between image-first and text-first puzzle interfaces.
-- Best use in Section 5 (evaluation protocol): Strong reference for multi-granular evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that post-training on narrow puzzle families does not solve generalization.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how puzzles can turn multimodal reasoning into an exactly scored benchmark.
+- Best use in Section 1 (taxonomy and evolutionary levels): A useful waypoint in the shift to purpose-built LVLM game benchmarks. Strong source on puzzle taxonomy and customizable benchmark construction.
+- Best use in Section 2 (core capabilities evaluated by games): Supports decomposition into perception, rule following, and solution generation.
+- Best use in Section 3 (interaction and evaluation paradigm): Good contrast between image-first and text-first puzzle interfaces. Strong reference for multi-granular evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that post-training on narrow puzzle families does not solve generalization.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SudokuBench
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/VGRPBench.md`
 - Next action: draft-section

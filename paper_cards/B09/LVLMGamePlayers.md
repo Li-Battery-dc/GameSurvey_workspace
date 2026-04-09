@@ -18,7 +18,7 @@
 - Why-games relevance: Games let the paper separate perception, rule application, and full-play competence under the same underlying task family.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L4 visual agency
-- Most relevant outline section(s): 1,3,4,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that "playing" scores can obscure whether failure comes from perception or from strategy
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how a single game family can reveal multiple distinct cognitive bottlenecks.
-- Best use in Section 1 (historical evolution): Useful as an early multimodal bridge from symbolic game reasoning to visual game agents.
-- Best use in Section 2 (design space): Helps distinguish board-style visual diagnostics from ecologically rich visual suites.
-- Best use in Section 3 (capability targets): Supports decomposition into perception, rule following, and game execution.
-- Best use in Section 4 (interaction paradigm): A useful contrast to native-interface benchmarks because it uses clean rendered states.
-- Best use in Section 5 (evaluation protocol): Demonstrates the value of separating component tasks from full-play metrics.
-- Best use in Section 6/7 (limitations and future): Supports the claim that better perception alone will not solve sequential game play.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how a single game family can reveal multiple distinct cognitive bottlenecks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as an early multimodal bridge from symbolic game reasoning to visual game agents. Helps distinguish board-style visual diagnostics from ecologically rich visual suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports decomposition into perception, rule following, and game execution.
+- Best use in Section 3 (interaction and evaluation paradigm): A useful contrast to native-interface benchmarks because it uses clean rendered states. Demonstrates the value of separating component tasks from full-play metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that better perception alone will not solve sequential game play.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Sudoku-Bench, VGRP-Bench
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 1,3,4,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/LVLMGamePlayers.md`
 - Next action: draft-section

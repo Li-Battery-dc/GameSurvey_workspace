@@ -18,7 +18,7 @@
 - Why-games relevance: Text adventures expose memory, planning, exploration, and instruction-following over very long action horizons in an automatically scored environment.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,6,7
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many agent benchmarks remain far shorter and easier than the horizons required for genuine autonomous play
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that games can operationalize week-scale decision horizons in a compact benchmark.
-- Best use in Section 1 (historical evolution): Extends the text-game lineage from short interactive tasks to genuinely long quests.
-- Best use in Section 2 (design space): Helps define long-horizon adventure suites as a distinct region of the design space.
-- Best use in Section 3 (capability targets): Supports discussion of memory, exploration, and planning failures.
-- Best use in Section 4 (interaction paradigm): An anchor for free-form natural-language command interfaces.
-- Best use in Section 5 (evaluation protocol): Useful for checkpoint scoring plus harm-aware evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that long-horizon robustness remains a major open problem.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can operationalize week-scale decision horizons in a compact benchmark.
+- Best use in Section 1 (taxonomy and evolutionary levels): Extends the text-game lineage from short interactive tasks to genuinely long quests. Helps define long-horizon adventure suites as a distinct region of the design space.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of memory, exploration, and planning failures.
+- Best use in Section 3 (interaction and evaluation paradigm): An anchor for free-form natural-language command interfaces. Useful for checkpoint scoring plus harm-aware evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that long-horizon robustness remains a major open problem.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): OpenDevin? not in corpus; Text-based benchmarks like BotzoneBench are less ecological
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B10
-- Outline sections: 3,4,6,7
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B10/TextQuests.md`
 - Next action: draft-section

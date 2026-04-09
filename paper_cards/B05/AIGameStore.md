@@ -18,7 +18,7 @@
 - Why-games relevance: Human games supply a broad, culturally evolved, and hard-to-saturate space for evaluating human-like general intelligence.
 - Historical stage: benchmark expansion / platform vision
 - Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
-- Most relevant outline section(s): 0,1,2,5,7
+- Most relevant outline section(s): 0,1,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the current benchmark slice is compelling but still only a first step toward the much larger platform vision
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): One of the clearest statements for why human games may be a uniquely strong evaluation substrate.
-- Best use in Section 1 (historical evolution): Captures the move from curated fixed suites toward open-ended benchmark generation.
-- Best use in Section 2 (design space): Useful as a maximal-breadth counterpoint to narrow or synthetic suites.
-- Best use in Section 3 (capability targets): Supports claims about memory, planning, and world-model demands in broad game play.
-- Best use in Section 4 (interaction paradigm): Strong evidence for human-like GUI interaction as an evaluation target.
-- Best use in Section 5 (evaluation protocol): Useful human-relative evaluation anchor.
-- Best use in Section 6/7 (limitations and future): One of the strongest papers for arguing that benchmark saturation is a design problem, not just a model problem.
+- Best use in Section 0 (lead-in and benchmark motivation): One of the clearest statements for why human games may be a uniquely strong evaluation substrate.
+- Best use in Section 1 (taxonomy and evolutionary levels): Captures the move from curated fixed suites toward open-ended benchmark generation. Useful as a maximal-breadth counterpoint to narrow or synthetic suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about memory, planning, and world-model demands in broad game play.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for human-like GUI interaction as an evaluation target. Useful human-relative evaluation anchor.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): One of the strongest papers for arguing that benchmark saturation is a design problem, not just a model problem.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): general game-playing and broad multimodal game benchmarks
@@ -118,7 +116,7 @@
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? A targeted reread may be worthwhile later because the synthesis pipeline matters for Section 7.
 - Which section to read next if needed: platform-construction methodology and human-comparison setup
-- Follow-up question(s): Should AI GameStore anchor the survey's future-work section on open-ended evaluation?
+- Follow-up question(s): Should AI GameStore anchor the survey's synthesis section on open-ended evaluation?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -126,7 +124,7 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 0,1,2,5,7
+- Outline sections: 0,1,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B05/AIGameStore.md`
 - Next action: draft-section

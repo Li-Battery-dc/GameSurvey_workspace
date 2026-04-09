@@ -8,11 +8,11 @@
 
 | Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Balrog | BALROG | P0 | deep | 0,2,3,4,5,6 | Core visual-agent benchmark and bridge into ecological interaction design. |
-| 2 | GameplayQA | GameplayQA | P1 | deep | 3,4,5,6 | Dense first-person video benchmark for temporal grounding and agent-state attribution. |
-| 3 | GameVerse | GameVerse | P1 | deep | 1,3,4,5,6,7 | Cross-game VLM benchmark with reflect-and-retry evaluation. |
-| 4 | StarBench | StarBench | P1 | deep | 3,4,5,6 | GUI benchmark for low-level control and ask-or-act information seeking. |
-| 5 | FlashAdventure | FlashAdventure | P1 | deep | 3,4,6,7 | Long-horizon GUI benchmark centered on full story completion and memory. |
+| 1 | Balrog | BALROG | P0 | deep | 0,1,2,3,4 | Core visual-agent benchmark and bridge into ecological interaction design. |
+| 2 | GameplayQA | GameplayQA | P1 | deep | 2,3,4 | Dense first-person video benchmark for temporal grounding and agent-state attribution. |
+| 3 | GameVerse | GameVerse | P1 | deep | 1,2,3,4 | Cross-game VLM benchmark with reflect-and-retry evaluation. |
+| 4 | StarBench | StarBench | P1 | deep | 2,3,4 | GUI benchmark for low-level control and ask-or-act information seeking. |
+| 5 | FlashAdventure | FlashAdventure | P1 | deep | 2,3,4 | Long-horizon GUI benchmark centered on full story completion and memory. |
 
 ## Expected Survey Payoff
 - Lock down the visual and ecological branch of the survey taxonomy.

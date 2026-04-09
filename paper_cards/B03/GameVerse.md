@@ -18,7 +18,7 @@
 - Why-games relevance: It uses games to couple perception, action, and post-hoc self-improvement in a way static video benchmarks cannot.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 1,3,4,5,6,7
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; reflection quality is partly entangled with the stronger models and judges used inside the pipeline
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong example of how games enable closed-loop evaluation of learning from failure.
-- Best use in Section 1 (historical evolution): Shows the shift from static VLM evaluation toward reflective agent loops.
-- Best use in Section 2 (design space): Good case of a broad visual suite with mixed scoring regimes.
-- Best use in Section 3 (capability targets): Useful for visual grounding, planning, and reflection-based adaptation.
-- Best use in Section 4 (interaction paradigm): Important example of reflection as an inference-time scaffold.
-- Best use in Section 5 (evaluation protocol): Relevant for hybrid native-score and milestone-score evaluation.
-- Best use in Section 6/7 (limitations and future): Supports the claim that stronger models benefit more from reflection than weaker ones.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of how games enable closed-loop evaluation of learning from failure.
+- Best use in Section 1 (taxonomy and evolutionary levels): Shows the shift from static VLM evaluation toward reflective agent loops. Good case of a broad visual suite with mixed scoring regimes.
+- Best use in Section 2 (core capabilities evaluated by games): Useful for visual grounding, planning, and reflection-based adaptation.
+- Best use in Section 3 (interaction and evaluation paradigm): Important example of reflection as an inference-time scaffold. Relevant for hybrid native-score and milestone-score evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that stronger models benefit more from reflection than weaker ones.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): visual game-agent benchmarks and tutorial-based improvement studies
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
-- Outline sections: 1,3,4,5,6,7
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B03/GameVerse.md`
 - Next action: draft-section

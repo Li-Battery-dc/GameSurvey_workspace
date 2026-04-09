@@ -36,14 +36,14 @@ table content code:
 
 Subsections:
 1.1 Level 1: Rule Following - Games as rule-grounded formal containers 
-1.2 Level 2: Strategic Reasoning — Planning and Optimization Under Uncertaintyand strategic reasoning Games as diagnostic capability probes
-1.3 Level 3: Social Intelligence — Multi-Agent Cooperation, Deception, and Network Dynamics(Werewolf Arena, WOLF)
+1.2 Level 2: Strategic Reasoning — Planning and optimization under uncertainty through diagnostic game probes
+1.3 Level 3: Social Intelligence — Multi-agent cooperation, deception, and network dynamics (`Werewolf Arena`, `WOLF`)
 1.4 Level 4: Visual Agency — Real-Time Perception and Embodied Control
-1.5 Level 5: Cross-Game Generalization — Open-Ended Transfer and Generalist Agents(Orak, GameVerse, AI GAMESTORE)
+1.5 Level 5: Cross-Game Generalization — Open-ended transfer and generalist agents (`Orak`, `GameVerse`, `AI GAMESTORE`)
 
 ## 2. Purpose: Core Capabilities Evaluated by Games
 Goal:
-- Classify game benchmarks by their primary capability targets, Explian why games are a suitable medium for that capability and what specific benchmark innovations make the measurement credible.
+- Classify game benchmarks by their primary capability targets, explain why games are a suitable medium for that capability, and identify which benchmark innovations make the measurement credible.
 
 Subsections:
 2.1 Rule grounding, legal action generation, and state tracking
@@ -56,17 +56,17 @@ Subsections:
 
 ## 3. Paradigm: From Interaction to Evaluation
 Goal:
-- Construct a comprehensive benchmark pipeline view. Compare how different benchmarks operationalize model interaction with games. What different benchmark interfaces affect the benchmark assessment. And analyze how game benchmarks define success, assign scores, calibrate difficulty, and instrument the gameplay process for evaluation. Compare how evaluation design affects benchmark validity, comparability, and robustness.
+- Construct a comprehensive benchmark pipeline view. Compare how different benchmarks operationalize model interaction with games, how interface choices affect benchmark assessment, and how game benchmarks define success, assign scores, calibrate difficulty, and instrument gameplay for evaluation. Compare how evaluation design affects benchmark validity, comparability, and robustness.
 
 Subsections:
-4.1 Interaction: transfer to human-like play.
-  - Observation channel: language description, structured states, GUI, pixels, video. highlight the shift from structured text to high-dimensional, real-time multimodal streams.
+3.1 Interaction: transfer to human-like play.
+  - Observation channel: language description, structured states, GUI, pixels, video. Highlight the shift from structured text to high-dimensional, real-time multimodal streams.
   - Action channel: discrete action set, natural language action, tool/API calls, hybrid control. 
   - Trade-off: Privileged interface vs ecological validity. Explain how interface choices heavily skew benchmark results.
-4.2 Evaluation: copare paradigm transfer and how different metrics affect the quality of evaluation.
-  -  Reuslt-based Metrics
+3.2 Evaluation: compare paradigms and how different metrics affect evaluation quality.
+  -  Result-based metrics
   -  Process-level and Diagnostic Evaluation
-  -  adversatial evaluation
+  -  Adversarial evaluation
   -  Calibration and Robustness: how benchmarks anchor their difficulty and defend against evaluation noise, ensuring the scores remain meaningful as models rapidly evolve.
 
 

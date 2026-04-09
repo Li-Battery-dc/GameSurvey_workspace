@@ -18,7 +18,7 @@
 - Why-games relevance: Diverse multi-agent games expose strategy, hidden information, cooperation, and communication in ways that resist simple static-answer evaluation.
 - Historical stage: formal container
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 1,2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the authors explicitly note that multigame aggregation can be unstable and that out-of-distribution status is hard to verify conclusively
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows why multi-agent games can create a harder and less saturable strategic benchmark than static tasks.
-- Best use in Section 1 (historical evolution): Useful for the transition from canonical game-theory tasks to more diverse strategic suites.
-- Best use in Section 2 (design space): Helps broaden the social and hidden-information portion of the taxonomy.
-- Best use in Section 3 (capability targets): Supports discussion of strategic transfer, cooperation, and social deduction.
-- Best use in Section 4 (interaction paradigm): Useful comparison point for standardized text APIs and scaffolded play.
-- Best use in Section 5 (evaluation protocol): Good reference for rating aggregation and the risks of cross-game leaderboard collapse.
-- Best use in Section 6/7 (limitations and future): Strong source on benchmark sensitivity, OOD verification difficulties, and low-resolution human baselines.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why multi-agent games can create a harder and less saturable strategic benchmark than static tasks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the transition from canonical game-theory tasks to more diverse strategic suites. Helps broaden the social and hidden-information portion of the taxonomy.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of strategic transfer, cooperation, and social deduction.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful comparison point for standardized text APIs and scaffolded play. Good reference for rating aggregation and the risks of cross-game leaderboard collapse.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong source on benchmark sensitivity, OOD verification difficulties, and low-resolution human baselines.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench and smaller game-theory or social-game evaluations
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B07
-- Outline sections: 1,2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B07/GameBench.md`
 - Next action: draft-section

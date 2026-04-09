@@ -18,7 +18,7 @@
 - Why-games relevance: NetHack compresses exploration, planning, survival, and partial observability into a single environment that is both hard and automatically evaluable.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 1,3,4,6,7
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is highly valuable as a hard benchmark, but it is not natively an LLM benchmark and so requires careful translation into the current survey frame
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong historical example of games as hard, multi-skill benchmark environments.
-- Best use in Section 1 (historical evolution): Important precursor in the long-horizon game-agent lineage.
-- Best use in Section 2 (design space): Useful for procedural, single-game, terminal-mediated benchmarks.
-- Best use in Section 3 (capability targets): Supports exploration, planning, and long-horizon robustness claims.
-- Best use in Section 4 (interaction paradigm): Helpful contrast against later natural-language or GUI-heavy interfaces.
-- Best use in Section 5 (evaluation protocol): Good reference for task-suite calibration in a single hard game.
-- Best use in Section 6/7 (limitations and future): Helps explain why later LLM-agent work often seeks more instrumented interfaces over similarly hard worlds.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong historical example of games as hard, multi-skill benchmark environments.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important precursor in the long-horizon game-agent lineage. Useful for procedural, single-game, terminal-mediated benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Supports exploration, planning, and long-horizon robustness claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful contrast against later natural-language or GUI-heavy interfaces. Good reference for task-suite calibration in a single hard game.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why later LLM-agent work often seeks more instrumented interfaces over similarly hard worlds.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): ALE, Obstacle Tower, BabyAI, classic roguelike RL environments
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B10
-- Outline sections: 1,3,4,6,7
+- Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B10/NetHackLearningEnvironment.md`
 - Next action: draft-section

@@ -18,7 +18,7 @@
 - Why-games relevance: Interactive fiction exposes language grounding, exploration, and long-horizon planning inside environments with sparse feedback and machine-verifiable progress.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 0,1,3,4,6,7
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that full parser-based action spaces are so large that many benchmark methods still need action-space simplification
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong early example of how games package language grounding and long-horizon planning.
-- Best use in Section 1 (historical evolution): Core historical root for later text-game agent benchmarks.
-- Best use in Section 2 (design space): Useful for the text-adventure region of the survey taxonomy.
-- Best use in Section 3 (capability targets): Supports long-horizon planning, exploration, and rule grounding.
-- Best use in Section 4 (interaction paradigm): Anchor case for free-form natural-language action.
-- Best use in Section 5 (evaluation protocol): Important precursor for score-based and progress-based text-game evaluation.
-- Best use in Section 6/7 (limitations and future): Helps explain why long-horizon text benchmarks remain hard even with strong language models.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong early example of how games package language grounding and long-horizon planning.
+- Best use in Section 1 (taxonomy and evolutionary levels): Core historical root for later text-game agent benchmarks. Useful for the text-adventure region of the survey taxonomy.
+- Best use in Section 2 (core capabilities evaluated by games): Supports long-horizon planning, exploration, and rule grounding.
+- Best use in Section 3 (interaction and evaluation paradigm): Anchor case for free-form natural-language action. Important precursor for score-based and progress-based text-game evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why long-horizon text benchmarks remain hard even with strong language models.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): TextWorld and earlier text-game RL work
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: structured-skim
 - Batch ID: B10
-- Outline sections: 0,1,3,4,6,7
+- Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B10/InteractiveFictionGames.md`
 - Next action: draft-section

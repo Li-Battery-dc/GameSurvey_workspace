@@ -18,7 +18,7 @@
 - Why-games relevance: Minecraft supports enormous state diversity, human-like control, and creative open-ended tasks that are hard to reduce to fixed benchmark labels.
 - Historical stage: open-ended benchmark expansion
 - Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
-- Most relevant outline section(s): 0,3,4,5,7
+- Most relevant outline section(s): 0,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the move to scalable automatic evaluation is necessary, but it shifts trust onto the evaluator itself
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong evidence that open-world games can support diverse, scalable agent evaluation.
-- Best use in Section 1 (historical evolution): Important step from small Minecraft task sets toward benchmark-scale coverage.
-- Best use in Section 2 (design space): Useful open-ended task-composition comparison point.
-- Best use in Section 3 (capability targets): Direct evidence for planning, creativity, and error correction as distinct axes.
-- Best use in Section 4 (interaction paradigm): One of the best raw-control ecological benchmarks in the corpus.
-- Best use in Section 5 (evaluation protocol): Essential reference for automated evaluation in open-ended settings.
-- Best use in Section 6/7 (limitations and future): Supports discussion of VLM judges, task quality, and scalable evaluation design.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that open-world games can support diverse, scalable agent evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important step from small Minecraft task sets toward benchmark-scale coverage. Useful open-ended task-composition comparison point.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for planning, creativity, and error correction as distinct axes.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the best raw-control ecological benchmarks in the corpus. Essential reference for automated evaluation in open-ended settings.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of VLM judges, task quality, and scalable evaluation design.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo and earlier Minecraft task benchmarks
@@ -126,7 +124,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 0,3,4,5,7
+- Outline sections: 0,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B05/MCU.md`
 - Next action: draft-section

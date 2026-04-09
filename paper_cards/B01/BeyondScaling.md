@@ -18,7 +18,7 @@
 - Why-games relevance: It uses adversarial games to expose dynamic decision quality and latency trade-offs that static reasoning tests miss.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,4,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is narrow in world diversity even if rich in protocol design
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Good example of how games reveal timing-sensitive agent failures.
-- Best use in Section 1 (historical evolution): Represents newer benchmark designs that focus on interaction regimes rather than only task suites.
-- Best use in Section 2 (design space): Strong case for hybrid turn-based / real-time taxonomy placement.
-- Best use in Section 3 (capability targets): Direct evidence for strategic planning, spatial reasoning, and real-time efficiency.
-- Best use in Section 4 (interaction paradigm): Useful example of structured-state prompting, protocol mediation, and tool-driven OODA-style play.
-- Best use in Section 5 (evaluation protocol): Important for PWER and strategy-quality-sensitive tournament scoring.
-- Best use in Section 6/7 (limitations and future): Strong support for the strategy-execution gap theme.
+- Best use in Section 0 (lead-in and benchmark motivation): Good example of how games reveal timing-sensitive agent failures.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents newer benchmark designs that focus on interaction regimes rather than only task suites. Strong case for hybrid turn-based / real-time taxonomy placement.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for strategic planning, spatial reasoning, and real-time efficiency.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful example of structured-state prompting, protocol mediation, and tool-driven OODA-style play. Important for PWER and strategy-quality-sensitive tournament scoring.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong support for the strategy-execution gap theme.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): strategic arena benchmarks and RTS-inspired LLM agent evaluations
@@ -128,7 +126,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 2,3,4,5,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B01/BeyondScaling.md`
 - Check status: unchecked

@@ -18,7 +18,7 @@
 - Why-games relevance: It uses open-ended games to keep evaluation unsaturated and to expose whether agents can improve strategies through repeated competition.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,5
+- Most relevant outline section(s): 1,2,3
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is evaluating a scaffolded code-agent workflow more than direct in-game interaction
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows one way games can stay unsaturated as agent capabilities grow.
-- Best use in Section 1 (historical evolution): Represents a move toward evaluation of improvement dynamics rather than one-shot scores.
-- Best use in Section 2 (design space): Useful contrast case for code-agent strategy evaluation.
-- Best use in Section 3 (capability targets): Supports strategic reasoning and adaptation claims.
-- Best use in Section 4 (interaction paradigm): Good counterexample to direct-play benchmarks.
-- Best use in Section 5 (evaluation protocol): Relevant for iterative tournaments and learning-over-rounds metrics.
-- Best use in Section 6/7 (limitations and future): Helps argue that evaluating agent learning ability is still methodologically unsettled.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows one way games can stay unsaturated as agent capabilities grow.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move toward evaluation of improvement dynamics rather than one-shot scores. Useful contrast case for code-agent strategy evaluation.
+- Best use in Section 2 (core capabilities evaluated by games): Supports strategic reasoning and adaptation claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Good counterexample to direct-play benchmarks. Relevant for iterative tournaments and learning-over-rounds metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that evaluating agent learning ability is still methodologically unsettled.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): tournament-style board-game evaluations and code-agent benchmarks
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
-- Outline sections: 2,3,5
+- Outline sections: 1,2,3
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/CATArena.md`
 - Next action: draft-section

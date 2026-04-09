@@ -18,7 +18,7 @@
 - Why-games relevance: Simple games can isolate a core cognitive ingredient such as sequential spatial reasoning without confounds from richer interfaces.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 3,4,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many spatial-agent claims may depend heavily on language and interface framing
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows that even stripped-down games can reveal deep sequential reasoning failures.
-- Best use in Section 1 (historical evolution): Useful as a minimalist counterpoint to richer embodied or visual game benchmarks.
-- Best use in Section 2 (design space): Helps define narrow diagnostic task-games.
-- Best use in Section 3 (capability targets): Strong evidence for spatial memory and loop avoidance as distinct targets.
-- Best use in Section 4 (interaction paradigm): Good example of a pure function-calling game interface.
-- Best use in Section 5 (evaluation protocol): Useful for bilingual paired evaluation and behavior metrics.
-- Best use in Section 6/7 (limitations and future): Supports caution about language-dependent "reasoning" claims.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that even stripped-down games can reveal deep sequential reasoning failures.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a minimalist counterpoint to richer embodied or visual game benchmarks. Helps define narrow diagnostic task-games.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for spatial memory and loop avoidance as distinct targets.
+- Best use in Section 3 (interaction and evaluation paradigm): Good example of a pure function-calling game interface. Useful for bilingual paired evaluation and behavior metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports caution about language-dependent "reasoning" claims.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): BabyAI-style navigation probes
@@ -127,7 +125,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 3,4,6
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/MazeEval.md`
 - Next action: draft-section

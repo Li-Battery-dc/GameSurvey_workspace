@@ -18,7 +18,7 @@
 - Why-games relevance: Matrix games let benchmark designers vary strategic structure systematically and still score responses exactly against Nash-equilibrium-based targets.
 - Historical stage: formal container
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; its formal precision is excellent, but the abstraction level means success here does not imply competence in richer game interfaces
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Shows how games can provide a principled coverage map for strategic reasoning rather than a grab bag of examples.
-- Best use in Section 1 (historical evolution): Useful as a later formal benchmark that reacts directly to leakage and coverage criticisms of earlier work.
-- Best use in Section 2 (design space): One of the best papers for systematic strategic design-space coverage.
-- Best use in Section 3 (capability targets): Supports precise discussion of equilibrium reasoning, ToM depth, and compositional strategic reasoning.
-- Best use in Section 4 (interaction paradigm): Mainly as a contrast case showing what maximum formal control looks like.
-- Best use in Section 5 (evaluation protocol): Strong source on inconsistency and bias metrics beyond simple accuracy.
-- Best use in Section 6/7 (limitations and future): Useful for arguing that even perfect formal coverage still leaves ecological validity unresolved.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how games can provide a principled coverage map for strategic reasoning rather than a grab bag of examples.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later formal benchmark that reacts directly to leakage and coverage criticisms of earlier work. One of the best papers for systematic strategic design-space coverage.
+- Best use in Section 2 (core capabilities evaluated by games): Supports precise discussion of equilibrium reasoning, ToM depth, and compositional strategic reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Mainly as a contrast case showing what maximum formal control looks like. Strong source on inconsistency and bias metrics beyond simple accuracy.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that even perfect formal coverage still leaves ecological validity unresolved.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench and GAMABench
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B07
-- Outline sections: 2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/TMGBench.md`
 - Next action: draft-section

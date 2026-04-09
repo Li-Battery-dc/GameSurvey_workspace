@@ -18,7 +18,7 @@
 - Why-games relevance: Board games create a dynamic alternative to static QA benchmarks and expose strategic instability through direct model-vs-model interaction.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,5,6
+- Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is informative as an arena study, but relative rankings remain volatile and pool-sensitive
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Demonstrates how games can generate dynamic benchmark content rather than fixed question sets.
-- Best use in Section 1 (historical evolution): Example of modern LLM-vs-LLM arena framing.
-- Best use in Section 2 (design space): Useful small-suite board-game comparison point.
-- Best use in Section 3 (capability targets): Supports strategic planning and opponent adaptation discussion, but only narrowly.
-- Best use in Section 4 (interaction paradigm): Representative text-board interface.
-- Best use in Section 5 (evaluation protocol): Good contrast against anchor-based protocols like BotzoneBench.
-- Best use in Section 6/7 (limitations and future): Strong evidence that relative arenas alone may overstate ranking stability.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates how games can generate dynamic benchmark content rather than fixed question sets.
+- Best use in Section 1 (taxonomy and evolutionary levels): Example of modern LLM-vs-LLM arena framing. Useful small-suite board-game comparison point.
+- Best use in Section 2 (core capabilities evaluated by games): Supports strategic planning and opponent adaptation discussion, but only narrowly.
+- Best use in Section 3 (interaction and evaluation paradigm): Representative text-board interface. Good contrast against anchor-based protocols like BotzoneBench.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence that relative arenas alone may overstate ranking stability.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): arena-style board-game and chess evaluations
@@ -126,7 +124,7 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
-- Outline sections: 2,5,6
+- Outline sections: 1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/WhoIsABetterPlayer.md`
 - Next action: draft-section

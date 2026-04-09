@@ -18,7 +18,7 @@
 - Why-games relevance: Real video games expose the full loop from noisy perception to long-horizon control while still permitting automatic progress checks.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 3,4,5,6
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that benchmark conclusions depend strongly on whether real-time latency is treated as part of the task or factored out
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): A strong contemporary example of why games expose coupled perception-planning-control failures.
-- Best use in Section 1 (historical evolution): Marks a shift from symbolic or text interfaces back to raw commercial-game play.
-- Best use in Section 2 (design space): Useful for contrasting real-game visual suites with scaffold-heavy harnesses.
-- Best use in Section 3 (capability targets): Supports claims about visual grounding and long-horizon control as distinct bottlenecks.
-- Best use in Section 4 (interaction paradigm): Central evidence for preserving human-like visual interfaces.
-- Best use in Section 5 (evaluation protocol): Good reference for checkpoint-based scoring and hidden-game contamination controls.
-- Best use in Section 6/7 (limitations and future): Supports the claim that current frontier models still fail badly when latency and raw perception are preserved.
+- Best use in Section 0 (lead-in and benchmark motivation): A strong contemporary example of why games expose coupled perception-planning-control failures.
+- Best use in Section 1 (taxonomy and evolutionary levels): Marks a shift from symbolic or text interfaces back to raw commercial-game play. Useful for contrasting real-game visual suites with scaffold-heavy harnesses.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about visual grounding and long-horizon control as distinct bottlenecks.
+- Best use in Section 3 (interaction and evaluation paradigm): Central evidence for preserving human-like visual interfaces. Good reference for checkpoint-based scoring and hidden-game contamination controls.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that current frontier models still fail badly when latency and raw perception are preserved.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Balrog, Orak
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 3,4,5,6
+- Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B09/VideoGameBench.md`
 - Next action: draft-section

@@ -18,7 +18,7 @@
 - Why-games relevance: Games can gather stepwise reasoning traces from real human interaction while keeping players engaged enough to generate fresh evaluation data.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 0,1,3,5,6
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that human preference arenas conflate reasoning with stylistic preference and need more structured alternatives
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong argument that games can make evaluation engaging enough to generate fresh dynamic data.
-- Best use in Section 1 (historical evolution): Useful in the shift from static test suites and preference arenas to live interactive reasoning benchmarks.
-- Best use in Section 2 (design space): Helps define human-in-the-loop dynamic game benchmarks.
-- Best use in Section 3 (capability targets): Strong source for mapping games to distinct reasoning types.
-- Best use in Section 4 (interaction paradigm): An anchor for natural-language-only live interaction.
-- Best use in Section 5 (evaluation protocol): Useful for retrospective analysis of intermediate reasoning signals.
-- Best use in Section 6/7 (limitations and future): Supports future benchmarks that combine human freshness with stronger automatic verification.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong argument that games can make evaluation engaging enough to generate fresh dynamic data.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the shift from static test suites and preference arenas to live interactive reasoning benchmarks. Helps define human-in-the-loop dynamic game benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Strong source for mapping games to distinct reasoning types.
+- Best use in Section 3 (interaction and evaluation paradigm): An anchor for natural-language-only live interaction. Useful for retrospective analysis of intermediate reasoning signals.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports future benchmarks that combine human freshness with stronger automatic verification.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Chatbot Arena
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B12
-- Outline sections: 0,1,3,5,6
+- Outline sections: 0,1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/GameArena.md`
 - Next action: draft-section

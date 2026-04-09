@@ -18,7 +18,7 @@
 - Why-games relevance: A diverse game set can cover multiple dimensions of strategic cognition that would be hard to compare in one real-world benchmark.
 - Historical stage: open-ended general-game benchmark
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence / L5 cross-game generalization
-- Most relevant outline section(s): 1,2,3,5,6
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -88,13 +88,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that outcome-only metrics miss major differences in how models play and fail
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games): Strong support for the idea that different games reveal different slices of strategic cognition.
-- Best use in Section 1 (historical evolution): Represents a mature move from single-game to comparative multi-game evaluation.
-- Best use in Section 2 (design space): Excellent for genre-diverse benchmark platforms.
-- Best use in Section 3 (capability targets): A direct source for capability-taxonomy discussion.
-- Best use in Section 4 (interaction paradigm): Useful for discussing unified text interfaces across heterogeneous games.
-- Best use in Section 5 (evaluation protocol): One of the best references for capability-specific fine-grained metrics.
-- Best use in Section 6/7 (limitations and future): Supports trajectory-level analysis rather than only final scores.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong support for the idea that different games reveal different slices of strategic cognition.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents a mature move from single-game to comparative multi-game evaluation. Excellent for genre-diverse benchmark platforms.
+- Best use in Section 2 (core capabilities evaluated by games): A direct source for capability-taxonomy discussion.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing unified text interfaces across heterogeneous games. One of the best references for capability-specific fine-grained metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports trajectory-level analysis rather than only final scores.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GTBench
@@ -127,7 +125,7 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B12
-- Outline sections: 1,2,3,5,6
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/DSGBench.md`
 - Next action: draft-section
