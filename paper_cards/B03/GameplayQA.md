@@ -8,11 +8,11 @@
 - Code link: https://hats-ict.github.io/gameplayqa/
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- GameplayQA evaluates whether multimodal models can understand dense, first-person, multi-agent gameplay videos well enough to support agent-like reasoning. The benchmark synchronizes multi-POV footage from nine commercial 3D games, annotates actions, states, objects, and events on multiple tracks, and generates 2.4K diagnostic QA pairs across fifteen task categories. It is not an active-play benchmark; instead, it is a perceptual proxy focused on Self, Other, and World understanding under temporal pressure. In the survey, this paper is most useful as a boundary case between visual game-agent evaluation and high-end video understanding.
+- GameplayQA evaluates whether multimodal models can understand dense, first-person, multi-agent gameplay videos well enough to support agent-centric perception and temporal reasoning. It builds 2,365 multiple-choice QA pairs from synchronized multi-POV footage spanning nine commercial 3D games, organized into fifteen task categories over Self, Other, and World entities. It is not an active-play benchmark: the model only answers diagnostic questions about gameplay videos. In the survey, this paper is best used as a perceptual boundary case for visual game-agent evaluation rather than as evidence of end-to-end game-playing competence.
 
 ## 2. Position in our survey
 - Why-games relevance: Games create dense temporally entangled streams of self-actions, other-agent behavior, and world events that are hard to approximate with generic video QA.
@@ -49,16 +49,16 @@
 - Secondary capability target(s): multi-agent attribution, first-person state tracking, hallucination resistance
 - Does it test rule grounding / legal action generation? no
 - Does it test strategic planning under uncertainty? no
-- Does it test social reasoning / deception / cooperation? partially
+- Does it test social reasoning / deception / cooperation? no; it probes other-agent attribution at the perceptual level rather than social strategy
 - Does it test visual grounding / spatial-temporal reasoning? yes
-- Does it test long-horizon autonomy / task completion? partially
+- Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Competitive 3D games produce rapid state changes and overlapping events that stress temporal grounding more than static vision tasks.
 
 ## 5. Interaction paradigm
 - Observation channel: synchronized first-person gameplay videos plus a question
-- Action channel: none; the model answers QA items
+- Action channel: none; the model selects an answer for a diagnostic QA item
 - Interface type: natural language
 - Agent scaffold allowed: none
 - Is there privileged API access? no
@@ -67,13 +67,13 @@
 
 ## 6. Evaluation protocol
 - Main score: QA accuracy
-- Auxiliary score(s): category-wise breakdowns and hallucination/error analysis by entity type
-- Evaluation style: judge-based
-- Human baseline / AI anchor / self-play / model-vs-model setup: model comparison on fixed QA sets
+- Auxiliary score(s): category-wise breakdowns, distractor-type analysis, entity-type analysis, and ablations over missing or shuffled video information
+- Evaluation style: multiple-choice accuracy / diagnostic
+- Human baseline / AI anchor / self-play / model-vs-model setup: fixed QA benchmark with frontier MLLM comparison and a human reference score
 - Automatic verifiability: high
-- Calibration method: dense timeline annotation plus manually aligned multi-POV labeling
-- Anti-contamination argument: synchronized multi-POV gameplay and combinatorial QA generation reduce the value of shallow benchmark memorization
-- Reliability or comparability concerns: because it is passive QA, high scores do not directly imply good game-agent control
+- Calibration method: dense human-in-the-loop timeline annotation, manually aligned multi-POV labeling, and blind filtering to remove question-only language priors
+- Anti-contamination argument: the benchmark combines synchronized gameplay footage with blind filtering and visual ablations, so questions cannot be solved reliably from language priors alone
+- Reliability or comparability concerns: annotation errors can propagate through template-based QA generation, and free-form model outputs are post-processed into option letters
 
 ## 7. Main contributions
 - Contribution 1: Builds a dense multi-POV 3D gameplay video benchmark centered on agent perception.
@@ -81,7 +81,7 @@
 - Contribution 3: Provides error analysis for hallucinations and attribution failures in gameplay understanding.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Current multimodal models still struggle to attribute actions, states, and world events correctly in dense first-person gameplay video.
+- Core empirical takeaway: Current multimodal models still show a meaningful gap to humans on dense gameplay video understanding, especially on temporal and cross-video reasoning.
 - Notable model failure mode 1: confusing self-actions with other-agent actions
 - Notable model failure mode 2: weak temporal grounding across concurrent events
 - Notable model failure mode 3: hallucinating objects or causal relationships in busy scenes
@@ -89,33 +89,34 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Shows that gameplay video is a rich source of dynamic perception challenges.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful marker for the rise of video-understanding proxies in game-agent evaluation. Good example of first-person multi-video observation without action.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a boundary case showing how far visual-game evaluation can move toward perception-heavy video understanding without closing the action loop.
 - Best use in Section 2 (core capabilities evaluated by games): Direct fit for visual grounding, temporal reasoning, and multi-agent attribution.
-- Best use in Section 3 (interaction and evaluation paradigm): Important counterexample to active-play benchmarks. Relevant for annotation-heavy QA generation and hallucination analysis.
+- Best use in Section 3 (interaction and evaluation paradigm): Important counterexample to active-play benchmarks. Relevant for diagnostic annotation pipelines, blind filtering, and distractor-based hallucination analysis.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that perception is still a bottleneck even before control.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): video QA and egocentric video benchmarks
-- Closest follow-up(s): GameVerse and other visual game-agent studies
+- Closest predecessor(s): MarioQA, EgoSchema, MVU-Eval, and other egocentric or video-QA benchmarks
+- Closest follow-up(s): nearby visual game-agent papers that reintroduce control, such as GameVerse, StarBench, and FlashAdventure
 - Best comparison targets inside our corpus: Balrog, GameVerse, StarBench, FlashAdventure
-- What this paper uniquely adds relative to neighbors: It isolates dense first-person multi-agent perception from the action loop more cleanly than the other visual papers.
+- What this paper uniquely adds relative to neighbors: It isolates dense first-person multi-POV perception, agent-role attribution, and hallucination diagnosis more cleanly than the active-play papers in this batch.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- GameplayQA uses synchronized multi-POV footage from nine commercial 3D games and constructs 2.4K QA pairs.
-- The benchmark organizes labels with a six-primitive taxonomy over Self, Other, and World entities.
-- The paper reports category-level error analysis showing persistent failures in temporal attribution and hallucination.
+- GameplayQA builds 2,365 multiple-choice QA pairs from synchronized gameplay videos spanning nine commercial 3D games and 100 video instances.
+- The benchmark uses a six-primitive Self-Other-World label system and organizes questions into fifteen categories over three cognitive levels.
+- The paper reports a substantial human-model gap: the best model reaches 71.3% overall accuracy versus 80.5% for humans.
+- The evaluation includes blind filtering and visual ablations showing the benchmark cannot be solved reliably from language priors alone.
 
 ### 11.2 Our synthesis / interpretation
-- GameplayQA should not be treated as evidence that a model can play games well; it is evidence that game-like perception remains hard.
-- It is therefore most helpful as a supporting card for the visual-grounding section rather than as a central ecological benchmark.
+- GameplayQA should not be treated as evidence that a model can play games well; it is evidence that dense gameplay perception and attribution remain hard even before action is introduced.
+- It is most useful as a supporting card for visual grounding and benchmark-design discussion, not as a core ecological play benchmark.
 
 ### 11.3 Uncertain or needs re-check
-- Recheck Appendix C if we later need the exact list of commercial games or category counts by title.
+- Recheck the appendix if we later need per-game category counts or want to cite the small 213-question cross-domain transfer experiment separately from the main gameplay benchmark.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? No immediate reread; the benchmark scope and role are already clear.
-- Which section to read next if needed: 3.1 / 3.2 / 4.2
+- Which section to read next if needed: 3 / 4 / limitations
 - Follow-up question(s): Where should the survey draw the boundary between agent-centric video understanding and actual game-agent evaluation?
 
 ## 13. Registry sync
@@ -128,4 +129,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B03/GameplayQA.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

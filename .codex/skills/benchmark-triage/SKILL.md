@@ -17,10 +17,10 @@ Use this skill for Stage 1 work only. Start from `benchmark.md`, `outline.md`, a
 - `corpus/registry/benchmark_registry.csv` if it already exists
 - `corpus/batches/batch_index.md` if it already exists
 - `template/registry_schema.md`
-- `assets/benchmark_registry_template.csv` if the registry needs to be initialized
-- `assets/batch_template.md` when writing `corpus/batches/batch_XX.md`
-- `assets/batch_index_template.md` when writing `corpus/batches/batch_index.md`
-- `references/triage_labels.md` for priority, queue, role, and check-status labels
+- `.codex/skills/benchmark-triage/assets/benchmark_registry_template.csv` if the registry needs to be initialized
+- `.codex/skills/benchmark-triage/assets/batch_template.md` when writing `corpus/batches/batch_XX.md`
+- `.codex/skills/benchmark-triage/assets/batch_index_template.md` when writing `corpus/batches/batch_index.md`
+- `.codex/skills/benchmark-triage/references/triage_labels.md` for priority, queue, role, and check-status labels
 
 ## Scope
 

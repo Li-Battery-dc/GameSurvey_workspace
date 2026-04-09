@@ -16,7 +16,7 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Pokemon naturally combines hidden information, strategic adversaries, and extremely long action horizons in a way few other benchmarks do.
-- Historical stage: competition-backed living benchmark
+- Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
@@ -35,8 +35,8 @@
 - Benchmark unit: battle or speedrun episode
 
 ### 3.3 Benchmark scope
-- Scope: dual-track benchmark
-- Number of games / tasks: 2 tracks
+- Scope: game family
+- Number of games / tasks: 2 benchmark tracks within the Pokemon ecosystem
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -49,10 +49,10 @@
 - Secondary capability target(s): harness design, metagame adaptation, specialist-versus-generalist comparison
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially, through opponent modeling in battles
+- Does it test social reasoning / deception / cooperation? no; it stresses adversarial opponent modeling rather than language-mediated social reasoning
 - Does it test visual grounding / spatial-temporal reasoning? yes, in the speedrunning track
 - Does it test long-horizon autonomy / task completion? yes
-- Does it test real-time efficiency? partially
+- Does it test real-time efficiency? yes, especially in the speedrunning track where wall-clock latency is part of the benchmark
 - Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Pokemon combines adversarial decision making and very long sequential play inside a culturally stable, data-rich ecosystem.
 
@@ -60,8 +60,8 @@
 - Observation channel: structured battle states on Showdown and visual frames plus limited state information for speedrunning
 - Action channel: legal battle actions or environment control commands through the challenge harnesses
 - Interface type: hybrid
-- Agent scaffold allowed: tool use
-- Is there privileged API access? yes
+- Agent scaffold allowed: other (submission-dependent; strong systems use search, RL, memory, planners, or multi-agent harnesses)
+- Is there privileged API access? mixed; yes on battling and partially on speedrunning through limited state exposure
 - How close is the setup to human play? medium; the benchmark preserves real game structure but often relies on standardized harnesses and battle-state abstractions
 - Main ecological-validity trade-off: The benchmark is unusually realistic in domain complexity, but performance is strongly shaped by harness quality.
 
@@ -69,10 +69,10 @@
 - Main score: Full-History Bradley-Terry for battling and completion progress/time for speedrunning
 - Auxiliary score(s): Glicko-1, GXE, completion time, and action count
 - Evaluation style: leaderboard / competition / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: community submissions, strong RL and LLM baselines, plus human references
+- Human baseline / AI anchor / self-play / model-vs-model setup: community submissions and organizer baselines drive the main evaluation; speedrunning also reports human world-record splits as an upper bound rather than a matched baseline
 - Automatic verifiability: high
 - Calibration method: dedicated evaluation server, large battle datasets, public leaderboards, and standardized task rules
-- Anti-contamination argument: yes; the paper argues that Pokemon battling is nearly orthogonal to standard LLM benchmarks and that evolving metagames force adaptation
+- Anti-contamination argument: partial; the paper argues Pokemon battling is nearly orthogonal to standard LLM benchmarks and that evolving metagames force adaptation, but harness and domain familiarity still matter
 - Reliability or comparability concerns: results depend heavily on harness design, and the two tracks measure very different kinds of capability
 
 ## 7. Main contributions
@@ -83,7 +83,7 @@
 ## 8. Main findings and failure modes
 - Core empirical takeaway: specialist RL and search methods remain much stronger than generalist LLM approaches, and long-horizon Pokemon play still requires substantial harness support
 - Notable model failure mode 1: raw frontier models do not make meaningful speedrunning progress without sophisticated orchestration
-- Notable model failure mode 2: battle performance depends heavily on harnesses and search support rather than backbone model quality alone
+- Notable model failure mode 2: common CLI-style agent harnesses lose coherence over the thousands of sequential decisions required for speedrunning
 - Notable model failure mode 3: Pokemon exposes capabilities that standard LLM benchmarks fail to predict well
 - Does this paper reveal a benchmark-design limitation as well? yes; benchmark difficulty is excellent, but comparing systems is hard when harness complexity varies so much
 
@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokeChamp, specialist Pokemon agents, long-horizon game-agent demonstrations
 - Closest follow-up(s): living game competitions and benchmark leaderboards
-- Best comparison targets inside our corpus: Orak, AI GameStore, MCU, PillagerBench
+- Best comparison targets inside our corpus: Orak, PokerBench, PokeChamp, MCU
 - What this paper uniquely adds relative to neighbors: It puts adversarial partial observability and long-context RPG play inside one benchmark ecosystem.
 
 ## 11. Evidence notes
@@ -111,6 +111,7 @@
 - It also strengthens the survey's argument that living competitive ecosystems create difficult-to-saturate evaluation targets.
 
 ### 11.3 Uncertain or needs re-check
+- Battling and speedrunning scores are not directly commensurate, so the paper should support cross-track synthesis only at the capability level, not through one combined ranking.
 - Recheck Sections 3.2, 4.2, and 5 if we later need the exact FH-BT fitting procedure or the official speedrunning boundary conditions.
 
 ## 12. Follow-up reading plan
@@ -127,5 +128,6 @@
 - Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B05/PokeAgentChallenge.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

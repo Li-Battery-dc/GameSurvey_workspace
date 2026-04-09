@@ -18,7 +18,7 @@
 - Why-games relevance: Puzzles retain explicit rules and strategic interaction while letting benchmark designers vary uncertainty, competition, and horizon length compactly.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 1,2,4
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -40,7 +40,7 @@
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
-- Primary modality: text / text-image
+- Primary modality: mixed
 - Perception burden retained: rule interpretation, logical and spatial reasoning, long-horizon planning, legality handling
 - Perception burden removed: richer ecological interaction beyond puzzle rules
 
@@ -69,10 +69,10 @@
 - Main score: normalized score and Elo-style comparison metrics
 - Auxiliary score(s): legal play percentage, win probability matrices, and instruction-versus-code comparisons
 - Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: custom strategies and model-versus-model comparisons
+- Human baseline / AI anchor / self-play / model-vs-model setup: custom strategies and model-versus-model comparisons; no human baseline is used
 - Automatic verifiability: high
 - Calibration method: difficulty settings, legality checking, and custom strategy baselines
-- Anti-contamination argument: yes; the paper emphasizes novel curated puzzles and extensible generation
+- Anti-contamination argument: partial; the paper emphasizes curated puzzle selection and the lack of public solving strategies rather than a hard contamination guarantee
 - Reliability or comparability concerns: the benchmark is broad within puzzles, but puzzle reasoning does not cover all the burdens of agentic game play
 
 ## 7. Main contributions
@@ -82,9 +82,9 @@
 
 ## 8. Main findings and failure modes
 - Core empirical takeaway: reasoning models outperform non-reasoning models in instruction-based play, but performance drops substantially in the code-based setting
-- Notable model failure mode 1: legal-play rates are poor on some puzzles, showing that models still fail basic rule compliance
-- Notable model failure mode 2: multi-hop reasoning remains brittle on harder or more competitive puzzles
-- Notable model failure mode 3: code generation is meaningfully harder than direct interactive play, even for strong models
+- Notable model failure mode 1: illegal moves and formatting failures remain common, showing that models still fail basic rule compliance
+- Notable model failure mode 2: code generation is meaningfully harder than direct interactive play, even for strong models
+- Notable model failure mode 3: multimodal gains are uneven, helping stronger models on some puzzles while weaker models can degrade
 - Does this paper reveal a benchmark-design limitation as well? yes; PuzzlePlex is rigorous for puzzle reasoning, but puzzle-heavy benchmarks only partially overlap with broader agent evaluation
 
 ## 9. Why this paper matters for our survey
@@ -111,6 +111,7 @@
 - It is especially relevant when comparing direct play against code-mediated interaction.
 
 ### 11.3 Uncertain or needs re-check
+- The instruction-based protocol excludes stochastic puzzles, so claims about uncertainty handling should be tied to the full benchmark rather than that specific protocol alone.
 - Recheck Sections 3.4, 3.5, and C.4 if we later need the exact normalized-score formula or instruction-code conversion details.
 
 ## 12. Follow-up reading plan
@@ -124,8 +125,9 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 1,2,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B05/PuzzlePlex.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

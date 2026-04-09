@@ -8,11 +8,11 @@
 - Code link:
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- This paper builds Qi Town, an LLM-vs-LLM board-game platform that runs round-robin tournaments across five games and scores models with technical and affective metrics. It combines fixed-rule games such as Tic-Tac-Toe, Gomoku, Reversi, and Chess with a Free-Style mode where agents negotiate rules before play, then analyzes outcomes using Elo, Performance Loop Graphs (PLG), and Positive Sentiment Score (PSS). For this survey, it is mainly a contrast case for arena-style relative evaluation rather than a stable benchmark anchor.
+- This paper builds Qi Town, an LLM-vs-LLM board-game platform that runs round-robin tournaments across five games and scores models with technical and affective metrics. It combines four fixed-rule games, namely Tic-Tac-Toe, Gomoku, Reversi, and Chess, with a Free-Style mode where agents negotiate rules before play, then analyzes outcomes using Elo, Performance Loop Graphs (PLGs), and Positive Sentiment Score (PSS). For this survey, it is mainly a contrast case for pool-dependent arena evaluation rather than a stable benchmark anchor.
 
 ## 2. Position in our survey
 - Why-games relevance: Board games create a dynamic alternative to static QA benchmarks and expose strategic instability through direct model-vs-model interaction.
@@ -51,13 +51,13 @@
 - Does it test strategic planning under uncertainty? no
 - Does it test social reasoning / deception / cooperation? partially, through Free-Style negotiation and sentiment tracking
 - Does it test visual grounding / spatial-temporal reasoning? no
-- Does it test long-horizon autonomy / task completion? partially
+- Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Repeated adversarial play makes cyclic win-loss structure visible in a way static benchmarks cannot.
 
 ## 5. Interaction paradigm
-- Observation channel: textual board states, game rules, and turn context
+- Observation channel: textual board states in standardized notation, game rules, and turn context
 - Action channel: move choice plus a short analysis and emotion output
 - Interface type: natural language
 - Agent scaffold allowed: none
@@ -69,9 +69,9 @@
 - Main score: Elo rating
 - Auxiliary score(s): Performance Loop Graphs and Positive Sentiment Score
 - Evaluation style: tournament / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: round-robin LLM-vs-LLM competition
+- Human baseline / AI anchor / self-play / model-vs-model setup: round-robin LLM-vs-LLM competition with no human baseline or fixed non-LLM anchor
 - Automatic verifiability: high
-- Calibration method: shared tournament scheduling and unified board-game platform
+- Calibration method: shared round-robin scheduling over 20 LLMs, unified textual interface, and three repeated tournament cycles
 - Anti-contamination argument: not central
 - Reliability or comparability concerns: results are pool-dependent, and PLG or sentiment metrics are harder to compare across benchmarks than anchored win-rate protocols
 
@@ -81,10 +81,10 @@
 - Contribution 3: Tracks Positive Sentiment Score as a psychological-style companion metric during gameplay.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: model rankings vary by game, and cyclic win-loss structures reveal that strategic competence is less stable than simple Elo tables suggest
-- Notable model failure mode 1: some LLMs still make poor offensive or defensive moves in simple rule-based games
-- Notable model failure mode 2: PLGs reveal nontransitive matchups rather than a clean global ordering
-- Notable model failure mode 3: sentiment remains broadly positive, but that signal is weakly coupled to technical quality
+- Core empirical takeaway: game-by-game leaders differ, and the large loops revealed by PLGs show that relative arena performance is less stable than a single Elo ranking suggests.
+- Notable model failure mode 1: capabilities remain uneven across games, with some models still showing weak play even in simpler fixed-rule settings
+- Notable model failure mode 2: PLGs reveal large cyclical win-loss structures, indicating unstable relative ordering outside a few draw-heavy settings such as chess
+- Notable model failure mode 3: emotional positivity is largely independent of technical performance and varies strongly by game type
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is informative as an arena study, but relative rankings remain volatile and pool-sensitive
 
 ## 9. Why this paper matters for our survey
@@ -97,8 +97,8 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): arena-style board-game and chess evaluations
 - Closest follow-up(s): CATArena and other tournament-centric protocols
-- Best comparison targets inside our corpus: BotzoneBench, CATArena, LLMChess
-- What this paper uniquely adds relative to neighbors: It explicitly visualizes nontransitive ranking structure and adds an affect-style metric on top of competition results.
+- Best comparison targets inside our corpus: `BotzoneBench`, `CATArena`, `BoardGameArena`
+- What this paper uniquely adds relative to neighbors: It explicitly visualizes cyclical ranking structure with PLGs and adds a self-reported affect metric on top of LLM-vs-LLM competition results.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
@@ -128,4 +128,5 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/WhoIsABetterPlayer.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Check status: unchecked
+- Last updated: 2026-04-09

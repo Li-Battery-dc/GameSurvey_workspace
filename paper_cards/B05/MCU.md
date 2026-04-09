@@ -16,9 +16,9 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Minecraft supports enormous state diversity, human-like control, and creative open-ended tasks that are hard to reduce to fixed benchmark labels.
-- Historical stage: open-ended benchmark expansion
-- Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
-- Most relevant outline section(s): 0,2,3,4
+- Historical stage: ecological agent benchmark
+- Narrative level(s): L4 visual agency
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -35,17 +35,17 @@
 - Benchmark unit: task episode
 
 ### 3.3 Benchmark scope
-- Scope: open-ended task universe
+- Scope: open-ended world
 - Number of games / tasks: 3,452 atomic tasks plus compositional variants
-- Benchmark intent: diagnostic evaluation
+- Benchmark intent: open-ended evaluation
 
 ### 3.4 Modality
-- Primary modality: visual control
+- Primary modality: image
 - Perception burden retained: raw RGB observations, mouse-keyboard control, long-horizon exploration, creativity, error recovery
 - Perception burden removed: some setup overhead through automated task instantiation
 
 ## 4. What this benchmark measures
-- Primary capability target: open-ended task completion and generalization in Minecraft
+- Primary capability target: open-ended task completion and intra-world generalization in Minecraft
 - Secondary capability target(s): creativity, error recognition and correction, material use, efficiency
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
@@ -53,25 +53,25 @@
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? partially
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? partially; it stresses broad task generalization inside one world rather than transfer across different games
 - Why is a game environment especially suitable here? Minecraft combines rich perception, open-ended objectives, and safe programmable task generation in one widely used environment.
 
 ## 5. Interaction paradigm
 - Observation channel: 640x360 RGB frames through MineStudio
 - Action channel: mouse and keyboard actions in unmodified Minecraft
 - Interface type: GUI
-- Agent scaffold allowed: none
+- Agent scaffold allowed: other (the benchmark is agent-agnostic, but the native interface itself is raw RGB plus mouse-keyboard control)
 - Is there privileged API access? no
 - How close is the setup to human play? high; MCU preserves human-like observation and control more than most benchmark suites in this corpus
 - Main ecological-validity trade-off: MCU is highly ecological, but automated task setup and VLM judging introduce benchmark-specific assumptions.
 
 ## 6. Evaluation protocol
-- Main score: AutoEval task assessment with task-success and multi-dimensional ratings
+- Main score: AutoEval task progress plus multi-dimensional task-quality ratings
 - Auxiliary score(s): task progress, material selection and usage, action control, error recognition and correction, creative attempts, and efficiency
 - Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: human labels are used to validate AutoEval rather than as the primary baseline
+- Human baseline / AI anchor / self-play / model-vs-model setup: human labels are used to validate AutoEval rather than as the primary gameplay baseline
 - Automatic verifiability: mixed
-- Calibration method: AutoEval achieves reported 91.5% alignment with human judgments and is compared for cost and efficiency
+- Calibration method: AutoEval is validated on 500 trajectories from 60 tasks with expert human annotations and reaches reported 91.5% average agreement on evaluation dimensions
 - Anti-contamination argument: not central
 - Reliability or comparability concerns: AutoEval is scalable, but benchmark conclusions depend partly on a VLM judge and on task-configuration quality
 
@@ -81,7 +81,7 @@
 - Contribution 3: Builds AutoEval, a VLM-based automatic evaluator for open-ended Minecraft trajectories.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: even strong agents struggle as task diversity and difficulty increase, especially on higher-order dimensions beyond simple completion
+- Core empirical takeaway: even strong agents struggle as task diversity, composition, and difficulty increase, especially on creativity, efficiency, and error recovery beyond simple completion
 - Notable model failure mode 1: agents improve on basic task completion and material usage but remain weak on creativity
 - Notable model failure mode 2: error recognition and correction remain a major weakness
 - Notable model failure mode 3: higher difficulty and novel task configurations degrade performance noticeably
@@ -111,6 +111,7 @@
 - It is also one of the best cards for arguing that "success rate" alone is inadequate for open-ended game agents.
 
 ### 11.3 Uncertain or needs re-check
+- MCU's strongest methodological claim still depends on a VLM judge and LLM-generated task configurations, so those components should stay visible in any survey use.
 - Recheck Section 3.1 and Appendix F if we later need exact baseline identities or the hardest evaluation-mode settings.
 
 ## 12. Follow-up reading plan
@@ -124,8 +125,9 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 0,2,3,4
+- Outline sections: 0,1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B05/MCU.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

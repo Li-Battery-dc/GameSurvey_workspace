@@ -6,9 +6,9 @@
 - Authors: Danijar Hafner
 - Paper link: https://arxiv.org/pdf/2109.06780.pdf
 - Code link: https://github.com/danijar/crafter
-- Reading depth: structured-skim
+- Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
@@ -17,8 +17,8 @@
 ## 2. Position in our survey
 - Why-games relevance: A survival game can package exploration, planning, resource dependencies, and long horizons into one automatically scored environment.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency / L5 cross-game generalization
-- Most relevant outline section(s): 0,1,2,4
+- Narrative level(s): L4 visual agency
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -27,7 +27,7 @@
 - Transition structure: stochastic
 - Agent structure: single-agent
 - Social structure: N/A
-- Time structure: hybrid
+- Time structure: real-time
 
 ### 3.2 World structure
 - World type(s): sandbox / open-world
@@ -37,7 +37,7 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 1 environment with 22 achievements
-- Benchmark intent: diagnostic evaluation / train+eval foundation
+- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: image
@@ -52,14 +52,14 @@
 - Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
-- Does it test real-time efficiency? partially
+- Does it test real-time efficiency? no
 - Does it test cross-game transfer / open-ended generalization? partially
 - Why is a game environment especially suitable here? A survival world naturally builds dependency chains among resources, tools, and hazards, which lets a single environment test many abilities at once.
 
 ## 5. Interaction paradigm
-- Observation channel: local top-down RGB view plus standard environment feedback
-- Action channel: discrete control actions for movement, interaction, combat, and crafting
-- Interface type: GUI interaction / structured action space / hybrid
+- Observation channel: a 64x64x3 local top-down RGB view with inventory and internal status rendered into the image
+- Action channel: 17 discrete actions for movement, interaction, sleeping, placing objects, and crafting
+- Interface type: image / structured action space
 - Agent scaffold allowed: none
 - Is there privileged API access? no in the core benchmark
 - How close is the setup to human play? medium; the world is game-like and visually grounded, though simplified relative to commercial open-world games
@@ -69,9 +69,9 @@
 - Main score: achievement-based benchmark score
 - Auxiliary score(s): per-achievement success rates and reward-based learning results
 - Evaluation style: milestone / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: RL baselines compare reward-driven and unsupervised agents
+- Human baseline / AI anchor / self-play / model-vs-model setup: RL baselines compare reward-driven and unsupervised agents, and a separate 5-expert / 100-episode human dataset provides a reference score
 - Automatic verifiability: high
-- Calibration method: semantically meaningful achievement set and geometric-mean aggregation over achievement success rates
+- Calibration method: 22 semantically meaningful achievements, a fixed 1M-step budget, and geometric-mean aggregation over achievement success rates
 - Anti-contamination argument: custom research environment rather than a heavily documented public game
 - Reliability or comparability concerns: a single environment cannot by itself justify broad general-game claims, even if it spans many subskills
 
@@ -81,7 +81,7 @@
 - Contribution 3: Argues that broad achievement coverage is a practical way to benchmark general agent capabilities.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: unlocking the full achievement spectrum remains difficult, which makes Crafter a durable benchmark for broad agent competence.
+- Core empirical takeaway: unlocking the full achievement spectrum remains difficult, with DreamerV2 reaching 10.0% benchmark score versus 50.5% for human experts.
 - Notable model failure mode 1: weak deep exploration beyond easy early achievements
 - Notable model failure mode 2: difficulty sustaining long dependency chains needed for advanced tools and resources
 - Notable model failure mode 3: narrow optimization on frequent achievements rather than broad capability growth
@@ -103,14 +103,15 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - Crafter is an open-world survival game with visual input designed to evaluate a range of general abilities within one environment.
-- The benchmark uses 22 achievements and aggregates achievement success rates with a geometric mean.
-- The paper argues that consistently unlocking the full set requires strong generalization, deep exploration, and long-term reasoning.
+- The benchmark uses 22 achievements, 17 discrete actions, and aggregates achievement success rates with a geometric mean over a 1M-step budget.
+- The paper argues that consistently unlocking the full set requires strong generalization, deep exploration, and long-term reasoning, and reports a large gap between RL agents and human experts.
 
 ### 11.2 Our synthesis / interpretation
 - Crafter is a key historical bridge from RL benchmark design to later LLM and VLM game benchmarks that claim to measure broad agent competence.
 - It is best treated as a precursor and conceptual anchor, not as an LLM benchmark in the narrow sense.
 
 ### 11.3 Uncertain or needs re-check
+- The environment exposes privileged world-state information for debugging, but that information is explicitly outside the core benchmark interface and should not be attributed to benchmarked agents.
 - Re-check the exact action-space description and baseline score table if we later compare Crafter quantitatively with later open-world benchmarks.
 
 ## 12. Follow-up reading plan
@@ -122,10 +123,11 @@
 - Registry row synced: yes
 - Registry status: card-reviewed
 - Priority: P1
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B05
-- Outline sections: 0,1,2,4
+- Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B05/Crafter.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-08
+- Last updated: 2026-04-09

@@ -12,19 +12,19 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- TowerMind is a lightweight tower-defense environment and benchmark for evaluating LLMs as real-time game agents. It keeps the RTS-style coupling of long-term planning and moment-to-moment action choice, but lowers deployment cost and exposes three observation modes: raw pixels, JSON-like textual state, and flattened structured state. The benchmark also explicitly measures invalid-action hallucination alongside task score and includes human and RL baselines. For this survey, TowerMind is a useful multimodal comparison point because it isolates planning, action validity, and privileged-state-interface trade-offs in a compact RTS-derived setting.
+- TowerMind is a lightweight tower-defense environment built to benchmark LLMs on long-term planning and real-time decision-making in an RTS-derived setting. It supports three observation modes - raw pixels, JSON-formatted textual state, and flattened structured state - and evaluates both task score and valid action rate, treating invalid actions as hallucination-like failures. The environment also adds moving fog of war, misleading tower points, and random gold drops, so the task is not purely deterministic even though the map layout is fixed. For this survey, TowerMind is best used as a compact diagnostic benchmark for interface trade-offs, action validity, and effectiveness under dynamic play, not as a close proxy for fully human-like RTS play.
 
 ## 2. Position in our survey
-- Why-games relevance: Tower-defense play creates measurable pressure on planning, timing, spatial allocation, and action validity inside a dynamic but still analyzable game loop.
-- Historical stage: ecological agent benchmark
+- Why-games relevance: Tower-defense play creates repeated, automatically scored decisions about spatial allocation, timing, and resource use inside a dynamic game loop where legality and usefulness can diverge.
+- Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
 ### 3.1 Environment structure
-- Information structure: perfect
-- Transition structure: deterministic
+- Information structure: imperfect
+- Transition structure: mixed
 - Agent structure: single-agent
 - Social structure: N/A
 - Time structure: real-time
@@ -36,87 +36,89 @@
 
 ### 3.3 Benchmark scope
 - Scope: single game
-- Number of games / tasks: 5 benchmark levels in one tower-defense environment
+- Number of games / tasks: 5 built-in benchmark levels in one tower-defense environment
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed
-- Perception burden retained: real-time spatial state interpretation, map reading, timing, and tactical response
-- Perception burden removed: textual and structured state formats expose game-state semantics more directly than raw human play
+- Perception burden retained: real-time map reading, timing pressure, spatial allocation, partial observability from moving fog of war, and action-outcome coupling
+- Perception burden removed: textual and structured modes expose privileged game-state semantics that humans do not receive directly
 
 ## 4. What this benchmark measures
-- Primary capability target: long-term planning plus real-time decision-making in an RTS-derived environment
-- Secondary capability target(s): action validity, multimodal understanding, spatial reasoning, and resistance to misleading cues
+- Primary capability target: long-term planning and real-time decision-making under dynamic, partially observable play
+- Secondary capability target(s): action validity, multimodal state understanding, spatial allocation, and resistance to misleading affordances
 - Does it test rule grounding / legal action generation? yes
-- Does it test strategic planning under uncertainty? partially
+- Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? yes
 - Does it test cross-game transfer / open-ended generalization? no
-- Why is a game environment especially suitable here? The tower-defense format forces repeated allocation and timing decisions while preserving precise automatic scoring and invalid-action checks.
+- Why is a game environment especially suitable here? The tower-defense format forces repeated decisions about where, when, and how to act while preserving automatic scoring and explicit checks for invalid actions.
 
 ## 5. Interaction paradigm
-- Observation channel: 512x512 RGB frames, textual JSON-like state, or flattened structured state
-- Action channel: hybrid action vector with continuous coordinates plus a discrete action type
+- Observation channel: 512 x 512 x 3 pixel observations, JSON-formatted textual state, or flattened structured state; units and enemies hidden by fog of war are removed from observations
+- Action channel: a hybrid action vector `(x, y, c)` with continuous 2D coordinates and one discrete action type over 12 actions
 - Interface type: API / structured action space / hybrid
 - Agent scaffold allowed: none
 - Is there privileged API access? yes
-- How close is the setup to human play? medium; the game loop is human-like, but the text and structured-state interfaces expose privileged semantics
-- Main ecological-validity trade-off: TowerMind keeps RTS-like pressure but gains tractability by exposing state in machine-friendly formats and by using a simplified single-player tower-defense setting
+- How close is the setup to human play? low to medium; the raw-pixel mode is closer to human play, but the text and structured-state modes expose privileged semantics
+- Main ecological-validity trade-off: TowerMind preserves a real-time RTS-like control problem while simplifying the domain to single-player tower defense and offering machine-friendly state formats
 
 ## 6. Evaluation protocol
-- Main score: environment reward / score normalized to the human baseline
-- Auxiliary score(s): valid action rate, per-level normalized performance, RL baseline scores
+- Main score: raw environment score / reward, ranging from -20 to 0 in the benchmark levels
+- Auxiliary score(s): valid action rate, level-wise score normalized against the human baseline in reported tables, and a separate RL benchmark with Ape-X DQN and PPO
 - Evaluation style: native score / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: five human experts, multiple commercial and open-source LLMs, plus Ape-X DQN and PPO baselines
+- Human baseline / AI anchor / self-play / model-vs-model setup: five human experts establish the main baseline; commercial and open LLMs are evaluated zero-shot under language-only and vision-language settings; Ape-X DQN and PPO are reported separately as RL baselines
 - Automatic verifiability: high
-- Calibration method: five benchmark levels, five random seeds per model, shared zero-shot prompts, and separate language-only versus vision-language settings
-- Anti-contamination argument: custom level editing and benchmark customizability are presented as ways to vary tasks and reduce contamination pressure
-- Reliability or comparability concerns: results depend strongly on whether the model sees raw vision or privileged state representations, so the benchmark mixes ecological and diagnostic settings
+- Calibration method: five built-in benchmark levels with an explicit difficulty metric, five random seeds per model, identical prompts across models, and side-by-side language-only versus vision-language evaluation
+- Anti-contamination argument: weak but present; the paper argues custom levels and the level editor can reduce contamination pressure, but does not present a strong benchmark-wide leakage defense
+- Reliability or comparability concerns: results are highly sensitive to whether the model sees raw pixels or privileged state representations, and valid-action reliability is easier than actually choosing effective actions
 
 ## 7. Main contributions
-- Contribution 1: Introduces a lightweight tower-defense environment for LLM and RL evaluation with multimodal observations.
-- Contribution 2: Adds hallucination-oriented evaluation through explicit invalid-action tracking.
-- Contribution 3: Releases customizable levels and level-editing support for future benchmark variation.
+- Contribution 1: Introduces a lightweight tower-defense environment for evaluating long-term planning and decision-making in LLM agents.
+- Contribution 2: Measures both task score and valid action rate, making hallucination-like invalid actions a first-class evaluation target.
+- Contribution 3: Provides multimodal observations, a difficulty-controlled five-level benchmark, and a level editor for future customization.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: commercial models outperform open models, but all tested LLMs remain far below human experts on both score and action reliability.
-- Notable model failure mode 1: models often choose strategically useless tower placements when levels contain misleading tower points
-- Notable model failure mode 2: models rarely show multifinal decision-making, such as combining movement and reward collection efficiently
-- Notable model failure mode 3: smaller open models produce many invalid or context-inconsistent actions, especially on harder levels
-- Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is informative partly because it exposes a large gap between correctness of legal actions and effectiveness of those actions
+- Core empirical takeaway: even the strongest models remain far below human experts, and the main gap is not only in legal action generation but also in choosing actions that are actually useful.
+- Notable model failure mode 1: models waste resources on misleading tower points or otherwise fail to validate whether a plausible action meaningfully helps the level
+- Notable model failure mode 2: models show weak multifinality in decision-making, struggling to coordinate subgoals such as combat, gold collection, and hero control
+- Notable model failure mode 3: open models in particular produce many invalid or state-inconsistent actions, and valid action rate worsens as levels become harder
+- Does this paper reveal a benchmark-design limitation as well? yes; it shows that benchmark conclusions change sharply with interface privilege, so raw score alone is not comparable across observation modes
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows why a compact RTS-derived environment can still expose clear planning gaps in frontier models.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later specialized branch of RTS-style LLM evaluation. Good case for comparing raw-vision, text-state, and structured-state interfaces inside one benchmark.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on planning, spatial reasoning, and hallucination under dynamic play.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful when discussing privileged observations versus human-like perceptual burden. Helpful for the distinction between task performance and valid-action reliability.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that many agent failures are not only illegal-action failures but also ineffective-action failures.
+- Best use in Section 0 (lead-in and benchmark motivation): A compact example showing why interactive games expose effectiveness gaps that static correctness benchmarks miss.
+- Best use in Section 1 (taxonomy and evolutionary levels): A specialized RTS-derived diagnostic branch that sits between formal strategy probes and richer visual-agent benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for real-time decision-making, spatial allocation, and the distinction between legal actions and useful actions.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for the privileged-interface versus ecological-validity trade-off because the same environment supports pixel, textual, and structured observations.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that current models can often act legally without acting effectively, and that misleading affordances remain a serious failure source.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): RTS-style LLM benchmarks such as TextStarCraft II and LLM-PySC2
-- Closest follow-up(s): later visual and ecological game-agent benchmarks that compare multiple input interfaces
-- Best comparison targets inside our corpus: [Balrog](D:/research_root/GameSurvey/workspace/paper_cards/B03/Balrog.md), [StarBench](D:/research_root/GameSurvey/workspace/paper_cards/B03/StarBench.md), [PillagerBench](D:/research_root/GameSurvey/workspace/paper_cards/B04/PillagerBench.md), [LMGameBench](D:/research_root/GameSurvey/workspace/paper_cards/B08/LMGameBench.md)
-- What this paper uniquely adds relative to neighbors: It combines RTS-like planning pressure with an explicit hallucination metric and side-by-side privileged-state versus vision settings.
+- Closest predecessor(s): TextStarCraft II, LLM-PySC2, and other RTS-style LLM benchmarks built on heavier StarCraft II infrastructure
+- Closest follow-up(s): later multimodal RTS and visual-agent benchmarks that test more ecological control loops
+- Best comparison targets inside our corpus: `VLMPlayStarCraftII`, `StarCraftIIArena`, `Balrog`, `AtariGPT`
+- What this paper uniquely adds relative to neighbors: It is a lightweight RTS-derived benchmark that explicitly separates invalid-action failures from ineffective-action failures while exposing the effect of privileged versus non-privileged observation modes.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- TowerMind is a Unity and ML-Agents-based tower-defense environment with pixel, textual, and structured observations.
-- Each action combines two continuous coordinates with one discrete action type, and the benchmark records both score and valid action rate.
-- The paper evaluates commercial and open-source LLMs on five levels, compares language-only and vision-language settings, and also reports Ape-X DQN and PPO baselines.
+- TowerMind provides three observation modes: pixel-based, JSON-formatted textual observations, and flattened structured state.
+- The environment includes moving fog of war, random gold drops, and misleading tower points; units and enemies inside fog are removed from observations and friendly units there become inactive.
+- Each action is represented as `(x, y, c)` with continuous coordinates plus one discrete action type over 12 actions, and the benchmark reports both score and valid action rate.
+- The paper defines five built-in benchmark levels, evaluates commercial and open LLMs against five human experts, and reports a separate RL benchmark using Ape-X DQN and PPO.
 
 ### 11.2 Our synthesis / interpretation
-- TowerMind is more useful as a diagnostic multimodal RTS comparison than as a central survey anchor, because its strongest contribution is how cleanly it exposes interface and hallucination trade-offs.
-- It is a good example of a benchmark where legality and usefulness diverge, which helps sharpen the survey’s evaluation-protocol discussion.
+- TowerMind is a strong diagnostic benchmark for planning, real-time action selection, and interface design, but it should not be framed as direct evidence of human-like RTS play.
+- Its most survey-relevant contribution is not raw performance ranking; it is the clean demonstration that action legality and action usefulness are distinct evaluation targets.
 
 ### 11.3 Uncertain or needs re-check
-- If we later need the exact per-level human-normalized scores or the formal level-difficulty equation, re-check Sections 4.2 to 4.3 and Appendix C.
+- If we later need the exact normalized human-relative scores or the full level-difficulty formula, re-check Section 4.2, Appendix C, and the human-baseline tables.
+- If we compare it in detail against StarCraft II benchmarks, re-check Appendix B for the exact observation fields and invalid-action error-code mapping.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread is required; the benchmark setup, interfaces, and main findings are already clear enough for synthesis.
-- Which section to read next if needed: 3.2 / 4.3 / Appendix B
-- Follow-up question(s): When we compare multimodal game benchmarks, should TowerMind be grouped with privileged-state diagnostics or with more ecological raw-visual agents?
+- Should we read beyond abstract + intro? why? No immediate reread is required; the setup, interfaces, and main findings are already clear enough for drafting support.
+- Which section to read next if needed: 3.2 / 4.2 / Appendix B / Appendix C
+- Follow-up question(s): When we write the real-time decision subsection, should TowerMind be grouped with RTS lineage papers or with multimodal diagnostic benchmarks built around interface trade-offs?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -127,5 +129,5 @@
 - Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B06/TowerMind.md`
-- Next action: draft-section
-- Last updated: 2026-04-05
+- Check status: unchecked
+- Last updated: 2026-04-09

@@ -25,6 +25,7 @@ A card file normally starts at `card-draft`. `triaged` is only for registry rows
 
 - Prefer the authoritative paper PDF when one exists.
 - If `paper_link` is only an arXiv `abs` page or another landing page, resolve the PDF before treating the paper as fully read.
+- Keep PDF resolution bounded to deterministic rewrites and at most one official landing-page hop.
 - If the PDF cannot be verified, record that uncertainty explicitly.
 
 ## Registry Sync Fields

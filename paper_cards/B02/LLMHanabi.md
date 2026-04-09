@@ -60,20 +60,20 @@
 - Observation channel: standard Hanabi game state plus teammate hints and actions
 - Action channel: cooperative play actions and generated ToM statements
 - Interface type: natural language / structured action space
-- Agent scaffold allowed: other
+- Agent scaffold allowed: other; all evaluated models are prompted to use CoT and to emit explicit ToM statements
 - Is there privileged API access? yes
 - How close is the setup to human play? medium; it preserves Hanabi’s hidden-information structure but uses prompt-based inference and explicit ToM outputs
 - Main ecological-validity trade-off: The benchmark cleanly measures rationale inference, but the explicit ToM reporting is more instrumented than natural gameplay.
 
 ## 6. Evaluation protocol
-- Main score: Game Score
+- Main score: dual metrics of Game Score and ToM Score
 - Auxiliary score(s): ToM Score, first-order ToM, second-order ToM, correlation between ToM and game success
 - Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: repeated same-model cooperative play
-- Automatic verifiability: high
-- Calibration method: fixed five-player setup, 30-50 games per model, standard Hanabi resources
+- Human baseline / AI anchor / self-play / model-vs-model setup: repeated same-model cooperative play in a fixed 5-player setting
+- Automatic verifiability: medium
+- Calibration method: fixed five-player setup with 30-50 games per model and post-game ToM scoring by an LLM judge
 - Anti-contamination argument: not central
-- Reliability or comparability concerns: performance is benchmarked in one cooperative game only, and explicit CoT prompting may shape outcomes
+- Reliability or comparability concerns: performance is benchmarked in one cooperative game only, all models are prompted with CoT, and ToM scores depend on an LLM-as-a-judge
 
 ## 7. Main contributions
 - Contribution 1: Builds a Hanabi benchmark centered on rationale inference rather than only score.
@@ -97,14 +97,14 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Hanabi-based AI collaboration studies and ToM benchmarks
 - Closest follow-up(s): broader cooperative game benchmarks
-- Best comparison targets inside our corpus: WerewolfArena, Wolf, CKArena
+- Best comparison targets inside our corpus: StrategicHanabi, WerewolfArena, CollabOvercooked
 - What this paper uniquely adds relative to neighbors: It gives the batch a cooperative imperfect-information benchmark with explicit ToM scoring rather than deception-only focus.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The benchmark uses five-player Hanabi games and evaluates both Game Score and ToM Score.
-- ToM Score averages first-order and second-order rationale-inference scores over hint interactions.
-- The paper reports a strong positive correlation between ToM proficiency and cooperative game performance.
+- ToM Score averages first-order and second-order rationale-inference scores over hint interactions, with the latter scored post-game by an LLM judge.
+- The paper reports a strong positive correlation between ToM proficiency and cooperative game performance, with first-order ToM correlating more strongly than second-order ToM.
 
 ### 11.2 Our synthesis / interpretation
 - LLM-Hanabi is a useful balancing card for the social batch because it shows that social intelligence is not only about lying and detecting lies.
@@ -114,7 +114,7 @@
 - Recheck Appendix A if we later need the exact model roster or prompt wording used in the cooperative runs.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the metric design and takeaways are already clear enough.
+- Should we read beyond abstract + intro? why? Completed in this audit; the benchmark design, ToM scoring pipeline, evaluation setup, results, and limitations sections are now checked against the full paper.
 - Which section to read next if needed: 3.3 / 4.2 / 4.3
 - Follow-up question(s): How transferable is first-order ToM from Hanabi to richer real-time cooperative settings?
 
@@ -127,5 +127,6 @@
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B02/LLMHanabi.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

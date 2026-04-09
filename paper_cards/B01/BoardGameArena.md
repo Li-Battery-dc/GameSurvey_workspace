@@ -12,7 +12,7 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- Game Reasoning Arena, earlier arXiv versions titled Board Game Arena, is a framework paper that wraps OpenSpiel board and matrix games into a unified environment for evaluating LLM agents through strategic play. The framework formats game state, legal actions, and sometimes move history into prompts; agents return both an action and a reasoning trace under a structured output schema. The current paper version emphasizes reusable infrastructure, distributed execution, prompt architecture, and richer reasoning-profile analysis across games rather than a single definitive leaderboard. In this survey, it is most useful as a representative of OpenSpiel-based text interfaces and process-level analysis for board-game play.
+- Game Reasoning Arena is a framework paper that wraps OpenSpiel board and matrix games into a unified environment for evaluating LLM agents through strategic play. The framework formats game state, legal actions, and sometimes move history into prompts; agents return both an action and a reasoning trace under a structured output schema. The current paper version emphasizes reusable infrastructure, distributed execution, prompt architecture, and richer reasoning-profile analysis across games rather than a single definitive leaderboard. In this survey, it is most useful as a representative of OpenSpiel-based text interfaces and process-level analysis for board-game play.
 
 ## 2. Position in our survey
 - Why-games relevance: It shows how classic strategic games can be repackaged into scalable LLM-agent evaluations with logged reasoning traces.
@@ -26,7 +26,7 @@
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
-- Social structure: competitive
+- Social structure: mixed
 - Time structure: turn-based / hybrid
 
 ### 3.2 World structure
@@ -49,7 +49,7 @@
 - Secondary capability target(s): equilibrium-aware play, error avoidance, opponent-aware reasoning patterns
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially, in games such as Kuhn Poker
+- Does it test social reasoning / deception / cooperation? partially, through bluffing in Kuhn Poker and cooperation trade-offs in iterated Prisoner's Dilemma
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? partially
 - Does it test real-time efficiency? no
@@ -108,7 +108,7 @@
 - The current paper version includes tooling for categorizing reasoning traces, tracking cross-game reasoning profiles, and flagging hallucinations or rule violations.
 
 ### 11.2 Our synthesis / interpretation
-- Board Game Arena is most useful as infrastructure evidence for Sections 4 and 5, not as the central empirical anchor for strategic-play results.
+- Board Game Arena is most useful as infrastructure evidence for Section 3, not as the central empirical anchor for strategic-play results.
 - It complements BotzoneBench by trading calibration strength for framework flexibility and richer rationale logging.
 
 ### 11.3 Uncertain or needs re-check

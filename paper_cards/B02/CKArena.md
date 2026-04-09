@@ -4,7 +4,7 @@
 - Date: 2026/02
 - Venue: NeurIPS 2025
 - Authors: Shuhang Xu, Weijian Deng, Yixuan Zhou, Fangwei Zhong
-- Paper link: https://arxiv.org/pdf/2505.17512v1
+- Paper link: https://arxiv.org/pdf/2505.17512v2
 - Code link: https://github.com/xushuhang1122/CK-Arena
 - Reading depth: deep
 - Card status: card-reviewed
@@ -18,7 +18,7 @@
 - Why-games relevance: It uses the interaction pressure of a game to force concept use, discrimination, and role-aware description in context.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L3 social intelligence
-- Most relevant outline section(s): 1,2,3,4
+- Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -32,11 +32,11 @@
 ### 3.2 World structure
 - World type(s): social deduction / other
 - Real game / simulated game / designed task-game hybrid: language game adapted into a conceptual-knowledge benchmark
-- Benchmark unit: full game
+- Benchmark unit: full game / snapshot item
 
 ### 3.3 Benchmark scope
 - Scope: single game
-- Number of games / tasks: 529 concept pairs overall; main evaluation uses 464 game instances across 12 categories
+- Number of games / tasks: 529 concept pairs overall; main evaluation uses 464 game instances across 12 categories, 500 ranking games, and 5,733 snapshot QA items
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -58,10 +58,10 @@
 
 ## 5. Interaction paradigm
 - Observation channel: assigned concept, historical statements, and previous-round analysis
-- Action channel: short descriptions, voting decisions, and related QA-style diagnostic tasks
+- Action channel: short descriptions and voting decisions during gameplay, with snapshot QA used as a separate diagnostic layer
 - Interface type: natural language
 - Agent scaffold allowed: none
-- Is there privileged API access? yes
+- Is there privileged API access? no
 - How close is the setup to human play? medium; the interaction is game-like, but prompts explicitly constrain strategy to isolate conceptual mastery
 - Main ecological-validity trade-off: Strategic restrictions help isolate conceptual reasoning, but they narrow the full space of social-game behavior.
 
@@ -71,7 +71,7 @@
 - Evaluation style: Elo / hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: anchor models plus human-reviewed statement scoring and a human reference on the leaderboard
 - Automatic verifiability: medium
-- Calibration method: anchor-based ratings over at least 60 rounds plus a derived QA benchmark from 500 completed games
+- Calibration method: anchor-model ratings over at least 60 rounds plus a +120 Elo offset to correct the civilian role advantage
 - Anti-contamination argument: dynamic game interactions and automatically generated QA reduce dependence on fixed static concept questions
 - Reliability or comparability concerns: statement quality depends partly on LLM judges and human review, and the benchmark is specific to concept-pair discrimination
 
@@ -81,7 +81,7 @@
 - Contribution 3: Derives a 5,733-item snapshot QA benchmark from gameplay traces for finer diagnosis.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Strong overall language models differ substantially in conceptual mastery, and fixed strategic heuristics do not explain the best results.
+- Core empirical takeaway: Strong overall language models differ substantially in conceptual mastery, and both the leaderboard and the 5,733-item QA benchmark suggest that adaptive concept use matters more than any single fixed strategy.
 - Notable model failure mode 1: models can produce coherent but weakly diagnostic descriptions
 - Notable model failure mode 2: concept understanding varies across semantic categories and is not well predicted by generic benchmark strength
 - Notable model failure mode 3: overly fixed aggressive or conservative strategies reduce performance sharply
@@ -89,7 +89,7 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Shows how games can operationalize semantic knowledge in interaction rather than as static QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful example of game benchmarks expanding into diagnostic knowledge probes. Social-deduction-adjacent benchmark centered on language-only concept play.
+- Best use in Section 1 (taxonomy and evolutionary levels): Contrast-only example of a game benchmark expanding into diagnostic knowledge probes, not a core social-evolution anchor.
 - Best use in Section 2 (core capabilities evaluated by games): Supports concept reasoning, inference from partial clues, and strategic description.
 - Best use in Section 3 (interaction and evaluation paradigm): Illustrates prompt restrictions used to isolate target capabilities. Relevant for mixed game outcomes plus snapshot QA and anchor-based rating.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that general benchmark strength does not guarantee fine-grained conceptual competence.
@@ -103,8 +103,8 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - CK-Arena uses six-player Undercover games with four civilians and two undercover agents.
-- It evaluates on hundreds of concept-pair games and also builds a 5,733-instance QA benchmark from gameplay traces.
-- Fixed strategic ablations underperform the unconstrained setting, suggesting success does not come from one simple heuristic.
+- The paper defines 529 concept pairs overall, uses 464 main-evaluation game instances across 12 concrete categories, and builds a 5,733-instance QA benchmark from 500 completed games.
+- The leaderboard corrects the civilian role bias with a temporary +120 Elo offset, and fixed-strategy ablations underperform the unconstrained setting.
 
 ### 11.2 Our synthesis / interpretation
 - CK-Arena is best used as a contrast card inside the social batch because it broadens what social game benchmarks can measure.
@@ -114,7 +114,7 @@
 - Recheck Appendix A if we later need the exact category distribution or statement-scoring rubric.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the main benchmark logic is already clear.
+- Should we read beyond abstract + intro? why? Completed in this audit; the game setup, leaderboard construction, QA benchmark, ablations, and scope limits are now checked against the full paper.
 - Which section to read next if needed: 3.3 / 3.4 / 4.5
 - Follow-up question(s): Should we place CK-Arena under social intelligence, conceptual reasoning, or both when drafting taxonomy prose?
 
@@ -124,8 +124,9 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 1,2,3,4
+- Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B02/CKArena.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

@@ -49,7 +49,7 @@
 - Secondary capability target(s): probabilistic reasoning, adaptation across game families, rule-compliant decision making
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially, in imperfect-information and mixed-role games
+- Does it test social reasoning / deception / cooperation? partially; Texas Hold'em probes bluffing and opponent modeling, while Fight the Landlord adds coalition coordination, but the suite is still centered on strategic competition rather than open-ended social play
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? partially
 - Does it test real-time efficiency? no

@@ -24,7 +24,7 @@
 ## 3. Design-space coding
 ### 3.1 Environment structure
 - Information structure: imperfect
-- Transition structure: stochastic
+- Transition structure: mixed
 - Agent structure: multi-agent
 - Social structure: competitive
 - Time structure: hybrid
@@ -103,13 +103,14 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - STAR formalizes evaluation as a finite-horizon partially observable zero-sum stochastic game.
+- The concrete RoTK benchmark instance uses deterministic combat resolution even though the broader STAR formalization allows potentially stochastic dynamics.
 - The standard benchmark exposes faction-level structured JSON observations under fog-of-war and supports unit-control, observation, faction-control, and system actions.
 - It evaluates models in both turn-based and real-time modes using win rate, SER, and PWER in round-robin play.
 - The system prompt explicitly enforces tool calls and an OODA-style perception-planning-action loop.
 - The paper reports that reasoning models dominate turn-based play but lose ground in real-time settings due to latency.
 
 ### 11.2 Our synthesis / interpretation
-- This is a strong contrast card for Section 5 because it shows that better reasoning is not enough if inference speed collapses execution quality.
+- This is a strong contrast card for Sections 3 and 4 because it shows that better reasoning is not enough if inference speed collapses execution quality.
 - The benchmark is more valuable as a protocol paper than as a broad survey anchor on game diversity.
 
 ### 11.3 Uncertain or needs re-check

@@ -16,8 +16,8 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Diverse real video games make it possible to evaluate whether an LLM agent can remain useful across very different cognitive demands instead of only one narrow ruleset.
-- Historical stage: benchmark expansion / training platform
-- Narrative level(s): L2 strategic reasoning / L4 embodied multimodal interaction
+- Historical stage: ecological agent benchmark
+- Narrative level(s): L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
@@ -35,21 +35,21 @@
 - Benchmark unit: game episode
 
 ### 3.3 Benchmark scope
-- Scope: cross-genre suite
+- Scope: genre-diverse suite
 - Number of games / tasks: 12 games
-- Benchmark intent: diagnostic evaluation and training support
+- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: mixed
-- Perception burden retained: visual interpretation, rule following, memory, planning, error handling, and genre-specific control
-- Perception burden removed: some game-specific integration friction through the MCP layer
+- Perception burden retained: rule following, memory, planning, error handling, and some visual grounding when image input is enabled
+- Perception burden removed: Orak preprocesses game states into structured text and hides information deemed irrelevant to gameplay
 
 ## 4. What this benchmark measures
 - Primary capability target: versatile game-agent competence across major video-game genres
 - Secondary capability target(s): value of agentic modules, effect of visual input, transfer from gameplay fine-tuning
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially
+- Does it test social reasoning / deception / cooperation? no; some games involve adversarial or multi-step interaction, but the suite is not a social-language benchmark
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? partially
@@ -57,13 +57,13 @@
 - Why is a game environment especially suitable here? Cross-genre video games demand different mixes of perception, reasoning, memory, and planning while keeping outcomes concretely measurable.
 
 ## 5. Interaction paradigm
-- Observation channel: MCP-accessed game states, visual inputs when enabled, and agentic-module outputs
-- Action channel: game actions chosen by the model, optionally mediated by planning or reflection modules
-- Interface type: API / hybrid
-- Agent scaffold allowed: tool use
+- Observation channel: MCP-mediated structured game states, with optional visual inputs in separate experiments
+- Action channel: discrete game actions emitted through MCP wrappers, optionally mediated by reflection, planning, or skill modules
+- Interface type: API / structured action space / hybrid
+- Agent scaffold allowed: memory / reflection / planner
 - Is there privileged API access? yes
-- How close is the setup to human play? medium; the games are real, but MCP tool access and benchmark scaffolding change how agents interact with them
-- Main ecological-validity trade-off: Orak is broader and more realistic than symbolic-only suites, but less raw than direct human-like control benchmarks.
+- How close is the setup to human play? low-to-medium; the games are real, but Orak intentionally preprocesses states into structured text favorable to LLM reasoning
+- Main ecological-validity trade-off: Orak offers broad real-game coverage, but MCP-mediated state abstraction and scaffolded interaction reduce raw human-like play.
 
 ## 6. Evaluation protocol
 - Main score: per-game benchmark score and leaderboard performance
@@ -73,7 +73,7 @@
 - Automatic verifiability: mixed
 - Calibration method: shared MCP interface, standardized evaluation pipeline, and controlled module ablations
 - Anti-contamination argument: not central
-- Reliability or comparability concerns: results depend meaningfully on the chosen scaffold and on whether visual input or text state is provided
+- Reliability or comparability concerns: results depend materially on scaffold choice, input modality, and the benchmark's favorable state preprocessing for LLM reasoning
 
 ## 7. Main contributions
 - Contribution 1: Builds a 12-game, all-major-genre benchmark for LLM and VLM game agents.
@@ -84,7 +84,7 @@
 - Core empirical takeaway: proprietary models outperform open-source models broadly, but scaffolding and fine-tuning meaningfully reshape the gap
 - Notable model failure mode 1: open-source models gain much less from extended agentic workflows than proprietary models
 - Notable model failure mode 2: visual inputs often hurt performance rather than help
-- Notable model failure mode 3: despite broad capability, even strong models remain weak or inconsistent in several genres
+- Notable model failure mode 3: fine-tuning mainly improves valid action generation and some intra-game transfer, but does not remove weak spatial reasoning or OOD-game failures
 - Does this paper reveal a benchmark-design limitation as well? yes; a common interface is valuable, but heavy scaffolding makes it harder to separate raw backbone ability from workflow engineering
 
 ## 9. Why this paper matters for our survey
@@ -104,13 +104,14 @@
 ### 11.1 Direct paper-supported facts
 - Orak covers 12 real video games spanning six major genres and connects game environments plus agentic modules through MCP.
 - The benchmark studies gameplay leaderboards, LLM battle arenas, the effect of visual input, and the effect of fine-tuning on smaller models.
-- The paper reports that proprietary models lead overall, visual input often hurts gameplay, and fine-tuning transfers useful gameplay meta-knowledge to smaller models and some non-game tasks.
+- The paper reports that proprietary models lead overall, visual input often hurts gameplay, and fine-tuning yields mixed but real gains in valid action generation and transfer.
 
 ### 11.2 Our synthesis / interpretation
 - Orak is one of the most useful survey anchors for the "generic gaming agent" framing.
 - It is especially valuable because it makes scaffolding an explicit experimental variable instead of hiding it inside the implementation.
 
 ### 11.3 Uncertain or needs re-check
+- The suite intentionally hides information deemed unnecessary for gameplay, so ecological claims should always be paired with the state-preprocessing caveat.
 - Recheck Sections 5.4 to 5.6 if we later need the exact per-module gains or the strongest fine-tuning transfer examples.
 
 ## 12. Follow-up reading plan
@@ -127,5 +128,6 @@
 - Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B05/Orak.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

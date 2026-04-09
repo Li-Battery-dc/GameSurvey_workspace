@@ -12,7 +12,7 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- BALROG is a broad benchmark and framework for evaluating long-context LLMs and VLMs as sequential decision-making agents across challenging game environments. It bundles environments such as BabyAI, Crafter, TextWorld, Baba Is AI, MiniHack, and NetHack, and evaluates zero-shot agents that produce natural-language actions from either language-only or vision-language observations. The benchmark explicitly decouples models from prompting strategies and reports standardized progression across tasks. For this survey, BALROG is a core visual/ecological anchor because it covers a wide range from simple navigation to very hard long-horizon environments.
+- BALROG is a benchmark and toolkit for evaluating long-context LLM and VLM agents on six game and RL environment families: BabyAI, Crafter, TextWorld, Baba Is AI, MiniHack, and NetHack. The paper reports zero-shot baselines in which agents output natural-language actions from language-wrapped observations, with optional current-frame images for VLM mode, and scores each environment on a standardized 0-100 progression scale. Because the environments are procedurally generated and range from relatively simple navigation to extremely hard long-horizon play, BALROG is a strong bridge from wrapper-heavy diagnostic evaluation toward harder ecological game suites. For this survey, it is best used as an ecological benchmark with important interface-privilege caveats, not as a pure human-like play benchmark.
 
 ## 2. Position in our survey
 - Why-games relevance: It uses games to stress sequential planning, exploration, spatial reasoning, and rule discovery under far richer dynamics than static multimodal benchmarks.
@@ -60,20 +60,20 @@
 - Observation channel: language-only descriptions or image-plus-description observations with history
 - Action channel: natural-language action strings
 - Interface type: natural language / hybrid
-- Agent scaffold allowed: none
-- Is there privileged API access? yes
-- How close is the setup to human play? medium; the benchmark keeps sequential gameplay but often supplements raw observations with language wrappers
-- Main ecological-validity trade-off: BALROG reaches harder environments than many earlier suites, but still relies on wrapper descriptions and standardized action prompting.
+- Agent scaffold allowed: none in the reported zero-shot baselines; the released toolkit also supports alternative inference-time strategies such as few-shot prompting
+- Is there privileged API access? partially; most environments are exposed through text wrappers, action lists, and invalid-action fallback handling rather than pure raw play
+- How close is the setup to human play? low to medium; it preserves sequential gameplay, but the wrappers, action normalization, and fallback actions simplify perception and control
+- Main ecological-validity trade-off: BALROG reaches much harder long-context environments than many earlier suites, but it does so through standardized language wrappers rather than end-to-end human-like interfaces
 
 ## 6. Evaluation protocol
 - Main score: standardized progression across environments
-- Auxiliary score(s): task-specific progress metrics and invalid-action trajectory statistics
+- Auxiliary score(s): per-environment progress metrics and invalid-action trajectory statistics
 - Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: model-only baseline leaderboard across environments
+- Human baseline / AI anchor / self-play / model-vs-model setup: model-only zero-shot baseline leaderboard across environments; no human baseline in the paper
 - Automatic verifiability: high
-- Calibration method: unified zero-shot protocol with multiple seeds and per-environment progress normalization
-- Anti-contamination argument: diverse games and hard exploration tasks reduce simple benchmark memorization value
-- Reliability or comparability concerns: wrapper quality and the choice of language-only versus vision-language format materially affect results
+- Calibration method: unified zero-shot protocol, multiple seeds, per-environment normalization to 0-100, and a bespoke NetHack progression metric
+- Anti-contamination argument: all six environments are procedurally generated, so exact instances are unlikely to repeat
+- Reliability or comparability concerns: wrapper quality, fallback handling for invalid actions, and the choice of language-only versus vision-language observations materially affect results
 
 ## 7. Main contributions
 - Contribution 1: Packages a diverse suite of hard game environments for LLM/VLM agent evaluation.
@@ -81,41 +81,42 @@
 - Contribution 3: Shows that many frontier models plateau far below competent play on the hardest tasks.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Even strong frontier models make only modest average progress, and the hardest environments such as MiniHack and NetHack remain largely unsolved.
+- Core empirical takeaway: Even strong frontier models make only modest average progress overall, while MiniHack and NetHack remain nearly unsolved.
 - Notable model failure mode 1: weak systematic exploration
 - Notable model failure mode 2: brittle long-term planning in puzzle and open-world tasks
-- Notable model failure mode 3: vision inputs sometimes degrade performance rather than helping
-- Does this paper reveal a benchmark-design limitation as well? yes; results can depend on language wrappers and fallback handling for invalid actions
+- Notable model failure mode 3: many models degrade when image observations are added, despite the benchmark's environments being visually grounded
+- Does this paper reveal a benchmark-design limitation as well? yes; results depend strongly on wrappers, textification choices, and invalid-action handling
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can still challenge frontier multimodal models on long-horizon interaction.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents the shift toward broader ecological suites after earlier symbolic/formal benchmarks. Useful overview paper for mixed environment structure and modality.
-- Best use in Section 2 (core capabilities evaluated by games): Supports planning, exploration, and spatial reasoning claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Good comparison case for language wrappers versus image-plus-language observations. Relevant for standardized progression metrics and invalid-action handling.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence for persistent exploration and planning failures.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move from narrow formal probes toward broader ecological suites, while still exposing heavy interface abstraction.
+- Best use in Section 2 (core capabilities evaluated by games): Supports planning, exploration, spatial reasoning, and long-context decision-making claims.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison case for language wrappers, optional image observations, per-environment normalization, and invalid-action fallback.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence for exploration and planning failures, plus a cautionary case on interface privilege inside "ecological" benchmarks.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): SmartPlay and earlier RL-game benchmark suites
-- Closest follow-up(s): Orak, GameVerse
+- Closest predecessor(s): environment-specific benchmark lines such as BabyAI, Crafter, MiniHack, NetHack, and TextWorld, plus earlier rule-grounded agent benchmarks
+- Closest follow-up(s): Orak and GameVerse as broader modern suites for visually grounded game agents
 - Best comparison targets inside our corpus: SmartPlay, Orak, GameVerse, FlashAdventure
-- What this paper uniquely adds relative to neighbors: It is one of the clearest broad-suite baselines for frontier LLMs and VLMs on long-context game environments.
+- What this paper uniquely adds relative to neighbors: It is one of the clearest broad-suite baselines for frontier long-context LLMs and VLMs on procedurally generated game environments under a unified protocol.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - BALROG evaluates agents on BabyAI, Crafter, TextWorld, Baba Is AI, MiniHack, and NetHack.
-- Agents output natural-language actions from either language-only or vision-language observations under a unified protocol.
-- The reported results show moderate progress on easier suites and near-flat performance on the hardest environments.
+- The reported baselines are zero-shot: agents output natural-language actions from language-wrapped observations, with optional current-frame images in VLM mode.
+- Scores are standardized to a 0-100 progression scale, with a bespoke progression metric for NetHack.
+- The environments are procedurally generated, and the paper reports strong performance gaps between easier suites and the hardest long-horizon tasks.
 
 ### 11.2 Our synthesis / interpretation
-- BALROG is best used as a central bridge from symbolic game probes to more ecological agent benchmarks.
-- The benchmark’s use of both language and vision formats makes it especially useful when discussing privileged interfaces.
+- BALROG is best used as a bridge paper: it broadens ecological scope substantially, but its wrappers still make it an interface-privileged benchmark rather than a human-like play benchmark.
+- Its paired language-only and VLM settings make it especially useful for discussing how interface design can dominate conclusions about multimodal agent competence.
 
 ### 11.3 Uncertain or needs re-check
-- Recheck the appendices if we later need exact per-environment task counts or the precise standardized-progression definition.
+- Recheck the appendices if we later need exact per-environment task counts, the full observation prompts, or the precise NetHack progression construction.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? No immediate reread; the suite structure and results are already strong enough for synthesis.
-- Which section to read next if needed: 2.1 / 3.1 / 4.1
+- Which section to read next if needed: 3 / 4 / NetHack appendix
 - Follow-up question(s): Which BALROG environments are the cleanest cross-paper comparison targets for long-horizon autonomy?
 
 ## 13. Registry sync
@@ -128,4 +129,4 @@
 - Survey role: anchor
 - Paper card path: `paper_cards/B03/Balrog.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

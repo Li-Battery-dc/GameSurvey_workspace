@@ -8,17 +8,17 @@
 - Code link:
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- CATArena is less a direct gameplay benchmark and more an iterative competitive framework for evaluating code agents that write and refine game strategies. Agents receive game code and sample implementations, compete in tournaments, inspect peers’ code and logs, then iterate across rounds. The framework covers four open-ended board and card games with rule variants and computes metrics from a cross-round scoring matrix. In this survey, the paper matters mainly as a tournament-based measure of strategy coding and peer learning rather than of raw interactive game play.
+- CATArena is less a direct gameplay benchmark and more an iterative competitive framework for evaluating code agents that write and refine game strategies. In round 1, agents receive game code and a sample AI, implement an initial strategy, then enter later rounds where they inspect peers’ code and tournament logs before revising their own submissions. The framework covers four board and card games with rule variants and evaluates strategy coding, learning, and generalizability through a cross-round scoring matrix. In this survey, the paper matters mainly as a code-agent tournament protocol rather than as evidence of raw in-game play.
 
 ## 2. Position in our survey
 - Why-games relevance: It uses open-ended games to keep evaluation unsaturated and to expose whether agents can improve strategies through repeated competition.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 1,2,3
+- Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -35,12 +35,12 @@
 - Benchmark unit: tournament round
 
 ### 3.3 Benchmark scope
-- Scope: game family
+- Scope: curated suite
 - Number of games / tasks: 4 games with variants
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
-- Primary modality: code
+- Primary modality: mixed
 - Perception burden retained: strategy analysis, game-code understanding, opponent adaptation, repeated learning rounds
 - Perception burden removed: direct in-environment perception and action generation at play time
 
@@ -48,28 +48,28 @@
 - Primary capability target: strategy coding and peer-learning ability
 - Secondary capability target(s): generalization across variants, tournament adaptation, long-run competitiveness
 - Does it test rule grounding / legal action generation? yes, but through code generation
-- Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? no
+- Does it test strategic planning under uncertainty? partially, depending on the specific game arena and variant
+- Does it test social reasoning / deception / cooperation? partially, but only indirectly through Bridge and asymmetric card settings
 - Does it test visual grounding / spatial-temporal reasoning? no
-- Does it test long-horizon autonomy / task completion? partially
+- Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
 - Does it test cross-game transfer / open-ended generalization? partially
 - Why is a game environment especially suitable here? Open-ended game tournaments keep score meaningful across repeated rounds and make strategic improvement directly observable.
 
 ## 5. Interaction paradigm
-- Observation channel: game code, sample AI, peer submissions, and tournament logs
+- Observation channel: game code, sample AI implementations, previous-round peer submissions, rankings, and detailed tournament logs
 - Action channel: revised strategy code submissions
-- Interface type: API / other
-- Agent scaffold allowed: other
+- Interface type: hybrid
+- Agent scaffold allowed: tool use
 - Is there privileged API access? yes
 - How close is the setup to human play? low; the benchmark evaluates agents as strategy programmers rather than direct players
-- Main ecological-validity trade-off: CATArena says more about iterative strategy development than about human-like game interaction.
+- Main ecological-validity trade-off: CATArena measures iterative strategy development in a code-agent workflow, so it says more about code synthesis and adaptation than about human-like gameplay.
 
 ## 6. Evaluation protocol
-- Main score: tournament score from the cross-round scoring matrix
-- Auxiliary score(s): learning-related metrics over iterative rounds
+- Main score: strategy-coding, global-learning, and generalizability scores derived from the cross-round scoring matrix
+- Auxiliary score(s): counter-adaptation and self-improvement metrics over iterative rounds
 - Evaluation style: tournament / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: code-agent tournament with repeated rounds
+- Human baseline / AI anchor / self-play / model-vs-model setup: repeated code-agent tournaments plus an LLM-Player control that outputs moves directly without writing code
 - Automatic verifiability: high
 - Calibration method: repeated matches, tailored formats for symmetric and asymmetric games, and explicit scoring matrices
 - Anti-contamination argument: variants are designed partly to reduce rote memorization
@@ -81,24 +81,24 @@
 - Contribution 3: Defines metrics aimed at separating initial strategy coding from later learning ability.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: CATArena can differentiate agents by both initial strategy quality and their ability to improve across rounds.
-- Notable model failure mode 1: many agents plateau after early rounds instead of learning effectively from logs
-- Notable model failure mode 2: strategy transfer weakens when variants alter familiar rules
-- Notable model failure mode 3: coding competence and gameplay competence do not always align cleanly
+- Core empirical takeaway: CATArena separates initial strategy-coding ability from iterative learning ability, and it shows that code-agent improvement over rounds is often unstable rather than steadily upward.
+- Notable model failure mode 1: many agents show limited or erratic gains across rounds instead of consistent iterative improvement
+- Notable model failure mode 2: agent-written strategies often remain relatively simple rule-based programs, leaving substantial headroom in strategy coding
+- Notable model failure mode 3: direct LLM gameplay behavior and agent-coded strategies diverge substantially, so strategy coding cannot be treated as a proxy for raw gameplay reasoning
 - Does this paper reveal a benchmark-design limitation as well? yes; it is evaluating a scaffolded code-agent workflow more than direct in-game interaction
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows one way games can stay unsaturated as agent capabilities grow.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move toward evaluation of improvement dynamics rather than one-shot scores. Useful contrast case for code-agent strategy evaluation.
-- Best use in Section 2 (core capabilities evaluated by games): Supports strategic reasoning and adaptation claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Good counterexample to direct-play benchmarks. Relevant for iterative tournaments and learning-over-rounds metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that evaluating agent learning ability is still methodologically unsettled.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows one way game-based evaluation can resist saturation by using open-ended variants and iterative competition.
+- Best use in Section 1 (taxonomy and evolutionary levels): Contrast case for the shift from one-shot gameplay scoring toward agent-improvement and strategy-coding evaluation.
+- Best use in Section 2 (core capabilities evaluated by games): Narrow contrast on strategic adaptation, but only through a code-agent workflow rather than direct play.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong protocol contrast for iterative tournaments, cross-round scoring matrices, and learning-over-rounds metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that agent-learning evaluation remains methodologically unsettled and may drift away from direct-play capability.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): tournament-style board-game evaluations and code-agent benchmarks
 - Closest follow-up(s): other peer-learning or self-improving agent evaluations
-- Best comparison targets inside our corpus: BotzoneBench, WhoIsABetterPlayer, ComplexCardGames
-- What this paper uniquely adds relative to neighbors: It evaluates iterative strategy refinement explicitly instead of only static performance.
+- Best comparison targets inside our corpus: `BotzoneBench`, `WhoIsABetterPlayer`, `BoardGameArena`
+- What this paper uniquely adds relative to neighbors: It evaluates iterative code revision explicitly, with a scoring matrix that separates strategy coding from later-round learning and adaptation.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
@@ -128,4 +128,5 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/CATArena.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Check status: unchecked
+- Last updated: 2026-04-09

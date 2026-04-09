@@ -51,7 +51,7 @@
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? yes
 - Does it test visual grounding / spatial-temporal reasoning? no
-- Does it test long-horizon autonomy / task completion? yes
+- Does it test long-horizon autonomy / task completion? partially
 - Does it test real-time efficiency? no
 - Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Werewolf naturally combines hidden information, factional incentives, and language-based persuasion with clear win conditions.
@@ -73,7 +73,7 @@
 - Automatic verifiability: medium to high
 - Calibration method: role-balanced pairings within and across model families
 - Anti-contamination argument: not central
-- Reliability or comparability concerns: small tournament sizes and fully synthetic agent societies limit statistical strength and human comparability
+- Reliability or comparability concerns: small tournament sizes, a simplified text-only environment, and mostly Gemini/GPT comparisons limit statistical strength and cross-paper comparability
 
 ## 7. Main contributions
 - Contribution 1: Recasts Werewolf as a live multi-agent LLM benchmark with hidden roles.
@@ -105,16 +105,17 @@
 - Each game uses eight players: one Seer, one Doctor, two Werewolves, and four Villagers.
 - The environment includes role-specific night actions, a rules-based Game Master, agent memories, and bidding-based debate turns.
 - The paper runs intra-family tournaments and analyzes shifting synthetic votes during debate.
+- The synthetic votes are analysis-only proxies: they do not affect gameplay and are not stored in player memories.
 
 ### 11.2 Our synthesis / interpretation
 - Werewolf Arena is a foundational social benchmark in this corpus because it treats dialogue as part of the environment, not just as explanation around the task.
-- Its bidding mechanism is especially useful for Section 4 because it adds a conversational-control dimension absent from most turn-based benchmarks.
+- Its bidding mechanism is especially useful for Section 3 because it adds a conversational-control dimension absent from most turn-based benchmarks.
 
 ### 11.3 Uncertain or needs re-check
 - Recheck Appendix C if we later need the exact debate-ending alternatives or more detailed moderator logic.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the gameplay loop and evaluation logic are already clear.
+- Should we read beyond abstract + intro? why? Completed in this audit; the environment design, bidding analysis, seer analysis, and limitations sections are now checked against the full paper.
 - Which section to read next if needed: 3.3 / 5.1 / Appendix C
 - Follow-up question(s): How much of the observed performance gap comes from bidding and verbosity rather than deeper role inference?
 
@@ -127,5 +128,6 @@
 - Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B02/WerewolfArena.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

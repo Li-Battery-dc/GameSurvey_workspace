@@ -12,7 +12,7 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- Beyond Survival shifts social-deduction evaluation away from pure LLM self-play and toward human-aligned reference judgments. It builds WereBench, a human-verified multimodal Werewolf dataset with over 100 hours of video and rich annotations, then introduces WereAlign, which scores models against strategies used by the winning human faction. The benchmark separates speech evaluation into five dimensions and adds decision-level alignment metrics. For this survey, the paper is most useful as a reference-based social benchmark that evaluates whether model reasoning aligns with successful human play rather than merely whether an LLM can survive in a synthetic game.
+- Beyond Survival shifts social-deduction evaluation away from live LLM self-play and toward human-grounded reference evaluation. The paper builds WereBench from 100+ hours of televised Panda Kill footage, reconstructs public game logs and MVP-centered highlight moments, and then introduces WereAlign, which asks models to choose speech or decisions aligned with successful human play. Speech evaluation covers five dimensions, while decision evaluation measures vote alignment and opponent-role inference. For this survey, the paper is most useful as an offline, human-aligned contrast case rather than as a live-agent benchmark.
 
 ## 2. Position in our survey
 - Why-games relevance: It uses a socially rich game to ground evaluation against human strategic behavior rather than only model-vs-model outcomes.
@@ -36,7 +36,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: single game
-- Number of games / tasks: human Werewolf corpus with 100+ hours of video and derived evaluation items
+- Number of games / tasks: 80+ human games, 100+ hours of video, 15 rule variants, 48 players, and derived WereAlign items
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -50,30 +50,30 @@
 - Does it test rule grounding / legal action generation? no
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? yes
-- Does it test visual grounding / spatial-temporal reasoning? partially, through multimodal context
+- Does it test visual grounding / spatial-temporal reasoning? no; the source corpus is multimodal, but WereAlign evaluates models on reconstructed public context rather than raw video perception
 - Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
 - Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Social deduction produces naturally entangled reasoning, lying, and coalition behavior that can be aligned against human strategic references.
 
 ## 5. Interaction paradigm
-- Observation channel: public information available at a focal timestamp, including multimodal human gameplay context
-- Action channel: multiple-choice answers for speech tasks and aligned decisions for vote/suspicion tasks
+- Observation channel: reconstructed public context at a focal timestamp, including rules, public logs, and speech history from human games
+- Action channel: multiple-choice answers for five speech dimensions plus structured vote and opponent-role predictions
 - Interface type: natural language / hybrid
 - Agent scaffold allowed: none
-- Is there privileged API access? yes
-- How close is the setup to human play? medium; the benchmark preserves real human gameplay evidence but turns evaluation into offline question answering and alignment tasks
+- Is there privileged API access? no
+- How close is the setup to human play? low to medium; the source data come from real human play, but evaluated models answer offline items rather than participate in live dialogue
 - Main ecological-validity trade-off: It gains stronger human grounding than synthetic self-play, but models are not actually participating in live conversation.
 
 ## 6. Evaluation protocol
 - Main score: macro-average speech evaluation accuracy
 - Auxiliary score(s): Role Inference, Strategic Judgment, Deception Reasoning, Persuasive Statements, Counterfactual Trade-off, Vote Alignment, Opponent Identification
-- Evaluation style: judge-based / milestone / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: winning human faction strategy serves as the reference target
-- Automatic verifiability: medium to high
-- Calibration method: reference-based multiple-choice construction from annotated human games
-- Anti-contamination argument: hidden-role and timestamp-specific public context reduce simple memorization value
-- Reliability or comparability concerns: the winning faction is used as a success proxy, which may not always equal globally optimal play
+- Evaluation style: multiple-choice / alignment / hybrid
+- Human baseline / AI anchor / self-play / model-vs-model setup: the reference target is the winning faction MVP trajectory reconstructed from annotated human games
+- Automatic verifiability: high
+- Calibration method: human-verified reconstruction, MVP-grounded positive options, and human-checked adversarial negative options
+- Anti-contamination argument: not the main claim; the paper leans on time-indexed human-game contexts rather than a broad saturation argument
+- Reliability or comparability concerns: the benchmark is built from one televised Werewolf source, uses MVP-from-winning-faction behavior as reference, and does not test live interaction
 
 ## 7. Main contributions
 - Contribution 1: Releases a large human-verified multimodal Werewolf corpus.
@@ -81,7 +81,7 @@
 - Contribution 3: Breaks social reasoning into five speech dimensions plus decision alignment metrics.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Most models remain below 50% average speech accuracy, and strategic reasoning is weaker than surface fluency.
+- Core empirical takeaway: Most models remain below 50% average speech accuracy, and strategic reasoning dimensions such as deception reasoning and counterfactual trade-off are markedly harder than persuasive phrasing.
 - Notable model failure mode 1: strong persuasive phrasing does not imply good counterfactual or deception reasoning
 - Notable model failure mode 2: role-dependent performance varies sharply, especially on roles requiring verification and hidden-state reasoning
 - Notable model failure mode 3: model rankings show that social strategy alignment is not well predicted by general benchmark strength alone
@@ -89,22 +89,22 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Shows that games can anchor human-like social reasoning evaluation with richer evidence than generic dialogue tasks.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful marker for a move from synthetic arenas toward human-grounded evaluation. Social-deduction benchmark built from recorded gameplay rather than live self-play.
+- Best use in Section 1 (taxonomy and evolutionary levels): Secondary contrast only; it shows a move from synthetic arenas toward human-grounded evaluation, but it is not a level-defining taxonomy anchor.
 - Best use in Section 2 (core capabilities evaluated by games): Strong for role inference, deception reasoning, and persuasive strategy.
 - Best use in Section 3 (interaction and evaluation paradigm): Good example of offline contextual evaluation rather than embodied participation. Important for winning-faction alignment and dimension-specific speech scoring.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that fluent dialogue is easier than robust social strategy.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): Werewolf Arena and earlier self-play social-deduction benchmarks
-- Closest follow-up(s): WOLF-style finer deception diagnostics
+- Closest predecessor(s): WerewolfArena and earlier self-play social-deduction benchmarks
+- Closest follow-up(s): WOLF is the nearest later contrast on statement-level instrumentation rather than a direct continuation of the human-grounded setup
 - Best comparison targets inside our corpus: WerewolfArena, Wolf, LLMHanabi
 - What this paper uniquely adds relative to neighbors: It anchors social evaluation to human winning strategies instead of only model self-play or peer judgments.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- The paper introduces a multimodal human Werewolf dataset with over 100 hours of video and extensive annotations.
-- WereAlign evaluates speech on five dimensions and decisions on metrics such as vote alignment and opponent identification.
-- Reported results show that even strong models remain error-prone, especially on deeper strategic reasoning dimensions.
+- WereBench contains 100+ hours of Panda Kill footage, 80+ games, 15 rule variants, and 48 human players, with strong agreement on speaker attribution and log reconstruction.
+- WereAlign evaluates speech on five dimensions and decisions with Vote Alignment and Opponent Identification.
+- The best reported speech macro-average is 0.720 for Gemini-2.5-Pro, while most models remain below 0.50.
 
 ### 11.2 Our synthesis / interpretation
 - Beyond Survival is a useful bridge card between live-agent social game benchmarks and offline human-grounded evaluation.
@@ -114,7 +114,7 @@
 - Recheck the dataset section if we later need the exact split or rule-variant composition of WereBench.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the benchmark structure and main scores are already clear.
+- Should we read beyond abstract + intro? why? Completed in this audit; the dataset-construction, reference-answer generation, main results, intervention analysis, and limitations sections are now checked against the full paper.
 - Which section to read next if needed: 4.1 / 4.2 / 5.3
 - Follow-up question(s): How defensible is winning-faction alignment as a proxy for optimal social reasoning across roles?
 
@@ -127,5 +127,6 @@
 - Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B02/BeyondSurvival.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

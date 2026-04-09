@@ -20,8 +20,8 @@ Use this skill for Stage 2 work only. Turn selected papers into evidence-bearing
 - `template/paper_card_template.md`
 - `evals/quality_rubric.md`
 - `evals/batch_review_checklist.md`
-- `references/card_rules.md`
-- `assets/paper_card_template.md` only if the root template is missing
+- `.codex/skills/paper-card-batch-reader/references/card_rules.md`
+- `.codex/skills/paper-card-batch-reader/assets/paper_card_template.md` only if the root template is missing
 
 ## Minimum Reading Scope
 
@@ -51,16 +51,21 @@ Read enough to fill the card reliably:
 
 Before deep reading, check whether `paper_link` already points to full text.
 
-- If it is an arXiv `abs` link, resolve the corresponding PDF URL first.
-- If it is OpenReview, a publisher landing page, or a project page, locate the official PDF from that page.
+- Keep the workflow simple and bounded. Only use deterministic rewrites plus one landing-page hop.
+- If `paper_link` is an arXiv `abs` page, rewrite it to `https://arxiv.org/pdf/<id>.pdf`.
+- If `paper_link` is an ACL Anthology landing page, prefer the corresponding `.pdf` URL on that page.
+- If `paper_link` is an OpenReview `forum?id=...` page, try the matching `pdf?id=...` URL. If the site blocks retrieval in the current environment, keep the landing page and record the blocker.
+- If `paper_link` is a DOI, publisher landing page, or project page, inspect that page for `citation_pdf_url` or a direct official PDF link. If the page only links onward to an official paper page such as arXiv or proceedings, follow that one hop and resolve the PDF there.
+- If you find a clearly better verified PDF URL, update the registry `paper_link` to that PDF URL before finishing the card.
+- Verify hard cases with a temporary download plus `file` or `pdfinfo`. Do not create or commit a repo-wide PDF cache unless the user explicitly asks for one.
 - Prefer the authoritative paper PDF over mirrors or informal summaries.
-- If the PDF cannot be verified, mark that uncertainty explicitly instead of inventing a URL.
+- If the PDF cannot be verified or the site blocks automated retrieval, keep the landing page, mark the blocker explicitly, and avoid inventing a URL.
 
 ## Workflow
 
 1. Start from a selected batch file or an explicit paper list.
 2. For each paper, follow the card path already stored in the registry. If none exists, default to `paper_cards/{batch_id}/{paper_id}.md`.
-3. Resolve the PDF URL when `paper_link` is only an abstract or landing page.
+3. Resolve the PDF URL when `paper_link` is only an abstract or landing page, using the bounded rules above.
 4. Fill `template/paper_card_template.md` exactly. Preserve the section order so cards stay comparable.
 5. Keep section `11.1` to direct paper-supported facts, section `11.2` to our synthesis, and section `11.3` to unresolved uncertainty.
 6. Update the registry after each card:

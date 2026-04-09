@@ -40,7 +40,7 @@ If the target paper has no card yet, prefer `.codex/skills/paper-card-batch-read
 - the existing card for the target paper
 - the target paper's registry row
 - the relevant batch file only if section support depends on current batch context
-- `references/audit_checklist.md`
+- `.codex/skills/paper-card-auditor/references/audit_checklist.md`
 
 ## Full-Text Standard
 
@@ -54,7 +54,14 @@ Read the whole paper, not just the abstract and introduction. Minimum full-text 
 - discussion, limitations, and threat-to-validity material
 - appendices when they resolve interface, metric, or result ambiguity
 
-If the current `paper_link` is only an arXiv `abs` page or another landing page, resolve the authoritative PDF first. Update the registry link if the resolved PDF is clearly better.
+If the current `paper_link` is only an arXiv `abs` page or another landing page, resolve the authoritative PDF first. Keep this bounded:
+
+- If the link is arXiv `abs`, rewrite it to the matching `pdf` URL.
+- If it is an ACL Anthology landing page, prefer the page's `.pdf` URL.
+- If it is an OpenReview `forum?id=...` page, try the matching `pdf?id=...` URL. If OpenReview blocks retrieval in the current environment, keep the landing page and record that blocker instead of guessing.
+- If it is a DOI, publisher landing page, or project page, look for `citation_pdf_url` or a direct official PDF link on that page. If the page only links onward to an official paper page such as arXiv or proceedings, follow that one hop and resolve the PDF there.
+- Prefer a verified official PDF over a landing page, but do not use search-engine detours or unofficial mirrors.
+- If the resolved PDF is clearly better, update the registry `paper_link`.
 
 ## Audit Priorities
 

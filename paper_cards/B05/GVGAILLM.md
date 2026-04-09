@@ -17,8 +17,8 @@
 ## 2. Position in our survey
 - Why-games relevance: Procedurally extensible game families let us probe reasoning, planning, and symbolic grounding beyond fixed benchmark sets.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L4 embodied interaction
-- Most relevant outline section(s): 1,2,4
+- Narrative level(s): L1 rule following / L2 strategic reasoning / L5 cross-game generalization
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -30,13 +30,13 @@
 - Time structure: step-based
 
 ### 3.2 World structure
-- World type(s): 2D video game
+- World type(s): other (2D arcade-style GVGAI games)
 - Real game / simulated game / designed task-game hybrid: simulated game family built on GVGAI
 - Benchmark unit: full level
 
 ### 3.3 Benchmark scope
 - Scope: game family
-- Number of games / tasks: 100+ games
+- Number of games / tasks: 118 games with up to 5 levels each
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -57,19 +57,19 @@
 - Why is a game environment especially suitable here? GVGAI supplies a large, extensible set of rule-based environments where performance remains far from saturated and easy to verify.
 
 ## 5. Interaction paradigm
-- Observation channel: ASCII maps, translated game rules, action mappings, and avatar position at each step
+- Observation channel: ASCII maps, translated game rules, action mappings, and avatar position at the current step only
 - Action channel: natural-language choice of a discrete action
 - Interface type: natural language / structured action space
 - Agent scaffold allowed: none
 - Is there privileged API access? yes
 - How close is the setup to human play? low; the benchmark strips away raw perception and exposes exact symbolic state
-- Main ecological-validity trade-off: GVGAI-LLM cleanly isolates symbolic reasoning, but it is less human-like than visual game play.
+- Main ecological-validity trade-off: GVGAI-LLM cleanly isolates symbolic reasoning, but it removes perception, memory, and forward interaction pressures that shape real game play.
 
 ## 6. Evaluation protocol
 - Main score: overall score averaging normalized meaningful step ratio, inverse steps, reward, and win rate
 - Auxiliary score(s): meaningful step ratio, step efficiency, win rate, and normalized reward
 - Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: LLMs compared with classical search and RL baselines
+- Human baseline / AI anchor / self-play / model-vs-model setup: LLMs compared with classical planning and RL baselines; no human baseline is used
 - Automatic verifiability: high
 - Calibration method: per-game normalization and a shared benchmark pipeline across many games
 - Anti-contamination argument: yes; VGDL-based game generation and level extensibility are presented as protection against saturation
@@ -81,9 +81,9 @@
 - Contribution 3: Analyzes failure modes including spatial grounding errors and symbolic identity confusion.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: current LLMs remain far from solving GVGAI-style symbolic games, especially on planning-heavy and puzzle-like environments
+- Core empirical takeaway: current LLMs remain far from solving GVGAI-style symbolic games, with GPT-4o-mini winning only 10.27% of evaluated levels and failing on 477 of 540 levels
 - Notable model failure mode 1: models make persistent spatial grounding and logical consistency errors
-- Notable model failure mode 2: coordinate taggers and contextual prompting yield limited or inconsistent gains
+- Notable model failure mode 2: coordinate tagging and verbose grounding help somewhat but do not resolve deeper planning and identity-tracking failures
 - Notable model failure mode 3: LLM agents are orders of magnitude slower per move than symbolic search methods
 - Does this paper reveal a benchmark-design limitation as well? yes; the zero-shot symbolic interface is useful diagnostically but not ecologically realistic
 
@@ -103,7 +103,7 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GVGAI-LLM is built on the original GVGAI framework and exposes game rules plus ASCII scene descriptions to LLMs.
-- The benchmark reports meaningful step ratio, step efficiency, win rate, reward, and an aggregated overall score.
+- The benchmark evaluates 118 games with up to five levels each and reports meaningful step ratio, step efficiency, win rate, reward, and an aggregated overall score.
 - The paper finds persistent spatial and logical errors, limited gains from coordinate tagging, and large latency gaps relative to MCTS.
 
 ### 11.2 Our synthesis / interpretation
@@ -111,6 +111,7 @@
 - It is especially valuable when contrasting symbolic access against ecological realism.
 
 ### 11.3 Uncertain or needs re-check
+- The benchmark intentionally removes memory and trajectory history, so it should not be used as direct evidence about long-horizon agent coherence without that caveat.
 - Recheck the experiments section if we later need exact per-model rankings across the six highlighted evaluation games.
 
 ## 12. Follow-up reading plan
@@ -124,8 +125,9 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05
-- Outline sections: 1,2,4
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B05/GVGAILLM.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09
