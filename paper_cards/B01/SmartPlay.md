@@ -16,9 +16,9 @@
 
 ## 2. Position in our survey
 - Why-games relevance: It makes the case that games expose planning, randomness, memory, and spatial reasoning in ways static QA benchmarks miss.
-- Historical stage: formal container
+- Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 0,1,2,3,5
+- Most relevant outline section(s): 0,1,2,3,4,5
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -66,19 +66,19 @@
 - Main ecological-validity trade-off: The benchmark broadens coverage cheaply by converting 2D/3D play into text, but that removes raw perception and fine-grained action control.
 
 ## 6. Evaluation protocol
-- Main score: per-game score normalized to a human baseline
+- Main score: game-specific score, with cross-game comparison reported through human-normalized scores
 - Auxiliary score(s): reward, completion rate
-- Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: human baseline for normalization plus multi-model comparison
+- Evaluation style: native score / completion rate / hybrid
+- Human baseline / AI anchor / self-play / model-vs-model setup: multi-model comparison with a small human baseline used for normalized aggregate reporting
 - Automatic verifiability: high
-- Calibration method: fixed rollout lengths and human-normalized scores
+- Calibration method: fixed per-game interface parameters and rollout lengths, repeated trials for stochastic games, and optional human-normalized aggregation for cross-game comparison
 - Anti-contamination argument: procedurally generated states and large state spaces reduce simple memorization
-- Reliability or comparability concerns: textualization choices, history length, and fixed action abstractions may change difficulty across games
+- Reliability or comparability concerns: textualization choices, history length, and fixed action abstractions change difficulty across games, and the human baseline is small
 
 ## 7. Main contributions
 - Contribution 1: Defines nine capability axes for LLM agents and maps each game to them.
 - Contribution 2: Packages six heterogeneous games behind a unified Gym-like text interface.
-- Contribution 3: Reports human-normalized results that expose where current LLM agents still break down.
+- Contribution 3: Reports game-native metrics plus human-normalized aggregate comparisons that expose where current LLM agents still break down.
 
 ## 8. Main findings and failure modes
 - Core empirical takeaway: GPT-4-class models outperform smaller models but still fall clearly below human baselines on the harder planning and spatial environments.
@@ -89,15 +89,15 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (why games): Early clear argument that games surface dynamic capabilities missing from static benchmarks.
-- Best use in Section 1 (historical evolution): Canonical starting point for game benchmarks aimed at LLM agents rather than classic RL only.
+- Best use in Section 1 (historical evolution): Early transition point from generic game environments to capability-decomposed LLM-agent benchmarking.
 - Best use in Section 2 (design space): Useful exemplar of a multi-game diagnostic suite with mixed world structures.
 - Best use in Section 3 (capability targets): Strong anchor for rule following, planning, spatial reasoning, and learning-from-history.
-- Best use in Section 4 (interaction paradigm): Illustrates a highly privileged but practical text-interface paradigm.
-- Best use in Section 5 (evaluation protocol): Good reference for reward/completion/score hybrids and human normalization.
+- Best use in Section 4 (interaction paradigm): Illustrates an early, highly privileged textification pipeline using manuals, bounded history, and flat action sets.
+- Best use in Section 5 (evaluation protocol): Good reference for reward/completion/score hybrids and for the distinction between native game metrics and later human-normalized comparison.
 - Best use in Section 6/7 (limitations and future): Supports the claim that symbolic success does not imply ecological competence.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): Crafter-style game benchmarks, MineDojo-style embodied environments, earlier general game benchmarking ideas
+- Closest predecessor(s): Crafter and Messenger as component environments, plus earlier text-game and general-agent evaluation lines
 - Closest follow-up(s): BotzoneBench, BALROG, Orak
 - Best comparison targets inside our corpus: BotzoneBench, BoardGameArena, GameBench, BALROG
 - What this paper uniquely adds relative to neighbors: It is one of the clearest early attempts to turn heterogeneous games into a capability-decomposed LLM-agent benchmark.
@@ -105,18 +105,19 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - SmartPlay contains six games and up to twenty settings with infinite environment variations.
-- The paper defines nine capability dimensions and uses a unified OpenAI Gym-like interface with text observations, manuals, history, and categorical actions.
-- It reports reward, completion rate, and score, and normalizes results against a human baseline.
+- The paper defines nine capability dimensions and uses a unified OpenAI Gym-like interface with text observations, manuals, bounded history, and flat categorical actions.
+- The benchmark defines three native metrics: reward, completion rate, and score; human-normalized scores are used later for cross-game comparison in the results.
+- The human baseline is collected from three experienced players using the SmartPlay interface.
 
 ### 11.2 Our synthesis / interpretation
 - SmartPlay is a strong historical anchor because it treats games as a structured probe of agentic skill rather than only as a leaderboard.
 - Its design is best read as high diagnostic control with intentionally reduced ecological realism.
 
 ### 11.3 Uncertain or needs re-check
-- Recheck Table 1 and Table 3 if we later need exact per-environment history windows or exact capability-degree mappings.
+- Recheck Table 1 and the appendix if we later need exact per-environment history windows or the precise human-normalization formula.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the core setup and metrics are already clear enough for survey use.
+- Should we read beyond abstract + intro? why? Completed in this audit; the core setup, interface, metrics, and appendix baseline details are now clear enough for survey use.
 - Which section to read next if needed: 4.1 / 4.2 / Appendix D
 - Follow-up question(s): If we quote exact cross-game human gaps, which table should anchor the comparison?
 
@@ -126,8 +127,9 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 0,1,2,3
+- Outline sections: 0,1,2,3,4,5
 - Survey role: anchor
 - Paper card path: `paper_cards/B01/SmartPlay.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

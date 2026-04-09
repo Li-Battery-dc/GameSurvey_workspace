@@ -34,7 +34,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 | 1. Historical evolution of game benchmarks | planning | B01, B05, B07, B10, and B12 reviewed | Build the historical skeleton using `Crafter`, `InteractiveFictionGames`, `NetHackLearningEnvironment`, and `HumanLevelDiplomacy` as reviewed bridge papers. |
 | 2. Taxonomy of game benchmarks | planning | Broad reviewed coverage across core and edge-case batches | Draft the table schema and five-level narrative mapping, then use `GridBasedGameCompetitions`, `clembench`, and `GTOWizardBenchmark` as edge-case contrasts. |
 | 3. Purpose: What game benchmarks actually measure | planning | B01, B02, B03, B10, and B12 reviewed | Draft capability-target subsections using the newly reviewed social, memory, and collaboration cards alongside the existing anchors. |
-| 4. Paradigm: how models are allowed to play | planning | B03, B08, B09, B10, and B13 reviewed | Draft the interface taxonomy and privileged-vs-ecological trade-off using the dialogue-game, open-world, and specialist-interface contrasts now in reviewed state. |
+| 4. Paradigm: how models are allowed to play | planning | B01, B03, B08, B09, B10, and B13 reviewed | Draft the interface taxonomy and privileged-vs-ecological trade-off using the newly audited B01 structured-state and tool-access cases alongside the dialogue-game, open-world, and specialist-interface contrasts. |
 | 5. Evaluation protocols | planning | B01, B03, B04, B08, and B13 reviewed | Draft the score and calibration comparison using `TextArena`, the `clembench` line, `CollabOvercooked`, and `GTOWizardBenchmark` as methodology anchors. |
 | 6. Synthesis: what current models still fail at | planning | B01, B02, B03, B10, B12, and B13 reviewed | Build the failure-mode skeleton from reviewed anchors spanning social, memory, collaboration, and specialist-calibration settings. |
 | 7. Open problems for next-generation game benchmarks | planning | B03, B05, B08, B10, and B12 reviewed | Draft the agenda from the reviewed generalization, dialogue-game, open-world, and collaboration branches. |
@@ -66,13 +66,13 @@ This file is the active drafting workspace for the survey on game benchmarks for
 ## 4. Paradigm: how models are allowed to play
 
 - Draft goal: compare observation channels, action channels, scaffolds, and ecological-validity trade-offs.
-- Likely reviewed anchors: `BALROG`, `GameplayQA`, `StarBench`, `VideoGameBench`, `V-MAGE`, `LLMPlayStarCraftII`, `Orak`, `TextArena`, `Clembench`, `Clembench2024`, `ThirdParadigm`, `MineNPCTask`, `GTOWizardBenchmark`.
+- Likely reviewed anchors: `SmartPlay`, `BeyondScaling`, `LLMChess`, `BoardGameArena`, `BALROG`, `GameplayQA`, `StarBench`, `VideoGameBench`, `V-MAGE`, `LLMPlayStarCraftII`, `Orak`, `TextArena`, `Clembench`, `Clembench2024`, `ThirdParadigm`, `MineNPCTask`, `GTOWizardBenchmark`.
 - Open synthesis focus: contrast pure natural-language dialogue games, structured API interfaces, and open-world scaffolded play without flattening them into one interface family.
 
 ## 5. Evaluation protocols
 
 - Draft goal: compare win rate, completion rate, milestone scoring, Elo or arena setups, human baselines, AI anchors, and contamination arguments.
-- Likely reviewed anchors: `BotzoneBench`, `BoardGameArena`, `BALROG`, `GAMEBoT`, `KORGym`, `VMage`, `StarCraftIIArena`, `TextArena`, `Clembench`, `Clembench2024`, `ThirdParadigm`, `CollabOvercooked`, `GTOWizardBenchmark`.
+- Likely reviewed anchors: `BotzoneBench`, `LLMChess`, `BoardGameArena`, `BALROG`, `GAMEBoT`, `KORGym`, `VMage`, `StarCraftIIArena`, `TextArena`, `Clembench`, `Clembench2024`, `ThirdParadigm`, `CollabOvercooked`, `GTOWizardBenchmark`.
 - Open synthesis focus: separate living leaderboards, dialogue-game protocol design, process-level collaboration metrics, and fixed-anchor calibration into distinct evaluation families.
 
 ## 6. Synthesis: what current models still fail at

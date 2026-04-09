@@ -1,24 +1,24 @@
-# BoardGameArena Board Game Arena: A Framework and Benchmark for Assessing Large Language Models via Strategic Play
+# BoardGameArena Game Reasoning Arena: A Framework and Benchmark for Assessing Reasoning Capabilities of Large Language Models via Game Play
 
 ## 0. Metadata
 - Date: 2025/08
 - Venue: arXiv
 - Authors: Lucia Cipolina-Kun, Marianna Nezhurina, Jenia Jitsev
-- Paper link: https://arxiv.org/pdf/2508.03368v1
-- Code link:
+- Paper link: https://arxiv.org/pdf/2508.03368v3
+- Code link: https://github.com/SLAMPAI/game_reasoning_arena
 - Reading depth: deep
 - Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- Board Game Arena is a framework paper that wraps OpenSpiel board and matrix games into a unified environment for evaluating LLM agents through strategic play. The framework formats game state, legal actions, and sometimes move history into prompts; agents return both an action and a reasoning trace. The paper emphasizes reusable infrastructure, distributed execution, and reasoning-trace analysis rather than a single definitive leaderboard. In this survey, it is most useful as a representative of OpenSpiel-based text interfaces and process-level analysis for board-game play.
+- Game Reasoning Arena, earlier arXiv versions titled Board Game Arena, is a framework paper that wraps OpenSpiel board and matrix games into a unified environment for evaluating LLM agents through strategic play. The framework formats game state, legal actions, and sometimes move history into prompts; agents return both an action and a reasoning trace under a structured output schema. The current paper version emphasizes reusable infrastructure, distributed execution, prompt architecture, and richer reasoning-profile analysis across games rather than a single definitive leaderboard. In this survey, it is most useful as a representative of OpenSpiel-based text interfaces and process-level analysis for board-game play.
 
 ## 2. Position in our survey
 - Why-games relevance: It shows how classic strategic games can be repackaged into scalable LLM-agent evaluations with logged reasoning traces.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L1 rule following / L2 strategic reasoning
-- Most relevant outline section(s): 1,2,3,5
+- Most relevant outline section(s): 1,2,3,4,5
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -60,16 +60,16 @@
 - Observation channel: prompt built from OpenSpiel state, legal moves, and optional history
 - Action channel: chosen action plus free-text rationale
 - Interface type: natural language / structured action space
-- Agent scaffold allowed: none
+- Agent scaffold allowed: other (reasoning directive plus structured JSON-style output schema)
 - Is there privileged API access? yes
 - How close is the setup to human play? low to medium; the benchmark keeps strategic structure but replaces ordinary play surfaces with text prompts
-- Main ecological-validity trade-off: The framework gains scalability and interpretability by textifying state and logging rationale, but loses human-like interaction fidelity.
+- Main ecological-validity trade-off: The framework gains scalability and interpretability by textifying state, exposing legal actions, and imposing structured outputs, but loses human-like interaction fidelity.
 
 ## 6. Evaluation protocol
 - Main score: cumulative reward or outcome depending on the game
-- Auxiliary score(s): decision optimality, reasoning length/coherence, illegal or suboptimal move rates
+- Auxiliary score(s): decision optimality, reasoning length/coherence, illegal or suboptimal move rates, and reasoning-profile distributions
 - Evaluation style: hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: supports random, human, RL, and LLM agent comparisons
+- Human baseline / AI anchor / self-play / model-vs-model setup: the framework supports random, heuristic, RL, human, and LLM agent comparisons; the paper itself emphasizes multi-agent comparative runs and reasoning-profile analysis
 - Automatic verifiability: high
 - Calibration method: repeated simulations with fixed seeds, paired tests, and bootstrap confidence intervals
 - Anti-contamination argument: not central
@@ -78,13 +78,13 @@
 ## 7. Main contributions
 - Contribution 1: Wraps OpenSpiel games in a Gymnasium-like LLM-agent interface.
 - Contribution 2: Logs both actions and reasoning traces for later analysis.
-- Contribution 3: Adds analysis tools for categorizing strategy explanations and spotting hallucinations or rule violations.
+- Contribution 3: Adds analysis tools for categorizing strategy explanations, tracking reasoning-profile changes across games, and spotting hallucinations or rule violations.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: The framework can expose distinct reasoning styles across games, not just end scores, and reveals that models shift between blocking, positional, and winning-logic patterns depending on the game.
-- Notable model failure mode 1: illegal or clearly suboptimal move generation
-- Notable model failure mode 2: shallow heuristic rationales disconnected from actual strategy
-- Notable model failure mode 3: game-dependent reasoning categories that do not transfer cleanly across settings
+- Core empirical takeaway: The current paper version shows that reasoning profiles vary both by game and by agent, so the framework is informative not just about end scores but about how strategic style shifts across settings.
+- Notable model failure mode 1: illegal or clearly suboptimal move generation remains a tracked error mode
+- Notable model failure mode 2: some agents collapse into narrow reasoning styles tied to a specific game structure
+- Notable model failure mode 3: strategic explanations can look coherent while still depending on shallow keyword-detectable heuristics
 - Does this paper reveal a benchmark-design limitation as well? yes; the paper is stronger on framework design than on a large decisive empirical comparison
 
 ## 9. Why this paper matters for our survey
@@ -92,7 +92,7 @@
 - Best use in Section 1 (historical evolution): Helps show the move from isolated benchmark scripts to reusable benchmark infrastructure.
 - Best use in Section 2 (design space): Useful game-family benchmark with mixed world structures inside one framework.
 - Best use in Section 3 (capability targets): Supports strategic reasoning and game-theoretic decision making claims.
-- Best use in Section 4 (interaction paradigm): Good illustration of OpenSpiel-state-to-prompt wrappers.
+- Best use in Section 4 (interaction paradigm): Good illustration of OpenSpiel-state-to-prompt wrappers, structured reasoning directives, and JSON-style output constraints.
 - Best use in Section 5 (evaluation protocol): Relevant for reasoning-trace analysis and optimality-oriented metrics.
 - Best use in Section 6/7 (limitations and future): Supports discussion of why rationale logging is useful but imperfect.
 
@@ -105,18 +105,19 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The framework wraps OpenSpiel games, converts state and legal moves into prompts, and asks agents to return both an action and a rationale.
-- It records per-step rewards, outcomes, decision optimality, rationale features, and illegal/suboptimal move rates.
-- The paper includes tooling for categorizing reasoning traces and flagging hallucinations or rule violations.
+- Prompts are augmented with a reasoning directive and a structured schema specifying `reasoning` and `action` fields.
+- It records per-step rewards, outcomes, decision optimality, rationale features, and illegal or suboptimal move rates, and reports statistical comparisons with paired tests and bootstrap confidence intervals.
+- The current paper version includes tooling for categorizing reasoning traces, tracking cross-game reasoning profiles, and flagging hallucinations or rule violations.
 
 ### 11.2 Our synthesis / interpretation
 - Board Game Arena is most useful as infrastructure evidence for Sections 4 and 5, not as the central empirical anchor for strategic-play results.
 - It complements BotzoneBench by trading calibration strength for framework flexibility and richer rationale logging.
 
 ### 11.3 Uncertain or needs re-check
-- Recheck the experimental section if we later need the exact set of evaluated games rather than the showcased examples.
+- Recheck the experimental section if we later need the exact model roster or the full reasoning-taxonomy definitions used in the latest arXiv version.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the framework contribution is already clear enough.
+- Should we read beyond abstract + intro? why? Completed in this audit; the framework design, prompt architecture, evaluation statistics, and latest reasoning-profile analyses are now clear enough for survey use.
 - Which section to read next if needed: 2 / 5 / 5.3
 - Follow-up question(s): Which reasoning-trace categories are robust enough to reuse in the survey taxonomy?
 
@@ -126,8 +127,9 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B01
-- Outline sections: 1,2,3,5
+- Outline sections: 1,2,3,4,5
 - Survey role: representative
 - Paper card path: `paper_cards/B01/BoardGameArena.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

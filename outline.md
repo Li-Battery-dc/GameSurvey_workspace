@@ -9,7 +9,7 @@ high-level narrative stages, all sections follow or recall:
 - Level 4: Visual Agency — Can it play like a human? (BALROG, VideoGameBench)
 - Level 5: Cross-Game Generalization — Can it play anything? (Orak, GameVerse, AI GAMESTORE)
 
-## 0. Why game as benchmark
+## 0. Lead in: Summary and why Game as Benchmark
 Goal:
 - Establish why games are a uniquely valuable benchmark environment for LLMs and VLMs by synthesizing:
 
@@ -21,77 +21,58 @@ Need evidence from:
 - benchmark papers with explicit motivation
 - examples spanning text to embodied-like interaction
 
-## 1. Historical evolution of game benchmarks
+## 1. Taxonomy: The Evolutionary Levels of Game Environments
 Goal:
-- Trace how game benchmarks evolved from formal, rule-bounded evaluation environments into broader capability probes and finally into open-ended, ecologically grounded agent benchmarks.This section should identify the major shifts in benchmark philosophy and connect that evolution to the survey’s high-level narrative from rule-grounded interaction to cross-game generalization.
+- Trace how game benchmarks evolved from formal, rule-bounded evaluation environments into broader capability probes and finally into open-ended, ecologically grounded agent benchmarks. Connect that evolution to the survey’s high-level narrative from rule-grounded interaction to cross-game generalization.
 
-Subsections:
-1.1 Games as formal containers for rule-grounded and strategic reasoning
-1.2 Games as diagnostic capability probes
-1.3 Games as ecologically grounded agent benchmarks
-1.4 Toward open-ended and general-game evaluation
+A giant table showing: 5 level stages as taxonomy as Rows and detailed cols showing a clear design-space view of game benchmarks by organizing papers along multiple benchmark axes, including game structure, world structure, benchmark scope, modality, and evaluation intent. 
 
-## 2. Taxonomy of game benchmarks
-Goal:
-- Construct a clear design-space view of game benchmarks by organizing papers along multiple benchmark axes, including game structure, world structure, benchmark scope, modality, and evaluation intent. Show our own taxonomy which is actually the high-level narrative stages. 
-
-A giant table showing: 5 level stages as taxonomy as Rows and detailed cols showing: 
-1. Environment structure: perfect vs imperfect information, deterministic vs stochastic, single-agent vs multi-agent, cooperative vs competitive, turn-based vs real-time
+table content code:
+1. Game structure: perfect vs imperfect information, deterministic vs stochastic, single-agent vs multi-agent, cooperative vs competitive, turn-based vs real-time
 2. World structure: board/card/puzzle/social deduction/RTS/adventure/open-world/sandbox
 3. Benchmark scope: single game, single family, curated suite, genre-diverse suite, procedural/infinite/open-ended game space
-4. Modality and embodiment: text-only, symbolic state, GUI, raw image/video, first-person multi-video
-5. Benchmark intent: diagnostic evaluation, ecological evaluation, train-and-eval foundation, or lifelong/open-ended evaluation
+4. Modality: text-only, symbolic state, GUI, raw image/video, first-person multi-video
+5. Evaluation intent: diagnostic evaluation, ecological evaluation, train-and-eval foundation, or lifelong/open-ended task
 
-## 3. Purpose: What game benchmarks actually measure
+Subsections:
+1.1 Level 1: Rule Following - Games as rule-grounded formal containers 
+1.2 Level 2: Strategic Reasoning — Planning and Optimization Under Uncertaintyand strategic reasoning Games as diagnostic capability probes
+1.3 Level 3: Social Intelligence — Multi-Agent Cooperation, Deception, and Network Dynamics(Werewolf Arena, WOLF)
+1.4 Level 4: Visual Agency — Real-Time Perception and Embodied Control
+1.5 Level 5: Cross-Game Generalization — Open-Ended Transfer and Generalist Agents(Orak, GameVerse, AI GAMESTORE)
+
+## 2. Purpose: Core Capabilities Evaluated by Games
 Goal:
 - Classify game benchmarks by their primary capability targets, Explian why games are a suitable medium for that capability and what specific benchmark innovations make the measurement credible.
 
 Subsections:
-3.1 Rule grounding, legal action generation, and state tracking
-3.2 Strategic planning under uncertainty
-3.3 Social intelligence: cooperation, negotiation, deception
-3.4 Visual grounding, spatial reasoning.
-3.5 Long-horizon autonomy and story/task completion with memory. 
-3.6 Time-sensitive decision-making and execution efficiency
-3.7 Cross-game transfer and open-ended generalization
+2.1 Rule grounding, legal action generation, and state tracking
+2.2 Strategic planning under uncertainty
+2.3 Social intelligence: cooperation, negotiation, deception
+2.4 Visual grounding, spatial reasoning.
+2.5 Long-horizon autonomy and story/task completion with memory. 
+2.6 Time-sensitive decision-making and execution efficiency
+2.7 Cross-game transfer and open-ended generalization
 
-## 4. Paradigm: how models are allowed to play
+## 3. Paradigm: From Interaction to Evaluation
 Goal:
-- Compare how different benchmarks operationalize model interaction with games. What different benchmark interfaces affect the benchmark mearsurement. 
+- Construct a comprehensive benchmark pipeline view. Compare how different benchmarks operationalize model interaction with games. What different benchmark interfaces affect the benchmark assessment. And analyze how game benchmarks define success, assign scores, calibrate difficulty, and instrument the gameplay process for evaluation. Compare how evaluation design affects benchmark validity, comparability, and robustness.
 
 Subsections:
-4.1 Observation channel: language description, structured states, GUI, pixels, video
-4.2 Action channel: discrete action set, natural language action, tool/API calls, hybrid control
-4.3 Agent scaffolds: memory, reflection, retrieval, planners, tool use, MCP modules
-4.4 Trade-off: Privileged interface vs ecological validity
+4.1 Interaction: transfer to human-like play.
+  - Observation channel: language description, structured states, GUI, pixels, video. highlight the shift from structured text to high-dimensional, real-time multimodal streams.
+  - Action channel: discrete action set, natural language action, tool/API calls, hybrid control. 
+  - Trade-off: Privileged interface vs ecological validity. Explain how interface choices heavily skew benchmark results.
+4.2 Evaluation: copare paradigm transfer and how different metrics affect the quality of evaluation.
+  -  Reuslt-based Metrics
+  -  Process-level and Diagnostic Evaluation
+  -  adversatial evaluation
+  -  Calibration and Robustness: how benchmarks anchor their difficulty and defend against evaluation noise, ensuring the scores remain meaningful as models rapidly evolve.
 
-## 5. Evaluation protocols
+
+## 4. Synthesis: Model Bottlenecks and Future Benchmark Design
 Goal:
-- Analyze how game benchmarks define success, assign scores, calibrate difficulty, and instrument the gameplay process for evaluation. Compare how evaluation design affects benchmark validity, comparability, and robustness.
+- Synthesize recurring empirical failure modes across game benchmarks to explain what current LLMs and VLMs still lack, and juxtapose these model bottlenecks with the unresolved methodological flaws in current benchmark designs.
+- Identify the major unresolved questions in benchmark design and propose directions for building more unified, scalable game benchmarks. Especially around generalization, interface standardization, calibration. 
 
-Subsections:
-5.1 Native score, win rate, completion rate, 
-5.2 Diagnostic / process-level / milestone completion evaluation
-5.3 Elo, arena, and adversarial evaluation
-5.4 Human baselines, AI anchors, and calibration
-5.5 Robustness to contamination, prompt variance, and model-pool drift
-
-## 6. Synthesis: what current models still fail at
-Goal:
-- Synthesize recurring empirical failure modes across game benchmarks and explain which challenges remain unsolved for current LLMs and VLMs. Dive deep into bottlenecks such as brittle rule tracking, poor long-horizon consistency, weak partial-observability reasoning, limited social modeling, fragile visual grounding, and the gap between slow reasoning and timely action.
-
-Subsections:
-6.1 Formal success does not imply ecological competence
-6.2 Partial observability, deception, and belief tracking remain hard (social reasoning)
-6.3 Visual grounding and spatial/temporal reasoning remain brittle
-6.4 Long horizons break memory and planning consistency
-6.5 Strategy–execution gap
-
-## 7. Open problems for next-generation game benchmarks
-Goal:
-- Identify the major unresolved questions in benchmark design and propose directions for building more unified, scalable, ecologically valid, and diagnostically useful game benchmarks. especially around generalization, interface standardization, calibration, and integration across social, visual, and open-ended settings.
-
-7.1 Unified and non-overly-privileged interfaces
-7.2 Better human difficulty calibration and cross-benchmark comparability
-7.3 Social, real-time, and multimodal evaluation under one framework
-7.4 Toward general, lifelong, open-ended game intelligence evaluation
+subsections open for final analyse

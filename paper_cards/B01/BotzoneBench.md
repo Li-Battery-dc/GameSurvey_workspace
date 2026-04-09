@@ -5,7 +5,7 @@
 - Venue: arXiv
 - Authors: Lingfeng Li, Yunlong Lu, Yuefei Zhang, Jingyu Yao, Yixin Zhu, KeYuan Cheng, Yongyi Wang, Qirui Zheng, Xionghui Yang, Wenxin Li
 - Paper link: https://arxiv.org/pdf/2602.13214v1
-- Code link:
+- Code link: https://github.com/AMysteriousBeing/BotzoneBench
 - Reading depth: deep
 - Card status: card-reviewed
 - Confidence in this card: high
@@ -62,8 +62,8 @@
 - Interface type: natural language / structured action space
 - Agent scaffold allowed: none
 - Is there privileged API access? yes
-- How close is the setup to human play? low to medium; strategic structure is real but state exposure is heavily textualized and normalized
-- Main ecological-validity trade-off: Stability and comparability improve because the benchmark fixes seeds and anchor bots, but the interface is much more privileged than ordinary human play.
+- How close is the setup to human play? low to medium; strategic structure is real but the benchmark exposes legal moves, public state, and public history in a strongly normalized textual interface
+- Main ecological-validity trade-off: Stability and comparability improve because the benchmark fixes seeds and anchor bots while exposing legal actions explicitly, but that prompt interface is much more privileged than ordinary human play.
 
 ## 6. Evaluation protocol
 - Main score: anchored skill rating as a `(level, progress)` tuple
@@ -73,18 +73,18 @@
 - Automatic verifiability: high
 - Calibration method: duplicate matches, fixed random seeds, and pre-calibrated baseline hierarchies
 - Anti-contamination argument: not the main claim; the paper focuses more on evaluation stability than dataset contamination
-- Reliability or comparability concerns: levels are comparable within a game, not across different games with different baseline ladders
+- Reliability or comparability concerns: levels are comparable within a game, not across different games with different baseline ladders, and baseline coverage is weaker in Chess and Texas Hold'em
 
 ## 7. Main contributions
 - Contribution 1: Replaces volatile LLM-vs-LLM ranking with fixed AI-anchor ladders.
 - Contribution 2: Uses duplicate-match design and seeded randomness for fairer cross-model comparison.
-- Contribution 3: Introduces an interpretable absolute skill metric instead of only raw win rates.
+- Contribution 3: Introduces an interpretable absolute skill metric and releases a large interaction-log dataset with reasoning traces.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: All tested models can be made rule-compliant, but strategic strength varies sharply and scales with model size; flagship models separate clearly once play quality rather than formatting is measured.
+- Core empirical takeaway: Under the benchmark's strongly constrained prompting and legal-action exposure, all evaluated models remain rule-compliant, but strategic strength still varies sharply with model size and game family.
 - Notable model failure mode 1: small models clear only the weakest anchor tiers
 - Notable model failure mode 2: performance varies strongly by game family and hidden-information demands
-- Notable model failure mode 3: some models look acceptable by raw outcomes but stall within higher anchor tiers
+- Notable model failure mode 3: some models remain behaviorally weak in imperfect-information settings even when their outputs stay well-formed
 - Does this paper reveal a benchmark-design limitation as well? yes; cross-game anchor levels are not directly comparable
 
 ## 9. Why this paper matters for our survey
@@ -105,18 +105,19 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - BotzoneBench covers eight games across perfect-information and imperfect-information settings.
-- It uses duplicate matches with fixed seeds and evaluates LLMs against graded classic AI baselines.
-- It reports a `(level, progress)` skill score based on clearing anchor tiers with at least 50% win rate.
+- It uses duplicate matches with fixed random seeds and evaluates LLMs against graded classic AI baselines.
+- It reports a `(level, progress)` skill score based on clearing anchor tiers with at least 50% win rate, with Tic-Tac-Toe using draw rate for progress because optimal play is solved.
+- The paper states that code and data are publicly available at `https://github.com/AMysteriousBeing/BotzoneBench`.
 
 ### 11.2 Our synthesis / interpretation
 - BotzoneBench is a key protocol paper for this survey because it reframes game benchmarking as stable calibration rather than transient peer comparison.
-- Its main weakness is not measurement noise but limited ecological realism in the interface.
+- Its main weakness is not measurement noise but the highly privileged prompt interface and uneven baseline depth across games.
 
 ### 11.3 Uncertain or needs re-check
 - Recheck the appendix if we later need the exact anchor roster for each of the eight games.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the main protocol and scoring logic are already clear.
+- Should we read beyond abstract + intro? why? Completed in this audit; the prompt design, anchor construction, and `(level, progress)` scoring are now clear enough for survey use.
 - Which section to read next if needed: 4.1 / 4.5 / Appendix A
 - Follow-up question(s): Which specific anchor ladders are most reusable when we compare calibration across papers?
 
@@ -129,5 +130,6 @@
 - Outline sections: 0,2,3,5
 - Survey role: anchor
 - Paper card path: `paper_cards/B01/BotzoneBench.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09
