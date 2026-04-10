@@ -1,31 +1,28 @@
-# Batch B06: multimodal-diagnostics
+# Batch B06: cross-game-generalization-platforms
 
 ## Why This Batch Exists
-- Keep a later comparison set for narrower multimodal and spatial-diagnostic papers.
-- Support Sections 2, 3, and 4 without letting these more specialized benchmarks crowd out the core queue.
+- Keep the Level 5 and generalization-focused benchmark platforms together instead of scattering them across visual or strategy batches.
+- Support Section 1.5 and Section 2.7 on transfer, benchmark breadth, and expanding challenge spaces.
 
-## Reading Order
+## Suggested Drafting Order
 
-| Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | TowerMind | TowerMind | P2 | deep | 2,3,4 | Real-time tower-defense benchmark with multimodal control and hallucination diagnostics. |
-| 2 | DeepPHY | DeepPHY | P2 | deep | 2,3,4 | Physical-reasoning benchmark that overlaps with game-like control but remains somewhat indirect. |
-| 3 | ReasoningViaVideo | Reasoning via Video | P2 | deep | 2,3,4 | Video maze benchmark for temporal and spatial reasoning under visual input. |
-| 4 | EvoEmpirBench | EvoEmpirBench | P2 | deep | 2,3,4 | Narrow dynamic spatial benchmark that is useful mainly as a comparison target. |
-| 5 | EMemBench | EMemBench | P1 | deep | 2,3,4 | Interactive episodic-memory benchmark for VLM agents across text and visual games. |
+| Order | paper_id | Title | Survey role | Outline anchors | Why this paper is in the batch |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | AIGameStore | AI GAMESTORE: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games | anchor | 0,1,3,4 | Open-ended platform vision for evaluating human-like general intelligence across human games. |
+| 2 | GVGAILLM | GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games | representative | 1,2,3,4 | General video game benchmark with procedural breadth and reproducible ASCII state interfaces. |
+| 3 | Orak | Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on 12-Genre Video Games | anchor | 1,2,3,4 | Genre-diverse train-and-eval benchmark bridging benchmark suites and cross-game generalization. |
+| 4 | GameVerse | GameVerse: Can VLMs Learn from Video-based Reflection? | representative | 1,2,3,4 | Cross-game VLM benchmark with reflect-and-retry loops and milestone evaluation. |
+| 5 | LMGameBench | LMGAME-BENCH: How Good are LLMs at Playing Games? | representative | 0,1,2,3 | Unified game benchmark with explicit perception and memory breakdowns for agent evaluation. |
+| 6 | KORGym | KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation | representative | 1,2,3,4 | Dynamic multi-game platform broadening benchmark coverage and evaluation protocol variation. |
+| 7 | TextArena | TextArena | representative | 1,2,3,4 | Competitive text-game suite with online-play ratings that broadens benchmark-platform discussion. |
 
 ## Expected Survey Payoff
-- Preserve a clear backlog of specialized multimodal comparison papers.
-- Give the survey a later batch for visual and spatial failure modes without derailing the core reading order.
+- Distinguish curated multi-game suites from genuinely scalable or open-ended benchmark platforms.
+- Give the survey one clean evidence block for transfer, saturation resistance, and benchmark growth.
 
-## Questions To Resolve While Reading
-- Which of these papers belong in the main survey narrative versus a narrower comparison table?
-- How much agent interaction is enough to count as a game benchmark in this survey?
+## Questions To Resolve While Drafting
+- Which papers truly test transfer, and which mostly enlarge the benchmark surface?
+- How should the survey distinguish benchmark breadth from open-endedness?
 
-## Exit Criteria
-- every paper in this batch has a paper card
-- registry rows are synced
-- unresolved ambiguity is explicit
-- outline gaps exposed by the batch are noted
-- batch status in `corpus/batches/batch_index.md` is updated
-
+## Batch Use Note
+- Use this batch to draft Level 5 and Section 2.7 on transfer, scale, and open-ended benchmark growth.

@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo and earlier Minecraft task benchmarks
 - Closest follow-up(s): open-ended Minecraft and embodied agent evaluation platforms
-- Best comparison targets inside our corpus: AI GameStore, BALROG, Orak, PillagerBench
+- Best comparison targets inside our corpus: InteractiveFictionGames, NetHackLearningEnvironment, TextQuests, TextAtari
 - What this paper uniquely adds relative to neighbors: It makes large-scale task composition and automated open-ended evaluation central rather than incidental.
 
 ## 11. Evidence notes
@@ -130,4 +130,4 @@
 - Paper card path: `paper_cards/B05/MCU.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-09
+- Last updated: 2026-04-10

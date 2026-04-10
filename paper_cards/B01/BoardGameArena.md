@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): OpenSpiel-based LLM game wrappers and earlier board-game prompting setups
 - Closest follow-up(s): BotzoneBench, WhoIsABetterPlayer
-- Best comparison targets inside our corpus: SmartPlay, BotzoneBench, WhoIsABetterPlayer, CATArena
+- Best comparison targets inside our corpus: BotzoneBench, SmartPlay, GTBench, LLMChess
 - What this paper uniquely adds relative to neighbors: It foregrounds reusable infrastructure and reasoning-trace analysis rather than only ranking models.
 
 ## 11. Evidence notes
@@ -130,4 +130,4 @@
 - Paper card path: `paper_cards/B01/BoardGameArena.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-09
+- Last updated: 2026-04-10

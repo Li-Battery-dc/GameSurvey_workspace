@@ -1,31 +1,33 @@
-# Batch B03: visual-ecological-core
+# Batch B03: social-intelligence-and-coordination
 
 ## Why This Batch Exists
-- Stabilize the survey's visual-agency and ecological-evaluation storyline.
-- Clarify how far recent benchmarks move from symbolic evaluation toward human-like play settings with pixels, GUI control, or video traces.
+- Group deception, cooperation, negotiation, and partner-modeling benchmarks into one social-intelligence evidence block.
+- Support Level 3 taxonomy plus Section 2.3 and the multi-agent contrasts in Sections 3 and 4.
 
-## Reading Order
+## Suggested Drafting Order
 
-| Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Balrog | BALROG | P0 | deep | 0,1,2,3,4 | Core visual-agent benchmark and bridge into ecological interaction design. |
-| 2 | GameplayQA | GameplayQA | P1 | deep | 2,3,4 | Dense first-person video benchmark for temporal grounding and agent-state attribution. |
-| 3 | GameVerse | GameVerse | P1 | deep | 1,2,3,4 | Cross-game VLM benchmark with reflect-and-retry evaluation. |
-| 4 | StarBench | StarBench | P1 | deep | 2,3,4 | GUI benchmark for low-level control and ask-or-act information seeking. |
-| 5 | FlashAdventure | FlashAdventure | P1 | deep | 2,3,4 | Long-horizon GUI benchmark centered on full story completion and memory. |
+| Order | paper_id | Title | Survey role | Outline anchors | Why this paper is in the batch |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | AvalonBench | AvalonBench: Evaluating LLMs Playing the Game of Avalon | representative | 1,2,3,4 | Early prompt-mediated social-deduction benchmark with naive-bot baselines; strongest as a historical contrast rather than an ecological anchor. |
+| 2 | WerewolfArena | Werewolf Arena | anchor | 1,2,3,4 | Anchor for social deduction and deceptive multi-agent evaluation with partial observability. |
+| 3 | Wolf | WOLF: Werewolf-based Observations for LLM Deception and Falsehoods | representative | 2,3,4 | Direct follow-on benchmark separating deception generation from deception detection in Werewolf. |
+| 4 | BeyondSurvival | Beyond Survival: Evaluating LLMs in Social Deduction Games with Human-Aligned Strategies | representative | 2,3,4 | Human-grounded social deduction benchmark built from Panda Kill; strongest as an offline reference-alignment contrast rather than a live-agent benchmark. |
+| 5 | CKArena | Is Your LLM Really Mastering the Concept? A Multi-Agent Benchmark | contrast | 2,3,4 | Contrast case for concept use through Undercover-style multi-agent play; strongest as a Section 2/3 contrast rather than a core social benchmark anchor. |
+| 6 | MulticulturalSpyfall | Multicultural Spyfall: Assessing LLMs through Dynamic Multilingual Social Deduction Game | representative | 2,3,4 | Multilingual Spyfall benchmark for non-English and cultural-stress effects in social deduction, especially beyond English-only evaluation. |
+| 7 | LLMHanabi | LLM-Hanabi: Evaluating Multi-Agent Gameplays with Theory-of-Mind and Rationale Inference in Imperfect Information Collaboration Game | representative | 1,2,3,4 | Cooperative imperfect-information benchmark for theory-of-mind and rationale inference. |
+| 8 | StrategicHanabi | Sparks of Cooperative Reasoning: LLMs as Strategic Hanabi Agents | representative | 2,3,4 | Representative cooperative Hanabi benchmark for scaffold sensitivity, self-play versus cross-play, and benchmark-plus-training-resource design. |
+| 9 | CollabOvercooked | Collab-Overcooked: Benchmarking and Evaluating Large Language Models as Collaborative Agents | representative | 1,2,3,4 | Forced-collaboration Overcooked benchmark with text-state interaction and PC/IC/RC-style process metrics; strong for cooperation analysis rather than ecological play. |
+| 10 | HumanLevelDiplomacy | Human-level play in the game of Diplomacy by combining language models with strategic reasoning | anchor | 0,1,2,3 | Anchor milestone for negotiation-heavy play and ecological human evaluation; use for language-plus-planning and comparability trade-offs rather than as a standardized benchmark protocol. |
+| 11 | LLMCoordination | LLM-Coordination: Evaluating and Analyzing Multi-agent Coordination Abilities in Large Language Models | representative | 1,2,3,4 | Pure-coordination benchmark with text-state, scaffolded agentic play plus CoordQA; strongest for the split between environment reasoning, partner modeling, and unseen-partner robustness. |
+| 12 | TeamCraft | TeamCraft: A Benchmark for Multi-Modal Multi-Agent Systems in Minecraft | representative | 2,3,4 | Minecraft multimodal multi-agent benchmark with MineFlayer-backed high-level skills and Goal/Scene/Agents generalization splits; strong for visual collaboration, not cross-game transfer. |
 
 ## Expected Survey Payoff
-- Lock down the visual and ecological branch of the survey taxonomy.
-- Give a cleaner comparison set for interface privilege, milestone evaluation, and long-horizon play.
+- Keep deduction, negotiation, and cooperation comparisons in one place.
+- Show how social evaluation changes when the setting moves from hidden-role games to richer collaborative worlds.
 
-## Questions To Resolve While Reading
-- What interaction privileges remain, and how should that affect ecological-validity claims?
-- Which evaluation choices make BALROG comparable or incomparable with the newer video and GUI-heavy papers?
-- Where should the survey draw the line between full agent play and video-understanding proxies?
+## Questions To Resolve While Drafting
+- Which papers are the best anchors for deception, which for cooperation, and which only as historical bridges?
+- How much social-intelligence evidence survives once we discount privileged prompting or fixed partner protocols?
 
-## Exit Criteria
-- the paper has a complete card
-- the registry row is synced
-- unresolved ambiguity is explicit
-- the visual-agency cluster in the outline is clearer
-
+## Batch Use Note
+- Use this batch to draft Level 3 and the cooperation/deception/negotiation subsections in Sections 2 and 4.

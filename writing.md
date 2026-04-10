@@ -30,11 +30,11 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 | Section | Status | Current evidence base | Next move |
 | :--- | :--- | :--- | :--- |
-| 0. Lead in: Summary and why Game as Benchmark | drafting | B01, B03, B05, B10, B12 | Open with `SmartPlay`, `GTBench`, and `Crafter` on dynamic rule-grounded evaluation, then bridge to `HumanLevelDiplomacy`, `Balrog`, `VideoGameBench`, and `AIGameStore` for social and embodied agency. |
-| 1. Taxonomy: The Evolutionary Levels of Game Environments | drafting | B01, B02, B03, B05, B07, B08, B09, B10, reviewed B12 cards, and reviewed B13 cards | Build the five-level taxonomy table and use the level anchors as the running narrative rather than keeping history and taxonomy as separate top-level sections. |
-| 2. Purpose: Core Capabilities Evaluated by Games | drafting | Broad reviewed coverage across formal, social, visual, open-world, and specialist batches | Draft the capability-target subsections with one clear benchmark innovation per capability family so this section does not collapse into a paper list. |
-| 3. Paradigm: From Interaction to Evaluation | drafting | B01, B03, B05, B08, B09, B10, reviewed B12 cards, and reviewed B13 cards | Separate interaction design from evaluation design, then make the privileged-interface versus ecological-validity trade-off the main through-line. |
-| 4. Synthesis: Model Bottlenecks and Future Benchmark Design | drafting | B01, B02, B03, B05, B08, B09, B10, B12 reviewed, and B13 reviewed | Merge old failure-mode and future-work material into one synthesis section that pairs recurring model failures with benchmark-design weaknesses. |
+| 0. Lead in: Summary and why Game as Benchmark | drafting | B01, B03, B04, B05, B06 | Open with `SmartPlay`, `GTBench`, and `Crafter` on dynamic rule-grounded evaluation, then bridge to `HumanLevelDiplomacy`, `Balrog`, `VideoGameBench`, and `AIGameStore` for social and embodied agency. |
+| 1. Taxonomy: The Evolutionary Levels of Game Environments | drafting | B01, B02, B03, B04, B05, B06, B08, B09 | Build the five-level taxonomy table and use the level anchors as the running narrative rather than keeping history and taxonomy as separate top-level sections. |
+| 2. Purpose: Core Capabilities Evaluated by Games | drafting | B01, B02, B03, B04, B05, B06, B08, B09 | Draft the capability-target subsections with one clear benchmark innovation per capability family so this section does not collapse into a paper list. |
+| 3. Paradigm: From Interaction to Evaluation | drafting | B01, B04, B05, B06, B07, B09 | Separate interaction design from evaluation design, then make the privileged-interface versus ecological-validity trade-off the main through-line. |
+| 4. Synthesis: Model Bottlenecks and Future Benchmark Design | drafting | B01, B02, B03, B04, B05, B06, B07, B08, B09 | Merge old failure-mode and future-work material into one synthesis section that pairs recurring model failures with benchmark-design weaknesses. |
 
 ## 0. Lead in: Summary and why Game as Benchmark
 

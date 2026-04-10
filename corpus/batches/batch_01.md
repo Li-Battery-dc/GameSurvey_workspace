@@ -1,31 +1,28 @@
-# Batch B01: formal-strategic-foundations
+# Batch B01: rule-grounded-foundations
 
 ## Why This Batch Exists
-- Establish the formal and strategic starting point of the survey.
-- Compare how early multi-game benchmarks, single-game probes, and stable anchor-based evaluation support Sections 0, 1, 2, and 3.
+- Consolidate the papers that best establish games as controlled, rule-grounded evaluation environments.
+- Support Level 1 and early Level 2 drafting with one evidence block for legal moves, state tracking, calibration, and interface privilege.
 
-## Reading Order
+## Suggested Drafting Order
 
-| Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | SmartPlay | SmartPlay | P0 | deep | 0,1,2 | Foundational multi-game benchmark for rule following and controlled agent evaluation. |
-| 2 | BotzoneBench | BotzoneBench | P0 | deep | 0,1,2,3 | Anchor for scalable evaluation using graded AI anchors rather than volatile model pools. |
-| 3 | BeyondScaling | Beyond Scaling | P1 | deep | 1,2,3,4 | Adds a zero-sum and time-sensitive strategic contrast. |
-| 4 | LLMChess | LLM CHESS | P1 | deep | 1,2,3 | Tight single-game probe for legal moves and instruction-following. |
-| 5 | BoardGameArena | Game Reasoning Arena | P1 | deep | 1,2,3 | Broad board-game framework that strengthens cross-game strategic comparison. |
+| Order | paper_id | Title | Survey role | Outline anchors | Why this paper is in the batch |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | SmartPlay | SmartPlay | anchor | 0,1,2,3 | Foundational multi-game agent benchmark for rule-grounded evaluation, capability decomposition, and textified interface trade-offs. |
+| 2 | GTBench | GTBench: Uncovering the Strategic Reasoning Limitations of LLMs via Game-Theoretic Evaluations | anchor | 0,1,2,3 | Game-theoretic task design and LLM-vs-LLM evaluation make it a core formal reasoning anchor. |
+| 3 | BotzoneBench | BotzoneBench: Scalable LLM Evaluation via Graded AI Anchors | anchor | 0,1,2,3 | Anchor for scalable protocol design with fixed AI skill tiers across games. |
+| 4 | LLMChess | LLM CHESS: Benchmarking Reasoning and Instruction-Following in LLMs through Chess | representative | 1,2,3 | Representative single-game probe for legal action, privileged tool access, and instruction-following under chess rules. |
+| 5 | BoardGameArena | Game Reasoning Arena: A Framework and Benchmark for Assessing Reasoning Capabilities of Large Language Models via Game Play | representative | 1,2,3 | Broad OpenSpiel-based framework for cross-game strategic comparison, prompt-interface analysis, and reasoning-trace inspection. |
+| 6 | GridBasedGameCompetitions | Evaluating Large Language Models with Grid-Based Game Competitions: An Extensible LLM Benchmark and Leaderboard | contrast | 1,2,3 | Simple grid-game leaderboard benchmark that fits as a controlled strategic precursor. |
+| 7 | RuleOracles | LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments | contrast | 1,2,3 | Contrast paper for multimodal rule-grounding in real tabletop games; strongest for rulebook integration and interface-design discussion rather than live gameplay claims. |
 
 ## Expected Survey Payoff
-- Lock down the rule-grounded and strategic-evaluation side of the survey narrative.
-- Clarify how protocol stability, calibration, and interface simplification differ across formal game benchmarks.
+- Lock down the opening contrast between static QA and closed-loop game interaction.
+- Keep rule grounding, legal action generation, and controlled evaluation protocols in the same citation cluster.
 
-## Questions To Resolve While Reading
-- Which benchmark interfaces and evaluation choices make SmartPlay a durable foundational anchor?
-- How much survey value comes from fixed AI anchors versus model-vs-model tournaments?
-- Which of these papers should remain the core historical references once more batches are read?
+## Questions To Resolve While Drafting
+- Which papers should carry the Level 1 narrative versus appear only as contrasts on abstraction or calibration?
+- How should the survey separate rule fidelity from deeper strategic competence?
 
-## Exit Criteria
-- the paper has a complete card
-- the registry row is synced
-- unresolved ambiguity is explicit
-- the role of formal and strategic game benchmarks in the outline is clearer
-
+## Batch Use Note
+- Use this batch to draft the lead-in, Level 1 taxonomy, and the rule-grounding/interface trade-off sections.

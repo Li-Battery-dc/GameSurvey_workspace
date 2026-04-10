@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): earlier RL environments such as MiniGrid and Obstacle Tower
 - Closest follow-up(s): MineDojo, MCU, TeamCraft, Orak
-- Best comparison targets inside our corpus: Orak, MCU, TeamCraft, StarDojo
+- Best comparison targets inside our corpus: StarDojo, MCU, InteractiveFictionGames, NetHackLearningEnvironment
 - What this paper uniquely adds relative to neighbors: It is a clean early case for broad capability evaluation inside one open-world environment rather than a cross-game suite.
 
 ## 11. Evidence notes
@@ -130,4 +130,4 @@
 - Paper card path: `paper_cards/B05/Crafter.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-09
+- Last updated: 2026-04-10

@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GameBench-style strategic suites, traditional game-AI rating ladders
 - Closest follow-up(s): CATArena, WhoIsABetterPlayer
-- Best comparison targets inside our corpus: SmartPlay, BoardGameArena, OpenGuanDan, CATArena
+- Best comparison targets inside our corpus: BoardGameArena, SmartPlay, GTBench, LLMChess
 - What this paper uniquely adds relative to neighbors: Stable AI anchors and seeded duplicate matches make it much stronger on calibration than most LLM arena papers.
 
 ## 11. Evidence notes
@@ -130,4 +130,4 @@
 - Paper card path: `paper_cards/B01/BotzoneBench.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-09
+- Last updated: 2026-04-10

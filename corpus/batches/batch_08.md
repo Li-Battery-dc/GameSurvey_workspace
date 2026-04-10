@@ -1,34 +1,31 @@
-# Batch B08: benchmark-suite-diagnostics
+# Batch B08: symbolic-spatial-and-adjacent-diagnostics
 
 ## Why This Batch Exists
-- Compare benchmark suites that emphasize diagnostic instrumentation rather than one game family.
-- Support the survey's discussion of measurement design, process metrics, and protocol transparency.
+- Hold the narrower puzzle, maze, spatial, and adjacent multimodal diagnostics together as contrast evidence.
+- Support boundary-setting in taxonomy and synthesis without letting these papers dominate the main narrative.
 
-## Reading Order
+## Suggested Drafting Order
 
-| Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | LMGameBench | LMGAME-BENCH | P1 | deep | 0,1,2,3 | Unified benchmark with explicit perception and memory breakdowns. |
-| 2 | GAMEBoT | GAMEBoT | P1 | deep | 1,2,3,4 | Transparent modular evaluation useful for process-level analysis. |
-| 3 | KORGym | KORGym | P1 | deep | 1,2,3,4 | Dynamic multi-game platform that broadens benchmark coverage. |
-| 4 | RuleOracles | LLMs as Rule Oracles | P2 | deep | 1,2,3 | Tabletop rulebook benchmark for multimodal rule understanding. |
-| 5 | TextArena | TextArena | P1 | deep | 2,3,4 | Competitive text-game suite with online-play ratings and rich interactive coverage. |
-| 6 | Clembench | clembench | P1 | structured-skim | 1,2,3 | Dialogue-game evaluation framework for conversational agents. |
-| 7 | Clembench2024 | clembench-2024 | P2 | structured-skim | 1,2,3,4 | Framework expansion that adds multilingual and multi-action dialogue games. |
-| 8 | ThirdParadigm | A Third Paradigm for LLM Evaluation | P2 | structured-skim | 0,1,3,4 | Meta-evaluation framing paper that positions dialogue-game evaluation against static and arena paradigms. |
+| Order | paper_id | Title | Survey role | Outline anchors | Why this paper is in the batch |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | DeepPHY | DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning | contrast | 2,3,4 | Physical reasoning benchmark overlaps with game-like control but fit to the survey remains partly indirect. [uncertain: scope] |
+| 2 | ReasoningViaVideo | Reasoning via Video: The First Evaluation of Video Models' Reasoning Abilities through Maze-Solving Tasks | contrast | 2,3,4 | Video maze benchmark isolates temporal visual reasoning more than full agent play. [uncertain: scope] |
+| 3 | EvoEmpirBench | EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer | contrast | 2,3,4 | Dynamic maze-style benchmark is useful for spatial reasoning comparison but narrow in survey scope. [uncertain: scope] |
+| 4 | PuzzleJAX | PuzzleJAX: A Benchmark for Reasoning and Learning | contrast | 1,2,4 | PuzzleScript-to-JAX puzzle family best used as a symbolic benchmark-space contrast on rule transfer, deadlock reasoning, and overfitting-resistant task breadth rather than ecological play. |
+| 5 | SudokuBench | Sudoku-Bench: Evaluating creative reasoning with Sudoku variants | contrast | 1,2,4 | Tool-free text benchmark for creative Sudoku break-ins; best used as a symbolic reasoning contrast and for separating intrinsic reasoning from optional tool-use tracks. |
+| 6 | CrossWordBench | CrossWordBench: Evaluating the Reasoning Capabilities of LLMs and LVLMs with Controllable Puzzle Generation | contrast | 1,2,3,4 | Generated crossword benchmark best used as a structural-constraint contrast on LLM-vs-LVLM reasoning, grid consistency, and perception-versus-reasoning failure separation. |
+| 7 | VGRPBench | VGRP-Bench: Visual Grid Reasoning Puzzle Benchmark for Large Vision-Language Models | contrast | 2,3,4 | Visual grid puzzle benchmark best used as a multimodal diagnostic contrast on perception-versus-reasoning failures and weak post-training generalization, not as full visual-agent evidence. |
+| 8 | MazeEval | MazeEval: Maze Navigation Benchmark | contrast | 2,3,4 | Coordinate-only maze benchmark with full visit-history support; best used as a compact contrast on sequential spatial reasoning, looping failure, and language dependence. |
+| 9 | GameTraversalBenchmark | GameTraversalBenchmark: Evaluating Planning Abilities Of Large Language Models Through Traversing 2D Game Maps | contrast | 2,3,4 | Generated 2D map traversal benchmark best used as a symbolic planning contrast on multi-objective routing, generation-control errors, and near-miss scoring rather than broad game competence. |
+| 10 | PuzzlePlex | PuzzlePlex: Benchmarking Foundation Models on Reasoning and Planning with Puzzles | contrast | 1,2,3,4 | Broad puzzle suite useful for planning and generalization contrasts beyond social or ecological games. |
 
 ## Expected Survey Payoff
-- Clarify how suites differ in instrumentation granularity and task decomposition.
-- Improve the survey's treatment of protocol validity and comparability.
+- Separate narrow reasoning probes from fuller game-agent benchmarks.
+- Give Sections 2 and 4 a controlled contrast set for scope, verifiability, and transfer failure.
 
-## Questions To Resolve While Reading
-- Which metrics here transfer across benchmarks and which are batch-specific inventions?
-- How much privileged rule access is acceptable before ecological validity breaks down?
+## Questions To Resolve While Drafting
+- Which of these should be cited as game benchmarks versus adjacent diagnostics?
+- What do these papers reveal that the richer agent benchmarks still hide?
 
-## Exit Criteria
-- every paper in this batch has a paper card
-- registry rows are synced
-- unresolved ambiguity is explicit
-- outline gaps exposed by the batch are noted
-- batch status in `corpus/batches/batch_index.md` is updated
-
+## Batch Use Note
+- Use this batch as a contrast set when drafting scope boundaries, verifiability claims, and failure-mode contrasts.

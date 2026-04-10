@@ -1,35 +1,31 @@
-# Batch B05: generalization-challenge-space
+# Batch B05: long-horizon-memory-open-worlds
 
 ## Why This Batch Exists
-- Extend the survey from fixed benchmark suites toward broader and more open-ended game spaces.
-- Clarify how Sections 0, 1, 3, and 4 should discuss general-game evaluation and challenge-space growth.
+- Consolidate the papers whose main survey value is long-horizon autonomy, memory, repair, and open-world or sandbox continuity.
+- Support Section 2.5 and the later synthesis on persistent failure modes.
 
-## Reading Order
+## Suggested Drafting Order
 
-| Order | paper_id | Title | Priority | Recommended depth | Outline anchors | Why this paper is in the batch |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | AIGameStore | AI GAMESTORE | P0 | deep | 0,1,3,4 | Open-ended platform vision for evaluation across human games. |
-| 2 | GVGAILLM | GVGAI-LLM | P1 | deep | 1,2,4 | General video game benchmark with procedural breadth and reproducible state interfaces. |
-| 3 | PokeAgentChallenge | The PokeAgent Challenge | P2 | deep | 2,3,4 | Competition-scale benchmark for long-context opponent modeling and repeated play. |
-| 4 | PuzzlePlex | PuzzlePlex | P2 | deep | 1,2,4 | Broad puzzle suite that usefully stresses planning and generalization. |
-| 5 | Orak | Orak | P0 | deep | 1,2,3,4 | Genre-diverse train-and-eval benchmark connecting suite evaluation to general-game claims. |
-| 6 | MCU | MCU | P1 | deep | 0,2,3,4 | Open-ended Minecraft benchmark with task composition and human-aligned evaluation. |
-| 7 | Crafter | Benchmarking the Spectrum of Agent Capabilities | P1 | structured-skim | 0,1,2,4 | Foundational Crafter precursor for single-environment general-capability evaluation. |
+| Order | paper_id | Title | Survey role | Outline anchors | Why this paper is in the batch |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | InteractiveFictionGames | Interactive Fiction Games: A Colossal Adventure | anchor | 0,1,2,3,4 | Highly cited text-game precursor and Jericho anchor for the survey's taxonomy and lineage discussion. |
+| 2 | NetHackLearningEnvironment | The NetHack Learning Environment | anchor | 1,2,3,4 | Foundational hard game environment for long-horizon, partial-observability, and general-agent discussions. |
+| 3 | TextQuests | TextQuests: How Good are LLMs at Text-Based Video Games? | representative | 2,3,4 | Interactive fiction benchmark stressing textual exploration memory and long-context action selection. |
+| 4 | TextAtari | TextAtari: 100K Frames Game Playing with Language Agents | contrast | 2,3,4 | Textified Atari benchmark links compact language state to very long control horizons. |
+| 5 | Crafter | Benchmarking the Spectrum of Agent Capabilities | anchor | 0,1,2,3,4 | Crafter is a foundational single-environment general-capability benchmark and precursor for later game-agent suites. |
+| 6 | MCU | MCU: An Evaluation Framework for Open-Ended Game Agents | representative | 0,1,2,3,4 | Open-ended Minecraft benchmark with task composition and human-aligned evaluation. |
+| 7 | Mars | Mars: Situated Inductive Reasoning in an Open-World Environment | contrast | 2,3,4 | Open-world situated reasoning environment is useful for embodied comparison but only partly benchmark-centric. [uncertain: scope] |
+| 8 | MineNPCTask | MineNPC-Task: Task Suite for Memory-Aware Minecraft Agents | representative | 2,3,4 | Minecraft task suite centered on memory-aware mixed-initiative play, useful for the long-horizon memory discussion. |
+| 9 | StarDojo | StarDojo: Benchmarking Open-Ended Behaviors of Agentic Multimodal LLMs in Production-Living Simulations with Stardew Valley | representative | 2,3,4 | Production-living simulation benchmark expanding open-ended multimodal behavior and long-horizon evaluation. |
+| 10 | EMemBench | EMemBench: Interactive Benchmarking of Episodic Memory for VLM Agents | representative | 2,3,4 | Interactive game-based episodic-memory benchmark for VLM agents that sharpens the memory diagnostic branch. |
 
 ## Expected Survey Payoff
-- Clarify the boundary between broad challenge-space design and truly open-ended evaluation.
-- Improve the survey's account of cross-game transfer and generalization claims.
-- Strengthen the bridge from curated suites to train-and-eval and open-world agent benchmarks.
+- Tie text games, roguelikes, Minecraft tasks, and production-living simulations into one long-horizon narrative.
+- Keep memory, trajectory length, and recovery-after-error evidence together.
 
-## Questions To Resolve While Reading
-- Which papers here are benchmarks versus platform visions or competitions?
-- What level of benchmark openness is realistic without losing comparability?
-- How much training support or privileged scaffolding is acceptable before generalization claims weaken?
+## Questions To Resolve While Drafting
+- Which failures are really memory failures versus interface or exploration failures?
+- How far can this batch support open-world claims without over-claiming ecological realism?
 
-## Exit Criteria
-- every paper in this batch has a paper card
-- registry rows are synced
-- unresolved ambiguity is explicit
-- outline gaps exposed by the batch are noted
-- batch status in `corpus/batches/batch_index.md` is updated
-
+## Batch Use Note
+- Use this batch to draft Section 2.5 and the long-horizon failure analysis in Section 4.1.

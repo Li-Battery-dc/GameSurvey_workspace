@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter and Messenger as component environments, plus earlier text-game and general-agent evaluation lines
 - Closest follow-up(s): BotzoneBench, BALROG, Orak
-- Best comparison targets inside our corpus: BotzoneBench, BoardGameArena, GameBench, BALROG
+- Best comparison targets inside our corpus: BoardGameArena, BotzoneBench, GTBench, LLMChess
 - What this paper uniquely adds relative to neighbors: It is one of the clearest early attempts to turn heterogeneous games into a capability-decomposed LLM-agent benchmark.
 
 ## 11. Evidence notes
@@ -130,4 +130,4 @@
 - Paper card path: `paper_cards/B01/SmartPlay.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-09
+- Last updated: 2026-04-10

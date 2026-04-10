@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): chess-as-reasoning studies and earlier chess finetuning papers
 - Closest follow-up(s): BoardGameArena, BotzoneBench
-- Best comparison targets inside our corpus: SmartPlay, BoardGameArena, BotzoneBench, CompleteChessGames
+- Best comparison targets inside our corpus: BoardGameArena, BotzoneBench, SmartPlay, GTBench
 - What this paper uniquely adds relative to neighbors: It explicitly separates chess strength from benchmarked tool-use and instruction-following reliability.
 
 ## 11. Evidence notes
@@ -130,4 +130,4 @@
 - Paper card path: `paper_cards/B01/LLMChess.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-09
+- Last updated: 2026-04-10
