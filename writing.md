@@ -41,17 +41,37 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Draft goal: establish why games are a uniquely valuable benchmark substrate for LLM and VLM agents, especially compared with static QA and one-shot multimodal tests.
 - Core synthesis claim:
   Games combine explicit rules, sequential action, delayed consequences, hidden state, and automatic verification in a way that makes agent behavior observable rather than purely inferential.
+- Revised opening thesis:
+  Compared with static benchmarks that mainly test recognition or one-step response quality, game benchmarks place models inside interactive systems where perception, action, feedback, adaptation, and failure are coupled. This is the opening contrast, and it should be framed with the stronger "why games" logic visible in `GameVerse` and `AI GAMESTORE`: games are useful not only because they are challenging, but because they let us test closed-loop behavior, learning from failure, and broad human-evolved challenge spaces inside environments that still permit scoring and replay.
 - Reviewed anchors:
-  `SmartPlay`, `GTBench`, `BotzoneBench`, `Crafter`, `Balrog`, `VideoGameBench`, `MCU`, `AIGameStore`.
-- Historical bridge now reviewed:
-  `HumanLevelDiplomacy` is now usable as a reviewed milestone anchor for negotiation-heavy play and ecological human evaluation, but it should still be cited narrowly rather than treated as a standardized benchmark.
-- Paragraph plan:
-  Paragraph 1 should use `SmartPlay`, `GTBench`, and `BotzoneBench` to argue that games restore closed-loop interaction, legal action constraints, and strategic incentives that static prompt benchmarks flatten away.
-  Paragraph 2 should use `Crafter`, `Balrog`, `MCU`, and `VideoGameBench` to show the shift from formal reasoning tests toward embodied, perceptual, and long-horizon agency.
-  Paragraph 3 should use `WerewolfArena` and `TextArena` as reviewed social-evaluation anchors, and use `HumanLevelDiplomacy` as a reviewed milestone bridge for negotiation and human-play evaluation while keeping protocol claims narrow.
-  Paragraph 4 should use `GameplayQA`, `VideoGameBench`, and `AIGameStore` carefully to argue that games can be more contamination-resistant or saturation-resistant than static sets, but only when benchmark construction actually preserves freshness, hidden content, or a growing challenge space.
+  `SmartPlay`, `GTBench`, `BotzoneBench`, `Crafter`, `Balrog`, `VideoGameBench`, `Orak`, `GameWorld`, `MCU`, `AIGameStore`.
+- Introduction shape to draft:
+  Write this section as a compact introduction to the whole survey, not as a mini-related-work catalog. It should move from the benchmark problem, to the developmental storyline, to the paper's contribution preview.
+- Paragraph architecture:
+  Paragraph 1 should open with the benchmark problem. Use `SmartPlay`, `GTBench`, and `BotzoneBench` to argue that games recover closed-loop interaction, legal action constraints, strategic incentives, repeated trials, and calibrated scoring that static prompt benchmarks flatten away. The tone should stay methodological rather than celebratory.
+  Paragraph 2 should transition from controlled formal settings to richer agents. Use `Crafter`, `Balrog`, `MCU`, and `VideoGameBench` to show that once benchmark designers preserve longer horizons, richer observations, and more ecological control loops, game benchmarks begin to expose perception, memory, exploration, and recovery failures that are hard to see in static tests.
+  Paragraph 3 should expand the same argument into social and language-mediated agency. Use `WerewolfArena`, `HumanLevelDiplomacy`, and `TextArena` to show that games can make negotiation, deception, cooperation, and partner modeling behaviorally consequential rather than purely judged after the fact.
+  Paragraph 4 should incorporate the stronger "why games" framing from `GameVerse` and `AI GAMESTORE`. `GameVerse` should support the claim that games uniquely permit act-fail-reflect-retry evaluation loops that static video understanding benchmarks cannot reproduce. `AI GAMESTORE` should support the claim that the space of human games is broad, culturally evolved, and harder to saturate than fixed benchmark sets. `AIGameStore`, `Orak`, and `GameVerse` should also bridge into the survey's Level 5 generalization story.
+  Paragraph 5 should preview the rest of the survey and state the contribution logic explicitly. It should say that the paper is not only a paper list; it offers a five-level narrative taxonomy, a capability-and-design-space comparison, a benchmark-paradigm analysis, and a synthesis of both model bottlenecks and benchmark-design bottlenecks.
+- Contribution preview to foreshadow in the introduction:
+  Contribution 1: a five-level narrative taxonomy from rule following to cross-game generalization, with the levels used as a narrative scaffold rather than a rigid chronology.
+  Contribution 2: a cross-benchmark comparison framework that jointly tracks game structure, world structure, benchmark scope, modality, and evaluation intent.
+  Contribution 3: a benchmark-methodology argument that interface privilege, calibration strategy, and evaluation protocol matter as much as raw task difficulty when interpreting results.
+  Contribution 4: a synthesis section that pairs recurring model failures with unresolved benchmark-design failures and turns that pairing into a forward design agenda.
+- Core insights to plant early so the later sections feel earned:
+  Insight 1: games matter because they bind outputs to state transitions and delayed consequences, not simply because they are entertaining or realistic.
+  Insight 2: the field evolves from rule-bounded formal containers toward social, visual, and open-ended environments, but stronger ecological validity usually reduces control and comparability.
+  Insight 3: benchmark breadth alone is not generalization; the real shift at the high end is toward transfer, challenge growth, and less saturable evaluation ecosystems.
+  Insight 4: the main comparability problem in the literature is interface and evaluation design, not only heterogeneity of game genres.
+- Evidence map for the final paragraph:
+  Section 1 preview should point to `SmartPlay`, `GTBench`, `WerewolfArena`, `Balrog`, `Orak`, and `AIGameStore` as representative level anchors.
+  Section 2 preview should emphasize that games can target rule grounding, strategic reasoning, social intelligence, visual grounding, long-horizon autonomy, real-time execution, and cross-game transfer under one survey frame.
+  Section 3 preview should foreground the interaction-versus-evaluation split, especially the gap between privileged symbolic interfaces and more human-like play loops.
+  Section 4 preview should make the ending claim explicit: current models still fail on strategy, social belief tracking, perception, and long-horizon repair, while benchmark design still fails on calibration, comparability, and sustainable openness.
 - Keep explicit caution:
   Do not claim that all game benchmarks are inherently realistic or leakage-resistant. `SmartPlay`, `BotzoneBench`, and `PokerBench` are strong because they are structured and checkable, not because they are human-like.
+- Additional caution for this draft:
+  `GameplayQA` can appear only as a boundary example for dynamic gameplay perception, not as evidence of full interactive agency. `HumanLevelDiplomacy` should be framed as a historical and ecological milestone, not as a reusable benchmark platform. `AIGameStore` should support the anti-saturation argument carefully: the point is benchmark openness and human-game breadth, not a blanket claim that all game benchmarks resist contamination.
 
 ## 1. Taxonomy: The Evolutionary Levels of Game Environments
 

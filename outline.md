@@ -12,14 +12,26 @@ high-level narrative stages, all sections follow or recall:
 ## 0. Lead in: Summary and why Game as Benchmark
 Goal:
 - Establish why games are a uniquely valuable benchmark environment for LLMs and VLMs by synthesizing:
-
 1. evidence that games provide dynamic, multi-step, interactive, strategic, and relatively contamination-resistant evaluation settings. This section should clarify what gaps in static QA-style benchmarks games can fill. 
 2. Foundation models change from formal reasoning with text to embodied and social agency
-
+3. Visual ability enable models to play like human and compare with humans.
+   
 Need evidence from:
 - foundational framing papers, P0
 - benchmark papers with explicit motivation
 - examples spanning text to embodied-like interaction
+
+Subsections:
+0.1 Why static agent benchmarks need games
+0.2 From rule-grounded evaluation to social and embodied agency
+0.3 From fixed game tasks to broad and open-ended benchmark platforms
+0.4 Contribution preview and roadmap for the rest of the survey
+
+Contribution preview:
+- Organize the literature with a five-level narrative taxonomy from rule following to cross-game generalization.
+- Compare benchmarks not only by capability target but also by game structure, world structure, modality, interface, and evaluation design.
+- Argue that the main methodological fault line in the field is not only task difficulty but also interface privilege, calibration strategy, and protocol comparability.
+- Distill recurring model bottlenecks and benchmark-design bottlenecks into a forward design agenda for future game benchmarks.
 
 ## 1. Taxonomy: The Evolutionary Levels of Game Environments
 Goal:

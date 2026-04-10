@@ -18,6 +18,7 @@
 | 8 | INGVP | ING-VP: MLLMs cannot Play Easy Vision-based Games Yet | contrast | 2,3,4 | Vision-game benchmark highlighting spatial planning limits under light scaffolding. |
 | 9 | AtariGPT | Atari-GPT: Benchmarking Multimodal Large Language Models as Low-Level Policies in Atari Games | contrast | 2,3,4 | Atari low-level control benchmark probes reaction latency and perception under multimodal policies. |
 | 10 | TowerMind | TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents | representative | 2,3,4 | Tower-defense environment adds real-time multimodal control and hallucination-oriented diagnostics. |
+| 11 | PokeGym | PokeGym: A Visually-Driven Long-Horizon Benchmark for Vision-Language Models | representative | 2,3,4 | Pure-pixel 3D RPG benchmark with automated AOB-based evaluation and deadlock-centered embodied diagnosis. |
 
 ## Expected Survey Payoff
 - Clarify the difference between perception-only diagnostics, GUI play, and end-to-end ecological control.

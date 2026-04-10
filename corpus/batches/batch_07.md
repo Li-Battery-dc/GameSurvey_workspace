@@ -16,6 +16,7 @@
 | 6 | WhoIsABetterPlayer | Who is a Better Player: LLM against LLM | contrast | 1,3,4 | Pool-dependent LLM-vs-LLM board-game arena useful for Elo/PLG methodology contrast and ranking-instability cautions. |
 | 7 | GameArena | GameArena: Evaluating LLM Reasoning Through Live Computer Games | representative | 0,1,3,4 | Live human-game benchmark with retrospective reasoning analysis and far higher useful-session yield than chat arenas. |
 | 8 | ARCAGI3 | ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence | contrast | 1,3,4 | Official ARC-AGI-3 paper is best used as an interactive benchmark-design contrast on human-normalized efficiency, private holdouts, and harness-versus-general-agent evaluation policy. |
+| 9 | GameWorld | GameWorld: Towards Standardized and Verifiable Evaluation of Multimodal Game Agents | anchor | 0,1,3,4 | Standardized browser-game benchmark with state-verifiable evaluation, dual control interfaces, and reproducibility analyses. |
 
 ## Expected Survey Payoff
 - Make the evaluation-design comparison explicit instead of burying it inside environment sections.

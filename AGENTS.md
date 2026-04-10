@@ -54,6 +54,7 @@ Repo-local skills live in `.codex/skills/`.
 - Batch files: `corpus/batches/batch_XX.md`
 - Default paper card path: `paper_cards/{batch_id}/{paper_id}.md`
 - Active drafting workspace: `writing.md`
+- Draft content included: `script.md`.  keep it aligned with the latest `writing.md` and `outline.md` plan.
 - Registry status vocabulary: `triaged`, `card-draft`, `card-reviewed`, `finalized`
 - Queue tiers: `now`, `next`, `later`, `hold`
 - `paper_id` should be stable, title-aligned, and readable. Use PascalCase or acronym-preserving CamelCase such as `SmartPlay`, `CKArena`, `GameplayQA`, or `GTBench` instead of lowercase slugs.

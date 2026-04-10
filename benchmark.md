@@ -3,6 +3,8 @@
 
 | Date | Title | Venue | Keywords | Links |
 | :--- | :--- | :--- | :--- | :--- |
+| 2026/04 | **GameWorld: Towards Standardized and Verifiable Evaluation of Multimodal Game Agents** | arXiv | Browser Games, Multimodal Agents, Standardized Evaluation, Verifiable Metrics | [[Paper](https://arxiv.org/abs/2604.07429v1)] [[Code](https://gameworld-bench.github.io)] |
+| 2026/04 | **PokeGym: A Visually-Driven Long-Horizon Benchmark for Vision-Language Models** | arXiv | 3D RPG, Pure Pixels, Long-Horizon, Automated Evaluation | [[Paper](https://arxiv.org/abs/2604.08340)] |
 | 2026/03 | **GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents** | arXiv |  | [[Paper](https://arxiv.org/abs/2603.24329)] [[Code](https://hats-ict.github.io/gameplayqa/)] |
 | 2026/03 | **GTO Wizard Benchmark** | arXiv | Poker, HUNL, Nash Equilibrium, Superhuman Anchor | [[Paper](https://arxiv.org/abs/2603.23660)] |
 | 2026/03 | **ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence** | arXiv | ARC-AGI-3, Agentic Intelligence, Interactive Reasoning, Human Calibration | [[Paper](https://arxiv.org/abs/2603.24621v1)] |
