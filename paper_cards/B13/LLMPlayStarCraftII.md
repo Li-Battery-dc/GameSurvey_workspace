@@ -12,12 +12,12 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- This paper introduces TextStarCraft II, a text-based environment for evaluating LLMs on StarCraft II macro strategy and long-horizon decision making. The environment converts SC2 state into textual observations, lets LLMs choose macro actions, and relies on scripted micro policies for low-level execution; the authors also propose Chain of Summarization (CoS) to manage long histories. The benchmark evaluates closed and open models against built-in AI, tests SC2 knowledge with expert review, and includes human-versus-agent matches. For this survey, the paper is an early and important RTS benchmark that established the text-interface lineage later extended by follow-up work.
+- This paper introduces TextStarCraft II, a text-based StarCraft II environment for evaluating LLMs on macro strategy, real-time decision-making, and long-horizon planning within a single RTS domain. The environment converts SC2 state into textual observations, lets LLMs choose macro actions, and uses scripted micro policies for low-level execution; the authors also propose Chain of Summarization (CoS) to compress fast-moving game history into manageable reasoning context. The paper evaluates closed and fine-tuned open models against built-in AI, separately studies StarCraft II knowledge via expert-reviewed QA, and runs human-versus-agent matches with a lightweight fine-tuned model. For this survey, it is a key early benchmark in the text-interface SC2 line, but it should be read as macro-level RTS evaluation rather than as evidence of cross-game generalization or full ecological play.
 
 ## 2. Position in our survey
 - Why-games relevance: Real-time strategy games compress resource management, tech progression, scouting, and long-horizon adaptation into one domain.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
@@ -53,35 +53,35 @@
 - Does it test visual grounding / spatial-temporal reasoning? no in the core interface
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? yes
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? SC2 requires layered decision making across economy, tech, and combat over extended time horizons.
 
 ## 5. Interaction paradigm
 - Observation channel: textualized game state, multi-frame summaries, and strategic history
 - Action channel: macro actions for production, construction, research, scouting, and high-level strategy
 - Interface type: natural language / API / hybrid
-- Agent scaffold allowed: summarization
+- Agent scaffold allowed: summarization / scripted micro policy
 - Is there privileged API access? yes
 - How close is the setup to human play? medium-low; the game is authentic, but raw visual and micro burdens are replaced by textual state plus scripted execution
 - Main ecological-validity trade-off: TextStarCraft II preserves strategic structure but removes much of the speed and perceptual pressure that make human SC2 difficult
 
 ## 6. Evaluation protocol
-- Main score: win rate against built-in AI and human players
-- Auxiliary score(s): PBR, RUR, APU, and TR for macro-management analysis
+- Main score: win rate against level-5 built-in AI
+- Auxiliary score(s): PBR, RUR, APU, and TR for macro-management analysis, SC2 knowledge QA judged by experts, and human-versus-agent match records
 - Evaluation style: win rate / hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: multiple LLMs and fine-tuned open models are tested against level-5 built-in AI, plus expert reviews and human matches
 - Automatic verifiability: high
 - Calibration method: shared maps, fixed race setup, and logged macro metrics
-- Anti-contamination argument: live SC2 interaction through a custom environment is less vulnerable to simple memorization than static strategy QA
+- Anti-contamination argument: no explicit contamination defense beyond preferring interactive SC2 evaluation to static strategy-only questioning
 - Reliability or comparability concerns: results depend strongly on the scripted micro layer and the race/opponent configuration
 
 ## 7. Main contributions
 - Contribution 1: Introduces TextStarCraft II as a text interface for LLM play in SC2.
 - Contribution 2: Proposes Chain of Summarization to compress long strategic histories.
-- Contribution 3: Shows that fine-tuned open models can beat level-5 built-in AI and play competitively against some humans.
+- Contribution 3: Shows that closed and fine-tuned open models can beat level-5 built-in AI and that a lightweight fine-tuned model can reach roughly Gold-level human performance in real-time matches.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: with summarization and text abstraction, several LLMs can reach competent macro-level SC2 play, but strategic diversity and realism remain limited.
+- Core empirical takeaway: with text abstraction and CoS-style history compression, several LLMs can reach competent macro-level SC2 play against built-in AI, but strategic diversity and ecological realism remain limited.
 - Notable model failure mode 1: dependence on scripted micro policies and constrained action sets
 - Notable model failure mode 2: strategy collapse in fine-tuned models toward narrow unit compositions such as mass stalkers
 - Notable model failure mode 3: difficulty understanding task requirements or generating valid commands for weaker open models
@@ -103,20 +103,20 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The paper introduces TextStarCraft II and the Chain of Summarization method.
-- It evaluates proprietary models and fine-tuned open models against level-5 built-in AI and also reports human-versus-agent matches.
+- It evaluates proprietary models and fine-tuned open models against level-5 built-in AI and also reports separate human-versus-agent matches.
 - The paper reports macro metrics including Population Block Ratio, Resource Utilization Ratio, Average Population Utilization, and Technology Rate.
+- In the human-interaction test, a fine-tuned Qwen1.8B model goes 5/10 against a Gold player, 0/10 against Grandmaster and pro players, and 10/10 against a novice.
 
 ### 11.2 Our synthesis / interpretation
 - This paper is the key starting point for the text-based StarCraft II line in the corpus.
 - It is most useful as a historical and methodological anchor rather than as the final word on ecological RTS evaluation.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check exact win-rate tables for each model if later drafting needs them.
-- Re-check how much CoS versus fine-tuning contributes independently in the strongest open-model results.
+- If later drafting needs more detail, re-check the appendix logs and figures used for the policy-interpretability discussion and the exact model-by-model win-rate tables.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes later, because this paper anchors the RTS lineage.
-- Which section to read next if needed: metrics / CoS design / human interaction experiments
+- Should we read beyond abstract + intro? why? Already audited from the full paper; revisit only if we later need appendix-level interpretability examples or exact per-model tables.
+- Which section to read next if needed: built-in-AI evaluation tables / human interaction experiments
 - Follow-up question(s): How much of the observed competence survives if the scripted micro layer is weakened?
 
 ## 13. Registry sync
@@ -129,4 +129,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B13/LLMPlayStarCraftII.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

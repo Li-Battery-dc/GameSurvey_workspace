@@ -12,13 +12,13 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- ARC-AGI-3 is the official benchmark paper for a human-calibrated interactive reasoning benchmark built from novel abstract turn-based environments. Instead of measuring static puzzle solving, it evaluates whether an agent can explore, infer goals, model environment dynamics, and execute plans efficiently on first contact without instructions. The benchmark uses action efficiency relative to human baselines as its core metric, with a large private holdout and explicit leaderboard policy meant to discount benchmark-specific harness overfitting. For this survey, ARC-AGI-3 is an important adjacent contrast paper because it turns game-like interaction into a direct benchmark for adaptive efficiency and benchmark-design robustness.
+- ARC-AGI-3 is the official benchmark paper for a human-calibrated interactive reasoning benchmark built from novel abstract turn-based environments. Instead of measuring static puzzle solving, it evaluates whether an agent can explore, infer goals, model environment dynamics, and execute plans efficiently on first contact without instructions. The benchmark uses action efficiency relative to human baselines as its core metric, with a large private holdout and an explicit split between official no-harness reporting and community harness-driven results. For this survey, ARC-AGI-3 is best used as an adjacent contrast paper on interactive benchmark design, adaptive efficiency, and anti-overfitting evaluation policy rather than as a central game benchmark in the narrow sense.
 
 ## 2. Position in our survey
 - Why-games relevance: Turn-based interactive environments let the benchmark measure exploration, mechanic discovery, and planning efficiency rather than only final-answer accuracy.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
-- Most relevant outline section(s): 0,1,2,3,4
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -67,7 +67,7 @@
 
 ## 6. Evaluation protocol
 - Main score: RHAE (Relative Human Action Efficiency)
-- Auxiliary score(s): per-level efficiency, environment scores, and cost-aware leaderboard placement
+- Auxiliary score(s): per-level efficiency, environment scores, and official-versus-community leaderboard distinctions
 - Evaluation style: hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: the human baseline is the second-best first-run human action count per level; official leaderboard runs use a shared prompt and no external tools; community leaderboard accepts self-reported harness results
 - Automatic verifiability: high
@@ -88,8 +88,8 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows how strongly measured performance can depend on whether evaluation rewards general-purpose agents or benchmark-specific scaffolds
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that interactive game-like environments can measure adaptive efficiency rather than static competence.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the ARC line's shift from static abstract reasoning toward interactive agentic evaluation. Helps define a boundary case between puzzle diagnostics and broader interactive agent benchmarks.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it helps show that interactive environments can measure adaptive efficiency rather than static competence, but it is not a central game-benchmark motivation anchor.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the ARC line's shift from static abstract reasoning toward interactive agentic evaluation. It is best framed as a boundary case between puzzle diagnostics and broader interactive agent benchmarks.
 - Best use in Section 2 (core capabilities evaluated by games): Strong anchor for exploration, goal inference, and planning under hidden mechanics.
 - Best use in Section 3 (interaction and evaluation paradigm): Useful for comparing shared turn-based APIs against richer harnesses and external memory tooling. Important for human-normalized efficiency scoring, private holdouts, and anti-overfitting leaderboard policy.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that future benchmarks need both stronger novelty protection and clearer separation between general intelligence and task-specific harness engineering.
@@ -97,7 +97,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): ARC-AGI-1, ARC-AGI-2
 - Closest follow-up(s): ARC Prize harness work and graph-based ARC-AGI-3 baselines
-- Best comparison targets inside our corpus: AIGameStore, PuzzleJAX, MazeEval, GameTraversalBenchmark
+- Best comparison targets inside our corpus: AIGameStore, MazeEval, GameTraversalBenchmark
 - What this paper uniquely adds relative to neighbors: It pairs instruction-free interactive play with human-normalized efficiency scoring and an explicit anti-overfitting leaderboard policy.
 
 ## 11. Evidence notes
@@ -105,11 +105,12 @@
 - ARC-AGI-3 contains 25 public environments, 55 semi-private environments, and 55 fully private environments.
 - Agents observe 64x64 16-color frames and act through a small turn-based action space that can include five key actions, undo, and cell-coordinate selection.
 - RHAE scores each completed level by the squared ratio between the second-best first-run human action count and the AI action count, then aggregates per environment and across the benchmark.
-- Included environments are tested on 10 humans and must be fully solved by at least two first-run participants; release-time official scores reported in the paper are 0.37% for Gemini 3.1 Pro Preview, 0.26% for GPT 5.4 (High), 0.25% for Opus 4.6 (Max), and 0.00% for Grok-4.20.
+- Every environment has five levels and is attempted by exactly 10 human participants; inclusion requires at least two first-run humans to solve the full environment. Release-time official scores reported in the paper are 0.37% for Gemini 3.1 Pro Preview, 0.26% for GPT 5.4 (High), 0.25% for Opus 4.6 (Max), and 0.00% for Grok-4.20.
 
 ### 11.2 Our synthesis / interpretation
 - ARC-AGI-3 is better used in this survey as a benchmark-design and agentic-evaluation contrast than as a core game benchmark in the narrow sense.
 - The paper is especially valuable because it makes evaluation policy itself part of the benchmark argument, not just the environment design.
+- It is also a useful warning that interactive benchmark scores can be dominated by choices about what kinds of scaffolding are considered legitimate.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact final levels-per-environment convention if we later need a quantitative table; the design section describes a broader production template while the scoring section standardizes a five-level weighting example.
@@ -126,8 +127,9 @@
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B11
-- Outline sections: 0,1,2,3,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B11/ARCAGI3.md`
 - Next action: draft-section
-- Last updated: 2026-04-07
+- Check status: unchecked
+- Last updated: 2026-04-09

@@ -6,126 +6,129 @@
 - Authors: Anton Bakhtin, Noam Brown, Emily Dinan, Gabriele Farina, Colin Flaherty, Daniel Fried, Andrew Goff, Jonathan Gray, Hengyuan Hu, Athul Paul Jacob, Mojtaba Komeili, Karthik Konath, Minae Kwon, Adam Lerer, Mike Lewis, Alexander H. Miller, Sasha Mitts, Adithya Renduchintala, Stephen Roller, Dirk Rowe, Weiyan Shi, Joe Spisak, Alexander Wei, David Wu, Hugh Zhang
 - Paper link: https://doi.org/10.1126/science.ade9097
 - Code link: https://github.com/facebookresearch/diplomacy_cicero
-- Reading depth: structured-skim
+- Reading depth: deep
 - Card status: card-reviewed
 - Confidence in this card: medium
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- This paper presents Cicero, an AI system that achieved human-level performance in the negotiation strategy game Diplomacy by combining language modeling with strategic planning and reinforcement-learning components. Strictly speaking, it is not a benchmark paper in the same sense as the other items in this batch; its core contribution is a high-impact capability demonstration in a socially rich game environment. However, it matters greatly for this survey because Diplomacy is one of the strongest known settings where natural-language negotiation, hidden intentions, alliance formation, and tactical planning are all required together. For historical framing, this paper is a major bridge between formal game evaluation and later benchmark work on negotiation and multi-agent social intelligence.
+- Human-Level Diplomacy is a milestone Science paper rather than a reusable benchmark release: it presents Cicero, a Diplomacy agent that combines controllable dialogue with strategic reasoning and evaluates it in anonymous live games against human players. The paper matters for this survey because Diplomacy makes language strategically consequential: players negotiate privately, model each other's intentions, coordinate joint actions, and manage betrayal under hidden intentions and long horizons. Cicero couples a dialogue model conditioned on intents with KL-regularized planning over predicted human policies, then tests that full system in real online play. For the survey, the paper is best used as an ecological bridge for negotiation-heavy game environments and as a cautionary case on the trade-off between human-like evaluation and benchmark reusability.
 
 ## 2. Position in our survey
-- Why-games relevance: Diplomacy combines negotiation, hidden intentions, coalition management, and long-horizon strategic planning inside a fully game-structured environment.
+- Why-games relevance: Diplomacy operationalizes negotiation, trust, coalition formation, and tactical planning inside a formally scored game where language changes the game state indirectly through coordination.
 - Historical stage: ecological agent benchmark
 - Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 0,1,2,3,4
+- Most relevant outline section(s): 0,1,2,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
 ### 3.1 Environment structure
 - Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: multi-agent
+- Transition structure: deterministic
+- Agent structure: multi-agent / human-model interaction
 - Social structure: mixed
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): board / social strategy
-- Real game / simulated game / designed task-game hybrid: real game with live human play
+- World type(s): board / other
+- Real game / simulated game / designed task-game hybrid: real board game played online with live human negotiation
 - Benchmark unit: full game / league performance
 
 ### 3.3 Benchmark scope
 - Scope: single game
-- Number of games / tasks: 40 games in an anonymous online Diplomacy league
+- Number of games / tasks: 40 anonymous league games, plus an 8-game tournament slice discussed in the paper
 - Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state
-- Perception burden retained: negotiation dialogue, board-state planning, belief and intent inference, and long-horizon coordination
-- Perception burden removed: no raw visual perception burden
+- Perception burden retained: negotiation dialogue, structured board-state reasoning, alliance and intention modeling, and long-horizon strategic coordination
+- Perception burden removed: no raw visual perception or native physical interface
 
 ## 4. What this benchmark measures
-- Primary capability target: social strategic competence under natural-language negotiation
-- Secondary capability target(s): belief modeling, tactical planning, coalition management, and language-conditioned decision making
+- Primary capability target: negotiation-grounded strategic play with humans
+- Secondary capability target(s): belief and intention modeling, coalition management, tactical coordination, and language-conditioned planning
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? yes
-- Does it test visual grounding / spatial-temporal reasoning? partially
+- Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? yes
-- Does it test real-time efficiency? no
+- Does it test real-time efficiency? partially; decisions and negotiation occur under short timed turns
 - Does it test cross-game transfer / open-ended generalization? no
-- Why is a game environment especially suitable here? Diplomacy uniquely combines explicit rules with open-ended negotiation, so it makes strategic language use operational rather than decorative.
+- Why is a game environment especially suitable here? Diplomacy turns open-ended language into strategically consequential action, so coordination, persuasion, and mistrust become measurable parts of success rather than side tasks.
 
 ## 5. Interaction paradigm
-- Observation channel: game state, dialogue history, and strategic context
-- Action channel: natural-language negotiation plus game orders
+- Observation channel: structured board state, recent action history, and private pairwise dialogue histories
+- Action channel: natural-language negotiation messages plus simultaneous Diplomacy orders
 - Interface type: natural language / structured action space / hybrid
-- Agent scaffold allowed: planner / other
-- Is there privileged API access? yes through the full Cicero system stack
-- How close is the setup to human play? high in terms of game structure and human opponents, but the agent itself uses a heavily engineered planning stack
-- Main ecological-validity trade-off: the evaluation is highly ecological, but the system is not a pure backbone-model benchmark and is difficult to compare directly to lighter-weight LLM evaluations
+- Agent scaffold allowed: planner / language model / other
+- Is there privileged API access? yes; Cicero uses structured board-state access, dialogue-conditioned policy prediction, RL value models, and message filters rather than a raw human-only interface
+- How close is the setup to human play? medium; the opponent pool and game objective are highly ecological, but the system itself is a heavily engineered language-plus-planning stack
+- Main ecological-validity trade-off: the evaluation is unusually close to real human play, but the system and protocol are difficult to reuse as a standardized benchmark or to compare directly with lighter LLM-agent setups
 
 ## 6. Evaluation protocol
-- Main score: online league performance in human games
-- Auxiliary score(s): average-score advantage over humans and league ranking
+- Main score: mean game score and league ranking in anonymous human play
+- Auxiliary score(s): tournament placement, dialogue-quality ratings on 126 validation situations, and message-filter evaluations
 - Evaluation style: tournament / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: Cicero is evaluated in an anonymous online league against human players
+- Human baseline / AI anchor / self-play / model-vs-model setup: Cicero is entered anonymously into an online human league, where its 40 games involve 82 distinct human opponents; separate expert annotation is used to evaluate dialogue quality
 - Automatic verifiability: mixed
-- Calibration method: live league participation across 40 games
+- Calibration method: anonymous live league participation, a tournament slice, KL-regularization toward human play, and expert-evaluated dialogue consistency metrics
 - Anti-contamination argument: not central
-- Reliability or comparability concerns: this is not a standardized public benchmark protocol, and reproducibility depends on live human play plus a complex engineered system
+- Reliability or comparability concerns: the paper evaluates one heavily engineered system in live human play, so scores are not directly comparable with later standardized benchmark suites; exact reproduction also depends on supplementary-method details not fully present in the short Science article
 
 ## 7. Main contributions
-- Contribution 1: Demonstrates human-level play in Diplomacy with a language-plus-planning system.
-- Contribution 2: Integrates language modeling with strategic reasoning and belief inference inside a negotiation game.
-- Contribution 3: Provides a high-impact milestone for socially situated game-agent competence.
+- Contribution 1: Demonstrates human-level play in full-press Diplomacy with a system that combines dialogue and strategic planning.
+- Contribution 2: Introduces intent-controlled dialogue grounded in game state and planning outputs rather than free-form imitation alone.
+- Contribution 3: Uses KL-regularized, human-compatible planning and evaluates the full system anonymously against humans in live online play.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Cicero achieved more than double the average score of human players and ranked in the top 10 percent of league participants who played more than one game.
-- Notable model failure mode 1: raw language modeling alone is not sufficient; the paper relies on a specialized strategic stack rather than a plain LLM agent
-- Notable model failure mode 2: comparison to later lightweight benchmark agents is difficult because evaluation depends on one heavily engineered system
-- Notable model failure mode 3: the work is less reusable as a benchmark protocol than as a historical milestone
-- Does this paper reveal a benchmark-design limitation as well? yes; it highlights the gap between impressive game performance and easily reusable benchmark methodology
+- Core empirical takeaway: in 40 anonymous webDiplomacy league games, Cicero achieved a mean score of 25.8%, more than double the 12.4% average of its human opponents, ranked in the top 10% of participants who played more than one game, and placed first in the paper's 8-game tournament slice.
+- Notable model failure mode 1: even with filters, generated messages can still contain grounding errors, contradict plans, or be strategically poor
+- Notable model failure mode 2: Cicero reasons about dialogue mainly through current-turn actions rather than modeling longer-term relationship effects across the game
+- Notable model failure mode 3: the intent representation limits richer dialogue acts such as asking questions, strategically revealing information, or explaining decisions
+- Does this paper reveal a benchmark-design limitation as well? yes; it is a strong ecological demonstration, but its live-human protocol and engineered stack make it much harder to reuse as a standardized benchmark than later corpus papers
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strongest high-level example that games can operationalize language-based social strategy in a way static NLP tasks cannot.
-- Best use in Section 1 (taxonomy and evolutionary levels): Essential historical bridge from capability demonstrations to later negotiation and cooperation benchmarks. Useful for mixed cooperative-competitive games with both language and tactical planning.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for negotiation, belief modeling, and long-horizon social strategy.
-- Best use in Section 3 (interaction and evaluation paradigm): Important example of a hybrid language-plus-planner game agent. Good contrast case for live human-league evaluation rather than fixed benchmark suites.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that high ecological validity often comes with low comparability and heavy system engineering.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong milestone evidence that games can operationalize social strategy and negotiation in ways static language tasks cannot.
+- Best use in Section 1 (taxonomy and evolutionary levels): Historical bridge from rule- and strategy-focused game AI toward social, language-mediated, human-in-the-loop evaluation.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for negotiation, intention modeling, trust management, and strategic communication under hidden intentions.
+- Best use in Section 3 (interaction and evaluation paradigm): Important example of a hybrid language-plus-planner system evaluated in anonymous human play. Useful for the ecological-validity versus comparability trade-off.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Use as a cautionary milestone showing that impressive ecological performance can coexist with limited benchmark reusability and strong dependence on engineered scaffolds.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): prior Diplomacy AI and negotiation systems
-- Closest follow-up(s): negotiation and cooperation benchmarks for LLM agents
-- Best comparison targets inside our corpus: CollabOvercooked, LLMCoordination, StrategicHanabi, GTBench
-- What this paper uniquely adds relative to neighbors: It is the clearest high-profile milestone where natural-language strategic interaction with humans was central to performance.
+- Closest predecessor(s): no-press Diplomacy systems, earlier negotiation agents, and human-regularized Diplomacy planning work
+- Closest follow-up(s): later social-intelligence and live-interaction benchmarks for LLM agents
+- Best comparison targets inside our corpus: GameArena, WerewolfArena, LLMCoordination, CollabOvercooked
+- What this paper uniquely adds relative to neighbors: It is the clearest corpus example where natural-language negotiation with humans is central to game performance rather than an auxiliary analysis layer
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- The abstract states that Cicero is the first AI agent to achieve human-level performance in Diplomacy by combining a language model with planning and reinforcement-learning algorithms.
-- Across 40 games in an anonymous online Diplomacy league, Cicero achieved more than double the average score of human players and ranked in the top 10 percent of participants who played more than one game.
-- The abstract emphasizes that the system infers players' beliefs and intentions from conversations and generates dialogue in pursuit of its plans.
+- Cicero combines a dialogue module with a strategic reasoning module; the dialogue model is grounded in dialogue history, game state, and intents representing planned actions for the speaker and recipient.
+- The paper states that WebDiplomacy data includes 125,261 games, of which 40,408 contain dialogue, totaling 12,901,662 messages used for training components of the system.
+- In anonymous human play, Cicero played 40 games between 19 August and 13 October 2022, sent 5,277 messages over 72 hours, achieved a mean score of 25.8% against 82 distinct opponents averaging 12.4%, and ranked second out of 19 participants who played at least five games.
+- On 126 expert-annotated dialogue situations, the intent-grounded dialogue model improves consistency-with-state, consistency-with-plan, and high-quality message ratings over weaker grounding baselines.
 
 ### 11.2 Our synthesis / interpretation
-- This is a historically essential survey card even though it is not a benchmark paper in the strict repository sense.
-- Its value is mostly as a milestone proving that negotiation-heavy game environments are a serious testbed for language agents.
+- The safest survey use is as a reviewed ecological milestone and negotiation bridge, not as a reusable benchmark protocol on the same footing as later standardized suites.
+- This paper is especially important because its result depends on coupling language with planning and human-compatible regularization; fluent dialogue alone is not the source of performance.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the full Science paper or supplementary materials if we later need exact league setup, ablations, or failure analysis beyond the abstract-level milestone claim.
+- Reopen the supplementary materials if later drafting needs the exact filter ensemble, full piKL or CoShar-piKL derivations, or the complete tournament-account protocol.
+- Avoid writing as though this paper provides a public, directly reusable benchmark with clean cross-paper comparability; its strongest contribution is milestone evidence, not standardization.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes, if we decide to use Cicero as a central historical bridge rather than only a milestone citation.
-- Which section to read next if needed: method / evaluation / supplementary materials
-- Follow-up question(s): How should this paper be framed so that it informs the survey without being mistaken for a standardized benchmark release?
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit. Reopen the supplementary materials only if later drafting needs full algorithmic detail, filter design, or exact league-protocol specifics.
+- Which section to read next if needed: Methods / Discussion / supplementary materials
+- Follow-up question(s): When drafting, use this paper for negotiation, ecological evaluation, and language-plus-planning arguments rather than for apples-to-apples benchmark score comparison.
 
 ## 13. Registry sync
 - Registry row synced: yes
 - Registry status: card-reviewed
 - Priority: P0
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B12
-- Outline sections: 0,1,2,3,4
+- Outline sections: 0,1,2,3
 - Survey role: anchor
 - Paper card path: `paper_cards/B12/HumanLevelDiplomacy.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-08
+- Last updated: 2026-04-10

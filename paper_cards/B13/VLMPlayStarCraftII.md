@@ -12,12 +12,12 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- VLMs Play StarCraft II introduces VLM-Attention, a multimodal StarCraft II environment and agent framework meant to align AI perception with human-style play more closely than symbolic SC2 interfaces do. The environment provides RGB input plus natural-language observations, defines a richer tactical action space, and evaluates VLM-based agents on 12 micromanagement scenarios. The associated agent architecture combines visual attention, retrieval-augmented StarCraft knowledge, and dynamic role assignment for unit coordination. For this survey, the paper is an important extension of the SC2 line from text-abstracted macro play toward multimodal tactical control.
+- VLMs Play StarCraft II introduces VLM-Attention, a multimodal StarCraft II environment and agent framework meant to align AI perception more closely with human-style play than symbolic SC2 interfaces do. The environment provides RGB input plus natural-language observations, defines a richer tactical action space, and evaluates VLM-based agents on a set of micromanagement scenarios; the main experiment section emphasizes 12 specialized scenarios, while the appendix documents a broader map collection. The associated agent architecture combines a VLM-based attention pipeline, retrieval-augmented StarCraft knowledge, and dynamic role assignment for unit coordination. For this survey, the paper is best used as a multimodal tactical extension of the SC2 line rather than as evidence of cross-game generalization.
 
 ## 2. Position in our survey
 - Why-games relevance: RTS micromanagement provides a harsh test of multimodal perception, tactical choice, and multi-unit coordination under time pressure.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency / L5 cross-game generalization
+- Narrative level(s): L4 visual agency
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
@@ -49,18 +49,18 @@
 - Secondary capability target(s): target selection, role assignment, knowledge retrieval, and multi-unit coordination
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? internal coordination yes
+- Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? partially
 - Does it test real-time efficiency? yes
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? RTS micromanagement tightly couples battlefield perception, timing, and action sequencing in ways static VLM benchmarks do not.
 
 ## 5. Interaction paradigm
 - Observation channel: RGB game observations plus natural-language environment descriptions
 - Action channel: tactical commands over units, including targeting, movement, and ability usage
 - Interface type: GUI interaction / API / hybrid
-- Agent scaffold allowed: retrieval / role assignment / self-reflection
+- Agent scaffold allowed: retrieval / role assignment / VLM-based attention
 - Is there privileged API access? yes; the environment augments visual input with textual observations and structured coordination logic
 - How close is the setup to human play? medium; it is more human-aligned than purely symbolic SC2 interfaces, but still provides textual augmentation and framework-level coordination
 - Main ecological-validity trade-off: the benchmark restores vision but still relies on auxiliary text and structured prompting to make current VLMs viable
@@ -72,7 +72,7 @@
 - Human baseline / AI anchor / self-play / model-vs-model setup: GPT-4-Turbo, GPT-4o, GPT-4o-mini, and Qwen-VL variants are tested on the same 12 scenarios and under ablations
 - Automatic verifiability: high
 - Calibration method: 12 fixed scenarios and component ablations over VLM-Attention, RAG, and role assignment
-- Anti-contamination argument: live multimodal tactical control in SC2 is hard to reduce to memorized text patterns
+- Anti-contamination argument: no strong explicit contamination claim beyond the benchmark’s live multimodal control setting
 - Reliability or comparability concerns: the scenarios focus on micro-level battles, so benchmark success does not automatically imply full RTS strategic competence
 
 ## 7. Main contributions
@@ -104,19 +104,20 @@
 ### 11.1 Direct paper-supported facts
 - The paper introduces a multimodal SC2 environment with RGB and natural-language observations and evaluates 12 micromanagement scenarios.
 - The agent framework combines VLM-Attention, RAG, and dynamic role assignment.
-- The full system reaches reported win rates up to 87% on some scenarios, while the paper also details limitations in spatial and temporal consistency.
+- GPT-4-Turbo reaches 87% win rate on `vlm attention 1`, while GPT-4o, GPT-4o-mini, and Qwen-VL-Plus reach 79%, 76%, and 75% respectively on that scenario.
+- The paper reports limitations in spatial understanding, temporal consistency, and knowledge application on harder maps.
 
 ### 11.2 Our synthesis / interpretation
 - VLMPlayStarCraftII is especially useful for arguing that multimodal RTS evaluation changes what counts as competent play.
 - It complements the text-based SC2 papers by restoring perception burden rather than only strategic abstraction.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact scenario names and strongest per-model win rates if later drafting needs them.
-- Re-check how much the textual observation channel contributes relative to pure RGB input.
+- If later drafting needs more detail, re-check the exact relationship between the 12 evaluated scenarios in the main experiment and the 21-map collection documented in the appendix.
+- Re-check how much the textual observation channel contributes relative to pure RGB input if we later need a stronger ecological-validity comparison.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes later, because the ablation section is valuable survey material.
-- Which section to read next if needed: environment design / role assignment / component analysis
+- Should we read beyond abstract + intro? why? Already audited from the full paper; revisit only if we later need appendix-level map taxonomy or deeper ablation commentary.
+- Which section to read next if needed: component analysis / appendix map details
 - Follow-up question(s): How much of the final performance comes from multimodal perception versus scaffolded knowledge retrieval?
 
 ## 13. Registry sync
@@ -129,4 +130,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B13/VLMPlayStarCraftII.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

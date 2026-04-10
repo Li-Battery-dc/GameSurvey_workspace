@@ -16,7 +16,7 @@ Use this file to track a long reading queue without opening every batch file.
 | B10 | long-horizon-openworld | reviewed | later | 8 | 0,1,2,3,4 | Use the reviewed long-horizon cards to support parser, roguelike, sandbox, and open-world lineage comparisons. |
 | B11 | symbolic-spatial-diagnostics | reviewed | later | 7 | 0,1,2,3,4 | Use the reviewed cards as contrast material for symbolic reasoning, puzzle verifiability, and map-based planning probes. |
 | B12 | interactive-multiagent-bridges | reviewed | later | 7 | 0,1,2,3,4 | Use the reviewed collaboration and negotiation cards to tighten the multi-agent bridge into the main narrative. |
-| B13 | domain-specialist-competition | reviewed | later | 8 | 1,2,3,4 | Use the reviewed specialist cards as calibrated contrast material for poker and RTS upper-bound discussion. |
+| B13 | domain-specialist-competition | reviewed | later | 8 | 1,2,3,4 | Use the reviewed specialist cards for synthesis, especially the SC2 line for specialist metric design and interface-comparison contrasts. |
 
 ## Notes
 - Keep only `2-3` batches at `queue_tier = now`.

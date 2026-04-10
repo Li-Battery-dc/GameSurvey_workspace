@@ -8,8 +8,8 @@
 - Code link:
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
-- Review gate label: usable
+- Confidence in this card: high
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - GTO Wizard Benchmark introduces a public API and standardized evaluation framework for heads-up no-limit Texas Hold'em. Unlike spot-based benchmarks such as PokerBench, it evaluates agents directly against a fixed superhuman anchor, GTO Wizard AI, and uses AIVAT to reduce variance so that meaningful conclusions can be drawn from many fewer hands. The paper benchmarks frontier LLMs in zero-shot conditions and shows that, despite rapid progress, they remain far below the baseline established by the benchmark's specialist anchor. For this survey, it is a valuable specialist benchmark because it combines a strong fixed opponent with explicit variance-control methodology.
@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Poker provides a formal hidden-information setting where strong solver-like anchors and variance-aware evaluation make strategic competence measurable.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
+- Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
@@ -49,10 +49,10 @@
 - Secondary capability target(s): hidden-state reasoning, representation quality, and variance-aware benchmarking
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially through competitive mixed-strategy play
+- Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? no
-- Does it test long-horizon autonomy / task completion? partially
-- Does it test real-time efficiency? partially
+- Does it test long-horizon autonomy / task completion? no
+- Does it test real-time efficiency? no
 - Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Poker allows benchmark designers to measure hidden-information reasoning against a fixed strong anchor while keeping outcomes numerically rigorous.
 
@@ -66,12 +66,12 @@
 - Main ecological-validity trade-off: the benchmark gains comparability and variance control by abstracting away full live-table interaction
 
 ## 6. Evaluation protocol
-- Main score: match performance in bb/100 against fixed AI anchors
-- Auxiliary score(s): variance-reduced significance estimates via AIVAT and comparisons against Slumbot
+- Main score: luck-adjusted win rate in bb/100 via AIVAT against GTO Wizard AI
+- Auxiliary score(s): chips won/lost, detailed luck decomposition metrics, and the anchor validation result against Slumbot
 - Evaluation style: tournament / hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: models are benchmarked against GTO Wizard AI and Slumbot rather than against humans
 - Automatic verifiability: high
-- Calibration method: fixed superhuman anchor plus AIVAT variance reduction
+- Calibration method: fixed superhuman anchor plus AIVAT variance reduction, with each evaluated model playing 5000 independent hands
 - Anti-contamination argument: not central
 - Reliability or comparability concerns: dependence on a proprietary anchor and public API may limit long-term independent reproducibility
 
@@ -81,7 +81,7 @@
 - Contribution 3: Integrates AIVAT to make poker evaluation more statistically efficient.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: frontier LLMs have improved substantially, but all remain far below the benchmark's specialist baseline.
+- Core empirical takeaway: frontier LLMs have improved substantially, but all remain far below the benchmark's specialist baseline; the best model in the paper, GPT-5.3 Extra High reasoning, still scores only -16 ± 3.0 bb/100.
 - Notable model failure mode 1: weak hidden-state reasoning relative to the superhuman anchor
 - Notable model failure mode 2: poor strategic representation in a domain requiring mixed strategies and action sizing
 - Notable model failure mode 3: large gap between general reasoning progress and specialist poker competence
@@ -97,25 +97,26 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokerBench, Slumbot-based poker evaluation, solver-grounded poker AI work
 - Closest follow-up(s): future standardized poker and imperfect-information benchmarks
-- Best comparison targets inside our corpus: PokerBench, GTBench, GameBench, TMGBench
+- Best comparison targets inside our corpus: PokerBench, BeyondScaling, GTBench
 - What this paper uniquely adds relative to neighbors: It evaluates directly against a fixed superhuman poker anchor and makes variance reduction part of the benchmark design.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The paper introduces a public API and standardized evaluation framework for heads-up no-limit Texas Hold'em.
 - GTO Wizard AI is used as the main benchmark anchor, and the paper states that it defeated Slumbot by 19.4 plus or minus 4.1 bb/100.
-- The benchmark integrates AIVAT for variance reduction and reports that frontier LLMs remain far below the established baseline.
+- The benchmark integrates AIVAT for variance reduction, which the paper says yields equivalent statistical significance with ten times fewer hands than naive Monte Carlo evaluation.
+- Each evaluated LLM plays 5000 independent hands, and the best model in Table 2 is GPT-5.3 Extra High reasoning at -16 ± 3.0 bb/100.
 
 ### 11.2 Our synthesis / interpretation
-- This is one of the stronger specialist-benchmark cards for Section 5 because calibration and statistical significance are part of the scientific contribution.
+- This is one of the stronger specialist-benchmark cards for Section 3 because calibration and statistical significance are part of the scientific contribution.
 - It complements PokerBench well: PokerBench focuses on spot evaluation, while GTO Wizard Benchmark focuses on full-play benchmarking against a fixed anchor.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact hand counts and model roster used in the final benchmarking table if we later compare this paper numerically with PokerBench.
+- If later drafting needs more detail, re-check the appendix prompt template and the detailed luck decomposition metrics beyond AIVAT.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Yes, because the AIVAT setup and anchor protocol likely matter for the evaluation-protocol section.
-- Which section to read next if needed: benchmark design / variance reduction / experiments
+- Should we read beyond abstract + intro? why? Already audited from the full paper; revisit only if we later need the appendix prompt or detailed decomposition metrics.
+- Which section to read next if needed: detailed evaluation metrics appendix
 - Follow-up question(s): How much of the benchmark's value comes from AIVAT and fixed-anchor design rather than from poker itself?
 
 ## 13. Registry sync
@@ -128,4 +129,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B13/GTOWizardBenchmark.md`
 - Next action: draft-section
-- Last updated: 2026-04-08
+- Last updated: 2026-04-09

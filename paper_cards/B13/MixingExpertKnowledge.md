@@ -8,17 +8,17 @@
 - Code link:
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- This paper presents LoGos, a Go-specialist general LLM trained by mixing structured Go expertise with long chain-of-thought reasoning data, then refining with RL. It is not mainly a benchmark paper, but it contributes a Go evaluation benchmark, KataGo-Bench-1K, and uses it to show that a general LLM can approach professional Go-level next-move prediction while retaining broad reasoning performance. The paper is relevant to the survey as a specialist upper-bound case and as evidence that benchmarked domain expertise can be injected into a general model when scalable structured knowledge exists. It should not be treated as a broad game benchmark anchor.
+- This paper presents LoGos, a Go-specialist general LLM trained by mixing structured Go expertise with long chain-of-thought reasoning data, followed by GRPO reinforcement learning. It is not mainly a benchmark paper, but it contributes KataGo-Bench-1K as a Go evaluation benchmark and uses it to show that a general LLM can reach professional-level benchmark performance on next-move prediction while retaining broad reasoning performance. The paper is most relevant here as a specialist upper-bound case and as evidence that domain expertise can be injected into a general model when large-scale structured expert data and strong external engines are available. It should not be treated as a broad game benchmark anchor or as evidence of ecological full-game play.
 
 ## 2. Position in our survey
 - Why-games relevance: Go remains a classic domain for evaluating whether structured strategy expertise can be incorporated into general models.
-- Historical stage: diagnostic capability probe / specialist comparison
+- Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 1,4
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: peripheral
 
 ## 3. Design-space coding
@@ -46,7 +46,7 @@
 
 ## 4. What this benchmark measures
 - Primary capability target: specialist Go move prediction from a general LLM
-- Secondary capability target(s): interaction between domain-specific expertise and general reasoning training
+- Secondary capability target(s): interaction between domain-specific expertise, long-CoT cold start, and reinforcement learning
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? no
 - Does it test social reasoning / deception / cooperation? no
@@ -67,12 +67,12 @@
 
 ## 6. Evaluation protocol
 - Main score: accuracy on KataGo-Bench-1K
-- Auxiliary score(s): comparative Elo-style tournament analyses and general benchmark retention
+- Auxiliary score(s): comparative win rates against Go reference models, human evaluation of generated explanations, and general benchmark retention
 - Evaluation style: accuracy / hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: LoGos is compared with strong closed-source LLMs and KataGo-Human-SL models across skill levels
 - Automatic verifiability: high
 - Calibration method: a 1,000-sample benchmark annotated from KataGo plus comparative tournaments
-- Anti-contamination argument: the model’s strength is attributed to injected structured expert knowledge rather than broad pretraining alone
+- Anti-contamination argument: no explicit contamination defense; the paper instead emphasizes the scarcity of natural-language Go corpora and the use of structured expert data
 - Reliability or comparability concerns: next-move prediction is not the same as full-game play, and the benchmark is highly specialist
 
 ## 7. Main contributions
@@ -81,10 +81,10 @@
 - Contribution 3: Demonstrates that a general LLM can reach Go-specific performance above other general LLMs while retaining broad reasoning ability.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: with expert-knowledge mixing and RL, a general LLM can dramatically improve on Go and approach professional-level benchmark performance.
+- Core empirical takeaway: with expert-knowledge mixing and RL, a general LLM can dramatically improve on Go and exceed the strongest human-simulating reference model on KataGo-Bench-1K while preserving strong general-task performance.
 - Notable model failure mode 1: without domain-specific cold-start data, self-exploration fails to reach even beginner-level strength
 - Notable model failure mode 2: naive direct prediction supervision underperforms structured heuristic data construction
-- Notable model failure mode 3: the approach depends on access to scalable expert knowledge and carefully designed heuristics
+- Notable model failure mode 3: long move histories create a context curse for token-sequence models, degrading prediction accuracy as board complexity grows
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that specialist benchmarks can be advanced by heavy domain-specific data construction not available for all domains
 
 ## 9. Why this paper matters for our survey
@@ -104,19 +104,19 @@
 ### 11.1 Direct paper-supported facts
 - The paper introduces KataGo-Bench-1K, a 1,000-sample Go benchmark for LLM evaluation.
 - LoGos is trained with mixed Go expertise and long-CoT reasoning data, followed by GRPO-based RL.
-- The authors report Go benchmark performance above other general LLMs and competitive with strong human-level reference models.
+- LoGos(32B) reaches 88.6% on KataGo-Bench-1K, slightly above KataGo-HumanSL-9d at 87.8%, while the strongest non-LoGos general LLM in the table is Claude3.7-Sonnet at 34.3%.
+- The paper also constructs a 10-million-scale next-step prediction dataset and a 100K commentary dataset for Go.
 
 ### 11.2 Our synthesis / interpretation
 - This is best read as a specialist upper-bound and methodology paper, not as a survey anchor for general game benchmarking.
-- It is useful mainly for the survey’s boundary cases on domain-expert systems.
+- It is useful mainly for the survey’s boundary cases on domain-expert systems and for showing how far structured expert data plus external-engine supervision can push a general LLM.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact benchmark accuracy numbers and tournament Elo mapping if later drafting needs them.
-- Re-check whether the "professional-level" claim is benchmark-only or supported by broader full-play evidence.
+- Re-check whether the paper’s "professional-level" phrasing should be treated strictly as benchmark-and-matchup evidence rather than full ecological game-play evidence when drafting survey prose.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Only if we later need a specialist upper-bound discussion.
-- Which section to read next if needed: KataGo-Bench setup / self-exploration analysis / data-mixing studies
+- Should we read beyond abstract + intro? why? Already audited from the full paper; revisit only if we later need deeper discussion of context-curse mitigation or Go-data mixing ratios.
+- Which section to read next if needed: self-exploration analysis / context-curse section
 - Follow-up question(s): How portable is this expert-knowledge-mixing recipe to domains without a strong external engine like KataGo?
 
 ## 13. Registry sync
@@ -125,8 +125,8 @@
 - Priority: P3
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 1,4
+- Outline sections: 1,2,3,4
 - Survey role: peripheral
 - Paper card path: `paper_cards/B13/MixingExpertKnowledge.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

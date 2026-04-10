@@ -30,11 +30,11 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 | Section | Status | Current evidence base | Next move |
 | :--- | :--- | :--- | :--- |
-| 0. Lead in: Summary and why Game as Benchmark | drafting | B01, B03, B05, B10, and B12 reviewed | Open with `SmartPlay`, `GTBench`, and `Crafter` on dynamic rule-grounded evaluation, then bridge to `HumanLevelDiplomacy`, `Balrog`, `VideoGameBench`, and `AIGameStore` for social and embodied agency. |
-| 1. Taxonomy: The Evolutionary Levels of Game Environments | drafting | B01, B02, B03, B05, B07, B08, B09, B10, B12, and B13 reviewed | Build the five-level taxonomy table and use the level anchors as the running narrative rather than keeping history and taxonomy as separate top-level sections. |
-| 2. Purpose: Core Capabilities Evaluated by Games | drafting | Broad reviewed coverage across formal, social, visual, and open-world batches | Draft the capability-target subsections with one clear benchmark innovation per capability family so this section does not collapse into a paper list. |
-| 3. Paradigm: From Interaction to Evaluation | drafting | B01, B03, B05, B08, B09, B10, B12, and B13 reviewed | Separate interaction design from evaluation design, then make the privileged-interface versus ecological-validity trade-off the main through-line. |
-| 4. Synthesis: Model Bottlenecks and Future Benchmark Design | drafting | B01, B02, B03, B05, B08, B09, B10, B12, and B13 reviewed | Merge old failure-mode and future-work material into one synthesis section that pairs recurring model failures with benchmark-design weaknesses. |
+| 0. Lead in: Summary and why Game as Benchmark | drafting | B01, B03, B05, B10, B12 | Open with `SmartPlay`, `GTBench`, and `Crafter` on dynamic rule-grounded evaluation, then bridge to `HumanLevelDiplomacy`, `Balrog`, `VideoGameBench`, and `AIGameStore` for social and embodied agency. |
+| 1. Taxonomy: The Evolutionary Levels of Game Environments | drafting | B01, B02, B03, B05, B07, B08, B09, B10, reviewed B12 cards, and reviewed B13 cards | Build the five-level taxonomy table and use the level anchors as the running narrative rather than keeping history and taxonomy as separate top-level sections. |
+| 2. Purpose: Core Capabilities Evaluated by Games | drafting | Broad reviewed coverage across formal, social, visual, open-world, and specialist batches | Draft the capability-target subsections with one clear benchmark innovation per capability family so this section does not collapse into a paper list. |
+| 3. Paradigm: From Interaction to Evaluation | drafting | B01, B03, B05, B08, B09, B10, reviewed B12 cards, and reviewed B13 cards | Separate interaction design from evaluation design, then make the privileged-interface versus ecological-validity trade-off the main through-line. |
+| 4. Synthesis: Model Bottlenecks and Future Benchmark Design | drafting | B01, B02, B03, B05, B08, B09, B10, B12 reviewed, and B13 reviewed | Merge old failure-mode and future-work material into one synthesis section that pairs recurring model failures with benchmark-design weaknesses. |
 
 ## 0. Lead in: Summary and why Game as Benchmark
 
@@ -42,11 +42,13 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Core synthesis claim:
   Games combine explicit rules, sequential action, delayed consequences, hidden state, and automatic verification in a way that makes agent behavior observable rather than purely inferential.
 - Reviewed anchors:
-  `SmartPlay`, `GTBench`, `BotzoneBench`, `Crafter`, `HumanLevelDiplomacy`, `Balrog`, `VideoGameBench`, `MCU`, `AIGameStore`.
+  `SmartPlay`, `GTBench`, `BotzoneBench`, `Crafter`, `Balrog`, `VideoGameBench`, `MCU`, `AIGameStore`.
+- Historical bridge now reviewed:
+  `HumanLevelDiplomacy` is now usable as a reviewed milestone anchor for negotiation-heavy play and ecological human evaluation, but it should still be cited narrowly rather than treated as a standardized benchmark.
 - Paragraph plan:
   Paragraph 1 should use `SmartPlay`, `GTBench`, and `BotzoneBench` to argue that games restore closed-loop interaction, legal action constraints, and strategic incentives that static prompt benchmarks flatten away.
   Paragraph 2 should use `Crafter`, `Balrog`, `MCU`, and `VideoGameBench` to show the shift from formal reasoning tests toward embodied, perceptual, and long-horizon agency.
-  Paragraph 3 should use `HumanLevelDiplomacy`, `WerewolfArena`, and `TextArena` to show that games also operationalize negotiation, persuasion, and cooperation rather than only solitary planning.
+  Paragraph 3 should use `WerewolfArena` and `TextArena` as reviewed social-evaluation anchors, and use `HumanLevelDiplomacy` as a reviewed milestone bridge for negotiation and human-play evaluation while keeping protocol claims narrow.
   Paragraph 4 should use `GameplayQA`, `VideoGameBench`, and `AIGameStore` carefully to argue that games can be more contamination-resistant or saturation-resistant than static sets, but only when benchmark construction actually preserves freshness, hidden content, or a growing challenge space.
 - Keep explicit caution:
   Do not claim that all game benchmarks are inherently realistic or leakage-resistant. `SmartPlay`, `BotzoneBench`, and `PokerBench` are strong because they are structured and checkable, not because they are human-like.
@@ -73,9 +75,10 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 1.3 Level 3: Social Intelligence
 
-- Core anchors: `WerewolfArena`, `Wolf`, `HumanLevelDiplomacy`, `LLMHanabi`, `StrategicHanabi`, `LLMCoordination`, `CollabOvercooked`.
+- Core anchors: `WerewolfArena`, `Wolf`, `LLMHanabi`, `StrategicHanabi`, `LLMCoordination`, `CollabOvercooked`.
 - Draft angle:
   Social benchmarks matter because success depends on belief tracking, persuasion, deception, or partner modeling, not only on task-state optimization. Keep deduction, negotiation, and cooperation as separate sub-branches.
+  Keep `HumanLevelDiplomacy` as a historical and ecological bridge rather than treating it as a reusable standardized benchmark.
 
 ### 1.4 Level 4: Visual Agency
 
@@ -110,9 +113,9 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 2.3 Social intelligence: cooperation, negotiation, deception
 
-- Primary anchors: `WerewolfArena`, `Wolf`, `HumanLevelDiplomacy`, `LLMHanabi`, `StrategicHanabi`, `LLMCoordination`, `CollabOvercooked`.
+- Primary anchors: `WerewolfArena`, `Wolf`, `LLMHanabi`, `StrategicHanabi`, `LLMCoordination`, `CollabOvercooked`.
 - Draft claim:
-  Keep three distinct targets visible: deception and suspicion (`WerewolfArena`, `Wolf`), cooperation and partner modeling (`LLMHanabi`, `LLMCoordination`, `CollabOvercooked`), and open-ended negotiation with strategic intent (`HumanLevelDiplomacy`).
+  Keep three distinct targets visible: deception and suspicion (`WerewolfArena`, `Wolf`), cooperation and partner modeling (`LLMHanabi`, `LLMCoordination`, `CollabOvercooked`), and open-ended negotiation with strategic intent (`HumanLevelDiplomacy`, a reviewed ecological milestone rather than a standardized benchmark).
 
 ### 2.4 Visual grounding and spatial reasoning
 
@@ -128,9 +131,9 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 2.6 Time-sensitive decision-making and execution efficiency
 
-- Primary anchors: `BeyondScaling`, `VideoGameBench`, `TowerMind`, `AtariGPT`, `TextAtari`.
+- Primary anchors: `BeyondScaling`, `StarCraftIIArena`, `VideoGameBench`, `TowerMind`, `AtariGPT`, `TextAtari`.
 - Draft claim:
-  This subsection should separate reasoning quality from execution latency. `BeyondScaling` and `VideoGameBench` are especially important because they expose how agent quality changes when time pressure is preserved versus factored out.
+  This subsection should separate reasoning quality from execution latency. `BeyondScaling`, `StarCraftIIArena`, and `VideoGameBench` are especially important because they expose how agent quality changes when time pressure is preserved versus factored out, even within otherwise strong strategic systems.
 
 ### 2.7 Cross-game transfer and open-ended generalization
 
@@ -195,7 +198,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Strategic depth remains brittle under uncertainty:
   `GTBench`, `PokerBench`, `DSGBench`, and `BeyondScaling` show weak opponent modeling, poor mixed-strategy play, and a strategy-execution gap.
 - Social belief modeling is still fragile:
-  `WerewolfArena`, `Wolf`, `LLMHanabi`, `LLMCoordination`, and `HumanLevelDiplomacy` show that fluent language does not imply robust deception detection, partner reasoning, or negotiation.
+  `WerewolfArena`, `Wolf`, `LLMHanabi`, and `LLMCoordination` show that fluent language does not imply robust deception detection or partner reasoning; `HumanLevelDiplomacy` adds a reviewed ecological milestone showing that stronger negotiation performance depended on a language-plus-planning stack rather than raw dialogue fluency.
 - Perception and control remain major blockers:
   `Balrog`, `VideoGameBench`, `GameplayQA`, and `StarBench` show failures in temporal grounding, affordance detection, and latency-sensitive action.
 - Long-horizon memory and repair are still unstable:
@@ -229,5 +232,5 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 - Do not flatten `GameplayQA`, `EMemBench`, `DeepPHY`, or similar diagnostic papers into full-agent benchmarks.
 - Do not overstate anti-contamination claims for classic formal games such as `GTBench`; keep those claims benchmark-specific.
-- Keep `HumanLevelDiplomacy` framed as a historical milestone and ecological bridge, not as a standardized reusable benchmark in the same sense as the later papers.
+- Keep `HumanLevelDiplomacy` framed as a historical milestone and ecological bridge, not as a standardized reusable benchmark in the same sense as the later papers; it is now reviewed evidence, but protocol and ranking claims should still stay close to what the Science paper directly reports.
 - Keep specialist benchmarks such as `PokerBench` and `GTOWizardBenchmark` as contrasts on calibration and uncertainty, not as the center of the general-game narrative.

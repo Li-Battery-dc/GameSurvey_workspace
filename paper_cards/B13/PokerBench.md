@@ -12,13 +12,13 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- PokerBench is a benchmark and training dataset for evaluating LLM poker skill on Texas No-Limit Hold’em decision spots. It uses 1,000 pre-flop and 10,000 post-flop scenarios grounded in game-theory-optimal (GTO) strategies, and it evaluates whether a model chooses the correct action and exact wager amount. The paper also validates benchmark usefulness by showing that models with higher PokerBench scores beat weaker ones over large simulated hand samples. For this survey, PokerBench is a strong specialist benchmark because it operationalizes imperfect-information strategic decision quality without requiring full online play for every training iteration.
+- PokerBench is a specialist poker benchmark and accompanying training set for evaluating LLM decision quality on Texas no-limit hold'em spots rather than full end-to-end table play. The benchmark contains 1,000 pre-flop and 10,000 post-flop scenarios labeled with GTO references, and it scores both action accuracy and exact-match wager accuracy. The paper then validates the benchmark by showing that higher-scoring fine-tuned checkpoints also win more in 50k-hand heads-up matches, while a smaller 1,000-hand test against GPT-4 exposes the gap between GTO-style spot accuracy and exploitative live play. For this survey, PokerBench is best used as a specialist contrast on solver-grounded diagnostic evaluation, not as a broad social or ecological benchmark.
 
 ## 2. Position in our survey
 - Why-games relevance: Poker combines hidden information, opponent modeling, and strategic trade-offs in a fully formalized setting with exact solver references.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 1,2,4
+- Narrative level(s): L2 strategic reasoning
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -46,13 +46,13 @@
 
 ## 4. What this benchmark measures
 - Primary capability target: GTO-aligned poker decision making
-- Secondary capability target(s): betting-size precision, balanced strategy selection, and relation between benchmark score and real-play strength
+- Secondary capability target(s): betting-size precision, balanced strategy selection, and the relation between spot-level accuracy and match play
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially through competitive opponent modeling
+- Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? no
-- Does it test real-time efficiency? partially
+- Does it test real-time efficiency? no
 - Does it test cross-game transfer / open-ended generalization? no
 - Why is a game environment especially suitable here? Poker has exact strategic references and forces reasoning under hidden information and mixed strategies.
 
@@ -62,62 +62,62 @@
 - Interface type: natural language / structured action space / hybrid
 - Agent scaffold allowed: none in the benchmark evaluation
 - Is there privileged API access? yes; the benchmark presents solver-clean spot state rather than a raw table interface
-- How close is the setup to human play? medium-low; it captures strategic essence but abstracts away live table dynamics
-- Main ecological-validity trade-off: PokerBench gives up live adaptive play in favor of fast, solver-grounded spot evaluation
+- How close is the setup to human play? low; it captures strategic decision structure but removes table interaction, timing, and full multi-hand adaptation
+- Main ecological-validity trade-off: PokerBench gains fast, reproducible solver-grounded evaluation by abstracting away live table dynamics and most exploitative adaptation
 
 ## 6. Evaluation protocol
-- Main score: action accuracy
-- Auxiliary score(s): exact match accuracy and downstream head-to-head results over large hand samples
+- Main score: action accuracy and exact match accuracy
+- Auxiliary score(s): 50k-hand heads-up bb/100 between fine-tuned checkpoints and a 1,000-hand matchup against GPT-4
 - Evaluation style: accuracy / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: many frontier and fine-tuned LLMs are compared on the benchmark and then validated in simulated play
+- Human baseline / AI anchor / self-play / model-vs-model setup: pretrained and fine-tuned LLMs are compared on solver-labeled spots, then selected checkpoints are compared in simulated heads-up play
 - Automatic verifiability: high
-- Calibration method: spots are grounded in GTOWizard and WASM-Postflop solver outputs
-- Anti-contamination argument: the benchmark is built from many diverse solver spots rather than a small public quiz set
-- Reliability or comparability concerns: spot accuracy measures optimal decision quality but not exploitative adaptation in live multi-hand play
+- Calibration method: curated pre-flop and post-flop spot sampling grounded in GTOWizard and WASM-Postflop solver outputs, plus match-play validation
+- Anti-contamination argument: no strong explicit contamination claim beyond using diverse solver-generated spots instead of a small public quiz set
+- Reliability or comparability concerns: spot accuracy measures closeness to GTO decisions, not full exploitative or ecological skill; live validation is heads-up and therefore narrower than the 6-max spot benchmark
 
 ## 7. Main contributions
 - Contribution 1: Introduces an 11,000-spot poker benchmark with separate pre-flop and post-flop evaluation.
 - Contribution 2: Uses exact action and size metrics grounded in GTO solver outputs.
-- Contribution 3: Shows that benchmark improvements translate into stronger simulated match performance.
+- Contribution 3: Validates the benchmark by relating checkpoint scores to stronger simulated match performance while also surfacing limits of simple supervised fine-tuning.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: current frontier LLMs are weak at poker, with GPT-4 only reaching 53.55% action accuracy, but fine-tuning improves performance substantially.
-- Notable model failure mode 1: overly tight or unbalanced pre-flop ranges
-- Notable model failure mode 2: poor wager-size selection even when the action type is correct
-- Notable model failure mode 3: strategy drift away from balanced play in post-flop situations
-- Does this paper reveal a benchmark-design limitation as well? yes; it shows that full-game poker evaluation is too expensive to use alone during development, motivating spot benchmarks
+- Core empirical takeaway: current pretrained LLMs are far from GTO poker play, with GPT-4 reaching 65.54% action accuracy and 53.55% exact-match accuracy overall, while fine-tuning can lift Llama-3-8B to 80.64% and 78.26% respectively.
+- Notable model failure mode 1: poor bet-size precision even when the action category is correct
+- Notable model failure mode 2: weak post-flop decision quality relative to solver-grounded references
+- Notable model failure mode 3: simple supervised fine-tuning can improve benchmark accuracy without yielding fully robust exploitative play against off-distribution strategies
+- Does this paper reveal a benchmark-design limitation as well? yes; it argues that full-game poker evaluation alone is too costly during development, but also shows that spot-level GTO accuracy and live-play exploitability are not identical
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Supports the use of games to evaluate hidden-information strategy.
-- Best use in Section 1 (taxonomy and evolutionary levels): A specialist benchmark reflecting a move from full-play engines to faster diagnostic spot evaluation. Useful for decision-spot versus full-trajectory benchmark distinctions.
+- Best use in Section 1 (taxonomy and evolutionary levels): A specialist benchmark reflecting a move from full-play engines to faster diagnostic spot evaluation. Useful for decision-spot versus full-trajectory benchmark distinctions inside single-game specialists.
 - Best use in Section 2 (core capabilities evaluated by games): Strong evidence on uncertainty, balance, and opponent-aware play.
-- Best use in Section 3 (interaction and evaluation paradigm): A contrast case for text-only strategic state inputs. A strong reference for solver-grounded action-level accuracy metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the idea that specialist domains may need both spot and live-play evaluation.
+- Best use in Section 3 (interaction and evaluation paradigm): A strong contrast case for structured text-state inputs, solver-grounded action-level metrics, and the difference between spot evaluation and match-play validation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the idea that specialist domains may need both cheap diagnostic spot evaluation and more ecological match-play checks.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): solver-based poker AI work
-- Closest follow-up(s): exploitative LLM poker systems
-- Best comparison targets inside our corpus: BeyondScaling, BotzoneBench, PokeChamp
-- What this paper uniquely adds relative to neighbors: It validates a fast benchmark against large-sample live-play outcomes rather than assuming spot accuracy is enough.
+- Closest predecessor(s): solver-based poker AI work and earlier GPT-4 poker spot analyses
+- Closest follow-up(s): GTOWizardBenchmark and later specialist poker evaluations with stronger calibration stacks
+- Best comparison targets inside our corpus: GTOWizardBenchmark, BeyondScaling, BotzoneBench
+- What this paper uniquely adds relative to neighbors: It pairs a solver-grounded spot benchmark and training set with explicit match-play validation, then shows that the two evaluation views align only partially
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - PokerBench contains 1,000 pre-flop spots and 10,000 post-flop spots for 6-max NLH.
-- It evaluates both Action Accuracy and Exact Match Accuracy using GTO references.
-- The paper reports GPT-4 as the best tested base model at 53.55% action accuracy and shows benchmark gains correlate with simulated match wins over 50k hands.
+- It evaluates both Action Accuracy and Exact Match Accuracy using GTOWizard pre-flop labels and WASM-Postflop solver outputs.
+- GPT-4 is the best pretrained model in Table 2 with 65.54% action accuracy and 53.55% exact-match accuracy overall.
+- The paper shows that higher-scoring Llama-3-8B checkpoints win more over 50k-hand heads-up matches, while GPT-4 beats the best fine-tuned checkpoint over a separate 1,000-hand test.
 
 ### 11.2 Our synthesis / interpretation
-- PokerBench is a strong benchmark paper for specialist imperfect-information play, especially because it validates benchmark usefulness against actual match results.
-- It is best used as a contrast to broader cross-game papers rather than as a survey anchor on its own.
+- PokerBench is a strong specialist benchmark for imperfect-information reasoning because it makes solver-grounded action quality auditable and then partially validates that score with live play.
+- It is best used as a contrast to broader cross-game papers and as evidence that benchmark design in specialist domains may need both spot metrics and gameplay checks.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact post-flop exact-match numbers if later drafting uses them.
-- Re-check how much exploitative versus GTO behavior the validation matches truly capture.
+- If later drafting needs more detail, re-check the appendix style analysis around GPT-4's off-GTO "donking" behavior and how strongly that specific failure mode generalizes.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? A targeted reread may help later when discussing specialist benchmarks versus live-play evaluation.
-- Which section to read next if needed: benchmark construction / metrics / gameplay analysis
-- Follow-up question(s): How sensitive is PokerBench to exploitative but non-GTO strong play?
+- Should we read beyond abstract + intro? why? Already audited from the full paper; revisit only if the survey needs appendix-level style analysis.
+- Which section to read next if needed: gameplay analysis appendix
+- Follow-up question(s): How should the survey phrase the gap between GTO-style spot accuracy and exploitative live-play strength without overstating either side?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -125,8 +125,8 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 1,2,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B13/PokerBench.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

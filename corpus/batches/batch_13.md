@@ -25,6 +25,10 @@
 - Which papers here are benchmarks versus capability demonstrations with benchmark-like evaluation?
 - How should specialist upper bounds be compared against cross-game generalization papers?
 
+## Current Audit Note
+- All eight papers in this batch now have reliable `card-reviewed` evidence.
+- `StarCraftIIArena` is now usable as reviewed evidence for SC2 metric design, sync-versus-async trade-offs, and decision-trace instrumentation, but its interface details should still be cited narrowly because the paper's implementation description remains thin.
+
 ## Exit Criteria
 - every paper in this batch has a paper card
 - registry rows are synced

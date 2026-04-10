@@ -8,11 +8,11 @@
 - Code link:
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- AvalonBench is an early benchmark for multi-agent LLM play in the social-deduction game Resistance: Avalon. It provides a game engine, rule-based baseline bots, and ReAct-style LLM agents that act, discuss, and summarize history across the game phases of team selection, voting, questing, and assassination. The benchmark is narrow and somewhat prompt-heavy, but it is important historically because it exposes that LLMs can sound socially competent in discussion while still making weak strategic decisions. For this survey, AvalonBench is best used as an early multi-agent social-game probe rather than a mature benchmark platform.
+- AvalonBench is an early benchmark for multi-agent LLM play in the social-deduction game Resistance: Avalon. It packages a five-player Avalon environment, naive rule-based bots, and ReAct-style LLM agents that generate actions, public discussion, and recursive game summaries across team selection, voting, quest, and assassination phases. The paper is historically useful because it shows that LLMs can extract identity clues from dialogue yet still fail to execute even simple role-specific strategies, especially on the good side. For this survey, AvalonBench is best used as an early prompt-mediated social-deduction probe rather than as a mature or highly ecological benchmark platform.
 
 ## 2. Position in our survey
 - Why-games relevance: Social deduction games force agents to combine hidden information, dialogue, deception, and structured decision phases.
@@ -36,7 +36,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: single game
-- Number of games / tasks: Avalon games in five-player settings with multiple role configurations
+- Number of games / tasks: five-player Avalon in baseline, Assassin Set, Servant Set, and a 60-game GPT-3.5 multi-LLM arena
 - Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
@@ -57,67 +57,67 @@
 - Why is a game environment especially suitable here? Avalon compresses hidden information, coordination, and adversarial dialogue into a short, structured interaction loop.
 
 ## 5. Interaction paradigm
-- Observation channel: role information, summaries of prior rounds, discussion transcripts, and phase prompts
-- Action channel: team choices, votes, quest decisions, assassination choices, and discussion messages
+- Observation channel: game rules, private role information, recursive game summaries, current-round discussion transcripts, and phase-specific request prompts; in bot-comparison runs the summary only uses mission outcomes, not voting history
+- Action channel: team choices, public votes, quest pass or fail decisions, assassination choices, and one public discussion utterance per round
 - Interface type: natural language / structured action space / hybrid
-- Agent scaffold allowed: summarization
-- Is there privileged API access? yes; the environment provides parsed state and role information
-- How close is the setup to human play? medium; game logic is authentic, but communication and memory are heavily prompt-mediated
-- Main ecological-validity trade-off: the benchmark captures real social deduction structure, but the heavy use of summaries and prompt parsers simplifies some cognitive burdens
+- Agent scaffold allowed: zero-shot CoT / recursive summarization / parser LLM
+- Is there privileged API access? yes; the environment supplies structured state, private role information, and parser-mediated action execution
+- How close is the setup to human play? medium-low; the rules are authentic, but discussion is turn-ordered and sentence-limited, and actions are routed through a separate parser
+- Main ecological-validity trade-off: the benchmark keeps the hidden-role discussion loop, but simplifies play through recursive summaries, parser mediation, scripted speaking order, and restricted voting-history access in baseline comparisons
 
 ## 6. Evaluation protocol
-- Main score: win rate in role-specific settings
-- Auxiliary score(s): assassination win rate and deduction accuracy for servant roles
+- Main score: role-conditioned win rate
+- Auxiliary score(s): mission win rate, assassination win rate, assassination accuracy, and servant deduction accuracy
 - Evaluation style: win rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: LLM agents are compared against deterministic baseline bots in assassin and servant settings, with and without discussion
+- Human baseline / AI anchor / self-play / model-vs-model setup: the LLM replaces either the Assassin or one Servant against naive bots, with and without discussion; the paper also reports a GPT-3.5 multi-LLM self-play arena
 - Automatic verifiability: high
 - Calibration method: repeated games with fixed role setups and separate role-conditioned metrics
-- Anti-contamination argument: live multi-agent play and discussion are harder to memorize than static QA benchmarks
-- Reliability or comparability concerns: benchmark conclusions depend strongly on the handcrafted baseline bots, prompt design, and summary quality
+- Anti-contamination argument: not central
+- Reliability or comparability concerns: LLM runs are small-sample, conclusions depend on naive baseline design and prompt/parser scaffolding, and bot-comparison runs intentionally withhold voting-history information for parity with the baselines
 
 ## 7. Main contributions
 - Contribution 1: Builds a playable Avalon benchmark with role-aware prompting and baseline bots.
-- Contribution 2: Separates action, discussion, and history summarization within the LLM agent loop.
-- Contribution 3: Shows that fluent discussion does not imply strong social-game strategy.
+- Contribution 2: Separates action generation, public discussion, recursive history summarization, and parser-based action extraction inside the agent loop.
+- Contribution 3: Shows that fluent discussion and decent deduction do not imply strong social-game strategy.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: LLMs often infer identities reasonably well from discussion but still lose due to poor strategic actions and unreliable deception.
-- Notable model failure mode 1: weak role-specific action selection despite good verbal analysis
-- Notable model failure mode 2: leaking evil identity through unnatural or inconsistent dialogue
-- Notable model failure mode 3: over-reliance on prompts and summaries rather than grounded strategic tracking
-- Does this paper reveal a benchmark-design limitation as well? yes; it shows that social-game evaluation can be confounded by prompt scaffolding and bot quality
+- Core empirical takeaway: LLMs can use discussion to infer identities, but often fail to convert that information into robust role-specific strategy; discussion especially helps assassin-side Merlin kills, while servant-side play remains well below the naive baseline.
+- Notable model failure mode 1: poor simple policy execution when discussion is removed or when the model must match naive role-specific heuristics
+- Notable model failure mode 2: evil players leak their own identity or speak inconsistently during discussion
+- Notable model failure mode 3: relatively strong deduction accuracy does not translate into stronger servant decisions
+- Does this paper reveal a benchmark-design limitation as well? yes; the results are materially conditioned on prompt/parser/summarization design and on naive bots that ignore voting history
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Early evidence that games can expose social reasoning gaps beyond static chat quality.
 - Best use in Section 1 (taxonomy and evolutionary levels): Important as an early social-deduction LLM benchmark. Helps define hidden-role, dialogue-heavy game benchmarks.
 - Best use in Section 2 (core capabilities evaluated by games): Supports discussion of deduction, deception, and cooperation under uncertainty.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful for role-prompt plus summary-based interaction loops. Good example of role-conditioned win-rate analysis.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for role-prompt plus recursive-summary interaction loops, parser-mediated action extraction, and role-conditioned evaluation.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports later calls for stronger multi-agent evaluation and less prompt-dependent setups.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): Werewolf-style social deduction studies
-- Closest follow-up(s): GameArena, DSGBench
-- Best comparison targets inside our corpus: WerewolfArena, Wolf, GameArena, DSGBench
-- What this paper uniquely adds relative to neighbors: It is an early concrete implementation of phase-structured LLM social-deduction play with separate discussion and action loops.
+- Closest predecessor(s): early hidden-role or Werewolf-style LLM social-deduction case studies
+- Closest follow-up(s): WerewolfArena, Wolf, GameArena
+- Best comparison targets inside our corpus: WerewolfArena, Wolf, GameArena, HumanLevelDiplomacy
+- What this paper uniquely adds relative to neighbors: It is an early concrete Avalon benchmark with phase-structured public discussion, recursive summaries, and role-conditioned replacement tests against explicit baseline bots.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - AvalonBench includes a game environment, rule-based bots, and ReAct-style LLM agents for Avalon.
-- It evaluates assassin and servant settings and reports win-rate-style metrics plus servant deduction accuracy.
-- The paper finds that GPT-3.5 improves with discussion in some settings but still underperforms baseline strategies overall.
+- In baseline-comparison runs, the LLM replaces either the Assassin or one Servant, and only mission outcomes rather than voting history are fed back into the summary to match the naive baselines.
+- GPT-3.5 with discussion reaches 66.7% total evil win rate and 66.7% assassination accuracy in the Assassin Set, while GPT-3.5 with discussion as a Servant reaches 22.2% win rate versus 38.2% for the naive servant baseline.
 
 ### 11.2 Our synthesis / interpretation
 - AvalonBench is historically important but methodologically lighter than later social or multi-game benchmark platforms.
-- It is most useful as a contrast case showing that discussion fluency is not the same as strategic social intelligence.
+- Its safest survey use is as a historical L3 benchmark and interface-design contrast, not as strong evidence of ecological human-like social play.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact role distributions and game counts if later drafting needs them.
-- Re-check whether later versions or forks of the environment changed the baseline bot assumptions.
+- Re-check Appendix A only if later drafting needs exact prompt templates or parser prompts.
+- Re-check the multi-LLM self-play section if we later want to compare social-deduction failure patterns across self-play and bot-baseline settings.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Only selectively later if we need exact role-metric definitions.
-- Which section to read next if needed: benchmark setup / baseline strategies / results analysis
-- Follow-up question(s): Which observed errors come from social reasoning limits versus prompt/parser brittleness?
+- Should we read beyond abstract + intro? why? No immediate follow-up needed; the full paper has been read for this audit. Reopen the appendix only if we need exact prompt text or dialogue examples.
+- Which section to read next if needed: appendix prompts / multi-LLM self-play analysis
+- Follow-up question(s): How should later social-deduction benchmarks be compared once they replace naive-bot baselines with stronger evaluation instrumentation?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -128,5 +128,6 @@
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B12/AvalonBench.md`
+- Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09

@@ -12,13 +12,13 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- PokéChamp is primarily a specialist agent paper, but it includes a substantial evaluation ecosystem for competitive Pokémon battling that makes it valuable for this survey. The agent integrates LLMs into minimax search for action sampling, opponent modeling, and value estimation, and it is evaluated through offline battle datasets, 1,000 puzzle scenarios, arena play against heuristic and LLM baselines, and live Pokémon Showdown ladder games. The results show that a language-model-guided planning system can reach expert-level competitive performance without Pokémon-specific pretraining of the base LLM itself. For this survey, PokeChamp is best used as a strong specialist upper bound and a case study in LLM-plus-search design.
+- PokéChamp is primarily a specialist agent paper, not a benchmark paper, but it contributes a rich evaluation ecosystem for competitive Pokémon battling. The system inserts LLMs into minimax search for player action sampling, opponent modeling, and leaf value estimation, then evaluates the resulting agent with a 3M-game replay corpus, offline action-prediction tasks, 1,000 1v1 puzzles plus mechanic-specific puzzles, arena matches against heuristic and LLM baselines, and live Pokémon Showdown ladder play. The paper shows that an LLM-guided planning system can reach expert-level Pokémon performance without Pokémon-specific finetuning of the base model, but that this performance still depends on structured search, a world model, and nontrivial engineering around time constraints. For this survey, PokéChamp is best used as a specialist upper-bound case study in LLM-plus-search design rather than as a general benchmark anchor.
 
 ## 2. Position in our survey
 - Why-games relevance: Pokémon battles stress hidden information, long horizons, combinatorial action spaces, and opponent modeling in a popular competitive game.
-- Historical stage: ecological agent benchmark / specialist comparison
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
-- Most relevant outline section(s): 1,2,4
+- Historical stage: ecological agent benchmark
+- Narrative level(s): L2 strategic reasoning
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -36,7 +36,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: single game with multiple evaluation modes
-- Number of games / tasks: 3M replay dataset, 1,000 puzzle scenarios, arena evaluations, and live ladder games
+- Number of games / tasks: 3M-plus replay dataset, 1,000 1v1 puzzle scenarios, mechanic-specific puzzles, arena evaluations, and live ladder games
 - Benchmark intent: specialist evaluation
 
 ### 3.4 Modality
@@ -49,7 +49,7 @@
 - Secondary capability target(s): opponent modeling, search under uncertainty, and use of special mechanics such as Terastallization and Dynamax
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? partially through opponent modeling
+- Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? yes
@@ -60,24 +60,24 @@
 - Observation channel: symbolic battle state, move history, and learned/statistical world-model information
 - Action channel: move or switch decisions selected through minimax plus LLM modules
 - Interface type: API / hybrid
-- Agent scaffold allowed: planner / retrieval / opponent model / value model
+- Agent scaffold allowed: planner / one-step lookahead / world model / opponent model / value model
 - Is there privileged API access? yes
 - How close is the setup to human play? medium-low; the battle is authentic, but the agent uses symbolic state and internal planning modules rather than a native UI
 - Main ecological-validity trade-off: the system preserves real competitive mechanics and live ladder play, but with substantial structured search and world-model support
 
 ## 6. Evaluation protocol
 - Main score: win rate and Elo in arena play and online ladder play
-- Auxiliary score(s): puzzle win rate, average turns, and specialized mechanic-use analyses
+- Auxiliary score(s): offline action-prediction accuracy, puzzle win rate, average turns, and specialized mechanic-use analyses
 - Evaluation style: win rate / Elo / hybrid
 - Human baseline / AI anchor / self-play / model-vs-model setup: PokeChamp is compared against heuristic bots, prior LLM agents, and human ladder opponents
 - Automatic verifiability: high
 - Calibration method: large replay dataset, at least 25 matches per pairwise arena experiment, and live ladder evaluation
-- Anti-contamination argument: live simulator battles and online ladder games reduce the relevance of memorized answer patterns
-- Reliability or comparability concerns: performance is sensitive to metagame shifts, timeouts, and the quality of the world model and opponent model
+- Anti-contamination argument: no strong explicit anti-contamination claim; the paper instead warns that online ladder evaluation should be limited to avoid contamination and burdening human players
+- Reliability or comparability concerns: performance is sensitive to metagame shifts, timeouts, static opponent modeling, and the quality of the world model and search budget
 
 ## 7. Main contributions
 - Contribution 1: Builds a language-model-guided minimax agent for competitive Pokémon.
-- Contribution 2: Provides a large replay dataset and puzzle-style evaluation scenarios.
+- Contribution 2: Provides a large replay dataset together with action-prediction tasks and puzzle-style evaluations.
 - Contribution 3: Demonstrates expert-level online performance and strong wins over heuristic and prior LLM baselines.
 
 ## 8. Main findings and failure modes
@@ -97,26 +97,26 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokéLLMon
 - Closest follow-up(s): future hybrid planning agents
-- Best comparison targets inside our corpus: PokerBench, LLMPlayStarCraftII, VLMPlayStarCraftII
-- What this paper uniquely adds relative to neighbors: It shows a particularly strong hybrid design where the LLM is not the whole policy but a component inside minimax planning.
+- Best comparison targets inside our corpus: PokerBench, GTOWizardBenchmark, LLMPlayStarCraftII
+- What this paper uniquely adds relative to neighbors: It shows a particularly strong hybrid design where the LLM is not the whole policy but one component inside minimax search, opponent modeling, and world-model-guided planning.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- The paper uses a replay dataset of over 3 million Pokémon Showdown games and a benchmark of 1,000 1v1 puzzle scenarios.
-- PokéChamp with GPT-4o reports 84% win rate against the Abyssal bot in Gen 9 OU and estimated online Elo around 1300-1500.
-- The paper reports that the smaller Llama 3.1 8B version still beats the prior strongest LLM-based Pokémon bot.
+- The paper uses a replay dataset of over 3 million Pokémon Showdown games, including more than 500,000 high-Elo matches, and a benchmark of 1,000 1v1 puzzle scenarios.
+- In Gen 9 OU, PokéChamp with GPT-4o reports 84% win rate against the Abyssal bot and Elo 1268 in arena evaluation.
+- The smaller Llama 3.1 8B version still beats the prior strongest LLM-based Pokémon bot, PokéLLMon with GPT-4o, by reporting a 64% win rate.
+- On the live Showdown ladder, about one third of games were lost on time; after removing timeout losses, the paper estimates PokéChamp at roughly 1300-1500 Elo.
 
 ### 11.2 Our synthesis / interpretation
 - PokeChamp is one of the strongest specialist upper-bound systems in the corpus, but it should not be mistaken for a general benchmark platform.
-- It is especially useful for showing how much structured planning can amplify an LLM in competitive games.
+- It is especially useful for showing how much structured planning, one-step lookahead, and opponent modeling can amplify an LLM in competitive games.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact ladder win-rate computation excluding timeout losses if later drafting uses it.
-- Re-check how much the one-step world model versus the LLM modules each contribute in ablations.
+- If later drafting needs more detail, re-check the appendix discussion of stall and excessive-switching failures and the Gen 8 Random Battles appendix numbers.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Only if we later need a specialist-system case study.
-- Which section to read next if needed: evaluation on full games / puzzle benchmarks / limitation analysis
+- Should we read beyond abstract + intro? why? Already audited from the full paper; revisit only if we later need appendix-level weakness analysis or Gen 8 comparisons.
+- Which section to read next if needed: full-game ladder analysis / appendix failure cases
 - Follow-up question(s): How robust is PokéChamp to metagame drift without refreshing its historical statistics?
 
 ## 13. Registry sync
@@ -125,8 +125,8 @@
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B13
-- Outline sections: 1,2,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B13/PokeChamp.md`
 - Next action: draft-section
-- Last updated: 2026-04-05
+- Last updated: 2026-04-09
