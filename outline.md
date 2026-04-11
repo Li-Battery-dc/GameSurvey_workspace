@@ -9,29 +9,30 @@ high-level narrative stages, all sections follow or recall:
 - Level 4: Visual Agency — Can it play like a human? (BALROG, VideoGameBench)
 - Level 5: Cross-Game Generalization — Can it play anything? (Orak, GameVerse, AI GAMESTORE)
 
-## 0. Lead in: Summary and why Game as Benchmark
+## 0. Lead in: Why Games as Benchmarks
 Goal:
-- Establish why games are a uniquely valuable benchmark environment for LLMs and VLMs by synthesizing:
-1. evidence that games provide dynamic, multi-step, interactive, strategic, and relatively contamination-resistant evaluation settings. This section should clarify what gaps in static QA-style benchmarks games can fill. 
-2. Foundation models change from formal reasoning with text to embodied and social agency
-3. Visual ability enable models to play like human and compare with humans.
-   
+- Open with the benchmark mismatch rather than with the taxonomy. First explain why static QA-style and one-shot multimodal tests are weak proxies for continuous agent behavior such as long-horizon planning, adaptive recovery, and state tracking.
+- Reframe games as human-calibrated capability probes rather than as a loose genre collection. Their value comes from explicit rules, sequential interaction, delayed consequences, and auditable progress across diverse human game structures.
+- Make the benchmark-design tension explicit: raw pixels, GUI layouts, and native controls are closer to human play, while textified states or semantic APIs make evaluation tractable but alter the capability demands.
+- Introduce the emerging front-end/back-end split in benchmark design: preserve human-like interaction on the front end when possible, while exploiting evaluator-only game-state access or other verifiable signals on the back end for robust scoring.
+- Preview the survey's four follow-up dimensions in a way that cleanly hands off to taxonomy, capability mapping, paradigm analysis, and final synthesis.
+
 Need evidence from:
-- foundational framing papers, P0
-- benchmark papers with explicit motivation
-- examples spanning text to embodied-like interaction
+- foundational framing papers and P0 anchors on why static evaluation misses interactive agency
+- representative benchmark papers showing games as capability probes across formal, social, and visual settings
+- platform and methodology papers on interface trade-offs, human-relative breadth, and verifiable evaluation
 
 Subsections:
-0.1 Why static agent benchmarks need games
-0.2 From rule-grounded evaluation to social and embodied agency
-0.3 From fixed game tasks to broad and open-ended benchmark platforms
-0.4 Contribution preview and roadmap for the rest of the survey
+0.1 Why static QA-style benchmarks and one-shot multimodal tests are not enough
+0.2 Why games: human-calibrated capability probes instead of a genre taxonomy
+0.3 Front-end interaction versus back-end evaluation in game benchmark design
+0.4 Contribution preview and roadmap
 
 Contribution preview:
-- Organize the literature with a five-level narrative taxonomy from rule following to cross-game generalization.
-- Compare benchmarks not only by capability target but also by game structure, world structure, modality, interface, and evaluation design.
-- Argue that the main methodological fault line in the field is not only task difficulty but also interface privilege, calibration strategy, and protocol comparability.
-- Distill recurring model bottlenecks and benchmark-design bottlenecks into a forward design agenda for future game benchmarks.
+- Introduce a five-level narrative taxonomy together with an orthogonal design-space view, organizing benchmarks by game structure, world structure, benchmark scope, modality, interface, and evaluation intent rather than by surface genre alone.
+- Map different game environments to the specific cognitive and agentic capabilities they expose, from rule grounding and strategic reasoning to visual control and cross-game transfer.
+- Analyze the interaction-evaluation pipeline, especially the trade-off between human-like interfaces, privileged abstractions, calibration quality, and protocol comparability.
+- Synthesize recurring model bottlenecks together with unresolved benchmark-design flaws to motivate more scalable next-generation game evaluation.
 
 ## 1. Taxonomy: The Evolutionary Levels of Game Environments
 Goal:

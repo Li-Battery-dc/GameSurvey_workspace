@@ -54,7 +54,8 @@ Repo-local skills live in `.codex/skills/`.
 - Batch files: `corpus/batches/batch_XX.md`
 - Default paper card path: `paper_cards/{batch_id}/{paper_id}.md`
 - Active drafting workspace: `writing.md`
-- Draft content included: `script.md`.  keep it aligned with the latest `writing.md` and `outline.md` plan.
+- Draft handoff file: `script.md`. When the user asks for copy-ready prose, write or revise `script.md` and keep it aligned with the latest `writing.md` and `outline.md` plan.
+- Citation rule for draft prose: when writing `script.md` or other copy-ready survey text, place citations directly as `paper_id` from the registry, using the in inline parenthetical form, for example `(SmartPlay; GTBench)` 
 - Registry status vocabulary: `triaged`, `card-draft`, `card-reviewed`, `finalized`
 - Queue tiers: `now`, `next`, `later`, `hold`
 - `paper_id` should be stable, title-aligned, and readable. Use PascalCase or acronym-preserving CamelCase such as `SmartPlay`, `CKArena`, `GameplayQA`, or `GTBench` instead of lowercase slugs.
