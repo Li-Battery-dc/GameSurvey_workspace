@@ -51,7 +51,7 @@ Subsections:
 1.1 Level 1: Rule Following - Games as rule-grounded formal containers 
 1.2 Level 2: Strategic Reasoning — Planning and optimization under uncertainty through diagnostic game probes
 1.3 Level 3: Social Intelligence — Multi-agent cooperation, deception, and network dynamics (`Werewolf Arena`, `WOLF`)
-1.4 Level 4: Visual Agency — Real-Time Perception and Embodied Control
+1.4 Level 4: Visual Agency — Real-Time Perception, Embodied Control, Spatial Reasoning
 1.5 Level 5: Cross-Game Generalization — Open-ended transfer and generalist agents (`Orak`, `GameVerse`, `AI GAMESTORE`)
 
 ## 2. Purpose: Core Capabilities Evaluated by Games
@@ -89,3 +89,5 @@ Goal:
 - Identify the major unresolved questions in benchmark design and propose directions for building more unified, scalable game benchmarks. Especially around generalization, interface standardization, calibration. 
 
 subsections open for final analyse
+
+Knowing-Doing gap(Barlog), 
