@@ -6,7 +6,7 @@ high-level narrative stages, all sections follow or recall:
 - Level 1: Rule Following — Can it make legal moves? (SmartPlay, GTBench)
 - Level 2: Strategic Reasoning — Can it think effectively? (PokerBench, DSGBench)
 - Level 3: Social Intelligence — Can it cooperate and deceive? (Werewolf Arena, WOLF)
-- Level 4: Visual Agency — Can it play like a human? (BALROG, VideoGameBench)
+- Level 4: Visual Agency — Can it play like a human? (BALROG, StarBench)
 - Level 5: Cross-Game Generalization — Can it play anything? (Orak, GameVerse, AI GAMESTORE)
 
 ## 0. Lead in: Why Games as Benchmarks

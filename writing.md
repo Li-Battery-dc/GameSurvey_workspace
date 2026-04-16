@@ -23,7 +23,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Level 1: Rule Following — Can it make legal moves? (`SmartPlay`, `GTBench`)
 - Level 2: Strategic Reasoning — Can it think effectively? (`PokerBench`, `DSGBench`)
 - Level 3: Social Intelligence — Can it cooperate and deceive? (`WerewolfArena`, `Wolf`)
-- Level 4: Visual Agency — Can it play like a human? (`Balrog`, `VideoGameBench`)
+- Level 4: Visual Agency — Can it play like a human? (`Balrog`, `StarBench`)
 - Level 5: Cross-Game Generalization — Can it play anything? (`Orak`, `GameVerse`, `AIGameStore`)
 
 ## Section Tracker
@@ -87,7 +87,8 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 1.4 Level 4: Visual Agency
 
-- Core anchors: `Balrog`, `VideoGameBench`, `StarBench`, `FlashAdventure`, `GameplayQA`, `MCU`.
+- Core anchors: `Balrog`, `StarBench`, `FlashAdventure`, `GameplayQA`, `MCU`.
+- Supporting comparison case: `VideoGameBench` for raw-screen control, walkthrough-frame checkpoint scoring, and the pause-versus-real-time trade-off.
 - Draft angle:
   This level preserves more of the human play loop: pixels, GUI control, raw timing pressure, and richer world dynamics. The section should stress that visual agency is not one thing; passive gameplay understanding (`GameplayQA`) is different from end-to-end control (`VideoGameBench`, `FlashAdventure`, `MCU`).
 
@@ -124,7 +125,8 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 2.4 Visual grounding and spatial reasoning
 
-- Primary anchors: `Balrog`, `VideoGameBench`, `GameplayQA`, `VLMPlayStarCraftII`, `StarBench`.
+- Primary anchors: `Balrog`, `GameplayQA`, `VLMPlayStarCraftII`, `StarBench`.
+- Supporting comparison cases: `VideoGameBench` for raw-frame control failures and very low-score qualitative analysis; `AtariGPT` for the gap between visual understanding and spatially grounded low-level action.
 - Draft claim:
   Game benchmarks are particularly useful here because perception errors immediately propagate into bad control, missed affordances, or false event attribution.
 
@@ -136,9 +138,10 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 2.6 Time-sensitive decision-making and execution efficiency
 
-- Primary anchors: `BeyondScaling`, `StarCraftIIArena`, `VideoGameBench`, `TowerMind`, `AtariGPT`, `TextAtari`.
+- Primary anchors: `BeyondScaling`, `StarCraftIIArena`, `TowerMind`, `TextAtari`.
+- Supporting comparison case: `VideoGameBench` for the gap between strict real-time play and its paused `Lite` variant.
 - Draft claim:
-  This subsection should separate reasoning quality from execution latency. `BeyondScaling`, `StarCraftIIArena`, and `VideoGameBench` are especially important because they expose how agent quality changes when time pressure is preserved versus factored out, even within otherwise strong strategic systems.
+  This subsection should separate reasoning quality from execution latency. `BeyondScaling` and `StarCraftIIArena` are the cleaner time-pressure comparisons. `VideoGameBench` is still useful as a raw-visual case because its paused `Lite` setting shows that some failures persist after reaction deadlines are relaxed, but that ablation is not directly equivalent to the original real-time task. `AtariGPT` can appear here only as a secondary caveat on systems feasibility, since its stronger contribution is the decomposition of low-level visual-action failure rather than a clean latency study.
 
 ### 2.7 Cross-game transfer and open-ended generalization
 
@@ -163,21 +166,24 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Action-channel ladder:
   discrete legal moves;
   natural-language commands;
-  tool or API calls;
-  low-level GUI or controller-like actions.
+  semantic action tuples or tool/API calls (`StarBench` TA, `Orak`, `MineNPCTask`);
+  low-level GUI or controller-like actions (`StarBench` DC, `VideoGameBench`, `FlashAdventure`).
 - Main synthesis claim:
-  Benchmark results are not comparable unless the paper discloses how much state abstraction, legal-action exposure, planning scaffolding, memory support, and tool mediation the agent receives.
+  Benchmark results are not comparable unless the paper discloses how much state abstraction, legal-action exposure, planning scaffolding, memory support, and tool mediation the agent receives. `StarBench` is the cleanest matched example because it keeps tasks and metrics fixed while shifting from screenshot-to-primitive control to semantic tuples plus OCR / detection aids.
 - Core contrast set:
   `SmartPlay` and `BotzoneBench` for privileged rule-clean play;
   `Orak` and `MineNPCTask` for scaffolded API play;
+  `StarBench` for matched low-level GUI versus semantic-action control on identical tasks;
   `FlashAdventure`, `MCU`, and `VideoGameBench` for more human-like control;
   `GameplayQA` as a boundary case that keeps perception but drops action.
 
 ### 3.2 Evaluation: from result metrics to diagnostic instrumentation
 
 - Result-based metrics:
-  win rate, reward, native score, completion, milestone progress, and checkpoint coverage.
+  win rate, reward, native score, completion, milestone progress, family-native combat metrics with different task objectives (`StarBench`), human-normalized reward in fixed-horizon Atari rollouts (`AtariGPT`), and walkthrough-frame checkpoint coverage (`VideoGameBench`).
 - Process-level metrics:
+  paired visual / spatial / acceptable-strategy / identification diagnostics (`AtariGPT`);
+  ask-rate, per-ask effect, and normalized ask efficiency (`StarBench`);
   regret and equilibrium distance (`GTBench`);
   statement-level deception and suspicion trajectories (`Wolf`);
   collaboration or coordination submetrics (`LLMCoordination`, `CollabOvercooked`);
@@ -190,7 +196,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Main synthesis claim:
   Evaluation design is now a benchmark contribution in its own right. The survey should explicitly compare stable anchors, live leaderboards, human-vs-model comparison, and automatic judges instead of treating them as interchangeable scoring layers.
 - Cross-paper caution:
-  The survey should not compare a solver-grounded specialist accuracy score (`PokerBench`) to a live leaderboard (`TextArena`) or an automatic VLM judge (`MCU`) as if they lie on one common scale.
+  The survey should not compare a solver-grounded specialist accuracy score (`PokerBench`), a live leaderboard (`TextArena`), `StarBench`'s family-specific native RPG metrics, heuristic walkthrough-frame checkpoint matching (`VideoGameBench`), or an automatic VLM judge (`MCU`) as if they lie on one common scale.
 
 ## 4. Synthesis: Model Bottlenecks and Future Benchmark Design
 
@@ -205,14 +211,14 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Social belief modeling is still fragile:
   `WerewolfArena`, `Wolf`, `LLMHanabi`, and `LLMCoordination` show that fluent language does not imply robust deception detection or partner reasoning; `HumanLevelDiplomacy` adds a reviewed ecological milestone showing that stronger negotiation performance depended on a language-plus-planning stack rather than raw dialogue fluency.
 - Perception and control remain major blockers:
-  `Balrog`, `VideoGameBench`, `GameplayQA`, and `StarBench` show failures in temporal grounding, affordance detection, and latency-sensitive action.
+  `Balrog`, `VideoGameBench`, `GameplayQA`, and `StarBench` show failures in temporal grounding, affordance detection, and latency-sensitive action; `StarBench` is especially useful because its direct-vs-tool-assisted split shows how much failure comes from grounding rather than task logic.
 - Long-horizon memory and repair are still unstable:
   `FlashAdventure`, `MineNPCTask`, `EMemBench`, `TextQuests`, and `MCU` repeatedly surface clue forgetting, inventory misuse, and weak recovery after mistakes.
 
 ### 4.2 Benchmark-design bottlenecks
 
 - Interface privilege distorts comparability:
-  symbolic or API-heavy benchmarks can diagnose reasoning well, but they should not be presented as direct evidence of human-like play.
+  symbolic or API-heavy benchmarks can diagnose reasoning well, but they should not be presented as direct evidence of human-like play; `StarBench` is a useful anchor because it demonstrates this distortion inside one matched task suite.
 - Evaluation protocols are fragmented:
   anchor ladders, arena ratings, human baselines, judge models, and validator pipelines each answer different questions.
 - Process metrics help, but they also introduce new assumptions:

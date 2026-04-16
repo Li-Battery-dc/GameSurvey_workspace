@@ -7,7 +7,7 @@ Use this file to track the writing-aligned evidence queue without opening every 
 | B01 | rule-grounded-foundations | reviewed | now | 7 | 0,1,2,3 | Use this batch to draft the lead-in, Level 1 taxonomy, and the rule-grounding/interface trade-off sections. |
 | B02 | strategic-uncertainty-and-adaptation | reviewed | now | 8 | 1,2,3,4 | Use this batch to draft Level 2, Section 2.2, and the strategy-versus-execution discussion in the synthesis. |
 | B03 | social-intelligence-and-coordination | reviewed | now | 12 | 0,1,2,3,4 | Use this batch to draft Level 3 and the cooperation/deception/negotiation subsections in Sections 2 and 4. |
-| B04 | visual-agency-and-ecological-control | reviewed | next | 11 | 0,1,2,3,4 | Use this batch to draft Level 4 and the observation-channel/action-channel ladder in Section 3.1. |
+| B04 | visual-agency-and-ecological-control | reviewed | next | 12 | 0,1,2,3,4 | Use this batch to draft Level 4 and the observation-channel/action-channel ladder in Section 3.1. |
 | B05 | long-horizon-memory-open-worlds | reviewed | next | 10 | 0,1,2,3,4 | Use this batch to draft Section 2.5 and the long-horizon failure analysis in Section 4.1. |
 | B06 | cross-game-generalization-platforms | reviewed | next | 7 | 0,1,2,3,4 | Use this batch to draft Level 5 and Section 2.7 on transfer, scale, and open-ended benchmark growth. |
 | B07 | evaluation-paradigms-and-instrumentation | reviewed | next | 9 | 0,1,3,4 | Use this batch to draft Section 3.2 and the benchmark-design bottlenecks in Section 4.2. |
