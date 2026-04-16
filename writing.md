@@ -45,8 +45,8 @@ This file is the active drafting workspace for the survey on game benchmarks for
   Present games as capability probes rather than as a genre list. Their value is that they combine explicit rules, sequential interaction, auditable progress, and behaviorally meaningful outcomes across formal, social, and visual settings.
 - Human-calibrated angle:
   Sync with the script's stronger claim that the space of human games is a culturally evolved and human-calibrated source of capability coverage. The point is not that games are automatically realistic, but that their structural diversity exposes different agentic demands inside repeatable interactive loops.
-- Interface and evaluation tension:
-  Bring in the script's main benchmark-design line. Human-like front ends use pixels, GUI layouts, and native controls, while many practical benchmarks textify states or expose semantic APIs to make agents tractable. That abstraction is useful, but it changes the capability being measured.
+- Semantic privilege vs. ecological interaction:
+  Bring in the script's main benchmark-design line. Human-like front ends use pixels, complex GUI layouts, and native controls, while many practical benchmarks grant **semantic privilege** by textifying states or exposing structured APIs to make agents tractable (StarBench). This abstraction masks the grounding complexity required for genuine agency.
 - Front-end/back-end split:
   State explicitly that recent work increasingly separates ecological interaction from robust evaluation: keep the observation-action loop as human-like as possible on the front end, while using evaluator-only state access, verifiable progress signals, or other backend instrumentation for scoring.
 - Section handoff:
@@ -90,7 +90,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Core anchors: `Balrog`, `StarBench`, `FlashAdventure`, `GameplayQA`, `MCU`.
 - Supporting comparison case: `VideoGameBench` for raw-screen control, walkthrough-frame checkpoint scoring, and the pause-versus-real-time trade-off.
 - Draft angle:
-  This level preserves more of the human play loop: pixels, GUI control, raw timing pressure, and richer world dynamics. The section should stress that visual agency is not one thing; passive gameplay understanding (`GameplayQA`) is different from end-to-end control (`VideoGameBench`, `FlashAdventure`, `MCU`).
+  This level preserves more of the human play loop: pixels, GUI control, raw timing pressure, and richer world dynamics. The section should stress that visual agency is not one thing; passive gameplay understanding (`GameplayQA`) is different from end-to-end control (`VideoGameBench`, `FlashAdventure`, `MCU`). `StarBench` serves as the diagnostic anchor here by quantifying the performance drop when semantic privilege (TA mode) is removed in favor of direct GUI control (DC mode).
 
 ### 1.5 Level 5: Cross-Game Generalization
 
@@ -128,7 +128,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Primary anchors: `Balrog`, `GameplayQA`, `VLMPlayStarCraftII`, `StarBench`.
 - Supporting comparison cases: `VideoGameBench` for raw-frame control failures and very low-score qualitative analysis; `AtariGPT` for the gap between visual understanding and spatially grounded low-level action.
 - Draft claim:
-  Game benchmarks are particularly useful here because perception errors immediately propagate into bad control, missed affordances, or false event attribution.
+  Game benchmarks are particularly useful here because perception errors immediately propagate into bad control, missed affordances, or false event attribution. `StarBench` explicitly identifies the "grounding gap" by showing models failing to locate UI targets despite potentially possessing the task logic.
 
 ### 2.5 Long-horizon autonomy and story or task completion with memory
 
@@ -160,16 +160,16 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 - Observation-channel ladder:
   text manuals and summarized state (`SmartPlay`, `GTBench`, `BotzoneBench`);
-  structured or API-mediated state (`BeyondScaling`, `DSGBench`, `MineNPCTask`, `Orak`);
-  GUI and raw visual control (`StarBench`, `FlashAdventure`, `MCU`, `VideoGameBench`);
+  structured or API-mediated state (**Semantic Privilege**: `BeyondScaling`, `DSGBench`, `MineNPCTask`, `Orak`);
+  GUI and raw visual control (**Ecological**: `StarBench`, `FlashAdventure`, `MCU`, `VideoGameBench`);
   video-only perceptual proxy (`GameplayQA`).
 - Action-channel ladder:
   discrete legal moves;
   natural-language commands;
-  semantic action tuples or tool/API calls (`StarBench` TA, `Orak`, `MineNPCTask`);
-  low-level GUI or controller-like actions (`StarBench` DC, `VideoGameBench`, `FlashAdventure`).
+  semantic action tuples or tool/API calls (**Semantic Privilege**: `StarBench` TA, `Orak`, `MineNPCTask`);
+  low-level GUI or controller-like actions (**Ecological**: `StarBench` DC, `VideoGameBench`, `FlashAdventure`).
 - Main synthesis claim:
-  Benchmark results are not comparable unless the paper discloses how much state abstraction, legal-action exposure, planning scaffolding, memory support, and tool mediation the agent receives. `StarBench` is the cleanest matched example because it keeps tasks and metrics fixed while shifting from screenshot-to-primitive control to semantic tuples plus OCR / detection aids.
+  Benchmark results are not comparable unless the paper discloses how much state abstraction, legal-action exposure, planning scaffolding, memory support, and tool mediation the agent receives. `StarBench` is the cleanest matched example because it keeps tasks and metrics fixed while shifting from screenshot-to-primitive control (DC) to semantic tuples plus OCR / detection aids (TA), revealing the catastrophic cost of removing semantic privilege.
 - Core contrast set:
   `SmartPlay` and `BotzoneBench` for privileged rule-clean play;
   `Orak` and `MineNPCTask` for scaffolded API play;
