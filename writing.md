@@ -68,7 +68,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 1.1 Level 1: Rule Following
 
-- Core anchors: `SmartPlay`, `LLMChess`, `GTBench`, `BotzoneBench`.
+- Core anchors: `SmartPlay`, `GTBench`, `BotzoneBench`.
 - Draft angle:
   These benchmarks emphasize legal moves, state tracking, and explicit rule compliance under strongly normalized interfaces. Their main strength is diagnostic control; their main weakness is privileged interaction.
 
