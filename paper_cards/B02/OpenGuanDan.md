@@ -12,14 +12,14 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- OpenGuanDan turns the Chinese four-player card game GuanDan into a benchmark for large-scale imperfect-information decision making. The paper emphasizes the game’s hybrid cooperative-competitive structure, large and variable action spaces, inter-round dependencies, and dynamic team composition. It provides a full simulator, observation and action wrappers, independent per-player APIs, and built-in learning-based and rule-based agents for comparison. In this survey, it is a useful card-game benchmark for partial observability and mixed-objective play rather than for ecological visual interaction.
+- OpenGuanDan turns the Chinese four-player card game GuanDan into a benchmark for large-scale imperfect-information decision making. The paper emphasizes hybrid cooperative-competitive play, large and variable legal-action spaces, inter-round dependencies, and dynamic team composition, and it packages these inside a custom simulator with observation, action, and reward wrappers plus independent per-player APIs. Crucially, the reported experiments evaluate built-in GuanDan AI agents and human-AI matchups, not LLM or VLM agents. In this survey, it is therefore a boundary-case contrast for hidden-information game complexity and symbolic API design rather than a direct benchmark paper for LFMs.
 
 ## 2. Position in our survey
-- Why-games relevance: It uses a rich card game to stress hidden information, huge legal-action sets, and teammate coordination inside one benchmark.
+- Why-games relevance: It uses a hard hidden-information card game to package large legal-action sets, teammate coordination, and inter-round dependencies into a checkable decision-making testbed, but that testbed is not instantiated as an LLM/VLM benchmark in the paper itself.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L2 strategic reasoning
-- Most relevant outline section(s): 1,2,3,4
-- Role in corpus: representative
+- Most relevant outline section(s): 2,3,4
+- Role in corpus: contrast
 
 ## 3. Design-space coding
 ### 3.1 Environment structure
@@ -73,7 +73,7 @@
 - Automatic verifiability: high
 - Calibration method: standardized simulator, shared built-in agents, and 1000 pairwise games per agent matchup
 - Anti-contamination argument: not central
-- Reliability or comparability concerns: one specialized game only, and the paper notes that human-AI results may be slightly inflated by volunteers’ unfamiliarity with the simulator.
+- Reliability or comparability concerns: one specialized game only; the paper's LLM compatibility is claimed at the API level rather than empirically tested; and the human-AI results may be slightly inflated by volunteers’ unfamiliarity with the simulator.
 
 ## 7. Main contributions
 - Contribution 1: Builds a faithful high-efficiency GuanDan simulator and benchmark wrapper.
@@ -81,52 +81,53 @@
 - Contribution 3: Provides built-in agents and human-AI match evaluation for reproducible comparison.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: GS2, SDMC, and DanZero clearly outperform rule-based baselines, but even the strongest agents remain below superhuman play and below consistent intermediate-to-advanced human performance.
+- Core empirical takeaway: Among the built-in GuanDan agents, GS2, SDMC, and DanZero clearly outperform rule-based baselines, but none of the evaluated agents reaches superhuman play or consistently matches intermediate-to-advanced human teams.
 - Notable model failure mode 1: rule-based agents fail to cover enough critical decision situations to stay competitive in GuanDan’s large, state-dependent action space
 - Notable model failure mode 2: current learning-based agents still cannot consistently beat intermediate and advanced human teams
 - Notable model failure mode 3: purely self-play-trained agents lag behind GS2, suggesting that learned blueprint strategies alone remain insufficient without stronger online search or refinement
 - Does this paper reveal a benchmark-design limitation as well? yes; it is a demanding but highly domain-specific benchmark
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how one specialized card game can combine hidden information, mixed incentives, and long-horizon round structure inside a checkable benchmark.
-- Best use in Section 1 (taxonomy and evolutionary levels): Representative specialized imperfect-information card benchmark, especially for mixed cooperative-competitive structure.
-- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for strategic planning under uncertainty, large legal-action spaces, and teammate coordination under hidden information.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful symbolic/API benchmark contrast with explicit legal-action exposure, built-in agent baselines, and both AI-vs-AI and human-AI evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that strong self-play agents in hidden-information games still remain below robust human play.
+- Best use in Section 0 (lead-in and benchmark motivation): Not a direct fit. At most, use it as a boundary reminder that game complexity alone does not make a paper a benchmark for LFMs.
+- Best use in Section 1 (taxonomy and evolutionary levels): Minor boundary contrast only. It shows a modern single-game symbolic benchmark outside the direct LLM/VLM evaluation line, not a level-defining anchor.
+- Best use in Section 2 (core capabilities evaluated by games): Narrow contrast for hidden-information strategic difficulty, large legal-action spaces, and mixed cooperative-competitive play; do not cite it as direct LLM/VLM evidence.
+- Best use in Section 3 (interaction and evaluation paradigm): Strongest use. The paper cleanly documents privileged symbolic observations, legal-action exposure, built-in AI baselines, and human-AI versus AI-versus-AI evaluation, while illustrating that API compatibility with LLMs is not the same as benchmarking them.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Use only as a cautionary scope case: a hard game benchmark can still sit outside our target literature when it evaluates specialized non-LFM agents rather than foundation-model agents.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): DanZero, SDMC, and GS2 as prior GuanDan agents rather than benchmark papers
-- Closest follow-up(s): multi-game card-benchmark work such as `ComplexCardGames` that reuses GuanDan as one domain within a broader transfer study
-- Best comparison targets inside our corpus: BeyondScaling, GameBench, GAMABench, TMGBench
-- What this paper uniquely adds relative to neighbors: It turns GuanDan into a standardized four-player mixed cooperative-competitive benchmark with built-in agents, explicit simulator interfaces, and human-AI calibration.
+- Closest follow-up(s): No direct LFM-focused follow-up appears in our current corpus; the nearest neighboring card-game papers are `ComplexCardGames`, `PokerBench`, and `GTOWizardBenchmark`, which actually evaluate foundation-model-facing or LLM-centered setups.
+- Best comparison targets inside our corpus: PokerBench, GTOWizardBenchmark, ComplexCardGames, DSGBench
+- What this paper uniquely adds relative to neighbors: It contributes a hard GuanDan simulator, explicit per-player APIs, and non-LFM built-in baselines, making it more useful as a scope boundary and interface contrast than as direct evidence about LFMs.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GuanDan is framed as a four-player, two-team imperfect-information card game with very large information sets, variable legal-action spaces, mixed cooperative-competitive incentives, and multi-round level progression.
-- OpenGuanDan provides a self-developed simulator with observation/action/reward wrappers, independent per-player action-upload APIs, and built-in rule-based and learning-based agents.
-- Pairwise evaluation uses 1000 games per agent pair, and human-AI evaluation shows that none of the learning-based agents exceeds a 50% overall win rate against the volunteer human teams.
+- OpenGuanDan provides a self-developed simulator with observation, action, and reward wrappers plus independent action-upload APIs; both the main text and Appendix C say the API supports game-theory, RL, and LLM agent integration.
+- The empirical evaluation in Section 6 covers pairwise comparisons among built-in GuanDan AI agents and human-AI evaluation of the learning-based agents; no LLM- or VLM-specific benchmark results are reported.
+- Pairwise evaluation uses 1000 games per agent pair, and human-AI evaluation with 16 volunteers in 8 teams shows that none of the evaluated learning-based agents exceeds a 50% overall win rate.
 
 ### 11.2 Our synthesis / interpretation
-- OpenGuanDan is a strong example of a deep strategic benchmark that stays mostly symbolic rather than ecological.
-- It is more useful for outline Sections 2, 3, and 4 than for any visual-agency discussion.
+- For this survey, OpenGuanDan is best treated as a boundary contrast: it demonstrates hidden-information benchmark design and symbolic API privilege, but it is not a direct benchmark paper for LLM/VLM agents.
+- Its main value is in Sections 3 and 4, where it helps distinguish between "LLM-compatible interface" claims and actual LFM evaluation.
 
 ### 11.3 Uncertain or needs re-check
-- Recheck Appendix D if we later need the exact action-time costs, or Section 5.2 if we need the full built-in-agent roster and training details.
+- Recheck Appendix D only if we later need exact per-agent inference-speed numbers; the benchmark's non-LFM scope is already clear from the abstract, Section 6, and Appendix C.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the benchmark structure and role are already clear.
-- Which section to read next if needed: 3.2 / 5.1 / 5.2
-- Follow-up question(s): Which card-game benchmark should anchor the survey's discussion of mixed cooperation and competition?
+- Should we read beyond abstract + intro? why? Already completed in this audit; no further reread is needed unless we want exact timing numbers from Appendix D.
+- Which section to read next if needed: Appendix C / Appendix D
+- Follow-up question(s): If the survey scope tightens to direct LLM/VLM benchmarks only, should OpenGuanDan remain as a contrast card or be parked as peripheral background?
 
 ## 13. Registry sync
 - Registry row synced: yes
 - Registry status: card-reviewed
-- Priority: P1
+- Priority: P2
 - Reading depth: deep
 - Batch ID: B02
-- Outline sections: 1,2,3,4
-- Survey role: representative
+- Outline sections: 2,3,4
+- Survey role: contrast
 - Paper card path: `paper_cards/B02/OpenGuanDan.md`
-- Next action: draft-section
+- Next action: contrast-only
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-19

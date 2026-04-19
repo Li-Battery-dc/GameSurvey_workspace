@@ -2,9 +2,9 @@
 
 ## 0. Metadata
 - Date: 2024/01
-- Venue: ICLR 2025
+- Venue: ICLR 2024
 - Authors: Siyuan Qi, Shuo Chen, Yexin Li, Xiangyu Kong, Junqi Wang, Bangcheng Yang, Pring Wong, Yifan Zhong, Xiaoyuan Zhang, Zhaowei Zhang, Nian Liu, Wei Wang, Yaodong Yang, Song-Chun Zhu
-- Paper link: https://arxiv.org/pdf/2401.10568v2.pdf
+- Paper link: https://openreview.net/pdf?id=UBVNwD3hPN
 - Code link: https://github.com/bigai-ai/civrealm
 - Reading depth: deep
 - Card status: card-reviewed
@@ -12,12 +12,12 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- CivRealm is a Civilization-like decision-making environment built on Freeciv that targets learning and reasoning in long-horizon, multi-agent strategy play. It supports both full games that can last for hours or days and a large family of automatically generated mini-games spanning development, battle, and diplomacy. The environment offers both tensor and language APIs, explicitly foregrounding imperfect information, stochasticity, multi-goal planning, diplomacy, communication, and changing action spaces. For this survey, CivRealm is a strong benchmark platform for long-horizon strategic worlds that sit between specialist board games and broader open-ended world benchmarks.
+- CivRealm is a Civilization-like benchmark environment built on Freeciv for decision-making agents in a long-horizon, partially observed, multi-agent strategy world. It couples full games that can last for hours or days with a procedurally generated mini-game suite spanning development, battle, and diplomacy, all under shared tensor and language APIs. The paper's strongest value for this survey is not broad cross-game openness, but its explicit stress on delayed strategic consequences, rapidly expanding state and action spaces, and the measurable gap between decomposed mini-games and the full strategic world. CivRealm is therefore best used as evidence about dynamic-space strategic reasoning under privileged but still difficult interfaces.
 
 ## 2. Position in our survey
 - Why-games relevance: Civilization-like worlds compress economics, warfare, diplomacy, and technology planning into one persistent strategic environment.
-- Historical stage: open-ended general-game benchmark
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
+- Historical stage: ecological agent benchmark
+- Narrative level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,4
 - Role in corpus: representative
 
@@ -37,88 +37,91 @@
 ### 3.3 Benchmark scope
 - Scope: open-ended world
 - Number of games / tasks: full game plus 10 mini-game types with 10,000 instances each
-- Benchmark intent: open-ended evaluation / train+eval foundation
+- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: symbolic state / text
-- Perception burden retained: partial observability, relational world state, and long-horizon planning
-- Perception burden removed: raw pixels are abstracted into structured map, unit, city, government, technology, and diplomacy observations
+- Perception burden retained: partial observability, dynamic multi-object world state, and long-horizon planning over a large evolving map
+- Perception burden removed: raw pixels and native GUI interaction are abstracted into structured map, unit, city, government, technology, and diplomacy observations
 
 ## 4. What this benchmark measures
-- Primary capability target: long-horizon strategic decision-making in a partially observed multi-goal world
-- Secondary capability target(s): diplomacy, tactical battle control, development planning, and transfer from mini-games to full games
+- Primary capability target: long-horizon strategic decision-making in a partially observed, multi-goal, dynamically expanding world
+- Secondary capability target(s): dynamic state/action-space management, development and battle subskills, diplomacy-aware play, and transfer from mini-games to full games
 - Does it test rule grounding / legal action generation? yes
 - Does it test strategic planning under uncertainty? yes
-- Does it test social reasoning / deception / cooperation? yes
+- Does it test social reasoning / deception / cooperation? partially; diplomacy and negotiation matter in the environment, but they are not the paper's strongest benchmark target
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes for within-platform generalization to novel maps, rules, and mini-games, but not for cross-title transfer
-- Why is a game environment especially suitable here? Civilization-like games naturally combine multiple strategic objectives, hidden information, and long-range consequences in a single formal world.
+- Does it test cross-game transfer / open-ended generalization? partially; it stresses within-platform generalization across maps, players, rules, and mini-games rather than transfer across different games
+- Why is a game environment especially suitable here? Civilization-like games naturally combine delayed consequences, multi-goal optimization, hidden information, diplomacy, and expanding action opportunities inside one persistent strategic world.
 
 ## 5. Interaction paradigm
-- Observation channel: structured information about map tiles, units, cities, government, technology, and diplomacy
-- Action channel: rich discrete actions over unit, city, government, technology, and diplomacy operations
-- Interface type: API / hybrid
-- Agent scaffold allowed: other; the platform provides tensor and language APIs, and the language baselines in the paper use AutoGPT-like decomposition rather than pure direct play
+- Observation channel: structured observations over map tiles, units, cities, government, technology, and diplomacy; language agents receive world summaries plus local 5x5 views, while Mastaba adds a 15x15 block-level pyramid view
+- Action channel: hierarchical discrete actions over unit, city, government, technology, and diplomacy operations; some map-targeted unit actions are restricted to a 9-tile neighborhood to keep action selection tractable
+- Interface type: API / structured action space / hybrid
+- Agent scaffold allowed: memory / retrieval / planner
 - Is there privileged API access? yes
-- How close is the setup to human play? medium-low; it captures strategic structure well but abstracts away the original GUI
-- Main ecological-validity trade-off: CivRealm preserves deep strategic structure while sacrificing native-interface cognition and almost all human-like interaction friction
+- How close is the setup to human play? low to medium; it preserves strategic structure and turn-based pacing but removes native GUI cognition and compresses large-map state into engineered summaries
+- Main ecological-validity trade-off: CivRealm preserves long-range strategic and world-state complexity while abstracting away native interface burden and partially factorizing large-space reasoning through structured observations and local action constraints
 
 ## 6. Evaluation protocol
-- Main score: aggregated game score plus task-specific mini-game victory criteria
-- Auxiliary score(s): population, cities, technologies, units, explored land, and other engine-derived dimensions
-- Evaluation style: native score / win rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: RL and LLM-based agents are tested on both full games and automatically generated mini-games, including built-in AI opponents
+- Main score: aggregated full-game score across 16 engine dimensions plus task-specific mini-game victory criteria
+- Auxiliary score(s): population, economics, production, cities, researched technologies, units, land-related stats, gold, and other engine-derived dimensions
+- Evaluation style: native score / success rate / hybrid
+- Human baseline / AI anchor / self-play / model-vs-model setup: no human baseline; the paper evaluates tensor RL and GPT-3.5-based language agents on full games and automatically generated mini-games, with built-in Freeciv AI available as co-players or opponents in the environment
 - Automatic verifiability: high
 - Calibration method: automatic mini-game generation, difficulty bands, and consistent API formats across full and mini-game settings
-- Anti-contamination argument: procedural variation in maps, players, and rules creates many novel situations
-- Reliability or comparability concerns: the full game is extremely hard and slow, so conclusions often rely heavily on mini-game performance rather than full-game mastery
+- Anti-contamination argument: procedural variation in maps, players, and rules creates many novel situations within the platform, but contamination resistance is not a central validated claim
+- Reliability or comparability concerns: the full game is extremely hard and slow, so many conclusions rely on mini-game results or qualitative full-game behavior; the language interface design also shapes how much large-space reasoning is actually exposed
 
 ## 7. Main contributions
 - Contribution 1: Introduces a Civilization-like benchmark with both full games and diverse mini-games.
 - Contribution 2: Provides dual tensor and language interfaces for RL and LLM agents.
-- Contribution 3: Emphasizes open-ended strategic features such as imperfect information, diplomacy, and dynamic action spaces.
+- Contribution 3: Makes long-horizon, multi-goal, and dynamically expanding strategic worlds a benchmark target rather than a background property.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: both RL and LLM agents remain far from strong full-game play, even when some mini-game competence is achievable.
-- Notable model failure mode 1: myopic strategies that optimize short-term gains over long-term civilization growth
-- Notable model failure mode 2: weak handling of dynamic, expanding state and action spaces
-- Notable model failure mode 3: poor diplomatic and multi-goal reasoning in the full game
-- Does this paper reveal a benchmark-design limitation as well? yes; it shows that miniature subgames are valuable but can only partially stand in for the full strategic world
+- Core empirical takeaway: current agents struggle precisely where CivRealm is most interesting: long-horizon planning and control in a dynamic large-space world. RL can solve some short-horizon mini-games, but remains myopic in full games; Mastaba improves over BaseLang, yet still falls far short of robust full-game competence.
+- Notable model failure mode 1: RL favors short-term score gains such as unit production instead of slower city-building strategies that support long-term technology and economic growth
+- Notable model failure mode 2: both RL and LLM agents struggle with rapidly expanding state and action spaces and with coordinating many entities over time
+- Notable model failure mode 3: LLM agents suffer from limited global perspective and grounding; even Mastaba's broader map context still leaves it weak at balancing gameplay priorities and defending against pirate invasions
+- Does this paper reveal a benchmark-design limitation as well? yes; it shows that miniature subgames only partially stand in for the full strategic world, and that interface compression materially shapes what "large-space reasoning" means in practice
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that strategy games can bundle many real-world decision dimensions into one environment.
-- Best use in Section 1 (taxonomy and evolutionary levels): A key waypoint in the move from narrow games toward broader decision worlds. Helps define open-ended, multi-goal strategy worlds without claiming human-like interface fidelity.
-- Best use in Section 2 (core capabilities evaluated by games): Useful for planning, diplomacy, uncertainty, and transfer discussions.
-- Best use in Section 3 (interaction and evaluation paradigm): A clear example of language/API access to a deep strategy environment. Good reference for combining full-game and mini-game evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for benchmarks that test strategic breadth without collapsing into overly narrow tasks.
+- Best use in Section 0 (lead-in and benchmark motivation): Support the claim that one game can bundle long-horizon, multi-goal, societally flavored decision making into a benchmarkable environment, but do not use it as primary evidence for human-like interaction.
+- Best use in Section 1 (taxonomy and evolutionary levels): A representative rich Level 2 strategy-world benchmark that sits between narrow strategic probes and later broader benchmark platforms, without making it a Level 5 cross-game case.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for long-horizon strategic planning, delayed consequences, and dynamic state/action-space growth.
+- Best use in Section 3 (interaction and evaluation paradigm): Secondary contrast for privileged structured interfaces, local-versus-global observation design, and the full-game versus mini-game evaluation split.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports bottleneck claims about myopia, context-limited large-map reasoning, and the mismatch between decomposed subgames and full strategic competence.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): StarCraft-style strategy environments and earlier Civilization or Diplomacy-inspired decision-making work
-- Closest follow-up(s): later benchmark platforms that combine broad strategic worlds with more explicit agent-facing interfaces
-- Best comparison targets inside our corpus: OpenGuanDan, DSGBench, BeyondScaling, GameBench
-- What this paper uniquely adds relative to neighbors: It offers one of the clearest long-horizon strategic worlds with both diplomacy and automatically generated curriculum-like mini-games under one platform.
+- Closest predecessor(s): earlier Civilization/Freeciv reasoning work and StarCraft-style large-scale strategy environments
+- Closest follow-up(s): later strategy-world and open-world benchmarks that separate rich environment structure from scalable evaluation through subtask generation or stronger agent scaffolds
+- Best comparison targets inside our corpus: DSGBench, OpenGuanDan, PillagerBench, StarCraftIIArena
+- What this paper uniquely adds relative to neighbors: It offers one of the clearest long-horizon, dynamically expanding single-world strategy benchmarks with both full games and procedurally generated mini-games under shared interfaces.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- CivRealm supports full Freeciv games plus 10 types of mini-games with 10,000 instances each.
-- The environment exposes observations over map, unit, city, government, technology, and diplomacy state.
-- It provides both tensor and language APIs and reports that full-game progress remains difficult for both RL and LLM methods.
+- Full games can last from several hours to several days, and the environment combines imperfect information, stochastic dynamics, multiple victory paths, changing players, and communication.
+- As the game unfolds, the paper states that the state can grow from 10^15 to 10^650 and the action space from 10^4 to 10^166.
+- The environment exposes structured observations over map, unit, city, government, technology, and diplomacy state; language agents use world summaries plus local 5x5 views, while Mastaba expands context through a 15x15 block pyramid.
+- CivRealm defines 10 types of mini-games and generates 10,000 instances of each, with the same input/output format as the full game.
+- RL performs better on mini-games with more immediate rewards but struggles on sparse delayed-reward tasks and on the full game; Mastaba outperforms BaseLang yet still shows grounding and defense weaknesses in full games.
 
 ### 11.2 Our synthesis / interpretation
-- CivRealm is a strong representative of open-ended strategic-world benchmarks rather than a narrow single-game probe.
-- It is especially valuable for contrasting full-world evaluation against decomposed diagnostic mini-games.
-- It is better used as a strategic-world generalization platform than as evidence of ecological or human-like play.
+- CivRealm's strongest survey use is as evidence of long-horizon strategic reasoning and dynamic-space control inside one complex world, not as a true cross-game or Level 5 generalization benchmark.
+- Diplomacy and communication matter as environment features, but the paper is weaker as a primary social-intelligence source than dedicated social benchmarks.
+- The benchmark is also useful because it shows that even privileged structured interfaces do not remove the difficulty of coordinating large evolving worlds over long horizons.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact mini-game taxonomy and reward definitions if we later need a formal comparison table.
-- Re-check the strongest reported language-agent baseline numbers for full game versus mini-games.
+- Re-check the exact full-game aggregated-score weighting if later drafting compares CivRealm's score directly to other benchmark metrics.
+- Re-check the exact contribution of rule changes versus random map or player variation if we later make a stronger generalization claim.
+- Re-check prompt and retrieval details if Section 3 later needs a more exact account of how much large-space reasoning was delegated to agent scaffolding.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need exact full-game score dimensions or the detailed BaseLang/Mastaba setup.
-- Which section to read next if needed: Sections 3.1 to 3.2 and Appendix A.1 to A.2
-- Follow-up question(s): Which mini-games transfer best to full-game competence, and how much of the difficulty comes from diplomacy versus dynamic action growth?
+- Should we read beyond abstract + intro? why? Audit completed from the full paper; reread only if we later need exact score formulas, action parameterization details, or the precise BaseLang/Mastaba prompt setup.
+- Which section to read next if needed: Sections 3.1 to 3.2, 5.2, and Appendix A to C
+- Follow-up question(s): When drafting Section 2.2, should CivRealm be used primarily for dynamic-space long-horizon reasoning rather than for diplomacy claims?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -131,4 +134,4 @@
 - Paper card path: `paper_cards/B02/CivRealm.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-19

@@ -74,9 +74,9 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 1.2 Level 2: Strategic Reasoning
 
-- Core anchors: `PokerBench`, `DSGBench`, `GameBench`, `BeyondScaling`, `OpenGuanDan`.
+- Core anchors: `PokerBench`, `DSGBench`, `GameBench`, `BeyondScaling`.
 - Draft angle:
-  The focus shifts from merely acting legally to planning under uncertainty, opponent modeling, and time-sensitive choice. `PokerBench` is the specialist imperfect-information contrast; `DSGBench` is the comparative multi-game platform; `BeyondScaling` adds the strategy-versus-execution split.
+  The focus shifts from merely acting legally to planning under uncertainty, opponent modeling, and time-sensitive choice. `GameBench` is useful here as an early coverage-oriented suite: it explicitly diversifies across six strategic reasoning components, but that decomposition is design-side rather than a stable per-dimension metric. `PokerBench` is the specialist imperfect-information contrast; `DSGBench` is the comparative multi-game platform; `BeyondScaling` adds the strategy-versus-execution split.
 
 ### 1.3 Level 3: Social Intelligence
 
@@ -113,9 +113,9 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 ### 2.2 Strategic planning under uncertainty
 
-- Primary anchors: `GTBench`, `PokerBench`, `DSGBench`, `BeyondScaling`, `OpenGuanDan`.
+- Primary anchors: `GTBench`, `GameBench`, `PokerBench`, `DSGBench`, `BeyondScaling`.
 - Draft claim:
-  Games are credible here because hidden information, mixed strategies, and adversarial adaptation are part of the environment rather than added after the fact as judge prompts.
+  Games are credible here because hidden information, mixed strategies, and adversarial adaptation are part of the environment rather than added after the fact as judge prompts. `GameBench` is useful as an early attempt to decompose strategic reasoning through suite design, but later papers should carry most claims that require stable per-capability diagnostics.
 
 ### 2.3 Social intelligence: cooperation, negotiation, deception
 
@@ -190,7 +190,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
   reasoning-trace or subproblem diagnostics (`GAMEBoT`).
 - Calibration families:
   fixed AI anchors (`BotzoneBench`, `GTOWizardBenchmark`);
-  live arenas and TrueSkill or Elo (`TextArena`, `BeyondScaling`);
+  live arenas and rating-based competition (`TextArena`, live TrueSkill; `BeyondScaling`, round-robin Elo / PWER);
   human-relative comparison (`AIGameStore`);
   judge-based or validator-based evaluation (`MCU`, `FlashAdventure`, `MineNPCTask`).
 - Main synthesis claim:
@@ -207,7 +207,7 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Rule compliance is no longer the whole problem:
   `SmartPlay`, `LLMChess`, and `BotzoneBench` show that legal play can coexist with shallow strategy.
 - Strategic depth remains brittle under uncertainty:
-  `GTBench`, `PokerBench`, `DSGBench`, and `BeyondScaling` show weak opponent modeling, poor mixed-strategy play, and a strategy-execution gap.
+  `GTBench` and `PokerBench` expose opponent modeling and mixed-strategy weaknesses in formal uncertainty settings, while `DSGBench` shows that strategic performance fragments across planning, real-time control, social reasoning, collaboration, and adaptive learning; `BeyondScaling` isolates a strategy-execution gap once adversarial reasoning is pushed into real-time, latency-sensitive play.
 - Social belief modeling is still fragile:
   `WerewolfArena`, `Wolf`, `LLMHanabi`, and `LLMCoordination` show that fluent language does not imply robust deception detection or partner reasoning; `HumanLevelDiplomacy` adds a reviewed ecological milestone showing that stronger negotiation performance depended on a language-plus-planning stack rather than raw dialogue fluency.
 - Perception and control remain major blockers:
@@ -245,3 +245,4 @@ This file is the active drafting workspace for the survey on game benchmarks for
 - Do not overstate anti-contamination claims for classic formal games such as `GTBench`; keep those claims benchmark-specific.
 - Keep `HumanLevelDiplomacy` framed as a historical milestone and ecological bridge, not as a standardized reusable benchmark in the same sense as the later papers; it is now reviewed evidence, but protocol and ranking claims should still stay close to what the Science paper directly reports.
 - Keep specialist benchmarks such as `PokerBench` and `GTOWizardBenchmark` as contrasts on calibration and uncertainty, not as the center of the general-game narrative.
+- Do not treat `OpenGuanDan` as direct LLM/VLM benchmark evidence; use it only as a boundary contrast on symbolic hidden-information benchmark design and API privilege.
