@@ -12,7 +12,7 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- EvoEmpirBench is a text-first dynamic reasoning benchmark built around two interactive tasks: a locally observable maze-navigation game and a match-2 elimination game. Both tasks are partially observable or dynamically changing, and the paper positions them as a harder alternative to static reasoning benchmarks by forcing agents to explore, adapt, and manage trade-offs over multi-step episodes. The same paper also introduces Agent-ExpVer, a three-agent online-learning scaffold that summarizes experience into reusable "truths" and re-injects them into future play. For this survey, EvoEmpirBench is useful as a narrow dynamic-reasoning contrast paper and as evidence that benchmark difficulty and scaffold engineering are often entangled.
+- EvoEmpirBench is a text-first dynamic reasoning benchmark built around two interactive tasks: a locally observable maze-navigation game and a match-2 elimination game. Both tasks are partially observable or dynamically changing, and the paper positions them as a harder alternative to static reasoning benchmarks by forcing agents to explore, adapt, and manage trade-offs over multi-step episodes. The paper's empirical story is inseparable from Agent-ExpVer, a three-agent online-learning scaffold that summarizes experience into reusable "truths" and feeds them back into future play. For this survey, EvoEmpirBench is most useful as a narrow dynamic-reasoning contrast paper and as evidence that benchmark difficulty and scaffold engineering are often entangled.
 
 ## 2. Position in our survey
 - Why-games relevance: Dynamic games make exploration, adaptation, and score-versus-completion trade-offs observable and automatically measurable under partial observability.
@@ -81,7 +81,7 @@
 - Contribution 3: Reports both model and human baselines, along with ablations that show how much the scaffold contributes.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: stronger models do better, but even top systems still trail humans, and Agent-ExpVer yields notable gains on both maze navigation and match-2.
+- Core empirical takeaway: stronger models do better, but even top systems still trail humans, and Agent-ExpVer yields notable gains on both maze navigation and match-2; the paper therefore demonstrates dynamic-reasoning difficulty together with scaffold effectiveness, not a clean benchmark-only ranking.
 - Notable model failure mode 1: models explore inefficiently in the maze task, taking many steps or failing to convert exploration into successful completion
 - Notable model failure mode 2: in match-2, models struggle with compound objectives where immediate eliminations can conflict with long-term score maximization
 - Notable model failure mode 3: performance improves substantially under full-vision ablations or scaffold support, showing that partial observability and memory are central bottlenecks
@@ -97,23 +97,25 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GameArena, Agent-Pro, and other dynamic or game-based reasoning evaluations
 - Closest follow-up(s): future dynamic reasoning benchmarks that separate benchmark definition from online-learning scaffolds more cleanly
-- Best comparison targets inside our corpus: GameTraversalBenchmark, MazeEval, DeepPHY, ReasoningViaVideo
-- What this paper uniquely adds relative to neighbors: It combines dynamic game diagnostics with an explicit online rule-distillation scaffold and makes that coupling part of the empirical story.
+- Best comparison targets inside our corpus: MazeEval, GameTraversalBenchmark, ReasoningViaVideo, DeepPHY
+- What this paper uniquely adds relative to neighbors: It combines dynamic game diagnostics with an explicit online rule-distillation scaffold, then makes the benchmark-method coupling itself part of the empirical story through TruthWeaver and Full-Vision ablations.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - EvoEmpirBench contains two tasks: a locally observable 9 x 9 maze-navigation game and an 8 x 8 match-2 elimination game.
 - Each task has Easy, Medium, and Hard settings, and the experiment section reports 30 evaluation instances per level for 90 instances per task.
 - The paper introduces Agent-ExpVer with three agents - GeoLink, InsightForce, and TruthWeaver - to collect experience, summarize it, and maintain reusable truths.
+- EEB supports both human and agent operation, and the experiment section reports human baselines for both games.
 - Reported metrics include success rate and average score for both tasks, plus task-specific efficiency and interaction metrics such as exploration, remaining HP, and API efficiency.
+- The paper also includes control ablations such as removing TruthWeaver and revealing Full-Vision or removing props to test how much benchmark constraints drive performance.
 
 ### 11.2 Our synthesis / interpretation
 - EvoEmpirBench is most useful as a contrast paper on dynamic evaluation design, not as a central benchmark lineage paper.
-- Its strongest survey value is methodological: it shows how easily benchmark evaluation and scaffold design can become inseparable in agent papers.
+- Its strongest survey value is methodological: it shows how easily benchmark evaluation, memory support, and workflow engineering can become inseparable in agent papers.
 
 ### 11.3 Uncertain or needs re-check
 - Section 3 describes a total of 120 diverse task episodes, while the experiment section reports 30 instances per level and 90 instances per task; if exact corpus accounting matters, re-check the released data and supplement.
-- If we later need exact gains from removing TruthWeaver or revealing full vision, re-check Tables 4 to 6 and the appendix prompts.
+- If we later need exact gains from removing TruthWeaver, revealing Full-Vision, or disabling props, re-check Tables 4 to 7 and the appendix prompts.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? No immediate reread is required unless we later need exact ablation numbers or want to compare benchmark difficulty against scaffold contribution in detail.
@@ -130,4 +132,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/EvoEmpirBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-19

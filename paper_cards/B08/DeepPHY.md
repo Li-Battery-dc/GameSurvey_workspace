@@ -8,14 +8,14 @@
 - Code link: https://github.com/XinrunXu/DeepPHY
 - Reading depth: deep
 - Card status: card-reviewed
-- Confidence in this card: medium
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- DeepPHY is a six-environment benchmark suite for testing whether agentic VLMs can turn visual observation into physically informed action. It aggregates PHYRE, I-PHYRE, Kinetix, Pooltool, Angry Birds, and Cut the Rope under a unified evaluation protocol, but it intentionally simplifies observation and action spaces through annotations, discretization, top-down views, and structured commands so that the benchmark stresses physical reasoning rather than raw perception or motor control. The benchmark mixes in-advance planning and on-the-fly planning settings, compares a direct Vision-Language-Action prompt against a World-Model prompt, and reports success rate, Pass@K, and average attempts. For this survey, DeepPHY is best treated as a carefully instrumented contrast case at the boundary between game benchmarks and physics-control diagnostics.
+- DeepPHY is a six-environment benchmark suite for testing whether agentic VLMs can turn visual observations into successful physics-grounded actions across PHYRE, I-PHYRE, Kinetix, Pooltool, Angry Birds, and Cut the Rope. Rather than preserve native human play, the benchmark deliberately re-engineers each environment with annotated images, discretized or structured action formats, and sometimes transformed views so that current models can be compared on physical reasoning itself. It evaluates both in-advance and on-the-fly planning, compares direct Vision-Language-Action prompting against an added World-Model prediction prompt, and reports success rate, Pass@K, and average attempts. For this survey, DeepPHY is best used as a contrast paper on physical reasoning and interface redesign, not as evidence of ecological game-agent competence.
 
 ## 2. Position in our survey
-- Why-games relevance: Physics-based games and simulators provide action-consequence loops that are automatically checkable, which makes them useful for testing whether visual understanding can drive executable control.
+- Why-games relevance: Physics-based games and simulators turn physical prediction into an interactive action-consequence loop rather than static QA, but DeepPHY makes that loop tractable through heavy benchmark-side interface redesign.
 - Historical stage: diagnostic capability probe
 - Narrative level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
@@ -41,8 +41,8 @@
 
 ### 3.4 Modality
 - Primary modality: image
-- Perception burden retained: visual scene reading, causal prediction, temporal planning, and action refinement after failed trials
-- Perception burden removed: many scenes are annotated, some action spaces are discretized or serialized, and Pooltool is converted to a 2D top-down view
+- Perception burden retained: rendered-scene parsing, spatial relations among objects, temporal prediction, and visual revision after failed trials
+- Perception burden removed: object detection is eased by grids or IDs, Pooltool is converted from a 3D view to a 2D top-down view, and much of the continuous-control burden is replaced by discretized or constrained action formats
 
 ## 4. What this benchmark measures
 - Primary capability target: interactive physical reasoning from visual observations
@@ -57,23 +57,23 @@
 - Why is a game environment especially suitable here? Interactive physics tasks make action consequences observable over time, so the benchmark can test whether descriptive physical knowledge becomes predictive control.
 
 ## 5. Interaction paradigm
-- Observation channel: annotated screenshots, gridded overlays, labeled interactive objects, or transformed visual scenes, plus environment rules and failed-attempt history
-- Action channel: structured environment-specific commands such as grid-and-radius choices, JSON action lists, integer control vectors, or constrained function calls
+- Observation channel: rendered scene images, annotated overlays or indexed objects, transformed 2D views for Pooltool, textual rules, and failed-attempt history
+- Action channel: environment-specific structured outputs such as grid-cell and radius choices, JSON timed-removal plans, integer control vectors, or constrained code commands like `shoot(angle, power)` and `cut_pin(id)`
 - Interface type: structured action space / hybrid
 - Agent scaffold allowed: other (failed-trial history and optional world-model prompting)
-- Is there privileged API access? yes
-- How close is the setup to human play? low; the underlying domains are game-like, but the benchmark intentionally reshapes observation and action spaces for current VLMs
-- Main ecological-validity trade-off: DeepPHY preserves physical interaction loops but removes much of the raw perceptual and motor burden, making it a physics-reasoning diagnostic suite rather than a naturalistic game-agent benchmark
+- Is there privileged API access? no direct hidden-state API, but strong benchmark-side semantic privilege through annotations, discretization, transformed views, and constrained command languages
+- How close is the setup to human play? low; the underlying domains are game-like, but observation, action, and even camera/view formats are redesigned for model tractability
+- Main ecological-validity trade-off: DeepPHY keeps interactive physical consequences and multi-attempt refinement, but removes much of the raw perception, continuous motor control, and native-interface difficulty that human play would involve
 
 ## 6. Evaluation protocol
 - Main score: success rate
-- Auxiliary score(s): Pass@K and average attempts
+- Auxiliary score(s): Pass@K, average attempts, and star-based solution-quality summaries for Angry Birds and Cut the Rope
 - Evaluation style: completion rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: 17 open and closed VLMs plus a MOCK random-action baseline are evaluated across the suite; non-expert human baselines are reported only for Pooltool, Angry Birds, and Cut the Rope
-- Automatic verifiability: mixed
-- Calibration method: standardized VLA versus WM prompt formats, fixed per-environment attempt budgets, unified observation/action conversions, and environment-specific difficulty settings
+- Human baseline / AI anchor / self-play / model-vs-model setup: 17 open and closed VLMs plus a MOCK random-action baseline are evaluated across the suite; human results are ballpark non-expert baselines and are reported only for Pooltool, Angry Birds, and Cut the Rope
+- Automatic verifiability: mixed; PHYRE, I-PHYRE, Kinetix, and Pooltool use environment-native success checks, while Angry Birds and Cut the Rope use manual evaluation and star summaries
+- Calibration method: common VLA versus WM prompt formats, per-environment attempt or step budgets, 3-run averages at temperature 0.1, and benchmark-side observation/action conversions tailored to each environment
 - Anti-contamination argument: weak; the paper mainly argues that interactive physical environments are a more meaningful target than static physics QA, not that DeepPHY itself fully solves contamination
-- Reliability or comparability concerns: environments differ in planning mode, some evaluations are environment-native while Angry Birds and Cut the Rope require manual scoring, and part of the benchmark difficulty is introduced by action-space engineering rather than only by raw physical reasoning
+- Reliability or comparability concerns: environments differ substantially in planning mode and interface design, Angry Birds and Cut the Rope require manual evaluation, Pooltool contains a deterministic brute-force artifact, Cut the Rope excludes multi-screen-transition levels, and the human baselines are only ballpark non-expert references
 
 ## 7. Main contributions
 - Contribution 1: Aggregates six previously separate physics simulators and physics-based games into a single benchmark for agentic VLMs.
@@ -81,44 +81,46 @@
 - Contribution 3: Reveals a persistent gap between verbal or descriptive physical knowledge and precise predictive control.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: even strong VLMs struggle badly on interactive physical reasoning, and the optional World-Model prompt usually fails to convert descriptive prediction into better control.
-- Notable model failure mode 1: in in-advance planning environments such as PHYRE, models rarely devise correct full plans from the start and improve only slowly across repeated attempts
-- Notable model failure mode 2: in on-the-fly environments such as Kinetix, Angry Birds, and Cut the Rope, models make poor timing and control choices even when annotations reveal the interactive objects
-- Notable model failure mode 3: some apparently strong results are brittle or misleading, such as repeated brute-force strategies in Pooltool that exploit deterministic settings without demonstrating robust strategy
+- Core empirical takeaway: DeepPHY shows that current VLMs remain weak at turning descriptive physical understanding into reliable control: strong closed-source models still trail even non-expert humans in Angry Birds and Cut the Rope, and WM prompting helps only modestly in simpler settings.
+- Notable model failure mode 1: in in-advance planning environments such as PHYRE, models rarely find correct full plans quickly and learn only slowly from failed attempts
+- Notable model failure mode 2: in sequential environments such as Kinetix, Angry Birds, and Cut the Rope, models struggle with precise timing, multi-step chain reactions, and dynamic adaptation even when key objects are labeled
+- Notable model failure mode 3: Pooltool can yield misleadingly high scores because deterministic setups reward repeated brute-force shots rather than genuine cue-ball control or spin reasoning
 - Does this paper reveal a benchmark-design limitation as well? yes; DeepPHY itself shows how much current results depend on discretization, annotation, and mixed evaluation modes
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited. Use only as a contrast case showing why interactive environments can test action-grounded physical reasoning better than static physics QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a boundary marker separating game benchmarks from simulator-heavy physical-reasoning diagnostics.
-- Best use in Section 2 (core capabilities evaluated by games): Strong contrast evidence for visual causal reasoning and action-grounded physical prediction.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence that many multimodal benchmarks achieve tractability by redesigning observation and action spaces, and that even explicit world-model prompting may not help.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that current multimodal agents still struggle to turn physical understanding into executable plans, especially in richer dynamic environments.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited. At most a brief contrast showing why interactive physics tasks probe action-grounded reasoning differently from static physics QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Limited boundary mention only; useful if we need to mark where simulator-heavy physical diagnostics sit beside, rather than inside, the main game-benchmark lineage.
+- Best use in Section 2 (core capabilities evaluated by games): Contrast evidence for visual and spatiotemporal physical reasoning under simplified but still interactive interfaces.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the clearest contrast cases for benchmark-side semantic privilege without giving models full symbolic-state APIs; also useful for the descriptive-versus-procedural gap between WM explanations and actual control.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Evidence that current multimodal agents still fail on timing, chain reactions, and action-grounded physical prediction, while benchmark designers often recover tractability by redesigning interfaces.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): static physics reasoning QA benchmarks, symbolic-input physical simulators, and game agents that sidestep low-level physics by operating at higher abstraction
 - Closest follow-up(s): future physically grounded multimodal agent benchmarks with less observation/action simplification
-- Best comparison targets inside our corpus: ReasoningViaVideo, EvoEmpirBench, PuzzleJAX, SudokuBench
-- What this paper uniquely adds relative to neighbors: It foregrounds physical reasoning specifically, mixes in-advance and on-the-fly planning regimes, and makes the observation/action redesign problem explicit instead of hiding it.
+- Best comparison targets inside our corpus: ReasoningViaVideo, EvoEmpirBench, MazeEval, VGRPBench
+- What this paper uniquely adds relative to neighbors: It is the clearest physical-reasoning contrast paper in the corpus: a multi-environment suite that keeps interactive consequence loops while openly exposing how much tractability comes from interface redesign.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - DeepPHY integrates PHYRE, I-PHYRE, Kinetix, Pooltool, Angry Birds, and Cut the Rope into one benchmark suite.
-- The benchmark explicitly converts observation spaces through annotations, grids, or transformed views, and discretizes or structures actions to make the tasks tractable for current VLMs.
-- Evaluation uses two prompt formats - Vision-Language-Action and World Model - and reports success rate, Pass@K, and average attempts.
-- Human results are reported only for Pooltool, Angry Birds, and Cut the Rope, and the paper states that these are non-expert baselines rather than expert upper bounds.
+- The benchmark explicitly rewrites observation spaces through grids, numerical labels, or transformed views, and rewrites action spaces through discretized selections, JSON outputs, integer control vectors, or constrained code commands.
+- Evaluation compares two prompt formats - Vision-Language-Action and World Model - where WM additionally asks the model to predict the environmental changes caused by its chosen action.
+- The core metrics are success rate, Pass@K, and average attempts, with star-based solution-quality summaries also reported for Angry Birds and Cut the Rope.
+- Human results are reported only for Pooltool, Angry Birds, and Cut the Rope, and the paper states that these are ballpark non-expert baselines rather than expert upper bounds.
+- Cut the Rope excludes multi-screen-transition levels because element positions could not be reliably obtained in real time.
 
 ### 11.2 Our synthesis / interpretation
-- DeepPHY is valuable to the survey mainly as a scope boundary and methodology contrast: it is about interactive physical control, but it is not a general game benchmark in the same way as the survey's core game-agent papers.
-- The paper is especially useful for Section 3 because it shows that benchmark interface design can dominate what "agentic" performance actually means.
+- DeepPHY is safest to cite as a contrast paper on physical reasoning and interface design, not as direct evidence of human-like game play.
+- Its main survey value is in showing that keeping visual input is not the same thing as preserving ecological interaction: benchmark-side annotation, action restructuring, and transformed views substantially change what is being measured.
 
 ### 11.3 Uncertain or needs re-check
-- If we later need exact task counts, attempt budgets, or best-model numbers for each environment, re-check the appendix tables because these vary substantially across the six settings.
-- If we compare human-relative performance in detail, re-check the paper's caveat that the reported human baselines are non-expert and only cover a subset of environments.
+- If we later need exact per-environment prompt templates, task splits, or ablation settings, re-check the appendices because implementation details vary sharply across the six environments.
+- If we compare scoring pipelines across benchmarks, re-check exactly how manual evaluation and star accounting were operationalized for Angry Birds and Cut the Rope.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? No immediate reread is required unless we later need per-environment score tables or a tighter comparison of VLA versus WM prompting.
 - Which section to read next if needed: 3.3 / 3.4 / 4 / 5 / appendices for individual environments
-- Follow-up question(s): When we write the benchmark-interface subsection, should DeepPHY stay in the main contrast table or move into a boundary-case paragraph about simulator-heavy physical diagnostics?
+- Follow-up question(s): When Section 3 discusses semantic privilege, should DeepPHY sit next to StarBench as a contrast case where visual input is retained but observation and action channels are heavily redesigned?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -130,4 +132,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/DeepPHY.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-19

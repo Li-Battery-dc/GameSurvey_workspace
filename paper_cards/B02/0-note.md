@@ -6,7 +6,7 @@
 
 为了reasoning 设计execution分离，设计视觉感知分离
 
-说明提升reasoning能力的方向不只是延长思维链，还要兼顾
+说明提升reasoning能力的方向不只是延长思维链，还要兼顾推理速度
 
 ## CivRealm
 
