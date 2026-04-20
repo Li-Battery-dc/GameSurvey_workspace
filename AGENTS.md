@@ -3,15 +3,16 @@
 ## Mission
 This repository is the working control plane for an end-to-end survey on game benchmarks for LLM and VLM agents. The repo now covers intake, triage, paper cards, card review, section drafting, and manuscript stabilization. Batches and paper cards remain important intermediate assets, but they are no longer the end goal.
 
-## Read First
+## Important Files
 Always open these files before planning work:
-- `benchmark.md`
 - `outline.md`
 - `writing.md`
 - `template/registry_schema.md`
 - `corpus/registry/benchmark_registry.csv`
-- `workflow_guidance/WORKFLOW.md`
 - `corpus/batches/batch_index.md`
+  
+the paper list in `benchmark.md` 
+the final scripts in `script.md`
 
 If the task touches batch card creation or batch review, also open:
 - `template/paper_card_template.md`
@@ -24,7 +25,7 @@ If the task is a single-paper audit of an existing card, also open:
 - the target paper's registry row
 - the full paper PDF or other authoritative full text
 
-If the task touches drafting or revision, also open:
+If the task touches drafting or revision, you can search:
 - the relevant reviewed cards under `paper_cards/`
 - the relevant file under `corpus/batches/` when section support depends on batch state
 
@@ -34,12 +35,6 @@ Repo-local skills live in `.codex/skills/`.
 - `paper-card-batch-reader`: deep-read selected papers, write paper cards, and sync the registry.
 - `paper-card-auditor`: full-text audit of one existing paper card for hallucinations, card accuracy, and alignment to the current outline and writing plan.
 - No dedicated repo-local skill exists yet for section drafting or cross-section revision. For Stages 3 to 5, work directly from the workflow docs, reviewed cards, `outline.md`, and `writing.md`.
-
-## Default Workflow
-1. List -> queue. Use `benchmark-triage` to turn `benchmark.md` into the next reading queue and keep touched registry rows at `status = triaged`.
-2. Queue -> paper card. Use `paper-card-batch-reader` to read the paper, create or update the card, and sync the registry at `status = card-draft`.
-3. Paper card -> check. Verify the card against the full paper before drafting. Use `paper-card-auditor` for a single-paper full-text audit, or run batch review only when the user explicitly wants batch-level checking. Promote only reliable cards to `card-reviewed`.
-4. Checked card -> draft. Draft or revise `writing.md` only from `card-reviewed` or `finalized` evidence. If support is thin or conflicting, push the work back to the earlier steps instead of guessing.
 
 ## Evidence Rules
 - Keep paper-supported facts separate from our synthesis.
