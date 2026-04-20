@@ -34,7 +34,7 @@ Repo-local skills live in `.codex/skills/`.
 - `benchmark-triage`: initial screening, batching, priority setting, and first-pass outline anchoring.
 - `paper-card-batch-reader`: deep-read selected papers, write paper cards, and sync the registry.
 - `paper-card-auditor`: full-text audit of one existing paper card for hallucinations, card accuracy, and alignment to the current outline and writing plan.
-- No dedicated repo-local skill exists yet for section drafting or cross-section revision. For Stages 3 to 5, work directly from the workflow docs, reviewed cards, `outline.md`, and `writing.md`.
+- `survey-section-writer`: align section plans in `writing.md`, mine support from reviewed paper cards, and then draft or revise copy-ready prose in `script.md`. This skill is the default for section drafting, cross-section revision, and manuscript stabilization work.
 
 ## Evidence Rules
 - Keep paper-supported facts separate from our synthesis.
