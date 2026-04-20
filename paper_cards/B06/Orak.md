@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Diverse real video games make it possible to evaluate whether an LLM agent can remain useful across very different cognitive demands instead of only one narrow ruleset.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency / L5 cross-game generalization
+- Benchmark level(s): L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -30,7 +30,7 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): mixed video games
+- World type(s): puzzle / adventure / RTS / sandbox / open-world / other
 - Real game / simulated game / designed task-game hybrid: real video games benchmarked through a common interface
 - Benchmark unit: game episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 12 games
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: rule following, memory, planning, error handling, and some visual grounding when image input is enabled
 - Perception burden removed: Orak preprocesses game states into structured text and hides information deemed irrelevant to gameplay
 

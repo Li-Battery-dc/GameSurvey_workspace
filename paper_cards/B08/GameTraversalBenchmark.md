@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Traversal tasks turn planning into a measurable sequential control problem with exact optimal-path references.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): puzzle / maze / other
+- World type(s): puzzle / other
 - Real game / simulated game / designed task-game hybrid: LLM-generated 2D game-like maps from a game-design pipeline
 - Benchmark unit: map episode with multiple objectives
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 150 maps with varied sizes, path lengths, and objective counts
 
 ### 3.4 Modality
-- Primary modality: symbolic state / text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: parsing map strings, route planning, and multi-objective sequencing
 - Perception burden removed: no visual or real-time input
 

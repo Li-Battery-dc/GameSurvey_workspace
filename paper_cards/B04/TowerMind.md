@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Tower-defense play creates repeated, automatically scored decisions about spatial allocation, timing, and resource use inside a dynamic game loop where legality and usefulness can diverge.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L4 visual agency
+- Benchmark level(s): L2 strategic reasoning / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: real-time
 
 ### 3.2 World structure
-- World type(s): RTS / tower defense
+- World type(s): RTS
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid built as a research environment
 - Benchmark unit: episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 5 built-in benchmark levels in one tower-defense environment
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: native control
 - Perception burden retained: real-time map reading, timing pressure, spatial allocation, partial observability from moving fog of war, and action-outcome coupling
 - Perception burden removed: textual and structured modes expose privileged game-state semantics that humans do not receive directly
 

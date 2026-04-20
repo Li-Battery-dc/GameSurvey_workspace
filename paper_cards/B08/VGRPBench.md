@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Grid puzzles let a benchmark stress perception and rule-based reasoning while keeping exact verification.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 20 puzzle families with easy, medium, and hard variants; evaluations use 5 runs of 20 sampled instances each for 100 total samples per reported setting
 
 ### 3.4 Modality
-- Primary modality: image-first, with text-control versions of every puzzle
+- Observation modality: visual image
+- Action modality: semantic
 - Perception burden retained: grid parsing, clue localization, visual-symbol alignment, and rule interpretation
 - Perception burden removed: no naturalistic visual clutter or embodied control beyond puzzle boards
 

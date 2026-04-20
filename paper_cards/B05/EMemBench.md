@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Interactive games create individualized, eventful trajectories with exact underlying state, making it possible to generate grounded memory questions that are automatically answerable and verifiable.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 15 Jericho text games plus the Crafter visual game; Table 1 reports about 80 questions per trajectory on average, and the visual setting is averaged over 5 fixed seeds
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: mixed
 - Perception burden retained: trajectory tracking, event binding, temporal ordering, spatial grounding, and partial observability in the underlying environments
 - Perception burden removed: fixed hand-authored question sets and subjective post-hoc judging of answers
 

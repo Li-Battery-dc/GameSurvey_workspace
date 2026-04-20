@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Chess supplies a high-contamination-resistance, automatically verifiable environment where legal-move errors and strategic weakness are easy to separate.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L2 strategic reasoning
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: chess only
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: board-state interpretation, legal move selection, long-horizon tactical consequences
 - Perception burden removed: raw visual board perception and natural move history handling
 

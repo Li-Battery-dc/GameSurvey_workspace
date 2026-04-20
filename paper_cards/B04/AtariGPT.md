@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Atari provides a compact way to test whether multimodal models can turn raw-screen understanding into concrete low-level actions, while the paper's paired diagnostics help decompose why those actions fail.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: real-time
 
 ### 3.2 World structure
-- World type(s): arcade / other
+- World type(s): adventure / other
 - Real game / simulated game / designed task-game hybrid: standardized arcade game suite in ALE
 - Benchmark unit: fixed-horizon rollout / static frame probe
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 7 gameplay games plus an 8-environment companion understanding probe
 
 ### 3.4 Modality
-- Primary modality: image
+- Observation modality: visual image
+- Action modality: native control
 - Perception burden retained: raw frames, object identification, relative spatial layout, and scene-to-action grounding under a short visual history
 - Perception burden removed: the control loop is simplified to prompted discrete actions with resized frames, fixed frame skipping, output repair, and a short rollout horizon rather than full human controller dexterity
 

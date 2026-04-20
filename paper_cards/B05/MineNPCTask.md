@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Minecraft supports long task arcs, tool dependencies, navigation, and mixed-initiative cooperation in a world where outcomes can still be checked from in-world evidence.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 44 high-level tasks and 216 subtasks in the initial evaluation snapshot
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: chat-grounded task understanding, inventory and equipment tracking, nearby-entity grounding, navigation, and memory over extended interaction
 - Perception burden removed: raw visual perception and low-level motor control are both abstracted through Mineflayer APIs and bounded execution policies
 

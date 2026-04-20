@@ -17,15 +17,15 @@
 ## 2. Position in our survey
 - Why-games relevance: Games let the paper hold the domain constant while progressively increasing the demands from raw board perception to rule-grounded and finally multi-turn play.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L4 visual agency (contrast-only)
+- Benchmark level(s): L2 strategic reasoning / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
-- Information structure: mostly perfect
-- Transition structure: mostly deterministic
-- Agent structure: single-agent / two-player mixed across games
+### 3.1 Game structure
+- Information structure: mixed
+- Transition structure: mixed
+- Agent structure: mixed
 - Social structure: mixed
 - Time structure: turn-based
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 games across 4 evaluation tasks
 
 ### 3.4 Modality
-- Primary modality: image / mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: board parsing, symbol localization, and visual state tracking
 - Perception burden removed: no native control interaction, no real-time pressure, and no visually cluttered 3D worlds
 

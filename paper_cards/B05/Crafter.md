@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: A survival game can package exploration, planning, resource dependencies, and long horizons into one automatically scored environment.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 1 environment with 22 achievements
 
 ### 3.4 Modality
-- Primary modality: image
+- Observation modality: visual image
+- Action modality: native control
 - Perception burden retained: local visual observation, exploration, resource management, and long-horizon planning
 - Perception burden removed: no language understanding or high-fidelity 3D control burden
 

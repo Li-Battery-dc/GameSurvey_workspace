@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Game-theoretic tasks strip away narrative clutter and make legal action selection, strategic trade-offs, uncertainty, and opponent modeling observable under explicit rules.
 - Historical stage: formal container
-- Narrative level(s): L1 rule following / L2 strategic reasoning
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning
 - Most relevant outline section(s): 0,1,2,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 10 game-theoretic tasks
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: rule following, state tracking, opponent modeling, and strategic choice under different information regimes
 - Perception burden removed: no raw visual interface or embodied control burden
 

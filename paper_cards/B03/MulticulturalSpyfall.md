@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Social deduction creates a repeatable setting where deception, belief tracking, and strategic dialogue can be tested jointly rather than as isolated QA skills.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 5-player Spyfall matches across four language settings and three entity regimes (generic locations, local locations, local foods)
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: hidden-role reasoning, multilingual dialogue, cultural grounding, and accusation strategy
 - Perception burden removed: no visual table interaction or embodied play burden
 

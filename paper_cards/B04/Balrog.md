@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses games to stress sequential planning, exploration, spatial reasoning, and rule discovery under far richer dynamics than static multimodal benchmarks.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 environment families spanning multiple task sets
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: language descriptions, optional images, long interaction history, exploration and planning demands
 - Perception burden removed: some environments rely on text wrappers or combined image-plus-description inputs rather than raw play alone
 

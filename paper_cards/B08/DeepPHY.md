@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Physics-based games and simulators turn physical prediction into an interactive action-consequence loop rather than static QA, but DeepPHY makes that loop tractable through heavy benchmark-side interface redesign.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: hybrid
 
 ### 3.2 World structure
-- World type(s): puzzle / physics game / simulation
+- World type(s): puzzle / other
 - Real game / simulated game / designed task-game hybrid: curated suite mixing physics simulators with physics-based games
 - Benchmark unit: attempt / trial
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 environments, each with its own task distribution and attempt budget
 
 ### 3.4 Modality
-- Primary modality: image
+- Observation modality: visual image
+- Action modality: semantic
 - Perception burden retained: rendered-scene parsing, spatial relations among objects, temporal prediction, and visual revision after failed trials
 - Perception burden removed: object detection is eased by grids or IDs, Pooltool is converted from a 3D view to a 2D top-down view, and much of the continuous-control burden is replaced by discretized or constrained action formats
 

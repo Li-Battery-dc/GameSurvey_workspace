@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Even tiny game worlds can expose the interaction between perception, planning, and repeated action selection better than one-shot reasoning tasks.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L4 visual agency (contrast-only)
+- Benchmark level(s): L2 strategic reasoning / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
-- Information structure: mostly perfect
+### 3.1 Game structure
+- Information structure: mixed
 - Transition structure: deterministic
 - Agent structure: single-agent
 - Social structure: N/A
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): puzzle / other (grid navigation and rearrangement)
+- World type(s): puzzle / other
 - Real game / simulated game / designed task-game hybrid: designed task-game suite
 - Benchmark unit: level episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 games with 50 levels each, for 300 levels total
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: image interpretation in the visual settings, grid understanding, and state tracking
 - Perception burden removed: worlds are simple and discrete, with limited action spaces and no real-time pressure
 

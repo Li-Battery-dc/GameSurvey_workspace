@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Poker combines hidden information, opponent modeling, and strategic trade-offs in a fully formalized setting with exact solver references.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 11,000 spots covering pre-flop and post-flop play
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: betting history, hidden-information reasoning, and wager selection
 - Perception burden removed: no visual table interface or live timing burden
 

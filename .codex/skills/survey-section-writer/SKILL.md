@@ -1,6 +1,6 @@
 ---
 name: survey-section-writer
-description: "Use when drafting or revising survey sections from the current outline and writing plan: tighten `writing.md`, mine support from reviewed paper cards, and only then draft or revise copy-ready prose in `script.md`. Trigger on requests like 'draft Section 3.1', 'revise the taxonomy writing plan', 'turn this subsection into script prose', or 'rewrite the lead-in with stronger evidence'."
+description: "Use when drafting or revising survey sections from the current outline and writing plan: discuss and refine `writing.md` without editing it directly, mine support from reviewed paper cards, and provide candidate survey prose in the dialogue for human review. Trigger on requests like 'draft Section 3.1', 'revise the taxonomy writing plan', 'turn this subsection into script prose', or 'rewrite the lead-in with stronger evidence'."
 ---
 
 # Survey Section Writer
@@ -9,7 +9,9 @@ description: "Use when drafting or revising survey sections from the current out
 
 Use this skill for Stages 3 to 5 work: section drafting, cross-section revision, and manuscript stabilization.
 
-This repo treats `writing.md` as the active thinking surface and `script.md` as the copy-ready handoff. Do not jump straight to polished prose. First align the section plan in `writing.md`, then pull evidence from reviewed cards, and only then draft or revise `script.md`.
+This repo treats `writing.md` as the active thinking surface and `script.md` as the copy-ready handoff. Do not jump straight to polished prose. First align the section plan in `writing.md`, then pull evidence from reviewed cards, and only then propose draft or revised prose.
+
+Do not directly edit `writing.md`. Always present suggested `writing.md` changes and candidate section prose in the dialogue so the user can review them manually first.
 
 ## Open These Files First
 
@@ -47,6 +49,8 @@ Use `.codex/skills/paper-card-auditor` for one-paper verification.
 
 Default to a discussion-first move centered on `writing.md`.
 
+Never modify `writing.md` directly. The job is to inspect the current plan, identify what should change, and present a suggested revision in the dialogue.
+
 Before touching `script.md`, make sure `writing.md` captures:
 
 - the target section or subsection
@@ -56,7 +60,7 @@ Before touching `script.md`, make sure `writing.md` captures:
 - the evidence type each paragraph needs
 - open gaps, uncertainty, or placeholder claims
 
-If the current plan is underspecified or internally inconsistent, fix `writing.md` first and stop there if needed. Do not let `script.md` outrun the planning surface.
+If the current plan is underspecified or internally inconsistent, explain the problem and propose a better `writing.md` version in the dialogue first. Do not let `script.md` outrun the planning surface.
 
 ## Evidence Eligibility
 
@@ -88,16 +92,16 @@ Start narrow. Do not open large swaths of the corpus without a section reason.
 ## Workflow
 
 1. Restate the target section in terms of `outline.md` and identify the live drafting problem in `writing.md`.
-2. Discuss and revise `writing.md` first:
+2. Discuss and refine `writing.md` first in the dialogue:
    - clarify the section objective
    - choose the paragraph sequence
    - assign anchor and comparison papers
    - record thin spots or claims that still need evidence
 3. Build a compact evidence set from the registry and reviewed cards. Prefer breadth of contrast over dumping many redundant citations.
-4. Patch `writing.md` so the current section has a usable structure, evidence hooks, and explicit open questions.
-5. Only after the plan is stable, draft or revise `script.md`.
-6. Keep `script.md` aligned to the latest `writing.md` wording, structure, and section boundaries.
-7. If the evidence is not yet strong enough for copy-ready prose, strengthen `writing.md` and leave `script.md` unchanged or clearly marked as placeholder text.
+4. Provide a recommended `writing.md` revision in the response, with usable structure, evidence hooks, and explicit open questions, but do not edit the file.
+5. Only after the plan is stable, provide candidate `script.md` prose in the dialogue.
+6. Keep the proposed prose aligned to the latest `writing.md` wording, structure, and section boundaries.
+7. If the evidence is not yet strong enough for copy-ready prose, stop at the `writing.md` suggestion layer and say what is still missing.
 
 ## Drafting Rules For `script.md`
 
@@ -106,11 +110,12 @@ Start narrow. Do not open large swaths of the corpus without a section reason.
 - Keep direct paper-supported facts separate in your own reasoning from cross-paper synthesis, even if both appear in the final prose.
 - Favor a small number of well-chosen citations over long citation piles with no argumentative role.
 - Preserve the user's intended story and framing when `writing.md` already makes a deliberate choice.
+- Present candidate prose in the dialogue for review instead of directly editing `script.md`, unless the user explicitly asks for a file edit later.
 - Revise existing prose when possible instead of appending parallel versions of the same paragraph.
 
-## Good `writing.md` Updates
+## Good `writing.md` Suggestions
 
-A strong writing-plan update usually adds or sharpens:
+A strong writing-plan suggestion usually adds or sharpens:
 
 - a section goal sentence
 - the intended progression of paragraphs
@@ -118,9 +123,9 @@ A strong writing-plan update usually adds or sharpens:
 - what comparison or tension each paragraph should surface
 - which claims are settled versus still open
 
-## Good `script.md` Updates
+## Good `script.md` Suggestions
 
-A strong script update is:
+A strong script suggestion is:
 
 - traceable to the current `writing.md`
 - supported by reviewed evidence
@@ -130,17 +135,18 @@ A strong script update is:
 ## Do Not
 
 - do not treat `script.md` as the first drafting surface
+- do not edit `writing.md` directly
 - do not write polished prose from unread or weakly supported cards
 - do not collapse direct evidence and our interpretation into one unsupported claim
 - do not cite a paper for a role its card explicitly marks as uncertain
 - do not search the entire corpus when the registry and batch structure already narrow the section
-- do not leave `writing.md` stale after materially changing the section story
+- do not silently apply wording changes to `writing.md`; always show them in the dialogue for review first
 
 ## Handoff
 
 At the end of a drafting pass, report:
 
-- which section or subsection was updated
-- whether `writing.md` changed, and how the plan became clearer
+- which section or subsection was addressed
+- what `writing.md` revision you recommend, and how the plan becomes clearer
 - which cards supplied the main support
-- whether `script.md` is now copy-ready or still has evidence gaps
+- what candidate prose you recommend for `script.md`, or why the section still has evidence gaps

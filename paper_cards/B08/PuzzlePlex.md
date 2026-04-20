@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Puzzles retain explicit rules and strategic interaction while letting benchmark designers vary uncertainty, competition, and horizon length compactly.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -39,7 +39,8 @@
 - Number of games / tasks: 15 puzzle types
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: rule interpretation, logical and spatial reasoning, long-horizon planning, legality handling
 - Perception burden removed: richer ecological interaction beyond puzzle rules
 

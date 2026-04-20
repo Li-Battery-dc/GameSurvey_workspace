@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses games to couple perception, action, and post-hoc self-improvement in a way static video benchmarks cannot.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency / L5 cross-game generalization
+- Benchmark level(s): L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 15 games
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: mixed
 - Perception burden retained: screenshot-based gameplay, GUI consequences, failure trajectories, and expert tutorial videos for reflection
 - Perception burden removed: internal game state access
 

@@ -17,17 +17,17 @@
 ## 2. Position in our survey
 - Why-games relevance: Minecraft-like worlds support open-ended cooperation, tool use, spatial planning, and multimodal task specification at scale.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L3 social intelligence / L4 visual agency
+- Benchmark level(s): L3 social intelligence / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
 - Social structure: cooperative
-- Time structure: real-time / hybrid
+- Time structure: hybrid
 
 ### 3.2 World structure
 - World type(s): sandbox / open-world
@@ -39,7 +39,8 @@
 - Number of games / tasks: 55,000 task variants across four task families
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: first-person RGB observation, inventory, spatial reasoning, and multimodal prompt grounding
 - Perception burden removed: MineFlayer executes higher-level skills instead of low-level motor control
 

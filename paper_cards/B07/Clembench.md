@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Dialogue games create repeatable multi-turn interaction with explicit goals, which lets the benchmark test conversational agency rather than only response quality.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L3 social intelligence
+- Benchmark level(s): L1 rule understanding / L3 social intelligence
 - Most relevant outline section(s): 1,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -39,7 +39,8 @@
 - Number of games / tasks: 5 interaction settings in v1.0, instantiated as 7 benchmark datasets and 250 instances
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: conversational grounding, instruction following, multi-turn planning, and goal-directed dialogue
 - Perception burden removed: no visual grounding or embodied action burden
 

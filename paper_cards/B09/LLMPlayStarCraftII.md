@@ -17,17 +17,17 @@
 ## 2. Position in our survey
 - Why-games relevance: Real-time strategy games compress resource management, tech progression, scouting, and long-horizon adaptation into one domain.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
 - Social structure: competitive
-- Time structure: real-time / hybrid
+- Time structure: hybrid
 
 ### 3.2 World structure
 - World type(s): RTS
@@ -39,7 +39,8 @@
 - Number of games / tasks: StarCraft II matches on selected ladder maps against built-in AI and humans
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: strategic state understanding, resource planning, and scouting interpretation
 - Perception burden removed: micro control and raw visual perception are abstracted away
 

@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Competitive Minecraft lets the benchmark combine teammate coordination, adversarial pressure, spatial/resource dependencies, and real-time execution in one automatically scorable setting.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning; secondary bridge to L3 social intelligence
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 2 competitive scenarios
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: spatial reasoning, inventory management, teammate coordination, opponent adaptation, temporal pressure
 - Perception burden removed: raw pixel perception and native human UI control
 

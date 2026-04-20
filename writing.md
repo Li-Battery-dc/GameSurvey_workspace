@@ -4,6 +4,12 @@ This file is the active drafting workspace for the survey on game benchmarks for
 
 This file inlcude the detailed idea and high-level story I want to write in the survey. For different section, always draft the script along with this file. 
 
+## Collaboration Rule
+
+- Do not modify `writing.md` directly during drafting assistance.
+- Always provide proposed `writing.md` revisions and candidate survey prose in the dialogue as reference material for human review.
+- Treat any wording, structure, or paragraph plan shown in the chat as a suggestion until I manually decide whether to apply it.
+
 ## Narrative Spine
 
 high-level narrative stages, all sections follow or recall:
@@ -48,9 +54,10 @@ high-level narrative stages, all sections follow or recall:
   
 ### Purpose
 
+1. Level 1: 
+
 ### Paragim
 
 #### Interface
 
 #### Evaluation
-

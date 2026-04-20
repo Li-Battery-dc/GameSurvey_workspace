@@ -16,15 +16,15 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Turn-based interactive environments let the benchmark measure exploration, hidden-mechanic discovery, goal inference, and planning efficiency rather than only final-answer accuracy.
-- Historical stage: diagnostic capability probe with an explicit benchmark-design and anti-overfitting agenda
-- Narrative level(s): L2 strategic reasoning / boundary case toward L5 cross-game generalization; not L4 visual agency
+- Historical stage: diagnostic capability probe
+- Benchmark level(s): L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
-- Information structure: partial
-- Transition structure: mostly deterministic
+### 3.1 Game structure
+- Information structure: imperfect
+- Transition structure: mixed
 - Agent structure: single-agent
 - Social structure: N/A
 - Time structure: turn-based
@@ -39,7 +39,8 @@
 - Number of games / tasks: 135 environments total (25 public, 55 semi-private, 55 fully private)
 
 ### 3.4 Modality
-- Primary modality: image / mixed
+- Observation modality: mixed
+- Action modality: native control
 - Perception burden retained: frame parsing, object tracking, transition interpretation, and action-effect inference from abstract visual states
 - Perception burden removed: natural-image semantics, language understanding, cultural symbols, and real-time sensorimotor control
 

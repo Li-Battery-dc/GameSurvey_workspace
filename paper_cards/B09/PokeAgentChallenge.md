@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Pokemon naturally combines hidden information, strategic adversaries, and extremely long action horizons in a way few other benchmarks do.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: mixed
@@ -30,7 +30,7 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): battle / RPG
+- World type(s): adventure / open-world / other
 - Real game / simulated game / designed task-game hybrid: real game benchmark wrappers around Pokemon battling and RPG play
 - Benchmark unit: battle or speedrun episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 2 benchmark tracks within the Pokemon ecosystem
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: mixed
 - Perception burden retained: hidden information, opponent modeling, long-horizon planning, visual interaction in speedrunning
 - Perception burden removed: some standardized harness friction, especially on the battling track
 

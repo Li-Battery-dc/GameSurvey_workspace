@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: A diverse game set can cover multiple dimensions of strategic cognition that would be hard to compare in one real-world benchmark.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning; secondary bridge to L3 social intelligence
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -30,7 +30,7 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): RTS / 4X strategy / fighting / negotiation / social deduction / board
+- World type(s): RTS / board / social deduction / other
 - Real game / simulated game / designed task-game hybrid: multi-game benchmark over established strategic games
 - Benchmark unit: match / scenario
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 games with customizable scenarios
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: strategic reasoning, social reasoning, temporal control, multi-step planning, and action grounding under standardized state descriptions
 - Perception burden removed: raw visuals, native interfaces, and most human-facing control burdens are abstracted into text-based interfaces
 

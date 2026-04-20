@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Overcooked tasks make collaboration pressure concrete because agents must coordinate spatially and temporally under shared goals.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 30 tasks across 6 complexity levels
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: task decomposition, communication, state tracking, and partner coordination under asymmetric information
 - Perception burden removed: visual perception and native game-interface control are abstracted into text prompts and predefined action primitives
 

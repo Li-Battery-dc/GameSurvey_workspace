@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses the interaction pressure of a game to force concept use, discrimination, and role-aware description in context.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 529 concept pairs overall; main evaluation uses 464 game instances across 12 categories, 500 ranking games, and 5,733 snapshot QA items
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: semantic similarity, contextual clue interpretation, multi-round description and voting
 - Perception burden removed: nonverbal cues and broader embodied play context
 

@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses a hard hidden-information card game to package large legal-action sets, teammate coordination, and inter-round dependencies into a checkable decision-making testbed, but that testbed is not instantiated as an LLM/VLM benchmark in the paper itself.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: GuanDan only
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: hidden hands, action-history tracking, teammate/opponent modeling, variable legal actions
 - Perception burden removed: visual card/table interaction
 

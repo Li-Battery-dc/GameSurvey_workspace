@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Hanabi makes hidden-state coordination and recursive partner modeling concrete while remaining fully scoreable.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: Hanabi games across 2-5 players with 17 evaluated models
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: hidden information, partner coordination, hint interpretation, and state tracking
 - Perception burden removed: physical card handling and face-to-face table interaction
 

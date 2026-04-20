@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Adventure games create long dependency chains and memory-heavy task structure that static benchmarks rarely capture.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -35,11 +35,12 @@
 - Benchmark unit: full task arc
 
 ### 3.3 Benchmark scope
-- Scope: curated suite
+- Scope: game family
 - Number of games / tasks: 34 games
 
 ### 3.4 Modality
-- Primary modality: GUI
+- Observation modality: visual image
+- Action modality: native control
 - Perception burden retained: raw RGB frames, GUI grounding, hidden internal state, long-horizon clue use
 - Perception burden removed: internal engine state and direct symbolic progress access
 

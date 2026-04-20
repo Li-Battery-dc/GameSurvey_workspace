@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It shows how a benchmark can decompose strategic reasoning into several game-native pressures, then recover diversity through real multiplayer games instead of only canonical game-theory toy settings.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 9 game environments
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state with a limited image exception in Hive
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: rule understanding, hidden-information reasoning, communication, social inference, strategic adaptation across games, and some board-state interpretation in Hive
 - Perception burden removed: native interfaces, most low-level perception, raw native control, and direct open-ended action search inside RAP
 

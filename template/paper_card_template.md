@@ -16,12 +16,12 @@
 ## 2. Position in our survey
 - Why-games relevance:
 - Historical stage: formal container / diagnostic capability probe / ecological agent benchmark / open-ended general-game benchmark
-- Narrative level(s): L1 rule following / L2 strategic reasoning / L3 social intelligence / L4 visual agency / L5 cross-game generalization
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning / L3 social intelligence / L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s):
 - Role in corpus: anchor / representative / contrast / peripheral
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect / imperfect / mixed
 - Transition structure: deterministic / stochastic / mixed
 - Agent structure: single-agent / multi-agent
@@ -38,7 +38,8 @@
 - Number of games / tasks:
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state / GUI / image / video / mixed
+- Observation modality: text or symbolic / visual image / mixed
+- Action modality: semantic / native control / mixed
 - Perception burden retained:
 - Perception burden removed:
 

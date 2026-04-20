@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It shows how games can expose social inference, deception, and conversational coordination in a controlled but still adversarial setting.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: Werewolf with eight-player role-balanced matches
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: public dialogue, hidden-role reasoning, memory over prior rounds, vote interpretation
 - Perception burden removed: face-to-face cues, vocal delivery, and nonverbal signaling
 

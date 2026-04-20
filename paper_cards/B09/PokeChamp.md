@@ -17,17 +17,17 @@
 ## 2. Position in our survey
 - Why-games relevance: Pokémon battles stress hidden information, long horizons, combinatorial action spaces, and opponent modeling in a popular competitive game.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: multi-agent
 - Social structure: competitive
-- Time structure: turn-based with clock pressure
+- Time structure: turn-based
 
 ### 3.2 World structure
 - World type(s): other
@@ -39,7 +39,8 @@
 - Number of games / tasks: 3M-plus replay dataset, 1,000 1v1 puzzle scenarios, mechanic-specific puzzles, arena evaluations, and live ladder games
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: partial observability, move history, and game-state reasoning
 - Perception burden removed: no raw visual battle interface
 

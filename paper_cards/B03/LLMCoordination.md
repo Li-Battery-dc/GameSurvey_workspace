@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Pure coordination games expose partner modeling and joint planning in a controlled setting without mixing in adversarial incentives.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -30,7 +30,7 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): mixed
+- World type(s): other
 - Real game / simulated game / designed task-game hybrid: curated coordination-game suite
 - Benchmark unit: game episode plus diagnostic question set
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 4 coordination games plus 198 CoordQA questions
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: environment understanding, partner modeling, and joint planning over textualized game states
 - Perception burden removed: raw visual grounding, raw grid parsing, and low-level control are abstracted away; the benchmark often supplies processed state information equivalent to RL observations
 

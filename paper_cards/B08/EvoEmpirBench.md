@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Dynamic games make exploration, adaptation, and score-versus-completion trade-offs observable and automatically measurable under partial observability.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): puzzle / maze / other
+- World type(s): puzzle / other
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid
 - Benchmark unit: episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 2 tasks with 3 difficulty levels each and 30 evaluation instances per level (90 instances per task)
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: local observability, state tracking, tool use, resource trade-offs, and long-horizon planning
 - Perception burden removed: no raw visual perception is required; state is presented through prompts and structured environment feedback
 

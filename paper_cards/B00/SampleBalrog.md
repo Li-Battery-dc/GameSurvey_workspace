@@ -16,12 +16,12 @@
 ## 2. Position in our survey
 - Why-games relevance: placeholder
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency / L5 cross-game generalization
+- Benchmark level(s): L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s): 1,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: unclear
 - Transition structure: unclear
 - Agent structure: unclear
@@ -38,7 +38,8 @@
 - Number of games / tasks: placeholder
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: mixed
 - Perception burden retained: placeholder
 - Perception burden removed: placeholder
 

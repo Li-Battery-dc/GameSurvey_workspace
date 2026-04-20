@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Games can gather stepwise reasoning traces from real human interaction while keeping players engaged enough to generate fresh evaluation data.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 0,1,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
-- Agent structure: multi-agent / human-model interaction
+- Agent structure: multi-agent
 - Social structure: mixed
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): social deduction / guessing / other
+- World type(s): social deduction / other
 - Real game / simulated game / designed task-game hybrid: benchmark suite built from existing human-playable conversational games
 - Benchmark unit: game session
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 3 games with 2,000+ collected sessions
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: multi-turn dialogue interpretation and human interaction
 - Perception burden removed: no visual or embodied interface
 

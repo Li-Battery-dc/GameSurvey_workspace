@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: NetHack compresses exploration, planning, survival, and partial observability into a single environment that is both hard and automatically evaluable.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 1 game plus an NLE task suite over procedurally generated runs
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: partial observability, inventory and resource tracking, spatial reasoning, and long-horizon planning
 - Perception burden removed: rich graphics and low-level motor control
 

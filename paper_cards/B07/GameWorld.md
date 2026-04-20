@@ -17,16 +17,16 @@
 ## 2. Position in our survey
 - Why-games relevance: Browser games provide closed-loop visual interaction, broad mechanic diversity, and scalable resettable environments while still permitting deterministic outcome checks.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 0,1,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
-- Social structure: mixed / N/A
+- Social structure: mixed
 - Time structure: mixed
 
 ### 3.2 World structure
@@ -39,7 +39,8 @@
 - Number of games / tasks: 34 games, 170 tasks, 5 genres
 
 ### 3.4 Modality
-- Primary modality: image
+- Observation modality: visual image
+- Action modality: mixed
 - Perception burden retained: raw screenshots, GUI layout interpretation, timing-sensitive control, and cross-game visual variability
 - Perception burden removed: paused inference in the default setting factors out latency, and the Generalist interface abstracts low-level control into semantic actions
 

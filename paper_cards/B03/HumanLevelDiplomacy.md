@@ -17,15 +17,15 @@
 ## 2. Position in our survey
 - Why-games relevance: Diplomacy operationalizes negotiation, trust, coalition formation, and tactical planning inside a formally scored game where language changes the game state indirectly through coordination.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence
 - Most relevant outline section(s): 0,1,2,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: deterministic
-- Agent structure: multi-agent / human-model interaction
+- Agent structure: multi-agent
 - Social structure: mixed
 - Time structure: turn-based
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 40 anonymous league games, plus an 8-game tournament slice discussed in the paper
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: negotiation dialogue, structured board-state reasoning, alliance and intention modeling, and long-horizon strategic coordination
 - Perception burden removed: no raw visual perception or native physical interface
 

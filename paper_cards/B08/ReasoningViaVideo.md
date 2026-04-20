@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Maze tasks provide explicit goals, procedural variation, and trajectory structure that can be largely scored automatically, making them useful for controlled visual reasoning evaluation.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: single-agent
 - Social structure: N/A
-- Time structure: real-time rollout / non-interactive
+- Time structure: real-time
 
 ### 3.2 World structure
-- World type(s): puzzle / maze
+- World type(s): puzzle
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid rendered as trajectory videos
 - Benchmark unit: trajectory
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 7,920 procedurally generated videos across 5 maze families
 
 ### 3.4 Modality
-- Primary modality: video
+- Observation modality: visual image
+- Action modality: semantic
 - Perception burden retained: spatial layout reading, temporal continuity, trajectory tracking, and structural consistency across frames
 - Perception burden removed: the benchmark does not require an agent to take discrete actions or interact with an evolving environment online
 

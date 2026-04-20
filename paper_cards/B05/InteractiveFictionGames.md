@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Interactive fiction exposes language grounding, exploration, and long-horizon planning inside environments with sparse feedback and machine-verifiable progress.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 56 supported games
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: language understanding, combinatorial command generation, and long-horizon state tracking
 - Perception burden removed: no visual grounding is required
 

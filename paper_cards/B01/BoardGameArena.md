@@ -17,17 +17,17 @@
 ## 2. Position in our survey
 - Why-games relevance: It shows how classic strategic games can be repackaged into scalable LLM-agent evaluations with logged reasoning traces.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L2 strategic reasoning
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning
 - Most relevant outline section(s): 1,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
 - Social structure: mixed
-- Time structure: turn-based / hybrid
+- Time structure: mixed
 
 ### 3.2 World structure
 - World type(s): board / card / other
@@ -39,7 +39,8 @@
 - Number of games / tasks: named examples include Tic-Tac-Toe, Connect Four, Kuhn Poker, Prisoner's Dilemma, and Matching Pennies; the reasoning-analysis figures span seven games
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: strategic state reading, legal-action choice, optional short move history, reasoning-trace generation
 - Perception burden removed: raw boards and direct native control
 

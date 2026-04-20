@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: A large game platform can probe many reasoning dimensions under controlled rules while staying less knowledge-dependent than many domain-specific benchmarks.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Benchmark level(s): L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -39,7 +39,8 @@
 - Number of games / tasks: 51 games across 6 reasoning dimensions, including 9 multimodal games
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: multi-turn state tracking, rule following, puzzle solving, strategic planning, and multimodal reasoning
 - Perception burden removed: standardized APIs smooth over environment integration and native UI irregularity, especially for text-rendered tasks
 

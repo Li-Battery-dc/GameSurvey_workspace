@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Production-living simulators package long-horizon planning, resource management, and social interaction into a grounded interactive world with reusable evaluation hooks.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L3 social intelligence / L4 visual agency
+- Benchmark level(s): L3 social intelligence / L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 1,000 tasks plus 100-task StarDojo-Lite and an extended playthrough task
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: first-person screenshots, local spatial reasoning, state monitoring, and task coordination over time
 - Perception burden removed: direct mod access exposes internal state and callable skills, reducing raw interface friction
 

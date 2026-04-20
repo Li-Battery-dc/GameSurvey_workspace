@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Game-like interaction provides goal-directed, repeatable, multi-turn evaluation that sits between fixed-instance testing and open-ended human preference.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L3 social intelligence
+- Benchmark level(s): L1 rule understanding / L3 social intelligence
 - Most relevant outline section(s): 0,1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -39,7 +39,8 @@
 - Number of games / tasks: current benchmark bundles report 14 text-only games with 817 instances and 5 multimodal games with 560 instances, within a broader extensible framework
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: multi-turn language interaction, goal tracking, and rule-conditioned dialogue
 - Perception burden removed: no visual or embodied interface burden
 

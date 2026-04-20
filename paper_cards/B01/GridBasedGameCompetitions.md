@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Small deterministic games make rule comprehension and action validity easy to verify, which is useful for controlled LLM comparison.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L2 strategic reasoning
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 3 games, 3 prompt types, 2,310 simulated matches, 7 LLMs plus random play
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: rule following, board-state interpretation, and strategic move selection
 - Perception burden removed: list prompts remove most perceptual burden and expose the board almost symbolically
 

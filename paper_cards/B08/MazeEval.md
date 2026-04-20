@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Simple games can isolate a core cognitive ingredient such as sequential spatial reasoning without confounds from richer interfaces.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
-- Information structure: partial but sufficient
+### 3.1 Game structure
+- Information structure: imperfect
 - Transition structure: deterministic
 - Agent structure: single-agent
 - Social structure: N/A
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): puzzle / maze
+- World type(s): puzzle
 - Real game / simulated game / designed task-game hybrid: designed maze benchmark
 - Benchmark unit: maze episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: five DFS-generated mazes for each size from 5x5 to 15x15, with additional exploratory tests for O3 at 30x30 and 40x40
 
 ### 3.4 Modality
-- Primary modality: symbolic state / text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: spatial state tracking and route planning
 - Perception burden removed: all visual cues are removed
 

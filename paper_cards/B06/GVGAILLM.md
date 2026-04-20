@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Procedurally extensible game families let us probe reasoning, planning, and symbolic grounding beyond fixed benchmark sets.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L2 strategic reasoning / L5 cross-game generalization
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
-- Social structure: none
-- Time structure: step-based
+- Social structure: N/A
+- Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): other (2D arcade-style GVGAI games)
+- World type(s): other
 - Real game / simulated game / designed task-game hybrid: simulated game family built on GVGAI
 - Benchmark unit: full level
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 118 games with up to 5 levels each
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: rule interpretation, spatial reasoning, reactive planning, action selection under evolving state
 - Perception burden removed: raw pixel perception
 

@@ -17,13 +17,13 @@
 ## 2. Position in our survey
 - Why-games relevance: Puzzle games give compact, highly verifiable tests of rule tracking, planning, and deadlock avoidance while keeping scoring and success conditions explicit.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Benchmark level(s): L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
-- Information structure: mostly perfect
+### 3.1 Game structure
+- Information structure: mixed
 - Transition structure: deterministic
 - Agent structure: single-agent
 - Social structure: N/A
@@ -39,7 +39,8 @@
 - Number of games / tasks: 951 collected PuzzleScript games; 414 fully valid and 156 partially valid under the paper's replay-based validation, with the paper framing 500+ diverse environments and access to thousands of PuzzleScript-style games
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: rule understanding, state tracking, deadlock reasoning, and long-range planning
 - Perception burden removed: low-level vision and motor control
 

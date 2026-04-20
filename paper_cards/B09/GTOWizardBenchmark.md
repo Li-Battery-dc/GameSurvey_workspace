@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Poker provides a formal hidden-information setting where strong solver-like anchors and variance-aware evaluation make strategic competence measurable.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: heads-up no-limit Texas Hold'em benchmark against fixed AI anchors
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: betting history, hidden-state reasoning, action sizing, and strategic planning under uncertainty
 - Perception burden removed: no visual table interface and no natural-language interaction burden
 

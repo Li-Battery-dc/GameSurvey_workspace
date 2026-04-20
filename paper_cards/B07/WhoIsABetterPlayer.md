@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Board games create a dynamic alternative to static QA benchmarks and expose strategic instability through direct model-vs-model interaction.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 5 games
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: board-state reasoning, move planning, opponent adaptation, rule negotiation in Free-Style
 - Perception burden removed: visual board perception and physical interaction
 

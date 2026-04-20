@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Cooperative games let the benchmark test hidden-state reasoning and partner modeling without collapsing everything into competition or deception.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: five-player Hanabi games with 30-50 runs per model
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: hidden information, partner hints, rationale interpretation, multi-agent coordination
 - Perception burden removed: visual card handling and embodied table interaction
 

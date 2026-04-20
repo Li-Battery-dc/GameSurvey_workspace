@@ -17,16 +17,16 @@
 ## 2. Position in our survey
 - Why-games relevance: RTS micromanagement provides a harsh test of multimodal perception, tactical choice, and multi-unit coordination under time pressure.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
-- Social structure: cooperative internal control / competitive external setting
+- Social structure: mixed
 - Time structure: real-time
 
 ### 3.2 World structure
@@ -39,7 +39,8 @@
 - Number of games / tasks: 12 specialized micromanagement scenarios
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: RGB battlefield perception, target identification, and tactical spatial reasoning
 - Perception burden removed: the environment still supplements visual input with natural-language observations
 

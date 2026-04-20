@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Social deduction games force agents to combine hidden information, dialogue, deception, and structured decision phases.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: single five-player Avalon game with baseline-bot evaluations, Assassin Set / Servant Set replacements, and a 60-game GPT-3.5 multi-LLM arena
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: dialogue interpretation, hidden-role reasoning, and memory over game history
 - Perception burden removed: no visual or embodied burden
 

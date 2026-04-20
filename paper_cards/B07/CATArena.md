@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses open-ended games to keep evaluation unsaturated and to expose whether agents can improve strategies through repeated competition.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 4 games with variants
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: strategy analysis, game-code understanding, opponent adaptation, repeated learning rounds
 - Perception burden removed: direct in-environment perception and action generation at play time
 

@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Games provide repeated, rule-bounded decision points where intermediate reasoning can be checked against ground truth rather than inferred from a single final answer.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 8 games
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: rule understanding, game-state tracking, subgoal reasoning, and opponent-aware decision making
 - Perception burden removed: gameplay is represented in text rather than through native visual interfaces
 

@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Crossword structure forces local answers to satisfy global consistency constraints, making reasoning more than independent clue retrieval.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: main English evaluation uses 100 7x7 and 100 14x14 puzzles; additional sets include 100 Chinese 7x7, 100 English Simple 7x7, and 50 CommonsenseQA-derived 7x7 puzzles
 
 ### 3.4 Modality
-- Primary modality: mixed text/image, though the strongest models in the paper are text-only LLMs
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: clue interpretation and grid-constraint satisfaction; image input is required for the LVLM track
 - Perception burden removed: the LLM track can use a text grid representation rather than raw image parsing, so the benchmark does not require human-like visual play in its strongest setting
 

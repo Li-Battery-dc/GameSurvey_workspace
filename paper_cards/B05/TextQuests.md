@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Text adventures expose memory, planning, exploration, and instruction-following over very long action horizons in an automatically scored environment.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Benchmark level(s): L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 25 Infocom games
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: language grounding, long-context state tracking, and command interpretation
 - Perception burden removed: no visual grounding is required
 

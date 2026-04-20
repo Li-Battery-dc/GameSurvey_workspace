@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Games create dense temporally entangled streams of self-actions, other-agent behavior, and world events that are hard to approximate with generic video QA.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 9 games, 2.4K QA pairs, 15 task categories
 
 ### 3.4 Modality
-- Primary modality: video
+- Observation modality: visual image
+- Action modality: semantic
 - Perception burden retained: first-person video, synchronized multi-view timing, self/other/world event tracking
 - Perception burden removed: direct action generation and control
 

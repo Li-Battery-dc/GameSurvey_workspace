@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Variant Sudoku gives tightly verifiable puzzle play where success depends on discovering nontrivial logical break-ins under novel rule combinations.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: core benchmark `challenge_100` with 15 4x4, 15 6x6, and 70 9x9 puzzles; the release also includes `nikoli_100`, `ctc` (2,565 Sudoku variants), and transcript/action resources
 
 ### 3.4 Modality
-- Primary modality: text in the core benchmark, with a separate SudokuPad agentic environment released alongside it
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: rule interpretation, global consistency, break-in discovery, and long multi-step deduction
 - Perception burden removed: the main benchmark textualizes visual elements and does not require natural visual parsing or human-style note-taking
 

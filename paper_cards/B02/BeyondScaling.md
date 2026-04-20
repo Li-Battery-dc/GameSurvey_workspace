@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses a zero-sum adversarial game to force reasoning to unfold over repeated, evolving states under latency pressure, while also making clear how much of that difficulty is retained after interface abstraction.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -30,7 +30,7 @@
 - Time structure: hybrid
 
 ### 3.2 World structure
-- World type(s): RTS / strategy / other
+- World type(s): RTS / other
 - Real game / simulated game / designed task-game hybrid: designed wargame-style task-game
 - Benchmark unit: full match
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: one benchmark environment with turn-based and real-time modes
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: partial observability, spatial state tracking, opponent updates over time, and action timing within an evolving battlefield
 - Perception burden removed: raw pixels, native control, and low-level motor execution, because the standard setting feeds faction-level JSON state through a protocol layer
 

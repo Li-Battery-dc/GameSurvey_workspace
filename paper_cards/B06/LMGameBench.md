@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Video games stress perception, planning, memory, and low-fault-tolerance action in ways that are easy to score yet difficult to saturate.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L4 visual agency
+- Benchmark level(s): L2 strategic reasoning / L4 visual agency
 - Most relevant outline section(s): 0,1,2,3
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): platformer / puzzle / adventure
+- World type(s): puzzle / adventure
 - Real game / simulated game / designed task-game hybrid: curated suite of established video games with a common harness
 - Benchmark unit: game episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 games
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: screen understanding, long-horizon planning, partial observability, and game-specific control logic
 - Perception burden removed: when the harness is enabled, perception modules and memory modules expose more machine-friendly state descriptions
 

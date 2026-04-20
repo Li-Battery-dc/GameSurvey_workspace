@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Competitive games generate dynamic, multi-turn pressure on strategy and social behavior while still producing clear outcomes and public leaderboards.
 - Historical stage: open-ended general-game benchmark
-- Narrative level(s): L2 strategic reasoning / L3 social intelligence / L5 cross-game generalization
+- Benchmark level(s): L2 strategic reasoning / L3 social intelligence / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -39,7 +39,8 @@
 - Number of games / tasks: 57+ in the initial release; Table 1 lists 74 environments at publication
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: dialogue, negotiation, state tracking, hidden information, and strategic interaction
 - Perception burden removed: no raw visual perception or embodied control burden
 

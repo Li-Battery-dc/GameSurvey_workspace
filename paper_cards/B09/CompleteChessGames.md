@@ -17,15 +17,15 @@
 ## 2. Position in our survey
 - Why-games relevance: Chess remains a clean test of legal action generation and strategic quality under exact rules.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L2 strategic reasoning
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
-- Agent structure: two-player
+- Agent structure: multi-agent
 - Social structure: competitive
 - Time structure: turn-based
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 10,000 evaluation board states plus full-game matches against Stockfish
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: board-state interpretation and move legality
 - Perception burden removed: no visual board perception or natural native control
 

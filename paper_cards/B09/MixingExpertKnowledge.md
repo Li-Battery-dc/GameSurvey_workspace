@@ -17,15 +17,15 @@
 ## 2. Position in our survey
 - Why-games relevance: Go remains a classic domain for evaluating whether structured strategy expertise can be incorporated into general models.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: peripheral
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
-- Agent structure: two-player
+- Agent structure: multi-agent
 - Social structure: competitive
 - Time structure: turn-based
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 1,000 evaluation positions in KataGo-Bench-1K plus tournament-style comparisons
 
 ### 3.4 Modality
-- Primary modality: text / symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: board understanding and next-move reasoning
 - Perception burden removed: no visual board input
 

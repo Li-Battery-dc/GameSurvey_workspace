@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It makes the full pixel -> action -> outcome loop auditable while also exposing the human-like question of when an agent should seek outside information instead of acting immediately.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: turn-based
 
 ### 3.2 World structure
-- World type(s): other (turn-based RPG combat)
+- World type(s): adventure / other
 - Real game / simulated game / designed task-game hybrid: real commercial game client benchmark
 - Benchmark unit: battle / episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 1 game, 8 battle tasks, 4 combat families
 
 ### 3.4 Modality
-- Primary modality: GUI
+- Observation modality: visual image
+- Action modality: mixed
 - Perception burden retained: raw screenshot parsing, partial observability, turn-order and resource tracking, weakness/status interpretation, and target localization
 - Perception burden removed: in TA, detector boxes, OCR text, static UI anchors, and an optional retrieved hint reduce the grounding burden substantially
 

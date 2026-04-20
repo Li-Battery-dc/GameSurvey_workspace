@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Dialogue games make it possible to keep evaluation dynamic, multi-turn, and automatically scoreable while still targeting interactive agency.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L3 social intelligence
+- Benchmark level(s): L1 rule understanding / L3 social intelligence
 - Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -39,7 +39,8 @@
 - Number of games / tasks: updated clembench benchmark with refreshed instances and a multilingual case study over the reference game
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: conversational grounding, multi-turn planning, and language-sensitive task execution
 - Perception burden removed: no visual burden and no open-ended real-world interaction noise
 

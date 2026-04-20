@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Minecraft supports enormous state diversity, human-like control, and creative open-ended tasks that are hard to reduce to fixed benchmark labels.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
-- Social structure: none
+- Social structure: N/A
 - Time structure: real-time
 
 ### 3.2 World structure
-- World type(s): open world / crafting / embodied
+- World type(s): sandbox / open-world
 - Real game / simulated game / designed task-game hybrid: real Minecraft benchmark with generated task configurations
 - Benchmark unit: task episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 3,452 atomic tasks plus compositional variants
 
 ### 3.4 Modality
-- Primary modality: image
+- Observation modality: visual image
+- Action modality: native control
 - Perception burden retained: raw RGB observations, mouse-keyboard control, long-horizon exploration, creativity, error recovery
 - Perception burden removed: some setup overhead through automated task instantiation
 

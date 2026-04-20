@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Human games supply a broad, culturally evolved, and hard-to-saturate space for evaluating human-like general intelligence.
 - Historical stage: open-ended general-game benchmark
-- Narrative level(s): L4 visual agency / L5 cross-game generalization
+- Benchmark level(s): L4 visual agency / L5 cross-game generalization
 - Most relevant outline section(s): 0,1,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: mixed
@@ -30,7 +30,7 @@
 - Time structure: mixed
 
 ### 3.2 World structure
-- World type(s): mixed human digital games
+- World type(s): puzzle / adventure / RTS / sandbox / open-world / other
 - Real game / simulated game / designed task-game hybrid: real human games adapted into standardized benchmark instances
 - Benchmark unit: short play episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 100 in the proof-of-concept release
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: native control
 - Perception burden retained: raw UI understanding, world-model learning, memory, planning, action timing
 - Perception burden removed: raw commercial-game execution is replaced by standardized p5.js adaptations and pause-based interaction
 

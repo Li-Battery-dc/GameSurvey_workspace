@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It makes the case that games expose planning, randomness, memory, and spatial reasoning in ways static QA benchmarks miss.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following / L2 strategic reasoning
+- Benchmark level(s): L1 rule understanding / L2 strategic reasoning
 - Most relevant outline section(s): 0,1,2,3
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 6 games, up to 20 settings, infinite environment variations
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: spatial relations, action history, manual following, stochastic tracking through textualized observations
 - Perception burden removed: raw pixels, low-level motor control, full human-like native control
 

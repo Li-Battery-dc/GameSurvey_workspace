@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: The 2x2 topology gives benchmark designers a closed formal space in which strategic structure can be varied systematically while responses remain exactly scoreable against equilibrium-based targets.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
-- Information structure: complete
+### 3.1 Game structure
+- Information structure: perfect
 - Transition structure: deterministic
 - Agent structure: multi-agent
 - Social structure: mixed
-- Time structure: hybrid; atomic tasks are one-shot simultaneous games, while the benchmark also adds sequential, parallel, and nested compositions
+- Time structure: hybrid
 
 ### 3.2 World structure
-- World type(s): other (formal matrix games / story-framed game-theory scenarios)
+- World type(s): other
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid based on 2x2 matrix-game topology
 - Benchmark unit: atomic game / composed task
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 144 atomic game types, plus multiple story-based variants and composed forms
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: payoff-matrix interpretation, equilibrium reasoning, context transfer to story-framed tasks, and limited compositional reasoning across coupled atomic games
 - Perception burden removed: no perceptual grounding, live multi-agent interaction, or embodied action burden
 

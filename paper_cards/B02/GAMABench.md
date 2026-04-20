@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Classical game-theory scenarios compress strategic interdependence into tunable, measurable settings. GAMABench is useful here less because it offers rich multi-player interaction, and more because it varies N-player formal settings while keeping incentives and scoring explicit.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 8 game-theory scenarios with dynamically varied parameters
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: long-rule understanding, arithmetic reasoning, limited belief modeling about other players' likely choices, and strategic choice under varying player configurations
 - Perception burden removed: no perceptual interface or embodied interaction burden
 

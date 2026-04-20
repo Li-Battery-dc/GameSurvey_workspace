@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: It uses a socially rich game to ground evaluation against human strategic behavior rather than only model-vs-model outcomes.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L3 social intelligence
+- Benchmark level(s): L3 social intelligence
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 80+ human games, 100+ hours of video, 15 rule variants, 48 players, and derived WereAlign items
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: multimodal game context, speech content, role information, voting and action logs
 - Perception burden removed: direct live actuation by the evaluated model
 

@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Complex card games give a demanding testbed for whether LLMs can acquire nontrivial strategic competence from data rather than from prompt scaffolds alone.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 8 games
 
 ### 3.4 Modality
-- Primary modality: symbolic state
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: hand-state interpretation, action-history tracking, legal action choice, hidden-information reasoning
 - Perception burden removed: raw visual card-table interaction
 

@@ -48,7 +48,7 @@ Goal:
 - Classify game benchmarks by their primary capability targets, follow the 5 level structure and explain why games are a suitable medium for that capability, and identify which benchmark innovations make the measurement credible.
 
 Subsections:
-2.1 Level 1: Rule Following:
+2.1 Level 1: Rule Understanding:
   - Games as rule-grounded formal containers
   - Understand the game rulea and make legal moves
 2.2 Level 2: Reasoning

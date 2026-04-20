@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Civilization-like worlds compress economics, warfare, diplomacy, and technology planning into one persistent strategic environment.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: stochastic
 - Agent structure: multi-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: full game plus 10 mini-game types with 10,000 instances each
 
 ### 3.4 Modality
-- Primary modality: symbolic state / text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: partial observability, dynamic multi-object world state, and long-horizon planning over a large evolving map
 - Perception burden removed: raw pixels and native control are abstracted into structured map, unit, city, government, technology, and diplomacy observations
 

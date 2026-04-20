@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: Games can operationalize rule discovery by forcing agents to infer hidden mechanics through repeated interaction.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -39,7 +39,8 @@
 - Number of games / tasks: 7 representative worlds selected from combinations of terrain, survival, and task-dependency changes
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: local grid observation, inventory, status, and action-outcome interpretation
 - Perception burden removed: environment remains lightweight and symbolic compared with richer 3D worlds
 

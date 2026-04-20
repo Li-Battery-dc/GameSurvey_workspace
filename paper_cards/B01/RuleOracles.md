@@ -17,15 +17,15 @@
 ## 2. Position in our survey
 - Why-games relevance: Real tabletop games force the benchmark to couple visual scene understanding, long heterogeneous rulebooks, and game-specific rule application in a way generic VQA tasks usually do not.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L1 rule following
+- Benchmark level(s): L1 rule understanding
 - Most relevant outline section(s): 1,2,3
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: perfect
 - Transition structure: deterministic
-- Agent structure: single-agent question answering over possibly multiplayer visible states
+- Agent structure: single-agent
 - Social structure: N/A
 - Time structure: turn-based
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 5 games, 638 questions
 
 ### 3.4 Modality
-- Primary modality: mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: board-image parsing, spatial relations, iconography interpretation, rulebook retrieval, and grounded cross-modal reasoning
 - Perception burden removed: no live gameplay loop, action execution, or long-horizon opponent adaptation
 

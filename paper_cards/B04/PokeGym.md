@@ -17,12 +17,12 @@
 ## 2. Position in our survey
 - Why-games relevance: A 3D RPG quest world forces models to connect perception, navigation, object interaction, and delayed task structure in a way static multimodal tests cannot.
 - Historical stage: ecological agent benchmark
-- Narrative level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: single-agent
@@ -30,7 +30,7 @@
 - Time structure: real-time
 
 ### 3.2 World structure
-- World type(s): open-world / adventure / other
+- World type(s): adventure / open-world / other
 - Real game / simulated game / designed task-game hybrid: real commercial 3D game played through emulator-based benchmarking
 - Benchmark unit: task trajectory
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 1 game, 30 tasks, 10 quests, 3 instruction granularities
 
 ### 3.4 Modality
-- Primary modality: image
+- Observation modality: visual image
+- Action modality: mixed
 - Perception burden retained: raw RGB observations, changing viewpoints, occlusion, depth reasoning, and quest-conditioned interaction
 - Perception burden removed: internal coordinates and quest flags are never exposed to the agent, and action execution is mediated through benchmark-defined control schemes
 

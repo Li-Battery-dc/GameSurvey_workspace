@@ -17,17 +17,17 @@
 ## 2. Position in our survey
 - Why-games relevance: RTS games compress long-term planning, time-bounded response, and adaptation to opponent behavior into a single adversarial environment.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: imperfect
 - Transition structure: mixed
 - Agent structure: multi-agent
 - Social structure: competitive
-- Time structure: real-time / hybrid
+- Time structure: hybrid
 
 ### 3.2 World structure
 - World type(s): RTS
@@ -39,7 +39,8 @@
 - Number of games / tasks: scenarios organized around Macro, Rush, and Random opponent strategies under Async and Sync modes; the main result table reports 10 games per model
 
 ### 3.4 Modality
-- Primary modality: symbolic state / mixed
+- Observation modality: mixed
+- Action modality: semantic
 - Perception burden retained: partial observability, resource and army-state reasoning, strategic adaptation, and real-time response pressure
 - Perception burden removed: the exact observation serialization and low-level control pathway are underdescribed in the paper, so the full human-play burden is not recoverable from the text alone
 

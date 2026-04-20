@@ -17,20 +17,20 @@
 ## 2. Position in our survey
 - Why-games relevance: Text-translated games let the benchmark stress long-horizon planning while controlling how much perceptual prior knowledge is exposed.
 - Historical stage: diagnostic capability probe
-- Narrative level(s): L2 strategic reasoning / L5 cross-game generalization
+- Benchmark level(s): L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Environment structure
+### 3.1 Game structure
 - Information structure: mixed
 - Transition structure: mixed
 - Agent structure: single-agent
 - Social structure: N/A
-- Time structure: turn-based / throttled real-time abstraction
+- Time structure: hybrid
 
 ### 3.2 World structure
-- World type(s): arcade / puzzle / adventure / other
+- World type(s): puzzle / adventure / other
 - Real game / simulated game / designed task-game hybrid: Atari suite rendered into textual state descriptions
 - Benchmark unit: episode
 
@@ -39,7 +39,8 @@
 - Number of games / tasks: 23 Atari games and nearly 100 game-condition settings
 
 ### 3.4 Modality
-- Primary modality: text
+- Observation modality: text or symbolic
+- Action modality: semantic
 - Perception burden retained: symbolic state tracking, sequential planning, and instruction use over long contexts
 - Perception burden removed: raw visual perception is replaced by AtariARI-derived text descriptions
 
