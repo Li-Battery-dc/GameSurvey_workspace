@@ -28,13 +28,13 @@
 - Social structure: cooperative / competitive / mixed / N/A
 - Time structure: turn-based / real-time / hybrid
 
-### 3.2 World structure
-- World type(s): board / card / puzzle / social deduction / RTS / adventure / sandbox / open-world / other
+### 3.2 Environment structure
+- Environment type(s): tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid:
 - Benchmark unit: move / turn / round / episode / trajectory / full task arc / open-world session
 
 ### 3.3 Benchmark scope
-- Scope: single game / game family / curated suite / expandable suite / open-ended world
+- Scope: single game / game family / curated suite / expandable suite / open-ended tasks
 - Number of games / tasks:
 
 ### 3.4 Modality
