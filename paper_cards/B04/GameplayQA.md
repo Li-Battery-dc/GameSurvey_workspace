@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): other
+### 3.2 Environment structure
+- Environment type(s): adventure-quest world / combat-strategy world
 - Real game / simulated game / designed task-game hybrid: real commercial games turned into a video benchmark
 - Benchmark unit: question
 

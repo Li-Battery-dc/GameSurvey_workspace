@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): adventure / other
+### 3.2 Environment structure
+- Environment type(s): adventure-quest world
 - Real game / simulated game / designed task-game hybrid: standardized arcade game suite in ALE
 - Benchmark unit: fixed-horizon rollout / static frame probe
 

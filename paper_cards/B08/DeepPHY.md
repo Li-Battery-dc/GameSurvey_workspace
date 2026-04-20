@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): puzzle / other
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle
 - Real game / simulated game / designed task-game hybrid: curated suite mixing physics simulators with physics-based games
 - Benchmark unit: attempt / trial
 

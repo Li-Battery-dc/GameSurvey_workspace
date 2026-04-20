@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): board / other
+### 3.2 Environment structure
+- Environment type(s): tabletop / social interaction arena
 - Real game / simulated game / designed task-game hybrid: real board game played online with live human negotiation
 - Benchmark unit: full game / league performance
 

@@ -29,8 +29,8 @@
 - Social structure: cooperative
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): other
+### 3.2 Environment structure
+- Environment type(s): adventure-quest world
 - Real game / simulated game / designed task-game hybrid: real game adapted into a collaboration benchmark
 - Benchmark unit: task episode
 

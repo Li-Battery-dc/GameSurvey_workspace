@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): RTS / board / social deduction / other
+### 3.2 Environment structure
+- Environment type(s): tabletop / social interaction arena / combat-strategy world
 - Real game / simulated game / designed task-game hybrid: multi-game benchmark over established strategic games
 - Benchmark unit: match / scenario
 

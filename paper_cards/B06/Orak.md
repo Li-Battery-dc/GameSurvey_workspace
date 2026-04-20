@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): puzzle / adventure / RTS / sandbox / open-world / other
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle / combat-strategy world / adventure-quest world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: real video games benchmarked through a common interface
 - Benchmark unit: game episode
 

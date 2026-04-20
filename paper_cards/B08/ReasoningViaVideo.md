@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): puzzle
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid rendered as trajectory videos
 - Benchmark unit: trajectory
 

@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): board / card / social deduction / other
+### 3.2 Environment structure
+- Environment type(s): tabletop / social interaction arena
 - Real game / simulated game / designed task-game hybrid: curated suite of existing games with unified software interfaces
 - Benchmark unit: match
 

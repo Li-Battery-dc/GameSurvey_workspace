@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): board / card / other
+### 3.2 Environment structure
+- Environment type(s): tabletop
 - Real game / simulated game / designed task-game hybrid: small strategic game suite wrapped through OpenSpiel
 - Benchmark unit: turn or full match
 

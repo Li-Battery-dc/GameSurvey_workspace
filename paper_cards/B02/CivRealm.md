@@ -29,13 +29,13 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): sandbox / open-world / other
+### 3.2 Environment structure
+- Environment type(s): combat-strategy world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: Freeciv-based strategy world with full games plus generated mini-games
 - Benchmark unit: full game / mini-game episode
 
 ### 3.3 Benchmark scope
-- Scope: open-ended world
+- Scope: open-ended tasks
 - Number of games / tasks: full game plus 10 mini-game types with 10,000 instances each
 
 ### 3.4 Modality

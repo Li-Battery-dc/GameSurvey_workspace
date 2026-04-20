@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): other
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle / adventure-quest world
 - Real game / simulated game / designed task-game hybrid: simulated game family built on GVGAI
 - Benchmark unit: full level
 

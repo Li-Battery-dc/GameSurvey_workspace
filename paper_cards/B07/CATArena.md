@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): board / card
+### 3.2 Environment structure
+- Environment type(s): tabletop
 - Real game / simulated game / designed task-game hybrid: real games and designed variants used in a code-agent tournament
 - Benchmark unit: tournament round
 

@@ -29,8 +29,8 @@
 - Social structure: cooperative
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): sandbox / open-world
+### 3.2 Environment structure
+- Environment type(s): sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: Minecraft-based benchmark with naturalistic player-authored tasks
 - Benchmark unit: full task arc / trajectory
 

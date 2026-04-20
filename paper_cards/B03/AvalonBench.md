@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): social deduction
+### 3.2 Environment structure
+- Environment type(s): social interaction arena
 - Real game / simulated game / designed task-game hybrid: digital environment for an existing tabletop social deduction game
 - Benchmark unit: full game
 

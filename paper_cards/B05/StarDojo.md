@@ -29,13 +29,13 @@
 - Social structure: mixed
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): sandbox / open-world / other
+### 3.2 Environment structure
+- Environment type(s): sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: commercial game with benchmark task wrappers
 - Benchmark unit: task episode / open-world session
 
 ### 3.3 Benchmark scope
-- Scope: open-ended world
+- Scope: open-ended tasks
 - Number of games / tasks: 1,000 tasks plus 100-task StarDojo-Lite and an extended playthrough task
 
 ### 3.4 Modality

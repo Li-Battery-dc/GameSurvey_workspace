@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): sandbox
+### 3.2 Environment structure
+- Environment type(s): combat-strategy world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: designed competitive scenarios inside Minecraft rather than open-ended survival play
 - Benchmark unit: timed episode
 

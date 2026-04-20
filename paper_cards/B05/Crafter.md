@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): sandbox / open-world
+### 3.2 Environment structure
+- Environment type(s): sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid built as a research environment
 - Benchmark unit: episode
 

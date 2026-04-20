@@ -29,8 +29,8 @@
 - Social structure: cooperative
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): other
+### 3.2 Environment structure
+- Environment type(s): tabletop / abstract puzzle / adventure-quest world
 - Real game / simulated game / designed task-game hybrid: curated coordination-game suite
 - Benchmark unit: game episode plus diagnostic question set
 

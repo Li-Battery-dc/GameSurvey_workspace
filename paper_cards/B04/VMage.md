@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): adventure / other
+### 3.2 Environment structure
+- Environment type(s): adventure-quest world
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid built from modified open-source Pygame games with manually redesigned benchmark levels
 - Benchmark unit: episode / level run
 

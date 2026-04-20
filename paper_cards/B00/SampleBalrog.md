@@ -28,8 +28,8 @@
 - Social structure: unclear
 - Time structure: unclear
 
-### 3.2 World structure
-- World type(s): placeholder
+### 3.2 Environment structure
+- Environment type(s): placeholder
 - Real game / simulated game / designed task-game hybrid: placeholder
 - Benchmark unit: placeholder
 

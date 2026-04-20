@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): board / puzzle / other
+### 3.2 Environment structure
+- Environment type(s): tabletop / abstract puzzle
 - Real game / simulated game / designed task-game hybrid: curated suite of familiar board and puzzle games with visual board renderings
 - Benchmark unit: state instance / move / full gameplay
 

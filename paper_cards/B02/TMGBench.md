@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): other
+### 3.2 Environment structure
+- Environment type(s): tabletop
 - Real game / simulated game / designed task-game hybrid: designed task-game hybrid based on 2x2 matrix-game topology
 - Benchmark unit: atomic game / composed task
 

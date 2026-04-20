@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): card
+### 3.2 Environment structure
+- Environment type(s): tabletop
 - Real game / simulated game / designed task-game hybrid: real card games with benchmarked fine-tuning pipelines
 - Benchmark unit: full game / episode
 

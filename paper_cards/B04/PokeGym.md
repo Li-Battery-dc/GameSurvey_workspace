@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): adventure / open-world / other
+### 3.2 Environment structure
+- Environment type(s): adventure-quest world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: real commercial 3D game played through emulator-based benchmarking
 - Benchmark unit: task trajectory
 

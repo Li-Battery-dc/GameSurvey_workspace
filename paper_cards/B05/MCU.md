@@ -29,13 +29,13 @@
 - Social structure: N/A
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): sandbox / open-world
+### 3.2 Environment structure
+- Environment type(s): sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: real Minecraft benchmark with generated task configurations
 - Benchmark unit: task episode
 
 ### 3.3 Benchmark scope
-- Scope: open-ended world
+- Scope: open-ended tasks
 - Number of games / tasks: 3,452 atomic tasks plus compositional variants
 
 ### 3.4 Modality
@@ -117,7 +117,7 @@
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? A later targeted reread is worthwhile because the AutoEval design will likely matter in drafting.
 - Which section to read next if needed: 2.3 / 2.5 / 3.1
-- Follow-up question(s): Should MCU anchor our discussion of automatic evaluation in open-ended worlds?
+- Follow-up question(s): Should MCU anchor our discussion of automatic evaluation in open-ended taskss?
 
 ## 13. Registry sync
 - Registry row synced: yes

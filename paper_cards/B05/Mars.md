@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): sandbox / open-world / other
+### 3.2 Environment structure
+- Environment type(s): sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: Crafter-derived open-world with modified mechanics
 - Benchmark unit: episode / world instance
 

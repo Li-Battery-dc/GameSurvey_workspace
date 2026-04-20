@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): puzzle
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle
 - Real game / simulated game / designed task-game hybrid: large family of human-authored PuzzleScript games plus a DSL that can compile new tile-puzzle rulesets
 - Benchmark unit: level episode
 

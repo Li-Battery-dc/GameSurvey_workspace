@@ -29,8 +29,8 @@
 - Social structure: competitive
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): other
+### 3.2 Environment structure
+- Environment type(s): combat-strategy world / adventure-quest world
 - Real game / simulated game / designed task-game hybrid: real competitive Pokémon battle simulator plus curated puzzles
 - Benchmark unit: battle / puzzle
 

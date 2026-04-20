@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): adventure / open-world / other
+### 3.2 Environment structure
+- Environment type(s): adventure-quest world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: curated suite using Jericho text games and Crafter as trajectory generators for memory evaluation
 - Benchmark unit: trajectory plus generated QA set
 

@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): board / puzzle / adventure / sandbox / other
+### 3.2 Environment structure
+- Environment type(s): tabletop / abstract puzzle / adventure-quest world / sandbox-open-world
 - Real game / simulated game / designed task-game hybrid: curated suite of adapted existing games and task-games
 - Benchmark unit: episode
 
@@ -89,7 +89,7 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Early clear argument that games surface dynamic capabilities missing from static benchmarks.
-- Best use in Section 1 (taxonomy and evolutionary levels): Early transition point from generic game environments to capability-decomposed LLM-agent benchmarking. Useful exemplar of a multi-game diagnostic suite with mixed world structures.
+- Best use in Section 1 (taxonomy and evolutionary levels): Early transition point from generic game environments to capability-decomposed LLM-agent benchmarking. Useful exemplar of a multi-game diagnostic suite with mixed environment structures.
 - Best use in Section 2 (core capabilities evaluated by games): Strong anchor for rule following, planning, spatial reasoning, and learning-from-history.
 - Best use in Section 3 (interaction and evaluation paradigm): Illustrates an early, highly privileged textification pipeline using manuals, bounded history, and flat action sets. Good reference for reward/completion/score hybrids and for the distinction between native game metrics and later human-normalized comparison.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic success does not imply ecological competence.

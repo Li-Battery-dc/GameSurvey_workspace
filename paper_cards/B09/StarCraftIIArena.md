@@ -29,8 +29,8 @@
 - Social structure: competitive
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): RTS
+### 3.2 Environment structure
+- Environment type(s): combat-strategy world
 - Real game / simulated game / designed task-game hybrid: StarCraft II benchmark scenarios with tracked high-level strategic decisions
 - Benchmark unit: match / scenario
 

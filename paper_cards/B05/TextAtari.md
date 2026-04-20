@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: hybrid
 
-### 3.2 World structure
-- World type(s): puzzle / adventure / other
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle / adventure-quest world
 - Real game / simulated game / designed task-game hybrid: Atari suite rendered into textual state descriptions
 - Benchmark unit: episode
 

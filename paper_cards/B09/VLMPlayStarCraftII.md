@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: real-time
 
-### 3.2 World structure
-- World type(s): RTS
+### 3.2 Environment structure
+- Environment type(s): combat-strategy world
 - Real game / simulated game / designed task-game hybrid: StarCraft II micromanagement environment with multimodal observations
 - Benchmark unit: scenario episode
 

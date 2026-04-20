@@ -29,8 +29,8 @@
 - Social structure: N/A
 - Time structure: mixed
 
-### 3.2 World structure
-- World type(s): puzzle / adventure
+### 3.2 Environment structure
+- Environment type(s): abstract puzzle / adventure-quest world
 - Real game / simulated game / designed task-game hybrid: curated suite of established video games with a common harness
 - Benchmark unit: game episode
 

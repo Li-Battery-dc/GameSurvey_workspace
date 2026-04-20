@@ -29,8 +29,8 @@
 - Social structure: mixed
 - Time structure: turn-based
 
-### 3.2 World structure
-- World type(s): social deduction / other
+### 3.2 Environment structure
+- Environment type(s): social interaction arena
 - Real game / simulated game / designed task-game hybrid: benchmark suite built from existing human-playable conversational games
 - Benchmark unit: game session
 
