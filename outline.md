@@ -13,7 +13,7 @@ high-level narrative stages, all sections follow or recall:
 Goal:
 - Open with the benchmark mismatch rather than with the taxonomy. First explain why static QA-style and one-shot multimodal tests are weak proxies for continuous agent behavior such as long-horizon planning, adaptive recovery, and state tracking.
 - Reframe games as human-calibrated capability probes rather than as a loose genre collection. Their value comes from explicit rules, sequential interaction, delayed consequences, and auditable progress across diverse human game structures.
-- Make the benchmark-design tension explicit: raw pixels, GUI layouts, and native controls are closer to human play, while textified states or semantic APIs make evaluation tractable but alter the capability demands.
+- Make the benchmark-design tension explicit: raw pixels, GUI layouts, and native control are closer to human play, while textified states or semantic APIs make evaluation tractable but alter the capability demands.
 - Preview the survey's four follow-up dimensions in a way that cleanly hands off to taxonomy, capability mapping, paradigm analysis, and final synthesis.
 
 Need evidence from:
@@ -33,13 +33,13 @@ Goal:
 - A giant table showing: detailed cols showing a clear design-space view of game benchmarks by organizing papers along multiple benchmark axes, including game structure, world structure, benchmark scope, modality, and primary narrative level target.
 
 A detailed overview of the various forms and directions of the table content code:
-1. 5 level definition: define the benchmark place. 
+1. 5 level definition: where the benchmark sits
 2. World structure: board/card/puzzle/social deduction/RTS/adventure/open-world/sandbox
 3. Game structure: perfect vs imperfect information, deterministic vs stochastic, single-agent vs multi-agent, cooperative vs competitive, turn-based vs real-time
-4. Benchmark scope: single game, game family, curated suite, procedural-infinite, open-ended world
+4. Benchmark scope: single game, game family, curated suite, expandable suite, open-ended world
 5. Modality: 
   - obs: text-only, raw image, mixed
-  - action: semantic, GUI
+  - action: semantic, native control
 
 Use the table to show each benchmark's dominant level at a glance. Keep cross-level nuance in the paper cards and unpack the capability meaning of each level later in Section 2 rather than inside the taxonomy table itself.
 

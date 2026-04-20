@@ -34,9 +34,8 @@
 - Benchmark unit: move / turn / round / episode / trajectory / full task arc / open-world session
 
 ### 3.3 Benchmark scope
-- Scope: single game / game family / curated suite / genre-diverse suite / procedural-infinite / open-ended world
+- Scope: single game / game family / curated suite / expandable suite / open-ended world
 - Number of games / tasks:
-- Benchmark intent: diagnostic evaluation / ecological evaluation / train+eval foundation / open-ended evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state / GUI / image / video / mixed
@@ -58,7 +57,7 @@
 ## 5. Interaction paradigm
 - Observation channel:
 - Action channel:
-- Interface type: natural language / API / structured action space / GUI interaction / hybrid
+- Interface type: natural language / API / structured action space / native control / hybrid
 - Agent scaffold allowed: none / memory / reflection / retrieval / planner / tool use / other
 - Is there privileged API access?
 - How close is the setup to human play?
@@ -87,13 +86,11 @@
 - Does this paper reveal a benchmark-design limitation as well?
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (why games):
-- Best use in Section 1 (historical evolution):
-- Best use in Section 2 (design space):
-- Best use in Section 3 (capability targets):
-- Best use in Section 4 (interaction paradigm):
-- Best use in Section 5 (evaluation protocol):
-- Best use in Section 6/7 (limitations and future):
+- Best use in Section 0 (lead-in and benchmark motivation):
+- Best use in Section 1 (taxonomy and evolutionary levels):
+- Best use in Section 2 (core capabilities evaluated by games):
+- Best use in Section 3 (interaction and evaluation paradigm):
+- Best use in Section 4 (synthesis, bottlenecks, and future design):
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s):

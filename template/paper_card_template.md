@@ -34,7 +34,7 @@
 - Benchmark unit: move / turn / round / episode / trajectory / full task arc / open-world session
 
 ### 3.3 Benchmark scope
-- Scope: single game / game family / curated suite / procedural-infinite / open-ended world
+- Scope: single game / game family / curated suite / expandable suite / open-ended world
 - Number of games / tasks:
 
 ### 3.4 Modality
@@ -57,7 +57,7 @@
 ## 5. Interaction paradigm
 - Observation channel:
 - Action channel:
-- Interface type: natural language / API / structured action space / GUI interaction / hybrid
+- Interface type: natural language / API / structured action space / native control / hybrid
 - Agent scaffold allowed: none / memory / reflection / retrieval / planner / tool use / other
 - Is there privileged API access?
 - How close is the setup to human play?
