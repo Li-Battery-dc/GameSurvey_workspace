@@ -33,17 +33,18 @@ high-level narrative stages, all sections follow or recall:
 - Level 3: Social Intelligence — Can it cooperate and deceive? (Werewolf Arena, WOLF)
 - Level 4: Visual Agency — Can it play like a human? (BALROG, StarBench)
 - Level 5: Cross-Game Generalization — Can it play anything? (GameVerse, AI GAMESTORE)
-2. Game Structure: 只放形式机制：信息结构、随机性、agent 数量、合作/对抗、时间结构。
-3. World Structure: 只放环境类型：board / card / puzzle / social deduction / RTS / adventure / sandbox / open-world。
-2和3的正文进行叙述：游戏本身带有的属性和游戏环境的结构使其成为研究者选择其作为评测环境的原因，带给agent不同的挑战。从博弈论游戏到board games再到 复杂的商业游戏，研究者可设计和调整的范围更大了，通过不同structure的组合可以得到多样化的评测环境.
 
-4. Benchmark Scope：
+过渡，high——level的演化背后需要对游戏的设计结构进行进一步的探讨：
+1. Game Structure: 只放形式机制：信息结构、随机性、agent 数量、合作/对抗、时间结构。
+2. Environment Structure: 只放环境类型：tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world。
+2和3的正文进行叙述：游戏本身带有的属性和游戏环境的结构使其成为研究者选择其作为评测环境的原因，带给agent不同的挑战。从博弈论游戏到board games再到 复杂的商业游戏，研究者可设计和调整的范围更大了，通过不同structure的组合可以得到多样化的评测环境.
+3. Benchmark Scope：
    - 早期single game大多强调推理深度，expert 能力,特点是metrics简单有效，方便做很深的case study。
    - game family 则在同类游戏结构下拓展，避免对单一游戏过拟合，同时保持相对统一的接口、规则分布和评测逻辑(FlashAdventure)。
    - curated suite基于作者对benchmark的设计有目的地覆盖多个 capability slice, 有意识地覆盖多种能力压力。通过差异化游戏结构评测模型的general 能力。 
    - expandable suite通过生成化方式引出无限的可拓展种类(AI GameStore)。 让 generalization 的重点从“是否见过这几个 benchmark games”转向“是否能应对新实例、新规则、新 level”。
-   - open-ended world偏向真实长程交互和agentic 任务，最接近 agent 叙事里的“持续行为”。最能体现真实 autonomy。
-5. Modality: (注意不要预先展开这些content code对于benchmark的影响)
+   - open-ended tasks偏向大规模组合式、长尾、持续扩展的任务空间，强调 benchmark 如何在单一环境中不断生成新任务实例，而不等同于环境本身是否是 open-world。
+4. Modality: (注意不要预先展开这些content code对于benchmark的影响)
    - obs: 
      - text or symbolic: 游戏状态用自然语言描述，符合LLM的language-centric,核心目标是diagnotic clarity. 
      - visual image: 使用screenshot, (其他方式)将游戏状态直接
