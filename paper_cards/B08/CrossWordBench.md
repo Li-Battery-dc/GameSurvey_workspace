@@ -35,9 +35,8 @@
 - Benchmark unit: full puzzle solution / interactive fill step
 
 ### 3.3 Benchmark scope
-- Scope: curated suite / procedural generator
+- Scope: procedural-infinite
 - Number of games / tasks: main English evaluation uses 100 7x7 and 100 14x14 puzzles; additional sets include 100 Chinese 7x7, 100 English Simple 7x7, and 50 CommonsenseQA-derived 7x7 puzzles
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed text/image, though the strongest models in the paper are text-only LLMs

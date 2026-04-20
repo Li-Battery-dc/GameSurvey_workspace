@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 5-player Spyfall matches across four language settings and three entity regimes (generic locations, local locations, local foods)
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

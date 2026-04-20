@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 80+ human games, 100+ hours of video, 15 rule variants, 48 players, and derived WereAlign items
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 34 games, 170 tasks, 5 genres
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: image

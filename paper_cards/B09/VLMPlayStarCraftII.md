@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 12 specialized micromanagement scenarios
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

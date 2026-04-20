@@ -35,9 +35,8 @@
 - Benchmark unit: match / episode
 
 ### 3.3 Benchmark scope
-- Scope: genre-diverse suite
+- Scope: curated suite
 - Number of games / tasks: 57+ in the initial release; Table 1 lists 74 environments at publication
-- Benchmark intent: diagnostic evaluation / train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: text
@@ -89,7 +88,7 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Strong contemporary example of games testing dynamic interaction beyond static QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful late-stage step from fixed suites to living benchmark platforms. Good anchor for genre-diverse text-game suites.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful late-stage step from fixed suites to living benchmark platforms. Good anchor for broad curated text-game suites.
 - Best use in Section 2 (core capabilities evaluated by games): Supports social reasoning, deception, and competitive planning claims.
 - Best use in Section 3 (interaction and evaluation paradigm): Helps anchor natural-language-only game interaction. Important for leaderboard, TrueSkill, and human-vs-model evaluation discussion.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for extensible, continuously updated benchmark ecosystems.

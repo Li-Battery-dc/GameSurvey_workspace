@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: game family
 - Number of games / tasks: 118 games with up to 5 levels each
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

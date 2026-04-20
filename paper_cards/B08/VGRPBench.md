@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 20 puzzle families with easy, medium, and hard variants; evaluations use 5 runs of 20 sampled instances each for 100 total samples per reported setting
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: image-first, with text-control versions of every puzzle

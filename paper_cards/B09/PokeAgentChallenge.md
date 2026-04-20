@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: game family
 - Number of games / tasks: 2 benchmark tracks within the Pokemon ecosystem
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

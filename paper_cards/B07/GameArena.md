@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 3 games with 2,000+ collected sessions
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

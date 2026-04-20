@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 8 game-theory scenarios with dynamically varied parameters
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: core benchmark `challenge_100` with 15 4x4, 15 6x6, and 70 9x9 puzzles; the release also includes `nikoli_100`, `ctc` (2,565 Sudoku variants), and transcript/action resources
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text in the core benchmark, with a separate SudokuPad agentic environment released alongside it

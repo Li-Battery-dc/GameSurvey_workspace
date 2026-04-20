@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 44 high-level tasks and 216 subtasks in the initial evaluation snapshot
-- Benchmark intent: ecological evaluation / diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

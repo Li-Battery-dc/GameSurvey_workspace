@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: game family
 - Number of games / tasks: 3 games, 3 prompt types, 2,310 simulated matches, 7 LLMs plus random play
-- Benchmark intent: diagnostic evaluation with an extensible leaderboard
 
 ### 3.4 Modality
 - Primary modality: mixed

@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 23 games total, with 13 dev games and a 10-game test split that includes 7 public titles plus 3 secret held-out games
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: image / short frame history

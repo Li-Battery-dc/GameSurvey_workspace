@@ -35,9 +35,8 @@
 - Benchmark unit: battle / puzzle
 
 ### 3.3 Benchmark scope
-- Scope: single game with multiple evaluation modes
+- Scope: single game
 - Number of games / tasks: 3M-plus replay dataset, 1,000 1v1 puzzle scenarios, mechanic-specific puzzles, arena evaluations, and live ladder games
-- Benchmark intent: specialist evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 55,000 task variants across four task families
-- Benchmark intent: ecological evaluation / train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: mixed

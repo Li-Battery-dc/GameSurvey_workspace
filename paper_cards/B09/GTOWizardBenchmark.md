@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: heads-up no-limit Texas Hold'em benchmark against fixed AI anchors
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

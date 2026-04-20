@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 1 environment with 22 achievements
-- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: image

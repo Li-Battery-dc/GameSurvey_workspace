@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 5 interaction settings in v1.0, instantiated as 7 benchmark datasets and 250 instances
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

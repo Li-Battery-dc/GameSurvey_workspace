@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: open-ended world
 - Number of games / tasks: 1,000 tasks plus 100-task StarDojo-Lite and an extended playthrough task
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

@@ -35,9 +35,8 @@
 - Benchmark unit: match / scenario
 
 ### 3.3 Benchmark scope
-- Scope: genre-diverse suite
+- Scope: curated suite
 - Number of games / tasks: 6 games with customizable scenarios
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state
@@ -89,7 +88,7 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Use it to argue that win rate alone is too coarse and that different strategic games expose different slices of decision-making capability.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents a mature move from single-game probes to comparative multi-game diagnostic suites. Use it as genre-diverse breadth, not as a full Level 5 transfer benchmark.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents a mature move from single-game probes to comparative multi-game diagnostic suites. Use it as broad curated-suite coverage, not as a full Level 5 transfer benchmark.
 - Best use in Section 2 (core capabilities evaluated by games): A direct source for theory-inspired strategic capability decomposition, but do not treat its five dimensions as a cleanly validated cognitive factorization.
 - Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing unified text interfaces across heterogeneous games, handcrafted metric families, weighted aggregation, and trajectory-based analysis.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports claims about capability specialization, temporal/social weaknesses, and the trade-off between richer diagnostics and comparability.

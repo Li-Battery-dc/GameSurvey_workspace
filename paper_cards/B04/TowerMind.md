@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 5 built-in benchmark levels in one tower-defense environment
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

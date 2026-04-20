@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: Hanabi games across 2-5 players with 17 evaluated models
-- Benchmark intent: diagnostic evaluation / train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

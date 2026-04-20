@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 2 competitive scenarios
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

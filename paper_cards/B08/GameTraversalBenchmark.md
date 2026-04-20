@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 150 maps with varied sizes, path lengths, and objective counts
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state / text

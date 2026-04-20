@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 40 anonymous league games, plus an 8-game tournament slice discussed in the paper
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

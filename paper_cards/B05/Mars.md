@@ -35,9 +35,8 @@
 - Benchmark unit: episode / world instance
 
 ### 3.3 Benchmark scope
-- Scope: curated suite of modified worlds generated from a larger world family
+- Scope: game family
 - Number of games / tasks: 7 representative worlds selected from combinations of terrain, survival, and task-dependency changes
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

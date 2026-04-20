@@ -35,9 +35,8 @@
 - Benchmark unit: short play episode
 
 ### 3.3 Benchmark scope
-- Scope: genre-diverse suite
+- Scope: curated suite
 - Number of games / tasks: 100 in the proof-of-concept release
-- Benchmark intent: open-ended evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

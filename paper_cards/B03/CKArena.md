@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 529 concept pairs overall; main evaluation uses 464 game instances across 12 categories, 500 ranking games, and 5,733 snapshot QA items
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

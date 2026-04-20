@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 7 gameplay games plus an 8-environment companion understanding probe
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: image

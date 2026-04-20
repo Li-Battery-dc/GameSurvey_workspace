@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 56 supported games
-- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: text

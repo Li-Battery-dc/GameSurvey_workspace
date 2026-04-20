@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: StarCraft II matches on selected ladder maps against built-in AI and humans
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 25 Infocom games
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: text

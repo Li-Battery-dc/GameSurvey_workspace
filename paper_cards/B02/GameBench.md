@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 9 game environments
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state with a limited image exception in Hive

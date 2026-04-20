@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 10,000 evaluation board states plus full-game matches against Stockfish
-- Benchmark intent: diagnostic evaluation / specialist evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

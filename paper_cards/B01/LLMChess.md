@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: chess only
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

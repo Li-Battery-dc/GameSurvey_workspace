@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: procedural-infinite
 - Number of games / tasks: 1 game plus an NLE task suite over procedurally generated runs
-- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

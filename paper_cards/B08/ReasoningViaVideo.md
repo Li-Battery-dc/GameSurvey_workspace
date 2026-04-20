@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 7,920 procedurally generated videos across 5 maze families
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: video

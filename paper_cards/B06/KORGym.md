@@ -31,13 +31,12 @@
 
 ### 3.2 World structure
 - World type(s): board / puzzle / other
-- Real game / simulated game / designed task-game hybrid: genre-diverse suite built from novel games, adapted classics, and multimodal tasks
+- Real game / simulated game / designed task-game hybrid: curated suite built from novel games, adapted classics, and multimodal tasks
 - Benchmark unit: game run
 
 ### 3.3 Benchmark scope
-- Scope: genre-diverse suite
+- Scope: curated suite
 - Number of games / tasks: 51 games across 6 reasoning dimensions, including 9 multimodal games
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

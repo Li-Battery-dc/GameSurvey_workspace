@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 30 tasks across 6 complexity levels
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: named examples include Tic-Tac-Toe, Connect Four, Kuhn Poker, Prisoner's Dilemma, and Matching Pennies; the reasoning-analysis figures span seven games
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

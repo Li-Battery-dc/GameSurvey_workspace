@@ -35,9 +35,8 @@
 - Benchmark unit: level episode
 
 ### 3.3 Benchmark scope
-- Scope: curated suite / generative family
+- Scope: procedural-infinite
 - Number of games / tasks: 951 collected PuzzleScript games; 414 fully valid and 156 partially valid under the paper's replay-based validation, with the paper framing 500+ diverse environments and access to thousands of PuzzleScript-style games
-- Benchmark intent: diagnostic evaluation / train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

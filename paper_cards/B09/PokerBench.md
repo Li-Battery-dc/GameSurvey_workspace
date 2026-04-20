@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 11,000 spots covering pre-flop and post-flop play
-- Benchmark intent: diagnostic evaluation / train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

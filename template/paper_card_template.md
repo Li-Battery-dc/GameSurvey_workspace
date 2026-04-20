@@ -34,9 +34,8 @@
 - Benchmark unit: move / turn / round / episode / trajectory / full task arc / open-world session
 
 ### 3.3 Benchmark scope
-- Scope: single game / game family / curated suite / genre-diverse suite / procedural-infinite / open-ended world
+- Scope: single game / game family / curated suite / procedural-infinite / open-ended world
 - Number of games / tasks:
-- Benchmark intent: diagnostic evaluation / ecological evaluation / train+eval foundation / open-ended evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state / GUI / image / video / mixed

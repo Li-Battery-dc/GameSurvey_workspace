@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: open-ended world
 - Number of games / tasks: 3,452 atomic tasks plus compositional variants
-- Benchmark intent: open-ended evaluation
 
 ### 3.4 Modality
 - Primary modality: image

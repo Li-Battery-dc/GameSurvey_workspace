@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 1 game, 30 tasks, 10 quests, 3 instruction granularities
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: image

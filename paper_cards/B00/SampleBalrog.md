@@ -34,9 +34,8 @@
 - Benchmark unit: placeholder
 
 ### 3.3 Benchmark scope
-- Scope: placeholder
+- Scope: curated suite
 - Number of games / tasks: placeholder
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

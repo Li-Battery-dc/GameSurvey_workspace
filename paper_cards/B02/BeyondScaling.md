@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: one benchmark environment with turn-based and real-time modes
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state

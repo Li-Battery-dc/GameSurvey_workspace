@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: current benchmark bundles report 14 text-only games with 817 instances and 5 multimodal games with 560 instances, within a broader extensible framework
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

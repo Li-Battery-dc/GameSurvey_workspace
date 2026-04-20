@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 1 game, 8 battle tasks, 4 combat families
-- Benchmark intent: ecological evaluation
 
 ### 3.4 Modality
 - Primary modality: GUI

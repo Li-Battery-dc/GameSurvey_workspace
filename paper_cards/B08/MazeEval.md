@@ -35,9 +35,8 @@
 - Benchmark unit: maze episode
 
 ### 3.3 Benchmark scope
-- Scope: procedural suite
+- Scope: procedural-infinite
 - Number of games / tasks: five DFS-generated mazes for each size from 5x5 to 15x15, with additional exploratory tests for O3 at 30x30 and 40x40
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state / text

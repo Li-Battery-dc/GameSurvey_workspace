@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 6 games across 4 evaluation tasks
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: image / mixed

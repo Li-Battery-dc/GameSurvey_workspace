@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 9 games, 2.4K QA pairs, 15 task categories
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: video

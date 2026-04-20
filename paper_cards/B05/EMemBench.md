@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 15 Jericho text games plus the Crafter visual game; Table 1 reports about 80 questions per trajectory on average, and the visual setting is averaged over 5 fixed seeds
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: mixed

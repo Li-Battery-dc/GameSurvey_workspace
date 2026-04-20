@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: open-ended world
 - Number of games / tasks: full game plus 10 mini-game types with 10,000 instances each
-- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: symbolic state / text

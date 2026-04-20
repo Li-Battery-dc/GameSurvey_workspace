@@ -10,7 +10,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | AIGameStore | AI GAMESTORE: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games | anchor | 0,1,3,4 | Open-ended platform vision for evaluating human-like general intelligence across human games. |
 | 2 | GVGAILLM | GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games | representative | 1,2,3,4 | General video game benchmark with procedural breadth and reproducible ASCII state interfaces. |
-| 3 | Orak | Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on 12-Genre Video Games | anchor | 1,2,3,4 | Genre-diverse train-and-eval benchmark bridging benchmark suites and cross-game generalization. |
+| 3 | Orak | Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on 12-Genre Video Games | anchor | 1,2,3,4 | Broad curated train-and-eval benchmark bridging benchmark suites and cross-game generalization. |
 | 4 | GameVerse | GameVerse: Can VLMs Learn from Video-based Reflection? | representative | 1,2,3,4 | Cross-game VLM benchmark with reflect-and-retry loops and milestone evaluation. |
 | 5 | LMGameBench | LMGAME-BENCH: How Good are LLMs at Playing Games? | representative | 0,1,2,3 | Unified game benchmark with explicit perception and memory breakdowns for agent evaluation. |
 | 6 | KORGym | KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation | representative | 1,2,3,4 | Dynamic multi-game platform broadening benchmark coverage and evaluation protocol variation. |

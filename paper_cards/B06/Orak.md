@@ -35,9 +35,8 @@
 - Benchmark unit: game episode
 
 ### 3.3 Benchmark scope
-- Scope: genre-diverse suite
+- Scope: curated suite
 - Number of games / tasks: 12 games
-- Benchmark intent: train+eval foundation
 
 ### 3.4 Modality
 - Primary modality: mixed

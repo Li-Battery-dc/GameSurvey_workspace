@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: 1,000 evaluation positions in KataGo-Bench-1K plus tournament-style comparisons
-- Benchmark intent: specialist evaluation
 
 ### 3.4 Modality
 - Primary modality: text / symbolic state

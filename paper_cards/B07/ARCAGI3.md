@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: curated suite
 - Number of games / tasks: 135 environments total (25 public, 55 semi-private, 55 fully private)
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: image / mixed

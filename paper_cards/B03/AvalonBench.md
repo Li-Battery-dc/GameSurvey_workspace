@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: single five-player Avalon game with baseline-bot evaluations, Assassin Set / Servant Set replacements, and a 60-game GPT-3.5 multi-LLM arena
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: text

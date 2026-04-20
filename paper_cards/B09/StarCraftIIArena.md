@@ -37,7 +37,6 @@
 ### 3.3 Benchmark scope
 - Scope: single game
 - Number of games / tasks: scenarios organized around Macro, Rush, and Random opponent strategies under Async and Sync modes; the main result table reports 10 games per model
-- Benchmark intent: diagnostic evaluation
 
 ### 3.4 Modality
 - Primary modality: symbolic state / mixed
