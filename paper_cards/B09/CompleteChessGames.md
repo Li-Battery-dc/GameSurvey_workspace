@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: text / symbolic state
 - Perception burden retained: board-state interpretation and move legality
-- Perception burden removed: no visual board perception or natural GUI interaction
+- Perception burden removed: no visual board perception or natural native control
 
 ## 4. What this benchmark measures
 - Primary capability target: legal and strong chess move generation from textual board state

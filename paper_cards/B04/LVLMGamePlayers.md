@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: image / mixed
 - Perception burden retained: board parsing, symbol localization, and visual state tracking
-- Perception burden removed: no native GUI or controller interaction, no real-time pressure, and no visually cluttered 3D worlds
+- Perception burden removed: no native control interaction, no real-time pressure, and no visually cluttered 3D worlds
 
 ## 4. What this benchmark measures
 - Primary capability target: visual state parsing linked to rule-grounded move selection in board-game settings
@@ -62,7 +62,7 @@
 - Agent scaffold allowed: none beyond task prompts and shared game rules
 - Is there privileged API access? no for agent inputs; simulator access is used only on the evaluator side for state generation, legality checks, and scoring
 - How close is the setup to human play? low-medium; the model sees images of recognizable boards, but acts through heavily scripted prompt formats rather than native play interfaces
-- Main ecological-validity trade-off: the benchmark cleanly diagnoses component failures, but it strips away controller or GUI interaction, real-time pressure, and many gameplay-realistic state distributions
+- Main ecological-validity trade-off: the benchmark cleanly diagnoses component failures, but it strips away controller-based or other native control, real-time pressure, and many gameplay-realistic state distributions
 
 ## 6. Evaluation protocol
 - Main score: task-specific accuracy or game-specific end-to-end score, followed by an ability-weighted aggregate across games

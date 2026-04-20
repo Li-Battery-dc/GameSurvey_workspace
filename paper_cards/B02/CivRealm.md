@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: symbolic state / text
 - Perception burden retained: partial observability, dynamic multi-object world state, and long-horizon planning over a large evolving map
-- Perception burden removed: raw pixels and native GUI interaction are abstracted into structured map, unit, city, government, technology, and diplomacy observations
+- Perception burden removed: raw pixels and native control are abstracted into structured map, unit, city, government, technology, and diplomacy observations
 
 ## 4. What this benchmark measures
 - Primary capability target: long-horizon strategic decision-making in a partially observed, multi-goal, dynamically expanding world
@@ -61,7 +61,7 @@
 - Interface type: API / structured action space / hybrid
 - Agent scaffold allowed: memory / retrieval / planner
 - Is there privileged API access? yes
-- How close is the setup to human play? low to medium; it preserves strategic structure and turn-based pacing but removes native GUI cognition and compresses large-map state into engineered summaries
+- How close is the setup to human play? low to medium; it preserves strategic structure and turn-based pacing but removes native interface cognition and compresses large-map state into engineered summaries
 - Main ecological-validity trade-off: CivRealm preserves long-range strategic and world-state complexity while abstracting away native interface burden and partially factorizing large-space reasoning through structured observations and local action constraints
 
 ## 6. Evaluation protocol

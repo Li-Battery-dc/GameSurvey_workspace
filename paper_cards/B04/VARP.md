@@ -58,7 +58,7 @@
 ## 5. Interaction paradigm
 - Observation channel: current game screenshots, sampled historical screenshots, OCR-recognized text cues, and Grounding DINO detections for people and objects
 - Action channel: executable Python action functions that call keyboard and mouse operations; actions can be predefined, newly generated for enemy-specific combat, or synthesized from retrieved human trajectories
-- Interface type: GUI interaction / hybrid
+- Interface type: native control / hybrid
 - Agent scaffold allowed: memory / reflection / retrieval / planner / tool use
 - Is there privileged API access? no game-state API is exposed, but the wrapper still uses substantial assistance through OCR, object detection, paused photo-mode inference, an action library, and optional human-guided retrieval
 - How close is the setup to human play? medium; it keeps screenshots plus keyboard-mouse output, but not pure end-to-end play because the agent reasons in a paused loop and acts through curated or generated macro-actions

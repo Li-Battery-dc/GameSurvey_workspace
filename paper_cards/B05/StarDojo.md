@@ -58,7 +58,7 @@
 ## 5. Interaction paradigm
 - Observation channel: gameplay screenshots plus structured textual observations about nearby tiles, inventory, character state, and global state
 - Action channel: high-level callable skills such as movement, interaction, item selection, and menu operations
-- Interface type: GUI interaction / API / hybrid
+- Interface type: native control / API / hybrid
 - Agent scaffold allowed: other; the benchmark provides structured text, one-step history, pause-resume support, and high-level skills, while excluding the higher-level `navigate` shortcut in the main experiments
 - Is there privileged API access? yes
 - How close is the setup to human play? medium; the world is real and rich, but actions and state are significantly abstracted through the mod and Python wrapper

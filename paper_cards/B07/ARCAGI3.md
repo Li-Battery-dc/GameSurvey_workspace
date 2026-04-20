@@ -58,7 +58,7 @@
 ## 5. Interaction paradigm
 - Observation channel: current 64x64 frame or frame sequence over a 16-color grid
 - Action channel: a small discrete action set plus optional cell-coordinate selection and undo
-- Interface type: GUI interaction / structured action space / hybrid
+- Interface type: native control / structured action space / hybrid
 - Agent scaffold allowed: none on the official leaderboard; community submissions may use harnesses
 - Is there privileged API access? no on the official leaderboard
 - How close is the setup to human play? low-to-medium; the interface is shared and instruction-free, but the abstract 16-color turn-based environments deliberately minimize perceptual and motor complexity

@@ -12,7 +12,7 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- FlashAdventure is a GUI-agent benchmark built from 34 classic Flash adventure games and focused on completing full story arcs rather than isolated subtasks. The benchmark formulates play as a POMDP over RGB frames and low-level GUI actions, documents a substantial observation-behavior gap in human play, and evaluates agents with success, milestone-completion, and step metrics. It also introduces CUA-as-a-Judge, a Claude-3.7 computer-use evaluator for milestone verification, and COAST, a clue-memory-based framework for long-horizon planning. In the survey, FlashAdventure is a strong anchor for long-horizon GUI play and memory-dependent task completion, but not for open-ended general-game transfer.
+- FlashAdventure is a native-control benchmark built from 34 classic Flash adventure games and focused on completing full story arcs rather than isolated subtasks. The benchmark formulates play as a POMDP over RGB frames and low-level native-control actions, documents a substantial observation-behavior gap in human play, and evaluates agents with success, milestone-completion, and step metrics. It also introduces CUA-as-a-Judge, a Claude-3.7 computer-use evaluator for milestone verification, and COAST, a clue-memory-based framework for long-horizon planning. In the survey, FlashAdventure is a strong anchor for long-horizon native-control play and memory-dependent task completion, but not for open-ended general-game transfer.
 
 ## 2. Position in our survey
 - Why-games relevance: Adventure games create long dependency chains and memory-heavy task structure that static benchmarks rarely capture.
@@ -58,11 +58,11 @@
 ## 5. Interaction paradigm
 - Observation channel: RGB game frames and full interaction history
 - Action channel: low-level GUI inputs such as clicks
-- Interface type: GUI interaction
+- Interface type: native control
 - Agent scaffold allowed: memory; some evaluated baselines also use retrieval or summary modules, while COAST adds explicit clue memory
 - Is there privileged API access? no
 - How close is the setup to human play? medium to high; the benchmark keeps raw frames, low-level actions, and long story arcs, but still runs under explicit step caps and evaluator access to milestone definitions
-- Main ecological-validity trade-off: Ecological fidelity is strong for slow, story-driven GUI play, but the automatic judge has oracle milestone access and the selected genres avoid strict reflex-heavy timing
+- Main ecological-validity trade-off: Ecological fidelity is strong for slow, story-driven native-control play, but the automatic judge has oracle milestone access and the selected genres avoid strict reflex-heavy timing
 
 ## 6. Evaluation protocol
 - Main score: success rate
@@ -80,7 +80,7 @@
 - Contribution 3: Adds automatic milestone verification and a clue-memory baseline framework.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Current GUI agents struggle heavily with full story arcs, especially when clues must be remembered and applied hundreds of steps later.
+- Core empirical takeaway: Current native-control agents struggle heavily with full story arcs, especially when clues must be remembered and applied hundreds of steps later.
 - Notable model failure mode 1: forgetting earlier clues and items before they become relevant
 - Notable model failure mode 2: poor subtask generation and weak lateral thinking across long dependencies
 - Notable model failure mode 3: brittle GUI grounding across highly varied non-standard interfaces
@@ -90,14 +90,14 @@
 - Best use in Section 0 (lead-in and benchmark motivation): Strong example of why games matter for long-horizon agent evaluation.
 - Best use in Section 1 (taxonomy and evolutionary levels): Represents the move toward more ecologically realistic GUI-game benchmarks, especially for full-story-arc adventure play.
 - Best use in Section 2 (core capabilities evaluated by games): Direct fit for long-horizon autonomy and memory-dependent task completion.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong example of raw GUI control with little privilege, plus milestone-based progress scoring and computer-use judging.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of raw native control with little privilege, plus milestone-based progress scoring and computer-use judging.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that long horizons and memory remain major failure points.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Cradle, VisEscape, and other GUI-agent or room-escape benchmarks
 - Closest follow-up(s): broader long-horizon GUI-game benchmarks and agentic computer-use systems
 - Best comparison targets inside our corpus: StarBench, Balrog, GameplayQA, VideoGameBench
-- What this paper uniquely adds relative to neighbors: It is one of the clearest full-story GUI benchmarks with explicit human evidence for large observation-behavior gaps and a validated computer-use judge.
+- What this paper uniquely adds relative to neighbors: It is one of the clearest full-story native-control benchmarks with explicit human evidence for large observation-behavior gaps and a validated computer-use judge.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts

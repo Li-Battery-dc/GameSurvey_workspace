@@ -58,7 +58,7 @@
 ## 5. Interaction paradigm
 - Observation channel: RGB game observations plus natural-language environment descriptions
 - Action channel: tactical commands over units, including targeting, movement, and ability usage
-- Interface type: GUI interaction / API / hybrid
+- Interface type: native control / API / hybrid
 - Agent scaffold allowed: retrieval / role assignment / VLM-based attention
 - Is there privileged API access? yes; the environment augments visual input with textual observations and structured coordination logic
 - How close is the setup to human play? medium; it is more human-aligned than purely symbolic SC2 interfaces, but still provides textual augmentation and framework-level coordination

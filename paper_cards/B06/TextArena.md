@@ -35,7 +35,7 @@
 - Benchmark unit: match / episode
 
 ### 3.3 Benchmark scope
-- Scope: curated suite
+- Scope: expandable suite
 - Number of games / tasks: 57+ in the initial release; Table 1 lists 74 environments at publication
 
 ### 3.4 Modality

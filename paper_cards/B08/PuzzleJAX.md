@@ -35,7 +35,7 @@
 - Benchmark unit: level episode
 
 ### 3.3 Benchmark scope
-- Scope: procedural-infinite
+- Scope: expandable suite
 - Number of games / tasks: 951 collected PuzzleScript games; 414 fully valid and 156 partially valid under the paper's replay-based validation, with the paper framing 500+ diverse environments and access to thousands of PuzzleScript-style games
 
 ### 3.4 Modality

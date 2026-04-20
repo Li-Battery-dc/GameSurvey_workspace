@@ -35,7 +35,7 @@
 - Benchmark unit: short play episode
 
 ### 3.3 Benchmark scope
-- Scope: curated suite
+- Scope: expandable suite
 - Number of games / tasks: 100 in the proof-of-concept release
 
 ### 3.4 Modality

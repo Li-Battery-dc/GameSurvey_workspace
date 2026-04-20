@@ -90,7 +90,7 @@
 - Best use in Section 0 (lead-in and benchmark motivation): Shows why procedurally extensible game families resist saturation better than fixed task sets.
 - Best use in Section 1 (taxonomy and evolutionary levels): Strong example of the GVGAI lineage entering LLM benchmarking. Important symbolic-game family comparison point.
 - Best use in Section 2 (core capabilities evaluated by games): Direct evidence for spatial reasoning and rule-grounding limits.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful as a privileged symbolic-state foil to visual and GUI benchmarks. Strong metric-design example.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful as a privileged symbolic-state foil to visual and native-control benchmarks. Strong metric-design example.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic access can clarify failure modes but weakens ecological claims.
 
 ## 10. Relation to nearby papers

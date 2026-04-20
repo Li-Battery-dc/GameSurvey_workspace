@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: text / symbolic state with a limited image exception in Hive
 - Perception burden retained: rule understanding, hidden-information reasoning, communication, social inference, strategic adaptation across games, and some board-state interpretation in Hive
-- Perception burden removed: native interfaces, most low-level perception, raw GUI control, and direct open-ended action search inside RAP
+- Perception burden removed: native interfaces, most low-level perception, raw native control, and direct open-ended action search inside RAP
 
 ## 4. What this benchmark measures
 - Primary capability target: cross-domain strategic reasoning in multi-agent games

@@ -61,7 +61,7 @@
 - Interface type: natural language / API / hybrid
 - Agent scaffold allowed: memory / planner / other
 - Is there privileged API access? yes
-- How close is the setup to human play? medium-low; the task structure comes from real co-play, but execution happens under a bounded-knowledge harness with high-level APIs instead of direct GUI control
+- How close is the setup to human play? medium-low; the task structure comes from real co-play, but execution happens under a bounded-knowledge harness with high-level APIs instead of direct native control
 - Main ecological-validity trade-off: the benchmark preserves realistic user requests and open-world dependencies, but Mineflayer access, bounded clarifications, and validator-backed judging simplify the control problem
 
 ## 6. Evaluation protocol

@@ -12,7 +12,7 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- StarBench is a real-client Honkai: Star Rail benchmark that holds tasks and metrics fixed while varying only the interaction regime. Across eight battles in four combat families, it compares direct control, where a VLM sees only a 1920x1080 screenshot and must emit low-level click coordinates plus keypresses, against tool-assisted control, where the same screenshot is paired with a semantic action tuple and optional YOLO/OCR textification. A second diagnostic lets the agent decide once per episode whether to ask a frozen LightRAG help corpus for a short hint before acting. For this survey, StarBench is an anchor paper because it cleanly separates raw GUI grounding, semantic action abstraction, and evaluation-time information seeking inside one benchmark.
+- StarBench is a real-client Honkai: Star Rail benchmark that holds tasks and metrics fixed while varying only the interaction regime. Across eight battles in four combat families, it compares direct control, where a VLM sees only a 1920x1080 screenshot and must emit low-level click coordinates plus keypresses, against tool-assisted control, where the same screenshot is paired with a semantic action tuple and optional YOLO/OCR textification. A second diagnostic lets the agent decide once per episode whether to ask a frozen LightRAG help corpus for a short hint before acting. For this survey, StarBench is an anchor paper because it cleanly separates raw native control, semantic action abstraction, and evaluation-time information seeking inside one benchmark.
 
 ## 2. Position in our survey
 - Why-games relevance: It makes the full pixel -> action -> outcome loop auditable while also exposing the human-like question of when an agent should seek outside information instead of acting immediately.
@@ -58,10 +58,10 @@
 ## 5. Interaction paradigm
 - Observation channel: DC uses the raw screenshot only; TA uses the same screenshot plus optional structured tokens from a per-task YOLOv8 detector and PaddleOCR; Ask persists one textual hint across the episode
 - Action channel: DC emits click coordinates `(x, y)` plus a keypress, while TA emits `(character, move, target)` with move in `{Basic, Skill, Release Ultimate, Hold Ultimate}`
-- Interface type: GUI interaction / hybrid
+- Interface type: native control / hybrid
 - Agent scaffold allowed: static UI maps, per-task detection, OCR, and optional one-shot LightRAG help; ReAct and Reflexion appear only as evaluated prompt variants
 - Is there privileged API access? no game-engine API is exposed, but TA is still privileged because it exposes detector/OCR outputs and fixed actionable regions
-- How close is the setup to human play? medium to high overall; DC is close to human GUI play, while TA and Ask deliberately move toward semantic assistance
+- How close is the setup to human play? medium to high overall; DC is close to human native control, while TA and Ask deliberately move toward semantic assistance
 - Main ecological-validity trade-off: Holding tasks and metrics fixed makes interface privilege explicit. TA is valuable because it isolates higher-level decision quality, but it should not be conflated with direct human-like control.
 
 ## 6. Evaluation protocol
@@ -88,7 +88,7 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Use Table 1 and the related-work framing to introduce the API / simulator / macro trade-off, then use StarBench as the clean matched case showing why that trade-off matters for human-like play.
-- Best use in Section 1 (taxonomy and evolutionary levels): Anchor Level 4 because it compares raw GUI control and semantic action abstraction inside one benchmark rather than across unrelated papers.
+- Best use in Section 1 (taxonomy and evolutionary levels): Anchor Level 4 because it compares raw native control and semantic action abstraction inside one benchmark rather than across unrelated papers.
 - Best use in Section 2 (core capabilities evaluated by games): Direct support for visual grounding, affordance detection, resource tracking, target selection, and information seeking under partial observability.
 - Best use in Section 3 (interaction and evaluation paradigm): Probably the strongest single paper in the corpus for the action-channel trade-off: screenshot -> OS primitives vs semantic tuple, plus family-native metric design and Ask-or-Act evaluation.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Anchor for the claim that current VLMs more often know what to do than they can ground and execute, and for the argument that dual-track protocols are better than collapsing ecological and assisted play into one score.

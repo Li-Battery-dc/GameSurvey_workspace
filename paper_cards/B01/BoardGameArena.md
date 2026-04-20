@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: text
 - Perception burden retained: strategic state reading, legal-action choice, optional short move history, reasoning-trace generation
-- Perception burden removed: raw boards and direct GUI play
+- Perception burden removed: raw boards and direct native control
 
 ## 4. What this benchmark measures
 - Primary capability target: rule-grounded strategic choice plus interpretable reasoning traces across small discrete games

@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: text / symbolic state
 - Perception burden retained: strategic reasoning, social reasoning, temporal control, multi-step planning, and action grounding under standardized state descriptions
-- Perception burden removed: raw visuals, native GUIs, and most human-facing control burdens are abstracted into text-based interfaces
+- Perception burden removed: raw visuals, native interfaces, and most human-facing control burdens are abstracted into text-based interfaces
 
 ## 4. What this benchmark measures
 - Primary capability target: theory-inspired multi-dimensional evaluation of strategic decision making across heterogeneous games

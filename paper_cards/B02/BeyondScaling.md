@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: symbolic state
 - Perception burden retained: partial observability, spatial state tracking, opponent updates over time, and action timing within an evolving battlefield
-- Perception burden removed: raw pixels, native GUI control, and low-level motor execution, because the standard setting feeds faction-level JSON state through a protocol layer
+- Perception burden removed: raw pixels, native control, and low-level motor execution, because the standard setting feeds faction-level JSON state through a protocol layer
 
 ## 4. What this benchmark measures
 - Primary capability target: opponent-aware sequential planning under uncertainty plus time-bounded execution

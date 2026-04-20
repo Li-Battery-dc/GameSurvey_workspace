@@ -58,7 +58,7 @@
 ## 5. Interaction paradigm
 - Observation channel: current screenshot plus up to three prior screenshots, wrapped with task-specific rule prompts and baseline history text describing earlier reasoning and action outcomes
 - Action channel: the model emits one action from a task-specific discrete action set, which the agent wrapper parses and semantically validates before execution
-- Interface type: GUI interaction / prompt-mediated discrete action space / hybrid
+- Interface type: native control / prompt-mediated discrete action space / hybrid
 - Agent scaffold allowed: recent-frame history / reasoning history / lightweight agent wrapper / semantic action parser
 - Is there privileged API access? no privileged game-state API is exposed to the model, but the interaction is not pure-pixel because prompts include rule text, output-format constraints, and baseline history text
 - How close is the setup to human play? medium: screenshot grounding is preserved, but the loop is prompt-mediated, built on modified mini-games, and paused during inference

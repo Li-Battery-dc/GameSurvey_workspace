@@ -61,7 +61,7 @@
 - Interface type: hybrid
 - Agent scaffold allowed: persistent cross-episode state / memory / planner / tool use
 - Is there privileged API access? yes
-- How close is the setup to human play? low to medium; agents operate in real-time Minecraft scenarios, but they act through privileged structured APIs and code generation rather than raw perception and native controls
+- How close is the setup to human play? low to medium; agents operate in real-time Minecraft scenarios, but they act through privileged structured APIs and code generation rather than raw perception and native control
 - Main ecological-validity trade-off: PillagerBench keeps real-time multi-agent competition and Minecraft resource dynamics, but heavily abstracts perception and control into Mineflayer events and JavaScript actions.
 
 ## 6. Evaluation protocol

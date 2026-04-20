@@ -35,7 +35,7 @@
 - Benchmark unit: episode
 
 ### 3.3 Benchmark scope
-- Scope: procedural-infinite
+- Scope: single game
 - Number of games / tasks: 1 game plus an NLE task suite over procedurally generated runs
 
 ### 3.4 Modality

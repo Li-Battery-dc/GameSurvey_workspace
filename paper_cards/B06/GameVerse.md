@@ -57,7 +57,7 @@
 
 ## 5. Interaction paradigm
 - Observation channel: current screenshot plus recent action context during play; selected settings also add memory, and reflection uses failure plus expert videos
-- Action channel: semantic or GUI control depending on the game
+- Action channel: semantic or native control depending on the game
 - Interface type: hybrid
 - Agent scaffold allowed: reflection; five games additionally use a memory-aware agent
 - Is there privileged API access? no
@@ -95,7 +95,7 @@
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): visual game-agent suites such as VideoGameBench and BALROG, plus prior tutorial- or reflection-based agent studies
-- Closest follow-up(s): StarBench and FlashAdventure as comparison cases for control fidelity and long-horizon GUI play, though not direct reflection benchmarks
+- Closest follow-up(s): StarBench and FlashAdventure as comparison cases for control fidelity and long-horizon native-control play, though not direct reflection benchmarks
 - Best comparison targets inside our corpus: AIGameStore, GVGAILLM, Orak, LMGameBench
 - What this paper uniquely adds relative to neighbors: It explicitly evaluates reflect-and-retry, dual action spaces, and latency-aware degradation rather than only one-shot control or passive visual understanding.
 

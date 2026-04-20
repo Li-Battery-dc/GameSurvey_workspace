@@ -41,7 +41,7 @@
 ### 3.4 Modality
 - Primary modality: text
 - Perception burden retained: spatial relations, action history, manual following, stochastic tracking through textualized observations
-- Perception burden removed: raw pixels, low-level motor control, full human-like GUI interaction
+- Perception burden removed: raw pixels, low-level motor control, full human-like native control
 
 ## 4. What this benchmark measures
 - Primary capability target: rule-grounded agent competence across planning, memory, randomness, and spatial reasoning
