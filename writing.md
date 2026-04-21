@@ -23,6 +23,31 @@ high-level narrative stages, all sections follow or recall:
 
 ### Lead-in
 
+从static benchmark mismatch开始，引入game benchmark的核心点不是“games are harder tasks”，而是“games preserve the dynamic, interactive, human-oriented structure that static benchmarks abstract away”.用三个问题引出全文三个主体部分：benchmark structure, capability target, and evaluation paradigm.
+
+段落计划：
+
+1. Problem framing:
+   - static QA 和 one-shot tests 主要观察 isolated answer quality
+   - 但 agent intelligence 需要在持续 interaction 中体现：状态跟踪、长期规划、根据反馈调整、出错后恢复
+   - 因此 benchmark gap 不在于题目是否更难，而在于是否保留 closed-loop interaction
+
+2. Why games:
+   - games 是为人类设计的动态任务系统，不只是娱乐类别
+   - 它们天然包含规则、目标、反馈、阶段推进、胜负或进度结构
+   - 正因为这些结构本来就是为人类玩家组织 challenge，games 才能成为 human-relevant capability probes
+   - 可用代表例子覆盖 formal / social / agency 三类，但不要展开成 benchmark catalogue
+
+3. Diversity as coverage:
+   - 游戏多样性不是 genre taxonomy 的装饰，而是 capability coverage 的来源
+   - 不同 game structures 对 intelligence 提出不同压力：规则理解、规划、不完全信息、社会推理、长期任务推进
+   - extensibility 在这里作为 benchmark space 的性质出现：人类游戏库和生成化 benchmark 让评测不容易被固定题集耗尽
+
+4. Roadmap by three questions:
+   - What kinds of game environments have benchmark designers built?
+   - What capabilities do these game structures actually probe?
+   - How do benchmark protocols turn gameplay into evidence, and what do benchmark scores really mean?
+
 ### Taxonomy
 
 引入： While conventional game genres categorize titles by player experience, benchmark taxonomies must prioritize the functional demands imposed on an agent.  所以需要从多个角度对benchmark中的游戏环境进行更深层次的拆分和分析。

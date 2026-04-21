@@ -11,20 +11,21 @@ high-level narrative stages, all sections follow or recall:
 
 ## 0. Lead in: Why Games as Benchmarks
 Goal:
-- Open with the benchmark mismatch rather than with the taxonomy. First explain why static QA-style and one-shot multimodal tests are weak proxies for continuous agent behavior such as long-horizon planning, adaptive recovery, and state tracking.
-- Reframe games as human-calibrated capability probes rather than as a loose genre collection. Their value comes from explicit rules, sequential interaction, delayed consequences, and auditable progress across diverse human game structures.
-- Make the benchmark-design tension explicit: raw pixels, GUI layouts, and native control are closer to human play, while textified states or semantic APIs make evaluation tractable but alter the capability demands.
-- Preview the survey's four follow-up dimensions in a way that cleanly hands off to taxonomy, capability mapping, paradigm analysis, and final synthesis.
+Goal:
+- Open with the evaluation gap: static QA-style and one-shot tests are weak proxies for intelligence that must unfold over time through action, feedback, adaptation, and recovery.
+- Reframe games as a uniquely suitable benchmark substrate because they are dynamic, interactive, and human-designed. Their rules, goals, and progress structures were built for human play, which makes them natural probes of human-relevant capability.
+- Emphasize that game diversity should be understood as structured capability coverage rather than as a loose collection of genres. Different game structures expose different demands on reasoning, memory, planning, coordination, and perception-action coupling.
+- Preview the survey through three organizing questions that lead into taxonomy, capability mapping, and benchmark paradigm analysis.
 
 Need evidence from:
-- foundational framing papers and P0 anchors on why static evaluation misses interactive agency
-- representative benchmark papers showing games as capability probes across formal, social, and visual settings
-- platform and methodology papers on interface trade-offs, human-relative breadth, and verifiable evaluation
+- framing papers on why static evaluation misses sustained interactive intelligence
+- representative benchmark papers showing how games operationalize dynamic, human-relevant capability demands
+- benchmark papers and platform papers showing that the space of human games can support broad and extensible evaluation coverage
 
-Subsections:
-0.1 Why static QA-style benchmarks and one-shot multimodal tests are not enough
-0.2 Why games: human-calibrated capability probes instead of a genre taxonomy
-0.3 Contribution preview and roadmap
+Paragraphs
+0.1 The evaluation gap: from static answers to sustained interaction
+0.2 Why games: dynamic, human-designed capability probes
+0.3 Three questions for understanding game benchmarks
 
 ## 1. Taxonomy: The Evolutionary Levels of Game Environments
 Goal:
