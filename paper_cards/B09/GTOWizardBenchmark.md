@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: multi-agent
-- Social structure: competitive
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: real game benchmarked through a public API
+### 3.1 Structure
+- Form: Puzzle
+- Construction: Adapted
+- Construction note: real game benchmarked through a public API
 - Benchmark unit: hand / match
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: multi-agent
+- Incentive structure: competitive
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

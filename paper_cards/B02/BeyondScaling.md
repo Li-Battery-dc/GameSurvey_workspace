@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: competitive
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): combat-strategy world
-- Real game / simulated game / designed task-game hybrid: designed wargame-style task-game
+### 3.1 Structure
+- Form: Match
+- Construction: Authored
+- Construction note: designed wargame-style task-game
 - Benchmark unit: full match
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: competitive
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: single game

@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: deterministic
-- Agent structure: multi-agent
-- Social structure: cooperative
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world
-- Real game / simulated game / designed task-game hybrid: real game adapted into a collaboration benchmark
+### 3.1 Structure
+- Form: Encounter
+- Construction: Adapted
+- Construction note: real game adapted into a collaboration benchmark
 - Benchmark unit: task episode
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: deterministic
+- Actor configuration: multi-agent
+- Incentive structure: cooperative
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: mixed
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: curated suite of existing games under unified text interfaces
+### 3.1 Structure
+- Form: Match
+- Construction: Wrapped
+- Construction note: curated suite of existing games under unified text interfaces
 - Benchmark unit: match
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

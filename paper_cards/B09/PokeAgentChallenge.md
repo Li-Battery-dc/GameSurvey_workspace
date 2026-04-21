@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: mixed
-- Social structure: mixed
-- Time structure: mixed
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: real game benchmark wrappers around Pokemon battling and RPG play
+### 3.1 Structure
+- Form: Match
+- Construction: Wrapped
+- Construction note: real game benchmark wrappers around Pokemon battling and RPG play
 - Benchmark unit: battle or speedrun episode
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: mixed
+- Incentive structure: mixed
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: game family

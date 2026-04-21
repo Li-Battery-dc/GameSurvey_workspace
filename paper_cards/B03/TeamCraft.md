@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: cooperative
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: Minecraft-based task benchmark
+### 3.1 Structure
+- Form: World
+- Construction: Adapted
+- Construction note: Minecraft-based task benchmark
 - Benchmark unit: collaborative task episode
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: cooperative
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: single game

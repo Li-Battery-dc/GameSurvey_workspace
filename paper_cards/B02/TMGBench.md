@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: perfect
-- Transition structure: deterministic
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: designed task-game hybrid based on 2x2 matrix-game topology
+### 3.1 Structure
+- Form: Match
+- Construction: Adapted
+- Construction note: designed task-game hybrid based on 2x2 matrix-game topology
 - Benchmark unit: atomic game / composed task
+
+### 3.2 Mechanics profile
+- State visibility: full
+- Transition uncertainty: deterministic
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

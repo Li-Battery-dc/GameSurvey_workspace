@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: real game benchmark with a custom simulator
+### 3.1 Structure
+- Form: Match
+- Construction: Adapted
+- Construction note: real game benchmark with a custom simulator
 - Benchmark unit: full match
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

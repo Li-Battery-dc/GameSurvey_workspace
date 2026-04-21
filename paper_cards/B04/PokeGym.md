@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: real-time
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: real commercial 3D game played through emulator-based benchmarking
+### 3.1 Structure
+- Form: World
+- Construction: Embedded
+- Construction note: real commercial 3D game played through emulator-based benchmarking
 - Benchmark unit: task trajectory
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: real-time
 
 ### 3.3 Benchmark scope
 - Scope: single game

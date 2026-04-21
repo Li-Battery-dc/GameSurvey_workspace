@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): abstract puzzle / adventure-quest world
-- Real game / simulated game / designed task-game hybrid: simulated game family built on GVGAI
+### 3.1 Structure
+- Form: Mixed
+- Construction: Generated
+- Construction note: simulated game family built on GVGAI
 - Benchmark unit: full level
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: game family

@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: mixed
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: designed task-game hybrid based on classical game-theory scenarios
+### 3.1 Structure
+- Form: Match
+- Construction: Adapted
+- Construction note: designed task-game hybrid based on classical game-theory scenarios
 - Benchmark unit: game instance
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

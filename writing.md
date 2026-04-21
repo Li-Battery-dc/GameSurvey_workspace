@@ -62,25 +62,41 @@ high-level narrative stages, all sections follow or recall:
 - Level 4: Visual Agency — Can it play like a human? (BALROG, StarBench): preserves more of the visual and interface burden of human play.
 - Level 5: Cross-Game Generalization — Can it play anything? (GameVerse, AI GAMESTORE): extends evaluation from competence in one game to adaptability across multiverse of games.
 
-过渡，high——level的演化背后需要对游戏的设计结构进行进一步的探讨：The five levels provide the survey's historical backbone, but they do not by themselves specify how a benchmark instantiates the game as an evaluation environment. We therefore add secondary coding axes to describe benchmark structure, scope, and modality within and across these stages.
+过渡，high——level的演化背后需要对 benchmark 作为 “game turned into evaluation object” 的方式做进一步解释：The five levels provide the survey's historical backbone, but they do not by themselves specify how a benchmark turns gameplay into an evaluable object. We therefore add secondary coding axes to describe structure, scope, and modality within and across these stages.
 
-1. structure: 游戏本身带有的属性和游戏环境的结构使其成为研究者选择其作为评测环境的原因，带给agent不同的挑战。从博弈论游戏到board games再到 复杂的商业游戏，研究者可设计和调整的范围更大了，通过不同structure的组合可以得到多样化的评测环境.
-   - Game Structure: 只放形式机制：信息结构、随机性、agent 数量、合作/对抗、时间结构。结合重要的论文原文中的描述，对这些词汇的含义和影响解释清楚。
-   - Environment Structure: 只放环境类型：tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world。简要对比这些environment对paradigm和设计的影响。比如puzzle适合language-centric, 社交游戏适合Mutil-agent, adventure 适合长流程互动。
+1. Structure: taxonomy 这里不再问 “这个游戏天然会施加什么 capability pressure”，那部分会在 Part 2 展开；这里问的是两个更 benchmark-centric 的问题：
+   - `Form`: 这个 benchmark 实际让模型完成的 playable/evaluable unit 是什么。这个字段要让读者一眼看出 “progress 是如何被组织起来的”，以及 “什么算一次完整评测单元”。 `Form` 决定 benchmark 如何定义 episode、progress、completion、failure，也决定同样一个 “game” 在 benchmark 中是被当成 battle、story、world 还是 question 来评。
+   - 词表：
+     - `Match`: bounded 对局，终局和胜负清晰，适合 formal board/card/strategy benchmarks。
+     - `Puzzle`: 单个约束求解实例或 question-like interactive problem，重点是局部解题或状态求解，而不是完整长期 play session。
+     - `Dialogue`: 语言互动本身就是主要行动媒介，episode 靠协商、辩论、说服、身份判断推进。
+     - `Encounter`: bounded tactical segment，例如一场战斗、一个关卡片段、一个短时任务场景。
+     - `Arc`: 完整 story / quest progression，强调从开头到结尾的长依赖链。
+     - `World`: 持续世界中的探索、生存、资源、achievement graph 或 open-ended task progression。
+     - `Mixed`: 仅用于确实横跨多种 playable units 的 suites/platforms，不作为默认兜底项。
+   - `Construction`: 这个 benchmark 是如何把 game 变成 benchmark artifact 的。这个字段直接回答 benchmark 与原始游戏 substrate 的关系。 `Construction` 决定 benchmark 和原始游戏的距离，直接影响 ecological validity、可仪器化程度、可重复性、contamination 风险与扩展方式。
+   - 词表：
+     - `Embedded`: benchmark 尽量保留原生 client/runtime/play surface，在原生游戏中直接评测。
+     - `Wrapped`: benchmark 复用现有游戏或环境，但通过统一 harness / API / wrapper 重新暴露给模型。
+     - `Adapted`: benchmark 取材于现有游戏，但把它切成特定 tasks / scenarios / questions / spots / logs 等评测对象。
+     - `Authored`: 研究者为了评测专门设计 game-like environment 或 benchmark task-game。
+     - `Generated`: benchmark 的核心对象由程序化、算法化或模型化生成，增长新任务/新规则/新游戏本身就是 benchmark 设计的一部分。  
+    
 2. Benchmark Scope：
    - 早期single game大多强调推理深度，expert 能力,特点是metrics简单有效，方便做很深的case study。
    - game family 则在同类游戏结构下拓展，避免对单一游戏过拟合，同时保持相对统一的接口、规则分布和评测逻辑(FlashAdventure)。
    - curated suite基于作者对benchmark的设计有目的地覆盖多个 capability slice, 有意识地覆盖多种能力压力。通过差异化游戏结构评测模型的general 能力。 
    - expandable suite通过生成化方式引出无限的可拓展种类(AI GameStore)。 让 generalization 的重点从“是否见过这几个 benchmark games”转向“是否能应对新实例、新规则、新 level”。
    - open-ended tasks偏向大规模组合式、长尾、持续扩展的任务空间，强调 benchmark 如何在单一环境中不断生成新任务实例，而不等同于环境本身是否是 open-world。
-3. Modality: (注意不要预先展开这些content code对于benchmark的影响，留到paradigm中说)
+3. Modality: (注意不要预先展开这些 content codes 对 benchmark 结果的影响，留到 paradigm 中说)
    - obs: 
-     - text or symbolic: 游戏状态用自然语言描述，符合LLM的language-centric,核心目标是diagnotic clarity. 
-     - visual image: 使用screenshot, (其他方式)将游戏状态直接
-     - mixed： 受限于当前模型能力，提供一些scaffold, 同时提供多种modality, 比较raw和assited. (STARBench)
+     - text or symbolic: 游戏状态用自然语言描述或结构化符号暴露，符合 LLM 的 language-centric interface，核心目标是 diagnostic clarity.
+     - visual image: 使用 screenshot 或其他图像化观测直接暴露游戏状态，尽量保留原生感知负担。
+     - mixed： 同时提供多种 observation modality，或者在 raw visual 之上加入有限 scaffold，便于比较 raw 与 assisted setting 的差异。`StarBench` 是典型例子。
    - action:
-     - semantic: 高层次语义动作
-     - native control: huamn-like的交互方式, gui, 键鼠交互，模拟器交互，
+     - semantic: 高层次语义动作，例如 move / skill / target 级别的动作输出。
+     - native control: human-like 的交互方式，例如 GUI、键鼠、模拟器输入。
+     - mixed: 同一 benchmark 同时提供 semantic 和 native-control 两类 action channel，或让 agent 在两者之间切换。
   
 ### Purpose
 
@@ -88,6 +104,16 @@ high-level narrative stages, all sections follow or recall:
 
 ### Paragim
 
+引入：游戏本身并不为了模型而设计，不会自动成为一个benchmark，需要interaction contract 和 evaluation contract才能利用上游戏的好处。The front end decides what part of the human play loop is preserved, while the back end decides what kinds of evidence can be extracted from play.
+
+段落结构：
+
+1. 举例论证同一个游戏由于接口和评分方式不同，不同的paradigm可以变成完全不同的benchmark. 
+
 #### Interface
+
+- Observation： 
+
+- Action: 
 
 #### Evaluation

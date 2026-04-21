@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): abstract puzzle / adventure-quest world
-- Real game / simulated game / designed task-game hybrid: Atari suite rendered into textual state descriptions
+### 3.1 Structure
+- Form: Encounter
+- Construction: Adapted
+- Construction note: Atari suite rendered into textual state descriptions
 - Benchmark unit: episode
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

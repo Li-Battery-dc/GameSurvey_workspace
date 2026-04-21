@@ -22,17 +22,18 @@
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world
-- Real game / simulated game / designed task-game hybrid: real commercial game client benchmark
+### 3.1 Structure
+- Form: Encounter
+- Construction: Embedded
+- Construction note: real commercial game client benchmark
 - Benchmark unit: battle / episode
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

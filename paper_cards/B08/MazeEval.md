@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: deterministic
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): abstract puzzle
-- Real game / simulated game / designed task-game hybrid: designed maze benchmark
+### 3.1 Structure
+- Form: Puzzle
+- Construction: Authored
+- Construction note: designed maze benchmark
 - Benchmark unit: maze episode
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: deterministic
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

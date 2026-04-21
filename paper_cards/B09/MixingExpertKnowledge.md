@@ -22,17 +22,18 @@
 - Role in corpus: peripheral
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: perfect
-- Transition structure: deterministic
-- Agent structure: multi-agent
-- Social structure: competitive
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: real board game represented as text next-move prediction
+### 3.1 Structure
+- Form: Match
+- Construction: Adapted
+- Construction note: real board game represented as text next-move prediction
 - Benchmark unit: board position
+
+### 3.2 Mechanics profile
+- State visibility: full
+- Transition uncertainty: deterministic
+- Actor configuration: multi-agent
+- Incentive structure: competitive
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

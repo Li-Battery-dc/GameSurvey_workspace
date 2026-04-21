@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world
-- Real game / simulated game / designed task-game hybrid: curated suite of commercial video games in emulation
+### 3.1 Structure
+- Form: Mixed
+- Construction: Embedded
+- Construction note: curated suite of commercial video games in emulation
 - Benchmark unit: full game run / episode
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

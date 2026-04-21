@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: real-time
-
-### 3.2 Environment structure
-- Environment type(s): combat-strategy world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: designed competitive scenarios inside Minecraft rather than open-ended survival play
+### 3.1 Structure
+- Form: Encounter
+- Construction: Adapted
+- Construction note: designed competitive scenarios inside Minecraft rather than open-ended survival play
 - Benchmark unit: timed episode
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: real-time
 
 ### 3.3 Benchmark scope
 - Scope: single game

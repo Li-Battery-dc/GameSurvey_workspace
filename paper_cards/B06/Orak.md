@@ -22,17 +22,18 @@
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: mixed
-- Social structure: mixed
-- Time structure: mixed
-
-### 3.2 Environment structure
-- Environment type(s): abstract puzzle / combat-strategy world / adventure-quest world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: real video games benchmarked through a common interface
+### 3.1 Structure
+- Form: Mixed
+- Construction: Wrapped
+- Construction note: real video games benchmarked through a common interface
 - Benchmark unit: game episode
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: mixed
+- Incentive structure: mixed
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: mixed
-- Social structure: mixed
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): abstract puzzle
-- Real game / simulated game / designed task-game hybrid: designed task-game hybrid
+### 3.1 Structure
+- Form: Puzzle
+- Construction: Authored
+- Construction note: designed task-game hybrid
 - Benchmark unit: puzzle instance
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: mixed
+- Incentive structure: mixed
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

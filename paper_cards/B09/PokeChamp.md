@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: multi-agent
-- Social structure: competitive
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): combat-strategy world / adventure-quest world
-- Real game / simulated game / designed task-game hybrid: real competitive Pokémon battle simulator plus curated puzzles
+### 3.1 Structure
+- Form: Match
+- Construction: Wrapped
+- Construction note: real competitive Pokémon battle simulator plus curated puzzles
 - Benchmark unit: battle / puzzle
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: multi-agent
+- Incentive structure: competitive
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

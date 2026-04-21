@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): social interaction arena
-- Real game / simulated game / designed task-game hybrid: real game adapted into a measurement-oriented benchmark
+### 3.1 Structure
+- Form: Dialogue
+- Construction: Adapted
+- Construction note: real game adapted into a measurement-oriented benchmark
 - Benchmark unit: statement plus full game
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

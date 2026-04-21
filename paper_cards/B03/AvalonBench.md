@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: deterministic
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): social interaction arena
-- Real game / simulated game / designed task-game hybrid: digital environment for an existing tabletop social deduction game
+### 3.1 Structure
+- Form: Dialogue
+- Construction: Adapted
+- Construction note: digital environment for an existing tabletop social deduction game
 - Benchmark unit: full game
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: deterministic
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

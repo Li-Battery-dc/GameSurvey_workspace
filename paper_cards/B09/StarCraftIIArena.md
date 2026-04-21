@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: multi-agent
-- Social structure: competitive
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): combat-strategy world
-- Real game / simulated game / designed task-game hybrid: StarCraft II benchmark scenarios with tracked high-level strategic decisions
+### 3.1 Structure
+- Form: Match
+- Construction: Adapted
+- Construction note: StarCraft II benchmark scenarios with tracked high-level strategic decisions
 - Benchmark unit: match / scenario
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: mixed
+- Actor configuration: multi-agent
+- Incentive structure: competitive
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: single game

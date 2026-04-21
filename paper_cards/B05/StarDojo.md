@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: mixed
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: commercial game with benchmark task wrappers
+### 3.1 Structure
+- Form: World
+- Construction: Adapted
+- Construction note: commercial game with benchmark task wrappers
 - Benchmark unit: task episode / open-world session
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: mixed
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: open-ended tasks

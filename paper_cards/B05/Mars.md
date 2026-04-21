@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: Crafter-derived open-world with modified mechanics
+### 3.1 Structure
+- Form: World
+- Construction: Adapted
+- Construction note: Crafter-derived open-world with modified mechanics
 - Benchmark unit: episode / world instance
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: game family

@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: multi-agent
-- Social structure: competitive
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: benchmark of real poker decision spots derived from solver analysis
+### 3.1 Structure
+- Form: Puzzle
+- Construction: Adapted
+- Construction note: benchmark of real poker decision spots derived from solver analysis
 - Benchmark unit: decision spot
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: multi-agent
+- Incentive structure: competitive
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

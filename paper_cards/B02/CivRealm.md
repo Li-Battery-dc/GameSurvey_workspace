@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: multi-agent
-- Social structure: mixed
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): combat-strategy world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: Freeciv-based strategy world with full games plus generated mini-games
+### 3.1 Structure
+- Form: World
+- Construction: Wrapped
+- Construction note: Freeciv-based strategy world with full games plus generated mini-games
 - Benchmark unit: full game / mini-game episode
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: multi-agent
+- Incentive structure: mixed
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: open-ended tasks

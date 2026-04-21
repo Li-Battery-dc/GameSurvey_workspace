@@ -22,17 +22,18 @@
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: stochastic
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: real-time
-
-### 3.2 Environment structure
-- Environment type(s): sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: designed task-game hybrid built as a research environment
+### 3.1 Structure
+- Form: World
+- Construction: Authored
+- Construction note: designed task-game hybrid built as a research environment
 - Benchmark unit: episode
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: stochastic
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: real-time
 
 ### 3.3 Benchmark scope
 - Scope: single game

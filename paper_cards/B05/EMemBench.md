@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: mixed
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid: curated suite using Jericho text games and Crafter as trajectory generators for memory evaluation
+### 3.1 Structure
+- Form: Puzzle
+- Construction: Generated
+- Construction note: curated suite using Jericho text games and Crafter as trajectory generators for memory evaluation
 - Benchmark unit: trajectory plus generated QA set
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

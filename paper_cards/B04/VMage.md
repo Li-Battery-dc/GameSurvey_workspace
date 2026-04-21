@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: perfect
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): adventure-quest world
-- Real game / simulated game / designed task-game hybrid: designed task-game hybrid built from modified open-source Pygame games with manually redesigned benchmark levels
+### 3.1 Structure
+- Form: Encounter
+- Construction: Adapted
+- Construction note: designed task-game hybrid built from modified open-source Pygame games with manually redesigned benchmark levels
 - Benchmark unit: episode / level run
+
+### 3.2 Mechanics profile
+- State visibility: full
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

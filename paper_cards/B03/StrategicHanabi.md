@@ -22,17 +22,18 @@
 - Role in corpus: representative
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: imperfect
-- Transition structure: deterministic
-- Agent structure: multi-agent
-- Social structure: cooperative
-- Time structure: turn-based
-
-### 3.2 Environment structure
-- Environment type(s): tabletop
-- Real game / simulated game / designed task-game hybrid: real game adapted into an LLM benchmark
+### 3.1 Structure
+- Form: Match
+- Construction: Adapted
+- Construction note: real game adapted into an LLM benchmark
 - Benchmark unit: full game
+
+### 3.2 Mechanics profile
+- State visibility: partial
+- Transition uncertainty: deterministic
+- Actor configuration: multi-agent
+- Incentive structure: cooperative
+- Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
 - Scope: single game

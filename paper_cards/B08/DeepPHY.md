@@ -22,17 +22,18 @@
 - Role in corpus: contrast
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: mixed
-- Transition structure: mixed
-- Agent structure: single-agent
-- Social structure: N/A
-- Time structure: hybrid
-
-### 3.2 Environment structure
-- Environment type(s): abstract puzzle
-- Real game / simulated game / designed task-game hybrid: curated suite mixing physics simulators with physics-based games
+### 3.1 Structure
+- Form: Puzzle
+- Construction: Adapted
+- Construction note: curated suite mixing physics simulators with physics-based games
 - Benchmark unit: attempt / trial
+
+### 3.2 Mechanics profile
+- State visibility: mixed
+- Transition uncertainty: mixed
+- Actor configuration: single-agent
+- Incentive structure: N/A
+- Temporal regime: hybrid
 
 ### 3.3 Benchmark scope
 - Scope: curated suite

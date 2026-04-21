@@ -31,13 +31,15 @@ Goal:
 - Use the five-level evolutionary spine as the primary historical organization of the literature. Then introduce structure, scope, and modality as secondary coding axes for reading the taxonomy table.
 
 
-introduce the 5 level definition evolutionary spine, then add more information on a detailed overview of the various forms and directions of the table content code:
-1. Game structure: perfect vs imperfect information, deterministic vs stochastic, single-agent vs multi-agent, cooperative vs competitive, turn-based vs real-time
-2. Environment structure: tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world
-3. Benchmark scope: single game, game family, curated suite, expandable suite, open-ended tasks
-4. Modality: 
-  - obs: text-only, raw image, mixed
-  - action: semantic, native control
+introduce the 5 level definition evolutionary spine, then add more information on a detailed overview of the table content code:
+1. Structure:
+  - Game Form: Match / Puzzle / Dialogue / Encounter / Arc / World / Mixed
+  - Construction: Embedded / Wrapped / Adapted / Authored / Generated
+  - Keep rule-level mechanics as supporting card annotations rather than as the main taxonomy axis.
+2. Benchmark scope: single game, game family, curated suite, expandable suite, open-ended tasks
+3. Modality: 
+  - obs: text or symbolic, visual image, mixed
+  - action: semantic, native control, mixed
 
 Use the table to show each benchmark's dominant level at a glance. Keep cross-level nuance in the paper cards and unpack the capability meaning of each level later in Section 2 rather than inside the taxonomy table itself.
 
@@ -71,8 +73,8 @@ Goal:
 
 Subsections:
 3.1 Interaction: 
-  - Observation channel: language description, structured states, GUI, pixels, video. Highlight the shift from structured text to high-dimensional, real-time multimodal streams.
-  - Action channel: discrete action set, natural language action, tool/API calls, hybrid control.
+  - Observation channel: language description, structured states, raw images. Highlight the shift from structured text to high-dimensional, real-time multimodal streams.
+  - Action channel: discrete action set, high-level semantic action, tool/API calls, native human-like-control, hybrid control.
   - Trade-off: Privileged interface vs ecological validity. Explain how interface choices heavily skew benchmark results.
 3.2 Evaluation: Compare paradigms and how different metrics affect evaluation quality.
   -  Result-based metrics

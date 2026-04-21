@@ -21,17 +21,18 @@
 - Role in corpus: anchor / representative / contrast / peripheral
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: perfect / imperfect / mixed
-- Transition structure: deterministic / stochastic / mixed
-- Agent structure: single-agent / multi-agent
-- Social structure: cooperative / competitive / mixed / N/A
-- Time structure: turn-based / real-time / hybrid
-
-### 3.2 Environment structure
-- Environment type(s): tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world
-- Real game / simulated game / designed task-game hybrid:
+### 3.1 Structure
+- Form: Match / Puzzle / Dialogue / Encounter / Arc / World / Mixed
+- Construction: Embedded / Wrapped / Adapted / Authored / Generated
+- Construction note:
 - Benchmark unit: move / turn / round / episode / trajectory / full task arc / open-world session
+
+### 3.2 Mechanics profile
+- State visibility: full / partial / mixed
+- Transition uncertainty: deterministic / stochastic / mixed
+- Actor configuration: single-agent / multi-agent / mixed
+- Incentive structure: cooperative / competitive / mixed / N/A
+- Temporal regime: turn-based / real-time / hybrid
 
 ### 3.3 Benchmark scope
 - Scope: single game / game family / curated suite / expandable suite / open-ended tasks

@@ -21,17 +21,18 @@
 - Role in corpus: anchor
 
 ## 3. Design-space coding
-### 3.1 Game structure
-- Information structure: unclear
-- Transition structure: unclear
-- Agent structure: unclear
-- Social structure: unclear
-- Time structure: unclear
-
-### 3.2 Environment structure
-- Environment type(s): placeholder
-- Real game / simulated game / designed task-game hybrid: placeholder
+### 3.1 Structure
+- Form: Mixed
+- Construction: Wrapped
+- Construction note: placeholder
 - Benchmark unit: placeholder
+
+### 3.2 Mechanics profile
+- State visibility: unclear
+- Transition uncertainty: unclear
+- Actor configuration: unclear
+- Incentive structure: unclear
+- Temporal regime: unclear
 
 ### 3.3 Benchmark scope
 - Scope: curated suite
