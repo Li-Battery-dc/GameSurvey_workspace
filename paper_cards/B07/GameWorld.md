@@ -12,13 +12,13 @@
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
-- GameWorld is a browser-game benchmark for multimodal agents that makes interface comparison and outcome verification first-class design goals rather than afterthoughts. It evaluates 18 model-interface pairs across 34 games and 170 tasks, covering both computer-use agents that emit mouse and keyboard controls and generalist multimodal agents that act through deterministic semantic action parsing. A browser sandbox can pause execution during inference so that decision quality is separated from response latency, while a JavaScript bridge exposes task-relevant game state to a state-verifiable evaluator that computes deterministic progress and success signals. For this survey, GameWorld is one of the strongest recent papers for arguing that visual game benchmarking needs standardized interfaces, verifiable outcomes, and explicit latency accounting.
+- GameWorld is a 34-game, 170-task browser-game benchmark for multimodal agents whose main contribution is to standardize interface and evaluation rather than to claim held-out transfer. It evaluates 18 model-interface pairs under one shared runtime, covering both computer-use agents that emit low-level mouse and keyboard controls and generalist multimodal agents that act through deterministic Semantic Action Parsing. A browser sandbox can pause execution during inference so that decision quality is separated from response latency, while a JavaScript bridge exposes serialized gameAPI state to a state-verifiable evaluator that computes deterministic progress and success signals. For this survey, GameWorld is strongest as an anchor for visual-agency evaluation design and for separating multi-game breadth from true cross-game generalization.
 
 ## 2. Position in our survey
 - Why-games relevance: Browser games provide closed-loop visual interaction, broad mechanic diversity, and scalable resettable environments while still permitting deterministic outcome checks.
 - Historical stage: ecological agent benchmark
 - Benchmark level(s): L4 visual agency
-- Most relevant outline section(s): 0,1,3,4
+- Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: anchor
 
 ## 3. Design-space coding
@@ -45,15 +45,15 @@
 - Perception burden removed: paused inference in the default setting factors out latency, and the Generalist interface abstracts low-level control into semantic actions
 
 ## 4. What this benchmark measures
-- Primary capability target: visual game play under standardized cross-interface evaluation
-- Secondary capability target(s): long-horizon control, timing grounding, open-ended browser-game task completion, and benchmark-methodology robustness
+- Primary capability target: visually grounded gameplay under standardized, interface-aware evaluation
+- Secondary capability target(s): timing grounding, spatial navigation, long-horizon task completion, and reproducible benchmark diagnostics
 - Does it test rule grounding / legal action generation? yes
-- Does it test strategic planning under uncertainty? yes
+- Does it test strategic planning under uncertainty? partially; strategy matters mainly in the puzzle and simulation subsets rather than as a benchmark-wide hidden-information target
 - Does it test social reasoning / deception / cooperation? no as a primary target
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? yes, through the separate GameWorld-RT variant
-- Does it test cross-game transfer / open-ended generalization? no; breadth matters here more as benchmark coverage than as explicit transfer design
+- Does it test cross-game transfer / open-ended generalization? no; the suite is broad, but the paper does not study held-out transfer or benchmark growth
 - Why is a game environment especially suitable here? Diverse games let the benchmark combine perception, timing, control, and delayed consequences while keeping success objectively measurable from environment state.
 
 ## 5. Interaction paradigm
@@ -82,22 +82,23 @@
 
 ## 8. Main findings and failure modes
 - Core empirical takeaway: even the best GameWorld agents are far below novice human performance, and most models make partial progress much more often than they complete tasks.
-- Notable model failure mode 1: weak timing grounding and basic control remain a bottleneck, especially in real-time or control-sensitive games
-- Notable model failure mode 2: open-ended simulation tasks and long-horizon coordination remain broadly difficult across both interfaces
+- Notable model failure mode 1: both interfaces drop sharply on Level-1 basic control and timing grounding despite doing much better on reactive and symbolic-reasoning games
+- Notable model failure mode 2: open-ended simulation tasks and Level-5 coordination or management tasks remain broadly difficult across both interfaces
 - Notable model failure mode 3: longer action history helps semantic agents modestly but can hurt CUAs because low-level traces bloat context without preserving useful semantic structure
-- Does this paper reveal a benchmark-design limitation as well? yes; it shows that benchmark conclusions depend strongly on whether latency is treated as part of the task and on how much control abstraction the interface allows
+- Does this paper reveal a benchmark-design limitation as well? yes; it shows that benchmark conclusions depend strongly on whether latency is treated as part of the task, on how much control abstraction the interface allows, and on whether broad suite coverage is mistaken for transfer evidence
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can support interactive evaluation with deterministic, auditable outcome signals instead of heuristic judging.
-- Best use in Section 1 (taxonomy and evolutionary levels): Helps position mature Level 4 benchmarks that preserve visual interaction while making protocol design itself a benchmark contribution.
+- Best use in Section 1 (taxonomy and evolutionary levels): Helps position mature Level 4 benchmarks that preserve visual interaction while making protocol design itself a benchmark contribution. Also useful as a boundary case: a broad curated suite is not automatically a Level-5 transfer benchmark.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for a capability-decomposition story inside visual gameplay: reactive control and symbolic reasoning are stronger than basic timing grounding and open-world coordination.
 - Best use in Section 3 (interaction and evaluation paradigm): One of the corpus anchors for interface disclosure, semantic-versus-CUA trade-offs, paused-versus-real-time evaluation, and state-verifiable scoring.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the forward-design claim that future benchmarks should separate decision quality from systems latency while still reporting both.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the forward-design claim that future benchmarks should separate decision quality from systems latency while still reporting both, and should say explicitly whether benchmark breadth means transfer, capability coverage, or instrumentation.
 
 ## 10. Relation to nearby papers
-- Closest predecessor(s): BALROG, VideoGameBench, V-MAGE, OSWorld
-- Closest follow-up(s): future browser-game and computer-use benchmarks that combine ecological play with stronger verifiability
-- Best comparison targets inside our corpus: Balrog, VideoGameBench, FlashAdventure, GameArena, GameVerse
-- What this paper uniquely adds relative to neighbors: It jointly standardizes dual agent interfaces, browser-game execution, deterministic outcome verification, and rerun-based robustness analysis in one benchmark
+- Closest predecessor(s): BALROG, VideoGameBench, FlashAdventure, OSWorld
+- Closest follow-up(s): GameVerse and future browser-game or computer-use benchmarks that combine ecological play with stronger verifiability or broader suite coverage
+- Best comparison targets inside our corpus: Balrog, FlashAdventure, LMGameBench, Orak, AIGameStore
+- What this paper uniquely adds relative to neighbors: It jointly standardizes dual agent interfaces, paused-versus-real-time browser execution, deterministic outcome verification, and rerun-based robustness analysis in one benchmark without claiming held-out transfer
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
@@ -106,19 +107,22 @@
 - The evaluator reads serialized gameAPI state through a JavaScript bridge and instruments 233 task-relevant fields across the 34 games to compute deterministic progress and success.
 - The best reported generalist result is Gemini-3-Flash-Preview at 21.2 SR and 41.9 PG, while the novice human reaches 55.3 SR and 64.1 PG under the same action budget.
 - Ten repeated full-benchmark reruns on open Qwen models show only low single-digit variation in aggregate SR and PG, supporting benchmark-level robustness claims.
+- The paper's capability-aligned curriculum peaks at Level-4 reasoning or strategy and Level-2 reactive control, but drops sharply at Level-1 basic control or timing grounding and Level-5 open-world coordination or management.
+- The limitations section states that scaling to new environments requires designing unique instruction sets and Semantic Action Parsing alignment for each game.
 
 ### 11.2 Our synthesis / interpretation
 - GameWorld is one of the clearest recent papers for the survey's claim that interface privilege and evaluation protocol matter as much as raw game difficulty.
-- It is better used as a methodology-and-visual-agency anchor than as a pure capability leaderboard, because its strongest contribution is making the benchmark itself more comparable and auditable.
+- It is better used as a visual-agency and evaluation-design anchor than as the main cross-game-generalization anchor, because its strongest contribution is making the benchmark itself more comparable and auditable.
+- For Level-5 writing, treat it as a boundary case: multi-game breadth plus some open-ended tasks is not the same thing as explicit cross-game transfer or expandable benchmark growth.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the appendix if later drafting needs exact per-game state schemas, legality filters, or prompt templates for the semantic-control interface.
-- Re-check the curriculum-level grouping if we later want to cite specific GameWorld games as exemplars of Level 1 timing grounding or Level 5 open-world coordination.
+- Re-check Appendix C or D if later drafting needs exact per-game state schemas, legality filters, prompt templates, or semantic-control registries.
+- If we later cite individual games as Level-1 or Level-5 exemplars, re-check the paper's internal curriculum grouping rather than assuming it matches the survey's taxonomy one-to-one.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? No immediate reread; the current card already uses the full paper's setup, results, and analysis sections.
 - Which section to read next if needed: 3.5 / 4.3 / 4.5 / Appendix C
-- Follow-up question(s): Which GameWorld analysis should be foregrounded most in Section 3: state-verifiable evaluation, paused-versus-real-time comparison, or semantic-versus-CUA interface trade-offs?
+- Follow-up question(s): Which Level-5 sentence, if any, should cite GameWorld only as a breadth-versus-transfer contrast alongside Orak or AI GameStore?
 
 ## 13. Registry sync
 - Registry row synced: yes
@@ -126,8 +130,8 @@
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B07
-- Outline sections: 0,1,3,4
+- Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B07/GameWorld.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-21

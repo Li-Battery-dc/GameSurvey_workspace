@@ -16,13 +16,15 @@
 | 6 | DSGBench | DSGBench: A Diverse Strategic Game Benchmark for Evaluating LLM-based Agents in Complex Decision-Making Environments | representative | 1,2,3,4 | Broad curated strategic suite with unified text interfaces, fine-grained capability metrics, and trajectory logging; broad diagnostic platform rather than a full generalization benchmark. |
 | 7 | PillagerBench | PillagerBench: Benchmarking LLM-Based Agents in Competitive Minecraft Team Environments | contrast | 1,2,3,4 | Keep in B02 as an ecological Level 2 contrast on task allocation and opponent adaptation under structured Minecraft APIs; not a core formal reasoning anchor. |
 | 8 | CivRealm | CivRealm: A Learning and Reasoning Odyssey in Civilization for Decision-Making Agents | representative | 1,2,4 | Civilization environment stressing long-horizon planning, dynamic state/action growth, and the full-game versus mini-game gap. |
+| 9 | KORGym | KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation | representative | 1,2,3 | Broad API-mediated reasoning platform with dimension-aware aggregation and RL-ready interaction; keep as Level 2 breadth and evaluation-engineering evidence, not Level 5 transfer support. |
 
 ## Expected Survey Payoff
-- Tighten the Level 2 narrative from formal probes to richer strategic environments.
+- Tighten the Level 2 narrative from formal probes to richer strategic environments and broader reasoning platforms.
 - Provide a shared comparison set for uncertainty, real-time pressure, and agent-vs-agent evaluation.
 
 ## Questions To Resolve While Drafting
 - Where is the clearest line between strategic depth, benchmark coverage, and evaluation engineering?
+- When does multi-game benchmark breadth remain a Level 2 diagnostic suite rather than becoming true Level 5 transfer evidence?
 - Which papers best expose uncertainty and time pressure rather than just prompt tuning or environment coupling?
 
 ## Batch Use Note

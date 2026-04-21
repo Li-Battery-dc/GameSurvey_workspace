@@ -21,6 +21,8 @@ high-level narrative stages, all sections follow or recall:
 
 ## Section Tracker
 
+### Lead-in
+
 ### Taxonomy
 
 引入： While conventional game genres categorize titles by player experience, benchmark taxonomies must prioritize the functional demands imposed on an agent.  所以需要从多个角度对benchmark中的游戏环境进行更深层次的拆分和分析。

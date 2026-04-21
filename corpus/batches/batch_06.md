@@ -13,8 +13,7 @@
 | 3 | Orak | Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on 12-Genre Video Games | anchor | 1,2,3,4 | Broad curated train-and-eval benchmark bridging benchmark suites and cross-game generalization. |
 | 4 | GameVerse | GameVerse: Can VLMs Learn from Video-based Reflection? | representative | 1,2,3,4 | Cross-game VLM benchmark with reflect-and-retry loops and milestone evaluation. |
 | 5 | LMGameBench | LMGAME-BENCH: How Good are LLMs at Playing Games? | representative | 0,1,2,3 | Unified game benchmark with explicit perception and memory breakdowns for agent evaluation. |
-| 6 | KORGym | KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation | representative | 1,2,3,4 | Dynamic multi-game platform broadening benchmark coverage and evaluation protocol variation. |
-| 7 | TextArena | TextArena | representative | 1,2,3,4 | Competitive text-game suite with online-play ratings that broadens benchmark-platform discussion. |
+| 6 | TextArena | TextArena | representative | 1,2,3,4 | Competitive text-game suite with online-play ratings that broadens benchmark-platform discussion. |
 
 ## Expected Survey Payoff
 - Distinguish curated multi-game suites from genuinely scalable or open-ended benchmark platforms.
@@ -23,6 +22,7 @@
 ## Questions To Resolve While Drafting
 - Which papers truly test transfer, and which mostly enlarge the benchmark surface?
 - How should the survey distinguish benchmark breadth from open-endedness?
+- Use GameWorld as a boundary comparison: a 34-game suite with open-ended tasks can broaden coverage without yet constituting held-out cross-game transfer.
 
 ## Batch Use Note
 - Use this batch to draft Level 5 and Section 2.7 on transfer, scale, and open-ended benchmark growth.
