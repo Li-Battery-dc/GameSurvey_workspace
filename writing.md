@@ -28,9 +28,10 @@ high-level narrative stages, all sections follow or recall:
 段落计划：
 
 1. Problem framing:
-   - static QA 和 one-shot tests 主要观察 isolated answer quality
-   - 但 agent intelligence 需要在持续 interaction 中体现：状态跟踪、长期规划、根据反馈调整、出错后恢复
-   - 因此 benchmark gap 不在于题目是否更难，而在于是否保留 closed-loop interaction
+   - 从基础问题切入：如果模型越来越被讨论为 agent，应该如何评估它们
+   - static QA 和 one-shot tests 主要提供 bounded knowledge / reasoning / one-shot multimodal understanding 的证据
+   - agent intelligence 需要在持续 interaction 中体现：状态跟踪、长期规划、根据反馈调整、出错后恢复
+   - 因此 evaluation gap 不在于题目是否更难，而在于是否保留 closed-loop interaction
 
 2. Why games:
    - games 是为人类设计的动态任务系统，不只是娱乐类别
@@ -39,7 +40,7 @@ high-level narrative stages, all sections follow or recall:
    - 可用代表例子覆盖 formal / social / agency 三类，但不要展开成 benchmark catalogue
 
 3. Diversity as coverage:
-   - 游戏多样性不是 genre taxonomy 的装饰，而是 capability coverage 的来源
+   - 游戏多样性不是 genre taxonomy 的装饰，而是Multiverse of games 带来的 capability coverage. 
    - 不同 game structures 对 intelligence 提出不同压力：规则理解、规划、不完全信息、社会推理、长期任务推进
    - extensibility 在这里作为 benchmark space 的性质出现：人类游戏库和生成化 benchmark 让评测不容易被固定题集耗尽
 

@@ -11,10 +11,9 @@ high-level narrative stages, all sections follow or recall:
 
 ## 0. Lead in: Why Games as Benchmarks
 Goal:
-Goal:
 - Open with the evaluation gap: static QA-style and one-shot tests are weak proxies for intelligence that must unfold over time through action, feedback, adaptation, and recovery.
 - Reframe games as a uniquely suitable benchmark substrate because they are dynamic, interactive, and human-designed. Their rules, goals, and progress structures were built for human play, which makes them natural probes of human-relevant capability.
-- Emphasize that game diversity should be understood as structured capability coverage rather than as a loose collection of genres. Different game structures expose different demands on reasoning, memory, planning, coordination, and perception-action coupling.
+- Emphasize that game diversity should be understood as structured capability coverage rather than as a loose collection of genres. Different game structures expose different demands on reasoning, memory, planning and coordination.
 - Preview the survey through three organizing questions that lead into taxonomy, capability mapping, and benchmark paradigm analysis.
 
 Need evidence from:
