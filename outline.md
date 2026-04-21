@@ -28,16 +28,14 @@ Paragraphs
 
 ## 1. Taxonomy: The Evolutionary Levels of Game Environments
 Goal:
-- Introduce our 5 level structure. Trace how game benchmarks evolved from formal, rule-bounded evaluation environments into broader capability probes and finally into open-ended, ecologically grounded agent benchmarks. Explain how we divide the games into different table content code to see the benchmark structure.
-  
-- A giant table showing: detailed cols showing a clear design-space view of game benchmarks by organizing papers along multiple benchmark axes, including game structure, environment structure, benchmark scope, modality, and primary narrative level target.
+- Use the five-level evolutionary spine as the primary historical organization of the literature. Then introduce structure, scope, and modality as secondary coding axes for reading the taxonomy table.
 
-A detailed overview of the various forms and directions of the table content code:
-1. 5 level definition: where the benchmark sits
-2. Game structure: perfect vs imperfect information, deterministic vs stochastic, single-agent vs multi-agent, cooperative vs competitive, turn-based vs real-time
-3. Environment structure: tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world
-4. Benchmark scope: single game, game family, curated suite, expandable suite, open-ended tasks
-5. Modality: 
+
+introduce the 5 level definition evolutionary spine, then add more information on a detailed overview of the various forms and directions of the table content code:
+1. Game structure: perfect vs imperfect information, deterministic vs stochastic, single-agent vs multi-agent, cooperative vs competitive, turn-based vs real-time
+2. Environment structure: tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world
+3. Benchmark scope: single game, game family, curated suite, expandable suite, open-ended tasks
+4. Modality: 
   - obs: text-only, raw image, mixed
   - action: semantic, native control
 

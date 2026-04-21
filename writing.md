@@ -51,28 +51,29 @@ high-level narrative stages, all sections follow or recall:
 
 ### Taxonomy
 
-引入： While conventional game genres categorize titles by player experience, benchmark taxonomies must prioritize the functional demands imposed on an agent.  所以需要从多个角度对benchmark中的游戏环境进行更深层次的拆分和分析。
+引入，为什么 genre taxonomy 不够： While conventional game genres categorize titles by player experience, benchmark taxonomies must prioritize the functional demands imposed on an agent.  所以需要从多个角度对benchmark中的游戏环境进行更深层次的拆分和分析。
 
-基本符合outline中的table content code描述。对每个维度的table code的具体含义和体现进行描述。描述时主要回答这些benchmark的结构类型，先不深入这些类型如何让benchmark发生系统性变化。
-每个维度的story具体是:
-1. benchmark level: 讲解全文的5层级发展分类：
-- Level 1: Rule understanding — Can it make legal moves? (SmartPlay, GTBench)
-- Level 2: Strategic Reasoning — Can it think effectively? (PokerBench, DSGBench. BeyondScaling)
-- Level 3: Social Intelligence — Can it cooperate and deceive? (Werewolf Arena, WOLF)
-- Level 4: Visual Agency — Can it play like a human? (BALROG, StarBench)
-- Level 5: Cross-Game Generalization — Can it play anything? (GameVerse, AI GAMESTORE)
+段落结构如下：
 
-过渡，high——level的演化背后需要对游戏的设计结构进行进一步的探讨：
-1. Game Structure: 只放形式机制：信息结构、随机性、agent 数量、合作/对抗、时间结构。
-2. Environment Structure: 只放环境类型：tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world。
-2和3的正文进行叙述：游戏本身带有的属性和游戏环境的结构使其成为研究者选择其作为评测环境的原因，带给agent不同的挑战。从博弈论游戏到board games再到 复杂的商业游戏，研究者可设计和调整的范围更大了，通过不同structure的组合可以得到多样化的评测环境.
-3. Benchmark Scope：
+引入benchmark level evolutionary spine， 明确发展历史主线，taxonomy 这里只做历史定位和组织，不讲每一级的 capability 细节，只讲 benchmark ambition 和 environment form 的历史推进。并且这种推进实际上和模型的能力和发展方向是近乎统一的。
+- Level 1: Rule understanding — Can it make legal moves? (SmartPlay, GTBench)： Level 1 corresponds to early benchmarks built around formal rule-grounded interaction.
+- Level 2: Strategic Reasoning — Can it think effectively? (PokerBench, DSGBench. BeyondScaling): Level 2 reflects a shift toward broader strategic decision making in evolving environments.
+- Level 3: Social Intelligence — Can it cooperate and deceive? (Werewolf Arena, WOLF): multi-agent social reasoning.
+- Level 4: Visual Agency — Can it play like a human? (BALROG, StarBench): preserves more of the visual and interface burden of human play.
+- Level 5: Cross-Game Generalization — Can it play anything? (GameVerse, AI GAMESTORE): extends evaluation from competence in one game to adaptability across multiverse of games.
+
+过渡，high——level的演化背后需要对游戏的设计结构进行进一步的探讨：The five levels provide the survey's historical backbone, but they do not by themselves specify how a benchmark instantiates the game as an evaluation environment. We therefore add secondary coding axes to describe benchmark structure, scope, and modality within and across these stages.
+
+1. structure: 游戏本身带有的属性和游戏环境的结构使其成为研究者选择其作为评测环境的原因，带给agent不同的挑战。从博弈论游戏到board games再到 复杂的商业游戏，研究者可设计和调整的范围更大了，通过不同structure的组合可以得到多样化的评测环境.
+   - Game Structure: 只放形式机制：信息结构、随机性、agent 数量、合作/对抗、时间结构。结合重要的论文原文中的描述，对这些词汇的含义和影响解释清楚。
+   - Environment Structure: 只放环境类型：tabletop / abstract puzzle / social interaction arena / combat-strategy world / adventure-quest world / sandbox-open-world。简要对比这些environment对paradigm和设计的影响。比如puzzle适合language-centric, 社交游戏适合Mutil-agent, adventure 适合长流程互动。
+2. Benchmark Scope：
    - 早期single game大多强调推理深度，expert 能力,特点是metrics简单有效，方便做很深的case study。
    - game family 则在同类游戏结构下拓展，避免对单一游戏过拟合，同时保持相对统一的接口、规则分布和评测逻辑(FlashAdventure)。
    - curated suite基于作者对benchmark的设计有目的地覆盖多个 capability slice, 有意识地覆盖多种能力压力。通过差异化游戏结构评测模型的general 能力。 
    - expandable suite通过生成化方式引出无限的可拓展种类(AI GameStore)。 让 generalization 的重点从“是否见过这几个 benchmark games”转向“是否能应对新实例、新规则、新 level”。
    - open-ended tasks偏向大规模组合式、长尾、持续扩展的任务空间，强调 benchmark 如何在单一环境中不断生成新任务实例，而不等同于环境本身是否是 open-world。
-4. Modality: (注意不要预先展开这些content code对于benchmark的影响)
+3. Modality: (注意不要预先展开这些content code对于benchmark的影响，留到paradigm中说)
    - obs: 
      - text or symbolic: 游戏状态用自然语言描述，符合LLM的language-centric,核心目标是diagnotic clarity. 
      - visual image: 使用screenshot, (其他方式)将游戏状态直接
