@@ -104,16 +104,40 @@ high-level narrative stages, all sections follow or recall:
 
 ### Paragim
 
-引入：游戏本身并不为了模型而设计，不会自动成为一个benchmark，需要interaction contract 和 evaluation contract才能利用上游戏的好处。The front end decides what part of the human play loop is preserved, while the back end decides what kinds of evidence can be extracted from play.
+引入：游戏本身并不为了模型而设计，不会自动成为一个benchmark，需要interaction contract 和 evaluation contract才能利用上游戏的好处。The front end decides what part of the human play loop is preserved, while the back end decides what kinds of evidence can be extracted from play.游戏 benchmark 的关键难点，不是找到更难的游戏，而是把 gameplay 转换成可解释、可比较、可持续的 measurement pipeline。
+
+前端 interaction 决定模型到底面对了什么难题。
+后端 evaluation 决定研究者到底从行为里读出了什么证据。
 
 段落结构：
 
-1. 举例论证同一个游戏由于接口和评分方式不同，不同的paradigm可以变成完全不同的benchmark. 
+paradigm 重要性和pipeline lens重要性。举例论证同一个游戏由于接口和评分方式不同，不同的paradigm可以变成完全不同的benchmark. 
 
-#### Interface
+#### Interface: privilege的层级
 
-- Observation： 
+重点参考Starbench， orak, GameVerse对于这些的探讨。
 
-- Action: 
+- Observation：
+  - 从text进行游戏状态的抽象表示走向raw visual stream是通向通用视觉agent和human-like的范式转变。
+  - 原始的text的表示服务于language-centric的LLMs并主要被用于推理评测。在很多基于文字和对话推理的游戏上好，但是对于一般的视觉商业游戏，这种转化需要依赖游戏API对于信息的获取，并且减弱了
+  - 纯视觉的输入引入信息噪声，对于当前的模型来说又变的很难，分非常低(VideoGameBench)， 中间可以有一些桥接的思路，比如STARbench用的OCR, Orak的text和image对比。
+  - 一些可用例子：SmartPlay / GTBench / DSGBench / WerewolfArena / TextArena 是强 textification；Balrog 是 wrapper-heavy 的 bridge；GameplayQA 保留 dense gameplay perception 但不闭合 action loop；GameWorld / StarBench / PokeGym / FlashAdventure 更接近真实视觉输入。
+
+- Action: action形式决定模型如何和游戏状态互动。semantic action tuple 到 native mouse-keyboard control
+  - semantic action通过规则化模型输出形式，并由工具解析后执行。这种方式让模型更多地关注到推理和决策本身，符合早期模型的关注点。
+  - native control: 直接使用游戏原生的，为人类设计的动作接口，达到非常agentic的评测。这些接口通常很好被纳入一个统一的框架下(game pad, mouse-keyboard), 这种统一带来了benchmark的原生可拓展性，可以直接拓展到商业游戏。
+
+- 接口不同的previlege层级讨论：
+   -  Previlege讨论：SmartPlay、GTBench、DSGBench、GameBench 这种 textified / API-mediated benchmark，将perception burden、UI grounding burden 从任务中剥离出来，让 benchmark 更接近一个“strategic reasoning instrument”。自动评测稳定，适合单独分析高层能力。被整理好的状态表示和动作空间上做决策的能力。但是弱化了模型从环境中理解状态的能力。也适当讨论一下latency部分。问题一些论文做了多种设定的对比(VideoGameBench, orak, StarBench)，基本说明现在模型的弱点就是在于这些被previleged benchmark剥离的能力。
+  - 现在的模型发展趋势是要做到end-to-end的agent loop, 博阿留了视觉 grounding、界面理解、动作执行、时序协调这些挑战，是现在的模型最缺乏，而human-like play 最需要的能力。但是现在的模型还不能在这些benchmark上做的好，导致这些benchmark内失败原因混杂，需要做更深入的case-study和comparison。
 
 #### Evaluation
+
+- 一些现有的evaluation metrics范式：
+  -  Result-based metrics：从RL范式继承下来，符合native 的 end-to-end的agent 游玩目标，直观且很好规模化评测。但是在模型失败的时候缺乏可解释性。并且对于现在的模型而言，在native的游戏分数上取得较好的结果还是比较困难(Video Gamebench全部报0)，这种时候这些metrics失去评测意义。
+  -  Adversarial evaluation: leaderboard, 天然适合对抗社交multi-agent任务，得到模型的相对表现。得到排名但是不知道强在哪里。
+  -  referenced-based: 提供解释分数意义的anchor, 评测解释性很强，表示模型能力距离期望目标的距离。但是天然带有一种先验的假设负担(ARC-AGI-3 把 human first-contact efficiency 写进 benchmark design 和 official leaderboard policy。)
+  -  Process-level/里程碑型：可解释性更强，更适合做failure analysis，更加细粒度，更能揭示模型能力缺陷和能力范围。benchmark进入long-horizon和长程的商业游戏，不能是靠粗糙的final success. 但是对于process—level的分解和定义依赖特定的游戏，是benchmark构建者的预假设。很难进行跨benchmark比较。
+
+- Calibration and robustness: 如何保持metric的语义，如何保证evaluation准
+  - Anchor： 
