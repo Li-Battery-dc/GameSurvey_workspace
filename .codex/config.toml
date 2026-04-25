@@ -1,8 +1,8 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 project_doc_max_bytes = 65536
-project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md"]
+model_context_window = 400000
 
 [sandbox_workspace_write]
 network_access = true

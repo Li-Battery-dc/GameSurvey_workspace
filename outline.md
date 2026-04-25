@@ -69,13 +69,13 @@ Subsections:
 
 ## 3. Paradigm: From Interaction to Evaluation
 Goal:
-- Construct a comprehensive benchmark pipeline view. Compare how different benchmarks operationalize model interaction with games, how interface choices affect benchmark assessment, and how game benchmarks define success, assign scores, calibrate difficulty, and instrument gameplay for evaluation. Compare how evaluation design affects benchmark validity, comparability, and robustness.
+- Construct a comprehensive benchmark pipeline view. make clear how a game become a benchmark from interfaces view and evaluation view.   Compare how different benchmarks operationalize model interaction with games, how interface choices affect benchmark assessment, and how game benchmarks define success, assign scores, calibrate difficulty, and instrument gameplay for evaluation. Compare how evaluation design affects benchmark validity, comparability, and robustness.
 
 Subsections:
 3.1 Interaction: 
-  - Observation channel: language description, structured states, raw images. Highlight the shift from structured text to high-dimensional, real-time multimodal streams.
-  - Action channel: discrete action set, high-level semantic action, tool/API calls, native human-like-control, hybrid control.
-  - Trade-off: Privileged interface vs ecological validity. Explain how interface choices heavily skew benchmark results.
+  - Observation channel 
+  - Action channel
+  - Previlege analysis
 3.2 Evaluation: Compare paradigms and how different metrics affect evaluation quality.
   -  Result-based metrics
   -  Process-level and Diagnostic Evaluation

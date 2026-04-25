@@ -70,6 +70,11 @@ If the current plan is underspecified or internally inconsistent, explain the pr
 - Use `writing.md` for narrative decisions and `script.md` for reader-facing prose.
 - If a useful paper is only `triaged` or `card-draft`, either keep it out of copy-ready prose or mark the script sentence as a placeholder/open question.
 
+## Paper Material Limits
+
+- Let `writing.md` set the argumentative line. Use specific papers to supply evidence for that line, not to redirect the section into paper-by-paper summaries.
+- Include only the paper methods, settings, or result details needed to support the current claim. Avoid extended paper-specific narration unless the section explicitly analyzes that design choice.
+
 ## Card Mining Order
 
 Start narrow. Do not open large swaths of the corpus without a section reason.

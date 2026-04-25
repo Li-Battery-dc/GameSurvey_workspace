@@ -115,13 +115,13 @@ paradigm 重要性和pipeline lens重要性。举例论证同一个游戏由于�
 
 #### Interface: privilege的层级
 
-重点参考Starbench， orak, GameVerse对于这些的探讨。
+这部分先从observation和action角度对范式的优缺点进行简单论述。然后进行previlege的层级探讨。
+重点参考Starbench， orak, GameVerse对于action和obs这些的探讨。
 
 - Observation：
-  - 从text进行游戏状态的抽象表示走向raw visual stream是通向通用视觉agent和human-like的范式转变。
-  - 原始的text的表示服务于language-centric的LLMs并主要被用于推理评测。在很多基于文字和对话推理的游戏上好，但是对于一般的视觉商业游戏，这种转化需要依赖游戏API对于信息的获取，并且减弱了
-  - 纯视觉的输入引入信息噪声，对于当前的模型来说又变的很难，分非常低(VideoGameBench)， 中间可以有一些桥接的思路，比如STARbench用的OCR, Orak的text和image对比。
-  - 一些可用例子：SmartPlay / GTBench / DSGBench / WerewolfArena / TextArena 是强 textification；Balrog 是 wrapper-heavy 的 bridge；GameplayQA 保留 dense gameplay perception 但不闭合 action loop；GameWorld / StarBench / PokeGym / FlashAdventure 更接近真实视觉输入。
+  从text进行游戏状态的抽象表示走向raw visual stream是通向通用视觉agent和human-like的范式转变。
+  - 原始的text的表示服务于language-centric的LLMs并主要被用于推理评测。在很多基于文字和对话推理的游戏上好，但是对于一般的视觉商业游戏，这种转化需要依赖游戏API对于信息的获取，并且减弱了可拓展性。
+  - 转向纯视觉输入是更加human-like的评测方式，顺应对模型能力要求提升。但是目前的纯视觉评测效果不好，因为视觉输入引入的状态噪声对于当前的模型来说比较难处理，模型得分非常低(VideoGameBench)， 中间可以有一些桥接的思路，比如STARbench用的OCR, Orak的text和image对比。
 
 - Action: action形式决定模型如何和游戏状态互动。semantic action tuple 到 native mouse-keyboard control
   - semantic action通过规则化模型输出形式，并由工具解析后执行。这种方式让模型更多地关注到推理和决策本身，符合早期模型的关注点。
@@ -134,10 +134,10 @@ paradigm 重要性和pipeline lens重要性。举例论证同一个游戏由于�
 #### Evaluation
 
 - 一些现有的evaluation metrics范式：
-  -  Result-based metrics：从RL范式继承下来，符合native 的 end-to-end的agent 游玩目标，直观且很好规模化评测。但是在模型失败的时候缺乏可解释性。并且对于现在的模型而言，在native的游戏分数上取得较好的结果还是比较困难(Video Gamebench全部报0)，这种时候这些metrics失去评测意义。
-  -  Adversarial evaluation: leaderboard, 天然适合对抗社交multi-agent任务，得到模型的相对表现。得到排名但是不知道强在哪里。
-  -  referenced-based: 提供解释分数意义的anchor, 评测解释性很强，表示模型能力距离期望目标的距离。但是天然带有一种先验的假设负担(ARC-AGI-3 把 human first-contact efficiency 写进 benchmark design 和 official leaderboard policy。)
-  -  Process-level/里程碑型：可解释性更强，更适合做failure analysis，更加细粒度，更能揭示模型能力缺陷和能力范围。benchmark进入long-horizon和长程的商业游戏，不能是靠粗糙的final success. 但是对于process—level的分解和定义依赖特定的游戏，是benchmark构建者的预假设。很难进行跨benchmark比较。
+  -  Result-based metrics：游戏天然提供可用的结果信号，保留原生指标。从RL范式继承下来，符合native 的 end-to-end的agent 游玩目标，它最忠于游戏自身的目标语义，最容易自动化，也最适合大规模 benchmark。但是在模型失败的时候缺乏可解释性，太过于粗粒度。而且跨游戏的 score semantics 很弱，往往不同得分没有跨游戏统一含义。并且对于现在的模型而言，在native的游戏分数上取得较好的结果还是比较困难(Video Gamebench全部报0)，这种时候这些metrics失去评测意义。
+  -  Adversarial evaluation:benchmark 是否通过对手、竞争环境或 live interaction 来制造动态评测压力，更不容易像静态题集那样快速饱和；能测试对手建模、欺骗、协作、策略调整这些只有互动中才出现的能力； leaderboard, 天然适合对抗社交multi-agent任务，在 social deduction 中尤其自然。得到模型的相对表现。得到排名但是不知道强在哪里，不知道模型为什么强，高度依赖对手池，参与模型，和protocol。adversarial evaluation 通过动态对抗提升 benchmark freshness，但也让分数更容易受到生态系统本身的影响。
+  -  Process-level/里程碑型：添加更多metrics和提供环境更稠密的milestone类型。可解释性更强，更适合做failure analysis，更加细粒度，更能揭示模型能力缺陷和能力范围。对于长程任务尤其重要，因为长程任务的success太稀疏。但是对于process—level的分解和定义依赖特定的游戏，是benchmark构建者的预假设，天然不可以跨benchmark比较，并且设计较为复杂，设计有效性也很难说。
 
 - Calibration and robustness: 如何保持metric的语义，如何保证evaluation准
-  - Anchor： 
+  - Calibration: calibration 的作用，是让不同 evaluation 范式产生的分数拥有更丰富的语义，并且在合理范围内可比。给分数补充解释框架。提供解释分数意义的anchor, 评测解释性很强，让分数获得外部语义，保持分数有效性。ARC-AGI-3对于human first-contact baseline比较的强调等。
+  - Robustness：  既包括结果是否稳定可复现，也包括 benchmark 是否没有被 shortcut、contamination 或 benchmark-specific optimization 主导。LMGAME-BENCH显式做了对比contamination案例。...其他案例。
