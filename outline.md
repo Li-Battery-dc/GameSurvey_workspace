@@ -35,7 +35,6 @@ introduce the 5 level definition evolutionary spine, then add more information o
 1. Structure:
   - Game Form: Match / Puzzle / Dialogue / Encounter / Arc / World / Mixed
   - Construction: Embedded / Wrapped / Adapted / Authored / Generated
-  - Keep rule-level mechanics as supporting card annotations rather than as the main taxonomy axis.
 2. Benchmark scope: single game, game family, curated suite, expandable suite, open-ended tasks
 3. Modality: 
   - obs: text or symbolic, visual image, mixed
