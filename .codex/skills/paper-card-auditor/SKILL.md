@@ -1,137 +1,166 @@
 ---
 name: paper-card-auditor
-description: "Use when verifying one existing paper card against the full paper and the current survey writing structure: detect hallucinations or unsupported claims, correct the card, tighten outline and writing anchors, and sync the registry for that single paper. Trigger on requests like 'audit this card', 're-read this paper and fix hallucinations', or 'does this paper really support Section 4?'. Do not use for batch review, multi-paper card writing, or section drafting."
+description: "Use when final-auditing existing paper cards against the authoritative paper and the current survey framework: verify facts, fix hallucinations, validate taxonomy/design-space labels, add writing-support claims for outline.md/writing.md/script.md, and sync the registry to finalized. Supports one-card audits and whole-batch finalization sweeps. Trigger on requests like 'audit this card', 'finalize batch B04', 'check whether this card supports Purpose', or 'verify this paper under the new taxonomy'. Do not use for first-pass card creation, unread-paper triage, or section drafting."
 ---
 
 # Paper Card Auditor
 
 ## Overview
 
-Use this skill for single-paper deep verification. The goal is not to score a batch. The goal is to decide whether one paper card is actually trustworthy for the survey's current `outline.md` and `writing.md`, then fix it.
+Use this skill for final verification of cards that already exist. The purpose is to make each card safe for repeated citation in the current survey narrative, not to create first-pass cards or draft prose.
 
-## Use This Skill When
+Audits may target one paper or an entire batch. In batch mode, process one card at a time and keep only a compact cross-batch summary.
 
-- one existing paper card may contain hallucinations, drift, or unsupported claims
-- a card looks too abstract, overconfident, or weakly tied to the full paper
-- you need to decide whether one paper really supports a specific survey section or subsection
-- you need to correct one paper's `outline_sections`, `survey_role`, or Section 9 survey-use mapping after a deeper read
+## Boundaries
 
-## Do Not Use This Skill When
-
-- triaging unread papers
-- reading a full batch into first-pass cards
-- running the batch-level review gate across several papers
-- drafting survey prose from multiple reviewed cards
-
-Use `.codex/skills/paper-card-batch-reader` for Stage 2 card creation.
-Use the batch review docs only when the user explicitly wants the batch gate.
-This skill does not treat `evals/quality_rubric.md` or `evals/batch_review_checklist.md` as the primary standard.
-
-If the target paper has no card yet, prefer `.codex/skills/paper-card-batch-reader` unless the user explicitly wants a one-off single-paper audit pass.
+- Use `paper-card-batch-reader` when cards do not exist yet or the user asks to deep-read a fresh batch into first-pass cards.
+- Use `survey-section-writer` when the user asks to draft or rewrite manuscript prose from reviewed/finalized cards.
+- Do not edit `writing.md`; report suggested changes or evidence gaps instead. Edit `script.md` only when the user explicitly asks for manuscript edits.
 
 ## Open These Files First
 
-- `benchmark.md` as backstop context only
 - `outline.md`
 - `writing.md`
+- `script.md`
 - `template/registry_schema.md`
 - `corpus/registry/benchmark_registry.csv`
+- `corpus/batches/batch_index.md`
+- `benchmark.md` as backstop context only
 - `template/paper_card_template.md`
-- the existing card for the target paper
-- the target paper's registry row
-- the relevant batch file only if section support depends on current batch context
+- the existing card(s) for the target paper(s)
+- the target paper's registry row(s)
 - `.codex/skills/paper-card-auditor/references/audit_checklist.md`
 
-## Full-Text Standard
+For batch audits, also open:
 
-Read the whole paper, not just the abstract and introduction. Minimum full-text coverage:
+- the relevant `corpus/batches/batch_XX.md`
+- `evals/quality_rubric.md`
+- `evals/batch_review_checklist.md`
+
+## Paper Reading Standard
+
+Read the main paper body closely enough to verify the card's factual and survey claims:
 
 - abstract and introduction
-- benchmark or task or environment setup
-- observation, action, and interface details
-- evaluation protocol, metrics, baselines, and calibration
-- main experiments and headline tables or figures
-- discussion, limitations, and threat-to-validity material
-- appendices when they resolve interface, metric, or result ambiguity
+- benchmark, task, or environment setup
+- observation, action, interface, scaffold, and privilege details
+- evaluation protocol, metrics, baselines, calibration, and robustness claims
+- main experiments, headline tables or figures, and key failure modes
+- limitations, discussion, and threat-to-validity material
 
-If the current `paper_link` is only an arXiv `abs` page or another landing page, resolve the authoritative PDF first. Keep this bounded:
+Do not default to loading all appendix material. Query appendices selectively only when they resolve a specific ambiguity in setup, metrics, prompts, task lists, baselines, implementation details, or a card claim that depends on appendix evidence. If appendix evidence is needed but too large or inaccessible, record the exact unresolved gap in Section 11.3.
 
-- If the link is arXiv `abs`, rewrite it to the matching `pdf` URL.
-- If it is an ACL Anthology landing page, prefer the page's `.pdf` URL.
-- If it is an OpenReview `forum?id=...` page, try the matching `pdf?id=...` URL. If OpenReview blocks retrieval in the current environment, keep the landing page and record that blocker instead of guessing.
-- If it is a DOI, publisher landing page, or project page, look for `citation_pdf_url` or a direct official PDF link on that page. If the page only links onward to an official paper page such as arXiv or proceedings, follow that one hop and resolve the PDF there.
-- Prefer a verified official PDF over a landing page, but do not use search-engine detours or unofficial mirrors.
-- If the resolved PDF is clearly better, update the registry `paper_link`.
+## PDF Resolution Rule
+
+If `paper_link` is not direct full text, resolve the authoritative PDF with bounded steps:
+
+- arXiv `abs` -> matching `pdf` URL
+- ACL Anthology landing page -> corresponding `.pdf` URL
+- OpenReview `forum?id=...` -> matching `pdf?id=...` URL when accessible
+- DOI, publisher, or project page -> one official hop to a direct PDF if the page exposes one
+
+Prefer verified official PDFs over landing pages. Do not use search-engine detours or unofficial mirrors. If a better verified PDF is found, update the registry `paper_link`.
 
 ## Audit Priorities
 
-Check the current card in this order:
+Check in this order:
 
-1. factual accuracy and unsupported claims
-2. incorrect or inflated benchmark classification
-3. wrong placement in the survey outline or writing plan
-4. missing details that make the card unsafe for drafting
-5. misleading comparison claims about nearby papers
-6. whether the paper is being overused or underused in `writing.md`
+1. factual accuracy and unsupported or inflated claims
+2. current taxonomy and design-space classification
+3. writing-framework role under `outline.md`, `writing.md`, and existing `script.md`
+4. missing claim-support details needed for Section 0-4 drafting
+5. interface, metric, calibration, robustness, and evidence-boundary caveats
+6. comparison claims about nearby papers
+7. registry/card synchronization and finalization readiness
+
+## Current Framework Checks
+
+Validate the card against the current survey architecture:
+
+- Section 2 survey position: historical stage, L1-L5 benchmark level(s), outline sections, corpus role
+- Section 3 design-space coding: Form, Construction, Scope, observation modality, action modality
+- Section 4 capability target: rule understanding, strategic reasoning, social intelligence, visual agency, or cross-game/open-ended generalization
+- Section 5 interaction paradigm: observation/action channel, scaffold, privileged access, ecological-validity trade-off
+- Section 6 evaluation protocol: result metric, process diagnostics, adversarial setup, calibration, robustness, contamination controls
+- Section 9 survey use: exact claims this paper can support in Sections 0-4, especially Purpose claims that still need evidence
+- Section 11 evidence split: direct paper-supported facts in 11.1, survey synthesis in 11.2, unresolved uncertainty in 11.3
+
+Add or tighten supportable claim information when the card is too generic. Each Section 9 bullet should name the paper's concrete argumentative use, not merely say it is "useful" or "important."
 
 ## Workflow
 
-1. Identify the target paper, card path, and registry row.
-2. Read the current card once before editing. Note which bullets are risky, vague, or suspiciously generic.
-3. Read the full paper and capture evidence for the benchmark definition, interface, evaluation, main findings, limitations, and the claims that the current card relies on.
-4. Re-audit the card section by section, especially Sections 2 to 11.
-5. Fix the card directly when the paper settles the issue. Do not stop at critique if a correction is possible.
-6. Move unsupported "facts" out of `11.1` into `11.2` or `11.3`, or delete them if they are not defensible.
-7. Tighten survey placement:
-   - `Historical stage`
-   - `Narrative level(s)`
-   - `Most relevant outline section(s)`
-   - Section 9 "best use" bullets
+1. Identify target paper(s), card path(s), registry row(s), and batch context if applicable.
+2. Read each current card before editing. Mark risky, vague, generic, or suspiciously broad claims.
+3. Resolve the authoritative PDF if needed.
+4. Read the main paper body and targeted appendix material only when necessary.
+5. Re-audit the card sections listed in Current Framework Checks.
+6. Fix the card directly when evidence settles the issue. Move unsupported direct claims out of 11.1, downgrade them to 11.2 or 11.3, or delete them.
+7. Tighten taxonomy placement and writing support:
+   - historical stage
+   - L1-L5 benchmark level(s)
+   - Form, Construction, Scope, observation modality, action modality
+   - Section 9 best-use bullets
    - Section 10 comparison targets
-8. Sync the registry row when the audit changes:
-   - `paper_link`
+8. Sync the registry row:
+   - `paper_link` when a better official PDF is verified
    - `status`
-   - `priority` only if the paper's actual survey leverage changed
+   - `priority` only if the paper's real survey leverage changed
    - `outline_sections`
    - `survey_role`
    - `paper_card_path` if needed
-   - `triage_note` if the paper's role or uncertainty changed
+   - `triage_note` when role, caveat, or uncertainty changed
    - `last_updated`
-9. Update `writing.md` only when the audit materially changes an active section claim, active evidence list, or logged evidence gap.
-10. Report the audit outcome clearly: what was wrong, what was fixed, what is still uncertain, and what section use changed.
+9. Sync the card metadata and Section 13 with the registry row.
+10. Report unsafe existing `script.md` claims if the audit affects already-drafted prose. Do not rewrite prose unless explicitly asked.
 
-## Card Correction Rules
+## Batch Audit Mode
 
-- Keep the paper card structure comparable and preserve the current section order.
-- Preserve useful extra fields already present in repo cards, such as `Review gate label`, only if they still remain accurate after the audit.
-- Prefer narrower and defensible `outline_sections` over broad coverage claims.
-- A paper can be a good comparison target without being an anchor.
-- If a claim is only cross-paper interpretation, it belongs in `11.2`, not `11.1`.
-- If you cannot verify a detail from the full paper, record the gap explicitly in `11.3`.
-- Do not let Section 9 turn into generic praise; make each "best use" bullet correspond to a real survey section need.
-- Do not keep stale placeholders or vague phrases like `strong case`, `useful benchmark`, or `important for the survey` unless the surrounding sentence says exactly why.
+When the target is a whole batch:
+
+- Use the batch file and registry `batch_order` as the processing order.
+- Do not load every paper PDF, appendix, and card into context at once.
+- Audit and finalize one paper at a time, then keep a compact running table of `finalized`, `fixed`, and `blocked` cards.
+- Open nearby cards only for concrete comparison questions, normally `1-3` at a time.
+- After the batch, summarize common taxonomy corrections, writing-support gains, remaining blockers, and any registry rows not promoted.
+- Update `corpus/batches/batch_index.md` only if the batch's next step or status text becomes stale.
 
 ## Status Rules
 
-- Keep `check_status` unchanged unless the user explicitly says a human finished checking the paper.
-- If the audit fully repairs the card and the card is reliable for drafting, it may remain `card-reviewed`.
-- If the audit reveals material unresolved problems that still block safe use in drafting, downgrade the registry row and the card to `card-draft`.
-- Reserve `finalized` for cards that are already stable enough to support repeated citation during writing.
+- Set `status = finalized` in both the registry and card when the audit verifies the card against the paper and the current writing framework.
+- Keep `status = card-reviewed` only when the card is mostly reliable but still needs a bounded recheck before repeated citation.
+- Downgrade or keep `status = card-draft` when material unresolved problems block safe drafting.
+- Keep `check_status` unchanged unless the user explicitly says a human completed the manual check.
+- Use the current date in `YYYY-MM-DD` for `last_updated`.
+
+## Card Correction Rules
+
+- Preserve the repo card structure and section order.
+- Preserve useful extra fields such as `Review gate label` when still accurate.
+- Prefer narrow, defensible `outline_sections` over broad coverage claims.
+- Treat a paper as `contrast` when it mainly sharpens a boundary or caveat, even if it is technically interesting.
+- Put cross-paper interpretation in 11.2, not 11.1.
+- Put unverified or appendix-dependent uncertainty in 11.3.
+- Remove stale placeholders and vague praise unless the sentence states exactly what claim the paper supports.
 
 ## Output Standard
 
-When responding to the user after an audit, include:
+After an audit, report:
 
-- audit verdict: `clean`, `fixed`, or `still-blocked`
-- major corrections, especially removed or rewritten hallucinated claims
-- outline and writing impact
-- residual uncertainty or recheck targets
+- verdict: `finalized`, `fixed-not-final`, or `blocked`
+- major factual, taxonomy, or writing-support corrections
+- registry/status changes
+- impact on `outline.md`, `writing.md`, and `script.md`
+- residual uncertainty or appendix recheck targets
 - files updated
+
+For batch audits, include counts and paper IDs for finalized, fixed-not-final, and blocked cards.
 
 ## Do Not
 
-- do not use batch-level eval labels as the main decision framework
-- do not treat abstract-level confidence as enough for a pass
-- do not preserve flattering but unsupported survey-relevance claims
-- do not draft polished section prose unless the user explicitly asked for writing work
-- do not mark the paper human-checked
+- do not create first-pass paper cards
+- do not treat abstract-level confidence as enough for finalization
+- do not preserve unsupported survey-relevance claims
+- do not read all appendices by default
+- do not silently edit `writing.md`
+- do not mark `check_status = checked` unless the user explicitly asks
+- do not draft polished section prose unless the user explicitly asks for writing work

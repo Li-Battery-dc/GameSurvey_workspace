@@ -1,93 +1,127 @@
 # Paper Card Audit Checklist
 
-Use this file when a single-paper audit needs a tighter defect taxonomy or a stricter exit standard.
+Use this reference when a final audit needs a tighter defect taxonomy, a batch-sweep checklist, or a clearer exit standard.
 
-## 1. Hallucination And Accuracy Defects
+## 1. Defects To Treat As Real Problems
 
-Treat these as real defects, not style issues:
-
-- fabricated fact: the paper card states something the paper does not support
-- overclaim: the card says more than the paper actually establishes
-- narrowed or distorted result: the card changes the scope, setup, metric, or conclusion
-- wrong classification: the card assigns the wrong historical stage, narrative level, world type, interface type, or evaluation family
-- unsupported survey-use claim: the card says the paper is central to a section that it only weakly or indirectly supports
-- comparison drift: the card claims a relation to nearby papers that is not supported by the current corpus evidence
-- missing caveat: the card omits a limitation that changes how the paper should be used in writing
+- fabricated fact: the card states something the paper does not support
+- overclaim: the card says more than the paper establishes
+- distorted result: the card changes setup, metric, scope, baseline, or conclusion
+- stale taxonomy: the card uses old stages, old outline sections, or broad labels that conflict with the current L1-L5 framework
+- wrong design-space code: Form, Construction, Scope, observation modality, or action modality is unsupported
+- writing-support gap: Section 9 does not say what claim the paper can support in the new `writing.md`/`script.md` framework
+- unsupported citation target: the paper is cited or positioned for a claim it only weakly supports
+- comparison drift: Section 10 claims a relationship to nearby papers that current cards do not justify
+- missing caveat: the card omits a limitation that changes how the paper should be used
 
 ## 2. Highest-Risk Card Areas
 
-Audit these sections carefully even if the rest of the card looks fine:
+Audit these sections even when the rest of the card looks plausible:
 
-- Section 2: survey position, historical stage, narrative level, outline sections, corpus role
-- Section 4: capability claims
+- Section 2: historical stage, L1-L5 level(s), outline sections, corpus role
+- Section 3: Form, Construction, Scope, modality, benchmark unit
+- Section 4: capability target and game-specific measurement rationale
 - Section 5: interface, scaffolds, privileged access, ecological-validity trade-off
-- Section 6: metrics, baselines, calibration, comparability, contamination claims
-- Section 8: empirical takeaway and failure modes
-- Section 9: exact survey use
+- Section 6: metrics, baselines, calibration, robustness, contamination claims
+- Section 8: empirical takeaways and failure modes
+- Section 9: exact survey use under Sections 0-4
 - Section 10: comparison targets and uniqueness claims
 - Section 11: boundary between direct evidence, synthesis, and uncertainty
+- Section 13: registry sync fields
 
-## 3. Full-Text Evidence Capture
+## 3. Current Taxonomy Validation
 
-Before editing, collect page, section, table, or figure anchors for:
+Confirm that the card's labels match the current `outline.md` and `writing.md`:
+
+- Level 1: rule understanding and legal action in formal containers
+- Level 2: strategic, game-theoretic, spatial, or adaptive interactive reasoning
+- Level 3: social intelligence, deception, negotiation, or coordination under interdependence
+- Level 4: visual agency, UI grounding, native or near-native control, long-horizon doing
+- Level 5: cross-game generalization, expandable/living game spaces, first-contact adaptation, or open-ended task generalization
+
+Then validate secondary axes:
+
+- Form: Match / Puzzle / Dialogue / Encounter / Arc / World / Mixed
+- Construction: Embedded / Wrapped / Adapted / Authored / Generated
+- Scope: single game / game family / curated suite / expandable suite / open-ended tasks
+- Observation: text or symbolic / visual image / mixed
+- Action: semantic / native control / mixed
+
+If a paper spans levels or axes, record the dominant role for the table and keep nuance in Sections 2, 9, and 11.
+
+## 4. Writing-Support Capture
+
+For each finalized card, Section 9 should answer:
+
+- What exact Section 0 claim can this paper support, if any?
+- What exact Section 1 taxonomy or historical-development claim can it support?
+- What exact Section 2 Purpose claim can it support?
+- What exact Section 3 interaction/evaluation paradigm claim can it support?
+- What exact Section 4 bottleneck or future-design claim can it support?
+- Is the paper direct support, a representative example, a contrast case, or only a caveat?
+- Does current `script.md` already cite or imply this paper in a way the audit supports or weakens?
+
+Prefer claim families over generic praise. Example shape: "Supports the Level 4 knowing-doing gap by showing that raw visual/native-control play entangles perception, UI grounding, and recovery failures."
+
+## 5. Evidence Capture
+
+Before editing, collect stable anchors for:
 
 - benchmark definition and intended task
 - observation and action interface
+- scaffold or privilege assumptions
 - evaluation protocol and main metrics
-- main findings
-- limitations or threats to validity
-- any card claim that looks especially strong or especially specific
+- baselines, human/AI anchors, or calibration method
+- main empirical finding and failure modes
+- limitations, robustness, or contamination discussion
+- any strong or surprising card claim
 
-When reporting major corrections to the user, prefer short page or section pointers when the PDF makes them stable.
+Use page, section, table, or figure references when they are stable. Use appendix material only for specific unresolved questions.
 
-## 4. Outline Alignment Questions
+## 6. Appendix Use Rule
 
-For each section below, decide whether the paper is direct support, contrast-only support, or not a meaningful fit:
+Do not read appendices wholesale at the start of an audit. Query them only when needed for:
 
-- Section 0: why games matter as benchmarks
-- Section 1: historical evolution
-- Section 2: taxonomy and design space
-- Section 3: capability target
-- Section 4: interaction paradigm
-- Section 5: evaluation protocol
-- Section 6: recurring failure modes
-- Section 7: open benchmark-design problems
+- full task/game lists or data construction details
+- prompt templates, action schemas, or interface contracts
+- metric definitions and scoring formulas
+- additional ablations or baseline details needed to verify a card claim
+- limitations or robustness details absent from the main body
 
-Then ask:
+If an appendix is too large, inaccessible, or only partially checked, record the residual uncertainty in Section 11.3.
 
-- Which subsection, if any, is the real landing point?
-- Is the paper an `anchor`, `representative`, `contrast`, or `peripheral` source for that landing point?
-- Does the paper support a broad section claim, or only a narrower contrast or caveat?
-- Is the current `outline_sections` field too broad?
+## 7. Batch Audit Checklist
 
-## 5. Writing Alignment Questions
+For whole-batch audits:
 
-Cross-check against `writing.md`:
+- confirm every target row has exactly one existing card
+- process cards in batch order
+- finalize only cards that pass full-paper and writing-framework verification
+- keep blocked cards at `card-reviewed` or `card-draft` with explicit reasons
+- keep `check_status` unchanged unless the user explicitly requests human-check marking
+- avoid loading all cards, PDFs, and appendices together
+- after the batch, report finalized/fixed-not-final/blocked counts and recurring taxonomy corrections
 
-- Is the paper listed as an anchor for a section it only weakly supports?
-- Does the paper provide direct evidence, a comparison case, or only a cautionary edge case?
-- Does the full paper strengthen, weaken, or contradict an active synthesis note?
-- Should this paper stay in the current evidence base for that section?
-- What exact sentence or claim family should this paper support after the audit?
+## 8. Downgrade Or Block Triggers
 
-## 6. Downgrade Triggers
+Do not finalize a card when:
 
-Downgrade a card back to `card-draft` when the audit still leaves one of these unresolved:
+- interface or evaluation protocol remains unclear
+- main findings in the card cannot be supported from the paper
+- taxonomy or Section 9 support is materially wrong and not repaired
+- the card still relies on abstract-level paraphrase
+- key claims need appendix evidence that has not been checked
+- `script.md` relies on a claim the audit weakens and the mismatch remains unresolved
 
-- the interface or evaluation protocol is still too unclear for safe survey use
-- the main findings in the card cannot be supported from the paper
-- the paper's section fit is materially wrong and not yet repaired
-- the card still relies on abstract-level paraphrase instead of full-text evidence
-- key Section 9 or Section 10 claims remain inflated or speculative
+## 9. Exit Standard
 
-## 7. Exit Standard
+A successful audit leaves:
 
-A strong single-paper audit leaves behind:
-
-- the full paper was actually read
-- the highest-risk card sections were rechecked
-- hallucinated or inflated claims were corrected or removed
-- the evidence split in Section 11 is clean
-- `outline_sections`, `survey_role`, and Section 9 reflect the current writing architecture
-- the registry is synced if any of those changed
-- the final user report says whether the card is `clean`, `fixed`, or `still-blocked`
+- the main paper body read and targeted appendix checks performed only as needed
+- hallucinated or inflated claims corrected or removed
+- taxonomy/design-space labels aligned to the current framework
+- Section 9 populated with concrete supportable survey claims
+- Section 11 split cleanly between paper facts, synthesis, and uncertainty
+- registry and card Section 13 synced
+- passing cards marked `finalized`
+- final report clear about remaining uncertainty and writing impact

@@ -1,7 +1,7 @@
 interface:
   display_name: "Paper Card Auditor"
-  short_description: "Audit one paper card against the full paper and the current survey writing structure."
-  default_prompt: "Audit one existing paper card against the full paper. Fix hallucinations, tighten outline alignment, and report section-level writing impact."
+  short_description: "Finalize existing paper cards against full papers."
+  default_prompt: "Use $paper-card-auditor to final-audit existing paper cards, fix unsupported claims, validate taxonomy labels, and sync finalized registry status."
 
 policy:
   allow_implicit_invocation: false
