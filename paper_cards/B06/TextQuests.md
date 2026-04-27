@@ -127,10 +127,10 @@
 - Registry status: card-reviewed
 - Priority: P1
 - Reading depth: deep
-- Batch ID: B05
+- Batch ID: B06
 - Outline sections: 2,3,4
 - Survey role: representative
-- Paper card path: `paper_cards/B05/TextQuests.md`
+- Paper card path: `paper_cards/B06/TextQuests.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

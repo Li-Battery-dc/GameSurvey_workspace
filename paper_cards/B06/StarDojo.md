@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Production-living simulators package long-horizon planning, resource management, and social interaction into a grounded interactive world with reusable evaluation hooks.
 - Historical stage: ecological agent benchmark
-- Benchmark level(s): L3 social intelligence / L4 visual agency
+- Benchmark level(s): L3 social intelligence / L4 visual agency / L5 open-ended task generalization
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
@@ -126,10 +126,10 @@
 - Registry status: card-reviewed
 - Priority: P1
 - Reading depth: deep
-- Batch ID: B05
+- Batch ID: B06
 - Outline sections: 2,3,4
 - Survey role: representative
-- Paper card path: `paper_cards/B05/StarDojo.md`
+- Paper card path: `paper_cards/B06/StarDojo.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

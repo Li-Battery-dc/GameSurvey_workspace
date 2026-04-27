@@ -50,7 +50,7 @@ Goal:
 Subsections:
 2.1 Level 1: Rule Understanding:
   - Games as rule-grounded formal containers
-  - Understand the game rulea and make legal moves
+  - Understand the game rule and make legal moves
 2.2 Level 2: Reasoning
   - Game as interactive reasoning environment
   - Diagnostic probes for various abilities：

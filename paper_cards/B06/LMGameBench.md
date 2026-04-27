@@ -134,4 +134,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B06/LMGameBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

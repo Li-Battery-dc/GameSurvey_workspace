@@ -134,4 +134,4 @@
 - Paper card path: `paper_cards/B08/SudokuBench.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

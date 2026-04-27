@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Minecraft supports enormous state diversity, human-like control, and creative open-ended tasks that are hard to reduce to fixed benchmark labels.
 - Historical stage: ecological agent benchmark
-- Benchmark level(s): L4 visual agency
+- Benchmark level(s): L4 visual agency / L5 open-ended task generalization
 - Most relevant outline section(s): 0,1,2,3,4
 - Role in corpus: representative
 
@@ -125,10 +125,10 @@
 - Registry status: card-reviewed
 - Priority: P1
 - Reading depth: deep
-- Batch ID: B05
+- Batch ID: B06
 - Outline sections: 0,1,2,3,4
 - Survey role: representative
-- Paper card path: `paper_cards/B05/MCU.md`
+- Paper card path: `paper_cards/B06/MCU.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

@@ -128,10 +128,10 @@
 - Registry status: card-reviewed
 - Priority: P2
 - Reading depth: deep
-- Batch ID: B08
+- Batch ID: B06
 - Outline sections: 1,2,4
 - Survey role: contrast
-- Paper card path: `paper_cards/B08/PuzzleJAX.md`
+- Paper card path: `paper_cards/B06/PuzzleJAX.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27
