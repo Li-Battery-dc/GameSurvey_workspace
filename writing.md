@@ -12,6 +12,8 @@ This file inlcude the detailed idea and high-level story I want to write in the 
 
 ## Narrative Spine
 
+Taxonomy 已经回答 “game benchmark 长成什么样”；Purpose 应该回答 “这些结构为什么能测某种能力”；Paradigm 再回答 “接口和指标如何改变这些证据的含义”。
+
 high-level narrative stages, all sections follow or recall:
 - Level 1: Rule understanding — Can it make legal moves? (SmartPlay, GTBench)
 - Level 2: Strategic Reasoning — Can it think effectively? (PokerBench, DSGBench. BeyondScaling)
@@ -100,7 +102,97 @@ high-level narrative stages, all sections follow or recall:
   
 ### Purpose
 
-1. Level 1: 
+引入：
+从 taxonomy 的环境结构转向 benchmark 的能力目标，解释不同structure如何成为capability probes。五级结构在这里应被写成 capability ladder. 
+提出后面的写法是：每一级level回答测什么能力，为什么这些游戏是适合的介质，值得关注的benchmark innovation如何让这种测量可信。
+
+本节沿用五级 evolutionary spine，但每一级都按同一逻辑展开：
+1. Measurement target：这一层主要测什么能力。
+2. Game affordance：为什么这类游戏结构适合让该能力显形。
+3. Benchmark innovation：哪些 benchmark 设计把 gameplay 转成可信证据。
+4. Evidence boundary：这一层证据能说明什么，不能说明什么。
+
+#### 2.1 Level 1: Rule Understanding — Games as rule-grounded formal containers
+
+Core claim:
+Level 1 的目标不是证明模型“聪明”，而是证明模型能否稳定进入一个规则化行动系统。它测的是 rule interpretation, state maintenance, legal-action generation, output conformity, tool/action formatting。只有这些基本环节稳定，后续 strategic reasoning 或 social reasoning 的分数才可解释。
+
+Why games:
+博弈论任务、棋盘游戏、网格游戏和小型 board-game suites 的共同价值在于 formal containment：规则封闭、状态转移明确、合法动作可检查、结果可自动评分。这使游戏成为比普通文字题更严格的 rule-grounding instrument。
+
+Benchmark innovation:
+- Formalized text/API game loops：将规则、状态、历史和动作空间转成可解析接口，使 rule-following 和 state tracking 可重复评估 `(SmartPlay; GTBench; BoardGameArena)`。
+- Legality and format diagnostics：把非法动作、格式错误、工具调用失败与策略质量分开，避免把执行失败误读成战略失败 `(LLMChess; GridBasedGameCompetitions; RuleOracles)`。
+- Controlled rule/representation variation：通过不同规则结构、board/grid 表示和 prompt 形式检验规则迁移与状态维护稳定性 `(GTBench; GridBasedGameCompetitions; BoardGameArena)`。
+
+Evidence boundary:
+这一层的证据主要说明模型能否在 formal game loop 中合法行动。它不应被过度解读为生态游戏能力，因为 text/API interface 已经移除了视觉感知、界面发现和低层动作控制。
+
+#### 2.2 Level 2: Reasoning — Games as interactive reasoning environments
+
+Core claim:
+Reasoning 在这里不是单一能力，而是 interactive decision quality：模型是否能在状态变化、延迟后果、不完全信息、对手适应、空间约束和时间压力下持续做出有效行动。Level 2 的关键不是“回答一道推理题”，而是让 reasoning 在 action-consequence loop 中接受检验。
+
+Why games:
+游戏天然把 reasoning 外化为轨迹：每个选择改变后续状态，错误会积累，对手或环境会反馈，计划必须随着新信息更新。因此游戏可以测静态 QA 很难测到的 stateful reasoning, adaptive planning, opponent-aware decision making, spatial planning。
+
+Benchmark innovation:
+- Formal strategic instrumentation：用 payoff、hidden information、equilibrium/regret、solver 或 AI anchors 让策略质量有可比较参照 `(GTBench; GAMABench; TMGBench; PokerBench)`。
+- Multi-dimensional decision diagnostics：用多游戏/多场景把 reasoning pressure 拆成 planning、uncertainty、real-time control、adaptation 等能力簇 `(GameBench; DSGBench; BeyondScaling; CivRealm)`。
+- Symbolic and spatial control probes：用 maze、map traversal、dynamic spatial tasks 在移除视觉干扰后测试空间状态整合、路径规划和 loop avoidance `(MazeEval; GameTraversalBenchmark; EvoEmpirBench; PuzzlePlex)`。
+
+Evidence boundary:
+Level 2 能说明模型在受控状态表示下的 decision quality，但许多 benchmark 仍高度 textified/API-mediated。它们强于诊断推理，弱于证明 human-like play。
+
+
+#### 2.3 Level 3: Social Intelligence — Games as social interdependence engines
+
+Core claim:
+Level 3 测的不是一般 social QA，而是 social interdependence：一个 agent 的成功取决于它如何建模、影响、协调或抵抗其他 agents。游戏的价值在于让 language, belief, deception, trust, coordination 变成胜负相关的环境变量。
+
+Why games:
+Hidden-role, negotiation, cooperative and coordination games 把社会推理放进连续互动中。模型不仅要解释他人话语，还要根据身份、意图、承诺和行动后果调整自己的策略。
+
+Benchmark innovation:
+- Hidden/private-information social inference：通过隐藏身份、私有信息、辩论、投票、怀疑轨迹、欺骗标签和 ToM scores 测身份推断、欺骗检测、信任和意图建模 `(AvalonBench; WerewolfArena; Wolf; LLMHanabi; HumanLevelDiplomacy)`。
+- Coordinated action under interdependence：通过共享目标、非对称信息、任务分工、cross-play、initiating/responding metrics 测协作是否真正转化为联合行动 `(CollabOvercooked; LLMCoordination; StrategicHanabi; TeamCraft)`。
+
+Evidence boundary:
+这些 benchmark 优于静态 social QA，因为它们保留互动、角色和后果。但许多仍依赖 text-only dialogue、structured roles、LLM judge/self-label 或 scaffolded action，因此证明的是 instrumented social gameplay，不是完整人类社交能力。
+
+
+#### 2.4 Level 4: Visual Agency — From knowing what to do to doing it in the game world
+
+Core claim:
+Level 4 的核心是 knowing-doing gap：模型是否能把视觉或半视觉状态可靠转成动作，并在长轨迹中保持目标、纠错和推进任务。这里测的不只是 perception，而是 perception + UI grounding + action localization + timing + recovery + memory。
+
+Why games:
+视觉游戏保留了人类玩家面对的 screen-to-action loop。模型不能只说出正确目标，还必须点击、移动、等待、避障、战斗、导航、使用物品，并从错误中恢复。这样很多静态视觉理解无法暴露的问题会变成可观察失败。
+
+Benchmark innovation:
+- Perception-to-control coupling：从 gameplay video understanding 到 active visual play，揭示 perception 和 action grounding 都是瓶颈 `(GameplayQA; Balrog; VideoGameBench; GameWorld)`。
+- Matched interface comparisons：通过 raw/direct control 与 tool-assisted/semantic control 的对照，暴露 knowing-doing gap `(StarBench; GameWorld; LMGameBench; DeepPHY)`。
+- Long-horizon progress and recovery metrics：用 milestones、quest progress、deadlock/recovery taxonomy、state-verifiable evaluation 评估长期任务推进和错误恢复 `(FlashAdventure; PokeGym; GameWorld; EMemBench)`。
+
+Evidence boundary:
+Level 4 更接近 human-like play，但分数解释更困难。低分可能来自视觉误读、UI grounding、计划错误、延迟、动作格式、记忆崩溃或恢复失败。这一 tension 应作为通往 Paradigm 的自然过渡。
+
+#### 2.5 Level 5: Cross-Game Generalization and Open-Ended Task Generalization
+
+Core claim:
+Level 5 不应简单等于 “many games”。它测的是模型是否能超越固定任务：面对新游戏、新规则、新关卡、新任务组合、新机制或 first-contact environment 时，仍能保持可迁移的游戏能力。
+
+Why games:
+人类游戏空间天然可扩展：同一机制可组合出新关卡，同一世界可生成长尾任务，不同游戏家庭可提供异质挑战，生成式或 living benchmark 可以持续增加新规则和新环境。这让游戏比固定题集更适合讨论 anti-saturation 和 generalist agency。
+
+Benchmark innovation:
+- Single-world open-ended task universes：在持续世界中扩展任务组合，评估 intra-world open-ended task generalization，而不是 cross-title transfer `(MCU; StarDojo; TeamCraft; MineNPCTask)`。
+- Broad curated suite evidence：用多游戏覆盖测试同一模型或 scaffold 是否能跨不同游戏推进 `(Orak; GameVerse; LMGameBench; TextQuests; TextAtari)`。
+- Generated/living/first-contact environments：通过程序化规则、human-game multiverse、private/OOD splits 或 hidden mechanics 测试 novelty、anti-saturation 和 first-contact adaptation `(GVGAILLM; AIGameStore; ARCAGI3; PuzzleJAX; Mars)`。
+
+Evidence boundary:
+Level 5 内部必须区分三种 claims：broad capability coverage, intra-world open-ended task generalization, true cross-game / first-contact adaptation。不要让 MCU/StarDojo、Orak/GameVerse、AIGameStore/ARCAGI3 被读者误认为同一种 generalization evidence。
+
 
 ### Paragim
 

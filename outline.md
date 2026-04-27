@@ -52,20 +52,21 @@ Subsections:
   - Games as rule-grounded formal containers
   - Understand the game rule and make legal moves
 2.2 Level 2: Reasoning
-  - Game as interactive reasoning environment
-  - Diagnostic probes for various abilities：
-  - Spatial Reasoning
+  - strategic / game-theoretic reasoning
+  - adaptive decision-making under uncertainty
+  - spatial / symbolic planning probes
 2.3 Level 3: Social Intelligence:
-  - Multi-agent cooperation,
-  - deception and network dynamics.
-2.4 Level 4: Visual Agency:
-  - Visual grounding，Perception
-  - Real-Time Interaction
+  - Social inference under hidden/private information
+  - Coordinated action under interdependence.
+2.4 Level 4: Visual Agency: 
+  - knowing-doing gap
+    - Visual grounding，Perception
+    - Real-Time Interaction
   - Agentic skills (Long-horizon autonomy and story/task completion with memory. )
 2.5 Level 5: Cross-Game Generalization — Open-ended transfer and generalist agents
-  - open-worlds tasks
-  - multi-game universe(AI Gamestore)
-  - zero-shot generalization
+  - broad curated suites：Orak, GameVerse, LMGameBench
+  - generated / expandable game universe：GVGAILLM, AIGameStore
+  - zero-shot first-contact：ARCAGI3
 
 ## 3. Paradigm: From Interaction to Evaluation
 Goal:

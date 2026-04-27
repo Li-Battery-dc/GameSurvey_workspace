@@ -3,7 +3,6 @@
 ## Why This Batch Exists
 - Hold the narrower puzzle, maze, spatial, and adjacent multimodal diagnostics together as contrast evidence.
 - Support boundary-setting in taxonomy and synthesis without letting these papers dominate the main narrative.
-- `PuzzleJAX` was moved to B06 because its PuzzleScript/JAX breadth is strong Level 5 contrast evidence; the remaining papers stay here as narrower diagnostics.
 
 ## Suggested Drafting Order
 
