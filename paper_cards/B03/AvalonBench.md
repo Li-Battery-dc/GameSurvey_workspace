@@ -98,7 +98,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): early hidden-role or Werewolf-style LLM social-deduction case studies
 - Closest follow-up(s): WerewolfArena, Wolf, BeyondSurvival
-- Best comparison targets inside our corpus: HumanLevelDiplomacy, WerewolfArena, Wolf, BeyondSurvival
+- Best comparison targets inside our corpus: Cicero, WerewolfArena, Wolf, BeyondSurvival
 - What this paper uniquely adds relative to neighbors: It is an early concrete Avalon benchmark with recursive history compression, phase-structured public discussion, and explicit evidence that good identity inference can still coexist with weak action policy execution.
 
 ## 11. Evidence notes

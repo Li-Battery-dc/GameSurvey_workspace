@@ -98,7 +98,7 @@
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Overcooked-AI, coordination and teamwork benchmarks
 - Closest follow-up(s): broader collaborative multi-agent game benchmarks
-- Best comparison targets inside our corpus: HumanLevelDiplomacy, StrategicHanabi, LLMCoordination, TeamCraft
+- Best comparison targets inside our corpus: Cicero, StrategicHanabi, LLMCoordination, TeamCraft
 - What this paper uniquely adds relative to neighbors: It focuses on fine-grained collaboration process, forced interdependence, and initiating-versus-responding capability rather than only team outcome or hidden-state reasoning.
 
 ## 11. Evidence notes

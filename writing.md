@@ -154,7 +154,7 @@ Why games:
 Hidden-role, negotiation, cooperative and coordination games 把社会推理放进连续互动中。模型不仅要解释他人话语，还要根据身份、意图、承诺和行动后果调整自己的策略。
 
 Benchmark innovation:
-- Hidden/private-information social inference：通过隐藏身份、私有信息、辩论、投票、怀疑轨迹、欺骗标签和 ToM scores 测身份推断、欺骗检测、信任和意图建模 `(AvalonBench; WerewolfArena; Wolf; LLMHanabi; HumanLevelDiplomacy)`。
+- Hidden/private-information social inference：通过隐藏身份、私有信息、辩论、投票、怀疑轨迹、欺骗标签和 ToM scores 测身份推断、欺骗检测、信任和意图建模 `(AvalonBench; WerewolfArena; Wolf; LLMHanabi; Cicero)`。
 - Coordinated action under interdependence：通过共享目标、非对称信息、任务分工、cross-play、initiating/responding metrics 测协作是否真正转化为联合行动 `(CollabOvercooked; LLMCoordination; StrategicHanabi; TeamCraft)`。
 
 Evidence boundary:

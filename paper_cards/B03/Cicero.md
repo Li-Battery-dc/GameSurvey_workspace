@@ -1,4 +1,4 @@
-# HumanLevelDiplomacy Human-level play in the game of Diplomacy by combining language models with strategic reasoning
+# Cicero
 
 ## 0. Metadata
 - Date: 2022/11
@@ -12,7 +12,7 @@
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
-- Human-Level Diplomacy is a milestone Science paper rather than a reusable benchmark release: it presents Cicero, a Diplomacy agent that combines controllable dialogue with strategic reasoning and evaluates it in anonymous live games against human players. The paper matters for this survey because Diplomacy makes language strategically consequential: players negotiate privately, model each other's intentions, coordinate joint actions, and manage betrayal under hidden intentions and long horizons. Cicero couples a dialogue model conditioned on intents with KL-regularized planning over predicted human policies, then tests that full system in real online play. For the survey, the paper is best used as an ecological bridge for negotiation-heavy game environments and as a cautionary case on the trade-off between human-like evaluation and benchmark reusability.
+- Cicero is a milestone Science paper rather than a reusable benchmark release: it presents a Diplomacy agent that combines controllable dialogue with strategic reasoning and evaluates it in anonymous live games against human players. The paper matters for this survey because Diplomacy makes language strategically consequential: players negotiate privately, model each other's intentions, coordinate joint actions, and manage betrayal under hidden intentions and long horizons. Cicero couples a dialogue model conditioned on intents with KL-regularized planning over predicted human policies, then tests that full system in real online play. For the survey, the paper is best used as an ecological bridge for negotiation-heavy game environments and as a cautionary case on the trade-off between human-like evaluation and benchmark reusability.
 
 ## 2. Position in our survey
 - Why-games relevance: Diplomacy operationalizes negotiation, trust, coalition formation, and tactical planning inside a formally scored game where language changes the game state indirectly through coordination.
@@ -130,7 +130,7 @@
 - Batch ID: B03
 - Outline sections: 0,1,2,3
 - Survey role: anchor
-- Paper card path: `paper_cards/B03/HumanLevelDiplomacy.md`
+- Paper card path: `paper_cards/B03/Cicero.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28
