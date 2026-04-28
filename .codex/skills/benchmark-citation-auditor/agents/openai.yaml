@@ -1,0 +1,4 @@
+interface:
+  display_name: "Benchmark Citation Auditor"
+  short_description: "Audit Benchmark.tex evidence and citations"
+  default_prompt: "Use $benchmark-citation-auditor to audit Overleaf Benchmark.tex for missing evidence support and nonstandard citations."
