@@ -34,7 +34,6 @@ The final axis is `Modality`, which records how the benchmark exposes observatio
 
 Taken together, these dimensions elevate the taxonomy table from a superficial genre catalog into a comprehensive design-space map. The five-level evolutionary spine traces the field's historical progression toward increasingly unconstrained generalization, while the structural, scope, and modal axes deconstruct exactly how these environments are engineered. With this architectural framework established, the next section moves a step forward to address the core objective of these environments: what specific capabilities game benchmarks actually measure, and why they serve as an unparalleled substrate for rigorous capability probes.
 
-
 ## Purpose
 
 The taxonomy above organizes game benchmarks by how they instantiate playable environments. Purpose shifts from that structural map to the capability claims those environments are meant to support. The same game substrate can become a different capability probe depending on which pressure the benchmark design foregrounds: rule exposure, state dynamics, information constraints, social interdependence, perception-action burden, or task novelty. This section explains why those structures can make particular capabilities visible, and where each kind of capability claim should remain bounded.
