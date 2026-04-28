@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2509.12718v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; because the benchmark and the learning workflow are introduced together, it is difficult to separate raw benchmark difficulty from scaffold-driven improvement
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Only as a narrow contrast case showing why dynamic interactive tasks are harder to saturate than static reasoning sets.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a narrow dynamic-evaluation branch rather than as a major stage in the main historical narrative.
-- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of exploration, partial observability, and multi-objective decision-making in text-based interactive settings.
-- Best use in Section 3 (interaction and evaluation paradigm): Good example of a benchmark where prompt interface, memory scaffold, and environment design all jointly determine performance.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong support for the claim that benchmark papers should disentangle environment difficulty from workflow engineering.
+- Best use in Section 0 (lead-in and benchmark motivation): Narrow contrast showing why dynamic interactive tasks resist the saturation and leakage risks of static reasoning sets, while still needing careful protocol interpretation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Supports the diagnostic L2 branch: authored, text-first task-games can preserve sequential adaptation and partial observability without becoming ecological gameplay benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for exploration, partial observability, memory use, and multi-objective trade-offs in controlled interactive games.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of scaffold-sensitive evaluation, where prompt interface, full-vision ablations, TruthWeaver, and online rule abstraction materially change the measured behavior.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong support for the design warning that benchmark difficulty, memory scaffolds, and workflow engineering must be disentangled before interpreting model rankings.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GameArena, Agent-Pro, and other dynamic or game-based reasoning evaluations
@@ -125,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -133,4 +133,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/EvoEmpirBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-28

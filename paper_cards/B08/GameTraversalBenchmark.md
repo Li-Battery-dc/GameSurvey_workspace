@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2410.07765v1.pdf
 - Code link: https://github.com/umair-nasir14/Game-Traversal-Benchmark
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that natural-language planning competence and rough distance estimation do not automatically transfer to symbolic traversal tasks
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it shows that game-like traversal tasks give precise planning metrics, but it is not a central motivation anchor for broader game-agent benchmarking.
-- Best use in Section 1 (taxonomy and evolutionary levels): Minor boundary-case contrast for symbolic traversal benchmarks derived from game-generation pipelines rather than human-play interfaces.
-- Best use in Section 2 (core capabilities evaluated by games): Supports path planning and route-following discussions.
-- Best use in Section 3 (interaction and evaluation paradigm): A contrast case for one-shot action-sequence generation. Useful for discussing composite metrics beyond pure success rate.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Shows the limits of simple symbolic planning transfer.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast showing how game-like traversal tasks turn planning into precise, automatically scored action traces.
+- Best use in Section 1 (taxonomy and evolutionary levels): Boundary-case support for generated symbolic traversal benchmarks: GTB comes from a game-generation pipeline but evaluates text-map planning rather than human-play interfaces.
+- Best use in Section 2 (core capabilities evaluated by games): Supports path planning, multi-objective route following, output-format control, and near-miss analysis in symbolic game maps.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for one-shot action-sequence generation, optional retry feedback, A*-anchored calibration, and composite metrics beyond pure success rate.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Shows that rough spatial intuition or distance awareness does not necessarily become executable action planning.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PlanBench-like symbolic planning tasks
@@ -125,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -134,4 +134,4 @@
 - Paper card path: `paper_cards/B08/GameTraversalBenchmark.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28

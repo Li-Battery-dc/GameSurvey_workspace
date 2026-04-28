@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2601.16447v1.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -23,7 +23,7 @@
 
 ## 3. Design-space coding
 ### 3.1 Structure
-- Form: Match
+- Form: Puzzle
 - Construction: Adapted
 - Construction note: real board game represented as text next-move prediction
 - Benchmark unit: board position
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that specialist benchmarks can be advanced by heavy domain-specific data construction not available for all domains
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited; mostly a specialist comparison case.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful for the return of board-game specialists inside the LLM era. Helps distinguish benchmark papers from specialist training-plus-evaluation papers.
-- Best use in Section 2 (core capabilities evaluated by games): A case study in expert strategic knowledge injection.
-- Best use in Section 3 (interaction and evaluation paradigm): Minor use only. Useful for move-prediction benchmark plus tournament correlation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of when specialist upper bounds are achievable for LLMs.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited use; only supports the broader point that classic games expose specialist-domain reasoning gaps in general LLMs.
+- Best use in Section 1 (taxonomy and evolutionary levels): Boundary case for a Level 2 `Puzzle`-style next-move benchmark attached to a system paper, not a reusable full-game environment.
+- Best use in Section 2 (core capabilities evaluated by games): Useful case study for expert strategic-knowledge injection, showing that a strong external engine and structured domain data can move a general LLM toward Go-specialist upper bounds.
+- Best use in Section 3 (interaction and evaluation paradigm): Use narrowly for move-prediction evaluation, KataGo-based labels, benchmark-vs-Elo correlation, and the gap between structured next-move scoring and full ecological play.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports a future-design caveat: expert-domain gains may require scalable professional knowledge sources, heuristic data construction, and domain collaboration.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): specialized Go engines, chess-specialist LLMs
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P3
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: peripheral
 - Paper card path: `paper_cards/B09/MixingExpertKnowledge.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

@@ -7,9 +7,9 @@
 - Paper link: https://arxiv.org/pdf/2508.04720v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
-- Review gate label: usable
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - This paper builds Qi Town, an LLM-vs-LLM board-game platform that runs round-robin tournaments across five games and scores models with technical and affective metrics. It combines four fixed-rule games, namely Tic-Tac-Toe, Gomoku, Reversi, and Chess, with a Free-Style mode where agents negotiate rules before play, then analyzes outcomes using Elo, Performance Loop Graphs (PLGs), and Positive Sentiment Score (PSS). For this survey, it is mainly a contrast case for pool-dependent arena evaluation rather than a stable benchmark anchor.
@@ -49,7 +49,7 @@
 - Primary capability target: adversarial strategic play under direct LLM-vs-LLM competition
 - Secondary capability target(s): tournament ranking stability, emotional response patterns, rule negotiation
 - Does it test rule grounding / legal action generation? yes
-- Does it test strategic planning under uncertainty? no
+- Does it test strategic planning under uncertainty? partially; the fixed games are full-state and deterministic, but opponent behavior and Free-Style rule negotiation introduce strategic uncertainty
 - Does it test social reasoning / deception / cooperation? partially, through Free-Style negotiation and sentiment tracking
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? no
@@ -104,8 +104,11 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - Qi Town supports five games, including fixed-rule board games and a Free-Style mode where LLMs negotiate rules before play.
-- The paper evaluates 20 LLM players using round-robin tournaments and reports Elo, Performance Loop Graphs, and Positive Sentiment Score.
-- The authors argue that cyclic win-loss relations in PLGs expose instability that aggregate ranking metrics can hide.
+- The five games are Gomoku, Chess, Reversi, Tic-Tac-Toe, and Free-Style; Free-Style uses a 5x5 board where LLMs negotiate and co-construct rules before play.
+- The interface is textual rather than visual: board states are represented in standardized notation, and each player response includes a move, emotion choice, and brief analysis.
+- The paper evaluates 20 LLM players from 12 organizations using round-robin tournaments and reports Elo, Performance Loop Graphs, and Positive Sentiment Score.
+- Each cycle contains 190 pairwise matches; the paper repeats the cycle three times across five games, for 2,850 total games.
+- The authors argue that cyclic win-loss relations in PLGs expose instability that aggregate ranking metrics can hide, with loops appearing broadly outside the draw-heavy chess setting.
 
 ### 11.2 Our synthesis / interpretation
 - This paper is more useful as a methodological caution about relative arenas than as a benchmark foundation for later drafting.
@@ -115,19 +118,18 @@
 - Recheck Section 4.3 or Appendix B if we later need the exact PLG construction procedure or sentiment-scoring formula.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the survey value is mostly protocol-level.
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit; no immediate reread is needed unless we need exact PLG or PSS formulas.
 - Which section to read next if needed: 3.5 / 3.6 / 4.2
 - Follow-up question(s): How should we position PLG relative to Elo when discussing ranking reliability?
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B07
 - Outline sections: 1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/WhoIsABetterPlayer.md`
-- Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

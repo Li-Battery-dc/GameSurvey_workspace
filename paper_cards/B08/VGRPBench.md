@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2503.23064v2.pdf
 - Code link: https://yufan-ren.com/subpage/VGRP-Bench/
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Grid puzzles let a benchmark stress perception and rule-based reasoning while keeping exact verification.
 - Historical stage: diagnostic capability probe
-- Benchmark level(s): L2 strategic reasoning
+- Benchmark level(s): L2 multimodal puzzle reasoning; L4 visual-agency boundary case
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
@@ -89,10 +89,10 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that whole-puzzle accuracy alone hides whether a model failed at perception, rule understanding, or downstream reasoning
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it shows that exact-score multimodal puzzles can remain difficult, but it is not a central motivation anchor for ecological game benchmarks.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful boundary case between symbolic puzzle diagnostics and richer visual-agent benchmarks, especially when discussing what should and should not count as visual agency.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for decomposing multimodal puzzle competence into perception, rule following, and solution generation.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast between image-first and text-control puzzle interfaces, and a good example of multi-granular evaluation beyond final solve rate.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast showing that exact-score multimodal puzzles remain difficult even when they are static and fully verifiable.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful boundary case for separating visual puzzle diagnostics from L4 visual agency: VGRP-Bench keeps image input but removes closed-loop control, timing, and recovery.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for decomposing multimodal puzzle competence into perception, rule following, cell-level grounding, and solution generation.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast between image-first and text-control puzzle interfaces, plus a good example of multi-granular evaluation beyond final solve rate.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that narrow post-training on puzzle families does not solve harder-level reasoning or unseen-puzzle generalization.
 
 ## 10. Relation to nearby papers
@@ -125,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -134,4 +134,4 @@
 - Paper card path: `paper_cards/B08/VGRPBench.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28

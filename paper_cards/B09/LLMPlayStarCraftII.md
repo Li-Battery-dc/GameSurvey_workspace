@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2312.11865v3.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -16,7 +16,7 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Real-time strategy games compress resource management, tech progression, scouting, and long-horizon adaptation into one domain.
-- Historical stage: ecological agent benchmark
+- Historical stage: diagnostic capability probe
 - Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that RTS evaluation outcomes change substantially when micro control and vision are abstracted away
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why RTS games are still central stress tests for long-horizon strategic reasoning.
-- Best use in Section 1 (taxonomy and evolutionary levels): A key early RTS benchmark in the LLM-agent literature. Important for text-abstracted RTS benchmarks.
-- Best use in Section 2 (core capabilities evaluated by games): Supports planning, adaptation, and resource-management claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong reference for text-first RTS interfaces and summarization scaffolds. Useful for combining win rate with macro-management metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports future work on bringing vision and richer control back into RTS benchmarks.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why RTS games are useful stress tests for long-horizon strategic reasoning, with the caveat that this paper studies a textified macro interface.
+- Best use in Section 1 (taxonomy and evolutionary levels): Key early Level 2 SC2 benchmark in the LLM-agent literature: single-game, `Match` form, wrapped text interface, semantic macro actions, scripted micro.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about resource management, tech progression, scouting interpretation, and long-context strategic adaptation under real-time pressure.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong reference for text-first RTS interfaces, CoS summarization scaffolds, and macro-management process metrics alongside win rate.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that apparent RTS competence can depend on removing vision and micro-control burdens, motivating later multimodal and richer-control SC2 benchmarks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): AlphaStar-style RL environments
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B09/LLMPlayStarCraftII.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

@@ -7,15 +7,15 @@
 - Paper link: https://arxiv.org/pdf/2510.26852v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
-- Review gate label: usable
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - CATArena is less a direct gameplay benchmark and more an iterative competitive framework for evaluating code agents that write and refine game strategies. In round 1, agents receive game code and a sample AI, implement an initial strategy, then enter later rounds where they inspect peers’ code and tournament logs before revising their own submissions. The framework covers four board and card games with rule variants and evaluates strategy coding, learning, and generalizability through a cross-round scoring matrix. In this survey, the paper matters mainly as a code-agent tournament protocol rather than as evidence of raw in-game play.
 
 ## 2. Position in our survey
-- Why-games relevance: It uses open-ended games to keep evaluation unsaturated and to expose whether agents can improve strategies through repeated competition.
+- Why-games relevance: It uses open-ended tournament scoring and rule variants to keep evaluation unsaturated and to expose whether agents can improve strategies through repeated competition.
 - Historical stage: diagnostic capability probe
 - Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,3,4
@@ -40,7 +40,7 @@
 - Number of games / tasks: 4 games with variants
 
 ### 3.4 Modality
-- Observation modality: mixed
+- Observation modality: text or symbolic
 - Action modality: semantic
 - Perception burden retained: strategy analysis, game-code understanding, opponent adaptation, repeated learning rounds
 - Perception burden removed: direct in-environment perception and action generation at play time
@@ -50,7 +50,7 @@
 - Secondary capability target(s): generalization across variants, tournament adaptation, long-run competitiveness
 - Does it test rule grounding / legal action generation? yes, but through code generation
 - Does it test strategic planning under uncertainty? partially, depending on the specific game arena and variant
-- Does it test social reasoning / deception / cooperation? partially, but only indirectly through Bridge and asymmetric card settings
+- Does it test social reasoning / deception / cooperation? no direct social-reasoning test; Bridge and asymmetric card settings introduce formal team or hidden-information structure only indirectly
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? no
 - Does it test real-time efficiency? no
@@ -104,8 +104,10 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - Agents submit strategy code, compete, inspect logs and peer code, then iterate over multiple rounds.
-- CATArena covers four board and card games with variants and computes scores from a tournament matrix.
+- CATArena covers Gomoku, Texas Hold'em, Bridge, and Chess, with variants such as forbidden or special moves, altered card distributions, and Chess960-style setups.
+- In round 1, agents receive game code and sample AI implementations; in later rounds, they also receive previous submissions, rankings, win counts, move histories, and logs before revising strategy code.
 - The framework is intended to measure both baseline strategy coding and subsequent learning ability.
+- The paper compares minimal code agents, commercial code agents, and an LLM-Player control that outputs moves directly, showing that code-agent strategy writing is not equivalent to direct gameplay reasoning.
 
 ### 11.2 Our synthesis / interpretation
 - CATArena is better treated as a meta-evaluation framework for code agents than as a conventional gameplay benchmark.
@@ -115,19 +117,18 @@
 - Recheck Appendix B if we later need the exact formulas for the learning-oriented evaluation metrics.
 
 ## 12. Follow-up reading plan
-- Should we read beyond abstract + intro? why? No immediate reread; the survey use is mainly conceptual and protocol-oriented.
+- Should we read beyond abstract + intro? why? Full paper read completed for this audit; no immediate reread is needed unless we need exact learning-metric formulas.
 - Which section to read next if needed: 3.1 / 3.4 / Appendix B
 - Follow-up question(s): Should CATArena live in the same survey subsection as direct-play arenas, or in a separate scaffold-evaluation subsection?
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B07
 - Outline sections: 1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/CATArena.md`
-- Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

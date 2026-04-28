@@ -1,15 +1,15 @@
 # ThirdParadigm A Third Paradigm for LLM Evaluation: Dialogue Game-Based Evaluation using clembench
 
 ## 0. Metadata
-- Date: 2025/07
+- Date: 2026/02
 - Venue: arXiv
 - Authors: David Schlangen, Sherzod Hakimov, Chalamalasetti Kranti, Jonathan Jordan, Philipp Sadler
 - Paper link: https://arxiv.org/pdf/2507.08491.pdf
 - Code link: https://github.com/clembench/clembench
-- Reading depth: structured-skim
-- Card status: card-reviewed
-- Confidence in this card: medium
-- Review gate label: usable
+- Reading depth: deep
+- Card status: finalized
+- Confidence in this card: high
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - A Third Paradigm for LLM Evaluation is a meta-evaluation paper that argues for dialogue game-based evaluation as a complement to both reference-based benchmarks and preference-based arenas. It uses clembench as the concrete implementation of this third paradigm and emphasizes repeatable, multi-turn, reference-free interactions with explicit goals. The paper's main contribution is conceptual and infrastructural rather than a new game suite: it explains why dialogue games combine some of the control of static benchmarks with some of the ecological validity of interactive user evaluation. For this survey, it is valuable because it gives a clear theoretical frame for why certain game benchmarks matter even when they are narrow in world content.
@@ -37,7 +37,7 @@
 
 ### 3.3 Benchmark scope
 - Scope: curated suite
-- Number of games / tasks: current benchmark bundles report 14 text-only games with 817 instances and 5 multimodal games with 560 instances, within a broader extensible framework
+- Number of games / tasks: the public framework reports 15 text-only and 6 multimodal games available, while the latest bundled benchmark runs report 14 text-only games with 817 instances and 5 multimodal games with 560 instances
 
 ### 3.4 Modality
 - Observation modality: text or symbolic
@@ -104,9 +104,10 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The paper argues that LLM evaluation currently has two main paradigms, reference-based and preference-based evaluation, and proposes dialogue game-based evaluation as a third complementary paradigm.
-- It presents clembench as a mature reusable implementation optimized for broader use.
+- It presents clembench as a mature reusable implementation optimized for broader use, with `clemcore` as the pip-installable backbone and `clembench` as the collection of implemented games and versioned pre-compiled instances.
 - The paper emphasizes multi-turn, reference-free, repeatable interactions and explains how the framework can benchmark one's own models or be extended with new tests.
-- It reports current benchmark bundles of 14 text-only games with 817 instances and 5 multimodal games with 560 instances, and describes `clemscore` as the condensed 0-100 summary score.
+- It states that 15 text-only games and 6 multimodal games are publicly available, while the latest bundled runs contain 14 text-only games with 817 instances and 5 multimodal games with 560 instances.
+- It reports human average quality of 86.93 on the overlapping games and notes that the best listed model, o3-mini, still remains below that human reference.
 
 ### 11.2 Our synthesis / interpretation
 - This is a survey-methodology card more than a benchmark card, but it is highly useful because it provides a principled vocabulary for discussing why game-based evaluation exists.
@@ -122,12 +123,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B07
 - Outline sections: 0,1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/ThirdParadigm.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

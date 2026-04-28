@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2412.13602v2
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -104,9 +104,11 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GAMEBoT evaluates 17 LLMs across eight games that include Othello, Checkers, TicTacToe, Connect4, Pong, Surround, Texas Hold'em, and Negotiation v2.
+- The eight games are grouped into board, action, card, and game-theoretic categories, with a mix of perfect/imperfect information, zero/non-zero-sum, and turn-based/simultaneous settings.
 - Each move is decomposed into 2-3 subproblems with rule-based verification, and the benchmark reports both outcome scores and intermediate-step scores.
 - The benchmark runs 20 head-to-head matches for each model pairing, with each model playing 10 matches as first player and 10 as second player.
 - The strongest reported average intermediate-step score is only 0.52, and Appendix C shows near-total failure on some complex subproblems.
+- The paper's limitations note that prompt templates are handcrafted, performance can be prompt-sensitive, the selected games are relatively lightweight, and token length constrains how many subproblems can be included.
 
 ### 11.2 Our synthesis / interpretation
 - GAMEBoT is one of the clearest papers in the corpus for arguing that outcome-only game benchmarking can be misleading.
@@ -124,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B07
@@ -132,4 +134,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/GAMEBoT.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

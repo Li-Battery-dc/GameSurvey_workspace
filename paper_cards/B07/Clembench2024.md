@@ -6,10 +6,10 @@
 - Authors: Anne Beyer, Kranti Chalamalasetti, Sherzod Hakimov, Brielen Madureira, Philipp Sadler, David Schlangen
 - Paper link: https://arxiv.org/pdf/2405.20859.pdf
 - Code link: https://github.com/clembench/clembench
-- Reading depth: structured-skim
-- Card status: card-reviewed
-- Confidence in this card: medium
-- Review gate label: usable
+- Reading depth: deep
+- Card status: finalized
+- Confidence in this card: high
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - clembench-2024 is a follow-up validation paper for the original clembench framework rather than a completely new benchmark family. It argues that dialogue-game evaluation can remain current without collapsing into contamination-prone static test sets, shows that even the best models remain well below human expert performance, and uses the framework to study questions such as multilingual prompting effects. For this survey, the paper is useful because it turns clembench from a proof-of-concept framework into an explicitly dynamic, maintainable benchmark program.
@@ -105,8 +105,10 @@
 ### 11.1 Direct paper-supported facts
 - The paper presents clembench-2024 as a dynamic, complementary, multilingual benchmark and framework for LLMs as multi-action agents.
 - It argues that the framework can keep up with new model developments while helping avoid data contamination.
-- The authors report that human expert performance is substantially higher than even the best models and use the framework to study prompting-language effects.
-- The paper reports stronger rank correlation with Chatbot Arena than with HELM, positioning clembench as a more interaction-aligned complement to static reference benchmarks.
+- The current version tracks 53 models, and the paper reports Kendall tau 0.71 between old and refreshed instances, supporting the claim that the games rather than particular public instances drive the ranking signal.
+- The authors report 100% played games for human experts, with quality scores of 72 for Wordle, 80.5 for Taboo, 95.2 for Drawing, 100 for Reference, and an 86.93 average.
+- The paper reports stronger rank correlation with Chatbot Arena, Kendall tau 0.65 over 30 shared models, than with HELM, Kendall tau 0.39 over 18 shared models, positioning clembench as a more interaction-aligned complement to static reference benchmarks.
+- The multilingual case study translates the reference game into German, English, Italian, Japanese, Portuguese, Telugu, Turkish, Turkmen, and Chinese, and shows prompt language can affect both formatting compliance and gameplay quality.
 
 ### 11.2 Our synthesis / interpretation
 - This paper matters less for introducing a new benchmark family than for showing how an interactive benchmark can remain scientifically useful over time.
@@ -122,12 +124,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B07
 - Outline sections: 1,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/Clembench2024.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

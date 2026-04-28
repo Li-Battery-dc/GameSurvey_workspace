@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2508.05405v1
 - Code link: https://github.com/XinrunXu/DeepPHY
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Physics-based games and simulators turn physical prediction into an interactive action-consequence loop rather than static QA, but DeepPHY makes that loop tractable through heavy benchmark-side interface redesign.
 - Historical stage: diagnostic capability probe
-- Benchmark level(s): L4 visual agency
+- Benchmark level(s): L2 strategic/spatial reasoning; L4 visual agency boundary case
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; DeepPHY itself shows how much current results depend on discretization, annotation, and mixed evaluation modes
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited. At most a brief contrast showing why interactive physics tasks probe action-grounded reasoning differently from static physics QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Limited boundary mention only; useful if we need to mark where simulator-heavy physical diagnostics sit beside, rather than inside, the main game-benchmark lineage.
-- Best use in Section 2 (core capabilities evaluated by games): Contrast evidence for visual and spatiotemporal physical reasoning under simplified but still interactive interfaces.
-- Best use in Section 3 (interaction and evaluation paradigm): One of the clearest contrast cases for benchmark-side semantic privilege without giving models full symbolic-state APIs; also useful for the descriptive-versus-procedural gap between WM explanations and actual control.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Evidence that current multimodal agents still fail on timing, chain reactions, and action-grounded physical prediction, while benchmark designers often recover tractability by redesigning interfaces.
+- Best use in Section 0 (lead-in and benchmark motivation): Contrast support for the claim that action-grounded physical reasoning needs interactive consequence loops rather than static physics QA alone.
+- Best use in Section 1 (taxonomy and evolutionary levels): Boundary evidence for a L2-to-L4 bridge: DeepPHY uses visual observations and game-like physics, but its adapted puzzle form and constrained commands keep it closer to a diagnostic probe than ecological visual agency.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for physical/spatiotemporal reasoning as a game-adjacent capability target, especially timing, chain reactions, causal prediction, and adaptation after failed attempts.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for the interface-privilege argument: visual input is retained, but grids, object IDs, top-down conversion, discretized parameters, and command languages substantially shape what the score means.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Evidence that current multimodal agents still struggle to turn descriptive physical knowledge into procedural control, while benchmark tractability often comes from redesigning observation/action channels.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): static physics reasoning QA benchmarks, symbolic-input physical simulators, and game agents that sidestep low-level physics by operating at higher abstraction
@@ -113,6 +113,7 @@
 ### 11.2 Our synthesis / interpretation
 - DeepPHY is safest to cite as a contrast paper on physical reasoning and interface design, not as direct evidence of human-like game play.
 - Its main survey value is in showing that keeping visual input is not the same thing as preserving ecological interaction: benchmark-side annotation, action restructuring, and transformed views substantially change what is being measured.
+- It can support taxonomy prose about why visual diagnostics and visual agency should be separated unless the benchmark preserves native or near-native control burdens.
 
 ### 11.3 Uncertain or needs re-check
 - If we later need exact per-environment prompt templates, task splits, or ablation settings, re-check the appendices because implementation details vary sharply across the six environments.
@@ -125,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -133,4 +134,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/DeepPHY.md`
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-28

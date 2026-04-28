@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2503.05383v2.pdf
 - Code link: https://github.com/camel-ai/VLM-Play-StarCraft2
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -23,7 +23,7 @@
 
 ## 3. Design-space coding
 ### 3.1 Structure
-- Form: Match
+- Form: Encounter
 - Construction: Wrapped
 - Construction note: StarCraft II micromanagement environment with multimodal observations
 - Benchmark unit: scenario episode
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that symbolic SC2 environments miss important multimodal burdens, but purely visual play is still hard enough to need auxiliary text support
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why multimodal games matter for testing integrated perception and control.
-- Best use in Section 1 (taxonomy and evolutionary levels): A natural extension of text-based SC2 benchmarking toward human-aligned multimodal play. Useful for multimodal RTS benchmark design.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on target selection, spatial reasoning, and coordinated tactical action.
-- Best use in Section 3 (interaction and evaluation paradigm): A key comparison point for text-only versus multimodal RTS interfaces. Good example of component ablations within a benchmark paper.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports future work on bridging full visual realism and scalable evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why multimodal games matter when evaluation targets the perception-to-action loop rather than only text-state strategy.
+- Best use in Section 1 (taxonomy and evolutionary levels): Level 4 `Encounter` benchmark that extends the SC2 line from textified macro play to bounded multimodal tactical episodes with RGB plus text observations.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on visual target selection, tactical spatial reasoning, role assignment, and coordinated action under real-time micromanagement pressure.
+- Best use in Section 3 (interaction and evaluation paradigm): Key comparison point for text-only versus multimodal RTS interfaces; useful for scaffold analysis through VLM-Attention, RAG, role assignment, and component ablations.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the knowing-doing gap by showing that even multimodal tactical play still struggles with terrain use, temporal consistency, target switching, and unit identification.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLMPlayStarCraftII
@@ -123,12 +123,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B09/VLMPlayStarCraftII.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

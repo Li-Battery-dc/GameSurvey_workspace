@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2509.01328v4
 - Code link: https://github.com/THUDM/LLM4CardGame
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -18,7 +18,7 @@
 - Why-games relevance: Complex card games give a demanding testbed for whether LLMs can acquire nontrivial strategic competence from data rather than from prompt scaffolds alone.
 - Historical stage: diagnostic capability probe
 - Benchmark level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,4
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -54,7 +54,7 @@
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? partially
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? yes for within-card-game transfer; no for open-ended generalization
 - Why is a game environment especially suitable here? Card games provide hard structured objectives, strong teacher AIs, and controllable transfer relations between similar and dissimilar rulesets.
 
 ## 5. Interaction paradigm
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is partly a benchmark paper and partly a domain-adaptation study
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows why high-complexity games remain attractive as upper-bound capability probes.
-- Best use in Section 1 (taxonomy and evolutionary levels): Contrast case for training-heavy card-game suites, but not a central taxonomy anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for uncertainty handling, long-horizon strategy, and cross-game transfer limits.
-- Best use in Section 3 (interaction and evaluation paradigm): Representative symbolic-state train+eval setup. Helpful for discussing teacher-generated data, legal-action exposure, and post-training evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence that specialist game tuning can trade off against broader capability retention.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why high-complexity games remain useful capability probes when the question is learning from interaction data rather than zero-shot prompting.
+- Best use in Section 1 (taxonomy and evolutionary levels): Level 2 curated-suite contrast for training-heavy card games with text-symbolic observation and semantic JSON actions; not a Level 5 open-ended benchmark.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for strategic learning under uncertainty and for transfer/interference patterns governed by rule similarity, such as DouDizhu/GuanDan and poker variants.
+- Best use in Section 3 (interaction and evaluation paradigm): Representative symbolic-state train+eval setup for teacher-generated trajectories, legal-action exposure, role/game-specific metrics, and post-training evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence that specialist game tuning can trade off against general benchmark performance, although targeted general-data recovery can partially repair the loss.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): prompt-based poker and card-game evaluations, specialist game-AI training work
@@ -121,13 +121,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 2,3,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/ComplexCardGames.md`
-- Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

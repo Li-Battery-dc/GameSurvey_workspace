@@ -2,12 +2,12 @@
 
 ## 0. Metadata
 - Date: 2025/03
-- Venue: arXiv
+- Venue: COLM 2025
 - Authors: Jixuan Leng, Chengsong Huang, Langlin Huang, Bill Yuchen Lin, William W. Cohen, Haohan Wang, Jiaxin Huang
 - Paper link: https://arxiv.org/pdf/2504.00043v2.pdf
 - Code link: https://github.com/SeanLeng1/CrossWordBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows both that structural constraints can revive saturated QA sources and that multimodal reasoning scores can collapse for reasons as basic as grid parsing
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it shows how structured puzzles can make familiar QA-style knowledge interactively harder, but it is not a central motivation paper for game-agent benchmarking.
-- Best use in Section 1 (taxonomy and evolutionary levels): Strong contrast for controllable generated puzzle benchmarks that sit closer to symbolic reasoning probes than to ecological game environments.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for global consistency, crossing-constraint integration, and multimodal clue-grid reasoning.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong case for comparing text-grid and image-grid interfaces on the same underlying task, and for using multi-metric scoring beyond one headline accuracy number.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that future multimodal benchmarks need verifiable feedback and better separation between reasoning failure and perception failure.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast showing how structured puzzle constraints can make familiar QA-style clue answering substantially harder without becoming a full agent benchmark.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong contrast for generated puzzle benchmarks: CrossWordBench is best coded as L2 structural reasoning with mixed text/image interfaces, not ecological visual agency.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for global consistency, crossing-letter constraint integration, clue reasoning, and multimodal clue-grid alignment.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for matched-interface analysis because the same crossword structure can be exposed as text grids, image grids, and an interactive LVLM update loop, with WCR/LCR/ICR/ISS separating failure types.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that future multimodal benchmarks need verifiable structural feedback and clearer separation between reasoning failure and perception/grid-parsing failure.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): text-centric crossword datasets such as Cryptonite and earlier crossword QA formulations
@@ -125,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -134,4 +134,4 @@
 - Paper card path: `paper_cards/B08/CrossWordBench.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28

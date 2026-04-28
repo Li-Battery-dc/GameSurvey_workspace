@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2511.15065v2
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Maze tasks provide explicit goals, procedural variation, and trajectory structure that can be largely scored automatically, making them useful for controlled visual reasoning evaluation.
 - Historical stage: diagnostic capability probe
-- Benchmark level(s): L4 visual agency
+- Benchmark level(s): L2 spatial-temporal reasoning; L4-adjacent visual diagnostic, not closed-loop agency
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: contrast
 
@@ -41,7 +41,7 @@
 
 ### 3.4 Modality
 - Observation modality: visual image
-- Action modality: semantic
+- Action modality: semantic (generated trajectory trace rather than online environment action)
 - Perception burden retained: spatial layout reading, temporal continuity, trajectory tracking, and structural consistency across frames
 - Perception burden removed: the benchmark does not require an agent to take discrete actions or interact with an evolving environment online
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it rigorously measures spatial reasoning in generated rollouts, but it does not tell us whether the same models can act as interactive agents in comparable environments
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Only as a contrast case showing how game-like tasks can support automatically scored multimodal reasoning diagnostics.
-- Best use in Section 1 (taxonomy and evolutionary levels): Limited boundary mention only; useful when distinguishing generative video-reasoning offshoots from actual interactive benchmark lineages.
-- Best use in Section 2 (core capabilities evaluated by games): Strong contrast for spatial-temporal reasoning, trajectory fidelity, and rule compliance in video-generated rollouts.
-- Best use in Section 3 (interaction and evaluation paradigm): A clean example of a benchmark that keeps perceptual structure and path-planning demands but removes action interfaces entirely, making generated rollouts themselves the evaluation target.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the caution that strong visual reasoning in generated trajectories does not imply strong interactive agency.
+- Best use in Section 0 (lead-in and benchmark motivation): Contrast case showing that game-like structure can yield automatically scored multimodal reasoning diagnostics even when closed-loop play is absent.
+- Best use in Section 1 (taxonomy and evolutionary levels): Boundary evidence for separating L2 spatial-temporal diagnostics and L4 visual agency: VR-Bench renders maze reasoning as generated video traces rather than agent-environment interaction.
+- Best use in Section 2 (core capabilities evaluated by games): Strong support for spatial-temporal trajectory reasoning, path fidelity, and rule compliance as capability targets adjacent to game play.
+- Best use in Section 3 (interaction and evaluation paradigm): Clean example of a paradigm that preserves visual/path structure but removes the action channel; the generated rollout, not gameplay behavior, becomes the evaluated artifact.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the caution that better visual trajectory generation should not be cited as evidence of robust interactive agency.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): maze-style visual reasoning and trajectory-generation benchmarks
@@ -111,6 +111,7 @@
 ### 11.2 Our synthesis / interpretation
 - VR-Bench is useful in this survey mainly as a boundary case: it is game-structured and diagnostically rigorous, but it is not an agent-play benchmark in the usual sense.
 - Its strongest survey value is in separating video-generated reasoning traces from actual gameplay evidence, especially when Section 3 compares perceptual diagnostics against closed-loop agents.
+- It should not be used as direct Level 4 knowing-doing evidence because the benchmark removes online action selection, recovery, and environment feedback during play.
 
 ### 11.3 Uncertain or needs re-check
 - If we later need exact per-task or per-difficulty scores for specific video models, re-check Table 1 and the appendix generalization tables.
@@ -123,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -131,4 +132,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/ReasoningViaVideo.md`
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-28

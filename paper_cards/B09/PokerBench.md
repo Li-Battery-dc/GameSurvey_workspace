@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2501.08328v2.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it argues that full-game poker evaluation alone is too costly during development, but also shows that spot-level GTO accuracy and live-play exploitability are not identical
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Supports the use of games to evaluate hidden-information strategy.
-- Best use in Section 1 (taxonomy and evolutionary levels): A specialist benchmark reflecting a move from full-play engines to faster diagnostic spot evaluation. Useful for decision-spot versus full-trajectory benchmark distinctions inside single-game specialists.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence on uncertainty, balance, and opponent-aware play.
-- Best use in Section 3 (interaction and evaluation paradigm): A strong contrast case for structured text-state inputs, solver-grounded action-level metrics, and the difference between spot evaluation and match-play validation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the idea that specialist domains may need both cheap diagnostic spot evaluation and more ecological match-play checks.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the claim that games expose decision quality under hidden information, but only as a specialist poker example rather than as broad game-benchmark evidence.
+- Best use in Section 1 (taxonomy and evolutionary levels): Clean contrast between a `Puzzle`-like decision-spot benchmark and full-trajectory game play inside the same single-game domain.
+- Best use in Section 2 (core capabilities evaluated by games): Strong Level 2 evidence for strategic reasoning under uncertainty, GTO balance, action sizing, and the limits of spot-level optimality as a proxy for live exploitative play.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for privileged text-state inputs, solver-grounded action metrics, and match-play validation as a calibration layer around cheap diagnostic scoring.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that specialist domains may need both efficient solver-labeled spot tests and slower ecological match checks because the two evaluate different failure modes.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): solver-based poker AI work and earlier GPT-4 poker spot analyses
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/PokerBench.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

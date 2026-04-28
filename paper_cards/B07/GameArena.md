@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2412.06394v5.pdf
 - Code link: https://github.com/lmgame-org
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -104,8 +104,11 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GameArena consists of Akinator, Taboo, and Bluffing and was evaluated on over 2,000 game sessions.
+- The paper maps Akinator to deductive multi-hop reasoning, Taboo to abductive multi-hop reasoning, and Bluffing to inductive multi-hop reasoning.
 - It evaluates 2,240 game sessions collected over 10 weeks and performs retrospective analysis to extract intermediate reasoning signals such as ranked candidate lists or truthfulness judgments.
+- The setup evaluates GPT-4o, Claude 3.5 Sonnet, Gemini-1.5 Pro, Mistral Large 2, and LLaMA-3.1 405B, with DSPy prompt search producing five optimized prompts per game.
 - GameArena reports 86.9% useful completed sessions versus 4% useful conversations in Chatbot Arena, and a 100-participant user study found higher enjoyment, satisfaction, and willingness to participate.
+- The paper reports that procedural reasoning metrics can rank models differently from outcome win rate and from broad preference/ranking benchmarks, making it useful for separating live-game success from reasoning-process signals.
 
 ### 11.2 Our synthesis / interpretation
 - GameArena is one of the best corpus examples of using games to collect fresh reasoning data in the wild.
@@ -122,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B07
@@ -130,5 +133,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B07/GameArena.md`
 - Check status: unchecked
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

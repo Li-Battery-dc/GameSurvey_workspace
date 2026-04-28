@@ -6,10 +6,10 @@
 - Authors: Kranti Chalamalasetti, Jana Gotze, Sherzod Hakimov, Brielen Madureira, Philipp Sadler, David Schlangen
 - Paper link: https://aclanthology.org/2023.emnlp-main.689.pdf
 - Code link: https://github.com/clembench/clembench
-- Reading depth: structured-skim
-- Card status: card-reviewed
-- Confidence in this card: medium
-- Review gate label: usable
+- Reading depth: deep
+- Card status: finalized
+- Confidence in this card: high
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - clembench is a dialogue-game evaluation framework for chat-optimized language models. Instead of testing models on static prompts or on open-ended user preference alone, it places them in carefully constructed interactive settings that probe instruction following, goal orientation, and situated language understanding through constrained gameplay. The original paper presents five interaction settings and shows that even comparatively simple games remain far from saturated. For this survey, clembench is an important methodological branch because it argues that game-like conversational interaction can itself be a reusable evaluation paradigm.
@@ -105,8 +105,11 @@
 ### 11.1 Direct paper-supported facts
 - The paper investigates five interaction settings for evaluating chat-optimized language models through gameplay.
 - Benchmark v1.0 contains 250 instances distributed across taboo, wordle, wordle+clue, wordle+clue+critic, drawing, reference, and private/shared datasets.
+- The framework separates player prompts from a programmatic Game Master that controls the dialogue game state, parses responses, enforces rules, and computes game-specific scores.
+- The common reporting scheme distinguishes percentage played, as a rule-following/completion signal, from quality score, and combines them as `clemscore`.
 - It argues that LLMs can be meaningfully evaluated by exposing them to constrained game-like settings designed to challenge specific capabilities.
 - The authors report that the metrics remain far from saturated and that newer models generally perform better, with GPT-4 achieving the strongest overall reported `clemscore`.
+- In the reported v1.0 table, GPT-4/GPT-4 reaches 96.06% played, 61.93 average quality, and 59.48 `clemscore`, while Wordle remains a severe failure case despite high formal playability.
 
 ### 11.2 Our synthesis / interpretation
 - clembench is less about game diversity than about evaluation philosophy, which makes it especially relevant for the survey's paradigm section.
@@ -122,12 +125,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B07
 - Outline sections: 1,3
 - Survey role: representative
 - Paper card path: `paper_cards/B07/Clembench.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28

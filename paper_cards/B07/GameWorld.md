@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2604.07429v1.pdf
 - Code link: https://gameworld-bench.github.io
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -104,10 +104,12 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GameWorld contains 34 browser games, 170 tasks, and 5 genres, and evaluates 18 model-interface pairs under one shared runtime.
+- At each step, the agent observes a screenshot and outputs either computer-use function calls or game-specific semantic actions, both normalized into a unified atomic mouse/keyboard event space.
 - The benchmark studies two interfaces: Computer-Use Agents that emit low-level mouse and keyboard controls and Generalist agents that act through deterministic Semantic Action Parsing.
 - The evaluator reads serialized gameAPI state through a JavaScript bridge and instruments 233 task-relevant fields across the 34 games to compute deterministic progress and success.
 - The best reported generalist result is Gemini-3-Flash-Preview at 21.2 SR and 41.9 PG, while the novice human reaches 55.3 SR and 64.1 PG under the same action budget.
 - Ten repeated full-benchmark reruns on open Qwen models show only low single-digit variation in aggregate SR and PG, supporting benchmark-level robustness claims.
+- The paper defines GameWorld-RT as an unpaused real-time variant and warns that default paused scores and RT scores should not be directly compared because latency becomes part of gameplay in RT.
 - The paper's capability-aligned curriculum peaks at Level-4 reasoning or strategy and Level-2 reactive control, but drops sharply at Level-1 basic control or timing grounding and Level-5 open-world coordination or management.
 - The limitations section states that scaling to new environments requires designing unique instruction sets and Semantic Action Parsing alignment for each game.
 
@@ -127,7 +129,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B07
@@ -135,4 +137,4 @@
 - Survey role: anchor
 - Paper card path: `paper_cards/B07/GameWorld.md`
 - Check status: unchecked
-- Last updated: 2026-04-21
+- Last updated: 2026-04-28

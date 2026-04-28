@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2603.23660.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -23,9 +23,9 @@
 
 ## 3. Design-space coding
 ### 3.1 Structure
-- Form: Puzzle
-- Construction: Adapted
-- Construction note: real game benchmarked through a public API
+- Form: Match
+- Construction: Wrapped
+- Construction note: heads-up no-limit Texas Hold'em exposed through a public API with GTO Wizard AI as a fixed superhuman opponent
 - Benchmark unit: hand / match
 
 ### 3.2 Mechanics profile
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is strong on calibration but depends on a proprietary anchor ecosystem
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Good specialist example of games supporting precise quantitative evaluation under uncertainty.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful later-stage refinement of poker benchmarking toward fixed-anchor standardization. Clean single-game imperfect-information specialist benchmark.
-- Best use in Section 2 (core capabilities evaluated by games): Supports strategic reasoning and hidden-state planning discussion.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast for highly structured API-based evaluation. Strong reference for AI anchors, variance reduction, and standardized calibration.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for cross-benchmark comparability and transparent anchor design.
+- Best use in Section 0 (lead-in and benchmark motivation): Specialist example showing that games can provide precise quantitative evidence under hidden information when paired with strong anchors and variance control.
+- Best use in Section 1 (taxonomy and evolutionary levels): Single-game Level 2 `Match` benchmark that refines poker evaluation from static spots toward API-mediated full-hand play against a fixed anchor.
+- Best use in Section 2 (core capabilities evaluated by games): Supports strategic reasoning under partial observability, especially state tracking, range reasoning, EV mistakes, and action-frequency balance.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong protocol reference for fixed AI anchors, AIVAT variance reduction, luck-adjusted bb/100, and structured API evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for transparent anchor design and variance-aware calibration when game outcomes are noisy and relative.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokerBench, Slumbot-based poker evaluation, solver-grounded poker AI work
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B09/GTOWizardBenchmark.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

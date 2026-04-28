@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2503.04094v1.pdf
 - Code link: https://github.com/sethkarten/pokechamp
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -16,7 +16,7 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Pokémon battles stress hidden information, long horizons, combinatorial action spaces, and opponent modeling in a popular competitive game.
-- Historical stage: ecological agent benchmark
+- Historical stage: diagnostic capability probe
 - Benchmark level(s): L2 strategic reasoning
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that specialist game strength often depends as much on search/world-model integration as on raw LLM reasoning
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited; mostly a specialist exemplar.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the line from heuristic game bots to LLM-augmented planners. Helps contrast benchmark papers with specialist systems plus rich evaluation harnesses.
-- Best use in Section 2 (core capabilities evaluated by games): Strong source on uncertainty, opponent modeling, and search-guided planning.
-- Best use in Section 3 (interaction and evaluation paradigm): An example of LLM modules embedded inside a search agent. Useful for discussing offline puzzles plus live ladder evaluation together.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports hybrid approaches combining learned priors with planning.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited use; use only as a specialist example of how games expose multi-turn hidden-information decision pressure.
+- Best use in Section 1 (taxonomy and evolutionary levels): Single-game Level 2 `Match` benchmark/system case that contrasts LLM-augmented planning with general benchmark platforms.
+- Best use in Section 2 (core capabilities evaluated by games): Strong source on partial observability, opponent modeling, search-guided planning, and strict time-budget effects in competitive play.
+- Best use in Section 3 (interaction and evaluation paradigm): Good example of embedding LLM modules inside a minimax/search agent, plus combining offline action prediction, puzzle tests, arena matches, and live ladder evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the hybrid-design claim that learned priors, world models, and search can amplify LLMs, while static opponent modeling and metagame drift remain bottlenecks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokéLLMon
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/PokeChamp.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2603.24621v1.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -40,8 +40,8 @@
 - Number of games / tasks: 135 environments total (25 public, 55 semi-private, 55 fully private)
 
 ### 3.4 Modality
-- Observation modality: mixed
-- Action modality: native control
+- Observation modality: visual image
+- Action modality: mixed
 - Perception burden retained: frame parsing, object tracking, transition interpretation, and action-effect inference from abstract visual states
 - Perception burden removed: natural-image semantics, language understanding, cultural symbols, and real-time sensorimotor control
 
@@ -60,7 +60,7 @@
 ## 5. Interaction paradigm
 - Observation channel: current 64x64 frame or frame sequence over a 16-color grid
 - Action channel: a small discrete action set plus optional cell-coordinate selection and undo
-- Interface type: native control / structured action space / hybrid
+- Interface type: structured action space / hybrid
 - Agent scaffold allowed: none on the official leaderboard; community submissions may use harnesses
 - Is there privileged API access? no on the official leaderboard
 - How close is the setup to human play? low-to-medium; the interface is shared and instruction-free, but the abstract 16-color turn-based environments deliberately minimize perceptual and motor complexity
@@ -106,10 +106,11 @@
 - ARC-AGI-3 contains 25 public environments, 55 semi-private environments, and 55 fully private environments.
 - Agents observe 64x64 16-color frames and act through a small turn-based action space that can include five key actions, undo, and cell-coordinate selection.
 - The paper explicitly states that the core challenge is intended to be reasoning rather than perception, which is why ARC-AGI-3 is turn-based rather than real-time.
+- The public set is described as a demonstration/front-door set, while the private set is intentionally out-of-distribution relative to the public environments and is split into semi-private API testing and fully private competition subsets.
 - RHAE scores each completed level by the squared ratio between the second-best first-run human action count and the AI action count, then aggregates per environment and across the benchmark.
 - Exactly 10 human participants are tested on each environment, and inclusion requires at least two first-run humans to solve the full environment.
 - The design section says environments are developed with at least six levels, while the scoring section defines environment weighting with `n = 5` and repeatedly refers to five scored levels.
-- The private set is explicitly described as out-of-distribution relative to the public set and is intended to test generalization more rigorously.
+- The official leaderboard excludes public-set and benchmark-specific harness scores, while a separate community leaderboard is provided for harness-driven results and explicitly cautioned against as AGI-progress evidence.
 - Release-time official scores reported in the paper are 0.37% for Gemini 3.1 Pro Preview, 0.26% for GPT 5.4 (High), 0.25% for Opus 4.6 (Max), and 0.00% for Grok-4.20.
 
 ### 11.2 Our synthesis / interpretation
@@ -129,13 +130,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B07
 - Outline sections: 2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B07/ARCAGI3.md`
-- Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-20
+- Last updated: 2026-04-28

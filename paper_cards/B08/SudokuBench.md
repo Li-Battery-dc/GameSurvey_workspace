@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2505.16135v1.pdf
 - Code link: https://github.com/SakanaAI/Sudoku-Bench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -17,8 +17,8 @@
 ## 2. Position in our survey
 - Why-games relevance: Variant Sudoku gives tightly verifiable puzzle play where success depends on discovering nontrivial logical break-ins under novel rule combinations.
 - Historical stage: diagnostic capability probe
-- Benchmark level(s): L2 strategic reasoning
-- Most relevant outline section(s): 1,2,4
+- Benchmark level(s): L1 rule-grounded formal container; L2 symbolic reasoning
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows both that many reasoning benchmarks over-reward memorized templates and that text-only puzzle evaluation measures something narrower than full human puzzle play
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it helps show that exact verification does not imply easy reasoning, but it is not a central motivation anchor for game-agent benchmarking.
-- Best use in Section 1 (taxonomy and evolutionary levels): Strong contrast for human-curated symbolic puzzle diagnostics that stay narrow in world type while still resisting memorized reasoning templates.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for creative break-in reasoning, global consistency maintenance, and long-form symbolic deduction.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast case for textified puzzle interfaces, single-shot versus multi-step evaluation, and the deliberate separation between pure reasoning and tool-use tracks.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports a future-design argument for keeping tool-use tracks separate from intrinsic-reasoning tracks instead of mixing them into one headline number.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast showing that exact, automatically verifiable puzzle play can remain difficult when success depends on novel multi-step reasoning rather than template recall.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong contrast for a narrow L1/L2 symbolic puzzle line: the benchmark is rule-grounded and fully verifiable, but its curated puzzle form stays far from ecological game agency.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for creative break-in reasoning, global consistency maintenance, rule-combination interpretation, and long-form symbolic deduction.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful evidence for separating tool-free intrinsic-reasoning tracks from SudokuPad/tool-use tracks, and for comparing single-shot full-solution scoring with multi-step committed-placement evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports a future-design argument that tool-use, natural puzzle interfaces, and intrinsic reasoning should be reported as distinct evidence layers instead of one mixed headline score.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): classic Sudoku reasoning work and adjacent creativity-oriented reasoning benchmarks such as ARC
@@ -125,13 +125,13 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
-- Outline sections: 1,2,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B08/SudokuBench.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28

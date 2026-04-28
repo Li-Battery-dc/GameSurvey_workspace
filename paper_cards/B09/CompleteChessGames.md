@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2501.17186v2.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it argues that static evaluation sets are insufficient for chess and should be supplemented by actual games
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited use; mostly a specialist upper-bound case.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the lineage of LLMs entering classical board games. Helps contrast single-game specialists with broader benchmark suites.
-- Best use in Section 2 (core capabilities evaluated by games): Supports legal-action and move-quality discussions.
-- Best use in Section 3 (interaction and evaluation paradigm): A contrast case for text-encoded board states. Good example of mixing static board evaluation with full-game Elo tests.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports caution when broad survey claims rely on specialist-trained models.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited support only; use as a boundary example that full games can reveal gaps missed by static move-prediction tests.
+- Best use in Section 1 (taxonomy and evolutionary levels): Single-game Level 1/Level 2 board-game specialist, useful for contrasting `Match` evaluation against static FEN-to-move evaluation under a text-symbolic interface.
+- Best use in Section 2 (core capabilities evaluated by games): Supports rule-grounding and strategic-move-quality discussion by separating legal-move generation, best-move accuracy, and full-game Elo.
+- Best use in Section 3 (interaction and evaluation paradigm): Contrast case for highly privileged FEN-state inputs, Stockfish-calibrated evaluation, and sampling-based legal-move recovery during actual games.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports caution that specialist-trained single-game systems can achieve impressive Elo while saying little about visual play, transfer, or general agent ability.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLMChess and ChessGPT
@@ -122,12 +122,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
 - Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/CompleteChessGames.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-28

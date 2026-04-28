@@ -5,9 +5,9 @@
 - Venue: arXiv
 - Authors: Yitao Long, Yuru Jiang, Hongjun Liu, Yilun Zhao, Jingchen Sun, Yiqiu Shen, Chen Zhao, Arman Cohan, Dennis Shasha
 - Paper link: https://arxiv.org/pdf/2510.06475v1
-- Code link:
+- Code link: https://github.com/yitaoLong/PuzzlePlex
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; PuzzlePlex is rigorous for puzzle reasoning, but puzzle-heavy benchmarks only partially overlap with broader agent evaluation
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how compact game-like environments can still generate difficult reasoning tests.
-- Best use in Section 1 (taxonomy and evolutionary levels): Later-stage example of reasoning-model benchmarking entering game-like domains. Useful contrast case for puzzle-focused suites.
-- Best use in Section 2 (core capabilities evaluated by games): Supports claims about rule grounding, planning, and uncertainty handling.
-- Best use in Section 3 (interaction and evaluation paradigm): Good example of comparing direct interaction with code-based execution. Useful Elo and legal-play metric comparison point.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that puzzle success and broader agent competence should not be conflated.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how compact game-like puzzle environments can still generate difficult reasoning and planning tests.
+- Best use in Section 1 (taxonomy and evolutionary levels): Contrast case for a broad L2 puzzle suite: it spans deterministic/stochastic and single-/two-player settings, but remains puzzle-heavy rather than ecological game-agent evaluation.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims about rule grounding, planning, legal-action discipline, uncertainty handling, and limited strategic interaction inside controlled puzzle games.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of comparing instruction-based direct play with code-based execution, and of combining normalized score, Elo, legal-play statistics, and win-probability analyses.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that puzzle success, code-generation competence, and broader agent competence should be reported as related but distinct evidence.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PuzzleBench, VGRP-Bench, BoardgameQA, other puzzle-centered evaluations
@@ -122,7 +122,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -131,4 +131,4 @@
 - Paper card path: `paper_cards/B08/PuzzlePlex.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28

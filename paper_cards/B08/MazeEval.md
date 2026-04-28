@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2507.20395v1.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many spatial-agent claims may depend heavily on language and interface framing
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it shows that even stripped-down sequential tasks can reveal severe reasoning failures, but it is not a central motivation anchor for game benchmarking writ large.
-- Best use in Section 1 (taxonomy and evolutionary levels): Minor boundary-case contrast for highly stripped-down task-games that preserve sequential decision-making while removing nearly all ecological content.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for spatial memory and loop avoidance as distinct targets.
-- Best use in Section 3 (interaction and evaluation paradigm): Good example of a pure function-calling game interface. Useful for bilingual paired evaluation and behavior metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports caution about language-dependent "reasoning" claims.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast showing that even stripped-down sequential game tasks can reveal failures hidden by static reasoning benchmarks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Boundary-case support for L2 diagnostic probes: MazeEval preserves sequential decision-making and partial observability while removing visual, embodied, and ecological content.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for spatial memory, route planning, loop avoidance, and language-dependent robustness as separable capability targets.
+- Best use in Section 3 (interaction and evaluation paradigm): Good example of a highly privileged function-calling interface with coordinates, wall distances, and complete history, plus paired bilingual evaluation and behavior-level failure metrics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports caution that "spatial reasoning" scores can depend on language framing and that explicit history support does not eliminate looping failures.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): BabyAI-style navigation probes
@@ -124,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B08
@@ -133,4 +133,4 @@
 - Paper card path: `paper_cards/B08/MazeEval.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-27
+- Last updated: 2026-04-28

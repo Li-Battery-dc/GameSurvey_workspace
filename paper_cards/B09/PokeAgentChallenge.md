@@ -7,8 +7,8 @@
 - Paper link: https://arxiv.org/pdf/2603.15563v2
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
-- Confidence in this card: medium
+- Card status: finalized
+- Confidence in this card: high
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
@@ -17,8 +17,8 @@
 ## 2. Position in our survey
 - Why-games relevance: Pokemon naturally combines hidden information, strategic adversaries, and extremely long action horizons in a way few other benchmarks do.
 - Historical stage: ecological agent benchmark
-- Benchmark level(s): L2 strategic reasoning
-- Most relevant outline section(s): 2,3,4
+- Benchmark level(s): L2 strategic reasoning / L4 visual agency
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: contrast
 
 ## 3. Design-space coding
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; benchmark difficulty is excellent, but comparing systems is hard when harness complexity varies so much
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how one game franchise can stress multiple hard capability axes simultaneously.
-- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of competition infrastructure hardening into a living benchmark. Useful mixed battle-plus-RPG comparison point.
-- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for partial observability, long-horizon planning, and metagame adaptation.
-- Best use in Section 3 (interaction and evaluation paradigm): Good case for harness-heavy evaluation. One of the strongest rating and leaderboard protocol cards in the corpus.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that benchmark quality and harness comparability need to be discussed together.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how one human game franchise can preserve multiple dynamic pressures: adversarial hidden-information battles and long-horizon RPG navigation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of `Mixed` form and game-family scope, where competition infrastructure hardens into a living benchmark with separate battle and speedrunning tracks.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for Level 2 partial-observability strategy in Battling and Level 4 visual/long-context agency in Speedrunning; do not collapse the two tracks into one capability score.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong protocol card for dedicated evaluation servers, FH-BT/Glicko/GXE rating choices, harness x model attribution, milestone speedrun metrics, and latency/action-count trade-offs.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that benchmark difficulty, living leaderboards, and harness comparability must be discussed together because raw frontier models fail without domain-specific orchestration.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PokeChamp, specialist Pokemon agents, long-horizon game-agent demonstrations
@@ -105,7 +105,7 @@
 ### 11.1 Direct paper-supported facts
 - The benchmark has two tracks: Battling on Pokemon Showdown and Speedrunning in Pokemon Emerald.
 - The battling track uses Glicko-1, GXE, and a Full-History Bradley-Terry rating as its primary skill metric, while the speedrunning track uses completion-oriented metrics.
-- The released resources include 20M+ battle trajectories, 18M synthetic battles, and 200K+ teams, and the NeurIPS challenge drew more than 100 competing teams.
+- The released resources include 4M human demonstrations, 18M synthetic/self-play battles, 200K+ curated teams, and 100K+ community battles; the NeurIPS challenge drew more than 100 competing teams.
 
 ### 11.2 Our synthesis / interpretation
 - This card is especially useful for discussing benchmark quality under strong harness effects rather than as a clean "raw model" comparison.
@@ -118,17 +118,16 @@
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? A targeted reread may be worthwhile later because the rating design and harness details matter for protocol drafting.
 - Which section to read next if needed: 3.2 / 4.2 / Appendix D
-- Follow-up question(s): Should FH-BT become a named protocol example in Section 5?
+- Follow-up question(s): Should FH-BT become a named protocol example in Section 3.2?
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B09
-- Outline sections: 2,3,4
+- Outline sections: 1,2,3,4
 - Survey role: contrast
 - Paper card path: `paper_cards/B09/PokeAgentChallenge.md`
 - Check status: unchecked
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-28
