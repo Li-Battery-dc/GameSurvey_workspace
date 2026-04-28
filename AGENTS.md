@@ -4,7 +4,7 @@
 This repository is the working control plane for an end-to-end survey on game benchmarks for LLM and VLM agents. The repo now covers intake, triage, paper cards, card review, section drafting, and manuscript stabilization. Batches and paper cards remain important intermediate assets, but they are no longer the end goal.
 
 ## Overleaf Paper Repository
-The `overleaf_paper/` directory is a separately cloned Overleaf Git repository for the user's paper writing. Treat it as a read-only reference by default. Do not modify, format, compile, pull, rebase, merge, commit, push, or generate files inside `overleaf_paper/`. When the user asks for changes to the paper, report the proposed edits in the conversation for human review first; apply them only after the user explicitly approves the exact scope.
+The `overleaf_paper/` directory is a separately cloned Overleaf Git repository for the user's paper writing. Treat it as a read-only reference strictly. Do not modify, format, compile, pull, rebase, merge, commit, push, or generate files inside `overleaf_paper/`. When the user asks for changes to the paper, report the proposed edits in the conversation for human review first; apply them only after the user explicitly approves the exact scope.
 
 ## Important Files
 Always open these files before planning work:
