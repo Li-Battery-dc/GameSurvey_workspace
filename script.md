@@ -37,6 +37,16 @@ Taken together, these dimensions elevate the taxonomy table from a superficial g
 
 ## Purpose
 
+The taxonomy above organizes game benchmarks by how they instantiate playable environments. Purpose shifts from that structural map to the capability claims those environments are meant to support. The same game substrate can become a different capability probe depending on which pressure the benchmark design foregrounds: rule exposure, state dynamics, information constraints, social interdependence, perception-action burden, or task novelty. This section explains why those structures can make particular capabilities visible, and where each kind of capability claim should remain bounded.
+
+The central question is not whether games are harder than static tasks, but how a benchmark design makes a target capability necessary for play. Capability probing depends on design choices such as how rules are exposed, how states change, how opponents or collaborators constrain action, how much perception and control burden is preserved, and how task variation prevents success from collapsing into memorized routines. These are purpose-level questions: they explain why a game can serve as a probe for an ability. 
+
+Accordingly, each subsection below follows three guiding questions:
+
+- Measurement target: What capability is the benchmark trying to put under pressure, and what should not be inferred from that target?
+- Game affordance and boundary: Which properties of this game structure make the capability surface during play, and which aspects of real gameplay are abstracted away or only weakly tested?
+- Probe design mechanisms: Which benchmark design choices make the target capability operationally necessary, such as rule-state-action formalization, information asymmetry, scenario selection, role structure, difficulty variation, scaffold contrasts, or generated task variation?
+
 
 ## Paradigm: From Interaction to Evaluation
 

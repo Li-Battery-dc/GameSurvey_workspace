@@ -109,7 +109,7 @@ high-level narrative stages, all sections follow or recall:
 本节沿用五级 evolutionary spine，但每一级都按同一逻辑展开为三个段落式：
 1. Measurement target：这一层主要测什么能力。
 2. Game affordance and Boundary：为什么这类游戏结构适合让该能力显形, 引出pros and cons, 明确这类游戏测试的boundary, 防止过度解读。
-3. Measurement mechanisms：哪些 benchmark 设计把 gameplay 转成可信证据。强调设计服务于能力probe。这里只归纳整合机制，将一簇论文或者重要论文作为引用论据。不过度展开具体论文实现细节。
+3. Measurement mechanisms：哪些 benchmark 设计将对应的能力很好的探测出来。强调设计服务于能力probe。这里只归纳整合机制，将一簇论文或者重要论文作为引用论据。不过度展开具体论文实现细节。
 
 #### 2.1 Level 1: Rule Understanding — Games as rule-grounded formal containers
 
