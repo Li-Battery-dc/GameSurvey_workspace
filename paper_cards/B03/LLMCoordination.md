@@ -7,7 +7,7 @@
 - Paper link: https://aclanthology.org/2025.findings-naacl.448.pdf
 - Code link: https://github.com/eric-ai-lab/llm_coordination
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -90,11 +90,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that aggregate coordination success alone can hide why models coordinate or fail to coordinate
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Clean evidence that games can isolate cooperation challenges under shared incentives instead of conflating them with adversarial strategy.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful bridge from formal coordination settings to richer social benchmarks. Good example of a curated coordination-game suite with a diagnostic overlay.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for cooperation, theory of mind, and joint planning.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong reference for text-state, scaffolded agentic play plus diagnostic QA, and for separating holistic coordination outcomes from component-level diagnosis.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that unseen-partner robustness is not the same as deep partner-belief reasoning.
+- Best use in Section 0 (lead-in and benchmark motivation): Clean evidence that games can isolate cooperation challenges under shared incentives rather than conflating social intelligence with adversarial deception.
+- Best use in Section 1 (taxonomy and evolutionary levels): Good Level 3 curated-suite example: four coordination games plus CoordQA bridge formal cooperation settings and richer social benchmarks.
+- Best use in Section 2 (core capabilities evaluated by games): Direct Purpose support for cooperation, theory of mind, joint planning, and the split between environment comprehension and partner-belief reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong Paradigm reference for scaffolded text-state play plus diagnostic QA; it shows why holistic coordination outcomes need component-level questions and cross-play tests.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that unseen-partner robustness is not the same as deep partner-belief reasoning, and that joint planning remains weak even when environment comprehension is strong.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GTBench-style coordination tasks and earlier coordination-game studies
@@ -110,6 +110,7 @@
 - The paper states that Overcooked observations are supplied as processed textual state descriptions equivalent to what an RL agent would access in state representations.
 - In self-play, GPT-4-turbo matches or exceeds RL baselines across multiple Overcooked layouts, but in Hanabi it scores `13.33` versus roughly `24` for the strongest RL baselines.
 - In Hanabi cross-play, GPT-4-turbo scores `15.00` with OBL-1 and `12.00` with OBL-4, while the SAD baseline drops from `23.66` in self-play to `11.33` and `8.00` with the same unseen partners.
+- CoordQA is built from 66 curated scenarios and 198 questions across Environment Comprehension, Theory-of-Mind Reasoning, and Joint Planning, with fuzzy string matching used for MCQ scoring.
 
 ### 11.2 Our synthesis / interpretation
 - LLM-Coordination is especially useful for Section 3 and Section 4 because it separates coordination outcome from coordination mechanism.
@@ -127,7 +128,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -136,4 +137,4 @@
 - Paper card path: `paper_cards/B03/LLMCoordination.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

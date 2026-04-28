@@ -5,9 +5,9 @@
 - Venue: arXiv
 - Authors: Sai Kolasani, Maxim Saplin, Nicholas Crispino, Kyle Montgomery, Jared Quincy Davis, Matei Zaharia, Chi Wang, Chenguang Wang
 - Paper link: https://arxiv.org/pdf/2512.01992v1
-- Code link:
+- Code link: https://github.com/maxim-saplin/llm_chess
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the chosen tool access simplifies some real chess burdens while intentionally foregrounding others
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Illustrates how games expose both competence and failure modes with exact automatic checking.
-- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of single-game probes used as modern reasoning diagnostics. Simple but useful single-game perfect-information anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Good evidence for rule grounding, tool use, and tactical reasoning.
-- Best use in Section 3 (interaction and evaluation paradigm): Helpful case for privileged API tools, exposed legal-move sets, and the deliberate omission of move history. Strong example of combining win/loss, Elo, and process-level instruction-following or per-ply error metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that instruction following remains a bottleneck even in formal domains.
+- Best use in Section 0 (lead-in and benchmark motivation): Illustrates how a familiar deterministic game can reveal agentic failures that static chess positions or next-move prediction hide: full-game play exposes tool-use, formatting, legality, timeouts, and recovery failures.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong single-game Level 1/2 diagnostic probe. It keeps the game form simple and fully observable, which makes the boundary between legal participation and deeper chess strength easy to explain.
+- Best use in Section 2 (core capabilities evaluated by games): Good evidence for rule grounding, instruction-following, tool-use discipline, tactical reasoning, and symbolic spatial planning under a large combinatorial state space.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong interface-privilege case: the benchmark exposes `get_current_board`, `get_legal_moves`, and `make_move`, omits move history, and shows through ablations that legal-move access, board representation, and simplifying the agentic tool loop materially change performance.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that instruction following and interface robustness remain bottlenecks even in formal domains, and that calibrated engine ladders can keep a single-game benchmark informative as models improve.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): chess-as-reasoning studies and earlier chess finetuning papers
@@ -107,6 +107,8 @@
 - The benchmark caps games at 100 moves, allows up to 10 conversation turns per ply, and omits move history while preserving board-state access.
 - It reports Win/Loss, Elo with 95% confidence intervals for stronger models, and per-game/per-ply indicators including instruction-following errors.
 - The paper finds that most models cannot consistently beat a random opponent, and reasoning models perform much better than non-reasoning ones.
+- The engine phase uses Komodo Dragon 1 skill levels as calibrated opponents; the strongest reported model peaks around Elo 758 in this setup.
+- Ablations show the agentic interface itself is a measured burden: providing only `make_move` while putting board and legal moves directly in the prompt improves win/loss for both tested models, while removing legal-move access has model-dependent effects.
 
 ### 11.2 Our synthesis / interpretation
 - This card is most useful as a narrow diagnostic benchmark rather than a broad strategic-play benchmark.
@@ -122,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B01
@@ -131,4 +133,4 @@
 - Paper card path: `paper_cards/B01/LLMChess.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

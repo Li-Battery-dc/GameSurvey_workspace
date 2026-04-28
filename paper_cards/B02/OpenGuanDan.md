@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2602.00676v1
 - Code link: https://github.com/GameAI-NJUPT/OpenGuanDan
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -92,7 +92,7 @@
 - Best use in Section 0 (lead-in and benchmark motivation): Not a direct fit. At most, use it as a boundary reminder that game complexity alone does not make a paper a benchmark for LFMs.
 - Best use in Section 1 (taxonomy and evolutionary levels): Minor boundary contrast only. It shows a modern single-game symbolic benchmark outside the direct LLM/VLM evaluation line, not a level-defining anchor.
 - Best use in Section 2 (core capabilities evaluated by games): Narrow contrast for hidden-information strategic difficulty, large legal-action spaces, and mixed cooperative-competitive play; do not cite it as direct LLM/VLM evidence.
-- Best use in Section 3 (interaction and evaluation paradigm): Strongest use. The paper cleanly documents privileged symbolic observations, legal-action exposure, built-in AI baselines, and human-AI versus AI-versus-AI evaluation, while illustrating that API compatibility with LLMs is not the same as benchmarking them.
+- Best use in Section 3 (interaction and evaluation paradigm): Strongest use. The paper cleanly documents privileged symbolic observations, legal-action exposure, built-in AI baselines, human-AI versus AI-versus-AI evaluation, and the important distinction between LLM-compatible APIs and actual LLM benchmark evidence.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Use only as a cautionary scope case: a hard game benchmark can still sit outside our target literature when it evaluates specialized non-LFM agents rather than foundation-model agents.
 
 ## 10. Relation to nearby papers
@@ -111,6 +111,7 @@
 ### 11.2 Our synthesis / interpretation
 - For this survey, OpenGuanDan is best treated as a boundary contrast: it demonstrates hidden-information benchmark design and symbolic API privilege, but it is not a direct benchmark paper for LLM/VLM agents.
 - Its main value is in Sections 3 and 4, where it helps distinguish between "LLM-compatible interface" claims and actual LFM evaluation.
+- It is useful negative evidence for corpus scope: game complexity, human-AI play, and LLM integration hooks do not by themselves justify using a paper as evidence about foundation-model game ability.
 
 ### 11.3 Uncertain or needs re-check
 - Recheck Appendix D only if we later need exact per-agent inference-speed numbers; the benchmark's non-LFM scope is already clear from the abstract, Section 6, and Appendix C.
@@ -122,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B02
@@ -131,4 +132,4 @@
 - Paper card path: `paper_cards/B02/OpenGuanDan.md`
 - Next action: contrast-only
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

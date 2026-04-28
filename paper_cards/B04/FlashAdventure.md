@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2509.01052v2
 - Code link: https://github.com/ahnjaewoo/FlashAdventure
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,7 +89,7 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; automatic judging depends on milestone definitions and is less suitable for reflex-heavy genres
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong example of why games matter for long-horizon agent evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of why games matter for long-horizon agent evaluation: full story arcs make clue memory and delayed payoff measurable rather than anecdotal.
 - Best use in Section 1 (taxonomy and evolutionary levels): Represents the move toward more ecologically realistic GUI-game benchmarks, especially for full-story-arc adventure play.
 - Best use in Section 2 (core capabilities evaluated by games): Direct fit for long-horizon autonomy and memory-dependent task completion.
 - Best use in Section 3 (interaction and evaluation paradigm): Strong example of raw native control with little privilege, plus milestone-based progress scoring and computer-use judging.
@@ -111,6 +111,7 @@
 ### 11.2 Our synthesis / interpretation
 - FlashAdventure is one of the strongest cards in this corpus for arguing that current agents fail on memory-heavy full-task arcs even when individual steps look simple.
 - It complements StarBench by shifting the main difficulty from precise moment-to-moment control to sustained long-range coherence and clue use.
+- It is best cited as native-control long-horizon GUI evidence, with the caveat that milestone definitions and the computer-use judge are part of the evaluation machinery rather than agent inputs.
 
 ### 11.3 Uncertain or needs re-check
 - Recheck the appendices if we later need exact per-subgenre milestone lists, judge prompts, or contamination-check details.
@@ -122,12 +123,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B04
 - Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B04/FlashAdventure.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-27

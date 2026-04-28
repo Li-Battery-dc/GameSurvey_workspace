@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2403.11807v7
 - Code link: https://github.com/CUHK-ARISE/GAMABench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -91,8 +91,8 @@
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Limited use only; it can support the claim that parameterized games offer a renewable formal test bed, but it is not a primary motivation anchor.
 - Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from small fixed canonical games to broader N-player, multi-round, parameterized formal probes without leaving the diagnostic game-theory regime.
-- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of strategic reasoning under varying incentives, limited belief modeling, and cooperation-versus-betrayal trade-offs, but it is not a strong dialogue-based social benchmark.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for prompt-mediated JSON interfaces, repeated-round summaries, game-specific scoring, and parameter diversity used as a leakage-mitigation and generalizability probe.
+- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of strategic reasoning under varying incentives, limited belief modeling, and cooperation-versus-betrayal trade-offs, but it is not a strong dialogue-based social benchmark because players do not negotiate in free-form language.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for prompt-mediated JSON interfaces, same-model multi-agent play, repeated-round summaries, game-specific scoring, and parameter diversity used as a leakage-mitigation and generalizability probe.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark-specific scoring and parameter variation improve diagnosis but reduce comparability and still stop short of ecological validity.
 
 ## 10. Relation to nearby papers
@@ -116,6 +116,7 @@
 - Its multi-player claim should be read narrowly: the benchmark stresses N-player strategic interdependence, not language-mediated social interaction.
 - It is a helpful reminder that "dynamic" can mean parameter variation, diverse profiles, and score adaptation rather than richer interfaces or more ecological environments.
 - Its leakage story is better read as mitigation by diversity than as a strong anti-contamination guarantee.
+- It supports the current evidence boundary for Level 2: formal games can make incentive structure and scoring precise, but that precision is purchased by removing natural communication, perception, and native control.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check Appendix E if we later need the exact rescaling formulas or want to compare scores across games more carefully.
@@ -129,7 +130,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
@@ -137,4 +138,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B02/GAMABench.md`
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2410.06555v1.pdf
 - Code link: https://github.com/Thisisus7/ING-VP
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -123,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
@@ -131,4 +131,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/INGVP.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

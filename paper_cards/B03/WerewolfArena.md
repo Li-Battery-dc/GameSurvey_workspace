@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2407.13943v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the paper shows promise, but the tournament scale is still modest and mainly compares GPT and Gemini families
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong example of interactive social reasoning that static benchmarks cannot reproduce.
-- Best use in Section 1 (taxonomy and evolutionary levels): Marks the move from formal rule-grounded games to social-intelligence probes. Clear anchor for social deduction and imperfect-information multi-agent play.
-- Best use in Section 2 (core capabilities evaluated by games): Direct fit for deception, cooperation, persuasion, and belief tracking.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful for memory-enabled text debate with role-specific actions. Relevant for role-balanced tournaments and process-level vote analysis.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that partial observability and social modeling remain hard.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of why games matter for agent evaluation: deception, persuasion, and belief updates unfold through live interaction rather than isolated social QA.
+- Best use in Section 1 (taxonomy and evolutionary levels): Anchor for Level 3 social-intelligence benchmarks: a hidden-role game becomes an adapted Dialogue environment with partial observability, faction incentives, and multi-agent debate.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for the Purpose claim that social games operationalize deception, persuasion, hidden-role inference, and factional cooperation as win-relevant capabilities.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for Paradigm claims about conversational agency: memory streams, role-specific actions, bidding-based turn taking, role-balanced tournaments, and synthetic vote dynamics make dialogue itself measurable.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the bottleneck claim that social scores remain entangled with verbosity, timing, role memory, and debate-control choices, not just deep role inference.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): AvalonBench and earlier LLM social-deduction studies
@@ -107,6 +107,7 @@
 - The environment includes role-specific night actions, a rules-based Game Master, agent memories, and bidding-based debate turns.
 - The paper runs intra-family tournaments and analyzes shifting synthetic votes during debate.
 - The synthetic votes are analysis-only proxies: they do not affect gameplay and are not stored in player memories.
+- The paper's no-debate Monte Carlo simulation gives villagers only a 1.2% win rate, while the Seer's information sharing can be decisive in the simplified setup.
 
 ### 11.2 Our synthesis / interpretation
 - Werewolf Arena is a foundational social benchmark in this corpus because it treats dialogue as part of the environment, not just as explanation around the task.
@@ -122,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B03
@@ -131,4 +132,4 @@
 - Paper card path: `paper_cards/B03/WerewolfArena.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

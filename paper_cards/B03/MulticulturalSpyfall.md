@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2601.09017v1.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that English-only social benchmarks can overestimate social competence
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows why dynamic game play can reduce leakage pressure in multilingual evaluation.
-- Best use in Section 1 (taxonomy and evolutionary levels): Secondary contrast only; it is a late-stage multilingual extension of social-deduction benchmarking rather than a core level-defining taxonomy anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for social reasoning plus cultural grounding.
-- Best use in Section 3 (interaction and evaluation paradigm): Helpful for natural-language multi-agent play without privileged state abstractions. Supports discussion of dynamic, leakage-resistant multilingual evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Useful for arguing that future social benchmarks should go beyond English-centric settings.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the claim that dynamic games can reduce static multilingual benchmark leakage while exposing failures that only appear during role-governed interaction.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as a Level 3 extension, not a level anchor: Spyfall is adapted into a text-symbolic Dialogue benchmark where cultural entity pools become part of the social-deduction pressure.
+- Best use in Section 2 (core capabilities evaluated by games): Strong Purpose evidence that social intelligence is language- and culture-conditioned; successful play requires hidden-role reasoning plus locally grounded entity knowledge.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful Paradigm case for strict JSON actions, fixed candidate entity pools, role permutations, leakage-rate analysis, and multilingual model-vs-model ranking.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the design claim that English-only social benchmarks overestimate robustness; non-English local foods and locations expose rule-following, leakage, and strategic-integrity failures.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Werewolf Arena, WOLF, CK-Arena, other social-deduction evaluations
@@ -107,6 +107,7 @@
 - Experiments use five-player games with four non-spies and one spy, a 10-turn limit, and repeated role permutations across models.
 - The benchmark covers generic locations, local locations, and local foods across English, Indonesian, Chinese, and Egyptian Arabic settings.
 - The authors report that game-based rankings align closely with Chatbot Arena, but non-English performance is weaker and models often struggle with rule-following or strategic integrity.
+- The reported ranking aggregates play across languages and scenarios over 9,000 matches, and the paper separately analyzes entity-guess accuracy and leakage when non-spies reveal the target entity.
 
 ### 11.2 Our synthesis / interpretation
 - This is one of the clearest papers for arguing that social-intelligence benchmarks should not be treated as language-neutral.
@@ -122,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -131,4 +132,4 @@
 - Paper card path: `paper_cards/B03/MulticulturalSpyfall.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

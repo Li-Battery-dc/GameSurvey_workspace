@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2406.06613v2
 - Code link: https://github.com/Joshuaclymer/GameBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -90,9 +90,9 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Limited use only; it can illustrate why multi-agent strategic play is harder to saturate than static tasks, but it is not a primary lead-in anchor.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful for showing an early strategic suite that diversifies game selection through six reasoning components rather than through one formal game family alone.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful for showing an early curated strategic suite that diversifies game selection through six reasoning components rather than through one formal game family alone; it supports the Scope axis more than a Level 5 transfer claim.
 - Best use in Section 2 (core capabilities evaluated by games): Useful as a coverage-based decomposition of strategic reasoning into hidden information, non-determinism, communication, social deduction, and cooperation, but cite it carefully because the paper does not provide stable per-component ability scores.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison point for standardized game APIs, available-action exposure, multimodal exceptions such as Hive, and rating aggregation that is visibly sensitive to benchmark composition.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison point for standardized game APIs, available-action exposure, multimodal exceptions such as Hive, inverse-frequency Bradley-Terry aggregation, and rating sensitivity to benchmark composition.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Strong source on aggregation instability, unresolved OOD validation, the weakness of low-resolution human baselines, and the gap between a diverse design rationale and a single aggregate leaderboard.
 
 ## 10. Relation to nearby papers
@@ -116,6 +116,7 @@
 - GameBench is best read as a design-side decomposition of strategic reasoning, not a measurement-side decomposition: it tells us what kinds of strategic pressure the suite tries to cover, but not yet which sub-skill each model lacks in a stable, directly scored way.
 - GameBench is a useful bridge paper: more diverse and socially expressive than GTBench, but still structurally close to the text-API benchmark tradition rather than ecological play.
 - It is especially valuable because it surfaces aggregation instability and weak OOD validation instead of treating one multigame leaderboard as unquestionable.
+- It can support the current taxonomy distinction between `curated suite` and `cross-game generalization`: the suite broadens coverage across game forms, but the experiment does not test held-out transfer or first-contact adaptation.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check Appendix H if we later need exact per-game confidence intervals or the Sea Battle sensitivity story in figure form.
@@ -128,7 +129,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
@@ -136,4 +137,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B02/GameBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

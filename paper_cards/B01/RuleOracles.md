@@ -5,9 +5,9 @@
 - Venue: ICLR 2026
 - Authors: Joseph J. Peper, Sai Krishna Gandra, Yunxiang Zhang, Vaibhav Chennareddy, Shloki Jha, Ali Payani, Lu Wang
 - Paper link: https://openreview.net/pdf?id=TOgQ00DEek
-- Code link:
+- Code link: https://huggingface.co/spaces/launch/LudoBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that rulebook access alone is not enough, but it also remains a pre-play diagnostic benchmark rather than evidence of human-like game competence
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited contrast case showing that games can expose multimodal reasoning failures before an agent ever enters a live control loop.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a Level-1 edge case showing that rule-following can stay visually grounded and rulebook-heavy without yet becoming a visual-agency benchmark.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for rule grounding, rule retrieval versus rule application, and the way visual grounding errors contaminate rule-understanding evaluation.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong example of an image-plus-rulebook interface, modality ablations, and exact-answer scoring for grounded game comprehension without environment interaction.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that multimodal rule understanding is itself a bottleneck, but should not be overused as evidence about full gameplay or ecological agent performance.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited contrast case showing that games expose multimodal reasoning failures even before live gameplay begins; use it to motivate why rules, state, and feedback are not enough unless the model can ground them in the actual game situation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful Level 1 edge case: rule understanding can be visually grounded, rulebook-heavy, and real-game based without yet becoming a Level 4 visual-agency benchmark because the benchmark unit is offline QA rather than action.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for rule grounding, rule retrieval versus situated rule application, visual scene parsing, short-horizon optimization, and the way perception errors contaminate rule-understanding evidence.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of an image-plus-rulebook interaction paradigm with `None`/`Text`/`Image` rulebook tracks, exact-match QA scoring after verified normalization, human/hobbyist validation, plurality headroom analysis, and targeted rule-retrieval error analysis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that multimodal rule understanding is itself a bottleneck and that more rule context can improve retrieval without guaranteeing correct situated application; do not use it as direct evidence of full gameplay or ecological agent performance.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): textified or structured rule-following benchmarks such as SmartPlay, LLMChess, and BoardGameArena, plus simpler board-image reasoning setups with far less rulebook complexity
@@ -109,6 +109,7 @@
 - Across all systems, average accuracy is about 63% on Tier 1, 36% on Tier 2, and 8% on Tier 3; the paper also reports hobbyist validation accuracy of 96.7%, 89.1%, and 82.2% across the three tiers.
 - In a 30-question Pax Renaissance Tier-2 error analysis with GPT-4o, rule retrieval rises from 20% with no rulebook to 73% with text and 90% with image rulebooks, while correct rule application rises only from 17% to 64% and then drops to 56%.
 - The paper reports that textual rulebooks help all models, while image rulebooks have mixed effects and can hurt some systems relative to text.
+- The benchmark, leaderboard, and visualizer are hosted at `https://huggingface.co/spaces/launch/LudoBench`.
 
 ### 11.2 Our synthesis / interpretation
 - This paper is best treated as a visually grounded Level-1 contrast case, not as a true Level-4 visual-agency benchmark: it preserves real game materials, but still evaluates comprehension rather than action.
@@ -126,7 +127,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B01
@@ -134,4 +135,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B01/RuleOracles.md`
 - Check status: unchecked
-- Last updated: 2026-04-18
+- Last updated: 2026-04-27

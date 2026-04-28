@@ -7,9 +7,9 @@
 - Paper link: https://arxiv.org/pdf/2603.06656v2
 - Code link: https://github.com/THUSI-Lab/GameVerse
 - Reading depth: deep
-- Card status: card-reviewed
-- Confidence in this card: medium
-- Review gate label: usable
+- Card status: finalized
+- Confidence in this card: high
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - GameVerse is a 15-game VLM benchmark built around a reflect-and-retry gameplay loop rather than one-shot play. During gameplay, agents act from current screenshots using GUI or semantic actions; after failure, they compare their own failure trajectory with expert tutorial videos, generate reflections, and retry with those reflections injected into the prompt. The benchmark mixes intrinsic and milestone-based scoring and compares VLMs against random, human rookie, and human expert baselines. It matters for the survey because it tests whether video-based reflection actually improves visually grounded gameplay and how that improvement depends on model strength, control mode, and game complexity.
@@ -25,7 +25,7 @@
 ### 3.1 Structure
 - Form: Mixed
 - Construction: Wrapped
-- Construction note: suite of popular commercial-style games
+- Construction note: suite of real/popular games run through a benchmark harness with visual observations, GUI controls for all games, semantic controls for selected games, and no internal state API for the visual play loop
 - Benchmark unit: episode
 
 ### 3.2 Mechanics profile
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the milestone pipeline relies on a stronger VLM and the reflection loop remains a single-turn, prompt-injected intervention
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong example of how games enable closed-loop evaluation of learning from failure.
-- Best use in Section 1 (taxonomy and evolutionary levels): Shows the shift from static visual evaluation toward reflective agent loops in a broad multi-game suite.
-- Best use in Section 2 (core capabilities evaluated by games): Useful for visual grounding, planning, and scaffold-dependent adaptation.
-- Best use in Section 3 (interaction and evaluation paradigm): Important example of reflection as an inference-time scaffold, plus a good case for mixed intrinsic and milestone evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that stronger models benefit more from reflection than weaker ones, and that internalization remains a bottleneck.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of why games expose closed-loop learning demands that static video QA cannot: agents must act from pixels, fail, inspect their trajectory against tutorials, and retry.
+- Best use in Section 1 (taxonomy and evolutionary levels): Level 5 curated-suite evidence for cross-game visual-agent evaluation. It should be presented as a fixed 15-game suite with five cognitive categories and three difficulty tiers, not as generated benchmark growth.
+- Best use in Section 2 (core capabilities evaluated by games): Useful for Level 4/5 claims about visual grounding, planning, reflection-driven adaptation, and the fact that generalization collapses from easy grid tasks to hard real-time/open-world tasks.
+- Best use in Section 3 (interaction and evaluation paradigm): Important example of reflection as an inference-time scaffold and of mixed evaluation: 8 games use intrinsic scores while 7 harder games use VLM-extracted, manually verified milestones from expert videos.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the knowing-doing gap: semantic control averages above GUI control, reflection helps stronger models more, and failures decompose into perception, reasoning, execution, and latency errors.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): visual game-agent suites such as VideoGameBench and BALROG, plus prior tutorial- or reflection-based agent studies
@@ -103,17 +103,21 @@
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- GameVerse covers 15 games across five cognitive categories and evaluates seven VLMs with and without video-based reflection.
-- During play, agents act from screenshots using GUI or semantic actions; for five games the paper uses a memory-aware agent, and for reflection it compares failure trajectories against expert tutorial videos.
-- Scores are normalized to a 100-point scale, combining intrinsic scoring for 8 games with milestone scoring for 7 harder games.
-- The paper reports that stronger models gain more from reflection, while gains fall as difficulty, GUI demands, and real-time pressure increase.
+- GameVerse covers 15 games across five cognitive categories: Tic-Tac-Toe/Baba Is You/2048, Maze/Angry Birds/Slay the Spire, Ace Attorney/Civilization VI/Scene Investigators, Snake/Plants vs. Zombies/Forza Horizon 5, and Mini Metro/Genshin Impact/Red Dead Redemption 2.
+- The benchmark evaluates seven VLMs, plus random, human rookie, and human expert baselines; the human baseline study uses 37 participants and 458 gameplay sessions.
+- During play, agents act from screenshots using GUI actions for all games and semantic actions for selected games; ten games use a zero-shot agent and five longer/story/open-world games use a memory-aware agent.
+- Video-based reflection records a failure trajectory, retrieves an expert walkthrough/tutorial, asks the VLM to contrast failure against expert video, and injects the resulting reflection into the retry prompt.
+- Scores are normalized to a 100-point scale, combining intrinsic scoring for 8 games with milestone scoring for 7 harder games; the milestone pipeline uses an advanced VLM and manual verification.
+- The paper reports that stronger models gain more from reflection, while gains fall as cognitive difficulty, GUI demands, and real-time pressure increase; semantic control outperforms GUI control on the compared games.
+- The paper classifies failures into perception, reasoning, execution, and latency errors.
 
 ### 11.2 Our synthesis / interpretation
 - GameVerse is useful less as proof that reflection solves visual gameplay and more as evidence that reflection itself is capability-dependent and scaffold-sensitive.
 - It helps bridge interaction design and synthesis because it connects tutorial-based scaffolds to persistent brittleness in grounding, latency, and internalization.
+- In the Level 5 narrative, it should support cross-game visual-agent breadth and reflective retry, not open-ended/generative benchmark expansion.
 
 ### 11.3 Uncertain or needs re-check
-- Recheck Appendix A or D if we later need per-game prompt details, exact latency settings, or the full split between zero-shot and memory-agent evaluations.
+- Appendix D is very large; only targeted game details were checked for failure-mode and memory-agent claims. Recheck Appendix D if citing exact per-game prompt templates or raw scores.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? No immediate reread; the reflection protocol and main findings are already usable.
@@ -122,12 +126,13 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06
 - Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B06/GameVerse.md`
+- Check status: unchecked
 - Next action: draft-section
 - Last updated: 2026-04-27

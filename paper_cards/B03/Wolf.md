@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2512.09187v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -82,18 +82,18 @@
 - Contribution 3: Tracks temporal suspicion dynamics and calibration rather than only final outcomes.
 
 ## 8. Main findings and failure modes
-- Core empirical takeaway: Across 100 games and 7,200+ statements, werewolves win 70% of games while peer deception judgments reach only about 72% precision and 48% recall, so deception remains only partly detectable.
+- Core empirical takeaway: Across 100 games and 7,320 statements, werewolves win 70% of games while peer deception judgments reach about 72% precision and 48% recall overall, so deception remains only partly detectable.
 - Notable model failure mode 1: observer recall is low even when precision is decent
 - Notable model failure mode 2: honest roles such as Seer and Doctor are often over-flagged because withholding looks deceptive
 - Notable model failure mode 3: subtle omissions and misdirection persist longer than overt fabrications
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark depends on self-reported deception labels as a reference signal
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how repeated social interaction creates richer deceptive behavior than static truthfulness datasets.
-- Best use in Section 1 (taxonomy and evolutionary levels): Secondary contrast only; it shows a move from social-game tournaments toward instrumented deception diagnostics, but it is not a core taxonomy anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Excellent fit for deception generation, detection, and belief tracking.
-- Best use in Section 3 (interaction and evaluation paradigm): Illustrates highly instrumented role-grounded prompting and private scratchpads. Useful for calibration metrics, suspicion trajectories, and per-role statistics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that deception detection remains weak and poorly calibrated.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why games create richer truthfulness evidence than static lie-detection items: deception is produced, repeated, observed, and reacted to over a role-governed trajectory.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as a late Level 3 refinement rather than a taxonomy anchor: Werewolf shifts from end-to-end social-game tournament toward statement-level deception instrumentation.
+- Best use in Section 2 (core capabilities evaluated by games): Strong Purpose evidence for separating deception production, deception detection, suspicion calibration, and longitudinal belief tracking inside one social game.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong Paradigm case for process-level social metrics: speaker self-labels, peer labels, deception-type tags, suspicion trajectories, Brier/ROC/AUPRC, and per-role breakdowns complement win rate.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the bottleneck claim that models can be precise when flagging deception but still miss many deceptive statements, while honest hidden-role behavior can be over-flagged.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): WerewolfArena and deception-detection studies
@@ -104,9 +104,10 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - WOLF uses fixed eight-player Werewolf games and treats each statement as a separate unit of deception analysis.
-- It records speaker self-assessments, peer suspicion, and deception types, then aggregates per-role and temporal metrics over 100 games.
+- It records speaker self-assessments, peer suspicion, and deception types, then aggregates per-role and temporal metrics over 100 games and 7,320 statements.
 - Across 100 runs, werewolves win 70 games, villagers win 10, and 20 games end without a declared winner.
 - Observer judgments against speaker self-reports yield 0.52 overall accuracy, 0.72 precision, and 0.48 recall.
+- The paper evaluates suspicion as a probabilistic signal with Brier score, ROC AUC, and AUPRC, and reports weak discrimination despite predictive suspicion trajectories.
 
 ### 11.2 Our synthesis / interpretation
 - WOLF is one of the clearest papers in this corpus for arguing that social-game benchmarks can measure more than final win rates.
@@ -122,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -131,4 +132,4 @@
 - Paper card path: `paper_cards/B03/Wolf.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

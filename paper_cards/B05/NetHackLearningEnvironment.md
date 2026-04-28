@@ -6,9 +6,9 @@
 - Authors: Heinrich Kuttler, Nantas Nardelli, Alexander H. Miller, Roberta Raileanu, Marco Selvatici, Edward Grefenstette, Tim Rocktaschel
 - Paper link: https://arxiv.org/pdf/2006.13760.pdf
 - Code link: https://github.com/facebookresearch/nle
-- Reading depth: structured-skim
-- Card status: card-reviewed
-- Confidence in this card: medium
+- Reading depth: deep
+- Card status: finalized
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: NetHack compresses exploration, planning, survival, and partial observability into a single environment that is both hard and automatically evaluable.
 - Historical stage: diagnostic capability probe
-- Benchmark level(s): L2 strategic reasoning
+- Benchmark level(s): L2 strategic reasoning; single-world long-horizon general-agent precursor, not cross-title transfer evidence
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: anchor
 
@@ -41,7 +41,7 @@
 
 ### 3.4 Modality
 - Observation modality: text or symbolic
-- Action modality: semantic
+- Action modality: semantic / native-control primitive
 - Perception burden retained: partial observability, inventory and resource tracking, spatial reasoning, and long-horizon planning
 - Perception burden removed: rich graphics and low-level motor control
 
@@ -70,9 +70,9 @@
 - Main score: task-suite performance and in-game progress
 - Auxiliary score(s): baseline RL performance and qualitative agent analysis
 - Evaluation style: native score / completion rate / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: distributed deep RL baselines and exploration baselines are the main comparison points
+- Human baseline / AI anchor / self-play / model-vs-model setup: distributed deep RL baselines and RND exploration baselines are the main comparison points; the paper references NAO human ascension streaks but does not run a controlled human baseline
 - Automatic verifiability: high
-- Calibration method: procedurally generated runs and a standardized task suite
+- Calibration method: procedurally generated runs, held-out unseen seeds, a standardized task suite, and an explicit recommendation to report average score over 1000 unseen-seed episodes
 - Anti-contamination argument: not central
 - Reliability or comparability concerns: NLE is primarily an RL benchmark, so direct comparison to language-model agents depends strongly on the chosen observation interface
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is highly valuable as a hard benchmark, but it is not natively an LLM benchmark and so requires careful translation into the current survey frame
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong historical example of games as hard, multi-skill benchmark environments.
-- Best use in Section 1 (taxonomy and evolutionary levels): Important precursor in the long-horizon game-agent lineage. Useful for procedural, single-game, terminal-mediated benchmarks.
-- Best use in Section 2 (core capabilities evaluated by games): Supports exploration, planning, and long-horizon robustness claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Helpful contrast against later natural-language or GUI-heavy interfaces. Good reference for task-suite calibration in a single hard game.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why later agent work often seeks more instrumented interfaces or narrower wrappers over similarly hard worlds.
+- Best use in Section 0 (lead-in and benchmark motivation): Historical support for games as compact but difficult systems that combine exploration, planning, survival, sparse reward, partial observability, and long-horizon consequences.
+- Best use in Section 1 (taxonomy and evolutionary levels): Anchor for the `World` / `Wrapped` / single-game branch of the taxonomy, especially the lineage from RL game environments to later LLM/VLM agent benchmarks; should not be presented as Level 4 visual play because the interface is symbolic terminal/API-mediated.
+- Best use in Section 2 (core capabilities evaluated by games): Supports exploration, resource management, stochastic partial-observability, skill acquisition, memory, and systematic generalization over seeds and roles as distinct long-horizon capability targets.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for the interface-privilege ladder: the full NetHack game dynamics are preserved, while observations, actions, task rewards, and replay tooling are exposed through a machine-friendly Gym interface.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain why hard single worlds require calibration beyond native score alone, including unseen-seed testing, task-suite subgoals, replay analysis, and caveats around score as only a proxy for solving the game.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): ALE, Obstacle Tower, BabyAI, classic roguelike RL environments
@@ -107,11 +107,15 @@
 - It explicitly motivates the environment as a medium for studying exploration, planning, skill acquisition, and language-conditioned RL.
 - The default environment exposes symbolic observations such as glyphs, chars, colors, bottom-line stats, messages, and inventory tensors over 93 available actions.
 - The paper provides a task suite and baseline deep RL results, emphasizing that only early-game success is currently demonstrated.
+- NLE's full-game solution criterion is consecutive ascension on unseen seeds with randomized character attributes, but the paper recommends score-task comparisons as a nearer-term proxy.
+- The paper requires future reports to specify character configuration, NetHack options, allowed actions, hard-coded action sequences, and training seeds, and to forbid test-time save scumming or RNG manipulation.
+- Baseline experiments show progress on early tasks such as staircase, pet, eat, gold, score, scout, and oracle, with the oracle task remaining essentially unsolved by the reported agents.
 
 ### 11.2 Our synthesis / interpretation
 - NLE is a useful historical anchor because it shows how a single hard game can function as a long-term benchmark platform.
 - It is best used as a precursor and comparison target rather than as a direct peer to modern LLM benchmark papers.
 - It should support the procedural-generalization and hard-world lineage, not claims about human-like multimodal interaction.
+- Its symbolic observations and task wrappers make it strong evidence for single-world long-horizon evaluation, but weak evidence for raw visual grounding or native GUI play.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact NLE task-suite composition and observation interfaces if we later compare it closely with parser-based text benchmarks.
@@ -123,13 +127,13 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B05
 - Outline sections: 1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B05/NetHackLearningEnvironment.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2603.24329v1
 - Code link: https://hats-ict.github.io/gameplayqa/
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -92,7 +92,7 @@
 - Best use in Section 0 (lead-in and benchmark motivation): Shows that gameplay video is a rich source of dynamic perception challenges.
 - Best use in Section 1 (taxonomy and evolutionary levels): Useful as a boundary case showing how far visual-game evaluation can move toward perception-heavy video understanding without closing the action loop.
 - Best use in Section 2 (core capabilities evaluated by games): Direct fit for visual grounding, temporal reasoning, and multi-agent attribution.
-- Best use in Section 3 (interaction and evaluation paradigm): Important counterexample to active-play benchmarks. Relevant for diagnostic annotation pipelines, blind filtering, and distractor-based hallucination analysis.
+- Best use in Section 3 (interaction and evaluation paradigm): Important counterexample to active-play benchmarks. Relevant for diagnostic annotation pipelines, blind filtering, answer-selection interfaces, and distractor-based hallucination analysis.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that perception is still a bottleneck even before control.
 
 ## 10. Relation to nearby papers
@@ -110,6 +110,7 @@
 
 ### 11.2 Our synthesis / interpretation
 - GameplayQA should not be treated as evidence that a model can play games well; it is evidence that dense gameplay perception and attribution remain hard even before action is introduced.
+- Its "action" output is only diagnostic answer selection, so it should be cited as a perception-before-control boundary case rather than as a semantic-control play benchmark.
 - It is most useful as a supporting card for visual grounding and benchmark-design discussion, not as a core ecological play benchmark.
 
 ### 11.3 Uncertain or needs re-check
@@ -122,12 +123,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B04
 - Outline sections: 2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B04/GameplayQA.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-27

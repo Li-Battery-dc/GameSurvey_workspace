@@ -7,8 +7,8 @@
 - Paper link: https://arxiv.org/pdf/2602.17594v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
-- Confidence in this card: medium
+- Card status: finalized
+- Confidence in this card: high
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
@@ -25,7 +25,7 @@
 ### 3.1 Structure
 - Form: Mixed
 - Construction: Generated
-- Construction note: real human games adapted into standardized benchmark instances
+- Construction note: popular human games are sourced from App Store/Steam charts, rebuilt as standardized p5.js games, and refined through automated tests plus human-in-the-loop feedback and variant generation
 - Benchmark unit: short play episode
 
 ### 3.2 Mechanics profile
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the current benchmark slice is compelling but still only a first step toward the much larger platform vision
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): One of the clearest statements for why human games may be a uniquely strong evaluation substrate.
-- Best use in Section 1 (taxonomy and evolutionary levels): Captures the move from curated fixed suites toward open-ended benchmark generation. Useful as a maximal-breadth counterpoint to narrow or synthetic suites.
-- Best use in Section 2 (core capabilities evaluated by games): Supports claims about memory, planning, and world-model demands in broad game play.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong human-relative evaluation case, but also a useful caution that pause-based harness design materially changes the interaction regime.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): One of the strongest papers for arguing that benchmark saturation is a design problem, but the current implementation should still be framed as an early platform prototype.
+- Best use in Section 0 (lead-in and benchmark motivation): Direct support for the claim that games are not just harder tasks but human-designed miniature activity systems that preserve dynamic, feedback-rich, human-relevant capability demands.
+- Best use in Section 1 (taxonomy and evolutionary levels): Anchor for the Level 5 branch where the benchmark object shifts from a fixed suite to a continually expandable distribution of human-game variants; also useful for distinguishing generated human-game adaptations from hand-curated multi-game suites.
+- Best use in Section 2 (core capabilities evaluated by games): Supports the Level 5 claim that broad human-game play probes integrated competence rather than one isolated skill: model performance falls most sharply on games requiring memory, planning, world-model learning, and multiple cognitive capabilities at once.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong calibration example because scores are normalized to per-game human medians, but also a paradigm caveat because the model harness pauses the game every second, uses screenshots/action history/scratchpad, and emits five 0.2-second keyboard-action chunks instead of real-time human input.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong support for anti-saturation and living-benchmark arguments: only 10 games are public, 90 form a private test set, and future variants are proposed as a mechanism for keeping evaluation fresh; the prototype status should remain explicit.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): general game-playing and broad multimodal game benchmarks
@@ -104,16 +104,20 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The paper defines the "Multiverse of Human Games" and proposes AI GameStore as a platform for sourcing representative human games.
-- The proof-of-concept release contains 100 games adapted from Apple App Store and Steam top charts.
-- Across seven frontier VLMs and 106 human participants, the best models achieve geometric-mean scores below 10 on a scale where each game's human median is normalized to 100.
+- The proof-of-concept release contains 100 games sourced from Apple App Store and Steam top charts, filtered for suitability, generated as p5.js games, and refined through automated testing and human feedback.
+- The release strategy keeps 10 games public and treats the remaining 90 as a private test set to reduce overfitting and saturation pressure.
+- The model harness pauses gameplay once per second and asks the model to output five 0.2-second action lists, using game description/control information, scratchpad memory, action history, screenshots, and reasoning.
+- Across seven frontier VLMs and 106 human participants, the best model reaches about 8.5 on a human-median-normalized geometric-mean scale where each game's human median is 100.
+- The paper reports especially weak relative performance on games demanding memory, planning, and world-model learning, and notes that model runtime is roughly 12-18x longer than the 120-second human play budget.
 
 ### 11.2 Our synthesis / interpretation
 - AI GameStore is more important as a framing and benchmark-design paper than as a mature finished benchmark.
 - The evaluated artifact is best treated as a 100-game proof-of-concept suite for a larger living-benchmark vision, not as a settled end-state platform.
+- In the survey taxonomy, this should be cited as generated/expandable Level 5 evidence, not as proof that current systems can transfer across unmodified commercial games.
 
 ### 11.3 Uncertain or needs re-check
 - The paper does not fully settle how faithfully regenerated games preserve the cognitive demands of the source commercial titles, or how much future variants will mitigate contamination in practice.
-- Recheck the methods section if we later need the exact human-normalization formula or harness prompt details.
+- Appendix H contains additional prompt/harness details that may be worth rechecking if the survey makes low-level prompt-interface claims.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? A targeted reread may be worthwhile later because the synthesis pipeline matters for Section 7.
@@ -122,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B06

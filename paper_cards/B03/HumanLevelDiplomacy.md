@@ -7,7 +7,7 @@
 - Paper link: https://doi.org/10.1126/science.ade9097
 - Code link: https://github.com/facebookresearch/diplomacy_cicero
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is a strong ecological demonstration, but its live-human protocol and engineered stack make it much harder to reuse as a standardized benchmark than later corpus papers
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong milestone evidence that games can operationalize social strategy and negotiation in ways static language tasks cannot.
-- Best use in Section 1 (taxonomy and evolutionary levels): Historical bridge from rule- and strategy-focused game AI toward social, language-mediated, human-in-the-loop evaluation.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for negotiation, intention modeling, trust management, and strategic communication under hidden intentions.
-- Best use in Section 3 (interaction and evaluation paradigm): Important example of a hybrid language-plus-planner system evaluated in anonymous human play. Useful for the ecological-validity versus comparability trade-off.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Use as a cautionary milestone showing that impressive ecological performance can coexist with limited benchmark reusability and strong dependence on engineered scaffolds.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong milestone evidence that games can operationalize social strategy and negotiation in a way static language tasks cannot, because language changes future coordinated action.
+- Best use in Section 1 (taxonomy and evolutionary levels): Historical bridge between Level 2 strategic reasoning and Level 3 social intelligence: a formal board game becomes an embedded, human-in-the-loop negotiation environment.
+- Best use in Section 2 (core capabilities evaluated by games): Direct Purpose support for negotiation, intention modeling, trust management, coalition formation, and language-conditioned tactical planning under hidden intentions.
+- Best use in Section 3 (interaction and evaluation paradigm): Important Paradigm example of ecological human evaluation: a hybrid language-plus-planner stack plays anonymous live games, improving realism while weakening reproducibility and apples-to-apples comparability.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Use as a cautionary milestone showing that impressive ecological performance can coexist with limited benchmark reusability, heavy engineered scaffolding, message filtering, and current-turn intent abstractions.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): no-press Diplomacy systems, earlier negotiation agents, and human-regularized Diplomacy planning work
@@ -107,6 +107,7 @@
 - The paper states that WebDiplomacy data includes 125,261 games, of which 40,408 contain dialogue, totaling 12,901,662 messages used for training components of the system.
 - In anonymous human play, Cicero played 40 games between 19 August and 13 October 2022, sent 5,277 messages over 72 hours, achieved a mean score of 25.8% against 82 distinct opponents averaging 12.4%, and ranked second out of 19 participants who played at least five games.
 - On 126 expert-annotated dialogue situations, the intent-grounded dialogue model improves consistency-with-state, consistency-with-plan, and high-quality message ratings over weaker grounding baselines.
+- The paper also reports first place in an eight-game tournament slice, but this is a system demonstration rather than a standardized benchmark leaderboard.
 
 ### 11.2 Our synthesis / interpretation
 - The safest survey use is as a reviewed ecological milestone and negotiation bridge, not as a reusable benchmark protocol on the same footing as later standardized suites.
@@ -123,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B03
@@ -132,4 +133,4 @@
 - Paper card path: `paper_cards/B03/HumanLevelDiplomacy.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

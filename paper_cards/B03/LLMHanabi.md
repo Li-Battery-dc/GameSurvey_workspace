@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2510.04980v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark is narrow but clean, so it is better for mechanism probing than for broad generalization claims
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how cooperative games can probe interactive inference beyond solitary reasoning.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful expansion from adversarial social games toward collaboration-centered social benchmarks. Clean cooperative imperfect-information benchmark anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for cooperation and rationale inference.
-- Best use in Section 3 (interaction and evaluation paradigm): Helpful case of prompt-instrumented cooperative play. Strong for dual scoring with gameplay and ToM metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that partner modeling remains a major bottleneck.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that cooperative games make interactive inference observable: hints, hidden hands, and teammate interpretations create evidence not available in solitary reasoning tasks.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful Level 3 cooperative counterpart to hidden-role deception papers: Hanabi is an adapted Match benchmark with partial information and shared incentives.
+- Best use in Section 2 (core capabilities evaluated by games): Direct Purpose evidence for theory-of-mind, rationale inference, cooperative planning, and the difference between first-order interpretation and second-order belief prediction.
+- Best use in Section 3 (interaction and evaluation paradigm): Helpful Paradigm case of prompt-instrumented cooperative play: explicit ToM statements and LLM-judge scoring sit alongside game performance, improving diagnosis but reducing naturalness.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the bottleneck claim that partner-rationale inference is central to cooperative success, while higher-order ToM remains weaker and harder to score robustly.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Hanabi-based AI collaboration studies and ToM benchmarks
@@ -106,6 +106,7 @@
 - The benchmark uses five-player Hanabi games and evaluates both Game Score and ToM Score.
 - ToM Score averages first-order and second-order rationale-inference scores over hint interactions, with the latter scored post-game by an LLM judge.
 - The paper reports a strong positive correlation between ToM proficiency and cooperative game performance, with first-order ToM correlating more strongly than second-order ToM.
+- The paper prompts all evaluated models to use CoT and produce ToM statements, so ToM measurement is an instrumented diagnostic layer rather than an unprompted natural-play behavior.
 
 ### 11.2 Our synthesis / interpretation
 - LLM-Hanabi is a useful balancing card for the social batch because it shows that social intelligence is not only about lying and detecting lies.
@@ -113,6 +114,7 @@
 
 ### 11.3 Uncertain or needs re-check
 - Recheck Appendix A if we later need the exact model roster or prompt wording used in the cooperative runs.
+- The paper text defines Game Score as a max-25 Hanabi score, but Table 1 is labeled "100-point scale" and reports values above 25; avoid citing absolute Game Score numbers until this scaling ambiguity is resolved.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? Completed in this audit; the benchmark design, ToM scoring pipeline, evaluation setup, results, and limitations sections are now checked against the full paper.
@@ -121,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -130,4 +132,4 @@
 - Paper card path: `paper_cards/B03/LLMHanabi.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

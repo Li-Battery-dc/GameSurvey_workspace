@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2603.09337v1
 - Code link: https://github.com/star-nexus/star
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -90,10 +90,10 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Limited contrast only: use it to show that time pressure changes agent evaluation, not as the main evidence for human-like continuous play.
-- Best use in Section 1 (taxonomy and evolutionary levels): Level 2 strategic-reasoning contrast that introduces matched turn-based versus real-time interaction regimes inside one designed environment.
-- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for adversarial sequential planning, partial observability, and time-sensitive execution; avoid citing it for open-ended long-horizon autonomy.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong example of structured-state prompting, protocol mediation, continuous polling in real-time mode, and efficiency-aware rating.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong support for the strategy-execution gap, with the caveat that deployment latency is part of what the benchmark is measuring.
+- Best use in Section 1 (taxonomy and evolutionary levels): Level 2 strategic-reasoning contrast that introduces matched turn-based versus real-time interaction regimes inside one authored environment; useful for showing that temporal regime is a taxonomy axis, not just an implementation detail.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for adversarial sequential planning, partial observability, spatial tactical reasoning, and time-sensitive execution; avoid citing it for open-ended long-horizon autonomy.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of structured-state prompting, protocol mediation, continuous polling in real-time mode, efficiency-aware rating, and the way VLM visual grounding can trade spatial precision for action frequency.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong support for the strategy-execution gap, with the caveat that deployment latency, batching, and serving infrastructure are part of what the benchmark is measuring.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): GameBench, GAMABench, and other structured strategic-game evaluations
@@ -113,8 +113,9 @@
 - The paper explicitly notes that real-time performance is shaped not only by model architecture but also by deployment conditions such as optimized inference infrastructure.
 
 ### 11.2 Our synthesis / interpretation
-- This is a strong contrast card for Sections 2.6, 3, and 4 because it shows that better reasoning is not enough if inference speed collapses execution quality.
+- This is a strong contrast card for Sections 2.2, 3, and 4 because it shows that better reasoning is not enough if inference speed collapses execution quality.
 - The benchmark is more valuable as controlled evidence for dynamic adversarial reasoning under interface abstraction than as a broad anchor on ecological gameplay or game diversity.
+- It is especially useful for the Purpose-to-Paradigm transition: the same strategic game substrate supports different capability claims once the interaction regime changes from turn-based deliberation to real-time polling.
 
 ### 11.3 Uncertain or needs re-check
 - Real-time performance partly entangles model quality with serving stack efficiency and batching policy; cross-paper comparison should keep that caveat explicit.
@@ -127,7 +128,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
@@ -136,4 +137,4 @@
 - Paper card path: `paper_cards/B02/BeyondScaling.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

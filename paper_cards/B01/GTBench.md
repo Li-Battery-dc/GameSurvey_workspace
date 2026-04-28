@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2402.12348v2
 - Code link: https://github.com/jinhaoduan/GTBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; because many tasks are classic, the benchmark is strong for formal comparison but weaker on contamination resistance
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Formal evidence that games can operationalize rule-constrained interaction and strategic incentives with exact scoring, but not evidence of human-like play.
-- Best use in Section 1 (taxonomy and evolutionary levels): Core anchor for the formal game-theoretic branch and for the L1-to-L2 bridge from legal action generation to strategic reasoning.
-- Best use in Section 2 (core capabilities evaluated by games): Supports claims about rule grounding, strategic planning under uncertainty, bluffing, bidding, and opponent modeling as separable targets.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong contrast case for privileged text-state interfaces, legal-action exposure, solver anchors, and mixed evaluation layers such as NRA, Elo, regret, and Pareto analysis.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that strong formal control improves diagnosis but leaves contamination and ecological-validity problems unresolved.
+- Best use in Section 0 (lead-in and benchmark motivation): Formal evidence that games turn strategic incentives, action consequences, and opponent interaction into exact benchmark evidence; use with the caveat that GTBench supports controlled reasoning evaluation, not human-like play.
+- Best use in Section 1 (taxonomy and evolutionary levels): Core anchor for the formal game-theoretic branch and the Level 1-to-Level 2 bridge. Its ten OpenSpiel-based tasks explicitly span complete/incomplete information, static/dynamic interaction, and deterministic/probabilistic regimes.
+- Best use in Section 2 (core capabilities evaluated by games): Supports claims that strategic reasoning can be decomposed into board strategy, bidding/auction behavior, bluffing, collaboration, math, and opponent modeling. It also shows that performance differs sharply by information regime: LLMs collapse against MCTS in complete deterministic games but are more competitive in several probabilistic or incomplete-information games.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for the evaluation-contract discussion: GTBench combines prompt adapters, legal-action text interfaces, MCTS/Tit-for-Tat/random baselines, 50 valid matches with first-player balancing, NRA, Elo, error profiles, regret, and Pareto-efficiency analysis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that formal control improves diagnosis but does not solve prompt sensitivity, limited action/state coverage, possible task familiarity, illegal-action generation, or ecological-validity limits.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): individual game-theory evaluations and smaller multi-agent game studies
@@ -107,6 +107,8 @@
 - The benchmark is built on OpenSpiel and compares LLMs against MCTS opponents for most games, Tit-for-Tat for Iterated Prisoner’s Dilemma, random baselines, and other LLMs.
 - Each competition uses 50 valid matches with first-player balancing, and the paper reports NRA plus Elo-style leaderboard results.
 - The paper reports that all tested LLM agents achieve at least 90% completion rate, that code pretraining helps strategic reasoning, and that CoT or ToT do not consistently improve performance.
+- The paper manually analyzes error patterns including misinterpretation, factual error, overconfidence, calculation error, and endgame misdetection.
+- The limitations section explicitly notes dependence on predefined prompt templates, prompt sensitivity, limited action/state spaces, and possible illegal generated actions.
 
 ### 11.2 Our synthesis / interpretation
 - GTBench is one of the strongest papers for the survey’s formal-roots story because it turns benchmark taxonomy, solver anchoring, and evaluation design into part of the contribution rather than treating them as implementation detail.
@@ -123,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B01
@@ -131,4 +133,4 @@
 - Survey role: anchor
 - Paper card path: `paper_cards/B01/GTBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

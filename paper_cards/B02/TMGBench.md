@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2410.10479v2
 - Code link: https://github.com/PinkEx/TMGBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -90,9 +90,9 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Very limited use only; it can caution that formal game benchmarks can respond to coverage and leakage concerns without becoming ecological.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful contrast showing a later formal branch that reacts to low-coverage classical-game studies by moving to topology coverage and synthetic reframing.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful contrast showing a later formal branch that reacts to low-coverage classical-game studies by moving to topology coverage, synthetic reframing, and compositional variants while remaining inside Level 2 formal diagnostics.
 - Best use in Section 2 (core capabilities evaluated by games): Limited use only; cite it narrowly for equilibrium reasoning, context-reframing robustness, or ToM prompting inside formal game settings, not for broad strategic-agent capability.
-- Best use in Section 3 (interaction and evaluation paradigm): Strongest landing point: semantic privilege, exact-answer grading, synthetic story reframing, and benchmark-specific anti-leakage logic.
+- Best use in Section 3 (interaction and evaluation paradigm): Strongest landing point: semantic privilege, exact-answer grading, symmetry-aware diagnostic metrics, synthetic story reframing, and benchmark-specific anti-leakage logic.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Contrast-only source for the point that better formal coverage and cleaner diagnostics still do not solve ecological validity or cross-benchmark comparability.
 
 ## 10. Relation to nearby papers
@@ -113,6 +113,7 @@
 ### 11.2 Our synthesis / interpretation
 - TMGBench is more useful as a design-side contrast on topology coverage, synthetic reframing, and leakage-aware formal evaluation than as a main source for broad strategic benchmark evolution.
 - In our survey, it should sit beside GTBench and GAMABench as a narrow formal comparison case, while broader Level 2 claims should lean more on GameBench, DSGBench, or BeyondScaling.
+- It is a useful Paradigm example because it shows how exact diagnostic metrics can be made very strong inside a closed formal space, while ecological validity and cross-benchmark comparability remain weak.
 
 ### 11.3 Uncertain or needs re-check
 - If we later need stronger claims about data quality, re-check Appendix E for the human-review loop because it is described procedurally rather than through inter-annotator statistics.
@@ -125,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P3
 - Reading depth: deep
 - Batch ID: B02
@@ -133,4 +134,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B02/TMGBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

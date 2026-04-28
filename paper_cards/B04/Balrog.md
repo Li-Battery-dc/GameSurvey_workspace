@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2411.13543v2
 - Code link: https://github.com/balrog-ai/BALROG
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; results depend strongly on wrappers, textification choices, and invalid-action handling
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can still challenge frontier multimodal models on long-horizon interaction.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move from narrow formal probes toward broader ecological suites, while still exposing heavy interface abstraction.
-- Best use in Section 2 (core capabilities evaluated by games): Supports planning, exploration, spatial reasoning, and long-context decision-making claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison case for language wrappers, optional image observations, per-environment normalization, and invalid-action fallback.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence for exploration and planning failures, plus a cautionary case on interface privilege inside "ecological" benchmarks.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can still challenge frontier multimodal models on long-horizon interaction even when observations and actions are standardized through wrappers.
+- Best use in Section 1 (taxonomy and evolutionary levels): Represents the move from narrow formal probes toward broader ecological suites, while still exposing heavy interface abstraction rather than pure human-like play.
+- Best use in Section 2 (core capabilities evaluated by games): Supports planning, exploration, spatial reasoning, long-context decision-making, and the gap between knowing a rule-like action space and using it effectively over an episode.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison case for language wrappers, optional image observations, recent-history prompting, per-environment normalization, and invalid-action fallback.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Strong evidence for exploration and planning failures, VLM degradation under some image-observation settings, and interface privilege inside "ecological" benchmarks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): environment-specific benchmark lines such as BabyAI, Crafter, MiniHack, NetHack, and TextWorld, plus earlier rule-grounded agent benchmarks
@@ -107,10 +107,13 @@
 - The reported baselines are zero-shot: agents output natural-language actions from language-wrapped observations, with optional current-frame images in VLM mode.
 - Scores are standardized to a 0-100 progression scale, with a bespoke progression metric for NetHack.
 - The environments are procedurally generated, and the paper reports strong performance gaps between easier suites and the hardest long-horizon tasks.
+- The protocol exposes recent interaction history and applies environment-specific handling for invalid natural-language actions rather than requiring low-level motor control.
+- The paper reports that MiniHack and NetHack remain nearly unsolved and that adding images can hurt some VLM agents relative to language-only prompting.
 
 ### 11.2 Our synthesis / interpretation
 - BALROG is best used as a bridge paper: it broadens ecological scope substantially, but its wrappers still make it an interface-privileged benchmark rather than a human-like play benchmark.
 - Its paired language-only and VLM settings make it especially useful for discussing how interface design can dominate conclusions about multimodal agent competence.
+- It is a good "broad but mediated" counterpoint to StarBench, FlashAdventure, VideoGameBench, and PokeGym, which retain more raw visual or GUI burden but cover narrower game families.
 
 ### 11.3 Uncertain or needs re-check
 - Recheck the appendices if we later need exact per-environment task counts, the full observation prompts, or the precise NetHack progression construction.
@@ -122,12 +125,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B04
 - Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B04/Balrog.md`
-- Next action: draft-section
-- Last updated: 2026-04-10
+- Check status: unchecked
+- Last updated: 2026-04-27

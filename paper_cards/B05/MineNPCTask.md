@@ -7,8 +7,8 @@
 - Paper link: https://arxiv.org/pdf/2601.05215.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
-- Confidence in this card: medium
+- Card status: finalized
+- Confidence in this card: high
 - Review gate label: usable
 
 ## 1. One-paragraph benchmark summary
@@ -31,7 +31,7 @@
 ### 3.2 Mechanics profile
 - State visibility: mixed
 - Transition uncertainty: mixed
-- Actor configuration: single-agent
+- Actor configuration: mixed; one evaluated NPC agent operates with a human requester/player in the loop
 - Incentive structure: cooperative
 - Temporal regime: hybrid
 
@@ -70,10 +70,10 @@
 - Main score: validator-based subtask completion
 - Auxiliary score(s): failure breakdowns, repair traces, and participant experience measures
 - Evaluation style: completion rate / process-level / hybrid
-- Human baseline / AI anchor / self-play / model-vs-model setup: initial benchmark instantiation evaluates GPT-4o across player-authored tasks from 8 experienced players
+- Human baseline / AI anchor / self-play / model-vs-model setup: initial benchmark instantiation evaluates GPT-4o across player-authored tasks from 8 experienced players; no cross-model comparison or controlled human baseline is reported
 - Automatic verifiability: high
 - Calibration method: explicit preconditions, dependency structure, single-turn clarification, and machine-checkable validators under a bounded-knowledge policy
-- Anti-contamination argument: tasks come from user-authored co-play rather than synthetic benchmark prompts, and evaluation is grounded in in-world evidence
+- Anti-contamination argument: tasks come from user-authored co-play rather than synthetic benchmark prompts, and evaluation is grounded in in-world evidence; contamination control is not the paper's central claim
 - Reliability or comparability concerns: the current empirical snapshot is narrow and depends on one bounded harness design plus one primary model snapshot
 
 ## 7. Main contributions
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that fair open-world evaluation depends heavily on bounded policies and validator design
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can ground realistic, multi-step user requests in a verifiable environment.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a recent Minecraft benchmark that adds memory and mixed initiative to the lineage. Good open-world cooperative benchmark with validator-based evaluation, but not a visual-agency anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for long-horizon memory, repair, and task completion.
-- Best use in Section 3 (interaction and evaluation paradigm): Important for natural-language clarification plus tool or API execution. Strong example of machine-checkable validators and bounded benchmark policies.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that memory and repair remain fragile even in heavily instrumented open-world setups.
+- Best use in Section 0 (lead-in and benchmark motivation): Evidence that games can ground realistic multi-step user requests in a world where progress, failure, and repair can be checked against in-game state.
+- Best use in Section 1 (taxonomy and evolutionary levels): Recent `World` / `Adapted` / single-game Minecraft benchmark for the long-horizon memory-and-repair lineage; useful as a cooperative/mixed-initiative open-world case, not as a visual-agency or cross-game anchor.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for long-horizon task planning, memory reuse, clarification, precondition reasoning, inventory/tool handling, navigation, and repair under user-authored goals.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong example of a bounded API-mediated interaction contract: public Mineflayer APIs, loaded-chunk evidence, single-turn clarifications, validator-backed judging, capped code-review retries, and logged repair loops.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that memory and repair remain fragile even when raw visual perception and low-level motor control are removed; also shows why open-world evaluation depends on validator design and denominator-aware reporting.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo, TeamCraft, MCU, Minecraft NPC and agent work
@@ -106,11 +106,15 @@
 - The benchmark builds on player-authored Minecraft requests collected through formative and summative co-play with expert players.
 - The harness uses explicit preconditions, machine-checkable validators, single-turn clarification, and public Mineflayer APIs under a bounded-knowledge policy.
 - In the initial snapshot, GPT-4o is evaluated on 44 tasks comprising 216 subtasks across 8 experienced players, with 71 subtask failures concentrated in code execution, inventory or tool handling, referencing, and navigation.
+- The framework forbids admin commands, global map or seed introspection, and scans beyond loaded chunks; violations are invalidated.
+- The paper explicitly states that the empirical snapshot includes no ablations or cross-model comparisons.
+- The limitations section notes that the suite is modest in size, expert-elicited, and specific to Minecraft with a Mineflayer client under the bounded-knowledge policy.
 
 ### 11.2 Our synthesis / interpretation
 - MineNPC-Task is one of the more realistic recent cards for Section 6 because it focuses on how open-world agents fail in actual mixed-initiative use.
 - It is especially useful as a bridge from sandbox-game benchmarks to benchmark-design questions about fairness and bounded evaluation.
 - It should support the scaffolded-API and mixed-initiative discussion, not the visual-agency narrative.
+- It is also a good evidence card for repair and failure taxonomy, because pass/fail validators are paired with logged plan deltas, clarifications, repairs, and failure categories.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact mapping from 44 high-level tasks to task families and the formal success metric if we later compare it quantitatively with TeamCraft or MCU.
@@ -122,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05

@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2510.18483v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -132,12 +132,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B04
 - Outline sections: 0,1,2,3,4
 - Survey role: anchor
 - Paper card path: `paper_cards/B04/StarBench.md`
-- Next action: draft-section
-- Last updated: 2026-04-16
+- Check status: unchecked
+- Last updated: 2026-04-27

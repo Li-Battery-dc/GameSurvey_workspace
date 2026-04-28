@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2601.18077v2.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -54,7 +54,7 @@
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no as a benchmark protocol; the paper separately tests whether HanabiRewards fine-tuning transfers to non-Hanabi cooperation and reasoning tasks
 - Why is a game environment especially suitable here? Hanabi requires reasoning about what teammates know, which makes cooperative cognition measurable through actual score and move quality.
 
 ## 5. Interaction paradigm
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it highlights how much cooperative-benchmark results can change when memory and context engineering change
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that cooperative games reveal hidden-state reasoning limits that ordinary QA misses.
-- Best use in Section 1 (taxonomy and evolutionary levels): Supportive contrast inside the cooperation branch rather than a level-defining taxonomy anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Directly supports cooperation, ToM, and working-memory claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Helpful when discussing context engineering and memory scaffolds. Useful for comparing native score with scaffolded and trainable evaluation setups.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that social competence often depends on explicit memory support.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that cooperative games expose hidden-state reasoning, working-memory, and partner-modeling limits that ordinary QA misses.
+- Best use in Section 1 (taxonomy and evolutionary levels): Supportive Level 3 cooperation example rather than a level anchor: Hanabi is an adapted Match benchmark whose evidential role changes substantially under different scaffolds.
+- Best use in Section 2 (core capabilities evaluated by games): Direct Purpose support for cooperative reasoning, ToM-like hint interpretation, and state tracking across 2-5 player imperfect-information play.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong Paradigm example for scaffold sensitivity: Watson, Sherlock, and Mycroft show how engine-provided deductions, explicit memory, and legal-action lists change what "Hanabi performance" measures.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the bottleneck claim that social/cooperative competence is highly scaffold-dependent; it also shows how benchmark trajectories can become post-training resources, with verifiability caveats.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): LLM-Hanabi, earlier Hanabi AI work, cooperative ToM evaluations
@@ -108,13 +108,14 @@
 - The best reasoning models score roughly 15-18/25, while specialist agents and strong human play remain above 20/25.
 - The authors release HanabiLogs with 1,520 annotated trajectories and HanabiRewards with 560 games carrying move-level utilities.
 - RL fine-tuning a 4B Qwen model on HanabiRewards improves Hanabi performance by up to 156% and transfers to external cooperation and temporal-reasoning tasks.
+- In all prompt settings, agents choose from provided legal candidate actions and rate candidate moves; HanabiRewards uses these move-level utility ratings even though the paper notes the reward is not strictly verifiable.
 
 ### 11.2 Our synthesis / interpretation
 - This paper is more than a raw benchmark card: it shows that cooperative results depend heavily on scaffold design and that benchmark trajectories can be repurposed for post-training.
 - It is useful as a bridge from pure evaluation to benchmark-plus-training-resource work in cooperative games.
 
 ### 11.3 Uncertain or needs re-check
-- Re-check the exact cross-play protocol and the strongest out-of-domain transfer numbers if we later use them in Section 7.
+- Re-check the exact cross-play protocol and the strongest out-of-domain transfer numbers if we later use them in Section 4 or any later future-work section.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? Completed in this audit; the experiment setup, benchmark results, cross-play, fine-tuning, and future-work sections are now checked against the full paper and source.
@@ -123,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -132,4 +133,4 @@
 - Paper card path: `paper_cards/B03/StrategicHanabi.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

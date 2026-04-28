@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2505.18134v2.pdf
 - Code link: https://github.com/alexzhang13/videogamebench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -127,7 +127,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
@@ -135,4 +135,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B04/VideoGameBench.md`
 - Check status: unchecked
-- Last updated: 2026-04-15
+- Last updated: 2026-04-27

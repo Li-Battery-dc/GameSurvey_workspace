@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2412.05255v1.pdf
 - Code link: https://github.com/teamcraft-bench/teamcraft
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,16 +89,16 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; centralized success can mask weak decentralized coordination, and the benchmark still relies on MineFlayer rather than end-to-end low-level control
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why open-world games are strong testbeds for embodied collaboration.
-- Best use in Section 1 (taxonomy and evolutionary levels): A key multi-agent multimodal benchmark in the Minecraft lineage. Use it as a cooperative visual-agent benchmark, not as a cross-game generalization anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Supports claims about coordination, visual grounding, and workload allocation.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong example of multimodal prompts specifying collaborative tasks, MineFlayer-backed high-level action interfaces, and centralized-versus-decentralized evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for explicit communication and better decentralized agent modeling.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates why open-world-style games are useful for embodied collaboration: goals, scene layout, inventories, and team allocation interact over time.
+- Best use in Section 1 (taxonomy and evolutionary levels): Key L3/L4 bridge in the Minecraft lineage: use it as a cooperative visual-agent World benchmark, not as Level 5 cross-game transfer evidence.
+- Best use in Section 2 (core capabilities evaluated by games): Supports Purpose claims about multimodal coordination, visual grounding, workload allocation, decentralized team awareness, and within-environment Goal/Scene/Agents generalization.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong Paradigm example of mixed observations and semantic actions: first-person RGB plus orthographic goal views are paired with MineFlayer high-level skills and centralized/decentralized control tracks.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports bottleneck claims about weak decentralized coordination, redundant work, poor 3D spatial grounding, and the gap between high-level skill wrappers and end-to-end native control.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo, MineRL, Marlo
 - Closest follow-up(s): MCU, StarDojo
-- Best comparison targets inside our corpus: CollabOvercooked, AvalonBench, WerewolfArena, Wolf
+- Best comparison targets inside our corpus: CollabOvercooked, LLMCoordination, StrategicHanabi, MCU, StarDojo
 - What this paper uniquely adds relative to neighbors: It centers multimodal multi-agent collaboration in Minecraft, with explicit Goal/Scene/Agents generalization splits and a centralized-versus-decentralized comparison rather than single-agent open-world play.
 
 ## 11. Evidence notes
@@ -106,6 +106,7 @@
 - TeamCraft contains 55,000 unique task variants with one expert demonstration each.
 - It uses multimodal prompts with three orthographic views, first-person RGB observations, inventory state, and eight MineFlayer-backed high-level actions over Minecraft.
 - The benchmark evaluates task success, subgoal success, and redundancy on held-out Goal, Scene, and Agents splits, and reports much worse performance in decentralized settings.
+- The full evaluation contains 950 test cases, and GPT-4o one-shot prompting fails on almost all test cases because of spatial-relation and action-argument errors.
 
 ### 11.2 Our synthesis / interpretation
 - TeamCraft is one of the strongest corpus papers for cooperative multimodal environments.
@@ -123,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -132,4 +133,4 @@
 - Paper card path: `paper_cards/B03/TeamCraft.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

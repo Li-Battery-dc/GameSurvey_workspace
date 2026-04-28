@@ -6,8 +6,8 @@
 - Authors: Oguzhan Topsakal, Colby J. Edell, Jackson B. Harper
 - Paper link: https://dergipark.org.tr/en/download/article-file/4483558
 - Code link: https://github.com/research-outcome/LLM-Game-Benchmark
-- Reading depth: structured-skim
-- Card status: card-reviewed
+- Reading depth: deep
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -62,7 +62,7 @@
 - Action channel: JSON row and column move proposals
 - Interface type: natural language / structured action space / image / hybrid
 - Agent scaffold allowed: none
-- Is there privileged API access? no
+- Is there privileged API access? mixed; list and illustration tracks expose simulator-produced board state, invalid-move warnings, and retry counts, while the image track retains more visual parsing burden.
 - How close is the setup to human play? low
 - Main ecological-validity trade-off: the benchmark is highly controlled, but direct symbolic state exposure, retry warnings after invalid moves, and tiny solved games make it more diagnostic of interface handling than of broader game-agent competence
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; prompt representation and multimodal support can dominate what appears to be strategic competence in simple board games
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Limited supporting example that games provide exact legal-action checks and a clear random-play contrast.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a small deterministic board-game probe, but too narrow to act as a main historical anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of rule following, board-state encoding, and simple deterministic strategy rather than rich planning.
-- Best use in Section 3 (interaction and evaluation paradigm): Strongest use case. Helpful for comparing symbolic versus illustrative versus image inputs, JSON action formatting, invalid-move handling, and leaderboard-style aggregation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the caution that tiny canonical games and multimodal interface burdens can confound claims about genuine strategic competence.
+- Best use in Section 0 (lead-in and benchmark motivation): Limited support that even simple games expose closed-loop action validity, exact win/draw/loss outcomes, and a random-play contrast; avoid using it as broad evidence for complex agent intelligence.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful lower-bound Level 1/2 case for deterministic grid-game probes. It fits as a game-family benchmark rather than a historical anchor because the game set is tiny and canonical.
+- Best use in Section 2 (core capabilities evaluated by games): Supports rule following, board-state encoding, simple deterministic strategy, and the distinction between recognizing one's own win and blocking the opponent's imminent win.
+- Best use in Section 3 (interaction and evaluation paradigm): Strongest use. It directly compares list, illustration, and image prompt tracks under the same games, uses JSON action formatting and invalid-move/disqualification rules, and adds missed win/block opportunities as process-level diagnostics.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports cautions that canonical solved games, prompt representation, multimodal support, retry warnings, and small repeat counts can dominate apparent strategic competence.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): earlier Tic-Tac-Toe-only board-game evaluations and GTBench-style formal game probes
@@ -108,6 +108,8 @@
 - Each pairing is repeated five times per game and prompt combination, with invalid-move limits of three for Tic-Tac-Toe, six for Connect Four, and fifteen for Gomoku; the full study reports 2,310 simulated matches.
 - The reported leaderboard aggregates win ratios, wins, disqualifications, invalid moves, and total moves, and the paper also analyzes missed win or block opportunities per valid move.
 - List prompts are generally easiest, while illustration and image prompts lead to more failures as game complexity increases; the paper notes no out-of-bounds errors and attributes many invalid moves to already occupied spaces.
+- The prompt includes game explanation, current state, role, JSON response format, invalid-move definition, prior invalid-move warning, and remaining invalid-move count.
+- The paper's limitations explicitly note possible familiarity with canonical games, the need for altered or novel rulesets, only five repeats per combination, missing full game history, and possible prompt-engineering confounds.
 
 ### 11.2 Our synthesis / interpretation
 - This is best treated as a narrow controlled contrast case at the lower end of the design space, not as a rich benchmark of long-horizon game agency.
@@ -123,12 +125,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
-- Reading depth: structured-skim
+- Reading depth: deep
 - Batch ID: B01
 - Outline sections: 1,2,3
 - Survey role: contrast
 - Paper card path: `paper_cards/B01/GridBasedGameCompetitions.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

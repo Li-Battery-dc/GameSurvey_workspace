@@ -7,8 +7,8 @@
 - Paper link: https://arxiv.org/pdf/2508.08501v2
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
-- Confidence in this card: medium
+- Card status: finalized
+- Confidence in this card: high
 - Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
@@ -16,7 +16,7 @@
 
 ## 2. Position in our survey
 - Why-games relevance: Procedurally extensible game families let us probe reasoning, planning, and symbolic grounding beyond fixed benchmark sets.
-- Historical stage: diagnostic capability probe
+- Historical stage: diagnostic capability probe / open-ended symbolic-game benchmark
 - Benchmark level(s): L1 rule understanding / L2 strategic reasoning / L5 cross-game generalization
 - Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
@@ -25,7 +25,7 @@
 ### 3.1 Structure
 - Form: Mixed
 - Construction: Generated
-- Construction note: simulated game family built on GVGAI
+- Construction note: built on the GVGAI Java engine and VGDL rule/level descriptions; the audited release evaluates a broad fixed set, while the formal game-description language enables rapid creation of new games and levels
 - Benchmark unit: full level
 
 ### 3.2 Mechanics profile
@@ -36,7 +36,7 @@
 - Temporal regime: turn-based
 
 ### 3.3 Benchmark scope
-- Scope: game family
+- Scope: expandable suite
 - Number of games / tasks: 118 games with up to 5 levels each
 
 ### 3.4 Modality
@@ -54,7 +54,7 @@
 - Does it test visual grounding / spatial-temporal reasoning? partially, in symbolic form
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? yes, in the symbolic GVGAI sense: broad rule/level diversity and VGDL extensibility, not raw commercial-game transfer
 - Why is a game environment especially suitable here? GVGAI supplies a large, extensible set of rule-based environments where performance remains far from saturated and easy to verify.
 
 ## 5. Interaction paradigm
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the zero-shot symbolic interface is useful diagnostically but not ecologically realistic
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows why procedurally extensible game families resist saturation better than fixed task sets.
-- Best use in Section 1 (taxonomy and evolutionary levels): Strong example of the GVGAI lineage entering LLM benchmarking. Important symbolic-game family comparison point.
-- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for spatial reasoning and rule-grounding limits.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful as a privileged symbolic-state foil to visual and native-control benchmarks. Strong metric-design example.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic access can clarify failure modes but weakens ecological claims.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows why dynamic game environments add evidence beyond static QA: even with exact symbolic state and translated rules, models fail to turn rule descriptions into consistent action over time.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong Level 5 symbolic-lineage example. It extends the older GVGAI general-game-playing tradition into LLM evaluation through a VGDL-backed, extensible game space rather than a small hand-picked title list.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for the boundary between rule exposure and usable game competence: LLMs receive rules, entity mappings, available actions, ASCII maps, and avatar position, yet still exhibit spatial misalignment, symbolic identity confusion, weak planning, and repeated ineffective actions.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful privileged symbolic-state foil to visual/native-control benchmarks. It is also a strong process-metric example because meaningful step ratio and step efficiency make failure visible even when win rate is low.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic access can clarify failure modes and reduce perception confounds, but it weakens ecological claims because the default agent has no trajectory memory and no raw perceptual burden.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): original GVGAI, SmartPlay, symbolic planning benchmarks
@@ -104,12 +104,15 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - GVGAI-LLM is built on the original GVGAI framework and exposes game rules plus ASCII scene descriptions to LLMs.
-- The benchmark evaluates 118 games with up to five levels each and reports meaningful step ratio, step efficiency, win rate, reward, and an aggregated overall score.
-- The paper finds persistent spatial and logical errors, limited gains from coordinate tagging, and large latency gaps relative to MCTS.
+- The benchmark evaluates 118 games with up to five levels each; the full-benchmark GPT-4o-mini pass runs one episode per level, and the multi-model comparison uses six representative games with five levels and repeated runs.
+- The default prompt includes static rule description, action mapping, current game state, sprite mapping, and avatar position, but excludes past states and past actions.
+- The paper reports meaningful step ratio, step efficiency, win rate, normalized reward, and an equal-weighted overall score.
+- The paper finds persistent spatial and logical errors, limited/non-significant gains from coordinate tagging across six spatial games, and large latency gaps relative to MCTS.
 
 ### 11.2 Our synthesis / interpretation
 - This is one of the clearest cards for discussing anti-saturation through procedural breadth without requiring raw visual perception.
 - It is especially valuable when contrasting symbolic access against ecological realism.
+- It should be cited as Level 5 expandable-symbolic evidence, not as human-like visual agency evidence.
 
 ### 11.3 Uncertain or needs re-check
 - The benchmark intentionally removes memory and trajectory history, so it should not be used as direct evidence about long-horizon agent coherence without that caveat.
@@ -122,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06

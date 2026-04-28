@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2505.14552v2
 - Code link: https://github.com/multimodal-art-projection/KORGym
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -90,9 +90,9 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Limited use only; it supports the claim that games can scale beyond single-turn reasoning tests, but it is not a primary motivation anchor.
-- Best use in Section 1 (taxonomy and evolutionary levels): Use as a Level 2 breadth case where multi-game reasoning coverage grows through platform engineering and dimension aggregation, not as a Level 5 transfer benchmark.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as a Level 2 breadth case where multi-game reasoning coverage grows through platform engineering, dimension aggregation, and standardized APIs, not as a Level 5 transfer benchmark.
 - Best use in Section 2 (core capabilities evaluated by games): Useful for showing how one API-mediated suite bundles mathematical, puzzle, spatial, control, strategic, and multimodal reasoning into one diagnostic benchmark.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for standardized game APIs, controllable difficulty, RL-compatible environment design, and dimension-aware score aggregation across heterogeneous tasks.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for standardized `generate` / `print_board` / `verify` APIs, controllable difficulty, RL-compatible environment design, and dimension-aware score aggregation across heterogeneous tasks.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Contrast-only use for the trade-off between platform breadth and interpretability; do not use it as evidence of open-ended generalization.
 
 ## 10. Relation to nearby papers
@@ -114,6 +114,7 @@
 - KORGym is best treated as a broad Level 2 reasoning platform, not as Level 5 cross-game generalization evidence.
 - Its survey value comes from scale, API unification, and aggregation design, especially as a bridge between smaller strategic suites and larger benchmark-platform engineering papers.
 - Its knowledge-orthogonality framing is a design aspiration and formal motivation, not a demonstrated proof that contamination risk or memorization effects are negligible.
+- It is useful for the taxonomy boundary between `curated suite` and `expandable suite`: the platform is described as extensible, but the reported evidence comes from a fixed evaluated suite.
 
 ### 11.3 Uncertain or needs re-check
 - The paper describes the suite as continuously expandable, but it does not evaluate held-out-game transfer or a true open-ended expansion protocol; avoid collapsing those ideas together in survey prose.
@@ -127,7 +128,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
@@ -135,4 +136,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B02/KORGym.md`
 - Check status: unchecked
-- Last updated: 2026-04-21
+- Last updated: 2026-04-27

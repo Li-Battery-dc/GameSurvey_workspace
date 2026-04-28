@@ -7,7 +7,7 @@
 - Paper link: https://openreview.net/pdf?id=c4OGMNyzPT
 - Code link: https://github.com/xinke-wang/LVLM-Playground
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -133,7 +133,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B04
@@ -141,4 +141,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B04/LVLMGamePlayers.md`
 - Check status: unchecked
-- Last updated: 2026-04-21
+- Last updated: 2026-04-27

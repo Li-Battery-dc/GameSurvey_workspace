@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2508.03368v3
 - Code link: https://github.com/SLAMPAI/game_reasoning_arena
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the paper is stronger on framework design than on a large decisive empirical comparison
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast for process-level inspection of reasoning traces rather than a lead-in anchor.
-- Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from isolated benchmark scripts to reusable benchmark infrastructure. Best read as an early multi-game diagnostic bridge inside rule-grounded strategic games, not as a Level 5 generalization paper.
-- Best use in Section 2 (core capabilities evaluated by games): Narrow comparison case for strategic reasoning under a shared prompt wrapper, not a core capability anchor.
-- Best use in Section 3 (interaction and evaluation paradigm): Good illustration of OpenSpiel-state-to-prompt wrappers, structured reasoning directives, and JSON-style output constraints. Relevant for reasoning-trace analysis and optimality-oriented metrics.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of why rationale logging is useful but imperfect.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor support only. Use it to show that games permit process-level inspection of decisions and rationales, not as a lead-in anchor for the whole survey.
+- Best use in Section 1 (taxonomy and evolutionary levels): Helps show the move from isolated game scripts to reusable benchmark infrastructure. Best read as a Level 1/2 diagnostic bridge inside rule-grounded strategic games, not as a Level 5 generalization paper.
+- Best use in Section 2 (core capabilities evaluated by games): Narrow comparison case for strategic reasoning under a shared prompt wrapper. It is useful for explaining how the same backend can expose different reasoning patterns across perfect-information, imperfect-information, and matrix-game structures.
+- Best use in Section 3 (interaction and evaluation paradigm): Strongest use. It illustrates OpenSpiel-state-to-prompt wrappers, legal-action exposure, optional move history, reasoning directives, JSON-style output constraints, reward/outcome logging, decision-optimality metrics, and post-hoc reasoning-profile analysis.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of why rationale logging helps failure analysis but remains approximate, heuristic-dependent, and weaker than calibrated gameplay anchors.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): OpenSpiel-based LLM game wrappers and earlier board-game prompting setups
@@ -107,6 +107,8 @@
 - Prompts are augmented with a reasoning directive and a structured schema specifying `reasoning` and `action` fields.
 - It records per-step rewards, outcomes, decision optimality, rationale features, and illegal or suboptimal move rates, and reports statistical comparisons with paired tests and bootstrap confidence intervals.
 - The current paper version includes tooling for categorizing reasoning traces, tracking cross-game reasoning profiles, and flagging hallucinations or rule violations.
+- The paper explicitly states that OpenSpiel checks action validity and mediates transition dynamics, while the LLM receives a text prompt containing current state, legal actions, and, for some games, past-move summaries.
+- The results section analyzes reasoning categories such as positional reasoning, opponent modeling, blocking, winning logic, heuristic-based reasoning, rule-based reasoning, and random/unjustified responses.
 
 ### 11.2 Our synthesis / interpretation
 - Board Game Arena is most useful as infrastructure evidence for Section 3 and as a Level 1/2 bridge, not as direct evidence for Level 5 cross-game generalization.
@@ -122,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B01
@@ -131,4 +133,4 @@
 - Paper card path: `paper_cards/B01/BoardGameArena.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-18
+- Last updated: 2026-04-27

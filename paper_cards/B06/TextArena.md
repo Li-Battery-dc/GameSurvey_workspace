@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2504.11442.pdf
 - Code link: https://github.com/TextArena/TextArena
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that public leaderboard design and model-pool drift become part of benchmark validity
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong contemporary example of games testing dynamic interaction beyond static QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful late-stage step from fixed suites to living benchmark platforms. Good anchor for broad curated text-game suites.
-- Best use in Section 2 (core capabilities evaluated by games): Supports social reasoning, deception, and competitive planning claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Helps anchor natural-language-only game interaction. Important for leaderboard, TrueSkill, and human-vs-model evaluation discussion.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for extensible, continuously updated benchmark ecosystems.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong contemporary example of games testing dynamic interaction beyond static QA, especially where model behavior depends on opponents, hidden information, negotiation, and evolving strategies.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful late-stage step from fixed suites to living benchmark platforms. Good anchor for broad curated text-game suites and for Level-5 suite expansion without visual/embodied burden.
+- Best use in Section 2 (core capabilities evaluated by games): Supports social reasoning, bluffing/deception, persuasion, uncertainty estimation, competitive planning, memory, and theory-of-mind claims. Avoid using it as evidence for visual grounding or embodied control.
+- Best use in Section 3 (interaction and evaluation paradigm): Helps anchor natural-language-only game interaction, Gym-style wrappers, model-vs-model/model-vs-human play, TrueSkill rating, human-as-leaderboard baseline, and soft-skill profiling.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for extensible, continuously updated benchmark ecosystems, while also illustrating leaderboard drift and game-pool dependence as validity risks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): clembench, game-specific social benchmarks, earlier text-game suites
@@ -103,17 +103,23 @@
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- TextArena is described as an open-source collection of 57+ unique text-based environments, and the paper notes that the collection had grown to 74 games by publication.
+- TextArena is described as an open-source collection of 57+ unique text-based environments, and Table 1 lists 74 environments by publication.
 - The framework supports single-player, two-player, and multi-player settings and connects them to online play against humans and submitted models.
 - The paper uses real-time TrueSkill ratings and explicitly highlights negotiation, theory of mind, and deception as key benchmark targets.
 - Table 1 breaks the current environment inventory down as 16 single-player, 47 two-player, and 11 multi-player environments.
+- TextArena initializes each model with TrueSkill `mu = 25` and `sigma = 25/3`; human players are collectively represented as `Humanity` on the leaderboard.
+- The paper reports 283 evaluated online models so far, including community submissions and 64 official models hosted by the platform.
+- Environments are tagged with up to five weighted soft skills drawn from Strategic Planning, Spatial Thinking, Pattern Recognition, Theory of Mind, Logical Reasoning, Memory Recall, Bluffing, Persuasion, Uncertainty Estimation, and Adaptability.
+- The environment inventory includes both classic strategic games and social/communication-heavy games such as Debate, IntegrativeDistributiveNegotiation, Iterated Prisoner's Dilemma, SimpleNegotiation, TruthAndDeception, Taboo, Poker, Diplomacy, SecretMafia, and Two Rooms and a Boom.
 
 ### 11.2 Our synthesis / interpretation
 - TextArena is one of the strongest missing pieces for the survey's paradigm section because it combines suite breadth with live leaderboard infrastructure.
 - It is also a useful bridge between narrow social-deduction benchmarks and broader agent-platform work.
+- Its evidence should be used as benchmark-platform evidence rather than as a stable fixed-score empirical comparison: rankings depend on active participants, model pool, selected games, and implementation state.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact environment taxonomy and whether the final version of the paper reports the full leaderboard roster or only a subset.
+- Some appendix game rows are marked as not fully implemented, so do not imply that every listed environment is equally mature.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? Full paper read completed for this audit; revisit only if we later need the exact online submission flow or the full environment appendix.
@@ -122,7 +128,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06

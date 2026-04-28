@@ -9,7 +9,7 @@ Use this reference when a final audit needs a tighter defect taxonomy, a batch-s
 - distorted result: the card changes setup, metric, scope, baseline, or conclusion
 - stale taxonomy: the card uses old stages, old outline sections, or broad labels that conflict with the current L1-L5 framework
 - wrong design-space code: Form, Construction, Scope, observation modality, or action modality is unsupported
-- writing-support gap: Section 9 does not say what claim the paper can support in the new `writing.md`/`script.md` framework
+- writing-support gap: Section 9 does not say what claim the paper can support in the new `writing.md`/`script.md` framework, especially across Taxonomy, Purpose, and Paradigm
 - unsupported citation target: the paper is cited or positioned for a claim it only weakly supports
 - comparison drift: Section 10 claims a relationship to nearby papers that current cards do not justify
 - missing caveat: the card omits a limitation that changes how the paper should be used
@@ -24,7 +24,7 @@ Audit these sections even when the rest of the card looks plausible:
 - Section 5: interface, scaffolds, privileged access, ecological-validity trade-off
 - Section 6: metrics, baselines, calibration, robustness, contamination claims
 - Section 8: empirical takeaways and failure modes
-- Section 9: exact survey use under Sections 0-4
+- Section 9: exact survey use under Sections 0-4, with Taxonomy/Purpose/Paradigm checked equally
 - Section 10: comparison targets and uniqueness claims
 - Section 11: boundary between direct evidence, synthesis, and uncertainty
 - Section 13: registry sync fields
@@ -60,6 +60,8 @@ For each finalized card, Section 9 should answer:
 - What exact Section 4 bottleneck or future-design claim can it support?
 - Is the paper direct support, a representative example, a contrast case, or only a caveat?
 - Does current `script.md` already cite or imply this paper in a way the audit supports or weakens?
+
+Give Sections 1-3 equal attention. The audit should discover and add possible supportable arguments for Taxonomy, Purpose, and Paradigm, not only validate the currently obvious landing point.
 
 Prefer claim families over generic praise. Example shape: "Supports the Level 4 knowing-doing gap by showing that raw visual/native-control play entangles perception, UI grounding, and recovery failures."
 

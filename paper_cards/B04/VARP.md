@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2409.12889v2
 - Code link: https://varp-agent.github.io/
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -41,7 +41,7 @@
 
 ### 3.4 Modality
 - Observation modality: mixed
-- Action modality: native control
+- Action modality: mixed
 - Perception burden retained: raw screenshots, enemy animations, sparse textual cues, UI icons, camera-view interpretation, and 3D navigation obstacles
 - Perception burden removed: direct game-state APIs are removed, but OCR, object detection, paused inference, predefined action functions, and optional human-guided retrieval reduce the burden of fully end-to-end play
 
@@ -115,6 +115,7 @@
 - The paper matters less as a final benchmark protocol than as an early articulation of the visual-centric, non-API problem in game-agent evaluation.
 - It should not be described as pure end-to-end human-like play: the benchmark removes game APIs, but the framework still depends on paused inference, OCR and detection aids, curated macro-actions, and optional human-guided retrieval.
 - Relative to later B04 papers, its evaluation backend is weak, but its action-channel discussion is unusually valuable because it makes the jump from semantic APIs to screenshot-grounded keyboard-mouse control explicit.
+- Its best paired use is with StarBench and PokeGym: VARP supplies the early ARPG non-API motivation, while the later papers provide cleaner interface comparisons or stricter evaluator isolation.
 
 ### 11.3 Uncertain or needs re-check
 - The paper does not fully specify how much of task success measurement is automated versus manually judged from gameplay outcomes, so later writing should avoid overstating backend verifiability.
@@ -128,7 +129,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
@@ -136,4 +137,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/VARP.md`
 - Check status: unchecked
-- Last updated: 2026-04-16
+- Last updated: 2026-04-27

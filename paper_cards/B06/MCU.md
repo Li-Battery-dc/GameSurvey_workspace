@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2310.08367v4
 - Code link: https://github.com/CraftJarvis/MCU
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -62,7 +62,7 @@
 - Action channel: mouse and keyboard actions in unmodified Minecraft
 - Interface type: GUI
 - Agent scaffold allowed: other (the benchmark is agent-agnostic, but the native interface itself is raw RGB plus mouse-keyboard control)
-- Is there privileged API access? no
+- Is there privileged API access? no for evaluated agents; diagnostic state such as inventory and GUI status is available only for tracking, recording, and evaluation
 - How close is the setup to human play? high; MCU preserves human-like observation and control more than most benchmark suites in this corpus
 - Main ecological-validity trade-off: MCU is highly ecological, but automated task setup and VLM judging introduce benchmark-specific assumptions.
 
@@ -89,27 +89,31 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the move to scalable automatic evaluation is necessary, but it shifts trust onto the evaluator itself
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that open-world games can support diverse, scalable agent evaluation.
-- Best use in Section 1 (taxonomy and evolutionary levels): Important step from small Minecraft task sets toward benchmark-scale coverage. Useful open-ended task-composition comparison point.
-- Best use in Section 2 (core capabilities evaluated by games): Direct evidence for planning, creativity, and error correction as distinct axes.
-- Best use in Section 3 (interaction and evaluation paradigm): One of the best raw-control ecological benchmarks in the corpus. Essential reference for automated evaluation in open-ended settings.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of VLM judges, task quality, and scalable evaluation design.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can support diverse, scalable agent evaluation because Minecraft combines a large open-world state space, human-like control, and programmable task instantiation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Important Level 5 example for single-world open-ended task generalization. It should be explicitly separated from cross-title transfer suites such as Orak/GameVerse and generated human-game platforms such as AI GameStore.
+- Best use in Section 2 (core capabilities evaluated by games): Direct evidence that open-ended task competence decomposes into planning, tool/material use, action control, creativity, error recognition/correction, and efficiency rather than binary completion alone.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the best raw-control ecological benchmarks in the corpus: agents receive 640x360 RGB observations and use mouse-keyboard actions in unmodified Minecraft, while evaluation uses VLM judging over trajectory videos.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports discussion of VLM judges, task quality, scalable task generation, and why open-ended benchmarks need process-level evaluation beyond success rate.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): MineDojo and earlier Minecraft task benchmarks
 - Closest follow-up(s): open-ended Minecraft and embodied agent evaluation platforms
-- Best comparison targets inside our corpus: InteractiveFictionGames, NetHackLearningEnvironment, TextQuests, TextAtari
+- Best comparison targets inside our corpus: StarDojo, MineNPCTask, TeamCraft, GameWorld, TextQuests
 - What this paper uniquely adds relative to neighbors: It makes large-scale task composition and automated open-ended evaluation central rather than incidental.
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - MCU includes 3,452 atomic tasks, 11 major categories, and 41 subcategories, with compositional task generation for further scaling.
 - The benchmark uses unmodified Minecraft with RGB observations and mouse-keyboard actions.
+- Task configuration generation uses an LLM to instantiate environment prerequisites, random factors, and task descriptions, then verifies/refines configurations through simulator feedback.
+- AutoEval evaluates trajectory videos with VLM-generated criteria and scores dimensions such as task progress, action control, error recognition and correction, creative attempts, task completion efficiency, and material selection/usage.
 - AutoEval is reported to reach 91.5% alignment with human ratings and to provide multi-dimensional assessment beyond binary task success.
+- The paper introduces MCU-Turbo as a canonical protocol with 80 atomic tasks and 20 compositional tasks under Simple and Hard regimes.
 
 ### 11.2 Our synthesis / interpretation
 - MCU is especially valuable for the survey because it separates open-ended task diversity from open-ended evaluation, then tackles both explicitly.
 - It is also one of the best cards for arguing that "success rate" alone is inadequate for open-ended game agents.
+- For Level 5, use MCU as single-world open-ended task evidence rather than cross-game generalization evidence.
 
 ### 11.3 Uncertain or needs re-check
 - MCU's strongest methodological claim still depends on a VLM judge and LLM-generated task configurations, so those components should stay visible in any survey use.
@@ -122,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06

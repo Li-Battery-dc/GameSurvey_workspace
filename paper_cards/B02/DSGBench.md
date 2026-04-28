@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2503.06047v1.pdf
 - Code link: https://github.com/DeciBrain-Group/DSGBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -91,8 +91,8 @@
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Use it to argue that win rate alone is too coarse and that different strategic games expose different slices of decision-making capability.
 - Best use in Section 1 (taxonomy and evolutionary levels): Represents a mature move from single-game probes to comparative multi-game diagnostic suites. Use it as broad curated-suite coverage, not as a full Level 5 transfer benchmark.
-- Best use in Section 2 (core capabilities evaluated by games): A direct source for theory-inspired strategic capability decomposition, but do not treat its five dimensions as a cleanly validated cognitive factorization.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing unified text interfaces across heterogeneous games, handcrafted metric families, weighted aggregation, and trajectory-based analysis.
+- Best use in Section 2 (core capabilities evaluated by games): A direct source for theory-inspired strategic capability decomposition across planning, real-time decisions, social reasoning, collaboration, and adaptation, but do not treat its five dimensions as a cleanly validated cognitive factorization.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful for discussing unified text interfaces across heterogeneous games, handcrafted metric families, metric normalization, weighted aggregation, and trajectory-based analysis as an explanatory layer around outcomes.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports claims about capability specialization, temporal/social weaknesses, and the trade-off between richer diagnostics and comparability.
 
 ## 10. Relation to nearby papers
@@ -113,6 +113,7 @@
 - DSGBench is a strong survey source for arguing that strategic-game evaluation benefits from theory-inspired subcapability breakdowns and metric families instead of collapsing everything into win rate.
 - The paper supports multi-dimensional strategic evaluation, but not a strict or validated decomposition of reasoning into independent cognitive factors.
 - Its breadth across multiple games does not by itself make it a Level 5 generalization benchmark; its safest use is as a broad diagnostic suite and interface-design contrast.
+- It can anchor the transition from Purpose to Paradigm: the same five capability labels only become usable evidence because DSGBench defines observation/action loops, per-game metrics, and trajectory tracking.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact values or justification of the capability weights and adjustment factors if later drafting uses the overall score directly.
@@ -126,7 +127,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
@@ -135,4 +136,4 @@
 - Paper card path: `paper_cards/B02/DSGBench.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

@@ -7,9 +7,9 @@
 - Paper link: https://arxiv.org/pdf/2109.06780.pdf
 - Code link: https://github.com/danijar/crafter
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
-- Review gate label: usable
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - Crafter is an open-world survival environment designed to evaluate a broad spectrum of agent abilities within a single game rather than across many separate benchmarks. Agents receive only raw 64x64 image observations and are scored through semantically meaningful achievements, which range from basic resource collection to tool creation and survival milestones. The paper's main benchmark argument is that a single, carefully designed world can reveal generalization, deep exploration, and long-horizon reasoning more efficiently than running many narrow tasks. For this survey, Crafter is an important historical precursor for later LLM and VLM game-benchmark work that uses one rich game world to test multiple capabilities.
@@ -33,7 +33,7 @@
 - Transition uncertainty: stochastic
 - Actor configuration: single-agent
 - Incentive structure: N/A
-- Temporal regime: real-time
+- Temporal regime: turn-based / step-based
 
 ### 3.3 Benchmark scope
 - Scope: single game
@@ -54,7 +54,7 @@
 - Does it test visual grounding / spatial-temporal reasoning? yes
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? partially
+- Does it test cross-game transfer / open-ended generalization? no for cross-game transfer; it tests procedural variation and achievement breadth inside one authored survival world
 - Why is a game environment especially suitable here? A survival world naturally builds dependency chains among resources, tools, and hazards, which lets a single environment test many abilities at once.
 
 ## 5. Interaction paradigm
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows both the value and the limits of using one environment as a proxy for many capabilities
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong early argument that one game can measure a wide capability spectrum under automatic scoring.
-- Best use in Section 1 (taxonomy and evolutionary levels): Important precursor to later open-world and general-capability game benchmarks. Useful for the distinction between single-world breadth and multi-game breadth.
-- Best use in Section 2 (core capabilities evaluated by games): Supports long-horizon planning, exploration, and visual grounding claims.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast against later heavily scaffolded LLM-agent interfaces. Good reference for achievement-based milestone scoring and geometric-mean aggregation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps motivate why later work moved from one broad environment to multi-game suites and open-world platforms.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong early argument that one game can be designed as a multi-capability benchmark when it combines survival pressure, resource dependencies, visual observations, and automatic milestone scoring.
+- Best use in Section 1 (taxonomy and evolutionary levels): Anchor for the `World` / `Authored` / single-game branch and for the distinction between single-world breadth, procedural variation, and true cross-game breadth.
+- Best use in Section 2 (core capabilities evaluated by games): Supports long-horizon planning, exploration, resource-chain reasoning, memory over partially observed maps, visual representation learning, and survival-oriented credit assignment as capability pressures.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong reference for milestone/process evaluation: 22 achievements, 1M-step budget, geometric-mean aggregation, per-achievement diagnostics, and a human expert reference score.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps explain both the value and the limitation of single-world capability spectra: they expose deep exploration and long dependency failures, but do not establish general-game transfer.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): earlier RL environments such as MiniGrid and Obstacle Tower
@@ -106,10 +106,13 @@
 - Crafter is an open-world survival game with visual input designed to evaluate a range of general abilities within one environment.
 - The benchmark uses 22 achievements, 17 discrete actions, and aggregates achievement success rates with a geometric mean over a 1M-step budget.
 - The paper argues that consistently unlocking the full set requires strong generalization, deep exploration, and long-term reasoning, and reports a large gap between RL agents and human experts.
+- The environment exposes privileged state only as debugging or auxiliary research information; benchmarked agents receive only the 64x64x3 image observation.
+- Reported baselines include DreamerV2, PPO, Rainbow, Plan2Explore, RND, and random actions, while a separate 5-expert / 100-episode human dataset provides a reference score.
 
 ### 11.2 Our synthesis / interpretation
 - Crafter is a key historical bridge from RL benchmark design to later LLM and VLM game benchmarks that claim to measure broad agent competence.
 - It is best treated as a precursor and conceptual anchor, not as an LLM benchmark in the narrow sense.
+- It should support claims about single-environment capability spectra and milestone scoring, not claims that many games or first-contact game transfer have been evaluated.
 
 ### 11.3 Uncertain or needs re-check
 - The environment exposes privileged world-state information for debugging, but that information is explicitly outside the core benchmark interface and should not be attributed to benchmarked agents.
@@ -122,7 +125,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05

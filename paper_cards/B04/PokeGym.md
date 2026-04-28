@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2604.08340v1.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -18,7 +18,7 @@
 - Why-games relevance: A 3D RPG quest world forces models to connect perception, navigation, object interaction, and delayed task structure in a way static multimodal tests cannot.
 - Historical stage: ecological agent benchmark
 - Benchmark level(s): L4 visual agency
-- Most relevant outline section(s): 2,3,4
+- Most relevant outline section(s): 1,2,3,4
 - Role in corpus: representative
 
 ## 3. Design-space coding
@@ -90,6 +90,7 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Good modern example of how games make perception, action, and recovery failures observable rather than merely inferable from final answers.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong representative Level 4 case because it preserves raw-pixel 3D RPG observation while keeping evaluator-only state access separate from the agent loop.
 - Best use in Section 2 (core capabilities evaluated by games): Direct support for visual grounding, spatial-temporal reasoning, long-horizon task completion, and recovery-after-error analysis.
 - Best use in Section 3 (interaction and evaluation paradigm): Strong evidence for pure-pixel evaluation without privileged state leakage, plus a clear automated-verification design using evaluator-only memory scanning.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): One of the best current cards for the claim that embodied VLM bottlenecks often look like spatial intuition and recovery failures rather than only weak top-level planning.
@@ -102,7 +103,7 @@
 
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
-- PokeGym defines 30 tasks derived from 10 quests, with trajectories ranging from 30 to 220 environment steps and three instruction granularities: Visual-Guided, Step-Guided, and Goal-Only.
+- PokeGym defines 30 tasks derived from 10 quests, with standardized task budgets and three instruction granularities: Visual-Guided, Step-Guided, and Goal-Only.
 - Agents operate only on RGB observations, while the evaluator performs AOB memory scanning to recover map IDs, coordinates, and quest flags that are never exposed to the model.
 - Across the eight main VLMs, Gemini-3-Pro and GPT-5.2 tie for the top average success rate at 58.70 on the main leaderboard.
 - Ineffective moves are significantly negatively correlated with task success across all three instruction granularities, and the failure taxonomy separates Unaware Deadlocks, Aware Deadlocks, Lost trajectories, and Execution Failures.
@@ -123,12 +124,12 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B04
-- Outline sections: 2,3,4
+- Outline sections: 1,2,3,4
 - Survey role: representative
 - Paper card path: `paper_cards/B04/PokeGym.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

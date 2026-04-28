@@ -1,6 +1,6 @@
 ---
 name: paper-card-auditor
-description: "Use when final-auditing existing paper cards against the authoritative paper and the current survey framework: verify facts, fix hallucinations, validate taxonomy/design-space labels, add writing-support claims for outline.md/writing.md/script.md, and sync the registry to finalized. Supports one-card audits and whole-batch finalization sweeps. Trigger on requests like 'audit this card', 'finalize batch B04', 'check whether this card supports Purpose', or 'verify this paper under the new taxonomy'. Do not use for first-pass card creation, unread-paper triage, or section drafting."
+description: "Use when final-auditing existing paper cards against the authoritative paper and the current survey framework: verify facts, fix hallucinations, validate taxonomy/design-space labels, add writing-support claims for outline.md/writing.md/script.md, and sync the registry to finalized. Supports one-card audits and whole-batch finalization sweeps. Trigger on requests like 'audit this card', 'finalize batch B04', 'check whether this card supports Taxonomy/Purpose/Paradigm', or 'verify this paper under the new taxonomy'. Do not use for first-pass card creation, unread-paper triage, or section drafting."
 ---
 
 # Paper Card Auditor
@@ -82,10 +82,10 @@ Validate the card against the current survey architecture:
 - Section 4 capability target: rule understanding, strategic reasoning, social intelligence, visual agency, or cross-game/open-ended generalization
 - Section 5 interaction paradigm: observation/action channel, scaffold, privileged access, ecological-validity trade-off
 - Section 6 evaluation protocol: result metric, process diagnostics, adversarial setup, calibration, robustness, contamination controls
-- Section 9 survey use: exact claims this paper can support in Sections 0-4, especially Purpose claims that still need evidence
+- Section 9 survey use: exact claims this paper can support in Sections 0-4, with equal attention to Taxonomy, Purpose, and Paradigm claim hooks
 - Section 11 evidence split: direct paper-supported facts in 11.1, survey synthesis in 11.2, unresolved uncertainty in 11.3
 
-Add or tighten supportable claim information when the card is too generic. Each Section 9 bullet should name the paper's concrete argumentative use, not merely say it is "useful" or "important."
+Add or tighten supportable claim information when the card is too generic. Each Section 9 bullet should name the paper's concrete argumentative use, not merely say it is "useful" or "important." Do not privilege Purpose over Taxonomy or Paradigm; record any supportable argument the paper can provide for all three main parts.
 
 ## Workflow
 
@@ -99,7 +99,7 @@ Add or tighten supportable claim information when the card is too generic. Each 
    - historical stage
    - L1-L5 benchmark level(s)
    - Form, Construction, Scope, observation modality, action modality
-   - Section 9 best-use bullets
+   - Section 9 best-use bullets for Taxonomy, Purpose, and Paradigm
    - Section 10 comparison targets
 8. Sync the registry row:
    - `paper_link` when a better official PDF is verified

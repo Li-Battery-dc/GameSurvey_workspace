@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2601.05899v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -41,7 +41,7 @@
 
 ### 3.4 Modality
 - Observation modality: mixed
-- Action modality: native control
+- Action modality: mixed
 - Perception burden retained: real-time map reading, timing pressure, spatial allocation, partial observability from moving fog of war, and action-outcome coupling
 - Perception burden removed: textual and structured modes expose privileged game-state semantics that humans do not receive directly
 
@@ -123,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
@@ -131,4 +131,4 @@
 - Survey role: representative
 - Paper card path: `paper_cards/B04/TowerMind.md`
 - Check status: unchecked
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

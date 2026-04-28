@@ -7,9 +7,9 @@
 - Paper link: https://arxiv.org/pdf/2506.04098v2.pdf
 - Code link: https://github.com/Lww007/Text-Atari-Agents
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
-- Review gate label: usable
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - TextAtari is a long-horizon benchmark that converts Atari environments into text using AtariARI and evaluates language agents on tasks that conceptually extend toward 100,000 steps. In practice, the paper studies 23 Atari games under four prompt conditions, yielding nearly 100 benchmark settings while reporting 1000-step rollouts for cost reasons. The core contribution is less about beating Atari and more about establishing a text-only testbed for extremely long sequential decision-making with controlled knowledge injections and reasoning prompts. For this survey, the paper is a useful contrast to raw-vision Atari benchmarks because it isolates language-side planning and state tracking while stripping away pixel perception.
@@ -52,9 +52,9 @@
 - Does it test strategic planning under uncertainty? yes
 - Does it test social reasoning / deception / cooperation? no
 - Does it test visual grounding / spatial-temporal reasoning? no in the core setting
-- Does it test long-horizon autonomy / task completion? yes
+- Does it test long-horizon autonomy / task completion? yes, with a 100K-step benchmark ambition and 1000-step reported rollouts for cost reasons
 - Does it test real-time efficiency? partially
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? partially; it tests robustness across 23 text-rendered Atari games and nearly 100 conditions, not held-out transfer or generated-game expansion
 - Why is a game environment especially suitable here? Atari offers standardized long control sequences while still supporting controlled interventions on the agent’s available knowledge.
 
 ## 5. Interaction paradigm
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that long-horizon evaluation is expensive enough that many studies shorten horizons and may therefore understate failure severity
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how game environments can scale decision horizons far beyond most static benchmarks.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the lineage from Atari RL toward language-agent control benchmarks. Clarifies the difference between text-rendered and raw-visual game environments without over-claiming ecological realism.
-- Best use in Section 2 (core capabilities evaluated by games): Supports analysis of memory, planning, and instruction grounding over long trajectories.
-- Best use in Section 3 (interaction and evaluation paradigm): A good contrast case for text-translated state interfaces. Useful for condition-based prompt intervention studies.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for benchmarks that can test both long horizons and stronger ecological validity.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows how games can scale decision horizons far beyond static benchmarks and why long-horizon evaluation becomes computationally expensive.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful in the lineage from Atari RL toward language-agent control benchmarks. It is a Level 5 contrast case for breadth across many games, but its text-rendered interface should be separated from raw-visual Atari or human-like play.
+- Best use in Section 2 (core capabilities evaluated by games): Supports analysis of memory, strategic consistency, instruction grounding, and state tracking over extended trajectories under partial observability.
+- Best use in Section 3 (interaction and evaluation paradigm): A strong example of privileged text-state interfaces and condition-based prompt interventions: Basic, Obscured, Manual Augmentation, and Reference-based settings isolate lexical priors, manuals, and demonstrations.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need for benchmarks that jointly address long horizons, cost, and ecological validity; the paper explicitly notes that text transformation improves control and reproducibility while sacrificing visual realism.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): AtariARI-style symbolic verbalization work and Atari benchmarks such as AtariGPT
@@ -105,12 +105,17 @@
 ### 11.1 Direct paper-supported facts
 - TextAtari covers 23 Atari 2600 games and uses AtariARI to translate RAM-derived state into text.
 - It defines four settings: Basic, Obscured, Manual Augmentation, and Reference-based, yielding nearly 100 game-condition benchmark settings.
-- The main baseline experiments use 1000-step rollouts, five seeds, and compare Basic, CoT, and Reflection-style prompting agents with sliding-window context management.
+- It evaluates three open-source LLMs across zero-shot, few-shot chain-of-thought, and reflection reasoning agents.
+- The main baseline experiments use 1000-step rollouts for cost saving, five random seeds, and sliding-window context management that drops older messages near the context limit.
+- The Reference-based setting injects a compact trajectory block from an RL demonstration collected before live inference.
+- The paper reports that performance across more than 90% of scenarios remains below 10% of human capability, with only two specific tasks approaching or marginally exceeding human performance.
+- The paper reports about 820,000 A100 GPU-minutes for the comprehensive evaluation and notes some games require over 300 hours per model and up to 50k tokens per decision step.
 
 ### 11.2 Our synthesis / interpretation
 - TextAtari is more useful for survey comparison than for ecological claims: its strength lies in controlled interventions on horizon and prior knowledge.
 - It pairs especially well with TextQuests and raw-vision Atari papers.
 - The paper's headline 100K framing should be read as a benchmark ambition, not as the horizon fully exercised in the reported experiments.
+- In the taxonomy, cite it as a privileged, textified curated suite that strips visual perception to stress long-horizon language-side control.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the strongest condition/model combination if we later need exact numbers in a summary table.
@@ -123,7 +128,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06

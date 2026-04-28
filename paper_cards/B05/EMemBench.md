@@ -7,9 +7,9 @@
 - Paper link: https://arxiv.org/pdf/2601.16690.pdf
 - Code link: https://github.com/InternLM/EMemBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
-- Review gate label: usable
+- Review gate label: strong
 
 ## 1. One-paragraph benchmark summary
 - EMemBench is a programmatic benchmark generator for episodic memory in interactive agents. Instead of evaluating memory with a fixed question set over prewritten histories, it lets an agent play interactive games, logs both observable and hidden game signals, and then generates verifiable questions from that specific trajectory. The benchmark is built on 15 Jericho interactive-fiction games plus the Crafter visual survival environment, balances seven ability families, and adds controls such as answerability preconditions, query-horizon limits, fixed seeds, and open-book versus closed-book human studies. For this survey, EMemBench is a strong representative of game-based memory diagnostics, but it should be used as evidence about trajectory-grounded evaluation rather than as a general game-performance benchmark.
@@ -17,7 +17,7 @@
 ## 2. Position in our survey
 - Why-games relevance: Interactive games create individualized, eventful trajectories with exact underlying state, making it possible to generate grounded memory questions that are automatically answerable and verifiable.
 - Historical stage: diagnostic capability probe
-- Benchmark level(s): L4 visual agency
+- Benchmark level(s): L2 strategic reasoning / L4 visual agency diagnostic branch
 - Most relevant outline section(s): 2,3,4
 - Role in corpus: representative
 
@@ -73,7 +73,7 @@
 - Human baseline / AI anchor / self-play / model-vs-model setup: strong LLM and VLM backbones are compared in direct in-context and memory-agent settings; humans are evaluated in both open-book and closed-book protocols
 - Automatic verifiability: high
 - Calibration method: answerability preconditions, balanced question-type distributions, query-horizon control, fixed environment and generation seeds, and optional paraphrase variants
-- Anti-contamination argument: strong; questions are generated from each agent's own trajectories rather than drawn from a fixed public test set
+- Anti-contamination argument: reduced but not eliminated; questions are generated from each agent's own trajectories rather than drawn from a fixed public test set, but the fixed template/generator pattern can still become a contamination channel
 - Reliability or comparability concerns: the template library defines what counts as memory ability, and the visual setting is currently centered on Crafter rather than a broader visual-game roster
 
 ## 7. Main contributions
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it makes clear that fixed-history memory QA misses the memory-formation process that interactive agents actually need
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): A strong example of games serving as controllable generators of grounded, individualized evaluation data.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful as a later-stage diagnostic branch where game trajectories are repurposed to measure memory rather than win rate or task completion.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for long-horizon memory, temporal reasoning, and spatially grounded recall in interactive settings.
-- Best use in Section 3 (interaction and evaluation paradigm): A strong reference for benchmark instrumentation, answerability control, and the effect of explicit memory modules.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that visually grounded episodic memory remains a major unresolved bottleneck.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong example of games as generators of individualized, trajectory-conditioned evidence: each agent's own play history becomes the object of evaluation.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful diagnostic branch where `Puzzle`/QA units are generated from `Mixed` game trajectories, showing that a game benchmark can evaluate memory over experience rather than native win rate or task completion.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for episodic memory, temporal ordering, induction, spatially grounded recall, and long-horizon experience binding as capability targets.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong reference for instrumentation and evaluation design: hidden-state logging for ground truth, answerability preconditions, balanced ability templates, fixed seeds, query-horizon control, and open-book versus closed-book human studies.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that visually grounded episodic memory and induction remain unsolved bottlenecks, and that benchmark generators reduce but do not eliminate contamination and template-overfitting risks.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): long-context memory QA benchmarks, StoryBench-style memory evaluation, and other memory-agent benchmarks that operate on fixed histories
@@ -107,10 +107,13 @@
 - The benchmark groups questions into seven ability families: single-hop, multi-hop, induction, spatial, temporal, logical, and adversarial.
 - For visual games, the paper reports averages over five fixed seeds `{1, 42, 43, 100, 123}`; for text games, results are averaged over 15 games, and question generation uses seed 42.
 - The paper includes both open-book and closed-book human studies and explicitly introduces query-horizon control to reduce unfairness from different trajectory lengths.
+- The main experiments report that the strongest settings remain far from saturation, with induction and spatial reasoning especially weak in the visual setting.
+- The limitations section states that environment coverage is limited, visual coverage is currently centered on Crafter, and trajectory-conditioned generation reduces but does not eliminate contamination via fixed templates or generator patterns.
 
 ### 11.2 Our synthesis / interpretation
 - EMemBench is one of the clearest examples in the corpus of how game environments can be repurposed into a benchmark generator rather than just a task suite.
 - Its survey value is strongest in Sections 2 to 4, where it helps connect game benchmarks to broader questions about agent instrumentation, memory modules, and evaluation validity.
+- It should be cited for trajectory-grounded memory diagnostics, not as a benchmark of general game-playing competence.
 
 ### 11.3 Uncertain or needs re-check
 - If we later compare memory-agent architectures in detail, re-check the exact prompting and retrieval settings for Mem0, LangMem, and A-MEM.
@@ -123,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B05

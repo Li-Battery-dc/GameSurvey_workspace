@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2510.11389v1
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it is a strong offline social benchmark, but not a live-agent game benchmark
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows that games can anchor human-like social reasoning evaluation with richer evidence than generic dialogue tasks.
-- Best use in Section 1 (taxonomy and evolutionary levels): Secondary contrast only; it shows a move from synthetic arenas toward human-grounded evaluation, but it is not a level-defining taxonomy anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Strong for role inference, deception reasoning, and persuasive strategy.
-- Best use in Section 3 (interaction and evaluation paradigm): Good example of offline contextual evaluation rather than embodied participation. Important for winning-faction alignment and dimension-specific speech scoring.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that fluent dialogue is easier than robust social strategy.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that human game traces can turn rich social play into evaluable evidence, not just synthetic self-play transcripts.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as a Level 3 contrast on Construction: the social game is adapted from recorded human Panda Kill play into offline alignment items rather than run as a live model arena.
+- Best use in Section 2 (core capabilities evaluated by games): Strong Purpose evidence for role inference, deception reasoning, strategic judgment, persuasion, and counterfactual social trade-offs grounded in successful human trajectories.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong Paradigm example of offline contextual evaluation: MVP-centered references, human-verified logs, adversarial negative options, speech-dimension scoring, vote alignment, and opponent identification.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the bottleneck claim that polished persuasive language is easier than strategy alignment; also cautions that winning-faction MVP behavior is a reference choice, not a universal optimality proof.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): WerewolfArena and earlier self-play social-deduction benchmarks
@@ -106,6 +106,7 @@
 - WereBench contains 100+ hours of Panda Kill footage, 80+ games, 15 rule variants, and 48 human players, with strong agreement on speaker attribution and log reconstruction.
 - WereAlign evaluates speech on five dimensions and decisions with Vote Alignment and Opponent Identification.
 - The best reported speech macro-average is 0.720 for Gemini-2.5-Pro, while most models remain below 0.50.
+- The benchmark constructs positive options from the winning faction MVP trajectory and adversarial negative options through context perturbation, information occlusion, faction inversion, and rationale-driven generation.
 
 ### 11.2 Our synthesis / interpretation
 - Beyond Survival is a useful bridge card between live-agent social game benchmarks and offline human-grounded evaluation.
@@ -121,7 +122,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -130,4 +131,4 @@
 - Paper card path: `paper_cards/B03/BeyondSurvival.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

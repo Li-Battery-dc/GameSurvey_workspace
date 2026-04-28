@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2508.16821v1.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -25,7 +25,7 @@
 ### 3.1 Structure
 - Form: Puzzle
 - Construction: Generated
-- Construction note: large family of human-authored PuzzleScript games plus a DSL that can compile new tile-puzzle rulesets
+- Construction note: human-authored PuzzleScript games ported into a JAX DSL/engine, with capacity to compile newly written PuzzleScript-style rulesets
 - Benchmark unit: level episode
 
 ### 3.2 Mechanics profile
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows both the value and the difficulty of scaling beyond fixed single-game probes without sacrificing validation coverage or protocol stability
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it helps show that seemingly small symbolic games can still expose hard reasoning failures, but it is not a central motivation anchor.
-- Best use in Section 1 (taxonomy and evolutionary levels): Strong contrast for a DSL-backed puzzle-family benchmark that broadens beyond a single game while staying inside a narrow symbolic world type.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for logical inference, rule transfer, deadlock handling, and long-range puzzle planning as distinct evaluation targets.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast case for privileged symbolic interfaces, explicit rule access, replay-based validation, and search-versus-learning comparisons on the same task family.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that broader benchmark spaces can reduce overfitting pressure, but only if validation coverage and frozen evaluation protocols stay explicit.
+- Best use in Section 0 (lead-in and benchmark motivation): Minor contrast only; it shows that compact symbolic games can expose hard reasoning failures without needing photorealistic worlds or motor control.
+- Best use in Section 1 (taxonomy and evolutionary levels): Strong contrast for a DSL-backed puzzle-family benchmark that broadens beyond a single game while staying inside a narrow symbolic world type. Use it for Level-5 benchmark-space expansion, not for ecological open-world agency.
+- Best use in Section 2 (core capabilities evaluated by games): Direct support for logical inference, rule transfer, deadlock handling, sparse-reward exploration, and long-range puzzle planning as distinct evaluation targets.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast case for privileged symbolic interfaces, explicit rule access, replay-based validation against an original engine, JAX throughput, and search-versus-learning-versus-LLM comparisons on the same task family.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that broader benchmark spaces can reduce overfitting pressure, but only if validation coverage, engine fidelity, and frozen evaluation protocols remain explicit.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): PuzzleScript itself and earlier single-puzzle families such as Sokoban-like benchmarks
@@ -105,13 +105,17 @@
 ### 11.1 Direct paper-supported facts
 - The paper reimplements PuzzleScript in JAX and reports speedups ranging from 2x to 16x over the JavaScript engine on tested games.
 - The authors collect 951 PuzzleScript games and report 414 fully valid plus 156 partially valid games under replay-based validation against original PuzzleScript behavior.
+- The validation appendix reports 7,957 total levels, 2,680 successful solutions, 1,781 valid PuzzleJAX solutions, 1,135 unvalidated levels, 489 solution errors, and 2,196 state errors; this makes validation coverage a central caveat rather than a footnote.
+- The validation pipeline uses breadth-first search in the original engine with a 100,000-step cap and a one-minute timeout, then replays action sequences in PuzzleJAX to check win conditions and final-state equivalence.
+- The major unimplemented PuzzleScript feature named by the paper is `rigid`, used for rigid-body physics; it appears in 9 games in the collected dataset and accounts for 9 compilation errors.
 - Breadth-first search is evaluated with a 1 million-step cap on a subset of games; PPO is trained on individual levels with heuristic-shaped reward; LLM agents are run 10 times per level with a 100-step cap across 12 games.
-- Most tested LLM/game pairs have 0% win rate, while BFS often solves tractable games that still defeat PPO or prompted LLMs.
+- LLM agents receive ASCII state, dynamic object mapping, rules, action space, and action meanings. Most tested LLM/game pairs have 0% win rate; Slidings is unusually easy for several models, while Blocks, Notsnake, Zen Puzzle Garden, and Multi-Word Dictionary Game remain broadly difficult.
 
 ### 11.2 Our synthesis / interpretation
 - PuzzleJAX is most defensible as a contrast case for symbolic diagnostic benchmark families, not as evidence of human-like game play.
 - The paper is useful because it separates two ideas that surveys often blur together: a reusable engine/DSL contribution and a standardized benchmark protocol.
 - It also supports the broader survey point that puzzle difficulty for AI can differ sharply from apparent human simplicity.
+- Its strongest Level-5 contribution is benchmark-space breadth and potential generation/compilation of new rulesets; its weakest point is that the evaluated subset is exploratory rather than a stable, fully validated leaderboard.
 
 ### 11.3 Uncertain or needs re-check
 - If we later build a quantitative comparison table, re-check the exact split between fully valid and partially valid games and whether we want to cite the paper's "500+ environments" phrasing or the appendix counts.
@@ -125,7 +129,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B06

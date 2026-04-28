@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2505.15146v2
 - Code link: https://github.com/lmgame-org/GamingAgent
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that scaffold choice, contamination handling, and prompt protocol can materially change what the benchmark score means
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Supports the claim that games jointly stress perception, memory, and sequential planning in a closed-loop setting.
-- Best use in Section 1 (taxonomy and evolutionary levels): Use as a diagnostic-suite example that sits between raw visual game play and heavily scaffolded benchmark infrastructure rather than as a pure ecological benchmark.
-- Best use in Section 2 (core capabilities evaluated by games): Useful for showing that one suite can probe different mixtures of spatial reasoning, long-context language understanding, and long-horizon planning.
-- Best use in Section 3 (interaction and evaluation paradigm): One of the strongest sources for the claim that observation abstraction, memory support, prompt control, and contamination mitigation all change what a game benchmark is measuring.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need to disclose interface privilege and bounded contamination evidence instead of treating benchmark scores as directly comparable across setups.
+- Best use in Section 0 (lead-in and benchmark motivation): Supports the claim that games jointly stress perception, memory, and sequential planning in a closed-loop setting, and that naive “drop a VLM into a game” evaluations can be weakly discriminative.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as a diagnostic-suite example between raw visual game play and heavily scaffolded benchmark infrastructure. It is Level 4/diagnostic-suite evidence, not a pure ecological or open-ended benchmark.
+- Best use in Section 2 (core capabilities evaluated by games): Useful for showing that one suite can probe different mixtures of spatial reasoning, long-context language understanding, visual understanding, pattern recognition, and long-horizon control.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the strongest sources for the claim that observation abstraction, memory/reflection support, long-CoT settings, prompt optimization, and contamination mitigation all change what a game benchmark is measuring.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the need to disclose interface privilege, run-count limits, variance, and bounded contamination evidence instead of treating game scores as directly comparable across setups.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): BALROG and earlier multimodal game-suite benchmarks
@@ -104,20 +104,26 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - LMGAME-BENCH evaluates 13 models on six games: Super Mario Bros., Tetris, Sokoban, Candy Crush, 2048, and Ace Attorney.
-- The paper introduces optional perception, memory, and reasoning support through a unified gaming harness and compares model performance with and without that support.
+- The paper introduces optional perception, memory, reflection, and reasoning support through a unified gaming harness and compares model performance with and without that support.
+- For grid games, the perception module converts backend visual layout into symbolic/textual spatial descriptions; for Super Mario Bros. and Ace Attorney, it extracts visual elements, status indicators, dialogue, and narrative context as text.
+- The memory module can record the past N game states/actions and use reflection lessons to narrow future action choices; the reasoning setting supports long-CoT capable models.
 - Excluding text-only models, 40% of unharnessed runs fail to beat random-play baselines, whereas 86.7% of harnessed runs beat the random baseline.
+- In Appendix E, harnessed runs are farther from random in 38 of 40 model-game pairs, versus 26 of 40 for unharnessed runs; paired t-tests find significant harness gains for Candy Crush, Sokoban, 2048, Ace Attorney, and Tetris, but not Super Mario Bros.
 - The contamination study is explicit for only two cases: vision-level checks in Super Mario Bros and text-level checks plus prompt-based mitigation in Ace Attorney.
+- Prompt standardization uses a two-stage procedure including DSPy/SIMBA optimization; in a 2048 case study it reduces prompt-pair performance discrepancy by 33.8% to 63.5% across three target models.
 - RL training on simplified Sokoban and Tetris improves cross-game planning performance and WebShop, but does not improve GSM8K or BIRD in the reported experiments.
 
 ### 11.2 Our synthesis / interpretation
 - LMGAME-BENCH is one of the clearest papers for arguing that benchmark design now includes interface engineering, not just task selection.
 - It is more defensible as a Section 3 paradigm paper than as a clean ecological-play benchmark, because the paper's own strongest results depend on privileged harness settings.
 - Its contamination contribution is useful for methodology discussion, but the evidence is bounded and should not be inflated into a blanket anti-contamination guarantee for all six games.
+- Its correlation and RL-transfer sections are useful for arguing that game tasks can align with broader benchmark clusters, but the paper itself warns that high-variance games such as Super Mario Bros. complicate such analyses.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check Appendix C if we later need exact prompt-variance reductions for specific games.
 - Re-check Appendix E or F if we later need exact paired-test or effect-size values for harness gains.
 - The paper does not provide a full human baseline table, so avoid phrasing that implies a direct human-versus-model benchmark.
+- Treat single-run markers for expensive model/game settings as a comparability caveat if using fine-grained leaderboard claims.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? Full paper read completed for this audit; no additional general read is required unless we need appendix-level numerical details.
@@ -126,7 +132,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06

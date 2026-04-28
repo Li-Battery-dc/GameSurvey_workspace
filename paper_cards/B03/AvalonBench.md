@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2310.05036v3.pdf
 - Code link:
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the results are materially conditioned on prompt/parser/summarization design, detached-language naive baselines, and bot comparisons that ignore voting history
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Early evidence that games can expose social reasoning gaps beyond static chat quality.
-- Best use in Section 1 (taxonomy and evolutionary levels): Important as an early social-deduction LLM benchmark. Helps define hidden-role, dialogue-heavy game benchmarks.
-- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of dialogue-conditioned deduction, deception, and the gap between language understanding and action selection under hidden information.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful for role-prompt plus recursive-summary interaction loops, parser-mediated action extraction, and the comparability trade-off created by matching LLM inputs to naive baselines.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Early evidence for a language-understanding-to-strategy-execution gap in social play and for prompt-conditioned multi-agent evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Early evidence that interactive games expose a gap static dialogue tasks hide: the model can discuss and infer identities yet still fail to turn that information into winning play.
+- Best use in Section 1 (taxonomy and evolutionary levels): Use as an early Level 3 adapted Dialogue benchmark: a real hidden-role game is converted into a text-symbolic, semantic-action arena with recursive memory and parser-mediated actions.
+- Best use in Section 2 (core capabilities evaluated by games): Supports the Purpose claim that social deduction tests more than fluent speech; AvalonBench separates dialogue-conditioned identity deduction from role-specific strategic execution.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong for Paradigm discussion of privileged prompt loops: recursive summaries, role prompts, parser extraction, and detached LLM dialogue for naive baselines improve control but shape the evidence.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports a social knowing-doing bottleneck: better discussion and deduction accuracy can coexist with weak servant-side win rate and brittle role strategy.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): early hidden-role or Werewolf-style LLM social-deduction case studies
@@ -127,7 +127,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -136,4 +136,4 @@
 - Paper card path: `paper_cards/B03/AvalonBench.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-14
+- Last updated: 2026-04-27

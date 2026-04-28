@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2509.06235v1
 - Code link: https://github.com/aialt/PillagerBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -92,8 +92,8 @@
 - Best use in Section 0 (lead-in and benchmark motivation): Shows how games expose adaptation, coordination, and failure modes in a controlled but still rich interactive world.
 - Best use in Section 1 (taxonomy and evolutionary levels): Ecological Level 2 contrast for competitive multi-agent benchmarking once the survey moves beyond formal small-game suites, while still making the interface-privilege caveat explicit.
 - Best use in Section 2 (core capabilities evaluated by games): Direct evidence for time-sensitive task allocation, opponent-aware adaptation, and causal dependency management in competitive multi-agent settings.
-- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison point for persistent multi-agent systems, Mineflayer-mediated symbolic interfaces, built-in opponent ladders, and latency-sensitive repeated evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that ecological strategic benchmarks remain narrow in scenario coverage, partially asymmetric, and method-coupled.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong comparison point for persistent multi-agent systems, Mineflayer-mediated symbolic interfaces, executable code actions, built-in opponent ladders, and latency-sensitive repeated evaluation.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that ecological strategic benchmarks remain narrow in scenario coverage, partially asymmetric, method-coupled, and vulnerable to self-play overspecialization.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): VillagerBench-style cooperative Minecraft systems, Voyager-style Mineflayer agents, and team-vs-team RL benchmarks such as SMAC and Lux AI
@@ -113,6 +113,7 @@
 - PillagerBench is more valuable for the survey's strategic and interaction sections than for broad benchmark-coverage claims because its scenario set is still small.
 - The safest placement is to keep it in B02 as an ecological Level 2 contrast, not to treat it as a core reasoning anchor and not to move it toward long-horizon or visual-agent batches.
 - It is a useful bridge between abstract strategic arenas and richer multi-agent Minecraft benchmarks, but it should not be cited as evidence of human-like visual play or open-ended autonomy.
+- It helps draw the interface ladder inside Section 3: richer world dynamics and real-time team competition can coexist with strong symbolic/API privilege.
 
 ### 11.3 Uncertain or needs re-check
 - Recheck Equation 9 to Equation 11 if we later need to compare sabotage or point-difference metrics across papers.
@@ -125,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B02
@@ -134,4 +135,4 @@
 - Paper card path: `paper_cards/B02/PillagerBench.md`
 - Next action: draft-section
 - Check status: unchecked
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

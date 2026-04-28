@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2310.01557v5
 - Code link: https://github.com/microsoft/SmartPlay
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; textifying visual worlds helps measurement but weakens ecological validity
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Early clear argument that games surface dynamic capabilities missing from static benchmarks.
-- Best use in Section 1 (taxonomy and evolutionary levels): Early transition point from generic game environments to capability-decomposed LLM-agent benchmarking. Useful exemplar of a multi-game diagnostic suite with mixed environment structures.
-- Best use in Section 2 (core capabilities evaluated by games): Strong anchor for rule following, planning, spatial reasoning, and learning-from-history.
-- Best use in Section 3 (interaction and evaluation paradigm): Illustrates an early, highly privileged textification pipeline using manuals, bounded history, and flat action sets. Good reference for reward/completion/score hybrids and for the distinction between native game metrics and later human-normalized comparison.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that symbolic success does not imply ecological competence.
+- Best use in Section 0 (lead-in and benchmark motivation): Direct support for the static-to-interactive evaluation gap: the paper argues that static benchmarks miss long-horizon planning, probabilistic events, spatial reasoning, and learning from interaction, while games provide objectives and feedback that unfold through action.
+- Best use in Section 1 (taxonomy and evolutionary levels): Anchor for the transition from Level 1 rule-grounded participation to Level 2 diagnostic agent evaluation. It is a curated mixed-form suite whose text observations, manuals, bounded history, and flat action sets show how early LLM-agent benchmarks converted heterogeneous games into controlled evaluation objects.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence that game suites can decompose capability targets rather than only report aggregate scores: SmartPlay maps six games to nine capabilities including rule following, planning, odds, learning from interaction, error handling, and 2D/3D spatial reasoning.
+- Best use in Section 3 (interaction and evaluation paradigm): Core example of a high-privilege textification pipeline. It fixes manuals, history windows, rollout lengths, action spaces, and trials, then reports reward/completion/score metrics plus human-normalized aggregation; use it to explain how diagnostic clarity trades off against human-like perception and control.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports bottleneck claims that even GPT-4-class agents remain far from human baselines on planning, recovery, Crafter-style concurrent objectives, and Minecraft-style 3D spatial navigation, while also showing that textified success is not ecological competence.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter and Messenger as component environments, plus earlier text-game and general-agent evaluation lines
@@ -107,6 +107,8 @@
 - The paper defines nine capability dimensions and uses a unified OpenAI Gym-like interface with text observations, manuals, bounded history, and flat categorical actions.
 - The benchmark defines three native metrics: reward, completion rate, and score; human-normalized scores are used later for cross-game comparison in the results.
 - The human baseline is collected from three experienced players using the SmartPlay interface.
+- Table 1 fixes per-game inputs, manuals, history lengths, rollout lengths, action spaces, and trial counts; the paper explicitly says changes to these settings should be stated.
+- The paper reports GPT-4 variants still underperform human baselines on harder settings, including substantial gaps on Hanoi, Crafter, and Minecraft creative navigation.
 
 ### 11.2 Our synthesis / interpretation
 - SmartPlay is a strong historical anchor because it treats games as a structured probe of agentic skill rather than only as a leaderboard.
@@ -122,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B01
@@ -131,4 +133,4 @@
 - Paper card path: `paper_cards/B01/SmartPlay.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

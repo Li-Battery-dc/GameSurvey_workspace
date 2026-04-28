@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2507.23701v3.pdf
 - Code link: https://github.com/centerforaisafety/textquests
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -54,7 +54,7 @@
 - Does it test visual grounding / spatial-temporal reasoning? no
 - Does it test long-horizon autonomy / task completion? yes
 - Does it test real-time efficiency? no
-- Does it test cross-game transfer / open-ended generalization? yes
+- Does it test cross-game transfer / open-ended generalization? partially; it is a 25-game curated suite that stresses robustness across long parser-game worlds, not a held-out transfer or generated-game benchmark
 - Why is a game environment especially suitable here? Text adventures create long, branching task arcs with sparse feedback and natural-language actions while remaining machine-verifiable.
 
 ## 5. Interaction paradigm
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many agent benchmarks remain far shorter and easier than the horizons required for genuine autonomous play
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can operationalize hours-long, hundreds-step decision horizons in a compact benchmark.
-- Best use in Section 1 (taxonomy and evolutionary levels): Extends the text-game lineage from short interactive tasks to genuinely long quests. Helps define long-horizon adventure suites as a distinct region of the design space.
-- Best use in Section 2 (core capabilities evaluated by games): Supports discussion of memory, exploration, and planning failures.
-- Best use in Section 3 (interaction and evaluation paradigm): An anchor for free-form natural-language command interfaces. Useful for checkpoint scoring plus harm-aware evaluation.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that long-horizon robustness remains a major open problem.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can operationalize hours-long, hundreds-step decision horizons in a compact, closed-loop benchmark without external tools.
+- Best use in Section 1 (taxonomy and evolutionary levels): Extends the text-game lineage from short interactive tasks to full quest arcs. In the taxonomy table, cite it as a curated text-adventure suite/Arc form, not as visual agency or generated open-endedness.
+- Best use in Section 2 (core capabilities evaluated by games): Supports Level 5 as broad long-horizon task robustness across games, and Level 2 as stateful planning under partial observability; the key bottlenecks are memory, exploration, mental mapping, and trial-and-error planning.
+- Best use in Section 3 (interaction and evaluation paradigm): Anchor for free-form natural-language command interfaces and for evaluation design that separates checkpoint progress from average harm; also useful for scaffold discussion because feelies, clues, and autosave materially shape difficulty.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that long-context size alone does not solve agentic coherence: models hallucinate history, loop in navigation, and make little extra progress beyond 500 steps.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): InteractiveFictionGames and the Jiminy Cricket moral-evaluation setup it builds upon
@@ -104,14 +104,18 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - The benchmark contains 25 Infocom games and caps runs at 500 steps.
-- It always provides required game `feelies`, evaluates `With Clues` and `No Clues` settings, and keeps the full interaction history.
+- It precludes external tools and is designed to test self-contained long-context reasoning in a single interactive session.
+- It always provides required game `feelies`, evaluates `With Clues` and `No Clues` settings, and keeps the full interaction history without truncation.
 - It includes an autosave mechanism that lets agents issue `restore {step_id}` to backtrack within a run.
 - It reports both checkpoint-based `Game Progress` and `Average Harm`.
+- In the headline results, GPT-5 reaches 37.8% progress without clues and 70.0% with clues; no-clue runs complete no games in Table 4, while the best with-clues runs complete up to 5 of 25 games.
+- Extending selected runs from 500 to 800 steps yields only minimal additional progress while often increasing harm.
 
 ### 11.2 Our synthesis / interpretation
 - TextQuests is one of the most useful corpus papers for arguing that many current agent benchmarks still understate real long-horizon difficulty.
 - The harm metric also makes it a useful bridge from raw progress scoring to more nuanced evaluation.
 - It should not be used as a strong anti-contamination example, because the paper's contribution is interaction design and long-context pressure, not benchmark freshness.
+- For Level 5, use it as a broad curated-suite case for long-horizon text-game robustness rather than true cross-title transfer learning.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the appendix if we later need exact game lists or the strongest model numbers by condition.
@@ -124,7 +128,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B06

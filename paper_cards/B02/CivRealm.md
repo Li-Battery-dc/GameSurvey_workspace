@@ -7,7 +7,7 @@
 - Paper link: https://openreview.net/pdf?id=UBVNwD3hPN
 - Code link: https://github.com/bigai-ai/civrealm
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -90,9 +90,9 @@
 
 ## 9. Why this paper matters for our survey
 - Best use in Section 0 (lead-in and benchmark motivation): Support the claim that one game can bundle long-horizon, multi-goal, societally flavored decision making into a benchmarkable environment, but do not use it as primary evidence for human-like interaction.
-- Best use in Section 1 (taxonomy and evolutionary levels): A representative rich Level 2 strategy-world benchmark that sits between narrow strategic probes and later broader benchmark platforms, without making it a Level 5 cross-game case.
+- Best use in Section 1 (taxonomy and evolutionary levels): A representative rich Level 2 strategy-world benchmark that sits between narrow strategic probes and later broader benchmark platforms, while clarifying that a large single-world task universe is not the same as Level 5 cross-game transfer.
 - Best use in Section 2 (core capabilities evaluated by games): Direct evidence for long-horizon strategic planning, delayed consequences, and dynamic state/action-space growth.
-- Best use in Section 3 (interaction and evaluation paradigm): Secondary contrast for privileged structured interfaces, local-versus-global observation design, and the full-game versus mini-game evaluation split.
+- Best use in Section 3 (interaction and evaluation paradigm): Secondary contrast for privileged structured interfaces, local-versus-global observation design, hierarchical LLM scaffolding, and the full-game versus mini-game evaluation split.
 - Best use in Section 4 (synthesis, bottlenecks, and future design): Supports bottleneck claims about myopia, context-limited large-map reasoning, and the mismatch between decomposed subgames and full strategic competence.
 
 ## 10. Relation to nearby papers
@@ -113,6 +113,7 @@
 - CivRealm's strongest survey use is as evidence of long-horizon strategic reasoning and dynamic-space control inside one complex world, not as a true cross-game or Level 5 generalization benchmark.
 - Diplomacy and communication matter as environment features, but the paper is weaker as a primary social-intelligence source than dedicated social benchmarks.
 - The benchmark is also useful because it shows that even privileged structured interfaces do not remove the difficulty of coordinating large evolving worlds over long horizons.
+- It can support the Section 2.5 boundary distinction later: procedurally varied mini-games inside one platform provide intra-world task variation, while the paper does not establish transfer across unrelated games.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact full-game aggregated-score weighting if later drafting compares CivRealm's score directly to other benchmark metrics.
@@ -126,7 +127,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B02
@@ -135,4 +136,4 @@
 - Paper card path: `paper_cards/B02/CivRealm.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-19
+- Last updated: 2026-04-27

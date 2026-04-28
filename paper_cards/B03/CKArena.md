@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2505.17512v2
 - Code link: https://github.com/xushuhang1122/CK-Arena
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: medium
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; the benchmark cleanly isolates concept use, but only within one specialized language-game setting
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Shows how games can operationalize semantic knowledge in interaction rather than as static QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Contrast-only example of a game benchmark expanding into diagnostic knowledge probes, not a core social-evolution anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Supports concept reasoning, inference from partial clues, and strategic description.
-- Best use in Section 3 (interaction and evaluation paradigm): Illustrates prompt restrictions used to isolate target capabilities. Relevant for mixed game outcomes plus snapshot QA and anchor-based rating.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that general benchmark strength does not guarantee fine-grained conceptual competence.
+- Best use in Section 0 (lead-in and benchmark motivation): Shows that interactive games can stress semantic knowledge in use, where concept understanding must survive role pressure, partial clues, and voting consequences.
+- Best use in Section 1 (taxonomy and evolutionary levels): Contrast-only Level 3 case: an Undercover-style Dialogue game broadens social benchmarks from deception alone to concept-discrimination under multi-agent interaction.
+- Best use in Section 2 (core capabilities evaluated by games): Supports Purpose claims about concept reasoning, semantic boundary control, role-aware description, and inference from partial teammate/opponent clues.
+- Best use in Section 3 (interaction and evaluation paradigm): Useful Paradigm evidence for combining dynamic game outcomes with derived diagnostics: Elo-style role-adjusted leaderboard, statement-quality scoring, and snapshot QA from gameplay traces.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that general benchmark strength does not guarantee fine-grained conceptual competence, and that fixed aggressive/conservative strategies can fail in interactive semantic games.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Undercover-game LLM studies and static concept-understanding benchmarks
@@ -106,6 +106,7 @@
 - CK-Arena uses six-player Undercover games with four civilians and two undercover agents.
 - The paper defines 529 concept pairs overall, uses 464 main-evaluation game instances across 12 concrete categories, and builds a 5,733-instance QA benchmark from 500 completed games.
 - The leaderboard corrects the civilian role bias with a temporary +120 Elo offset, and fixed-strategy ablations underperform the unconstrained setting.
+- The paper reports a strong correlation between snapshot QA performance and game win rates, using the QA layer as a fine-grained diagnostic rather than a replacement for dynamic play.
 
 ### 11.2 Our synthesis / interpretation
 - CK-Arena is best used as a contrast card inside the social batch because it broadens what social game benchmarks can measure.
@@ -121,7 +122,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B03
@@ -130,4 +131,4 @@
 - Paper card path: `paper_cards/B03/CKArena.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

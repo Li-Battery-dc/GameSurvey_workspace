@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2410.08126v2.pdf
 - Code link: https://github.com/XiaojuanTang/Mars
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -24,8 +24,8 @@
 ## 3. Design-space coding
 ### 3.1 Structure
 - Form: World
-- Construction: Adapted
-- Construction note: Crafter-derived open-world with modified mechanics
+- Construction: Generated
+- Construction note: Crafter-derived generator of counter-commonsense worlds through terrain, survival-setting, and task-dependency modifications; the experiments use seven representative worlds
 - Benchmark unit: episode / world instance
 
 ### 3.2 Mechanics profile
@@ -33,7 +33,7 @@
 - Transition uncertainty: mixed
 - Actor configuration: single-agent
 - Incentive structure: N/A
-- Temporal regime: turn-based
+- Temporal regime: turn-based / step-based
 
 ### 3.3 Benchmark scope
 - Scope: game family
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that many existing benchmarks mostly reward stored world knowledge rather than adaptive reasoning
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates that games can test rule discovery through interaction rather than static QA.
-- Best use in Section 1 (taxonomy and evolutionary levels): Represents a move toward adaptive reasoning benchmarks rather than fixed-rule play only. Useful for defining rule-perturbed task-game hybrids, mainly as a contrast case rather than as a central level anchor.
-- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for inductive reasoning and exploration as distinct targets.
-- Best use in Section 3 (interaction and evaluation paradigm): Useful contrast to benchmarks that reveal all task rules upfront. A good example of controlled world perturbation as evaluation design.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that benchmark difficulty should come from novelty, not only from scale.
+- Best use in Section 0 (lead-in and benchmark motivation): Demonstrates that games can make rule discovery an interactive problem: the agent must test actions, observe consequences, and update hypotheses rather than answer a static rule puzzle.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful contrast for the `World` / `Generated` / game-family branch, showing a generated rulespace inside one survival-game substrate rather than a broad cross-title suite.
+- Best use in Section 2 (core capabilities evaluated by games): Strong evidence for situated inductive reasoning, adaptive planning, and exploration under counter-commonsense rules as capability targets distinct from known-rule execution.
+- Best use in Section 3 (interaction and evaluation paradigm): Good example of benchmark construction as controlled rule perturbation: visual/grid play is made LLM-accessible through textual wrappers, while evaluation keeps Crafter-style reward, success rate, and log-space achievement score.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the argument that future benchmarks need novelty and rule-shift controls, because pretrained commonsense can become misleading rather than helpful.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Crafter-based achievement benchmarks
@@ -104,14 +104,17 @@
 ## 11. Evidence notes
 ### 11.1 Direct paper-supported facts
 - Mars modifies Crafter through terrain, survival, and task-dependency changes.
+- The paper says Mars can generate numerous worlds from those mechanism changes while preserving playability constraints: no new resources/objects, resource balance, task achievability, and supply exceeding demand.
 - The main evaluation uses seven worlds spanning single, double, and triple combinations of those changes.
 - The benchmark reports reward, success rate, and a log-space overall score over 22 achievements, and finds severe degradation from default Crafter to Mars worlds.
 - The paper also introduces Induction from Reflection (IfR), which improves over other LLM baselines but remains far from solving the benchmark.
+- The LLM baselines receive a text wrapper describing the gameplay screen, while RL baselines use visual inputs and train separately for each world.
 
 ### 11.2 Our synthesis / interpretation
 - Mars is one of the most useful corpus papers for arguing that game benchmarks can test adaptation to novel rules rather than only execution under fixed rules.
 - It is particularly strong for the survey’s limitations section because it exposes how pretrained priors can become liabilities.
 - It is better used as a novelty-and-adaptation contrast case than as a broad open-world benchmark anchor.
+- It should not be cited as evidence for cross-game transfer; its strongest claim is generated rule variation within a Crafter-derived family.
 
 ### 11.3 Uncertain or needs re-check
 - Re-check the exact world definitions in Appendix M if we later need a detailed taxonomy.
@@ -124,7 +127,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B05

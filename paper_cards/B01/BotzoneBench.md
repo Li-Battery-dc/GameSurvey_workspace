@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2602.13214v1
 - Code link: https://github.com/AMysteriousBeing/BotzoneBench
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: strong
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; cross-game anchor levels are not directly comparable
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games permit durable, interpretable evaluation standards.
-- Best use in Section 1 (taxonomy and evolutionary levels): Marks a shift from ad hoc suite results toward protocol-calibrated benchmarking. Good case of a mixed-information strategic suite.
-- Best use in Section 2 (core capabilities evaluated by games): Supports strategic planning, uncertainty handling, and adaptive play.
-- Best use in Section 3 (interaction and evaluation paradigm): Typical privileged text-state plus legal-action benchmark interface. One of the clearest anchor-based calibration papers in the corpus.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue for better cross-benchmark comparability and non-volatile evaluation.
+- Best use in Section 0 (lead-in and benchmark motivation): Strong evidence that games can provide durable, interpretable standards for interactive decision-making because fixed external AI ladders make model progress measurable without rebuilding a peer pool.
+- Best use in Section 1 (taxonomy and evolutionary levels): Marks a shift from ad hoc strategic-suite results toward protocol-calibrated benchmarking. Use it as a Level 1/2 strategic suite spanning deterministic perfect-information board games and stochastic imperfect-information card/tile games.
+- Best use in Section 2 (core capabilities evaluated by games): Supports the distinction between rule compliance and strategic competence: the prompt exposes rules, state, history, and legal actions, yet model skill still varies by capacity, game family, hidden information, and cooperative-competitive dynamics.
+- Best use in Section 3 (interaction and evaluation paradigm): One of the strongest calibration anchors in the corpus. It supplies duplicate matches, fixed random seeds, graded classic AI baselines, a `(level, progress)` score, and a clear caveat that levels are comparable within a game but not across games.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Helps argue that future game benchmarks need stable anchors and longitudinal interpretability, while still documenting unresolved issues in baseline coverage, prompt design, and cross-game comparability.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): SmartPlay, GameBench-style strategic suites, traditional game-AI rating ladders
@@ -107,6 +107,8 @@
 - It uses duplicate matches with fixed random seeds and evaluates LLMs against graded classic AI baselines.
 - It reports a `(level, progress)` skill score based on clearing anchor tiers with at least 50% win rate, with Tic-Tac-Toe using draw rate for progress because optimal play is solved.
 - The paper states that code and data are publicly available at `https://github.com/AMysteriousBeing/BotzoneBench`.
+- The prompt provides game rules, player identity, current state, action history, and legal moves, which the paper frames as ensuring rule compliance while leaving strategic reasoning to the model.
+- The paper reports 6,403 completed games and 177,047 state-action pairs with reasoning traces; it also notes that skill levels are comparable only within a game because baseline ladders differ.
 
 ### 11.2 Our synthesis / interpretation
 - BotzoneBench is a key protocol paper for this survey because it reframes game benchmarking as stable calibration rather than transient peer comparison.
@@ -122,7 +124,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P0
 - Reading depth: deep
 - Batch ID: B01
@@ -131,4 +133,4 @@
 - Paper card path: `paper_cards/B01/BotzoneBench.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

@@ -7,7 +7,7 @@
 - Paper link: https://aclanthology.org/2025.emnlp-main.249.pdf
 - Code link: https://github.com/YusaeMeow/Collab-Overcooked
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -89,11 +89,11 @@
 - Does this paper reveal a benchmark-design limitation as well? yes; it shows that outcome-only scoring can hide large differences in how collaboration actually happens, but its own evaluation depends on exhaustively specified RATs and long prompt-based agent loops
 
 ## 9. Why this paper matters for our survey
-- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that cooperative games reveal interaction failures that static task benchmarks miss.
-- Best use in Section 1 (taxonomy and evolutionary levels): Useful bridge from social reasoning benchmarks to collaboration-centered multi-agent evaluation. Strong example of a cooperative single-game benchmark with process metrics.
-- Best use in Section 2 (core capabilities evaluated by games): Direct support for cooperation and adaptation.
-- Best use in Section 3 (interaction and evaluation paradigm): Helpful for text-state interaction, predefined action primitives, and process-oriented collaboration metrics such as PC, IC, and RC.
-- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the claim that active collaboration remains much weaker than simple goal interpretation.
+- Best use in Section 0 (lead-in and benchmark motivation): Good evidence that cooperative games reveal interaction failures static task benchmarks miss, especially when success requires asking for and responding to help.
+- Best use in Section 1 (taxonomy and evolutionary levels): Useful Level 3 bridge from dialogue-heavy social reasoning to collaboration-centered Encounter benchmarks with text-state interaction and semantic action primitives.
+- Best use in Section 2 (core capabilities evaluated by games): Direct Purpose support for active collaboration, adaptive task execution, initiating help, responding to partner requests, and shared-goal coordination under forced interdependence.
+- Best use in Section 3 (interaction and evaluation paradigm): Strong Paradigm case for process-level metrics: TES/ITES, Progress Completeness, Initiating Capability, and Responding Capability reveal collaboration quality beyond final success rate.
+- Best use in Section 4 (synthesis, bottlenecks, and future design): Supports the bottleneck claim that active collaboration and continuous adaptation remain weaker than goal interpretation, and that outcome-only scoring can hide process failures.
 
 ## 10. Relation to nearby papers
 - Closest predecessor(s): Overcooked-AI, coordination and teamwork benchmarks
@@ -106,6 +106,7 @@
 - Collab-Overcooked contains 30 tasks across 6 complexity levels and is built on Overcooked-AI.
 - The paper defines collaboration capability in terms of initiating collaboration and responding to collaboration, and introduces TES/ITES-derived metrics including Progress Completeness, Initiating Capability, and Responding Capability.
 - Across 13 LLMs and a 10-person human evaluation, the authors find strong goal interpretation but notable weaknesses in active collaboration and continuous adaptation, with human performance remaining far more stable at high complexity.
+- The benchmark's diagnostic control depends on manually annotated Referential Action Trajectories for all 30 tasks and text prompts exposing rules, task state, and available action primitives.
 
 ### 11.2 Our synthesis / interpretation
 - This paper is one of the stronger corpus sources for showing why process metrics are necessary in multi-agent benchmarks.
@@ -122,7 +123,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P1
 - Reading depth: deep
 - Batch ID: B03
@@ -131,4 +132,4 @@
 - Paper card path: `paper_cards/B03/CollabOvercooked.md`
 - Check status: unchecked
 - Next action: draft-section
-- Last updated: 2026-04-10
+- Last updated: 2026-04-27

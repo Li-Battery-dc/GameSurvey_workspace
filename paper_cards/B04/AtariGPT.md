@@ -7,7 +7,7 @@
 - Paper link: https://arxiv.org/pdf/2408.15950v2.pdf
 - Code link: https://github.com/nwayt001/atari-gpt
 - Reading depth: deep
-- Card status: card-reviewed
+- Card status: finalized
 - Confidence in this card: high
 - Review gate label: usable
 
@@ -41,7 +41,7 @@
 
 ### 3.4 Modality
 - Observation modality: visual image
-- Action modality: native control
+- Action modality: mixed
 - Perception burden retained: raw frames, object identification, relative spatial layout, and scene-to-action grounding under a short visual history
 - Perception burden removed: the control loop is simplified to prompted discrete actions with resized frames, fixed frame skipping, output repair, and a short rollout horizon rather than full human controller dexterity
 
@@ -63,7 +63,7 @@
 - Interface type: structured action space / hybrid
 - Agent scaffold allowed: short frame-and-response history, chain-of-thought prompting, environment-specific action documentation, and invalid-action repair
 - Is there privileged API access? no
-- How close is the setup to human play? low-medium; the models see raw frames, but control is mediated through prompted discrete actions, resized inputs, short history, and aggressive frame skipping
+- How close is the setup to human play? low-medium; the models see raw frames, but control is mediated through prompted ALE discrete action IDs, resized inputs, short history, and aggressive frame skipping
 - Main ecological-validity trade-off: the benchmark preserves pixel-conditioned action selection, but the prompt-scaffolded control loop and fixed-horizon protocol make it a diagnostic visual-action benchmark rather than a close replica of native human play
 
 ## 6. Evaluation protocol
@@ -117,7 +117,7 @@
 ### 11.3 Uncertain or needs re-check
 - Re-open Figure 5 or Figure 7 if the draft later needs exact per-task percentages rather than the paper's qualitative statement about spatial-reasoning drop-offs.
 - The discussion mentions temperature tuning as a possible mitigation for output inconsistency, but there is no systematic ablation; avoid stronger claims unless we inspect supplementary material or code.
-- Keep cross-track comparisons qualified because gameplay uses API-based rollouts while the diagnostic task uses web-interface prompting for a broader model set.
+- Keep cross-track comparisons qualified because gameplay uses ALE emulator rollouts while the diagnostic task uses web-interface prompting for a broader model set.
 
 ## 12. Follow-up reading plan
 - Should we read beyond abstract + intro? why? Already done for this audit; rereading is only needed if the draft later needs exact Figure 5 or Figure 7 percentages.
@@ -126,7 +126,7 @@
 
 ## 13. Registry sync
 - Registry row synced: yes
-- Registry status: card-reviewed
+- Registry status: finalized
 - Priority: P2
 - Reading depth: deep
 - Batch ID: B04
@@ -134,4 +134,4 @@
 - Survey role: contrast
 - Paper card path: `paper_cards/B04/AtariGPT.md`
 - Check status: unchecked
-- Last updated: 2026-04-16
+- Last updated: 2026-04-27
