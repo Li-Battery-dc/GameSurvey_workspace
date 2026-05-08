@@ -151,7 +151,7 @@ Probe design mechanisms:
 - Hidden/private-information social inference：通过隐藏身份、私有信息、公开讨论、投票、怀疑轨迹和 role-conditioned incentives，让身份推断、欺骗检测、信任校准和意图建模成为胜负相关能力 `(AvalonBench; WerewolfArena; Wolf; BeyondSurvival; MulticulturalSpyfall)`。
 - Cooperative interdependence probes：通过共享目标、非对称信息、hint interpretation、cross-play、partner modeling、initiating/responding collaboration，让协作不是语言表态，而是必须转化为联合行动 `(LLMHanabi; StrategicHanabi; CollabOvercooked; LLMCoordination; TeamCraft)`。
 - Negotiation and influence probes：通过联盟形成、承诺、说服、背叛风险和语言条件下的行动计划，测试模型是否能把自然语言互动接入策略执行 `(Cicero; WerewolfArena; AvalonBench)`。
-- Social-process decomposition：用 deception production/detection、suspicion calibration、CoordQA、IC/RC、role-conditioned outcomes 等过程视角拆出 social success 的来源，但这里只作为能力显形机制，具体指标解释留给 Paradigm `(Wolf; LLMCoordination; CollabOvercooked; BeyondSurvival)`。
+- Social-process decomposition：用 deception production/detection、suspicion calibration、CoordQA、IC/RC、role-conditioned outcomes 等过程视角拆出 social success 的来源，论述时注意这里只作为能力显形机制，具体指标解释留给 Paradigm `(Wolf; LLMCoordination; CollabOvercooked; BeyondSurvival)`。
 
 #### 2.4 Level 4: Visual Agency — From knowing what to do to doing it in the game world
 
@@ -161,10 +161,9 @@ Level 4 的核心是 knowing-doing gap：模型是否能把视觉或半视觉状
 Game affordance and boundary:
 视觉游戏保留了人类玩家面对的 screen-to-action loop。模型不能只说出正确目标，还必须定位 UI、点击、移动、等待、避障、战斗、导航、使用物品，并从错误中恢复。这样静态视觉理解无法暴露的问题会变成可观察失败。边界是，越接近 human-like play，分数解释越困难：低分可能来自视觉误读、UI grounding、计划错误、latency、动作格式、记忆崩溃或恢复失败。因此 Level 4 的关键不是宣称“更真实所以更好”，而是明确 interface privilege 如何改变证据含义。
 
-Measurement mechanisms:
 Probe design mechanisms:
-- Perception-before-control probes：先用 gameplay video、screenshot-grounded board/game states、视觉问答或组件化任务测试 visual grounding、temporal reasoning、object attribution 和 spatial localization，说明 active play 之前视觉状态理解本身就是瓶颈 `(GameplayQA; LVLMGamePlayers; INGVP; AtariGPT; VMage; RuleOracles)`。
-- Matched perception-action contrasts：在同一或相近任务中比较 raw visual control、semantic/tool-assisted control、text/image tracks、paused vs real-time settings，让 reasoning、UI grounding、action localization 和 timing 的差异成为可见 probe，而不在此处展开分数可靠性 `(StarBench; GameWorld; LMGameBench; Balrog; VideoGameBench; TowerMind)`。
+- Perception-before-control probes：先用 gameplay video、screenshot-grounded board/game states、视觉问答或组件化任务测试 visual grounding、temporal reasoning、object attribution 和 spatial localization，说明 active play 之前视觉状态理解本身就是瓶颈 `(GameplayQA; LVLMGamePlayers; INGVP; AtariGPT; VMage;)`。
+- Matched perception-action contrasts：在同一或相近任务中比较 raw visual control、semantic/tool-assisted control、text/image tracks、paused vs real-time settings，让 reasoning、UI grounding、action localization 和 timing 的差异成为可见 probe，而不在此处展开分数可靠性 `(StarBench; GameWorld; LMGameBench; Balrog; VideoGameBench)`。
 - Progress and recovery probes：通过 full story arcs、quest progress、milestones、deadlock/recovery categories、state-verifiable task progress，测试模型是否能在视觉世界中持续推进、记忆线索、纠正错误并恢复轨迹 `(FlashAdventure; PokeGym; GameWorld; VideoGameBench; Balrog; Crafter)`。
 
 
@@ -174,11 +173,11 @@ Core claim:
 Level 5 不应简单等于 “many games”。它测的是模型能否超越固定任务：面对新游戏、新规则、新关卡、新任务组合、新机制或 first-contact environment 时，仍能保持可迁移的游戏能力。
 
 Game affordance and boundary:
-人类游戏空间天然可扩展：同一机制可组合出新关卡，同一世界可生成长尾任务，不同游戏家庭可提供异质挑战，生成式或 living benchmark 可以持续增加新规则和新环境。这让 games 比固定题集更适合讨论 anti-saturation 和 generalist agency。边界必须明确区分三种证据：fixed curated breadth 主要说明 capability coverage；single-world open-ended tasks 说明 intra-world generalization；generated/living/first-contact settings 才更接近 novelty 和 anti-saturation。不要把 MCU/StarDojo、Orak/GameVerse、AIGameStore/ARCAGI3 写成同一种 generalization evidence。
+人类游戏空间天然可扩展：同一机制可组合出新关卡，同一世界可生成长尾任务，不同游戏家庭可提供异质挑战，生成式或 living benchmark 可以持续增加新规则和新环境。这让 games 比固定题集更适合讨论 anti-saturation 和 generalist agency。边界必须明确区分三种证据，说明现在声称generalize的方式仍然不统一并且朝着不同的方向发展。细节在下一段三种类型下再展开：fixed curated breadth 主要说明 capability coverage；single-world open-ended tasks 说明 intra-world generalization；generated/living/first-contact settings 才更接近 novelty 和 anti-saturation。写作script时不要把 MCU/StarDojo、Orak/GameVerse、AIGameStore/ARCAGI3 写成同一种 generalization evidence。
 
 Probe design mechanisms:
-- Single-world open-ended task universes：在一个持续世界中扩展任务组合、资源链、角色互动、生产/探索/建造目标，测试 intra-world open-ended task generalization 和长期任务推进，而不是跨游戏泛化 `(MCU; StarDojo; TeamCraft; MineNPCTask; Crafter; NetHackLearningEnvironment)`。
-- Broad curated-suite probes：固定多游戏集合用于测试模型或 scaffold 是否能跨不同游戏结构保持有效，主要证明 capability coverage 和 robustness across game forms，不直接证明 held-out transfer `(Orak; GameVerse; LMGameBench; TextQuests; TextAtari; TextArena)`。
+- Single-world open-ended task universes：在一个持续世界中扩展任务组合、资源链、角色互动、生产/探索/建造目标，测试 intra-world open-ended task generalization 和长期任务推进，是在一个自由度足够高的世界内多任务泛化，而不是跨游戏泛化 `(MCU; StarDojo; TeamCraft; MineNPCTask; Crafter; NetHackLearningEnvironment)`。
+- Broad curated-suite probes：手动学则和固定多游戏集合用于测试模型或 scaffold 是否能跨不同游戏结构保持有效，这类保持多游戏集合拓展性，主要证明 robustness across game forms `(Orak; GameVerse; LMGameBench; TextQuests; TextAtari; TextArena)`。
 - Generated/living/first-contact probes：通过程序化规则、可扩展游戏库、private/OOD splits、隐藏机制或首次接触环境，让 novelty、anti-saturation、mechanic induction 和 first-contact adaptation 成为核心压力 `(GVGAILLM; AIGameStore; PuzzleJAX; ARCAGI3; Mars)`。
 
 ### Paragim
