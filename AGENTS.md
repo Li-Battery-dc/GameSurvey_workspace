@@ -38,6 +38,7 @@ Repo-local skills live in `.codex/skills/`.
 - `paper-card-batch-reader`: deep-read selected papers, write paper cards, and sync the registry.
 - `paper-card-auditor`: full-text audit of one existing paper card for hallucinations, card accuracy, and alignment to the current outline and writing plan.
 - `survey-section-writer`: align section plans in `writing.md`, mine support from reviewed paper cards, and then draft or revise copy-ready prose in `script.md`. This skill is the default for section drafting, cross-section revision, and manuscript stabilization work.
+- `survey-polish-auditor`: audit the full polishing chain from paper-card evidence to `writing.md` logic, `script.md` prose, and `script.md` citation placement; use for factual checks, argument-evidence alignment, style rigor, and citation reasonableness before manuscript handoff.
 
 ## Evidence Rules
 - Keep paper-supported facts separate from our synthesis.
