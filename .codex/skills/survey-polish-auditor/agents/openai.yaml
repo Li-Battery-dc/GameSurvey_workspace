@@ -1,0 +1,4 @@
+interface:
+  display_name: "Survey Polish Auditor"
+  short_description: "Audit survey claims, prose, and citations"
+  default_prompt: "Use $survey-polish-auditor to audit a survey section from paper-card evidence through writing.md, script.md, and citation placement."
