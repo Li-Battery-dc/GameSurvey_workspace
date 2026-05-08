@@ -119,7 +119,7 @@ Core claim:
 Level 1 的目标不是证明模型“聪明”，而是检验模型能否稳定进入一个规则化行动系统。它测的是 rule interpretation, state maintenance, legal-action generation, output conformity, tool/action formatting。只有这些基本环节稳定，后续 strategic reasoning 或 social reasoning 的分数才可解释。
 
 Game affordance and boundary:
-博弈论任务、棋盘游戏、网格游戏和 tabletop rule tasks 的共同价值在于 formal containment：规则封闭、状态转移明确、合法动作可检查、结果可自动评分。因此它们能提供比普通文字题更干净的 rule-grounding 证据。边界也来自这种干净性：许多 Level 1 benchmark 通过 text/API interface 暴露规则、状态、历史或 legal moves，移除了视觉感知、界面发现和低层动作控制；RuleOracles 还说明 rulebook access 和 situated rule application 也会分离。因此 Level 1 更适合作为 later gameplay evidence 的 entry condition，而不是 human-like play 的证明。
+博弈论任务、棋盘游戏、网格游戏和 tabletop rule tasks 的共同价值在于 formal containment：规则封闭、状态转移明确、合法动作可检查、结果可自动评分。因此它们能提供比普通文字题更干净的 rule-grounding 证据。评测边界也来自这种干净性：许多 Level 1 benchmark 通过 text/API interface 暴露规则、状态、历史或 legal moves. RuleOracles 还说明 rulebook access 和 situated rule application 也会分离。
 
 Probe design mechanisms:
 - Rule-state-action containment：通过明确规则、状态、历史和合法动作空间，把 rule interpretation、state maintenance 和 legal-action generation 变成模型进入游戏系统的最低条件 `(SmartPlay; GTBench; BoardGameArena; BotzoneBench)`。
@@ -129,14 +129,14 @@ Probe design mechanisms:
 #### 2.2 Level 2: Reasoning — Games as interactive decision environments
 
 Core claim:
-Level 2 测的不是静态“会不会推理”，而是 interactive decision quality：模型是否能在状态变化、延迟后果、不完全信息、对手适应、空间约束和时间压力下持续做出有效行动。关键不是回答一道推理题，而是让 reasoning 在 action-consequence loop 中接受检验。
+Level 2 测的不是静态“会不会推理”，而是 interactive decision quality：模型是否能在状态变化、延迟后果、不完全信息、对手适应、空间约束下持续做出有效行动。关键不是回答一道推理题，而是让 reasoning 在 action-consequence loop 中接受检验。
 
 Game affordance and boundary:
 游戏把 reasoning 外化为轨迹：每个动作改变后续状态，错误会积累，对手或环境会反馈，计划必须随新信息更新。这让 game benchmarks 可以测 stateful reasoning, adaptive planning, opponent-aware decision making, spatial planning 和 long-horizon strategy。边界是，多数 Level 2 benchmark 仍高度 textified/API-mediated；多游戏覆盖也不等于 transfer evidence；DSGBench/GameBench 这类维度分解主要是 benchmark designer 的测量框架，不应被写成已经验证的自然认知因子。
 
 Probe design mechanisms:
 - Formal strategic-pressure designs：用 payoff structure、hidden information、multi-round interaction、opponent response 和 equilibrium/EV-like references，让 reasoning 必须通过行动选择表现出来，而不是停留在静态解释 `(GTBench; GAMABench; TMGBench; PokerBench; GTOWizardBenchmark)`。
-- Coverage-oriented reasoning suites：用多游戏或多场景覆盖 hidden information、non-determinism、cooperation, communication, adaptation, long-term planning 等不同 strategic pressures 不同能力，但只把它们写成 capability coverage，不写成 held-out transfer evidence `(GameBench; DSGBench; KORGym; BotzoneBench)`。
+- Coverage-oriented reasoning suites：用多游戏或多场景覆盖 hidden information、non-determinism、cooperation, communication, adaptation, long-term planning 等不同 strategic pressures 不同能力，用capability coverage提升probe准度 `(GameBench; DSGBench; KORGym; BotzoneBench)`。
 - Spatial-temporal execution probes：通过 maze/map traversal、RTS/tower-defense、turn-based vs real-time matched regimes，检查计划是否能持续转化为有效轨迹，尤其是空间状态维护、循环避免、时间压力和对手适应 `(MazeEval; GameTraversalBenchmark; BeyondScaling; TowerMind; CivRealm)`。
 
 #### 2.3 Level 3: Social Intelligence — Games as social interdependence engines
