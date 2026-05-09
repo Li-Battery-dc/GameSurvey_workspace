@@ -207,7 +207,7 @@ paradigm 重要性和pipeline lens重要性。举例论证同一个游戏由于�
 
 - 接口不同的previlege层级讨论：
    -  Previlege讨论：SmartPlay、GTBench、DSGBench、GameBench 这种 textified / API-mediated benchmark，将perception burden、UI grounding burden 从任务中剥离出来，让 benchmark 更接近一个“strategic reasoning instrument”。自动评测稳定，适合单独分析高层能力。被整理好的状态表示和动作空间上做决策的能力。但是弱化了模型从环境中理解状态的能力。也适当讨论一下latency部分。问题一些论文做了多种设定的对比(VideoGameBench, orak, StarBench)，基本说明现在模型的弱点就是在于这些被previleged benchmark剥离的能力。
-  - 现在的模型发展趋势是要做到end-to-end的agent loop, 博阿留了视觉 grounding、界面理解、动作执行、时序协调这些挑战，是现在的模型最缺乏，而human-like play 最需要的能力。但是现在的模型还不能在这些benchmark上做的好，导致这些benchmark内失败原因混杂，需要做更深入的case-study和comparison。
+  - 现在的模型发展趋势是要做到end-to-end的agent loop, 保留了视觉 grounding、界面理解、动作执行、时序协调这些挑战，是现在的模型最缺乏，而human-like play 最需要的能力。但是现在的模型还不能在这些benchmark上做的好，导致这些benchmark内失败原因混杂，需要做更深入的case-study和comparison。
 
 #### Evaluation
 
